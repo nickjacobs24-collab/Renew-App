@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Custom styles that won't get purged */
+.gradient-energy {
+  background: linear-gradient(135deg, #00897B 0%, #004D40 100%);
+}
+
+.gradient-mind {
+  background: linear-gradient(135deg, #512DA8 0%, #311B92 100%);
+}
+
+.gradient-sleep {
+  background: linear-gradient(135deg, #1A237E 0%, #0D1142 100%);
+}
+
+.gradient-stress {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+}
+
+.gradient-immunity {
+  background: linear-gradient(135deg, #607D8B 0%, #37474F 100%);
+}
+
+.gradient-wellness {
+  background: linear-gradient(135deg, #673AB7 0%, #4527A0 100%);
+}
+
+.hero-gradient {
+  background: radial-gradient(60rem 40rem at 50% 20%, rgba(77,182,172,0.22), rgba(15,44,63,0) 60%), 
+              linear-gradient(180deg, #1A3B5D 0%, #0F2C3F 100%);
+}
+
+.button-gradient {
+  background: linear-gradient(90deg, #2FB7A6 0%, #0F2C3F 100%);
+  }
