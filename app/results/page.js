@@ -1,5 +1,4 @@
-"use client"
-import { useState, useEffect, useRef, Suspense } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { ArrowLeft, Sparkles, Zap, Brain, SmileIcon, HeartIcon } from 'lucide-react';
@@ -21,7 +20,6 @@ import ImmVitaminD from "./Modals/Immunity/ImmVitaminD";
 import WellnessVitaminD from "./Modals/Wellness/WellnessVitaminD";
 import WellnessOmega3 from "./Modals/Wellness/WellnessOmega3";
 import WellnessMultivitamins from "./Modals/Wellness/WellnessMultivitamins";
-
 //
 // ---------------------------
 // DATA (unchanged)
@@ -34,7 +32,7 @@ const energySupplements = [
     id: 'EnergyVitaminB',
     name: 'Vitamin B',
     benefitStatement: 'Turns food into all-day energy',
-    stat: 'Without it, you can't fully use food for energy',
+    stat: 'Without it, you can’t fully use food for energy',
     description: 'B vitamins are essential cofactors in energy metabolism. Without adequate B vitamins, your body cannot efficiently convert nutrients into usable energy.',
     keyBenefits: ['Helps convert food to energy','Supports brain function','Reduces tiredness and fatigue'],
     timeToEffect: '3-7 days',
@@ -101,7 +99,7 @@ const mindSupplements = [
     id: 'MindVitaminB',
     name: 'Vitamin B',
     benefitStatement: 'Helps sharpen your thinking',
-    stat: 'Your body can't store it - needs daily top ups',
+    stat: 'Your body can’t store it - needs daily top ups',
     description: 'B vitamins are crucial for brain function, supporting neurotransmitter synthesis and mental energy production.',
     keyBenefits: ['Enhances mental clarity','Supports mood balance','Reduces brain fog'],
     timeToEffect: '3-7 days',
@@ -142,8 +140,9 @@ const mindAdvanced = [
   }
 ];
 
-// HARDCODED SLEEP SUPPLEMENTS - Design phase
+// HARDCODED SLEEP SUPPLEMENTS - Design phase (you can edit content later)
 const SleepSupplements = [
+ 
   {
     id: 'SleepLtheanine',
     name: 'L-Theanine',
@@ -164,7 +163,7 @@ const SleepSupplements = [
     timeToEffect: '1-2 weeks',
     image: '/images/Magnesium Sleep.jpg'
   },
-  {
+   {
     id: 'SleepGlycine',
     name: 'Glycine',
     benefitStatement: 'Helps you sleep more deeply',
@@ -199,7 +198,7 @@ const SleepAdvanced = [
   }
 ];
 
-// HARDCODED CALM SUPPLEMENTS - Design phase
+// HARDCODED CALM SUPPLEMENTS - Design phase (3 items)
 const CalmSupplements = [
   {
     id: 'CalmGlycine',
@@ -208,7 +207,7 @@ const CalmSupplements = [
     stat: 'Stress builds up throughout the day',
     description: 'Supports deeper, more restorative sleep and helps regulate core body temperature before bedtime.',
     keyBenefits: ['Supports deeper sleep', 'May improve sleep quality', 'Gentle, non-habit forming'],
-    timeToEffect: '1–2 weeks',
+    timeToEffect: '1â€“2 weeks',
     image: '/images/glycine Calm.jpg'
   },
   {
@@ -218,7 +217,7 @@ const CalmSupplements = [
     stat: 'Works in under an hour',
     description: 'An amino acid from tea that promotes relaxation without drowsiness, helping you unwind before bed.',
     keyBenefits: ['Reduces pre-bed tension', 'Non-drowsy relaxation', 'Pairs well with magnesium'],
-    timeToEffect: '3–7 days',
+    timeToEffect: '3â€“7 days',
     image: '/images/L-Theanine Calm.jpg'
   },
   {
@@ -228,21 +227,27 @@ const CalmSupplements = [
     stat: 'Hard to get enough from diet alone',
     description: 'Helps relax muscles and supports the neurotransmitters involved in sleep quality.',
     keyBenefits: ['Eases muscle tension', 'Supports sleep quality', 'Helps you feel rested'],
-    timeToEffect: '1–2 weeks',
+    timeToEffect: '1â€“2 weeks',
     image: '/images/Magnesium Calm.jpg'
   }
 ];
+
 
 // HARDCODED IMMUNITY SUPPLEMENTS - Design phase
 const immunitySupplements = [
   {
     id: 'ImmVitaminD',
     name: 'Vitamin D',
-    benefitStatement: 'Builds your body's immune defences',
+    benefitStatement: 'Builds your body’s immune defences',
     stat: "Half of adults do not get enough",
-    description: "Vitamin D helps your immune system respond effectively. Sunlight and food often aren't enough year-round, so maintaining healthy levels supports your body's natural defenses.",
-    keyBenefits: ['Supports immune function','Helps maintain overall health','May support mood and energy'],
-    timeToEffect: '2–4 weeks',
+    description:
+      "Vitamin D helps your immune system respond effectively. Sunlight and food often arenâ€™t enough year-round, so maintaining healthy levels supports your bodyâ€™s natural defenses.",
+    keyBenefits: [
+      'Supports immune function',
+      'Helps maintain overall health',
+      'May support mood and energy'
+    ],
+    timeToEffect: '2â€“4 weeks',
     image: '/images/Zinc Immunity.jpg'
   },
   {
@@ -250,18 +255,28 @@ const immunitySupplements = [
     name: 'Vitamin C',
     benefitStatement: 'Maintains immune defences',
     stat: "Your body cannot store it - daily top-ups matter",
-    description: "Vitamin C supports immune function and antioxidant defenses. Because it's water-soluble and not stored, regular intake helps keep levels topped up.",
-    keyBenefits: ['Supports normal immune function','Antioxidant support','Helps reduce tiredness when deficient'],
+    description:
+      "Vitamin C supports immune function and antioxidant defenses. Because itâ€™s water-soluble and not stored, regular intake helps keep levels topped up.",
+    keyBenefits: [
+      'Supports normal immune function',
+      'Antioxidant support',
+      'Helps reduce tiredness when deficient'
+    ],
     timeToEffect: '1 to 2 weeks',
     image: '/images/Vitamin C Immunity.jpg'
   },
-  {
+   {
     id: 'ImmZinc',
     name: 'Zinc',
     benefitStatement: 'Protects when you need to recover',
     stat: 'Your body uses more when fighting illness',
-    description: "Zinc is required for normal immune cell development and function. Keeping intake consistent supports your body's first line of defense.",
-    keyBenefits: ['Supports daily immune resilience','Involved in immune cell function','Helps maintain healthy recovery'],
+    description:
+      "Zinc is required for normal immune cell development and function. Keeping intake consistent supports your bodyâ€™s first line of defense.",
+    keyBenefits: [
+      'Supports daily immune resilience',
+      'Involved in immune cell function',
+      'Helps maintain healthy recovery'
+    ],
     timeToEffect: '1 to 2 weeks',
     image: '/images/Vitamin D Immunity.jpg'
   }
@@ -273,33 +288,48 @@ const immunityAdvanced = [
     name: 'Quercetin',
     benefitStatement: 'Antioxidant support for defenses',
     stat: 'Commonly paired with Vitamin C',
-    description: "A plant polyphenol that supports antioxidant defenses and is often combined with Vitamin C in immune-focused protocols.",
-    keyBenefits: ['Antioxidant support','May support immune balance','Often used seasonally'],
-    timeToEffect: '2–3 weeks',
+    description:
+      "A plant polyphenol that supports antioxidant defenses and is often combined with Vitamin C in immune-focused protocols.",
+    keyBenefits: [
+      'Antioxidant support',
+      'May support immune balance',
+      'Often used seasonally'
+    ],
+    timeToEffect: '2â€“3 weeks',
     image: '/images/quercetin.jpg'
   },
   {
     id: 'probiotics',
     name: 'Probiotics',
-    benefitStatement: 'Gut–immune connection',
+    benefitStatement: 'Gutâ€“immune connection',
     stat: '~70% of immune cells live in the gut',
-    description: "Gut health and immunity are closely linked. Quality probiotic strains can help support a healthy gut environment.",
-    keyBenefits: ['Supports gut–immune axis','May improve resilience','Complements daily nutrition'],
-    timeToEffect: '2–4 weeks',
+    description:
+      "Gut health and immunity are closely linked. Quality probiotic strains can help support a healthy gut environment.",
+    keyBenefits: [
+      'Supports gutâ€“immune axis',
+      'May improve resilience',
+      'Complements daily nutrition'
+    ],
+    timeToEffect: '2â€“4 weeks',
     image: '/images/probiotics.jpg'
   }
 ];
 
-// HARDCODED WELLNESS SUPPLEMENTS – Design phase
+// HARDCODED WELLNESS SUPPLEMENTS â€” Design phase
 const wellnessSupplements = [
   {
     id: 'WellnessVitaminD',
     name: 'Vitamin D',
     benefitStatement: 'Keeps your bones and immunity strong',
     stat: 'Half of adults do not get enough',
-    description: "Daily D3 helps maintain healthy levels year-round; K2 supports proper calcium handling. Together they're a strong foundation for overall wellness.",
-    keyBenefits: ['Supports immune & bone health','Helps maintain mood & energy','Complements everyday nutrition'],
-    timeToEffect: '2–4 weeks',
+    description:
+      "Daily D3 helps maintain healthy levels year-round; K2 supports proper calcium handling. Together theyâ€™re a strong foundation for overall wellness.",
+    keyBenefits: [
+      'Supports immune & bone health',
+      'Helps maintain mood & energy',
+      'Complements everyday nutrition'
+    ],
+    timeToEffect: '2â€“4 weeks',
     image: '/images/Vitamin D Welllness.jpg'
   },
   {
@@ -307,9 +337,14 @@ const wellnessSupplements = [
     name: 'Omega-3',
     benefitStatement: 'Keeps your heart and mind healthy',
     stat: 'Hard to get enough from food alone',
-    description: "High-quality EPA/DHA supports heart, brain and inflammation balance. Triglyceride form is typically well-absorbed.",
-    keyBenefits: ['Supports heart & brain','Helps balance inflammation','Everyday foundational nutrient'],
-    timeToEffect: '4–8 weeks',
+    description:
+      "High-quality EPA/DHA supports heart, brain and inflammation balance. Triglyceride form is typically well-absorbed.",
+    keyBenefits: [
+      'Supports heart & brain',
+      'Helps balance inflammation',
+      'Everyday foundational nutrient'
+    ],
+    timeToEffect: '4â€“8 weeks',
     image: '/images/Omega-3 Wellness.jpg'
   },
   {
@@ -317,9 +352,14 @@ const wellnessSupplements = [
     name: 'Multivitamins',
     benefitStatement: 'Fills daily nutrient gaps',
     stat: '9 out of 10 people dont get enough nutrients from food alone',
-    description: "Gentle, well-absorbed form that supports muscle relaxation, sleep quality and stress regulation.",
-    keyBenefits: ['Supports sleep quality','Helps muscle relaxation','Aids stress balance'],
-    timeToEffect: '3–7 days',
+    description:
+      "Gentle, well-absorbed form that supports muscle relaxation, sleep quality and stress regulation.",
+    keyBenefits: [
+      'Supports sleep quality',
+      'Helps muscle relaxation',
+      'Aids stress balance'
+    ],
+    timeToEffect: '3â€“7 days',
     image: '/images/Multivitamin Wellness.jpg'
   }
 ];
@@ -330,9 +370,14 @@ const wellnessAdvanced = [
     name: 'Vitamin C (Liposomal)',
     benefitStatement: 'Daily antioxidant support',
     stat: 'Not stored by the body',
-    description: "Supports antioxidant defenses and collagen formation. Liposomal formats can improve tolerability and absorption for some people.",
-    keyBenefits: ['Antioxidant support','Skin & collagen formation','Complements immune health'],
-    timeToEffect: '1–2 weeks',
+    description:
+      "Supports antioxidant defenses and collagen formation. Liposomal formats can improve tolerability and absorption for some people.",
+    keyBenefits: [
+      'Antioxidant support',
+      'Skin & collagen formation',
+      'Complements immune health'
+    ],
+    timeToEffect: '1â€“2 weeks',
     image: '/images/vitamin-c.jpg'
   },
   {
@@ -340,16 +385,23 @@ const wellnessAdvanced = [
     name: 'High-Quality Multivitamin',
     benefitStatement: 'Fills everyday gaps',
     stat: 'Broad micronutrient coverage',
-    description: "A well-formulated multi can cover small gaps in daily intake. Look for sensible doses and bioavailable forms.",
-    keyBenefits: ['Covers common shortfalls','Supports overall vitality','Pairs with whole foods diet'],
-    timeToEffect: '2–4 weeks',
+    description:
+      "A well-formulated multi can cover small gaps in daily intake. Look for sensible doses and bioavailable forms.",
+    keyBenefits: [
+      'Covers common shortfalls',
+      'Supports overall vitality',
+      'Pairs with whole foods diet'
+    ],
+    timeToEffect: '2â€“4 weeks',
     image: '/images/multivitamin.jpg'
   }
 ];
 
+
+
 //
 // ---------------------------
-// PRESENTATIONAL PARTS
+// PRESENTATIONAL PARTS (unchanged)
 // ---------------------------
 //
 
@@ -466,26 +518,27 @@ const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor 
     }
   };
 
-  const getTextTint = () => {
-    switch(supplement.id) {
-      case 'Vitamin B':
-        return 'text-amber-700/80';
-      case 'Vitamin B-mind':
-        return 'text-purple-700/80';
-      case 'creatine':
-        return 'text-amber-700/80';
-      case 'coq10':
-        return 'text-orange-700/80';
-      default:
-        if (category === 'Energy') return 'text-amber-700/80';
-        if (category === 'Mind') return 'text-purple-700/80';
-        if (category === 'Sleep') return 'text-blue-700/80';
-        if (category === 'Calm') return 'text-teal-700/80';
-        if (category === 'Immunity') return 'text-teal-700/80';
-        if (category === 'Wellness') return 'text-orange-700/80';
-        return 'text-gray-700/80';
-    }
-  };
+const getTextTint = () => {
+  switch(supplement.id) {
+    case 'Vitamin B':
+      return 'text-amber-700/80'; // Energy Vitamin B gets amber
+    case 'Vitamin B-mind':
+      return 'text-purple-700/80'; // Mind Vitamin B gets purple
+    case 'creatine':
+      return 'text-amber-700/80'; // Energy creatine gets amber
+    case 'coq10':
+      return 'text-orange-700/80';
+    default:
+      // Handle by category
+      if (category === 'Energy') return 'text-amber-700/80';
+      if (category === 'Mind') return 'text-purple-700/80';
+      if (category === 'Sleep') return 'text-blue-700/80';
+      if (category === 'Calm') return 'text-teal-700/80';
+      if (category === 'Immunity') return 'text-teal-700/80';
+      if (category === 'Wellness') return 'text-orange-700/80';
+      return 'text-gray-700/80'; // fallback
+  }
+};
 
   return (
     <>
@@ -523,61 +576,77 @@ const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor 
             </div>
           </div>
         </div>
-
         {showModal && supplement.id === "EnergyVitaminB" && (
-          <EnergyVitaminB onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "EnergyCreatine" && (
-          <EnergyCreatine onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "EnergyCoQ10" && (
-          <EnergyCoQ10 onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "MindVitaminB" && (
-          <MindVitaminB onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "MindOmega3" && (
-          <MindOmega3 onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "MindCiticoline" && (
-          <MindCiticoline onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "SleepGlycine" && (
-          <SleepGlycine onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "SleepLtheanine" && (
-          <SleepLtheanine onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "SleepMagnesium" && (
-          <SleepMagnesium onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "CalmGlycine" && (
-          <CalmGlycine onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "CalmMagnesium" && (
-          <CalmMagnesium onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "CalmLtheanine" && (
-          <CalmLtheanine onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "ImmVitaminC" && (
-          <ImmVitaminC onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "ImmVitaminD" && (
-          <ImmVitaminD onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "ImmZinc" && (
-          <ImmZinc onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "WellnessMultivitamins" && (
-          <WellnessMultivitamins onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "WellnessOmega3" && (
-          <WellnessOmega3 onClose={() => setShowModal(false)} />
-        )}
-        {showModal && supplement.id === "WellnessVitaminD" && (
-          <WellnessVitaminD onClose={() => setShowModal(false)} />
-        )}
+    <EnergyVitaminB onClose={() => setShowModal(false)} />
+  )}
+
+  {showModal && supplement.id === "EnergyCreatine" && (
+    <EnergyCreatine onClose={() => setShowModal(false)} />
+  )}
+
+ {showModal && supplement.id === "EnergyCoQ10" && (
+    <EnergyCoQ10 onClose={() => setShowModal(false)} />
+  )}
+
+   {showModal && supplement.id === "MindVitaminB" && (
+    <MindVitaminB onClose={() => setShowModal(false)} />
+  )}
+
+   {showModal && supplement.id === "MindOmega3" && (
+    <MindOmega3 onClose={() => setShowModal(false)} />
+  )}
+
+     {showModal && supplement.id === "MindCiticoline" && (
+    <MindCiticoline onClose={() => setShowModal(false)} />
+  )}
+
+       {showModal && supplement.id === "SleepGlycine" && (
+    <SleepGlycine onClose={() => setShowModal(false)} />
+  )}
+
+     {showModal && supplement.id === "SleepLtheanine" && (
+    <SleepLtheanine onClose={() => setShowModal(false)} />
+  )}
+
+     {showModal && supplement.id === "SleepMagnesium" && (
+    <SleepMagnesium onClose={() => setShowModal(false)} />
+  )}
+
+       {showModal && supplement.id === "CalmGlycine" && (
+    <CalmGlycine onClose={() => setShowModal(false)} />
+  )}
+       {showModal && supplement.id === "CalmMagnesium" && (
+    <CalmMagnesium onClose={() => setShowModal(false)} />
+  )}
+
+       {showModal && supplement.id === "CalmLtheanine" && (
+    <CalmLtheanine onClose={() => setShowModal(false)} />
+  )}
+
+         {showModal && supplement.id === "ImmVitaminC" && (
+    <ImmVitaminC onClose={() => setShowModal(false)} />
+  )}
+
+         {showModal && supplement.id === "ImmVitaminD" && (
+    <ImmVitaminD onClose={() => setShowModal(false)} />
+  )}
+
+           {showModal && supplement.id === "ImmZinc" && (
+    <ImmZinc onClose={() => setShowModal(false)} />
+  )}
+
+{showModal && supplement.id === "WellnessMultivitamins" && (
+  <WellnessMultivitamins onClose={() => setShowModal(false)} />
+)}
+
+{showModal && supplement.id === "WellnessOmega3" && (
+  <WellnessOmega3 onClose={() => setShowModal(false)} />
+)}
+
+{showModal && supplement.id === "WellnessVitaminD" && (
+  <WellnessVitaminD onClose={() => setShowModal(false)} />
+)}
+
       </div>      
     </>
   );
@@ -635,54 +704,52 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
 
 //
 // ---------------------------
-// LOADING FALLBACK
+// RESULTS PAGE (updated)
 // ---------------------------
 //
 
-function LoadingFallback() {
+import { Suspense } from 'react';
+
+export default function ResultsPage() {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="text-center">
-        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mb-4"></div>
-        <p className="text-gray-600 text-lg">Loading your results...</p>
-      </div>
-    </div>
+    <Suspense fallback={<div className="p-10 text-center text-gray-600">Loading results...</div>}>
+      <ResultsPageContent />
+    </Suspense>
   );
 }
 
-//
-// ---------------------------
-// RESULTS PAGE CONTENT (uses useSearchParams)
-// ---------------------------
-//
-
+"use client"
 function ResultsPageContent() {
   const router = useRouter();
   const params = useSearchParams();
 
+  // Read goals from query: /results?goals=energy,mind
   const goalsParam = params.get('goals') || '';
   const selectedGoals = goalsParam.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
 
+  // Booleans for each section
   const showEnergy = selectedGoals.includes('energy');
   const showMind   = selectedGoals.includes('mind');
   const showSleep  = selectedGoals.includes('sleep');
   const showCalm   = selectedGoals.includes('calm');
   const showImm    = selectedGoals.includes('immunity');
-  const showWellness = selectedGoals.includes('wellness');
+  const showWellness   = selectedGoals.includes('wellness');
 
+  // UI state
   const [showEnergyAdvanced, setShowEnergyAdvanced] = useState(false);
   const [showMindAdvanced, setShowMindAdvanced] = useState(false);
-  const [showSleepAdvanced, setShowSleepAdvanced] = useState(false);
+  const [showSleepAdvanced, setShowSleepAdvanced] = useState(false); 
   const [showImmunityAdvanced, setShowImmunityAdvanced] = useState(false);
   const [showWellnessAdvanced, setShowWellnessAdvanced] = useState(false);
   const [showCalmAdvanced, setShowCalmAdvanced] = useState(false);
+// NEW: sleep advanced toggle
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const displayedEnergySupplements = showEnergyAdvanced ? [...energySupplements, ...energyAdvanced] : energySupplements;
   const displayedMindSupplements   = showMindAdvanced   ? [...mindSupplements,   ...mindAdvanced]   : mindSupplements;
-  const displayedSleepSupplements  = showSleepAdvanced  ? [...SleepSupplements,  ...SleepAdvanced]  : SleepSupplements;
-  const displayedImmunitySupplements = showImmunityAdvanced ? [...immunitySupplements, ...immunityAdvanced] : immunitySupplements;
-  const displayedWellnessSupplements = showWellnessAdvanced ? [...wellnessSupplements, ...wellnessAdvanced] : wellnessSupplements;
+  const displayedSleepSupplements  = showSleepAdvanced  ? [...SleepSupplements,  ...SleepAdvanced]  : SleepSupplements; // NEW
+  const displayedImmunitySupplements = showImmunityAdvanced ? [...immunitySupplements, ...immunityAdvanced]  : immunitySupplements;
+  const displayedWellnessSupplements = showWellnessAdvanced ? [...wellnessSupplements, ...wellnessAdvanced]  : wellnessSupplements;
 
   useEffect(() => {
     let ticking = false;
@@ -700,41 +767,48 @@ function ResultsPageContent() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Dynamic background tints (safe even if a section isn't shown)
   const energyOpacity = Math.min(0.08 + (scrollProgress * 0.08), 0.15);
   const mindOpacity   = Math.min(0.06 + (scrollProgress * 0.12), 0.15);
 
+  // If someone lands here with no goals, nudge them back
   const noGoals = selectedGoals.length === 0;
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 px-6 py-4 sticky top-0 z-50">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Image
-              src="/images/Renew logo black.png"
-              alt="Renew logo"
-              width={90}
-              height={30}
-              className="object-contain"
-              priority
-            />
-          </div>
-          
-          <button
-            onClick={() => router.push('/goals')}
-            className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            <span className="font-large">Back</span>
-          </button>
-        </div>
-      </header>
 
+
+{/* Header */}
+<header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 px-6 py-4 sticky top-0 z-50">
+  <div className="flex items-center justify-between">
+    {/* Logo - positioned far left */}
+    <div className="flex items-center">
+      <Image
+        src="/images/Renew logo black.png"
+        alt="Renew logo"
+        width={90}
+        height={30}
+        className="object-contain"
+        priority
+      />
+    </div>
+    
+    {/* Right side - Back button */}
+    <button
+      onClick={() => router.push('/goals')}
+      className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50"
+    >
+      <ArrowLeft className="w-5 h-5 mr-2" />
+      <span className="font-large">Back</span>
+    </button>
+  </div>
+</header>
+
+      {/* Empty-state if no goals */}
       {noGoals && (
         <div className="max-w-3xl mx-auto px-6 py-16 text-center">
           <h2 className="text-3xl font-bold mb-2">Choose a goal to see your options</h2>
-          <p className="text-gray-600 mb-6">Head back and pick up to two goals – we'll tailor this page to you.</p>
+          <p className="text-gray-600 mb-6">Head back and pick up to two goals â€” weâ€™ll tailor this page to you.</p>
           <button
             onClick={() => router.push('/goals')}
             className="inline-flex items-center px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700"
@@ -744,8 +818,9 @@ function ResultsPageContent() {
         </div>
       )}
 
+      {/* Content */}
       <div className="relative">
-        {/* ENERGY Section */}
+        {/* ---------- ENERGY (conditional) ---------- */}
         {showEnergy && (
           <section
             className="relative py-16 lg:py-24"
@@ -786,6 +861,7 @@ function ResultsPageContent() {
                     className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-[#E64A19] hover:bg-[#D54317] text-white shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     {showEnergyAdvanced ? 'Show less' : 'Advanced results coming soon'}
+                    
                   </button>
                 </div>
               </div>
@@ -793,7 +869,9 @@ function ResultsPageContent() {
           </section>
         )}
 
-        {/* MIND Section */}
+        
+
+        {/* ---------- MIND (conditional) ---------- */}
         {showMind && (
           <section
             className="relative py-12 lg:py-16"
@@ -810,7 +888,7 @@ function ResultsPageContent() {
                   title={<><span style={{ color: '#7c3aed' }}>Mind</span> that performs.</>}
                   description={
                     <>
-                      Clear thinking <span className="font-extrabold">helps you work better, learn faster and stay focused</span>. Mental sharpness depends on brain health. Two out of three adults say they struggle with focus or memory<sup className="text-sm">2</sup>.
+                        Clear thinking <span className="font-extrabold">helps you work better, learn faster and stay focused</span>.  Mental sharpness depends on brain health. Two out of three adults say they struggle with focus or memory<sup className="text-sm">2</sup>.
                     </>
                   }
                   secondParagraph="These natural supports help protect long-term brain health, sharpen your thinking, and keep you focused."
@@ -834,6 +912,7 @@ function ResultsPageContent() {
                     className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-purple-600 hover:bg-purple-700 text-white shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     {showMindAdvanced ? 'Show less' : 'Advanced results coming soon'}
+                  
                   </button>
                 </div>
               </div>
@@ -841,7 +920,7 @@ function ResultsPageContent() {
           </section>
         )}
 
-        {/* SLEEP Section */}
+        {/* ---------- SLEEP (conditional) ---------- */}
         {showSleep && (
           <section
             className="relative py-12 lg:py-16"
@@ -882,6 +961,7 @@ function ResultsPageContent() {
                     className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-blue-700 hover:bg-blue-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     {showSleepAdvanced ? 'Show less' : 'Advanced results coming soon'}
+                    
                   </button>
                 </div>
               </div>
@@ -889,157 +969,171 @@ function ResultsPageContent() {
           </section>
         )}
 
-        {/* CALM Section */}
-        {showCalm && (
-          <section
-            className="relative py-12 lg:py-16"
-            style={{
-              background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(15, 118, 110, ${mindOpacity * 0.6}) 50%, rgba(15, 118, 110, ${mindOpacity}) 100%)`,
-              transition: 'background 0.3s ease'
-            }}
-          >
-            <div className="max-w-7xl mx-auto px-4 lg:px-8">
-              <div className="max-w-6xl mx-auto">
-                <SectionHeader
-                  icon={HeartIcon}
-                  color={{ from: '#14b8a6', to: '#0F766E' }}
-                  title={<><span style={{ color: '#0F766E' }}>Calm</span> that relaxes.</>}
-                  description={
-                    <>
-                      Stress <span className="font-extrabold">affects how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus, and relationships. Three out of four adults regularly experience physical symptoms of stress <sup className="text-sm">4</sup>.
+       {/* ---------- CALM (conditional) ---------- */}
+{showCalm && (
+  <section
+    className="relative py-12 lg:py-16"
+    style={{
+      // uses mindOpacity like your other sections; feel free to introduce a calmOpacity later
+      background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(15, 118, 110, ${mindOpacity * 0.6}) 50%, rgba(15, 118, 110, ${mindOpacity}) 100%)`,
+      transition: 'background 0.3s ease'
+    }}
+  >
+    <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader
+          icon={HeartIcon}
+          color={{ from: '#14b8a6', to: '#0F766E' }}
+          title={<><span style={{ color: '#0F766E' }}>Calm</span> that relaxes.</>}
+          description={
+            <>
+              Stress <span className="font-extrabold">affects how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus, and relationships. Three out of four adults regularly experience physical symptoms of stress <sup className="text-sm">4</sup>.
                     </>
                   }
                   secondParagraph="These natural supports help ease stress, quiet your mind, and relax your body"
                 />
 
-                <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
-                  {CalmSupplements.map((supplement, index) => (
-                    <SupplementCard
-                      key={supplement.id}
-                      supplement={supplement}
-                      index={index}
-                      category="Calm"
-                      categoryColor="#0F766E"
-                    />
-                  ))}
-                </div>
 
-                <div className="mt-12 text-center">
-                  <button
-                    onClick={() => setShowCalmAdvanced(!showCalmAdvanced)}
-                    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-teal-700 hover:bg-teal-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
-                  >
-                    {showCalmAdvanced ? 'Show less' : 'Advanced results coming soon'}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
+        <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
+          {(typeof CalmSupplements !== 'undefined' ? CalmSupplements : calmSupplements).map((supplement, index) => (
+            <SupplementCard
+              key={supplement.id}
+              supplement={supplement}
+              index={index}
+              category="Calm"
+              categoryColor="#0F766E"
+            />
+          ))}
+        </div>
 
-        {/* IMMUNITY Section */}
+<div className="mt-12 text-center">
+  <button
+    onClick={() => setShowCalmAdvanced(!showCalmAdvanced)}
+    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-teal-700 hover:bg-teal-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
+  >
+    {showCalmAdvanced ? 'Show less' : 'Advanced results coming soon'}
+  </button>
+</div>
+
+
+      </div>
+    </div>
+  </section>
+)}
+
+       {/* ---------- IMMUNITY (conditional) ---------- */}
         {showImm && (
-          <section
-            className="relative py-12 lg:py-16"
-            style={{
-              background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(15, 118, 110, ${mindOpacity * 0.6}) 50%, rgba(15, 118, 110, ${mindOpacity}) 100%)`,
-              transition: 'background 0.3s ease'
-            }}
-          >
-            <div className="max-w-7xl mx-auto px-4 lg:px-8">
-              <div className="max-w-6xl mx-auto">
-                <SectionHeader
-                  icon={IconShield}
-                  color={{ from: '#14b8a6', to: '#0F766E' }}
-                  title={<><span style={{ color: '#05966' }}>Immunity that</span> <span style={{ color: '#0F766E' }}>protects.</span></>}
-                  description={
-                    <>
-                      Your immune system <span className="font-extrabold">protects you from everyday threats </span>. When it is strong, you body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength <sup className="text-sm">6</sup>.
+  <section
+    className="relative py-12 lg:py-16"
+    style={{
+      // uses mindOpacity like your other sections; feel free to introduce a calmOpacity later
+      background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(15, 118, 110, ${mindOpacity * 0.6}) 50%, rgba(15, 118, 110, ${mindOpacity}) 100%)`,
+      transition: 'background 0.3s ease'
+    }}
+  >
+    <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader
+          icon={IconShield}
+          color={{ from: '#14b8a6', to: '#0F766E' }}
+          title={<><span style={{ color: '#05966' }}>Immunity that</span> <span style={{ color: '#0F766E' }}>protects.</span></>}
+          description={
+            <>
+              Your immune system <span className="font-extrabold">protects you from everyday threats </span>. When it is strong, you body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength <sup className="text-sm">6</sup>.
                     </>
                   }
                   secondParagraph="These natural supports help build, maintain, and protect your defenses."
                 />
 
-                <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
-                  {immunitySupplements.map((supplement, index) => (
-                    <SupplementCard
-                      key={supplement.id}
-                      supplement={supplement}
-                      index={index}
-                      category="Immunity"
-                      categoryColor="#0F766E"
-                    />
-                  ))}
-                </div>
+        <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
+          {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
+            <SupplementCard
+              key={supplement.id}
+              supplement={supplement}
+              index={index}
+              category="Immunity"
+              categoryColor="#0F766E"
+            />
+          ))}
+        </div>
 
-                <div className="mt-12 text-center">
-                  <button
-                    onClick={() => setShowImmunityAdvanced(!showImmunityAdvanced)}
-                    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-emerald-700 hover:bg-emerald-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
-                  >
-                    {showImmunityAdvanced ? 'Show less' : 'Advanced results coming soon'}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
+        <div className="mt-12 text-center">
+  <button
+    onClick={() => setShowImmunityAdvanced(!showImmunityAdvanced)}
+    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-emerald-700 hover:bg-emerald-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
+  >
+    {showImmunityAdvanced ? 'Show less' : 'Advanced results coming soon'}
+  </button>
+</div>
 
-        {/* WELLNESS Section */}
-        {showWellness && (
-          <section
-            className="relative py-12 lg:py-16"
-            style={{
-              background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,146,60,0.08) 50%, rgba(234,88,12,0.12) 100%)`,
-              transition: 'background 0.3s ease'
-            }}
+
+      </div>
+    </div>
+  </section>
+)}
+
+
+
+{/* ---------- WELLNESS (conditional) ---------- */}
+{showWellness && (
+  <section
+    className="relative py-12 lg:py-16"
+    style={{
+      background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,146,60,0.08) 50%, rgba(234,88,12,0.12) 100%)`,
+      transition: 'background 0.3s ease'
+    }}
+  >
+    <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader
+          icon={SmileIcon}
+          color={{ from: '#B45309', to: '#FBBF24' }}
+          title={
+            <>
+              Wellness <span style={{ color: '#B45309' }}> that supports</span>.
+            </>
+          }
+          description={
+            <>
+              Good health is more than avoiding illness — it’s about{" "}
+              <span className="font-extrabold">feeling your best each day</span>. 
+              Energy, clarity, and resilience all depend on essential nutrients, yet nine out of ten people don’t get enough from food alone <sup className="text-sm">5</sup>.
+            </>
+          }
+          secondParagraph="These natural supports help fill nutrient gaps and support your overall health."
+        />
+
+        {/* Wellness Cards */}
+        <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
+          {displayedWellnessSupplements.map((supplement, index) => (
+            <SupplementCard
+              key={supplement.id}
+              supplement={supplement}
+              index={index}
+              category="Wellness"
+              categoryColor="#B45309"
+            />
+          ))}
+        </div>
+
+        {/* Advanced Wellness Toggle */}
+        <div className="mt-12 text-center">
+          <button
+            onClick={() => setShowWellnessAdvanced(!showWellnessAdvanced)}
+            className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-amber-700 hover:bg-amber-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <div className="max-w-7xl mx-auto px-4 lg:px-8">
-              <div className="max-w-6xl mx-auto">
-                <SectionHeader
-                  icon={SmileIcon}
-                  color={{ from: '#B45309', to: '#FBBF24' }}
-                  title={
-                    <>
-                      Wellness <span style={{ color: '#B45309' }}> that supports</span>.
-                    </>
-                  }
-                  description={
-                    <>
-                      Good health is more than avoiding illness — it's about{" "}
-                      <span className="font-extrabold">feeling your best each day</span>. 
-                      Energy, clarity, and resilience all depend on essential nutrients, yet nine out of ten people don't get enough from food alone <sup className="text-sm">5</sup>.
-                    </>
-                  }
-                  secondParagraph="These natural supports help fill nutrient gaps and support your overall health."
-                />
+            {showWellnessAdvanced ? 'Show less' : 'Advanced results coming soon'}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
 
-                <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
-                  {displayedWellnessSupplements.map((supplement, index) => (
-                    <SupplementCard
-                      key={supplement.id}
-                      supplement={supplement}
-                      index={index}
-                      category="Wellness"
-                      categoryColor="#B45309"
-                    />
-                  ))}
-                </div>
 
-                <div className="mt-12 text-center">
-                  <button
-                    onClick={() => setShowWellnessAdvanced(!showWellnessAdvanced)}
-                    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-amber-700 hover:bg-amber-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
-                  >
-                    {showWellnessAdvanced ? 'Show less' : 'Advanced results coming soon'}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
 
-        {/* Citations */}
+
+        {/* Citations (kept at the bottom) */}
         {(showEnergy || showMind || showSleep || showCalm || showImm || showWellness) && (
           <footer className="bg-gray-50 py-12 mt-20">
             <div className="max-w-6xl mx-auto px-4 lg:px-8">
@@ -1048,27 +1142,14 @@ function ResultsPageContent() {
                 <p><sup>2</sup> Harvard Medical School. (2023). Brain Fog: Memory and Attention After COVID-19.</p>
                 <p><sup>3</sup> Gallup & Casper (2022). Sleep Survey.</p>
                 <p><sup>4</sup> American Psychological Association. (2022). Stress in America Survey</p>
-                <p><sup>5</sup> Wallace, T.C., McBurney & Fulgoni, V.L. (2024). Multivitamin/mineral supplement contribution to micronutrient intakes in the United States, 2007–2010. Journal of the American College of Nutrition.</p>
-                <p><sup>6</sup> Forrest, K.Y., & Stuhldreher, W.L. (2011). Prevalence and correlates of vitamin D deficiency in US adults.</p>
+                <p><sup>5</sup> Wallace, T.C., McBurney & Fulgoni, V.L.  (2024). Multivitamin/mineral supplement contribution to micronutrient intakes in the United States, 2007–2010. Journal of the American College of Nutrition.
+               </p>
+                <p><sup>6</sup> Forrest, K.Y., & Stuhldreher, W.L. (2011). Prevalence and correlates of vitamin D deficiency in US adults. </p>
               </div>
             </div>
           </footer>
         )}
       </div>
     </div>
-  );
-}
-
-//
-// ---------------------------
-// MAIN EXPORT - Wrapped in Suspense
-// ---------------------------
-//
-
-export default function ResultsPage() {
-  return (
-    <Suspense fallback={<LoadingFallback />}>
-      <ResultsPageContent />
-    </Suspense>
   );
 }
