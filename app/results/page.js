@@ -37,7 +37,7 @@ const energySupplements = [
     description: 'B vitamins are essential cofactors in energy metabolism. Without adequate B vitamins, your body cannot efficiently convert nutrients into usable energy.',
     keyBenefits: ['Helps convert food to energy','Supports brain function','Reduces tiredness and fatigue'],
     timeToEffect: '3-7 days',
-    image: '/images/Vitamin-B-Energy.jpg'
+    image: '/images/vitamin-b-energy.jpg'
   },
   {
     id: 'EnergyCreatine',
@@ -47,7 +47,7 @@ const energySupplements = [
     description: 'Boosts cellular energy for muscles and brain. One of the most evidence-backed supplements for performance.',
     keyBenefits: ['Boosts cellular ATP energy','Improves workout performance','Enhances mental focus'],
     timeToEffect: '1-2 weeks',
-    image: '/images/Creatine-Energy.jpg'
+    image: '/images/creatine-energy.jpg'
   },
   {
     id: 'EnergyCoQ10',
@@ -57,7 +57,7 @@ const energySupplements = [
     description: 'Powers cellular energy production and heart health. Essential for mitochondrial function, especially over 40.',
     keyBenefits: ['Supports cellular energy','Essential for heart health','Powerful antioxidant'],
     timeToEffect: '2-4 weeks',
-    image: '/images/CoQ10-Energy.jpg'
+    image: '/images/coq10-energy.jpg'
   }
 ];
 
@@ -94,7 +94,7 @@ const mindSupplements = [
     description: 'Your brain is 60% fat, and omega-3s are essential building blocks. These crucial fats support everything from memory formation to mood regulation.',
     keyBenefits: ['Supports cognitive performance','Reduces brain inflammation','Protects against cognitive decline'],
     timeToEffect: '8-12 weeks',
-    image: '/images/Omega-3-Mind.jpg'
+    image: '/images/omega-3-mind.jpg'
   },
   {
     id: 'MindVitaminB',
@@ -104,7 +104,7 @@ const mindSupplements = [
     description: 'B vitamins are crucial for brain function, supporting neurotransmitter synthesis and mental energy production.',
     keyBenefits: ['Enhances mental clarity','Supports mood balance','Reduces brain fog'],
     timeToEffect: '3-7 days',
-    image: '/images/Vitamin-B-Mind.jpg'
+    image: '/images/vitamin-b-mind.jpg'
   },
   {
     id: 'MindCiticoline',
@@ -114,7 +114,7 @@ const mindSupplements = [
     description: 'Enhances focus, memory, and brain energy. Supports acetylcholine and brain energy production.',
     keyBenefits: ['Improves focus and attention','Enhances memory formation','Boosts brain energy'],
     timeToEffect: '1-2 weeks',
-    image: '/images/Citicoline-Mind.jpg'
+    image: '/images/citicoline-mind.jpg'
   }
 ];
 
@@ -152,7 +152,7 @@ const SleepSupplements = [
     description: 'B vitamins are crucial for brain function, supporting neurotransmitter synthesis and mental energy production.',
     keyBenefits: ['Enhances mental clarity','Supports mood balance','Reduces brain fog'],
     timeToEffect: '3-7 days',
-    image: '/images/L-Theanine-Sleep.jpg'
+    image: '/images/l-theanine-sleep.jpg'
   },
   {
     id: 'SleepMagnesium',
@@ -162,7 +162,7 @@ const SleepSupplements = [
     description: 'Enhances focus, memory, and brain energy. Supports acetylcholine and brain energy production.',
     keyBenefits: ['Improves focus and attention','Enhances memory formation','Boosts brain energy'],
     timeToEffect: '1-2 weeks',
-    image: '/images/Magnesium-Sleep.jpg'
+    image: '/images/magnesium-sleep.jpg'
   },
    {
     id: 'SleepGlycine',
@@ -172,7 +172,7 @@ const SleepSupplements = [
     description: 'Your brain is 60% fat, and omega-3s are essential building blocks. These crucial fats support everything from memory formation to mood regulation.',
     keyBenefits: ['Supports cognitive performance','Reduces brain inflammation','Protects against cognitive decline'],
     timeToEffect: '8-12 weeks',
-    image: '/images/Glycine-Sleep.jpg'
+    image: '/images/glycine-sleep.jpg'
   }
 ];
 
@@ -209,7 +209,7 @@ const CalmSupplements = [
     description: 'Supports deeper, more restorative sleep and helps regulate core body temperature before bedtime.',
     keyBenefits: ['Supports deeper sleep', 'May improve sleep quality', 'Gentle, non-habit forming'],
     timeToEffect: '1â€“2 weeks',
-    image: '/images/Glycine-Calm.jpg'
+    image: '/images/glycine-calm.jpg'
   },
   {
     id: 'CalmLtheanine',
@@ -219,7 +219,7 @@ const CalmSupplements = [
     description: 'An amino acid from tea that promotes relaxation without drowsiness, helping you unwind before bed.',
     keyBenefits: ['Reduces pre-bed tension', 'Non-drowsy relaxation', 'Pairs well with magnesium'],
     timeToEffect: '3â€“7 days',
-    image: '/images/L-Theanine-Calm.jpg'
+    image: '/images/l-theanine-calm.jpg'
   },
   {
     id: 'CalmMagnesium',
@@ -229,7 +229,7 @@ const CalmSupplements = [
     description: 'Helps relax muscles and supports the neurotransmitters involved in sleep quality.',
     keyBenefits: ['Eases muscle tension', 'Supports sleep quality', 'Helps you feel rested'],
     timeToEffect: '1â€“2 weeks',
-    image: '/images/Magnesium-Calm.jpg'
+    image: '/images/magnesium-calm.jpg'
   }
 ];
 
@@ -249,7 +249,7 @@ const immunitySupplements = [
       'May support mood and energy'
     ],
     timeToEffect: '2â€“4 weeks',
-    image: '/images/Zinc-Immunity.jpg'
+    image: '/images/zinc-immunity.jpg'
   },
   {
     id: 'ImmVitaminC',
@@ -264,7 +264,7 @@ const immunitySupplements = [
       'Helps reduce tiredness when deficient'
     ],
     timeToEffect: '1 to 2 weeks',
-    image: '/images/Vitamin-C-Immunity.jpg'
+    image: '/images/vitamin-c-immunity.jpg'
   },
    {
     id: 'ImmZinc',
@@ -279,7 +279,7 @@ const immunitySupplements = [
       'Helps maintain healthy recovery'
     ],
     timeToEffect: '1 to 2 weeks',
-    image: '/images/Vitamin-D-Immunity.jpg'
+    image: '/images/vitamin-d-immunity.jpg'
   }
 ];
 
@@ -331,7 +331,7 @@ const wellnessSupplements = [
       'Complements everyday nutrition'
     ],
     timeToEffect: '2â€“4 weeks',
-    image: '/images/Vitamin-D-Welllness.jpg'
+    image: '/images/vitamin-d-welllness.jpg'
   },
   {
     id: 'WellnessOmega3',
@@ -346,7 +346,7 @@ const wellnessSupplements = [
       'Everyday foundational nutrient'
     ],
     timeToEffect: '4â€“8 weeks',
-    image: '/images/Omega-3-Wellness.jpg'
+    image: '/images/omega-3-wellness.jpg'
   },
   {
     id: 'WellnessMultivitamins',
@@ -361,7 +361,7 @@ const wellnessSupplements = [
       'Aids stress balance'
     ],
     timeToEffect: '3â€“7 days',
-    image: '/images/Multivitamin-Wellness.jpg'
+    image: '/images/multivitamin-wellness.jpg'
   }
 ];
 
