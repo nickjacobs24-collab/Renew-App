@@ -70,14 +70,12 @@ export default function EnergyVitaminB({ onClose }) {
 
 
 <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-  Magnesium helps muscles relax and keep mood steady.
+Magnesium helps muscles relax and keep mood steady.
 </p>
-
 <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-  Most people dont get enough from food, and stress reduces it further. Getting more helps your body restore calm again.
+Most people dont get enough from food, and stress reduces it further. Getting more helps your body restore calm again.
 </p>
-
-<br /
+<br></br>
 
           {/* Info grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
