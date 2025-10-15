@@ -1,5 +1,9 @@
 import { Suspense } from 'react';
-import ResultsPageContent from './ResultsPageContent.js';
+import dynamic from 'next/dynamic';
+
+const ResultsPageContent = dynamic(() => import('./ResultsPageContent.js'), {
+  ssr: false
+});
 
 function LoadingFallback() {
   return (
