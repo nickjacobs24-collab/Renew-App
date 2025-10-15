@@ -116,7 +116,7 @@ Most people don’t get enough. Daily top-ups support stronger bones, muscles, i
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a href="https://www.hollandandbarrett.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                <img src="/images/HBPILL.png" alt="Holland & Barrett" width="80" height="50" />
+                <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
               </a>
               <a href="https://www.iherb.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                 <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />

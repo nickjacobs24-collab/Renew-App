@@ -23,7 +23,7 @@ export default function LandingPage() {
           {/* Logo */}
           <div className="flex items-center mt-2">
             <Image
-              src="/images/Renew-logo-white.png"
+              src="/images/renew-logo-white.png"
               alt="Renew logo"
               width={100}
               height={40}
