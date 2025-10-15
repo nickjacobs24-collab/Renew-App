@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import ResultsPageContent from './ResultsPageContent';
+import ResultsPageContent from './ResultsPageContent.js';
 
 function LoadingFallback() {
   return (
