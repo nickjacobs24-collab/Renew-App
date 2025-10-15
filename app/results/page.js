@@ -709,7 +709,17 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
 // ---------------------------
 //
 
+import { Suspense } from 'react';
+
 export default function ResultsPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center text-gray-600">Loading results...</div>}>
+      <ResultsPageContent />
+    </Suspense>
+  );
+}
+
+function ResultsPageContent() {
   const router = useRouter();
   const params = useSearchParams();
 
