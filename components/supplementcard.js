@@ -48,11 +48,13 @@ export default function SupplementCard({ supplement, data, isLocked, isPremiumAc
         </div>
 
         {data.expert_validation && (
-          <blockquote className={`border-l-4 border-blue-200 pl-3 mb-4 text-sm italic text-blue-900 ${
-            !expandedQuote && isLongQuote ? 'line-clamp-3' : ''
-          }`}>
-            "{data.expert_validation}"
-          </blockquote>
+       <blockquote
+  className={`border-l-4 border-blue-200 pl-3 mb-4 text-sm italic ${
+    isExpandedQuote && isLongQuote ? &quot;line-clamp-3&quot; : &quot;&quot;
+  }`}
+>
+  {data.expert_validation}
+</blockquote>
         )}
 
         <div className="mt-4">

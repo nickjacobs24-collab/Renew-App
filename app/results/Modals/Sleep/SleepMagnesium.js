@@ -70,7 +70,7 @@ export default function EnergyVitaminB({ onClose }) {
 
 
 <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
- Many people don't get enough magnesium for quality sleep. 
+ Many people don&#39;t get enough magnesium for quality sleep. 
 </p>
 <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
 This form works throughout your body and brain, helping you relax into deeper, better sleep.

@@ -62,7 +62,7 @@ export default function PrivacyPolicy() {
             <span className="absolute bottom-0 left-0 w-16 h-1 bg-indigo-500 rounded-full"></span>
           </h2>
           <ul className="space-y-3 text-lg text-gray-700/90 leading-relaxed">
-            <li>To improve Renew's design, content, and user experience.</li>
+            <li>To improve Renew&#39;s design, content, and user experience.</li>
             <li>
               To communicate with you if you have chosen to share your email
               (for example, to follow up on feedback or notify you about

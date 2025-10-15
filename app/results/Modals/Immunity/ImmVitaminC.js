@@ -70,7 +70,7 @@ export default function EnergyVitaminB({ onClose }) {
 
 
 <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-Vitamin C gets used up quickly, especially when you're stressed or tired. 
+Vitamin C gets used up quickly, especially when you&#39;re stressed or tired. 
 </p>
 <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
 Daily top-ups keep your defenses strong so you stay healthy and bounce back faster.
