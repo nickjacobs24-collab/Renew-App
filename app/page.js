@@ -1,7 +1,6 @@
-"use client"
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { Sparkles } from 'lucide-react';
+"use client";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function LandingPage() {
@@ -9,19 +8,17 @@ export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 100);
-    return () => clearTimeout(timer);
+    const t = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(t);
   }, []);
 
   return (
-<div className="min-h-screen relative overflow-hidden flex flex-col" 
-         style={{ background: 'linear-gradient(to bottom, #0f2554 0%, #2563eb 100%)' }}>
-      
-      {/* Navigation */}
-      <nav className="relative z-10 px-6 py-6">
-        <div className="flex items-center justify-between">
+    <div className="flex min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-[#0f2554] to-[#2563eb]">
+      {/* NAV - Fixed height for predictable layout */}
+      <nav className="relative z-10 h-20 shrink-0 px-6">
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center mt-2">
+          <div className="flex items-center">
             <Image
               src="/images/renew-logo-white.png"
               alt="Renew logo"
@@ -31,25 +28,26 @@ export default function LandingPage() {
               priority
             />
           </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="/results/appprivacy" 
+
+          {/* Right links */}
+          <div className="hidden items-center space-x-8 md:flex">
+            <a
+              href="/results/appprivacy"
               onClick={(e) => {
                 e.preventDefault();
-                window.open('/results/appprivacy', '_blank', 'width=1000,height=800');
+                window.open("/results/appprivacy", "_blank", "width=1000,height=800");
               }}
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
             >
               Privacy Policy
             </a>
-            <a 
-              href="/results/appprivacy" 
+            <a
+              href="/results/appdisclaimer"
               onClick={(e) => {
                 e.preventDefault();
-                window.open('/results/appdisclaimer', '_blank', 'width=1000,height=800');
+                window.open("/results/appdisclaimer", "_blank", "width=1000,height=800");
               }}
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
             >
               Disclaimer
             </a>
@@ -57,66 +55,79 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* Hero Content - Properly Centered */}
-<div className="flex-1 flex items-start justify-center px-6 pt-64">
-        <div className="text-center max-w-5xl mx-auto">
-          {/* Main Headline */}
-          <h1 className={`transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <div 
-              className="text-white leading-none"
+      {/* HERO - Flex grow for remaining space */}
+      <main className="flex grow items-center justify-center px-6">
+        <div className="w-full max-w-5xl text-center">
+          {/* Headline */}
+          <h1
+            className={`transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <span
+              className="block text-white"
               style={{
-                fontSize: 'clamp(64px, 12vw, 112px)',
+                fontSize: "clamp(3.5rem, 12vw, 7rem)",
                 fontWeight: 800,
-                letterSpacing: '-0.03em',
+                letterSpacing: "-0.03em",
                 lineHeight: 1
               }}
             >
               Supplements
-            </div>
-            <div 
-              className="text-white/80 leading-none"
+            </span>
+            <span
+              className="block text-white/80 mt-2"
               style={{
-                fontSize: 'clamp(56px, 10vw, 96px)',
+                fontSize: "clamp(3rem, 10vw, 6rem)",
                 fontWeight: 100,
-                letterSpacing: '-0.02em',
+                letterSpacing: "-0.02em",
                 lineHeight: 1
               }}
             >
               made simple.
-            </div>
+            </span>
           </h1>
 
           {/* Subheading */}
-          <p className={`text-white/60 mt-10 transition-all duration-1000 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-          style={{
-            fontSize: 'clamp(18px, 2.5vw, 24px)',
-            fontWeight: 400,
-            lineHeight: 1.5,
-            letterSpacing: '0.01em'
-          }}>
+          <p
+            className={`mt-8 md:mt-10 text-white/60 transition-all duration-1000 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{
+              fontSize: "clamp(1.125rem, 2.5vw, 1.5rem)",
+              fontWeight: 400,
+              lineHeight: 1.5,
+              letterSpacing: "0.01em"
+            }}
+          >
             Clear, evidence-backed guidance.
           </p>
 
-          {/* CTA Button */}
-          <div className={`mt-12 transition-all duration-1000 delay-400 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+          {/* CTA */}
+          <div
+            className={`mt-10 md:mt-12 transition-all duration-1000 delay-300 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
             <button
-              onClick={() => router.push('/goals')}
-              className="group relative inline-flex items-center px-10 py-5 bg-white/95 backdrop-blur-sm text-blue-600 font-medium text-lg rounded-full ring-1 ring-white/20 shadow-2xl hover:bg-white hover:scale-105 transition-all duration-300"
+              onClick={() => router.push("/goals")}
+              className="group relative inline-flex items-center rounded-full bg-white/95 px-8 py-4 md:px-10 md:py-5 text-base md:text-lg font-medium text-blue-600 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-blue-600/50 active:scale-100"
+              aria-label="Get your supplement recommendations"
             >
               Get your recommendations
-              <svg className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="ml-2 md:ml-3 h-4 w-4 md:h-5 md:w-5 transition-transform duration-200 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
