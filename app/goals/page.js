@@ -144,15 +144,15 @@ export default function GoalsPage() {
       </header>
 
       {/* Main content - flex grow for vertical centering */}
-      <main className="relative z-10 flex grow items-center justify-center px-4 pb-16">
+      <main className="relative z-10 flex grow items-center justify-center px-4 pb-8 md:pb-16">
         <div className="max-w-xl mx-auto w-full">
-          {/* Hero text - keeping your original structure */}
-          <div className="text-center mb-10">
-            <h1 className={`font-black text-gray-900 mb-3 leading-tight transition-all duration-1000 ${
+          {/* Hero text - responsive sizing added */}
+          <div className="text-center mb-6 md:mb-10">
+            <h1 className={`font-black text-gray-900 mb-2 md:mb-3 leading-tight transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              fontSize: 'clamp(2rem, 6vw, 3rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 3rem)',
               lineHeight: 1.1,
               letterSpacing: '-0.02em'
             }}
@@ -165,15 +165,15 @@ export default function GoalsPage() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              fontSize: 'clamp(1rem, 2vw, 1.125rem)'
+              fontSize: 'clamp(0.875rem, 2vw, 1.125rem)'
             }}
             >
               Select up to 2 goals
             </p>
           </div>
 
-          {/* Goals grid - enhanced visibility */}
-          <div className="space-y-3 mb-10">
+          {/* Goals grid - responsive padding and spacing */}
+          <div className="space-y-2 md:space-y-3 mb-6 md:mb-10">
             {goals.map((goal, index) => {
               const Icon = goal.icon;
               const selected = isSelected(goal.id);
@@ -190,7 +190,7 @@ export default function GoalsPage() {
                   <button
                     onClick={() => handleGoalSelect(goal.id)}
                     disabled={disabled}
-                    className={`w-full p-4 md:p-5 rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
+                    className={`w-full p-3 md:p-4 lg:p-5 rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
                       selected 
                         ? `text-white shadow-xl border-transparent focus:ring-white/50`
                         : disabled
@@ -203,16 +203,16 @@ export default function GoalsPage() {
                     aria-label={`${selected ? 'Deselect' : 'Select'} ${goal.name}: ${goal.description}`}
                     aria-pressed={selected}
                   >
-                    <div className="flex items-center space-x-4">
-                      {/* Icon container */}
-                      <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                    <div className="flex items-center space-x-3 md:space-x-4">
+                      {/* Icon container - responsive sizing */}
+                      <div className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
                         selected 
                           ? 'bg-white/90 shadow-sm' 
                           : disabled
                             ? 'bg-gray-100'
                             : `${goal.iconBg} group-hover:scale-110`
                       }`}>
-                        <Icon className={`w-5 h-5 md:w-6 md:h-6 transition-all duration-300`}
+                        <Icon className={`w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-all duration-300`}
                           style={{
                             color: selected ? goal.baseColor : disabled ? '#9CA3AF' : goal.baseColor
                           }}
@@ -220,9 +220,9 @@ export default function GoalsPage() {
                         />
                       </div>
                       
-                      {/* Text content */}
+                      {/* Text content - responsive font sizes */}
                       <div className="flex-1">
-                        <h3 className={`font-bold mb-1 transition-all duration-300 ${
+                        <h3 className={`font-bold mb-0.5 md:mb-1 transition-all duration-300 ${
                           selected 
                             ? 'text-white' 
                             : disabled
@@ -230,7 +230,7 @@ export default function GoalsPage() {
                               : 'text-gray-900'
                         }`}
                         style={{
-                          fontSize: 'clamp(1.25rem, 3vw, 1.5rem)'
+                          fontSize: 'clamp(1rem, 2.5vw, 1.5rem)'
                         }}
                         >
                           {goal.name}
@@ -243,7 +243,7 @@ export default function GoalsPage() {
                               : 'text-gray-600'
                         }`}
                         style={{
-                          fontSize: 'clamp(0.875rem, 2vw, 1rem)'
+                          fontSize: 'clamp(0.75rem, 1.5vw, 1rem)'
                         }}
                         >
                           {goal.description}
@@ -252,9 +252,9 @@ export default function GoalsPage() {
 
                       {/* Selection indicator - checkmark badge */}
                       {selected && (
-                        <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-lg">
+                        <div className="absolute -right-1 -top-1 md:-right-2 md:-top-2 flex h-6 w-6 md:h-7 md:w-7 items-center justify-center rounded-full bg-white shadow-lg">
                           <svg 
-                            className="h-4 w-4" 
+                            className="h-3.5 w-3.5 md:h-4 md:w-4" 
                             fill={goal.baseColor} 
                             viewBox="0 0 20 20"
                             aria-hidden="true"
@@ -270,19 +270,19 @@ export default function GoalsPage() {
             })}
           </div>
 
-          {/* Continue button - keeping your original style with improvements */}
+          {/* Continue button - responsive padding */}
           <div className={`transition-all duration-1000 delay-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <button
               onClick={handleContinue}
-              className={`w-full py-4 md:py-5 px-8 rounded-2xl font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              className={`w-full py-3.5 md:py-4 lg:py-5 px-8 rounded-2xl font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 selectedGoals.length > 0
                   ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 focus:ring-blue-500'
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed shadow-none'
               }`}
               style={{
-                fontSize: 'clamp(1rem, 2vw, 1.125rem)'
+                fontSize: 'clamp(0.9375rem, 2vw, 1.125rem)'
               }}
               disabled={selectedGoals.length === 0}
               aria-label={selectedGoals.length === 0 ? 'Select at least one goal to continue' : 'Continue to results'}
