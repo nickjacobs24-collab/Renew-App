@@ -15,7 +15,6 @@ const goals = [
     lightColor: '#FB923C',
     darkColor: '#EA580C',
     iconBg: 'bg-orange-100',
-    iconColor: 'text-orange-600'
   },
   {
     id: 'mind',
@@ -26,7 +25,6 @@ const goals = [
     lightColor: '#9333EA',
     darkColor: '#6D28D9',
     iconBg: 'bg-purple-100',
-    iconColor: 'text-purple-600'
   },
   {
     id: 'sleep',
@@ -37,7 +35,6 @@ const goals = [
     lightColor: '#3B82F6',
     darkColor: '#1E3A8A',
     iconBg: 'bg-indigo-100',
-    iconColor: 'text-indigo-600'
   },
   {
     id: 'calm',
@@ -48,7 +45,6 @@ const goals = [
     lightColor: '#14B8A6',
     darkColor: '#0F766E',
     iconBg: 'bg-teal-100',
-    iconColor: 'text-teal-600'
   },
   {
     id: 'wellness',
@@ -59,7 +55,6 @@ const goals = [
     lightColor: '#FBBF24',
     darkColor: '#D97706',
     iconBg: 'bg-amber-100',
-    iconColor: 'text-amber-600'
   },
   {
     id: 'immunity',
@@ -70,7 +65,6 @@ const goals = [
     lightColor: '#10B981',
     darkColor: '#047857',
     iconBg: 'bg-emerald-100',
-    iconColor: 'text-emerald-600'
   }
 ];
 
@@ -106,61 +100,66 @@ export default function GoalsPage() {
     <div className="relative flex flex-col min-h-screen">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-gray-50 to-gray-200" />
-      
-      {/* Header - consistent with other pages */}
-      <header className="h-20 shrink-0 px-6 py-4 border-b border-gray-200 shadow-md shadow-gray-200/40 bg-white/95 backdrop-blur-sm">
-        <div className="flex h-full items-center justify-between">
-          <div className="flex items-center">
-            <Image
-              src="/images/renew-logo-black.png"
-              alt="Renew logo"
-              width={90}
-              height={30}
-              className="object-contain"
-              priority
-            />
-          </div>
 
-          <button 
+      {/* Header */}
+      <header className="h-20 shrink-0 border-b border-gray-200 shadow-md shadow-gray-200/40 bg-white/95 backdrop-blur-sm"
+        style={{ padding: 'clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2rem)' }}>
+        <div className="flex h-full items-center justify-between">
+          <Image
+            src="/images/renew-logo-black.png"
+            alt="Renew logo"
+            width={90}
+            height={30}
+            className="object-contain"
+            priority
+          />
+          <button
             onClick={() => router.back()}
             className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
-            <span className="font-large">Back</span>
+            <span style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}>Back</span>
           </button>
         </div>
       </header>
 
-      {/* Main content - responsive padding scales up on larger screens */}
-      <main className="flex-1 flex items-start justify-center px-4 py-4 md:py-6 lg:py-10 overflow-y-auto pb-12 scroll-smooth">
-        <div className="w-full max-w-md md:max-w-lg lg:max-w-2xl mx-auto">
-          {/* Hero text - scales from small on laptop to large on desktop */}
-          <div className="text-center mb-3 md:mb-6 lg:mb-10">
-            <h1 
-              className={`font-black text-gray-900 mb-2 leading-tight tracking-tight transition-all duration-1000 text-2xl md:text-3xl lg:text-5xl ${
+      {/* Main content */}
+      <main className="flex-1 flex items-start justify-center overflow-y-auto scroll-smooth"
+        style={{ padding: 'clamp(1rem, 3vw, 4rem) clamp(1rem, 3vw, 3rem) clamp(2rem, 4vw, 5rem)' }}>
+        <div className="w-full mx-auto" style={{ maxWidth: 'clamp(22rem, 65vw, 48rem)' }}>
+          {/* Hero text */}
+          <div className="text-center" style={{ marginBottom: 'clamp(1rem, 3vw, 2.5rem)' }}>
+            <h1
+              className={`font-black text-gray-900 mb-2 leading-tight tracking-tight transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
+              style={{ fontSize: 'clamp(1.8rem, 3vw + 1rem, 3.8rem)' }}
             >
               Choose your
               <br />
               wellness goals.
             </h1>
-            <p 
-              className={`text-gray-600 font-medium transition-all duration-1000 delay-300 text-sm md:text-base lg:text-lg ${
+            <p
+              className={`text-gray-600 font-medium transition-all duration-1000 delay-300 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
+              style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.25rem)' }}
             >
               Select up to 2 goals
             </p>
           </div>
 
-          {/* Goals grid - spacing scales with screen size */}
-          <div className="space-y-1.5 md:space-y-2 lg:space-y-3 mb-3 md:mb-6 lg:mb-10">
+          {/* Goals grid */}
+          <div className="flex flex-col" 
+            style={{ 
+              gap: 'clamp(0.5rem, 1vw, 1rem)',
+              marginBottom: 'clamp(1rem, 3vw, 2.5rem)'
+            }}>
             {goals.map((goal, index) => {
               const Icon = goal.icon;
               const selected = isSelected(goal.id);
               const disabled = isDisabled(goal.id);
-              
+
               return (
                 <div
                   key={goal.id}
@@ -174,64 +173,97 @@ export default function GoalsPage() {
                     disabled={disabled}
                     role="checkbox"
                     aria-checked={selected}
-                    className={`w-full p-2.5 md:p-3 lg:p-5 rounded-xl md:rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
-                      selected 
-                        ? `text-white shadow-xl border-transparent focus:ring-white/50`
+                    className={`w-full border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
+                      selected
+                        ? 'text-white shadow-xl border-transparent focus:ring-white/50'
                         : disabled
-                          ? 'bg-gray-50/50 border-gray-200 text-gray-400 cursor-not-allowed opacity-60'
-                          : 'bg-white border-gray-300 text-gray-900 hover:border-gray-400 hover:shadow-lg shadow-md focus:ring-gray-400'
+                        ? 'bg-gray-50/50 border-gray-200 text-gray-400 cursor-not-allowed opacity-60'
+                        : 'bg-white border-gray-300 text-gray-900 hover:border-gray-400 hover:shadow-lg shadow-md focus:ring-gray-400'
                     }`}
-                    style={selected ? {
-                      background: `linear-gradient(135deg, ${goal.lightColor} 0%, ${goal.darkColor} 100%)`
-                    } : {}}
+                    style={{
+                      padding: 'clamp(0.75rem, 1.5vw, 1.5rem)',
+                      borderRadius: 'clamp(0.75rem, 1.5vw, 1.25rem)',
+                      background: selected
+                        ? `linear-gradient(135deg, ${goal.lightColor} 0%, ${goal.darkColor} 100%)`
+                        : undefined,
+                    }}
                     aria-label={`${goal.name}: ${goal.description}`}
                   >
-                    <div className="flex items-center gap-2.5 md:gap-3 lg:gap-4">
-                      {/* Icon - scales with screen size */}
-                      <div className={`w-8 h-8 md:w-9 md:h-9 lg:w-12 lg:h-12 rounded-lg md:rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
-                        selected 
-                          ? 'bg-white/90 shadow-sm' 
-                          : disabled
+                    <div className="flex items-center" style={{ gap: 'clamp(0.5rem, 1vw, 1.25rem)' }}>
+                      {/* Icon */}
+                      <div
+                        className={`flex items-center justify-center shrink-0 transition-all duration-300 ${
+                          selected
+                            ? 'bg-white/90 shadow-sm'
+                            : disabled
                             ? 'bg-gray-100'
                             : `${goal.iconBg} group-hover:scale-110`
-                      }`}>
-                        <Icon 
-                          className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-all duration-300"
+                        }`}
+                        style={{
+                          width: 'clamp(2rem, 3vw, 3rem)',
+                          height: 'clamp(2rem, 3vw, 3rem)',
+                          borderRadius: 'clamp(0.5rem, 1vw, 1rem)',
+                        }}
+                      >
+                        <Icon
+                          className="transition-all duration-300"
                           style={{
-                            color: selected ? goal.baseColor : disabled ? '#9CA3AF' : goal.baseColor
+                            width: 'clamp(1rem, 1.5vw, 1.5rem)',
+                            height: 'clamp(1rem, 1.5vw, 1.5rem)',
+                            color: selected ? goal.baseColor : disabled ? '#9CA3AF' : goal.baseColor,
                           }}
                           aria-hidden="true"
                         />
                       </div>
-                      
-                      {/* Text - scales with screen size */}
+
+                      {/* Text */}
                       <div className="flex-1 min-w-0">
-                        <h3 
-                          className={`font-bold mb-0 md:mb-0.5 lg:mb-1 transition-all duration-300 text-base md:text-lg lg:text-2xl ${
+                        <h3
+                          className={`font-bold transition-all duration-300 ${
                             selected ? 'text-white' : disabled ? 'text-gray-400' : 'text-gray-900'
                           }`}
+                          style={{ 
+                            fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                            marginBottom: 'clamp(0rem, 0.5vw, 0.25rem)'
+                          }}
                         >
                           {goal.name}
                         </h3>
-                        <p 
-                          className={`font-medium transition-all duration-300 text-xs md:text-sm lg:text-base ${
+                        <p
+                          className={`font-medium transition-all duration-300 ${
                             selected ? 'text-white/90' : disabled ? 'text-gray-400' : 'text-gray-600'
                           }`}
+                          style={{ fontSize: 'clamp(0.8rem, 1.25vw, 1rem)' }}
                         >
                           {goal.description}
                         </p>
                       </div>
 
-                      {/* Checkmark - scales with screen size */}
+                      {/* Checkmark */}
                       {selected && (
-                        <div className="absolute -right-1.5 -top-1.5 md:-right-2 md:-top-2 flex h-6 w-6 md:h-7 md:w-7 items-center justify-center rounded-full bg-white shadow-lg shrink-0">
-                          <svg 
-                            className="h-3.5 w-3.5 md:h-4 md:w-4" 
-                            fill={goal.baseColor} 
+                        <div
+                          className="absolute flex items-center justify-center rounded-full bg-white shadow-lg shrink-0"
+                          style={{
+                            right: 'clamp(-0.5rem, -1vw, -1rem)',
+                            top: 'clamp(-0.5rem, -1vw, -1rem)',
+                            width: 'clamp(1.25rem, 2vw, 1.75rem)',
+                            height: 'clamp(1.25rem, 2vw, 1.75rem)',
+                          }}
+                        >
+                          <svg
+                            fill={goal.baseColor}
                             viewBox="0 0 20 20"
                             aria-hidden="true"
+                            style={{
+                              width: 'clamp(0.75rem, 1.25vw, 1rem)',
+                              height: 'clamp(0.75rem, 1.25vw, 1rem)',
+                            }}
                           >
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            <path
+                              fillRule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clipRule="evenodd"
+                            />
                           </svg>
                         </div>
                       )}
@@ -242,19 +274,26 @@ export default function GoalsPage() {
             })}
           </div>
 
-          {/* Continue button - scales with screen size */}
-          <div className={`transition-all duration-1000 delay-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+          {/* Continue button */}
+          <div
+            className={`transition-all duration-1000 delay-1000 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <button
               onClick={handleContinue}
-              className={`w-full py-3 md:py-4 lg:py-5 px-8 rounded-xl md:rounded-2xl font-bold text-base md:text-lg lg:text-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                selectedGoals.length > 0
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 focus:ring-blue-500'
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed shadow-none'
-              }`}
               disabled={selectedGoals.length === 0}
               aria-disabled={selectedGoals.length === 0}
+              className={`w-full font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                selectedGoals.length > 0
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0'
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              }`}
+              style={{
+                padding: 'clamp(0.75rem, 1.5vw, 1.5rem) 2rem',
+                fontSize: 'clamp(0.9375rem, 2vw, 1.25rem)',
+                borderRadius: 'clamp(0.75rem, 1vw, 1rem)',
+              }}
             >
               {selectedGoals.length === 0 ? 'Select a goal to continue' : 'Continue'}
             </button>
