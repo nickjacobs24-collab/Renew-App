@@ -784,7 +784,7 @@ function ResultsPageContent() {
     {/* Logo - positioned far left */}
     <div className="flex items-center">
       <Image
-        src="/images/Renew-logo-black.png"
+        src="/images/renew-logo-black.png"
         alt="Renew logo"
         width={90}
         height={30}
