@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, Zap, Brain, Moon, Heart, Shield, Sparkles, SmileIcon } from 'lucide-react';
+import { ArrowLeft, Zap, Brain, Moon, Heart, Shield, SmileIcon } from 'lucide-react';
 import Image from "next/image";
 
 const goals = [
@@ -54,17 +54,16 @@ const goals = [
     iconBg: 'bg-teal-100',
     iconColor: 'text-teal-600'
   },
-    {
+  {
     id: 'wellness',
     name: 'Wellness',
     description: 'Overall health and vitality',
     icon: SmileIcon,
     baseColor: '#F59E0B',
     lightColor: '#FBBF24',
-    darkColor: '#B45309',
-    tintColor: '#EFF6FF',
-    iconBg: 'bg-yellow-100',
-    iconColor: 'text-yellow-700'
+    darkColor: '#D97706',
+    iconBg: 'bg-amber-100',
+    iconColor: 'text-amber-600'
   },
   {
     id: 'immunity',
@@ -108,8 +107,8 @@ export default function GoalsPage() {
   const isDisabled = (goalId) => selectedGoals.length >= 2 && !isSelected(goalId);
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* White to gray gradient background */}
+    <div className="min-h-[100dvh] relative flex flex-col overflow-hidden">
+      {/* Background gradient - keeping your exact original */}
       <div 
         className="absolute inset-0"
         style={{
@@ -117,56 +116,63 @@ export default function GoalsPage() {
         }}
       />
       
-{/* Header */}
-<header className="relative z-10 px-6 py-4 border-b border-gray-200 shadow-lg shadow-gray-300/40">
-  <div className="flex items-center justify-between">
+      {/* Header - restored to your exact original layout with consistent shadow */}
+      <header className="relative z-10 h-20 shrink-0 px-6 py-4 border-b border-gray-200 shadow-lg shadow-gray-300/40">
+        <div className="flex h-full items-center justify-between">
+          {/* Logo - far left, exactly as original */}
+          <div className="flex items-center">
+            <Image
+              src="/images/renew-logo-black.png"
+              alt="Renew logo"
+              width={90}
+              height={30}
+              className="object-contain"
+              priority
+            />
+          </div>
 
-    {/* Logo Image - far left */}
-    <div className="flex items-center">
-      <Image
-        src="/images/renew-logo-black.png"
-        alt="Renew logo"
-        width={90}
-        height={30}
-        className="object-contain"
-        priority
-      />
-    </div>
+          {/* Back button - far right, exactly as original */}
+          <button 
+            onClick={() => router.back()}
+            className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+            aria-label="Go back"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            <span className="font-large">Back</span>
+          </button>
+        </div>
+      </header>
 
-    {/* Back button - far right */}
-    <button 
-      onClick={() => router.back()}
-      className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50"
-    >
-      <ArrowLeft className="w-5 h-5 mr-2" />
-      <span className="font-large">Back</span>
-    </button>
-
-  </div>
-</header>
-
-<br></br><br></br><br></br><br></br>
-
-      {/* Main content */}
-      <main className="relative z-10 px-4 pb-16">
-        <div className="max-w-xl mx-auto">
-          {/* Hero text - more compact */}
+      {/* Main content - flex grow for vertical centering */}
+      <main className="relative z-10 flex grow items-center justify-center px-4 pb-16">
+        <div className="max-w-xl mx-auto w-full">
+          {/* Hero text - keeping your original structure */}
           <div className="text-center mb-10">
-            <h1 className={`text-4xl md:text-5xl font-black text-gray-900 mb-3 leading-tight transition-all duration-1000 ${
+            <h1 className={`font-black text-gray-900 mb-3 leading-tight transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
+            }`}
+            style={{
+              fontSize: 'clamp(2rem, 6vw, 3rem)',
+              lineHeight: 1.1,
+              letterSpacing: '-0.02em'
+            }}
+            >
               Choose your
               <br />
               wellness goals.
             </h1>
-            <p className={`text-lg text-gray-600 font-medium transition-all duration-1000 delay-300 ${
+            <p className={`text-gray-600 font-medium transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
+            }`}
+            style={{
+              fontSize: 'clamp(1rem, 2vw, 1.125rem)'
+            }}
+            >
               Select up to 2 goals
             </p>
           </div>
 
-          {/* Goals grid - 70% smaller pills */}
+          {/* Goals grid - enhanced visibility */}
           <div className="space-y-3 mb-10">
             {goals.map((goal, index) => {
               const Icon = goal.icon;
@@ -184,52 +190,79 @@ export default function GoalsPage() {
                   <button
                     onClick={() => handleGoalSelect(goal.id)}
                     disabled={disabled}
-                    className={`w-full p-4 md:p-5 rounded-2xl border transition-all duration-300 ease-out text-left group ${
+                    className={`w-full p-4 md:p-5 rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
                       selected 
-                        ? `text-white shadow-xl border-transparent`
+                        ? `text-white shadow-xl border-transparent focus:ring-white/50`
                         : disabled
-                          ? 'bg-gray-100 border-gray-300 text-gray-400 cursor-not-allowed opacity-60'
-                          : 'bg-white border-gray-300 text-gray-900 hover:border-gray-400 hover:shadow-lg'
+                          ? 'bg-gray-50/50 border-gray-200 text-gray-400 cursor-not-allowed opacity-60'
+                          : 'bg-white border-gray-300 text-gray-900 hover:border-gray-400 hover:shadow-lg shadow-md focus:ring-gray-400'
                     }`}
                     style={selected ? {
                       background: `linear-gradient(135deg, ${goal.lightColor} 0%, ${goal.darkColor} 100%)`
                     } : {}}
+                    aria-label={`${selected ? 'Deselect' : 'Select'} ${goal.name}: ${goal.description}`}
+                    aria-pressed={selected}
                   >
                     <div className="flex items-center space-x-4">
+                      {/* Icon container */}
                       <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
                         selected 
-                          ? 'bg-white bg-opacity-90' 
+                          ? 'bg-white/90 shadow-sm' 
                           : disabled
-                            ? 'bg-gray-200'
-                            : `${goal.iconBg} group-hover:scale-105`
+                            ? 'bg-gray-100'
+                            : `${goal.iconBg} group-hover:scale-110`
                       }`}>
                         <Icon className={`w-5 h-5 md:w-6 md:h-6 transition-all duration-300`}
                           style={{
                             color: selected ? goal.baseColor : disabled ? '#9CA3AF' : goal.baseColor
                           }}
+                          aria-hidden="true"
                         />
                       </div>
                       
+                      {/* Text content */}
                       <div className="flex-1">
-                        <h3 className={`text-xl md:text-2xl font-bold mb-1 transition-all duration-300 ${
+                        <h3 className={`font-bold mb-1 transition-all duration-300 ${
                           selected 
                             ? 'text-white' 
                             : disabled
                               ? 'text-gray-400'
                               : 'text-gray-900'
-                        }`}>
+                        }`}
+                        style={{
+                          fontSize: 'clamp(1.25rem, 3vw, 1.5rem)'
+                        }}
+                        >
                           {goal.name}
                         </h3>
-                        <p className={`text-sm md:text-base font-medium transition-all duration-300 ${
+                        <p className={`font-medium transition-all duration-300 ${
                           selected 
-                            ? 'text-white text-opacity-90' 
+                            ? 'text-white/90' 
                             : disabled
                               ? 'text-gray-400'
                               : 'text-gray-600'
-                        }`}>
+                        }`}
+                        style={{
+                          fontSize: 'clamp(0.875rem, 2vw, 1rem)'
+                        }}
+                        >
                           {goal.description}
                         </p>
                       </div>
+
+                      {/* Selection indicator - checkmark badge */}
+                      {selected && (
+                        <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-lg">
+                          <svg 
+                            className="h-4 w-4" 
+                            fill={goal.baseColor} 
+                            viewBox="0 0 20 20"
+                            aria-hidden="true"
+                          >
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                      )}
                     </div>
                   </button>
                 </div>
@@ -237,20 +270,24 @@ export default function GoalsPage() {
             })}
           </div>
 
-          {/* Continue button - darker gray when disabled */}
+          {/* Continue button - keeping your original style with improvements */}
           <div className={`transition-all duration-1000 delay-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <button
               onClick={handleContinue}
-              className={`w-full py-4 md:py-5 px-8 rounded-2xl font-bold text-lg transition-all duration-300 ${
+              className={`w-full py-4 md:py-5 px-8 rounded-2xl font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 selectedGoals.length > 0
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0'
-                  : 'bg-gray-400 text-gray-200 cursor-not-allowed shadow-none'
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 focus:ring-blue-500'
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed shadow-none'
               }`}
+              style={{
+                fontSize: 'clamp(1rem, 2vw, 1.125rem)'
+              }}
               disabled={selectedGoals.length === 0}
+              aria-label={selectedGoals.length === 0 ? 'Select at least one goal to continue' : 'Continue to results'}
             >
-              Continue
+              {selectedGoals.length === 0 ? 'Select a goal to continue' : 'Continue'}
             </button>
           </div>
         </div>
