@@ -133,7 +133,7 @@ export default function GoalsPage() {
               className={`font-black text-gray-900 mb-2 leading-tight tracking-tight transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
-              style={{ fontSize: 'clamp(1.8rem, 3vw + 1rem, 3.8rem)' }}
+              style={{ fontSize: 'clamp(1.6rem, 1.8vw + 1rem, 2.8rem)' }}
             >
               Choose your
               <br />
@@ -143,7 +143,7 @@ export default function GoalsPage() {
               className={`text-gray-600 font-medium transition-all duration-1000 delay-300 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
-              style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.25rem)' }}
+              style={{ fontSize: 'clamp(0.9rem, 0.8vw + 0.25rem, 1.1rem)' }}
             >
               Select up to 2 goals
             </p>
@@ -223,7 +223,7 @@ export default function GoalsPage() {
                             selected ? 'text-white' : disabled ? 'text-gray-400' : 'text-gray-900'
                           }`}
                           style={{ 
-                            fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                            fontSize: 'clamp(1rem, 1.2vw + 0.25rem, 1.3rem)',
                             marginBottom: 'clamp(0rem, 0.5vw, 0.25rem)'
                           }}
                         >
@@ -233,7 +233,7 @@ export default function GoalsPage() {
                           className={`font-medium transition-all duration-300 ${
                             selected ? 'text-white/90' : disabled ? 'text-gray-400' : 'text-gray-600'
                           }`}
-                          style={{ fontSize: 'clamp(0.8rem, 1.25vw, 1rem)' }}
+                          style={{ fontSize: 'clamp(0.8rem, 0.7vw + 0.25rem, 0.95rem)' }}
                         >
                           {goal.description}
                         </p>
@@ -291,7 +291,7 @@ export default function GoalsPage() {
               }`}
               style={{
                 padding: 'clamp(0.75rem, 1.5vw, 1.5rem) 2rem',
-                fontSize: 'clamp(0.9375rem, 2vw, 1.25rem)',
+                fontSize: 'clamp(0.9375rem, 1vw, 1.1rem)',
                 borderRadius: 'clamp(0.75rem, 1vw, 1rem)',
               }}
             >
