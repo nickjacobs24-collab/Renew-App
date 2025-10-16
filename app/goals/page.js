@@ -103,16 +103,19 @@ export default function GoalsPage() {
   const isDisabled = (goalId) => selectedGoals.length >= 2 && !isSelected(goalId);
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden bg-gradient-to-b from-white via-gray-50 to-gray-200">
-      {/* Header - Fixed 64px */}
-      <header className="h-16 shrink-0 px-6 py-3 border-b border-gray-200 shadow-lg shadow-gray-300/40 bg-white/95 backdrop-blur-sm">
+    <div className="relative flex flex-col min-h-screen">
+      {/* Background gradient */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-gray-50 to-gray-200" />
+      
+      {/* Header - consistent with other pages */}
+      <header className="h-20 shrink-0 px-6 py-4 border-b border-gray-200 shadow-md shadow-gray-200/40 bg-white/95 backdrop-blur-sm">
         <div className="flex h-full items-center justify-between">
           <div className="flex items-center">
             <Image
               src="/images/renew-logo-black.png"
               alt="Renew logo"
-              width={80}
-              height={26}
+              width={90}
+              height={30}
               className="object-contain"
               priority
             />
@@ -122,33 +125,37 @@ export default function GoalsPage() {
             onClick={() => router.back()}
             className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
           >
-            <ArrowLeft className="w-4 h-4 mr-1.5" />
-            <span className="text-sm">Back</span>
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            <span className="font-large">Back</span>
           </button>
         </div>
       </header>
 
-      {/* Main content - Uses remaining space */}
-      <main className="flex-1 overflow-y-auto px-4 py-3">
-        <div className="w-full max-w-lg mx-auto h-full flex flex-col">
-          {/* Hero text - Compact */}
-          <div className="text-center mb-3 shrink-0">
-            <h1 className={`font-black text-gray-900 text-3xl mb-1 leading-tight tracking-tight transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
+      {/* Main content - responsive padding scales up on larger screens */}
+      <main className="flex-1 flex items-start justify-center px-4 py-4 md:py-6 lg:py-10 overflow-y-auto pb-12 scroll-smooth">
+        <div className="w-full max-w-md md:max-w-lg lg:max-w-2xl mx-auto">
+          {/* Hero text - scales from small on laptop to large on desktop */}
+          <div className="text-center mb-3 md:mb-6 lg:mb-10">
+            <h1 
+              className={`font-black text-gray-900 mb-2 leading-tight tracking-tight transition-all duration-1000 text-2xl md:text-3xl lg:text-5xl ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
               Choose your
               <br />
               wellness goals.
             </h1>
-            <p className={`text-gray-600 font-medium text-sm transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
+            <p 
+              className={`text-gray-600 font-medium transition-all duration-1000 delay-300 text-sm md:text-base lg:text-lg ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
               Select up to 2 goals
             </p>
           </div>
 
-          {/* Goals grid - Compact spacing */}
-          <div className="space-y-1.5 mb-3 flex-1">
+          {/* Goals grid - spacing scales with screen size */}
+          <div className="space-y-1.5 md:space-y-2 lg:space-y-3 mb-3 md:mb-6 lg:mb-10">
             {goals.map((goal, index) => {
               const Icon = goal.icon;
               const selected = isSelected(goal.id);
@@ -167,7 +174,7 @@ export default function GoalsPage() {
                     disabled={disabled}
                     role="checkbox"
                     aria-checked={selected}
-                    className={`w-full p-2.5 rounded-xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
+                    className={`w-full p-2.5 md:p-3 lg:p-5 rounded-xl md:rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
                       selected 
                         ? `text-white shadow-xl border-transparent focus:ring-white/50`
                         : disabled
@@ -179,9 +186,9 @@ export default function GoalsPage() {
                     } : {}}
                     aria-label={`${goal.name}: ${goal.description}`}
                   >
-                    <div className="flex items-center gap-2.5">
-                      {/* Icon - Compact */}
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
+                    <div className="flex items-center gap-2.5 md:gap-3 lg:gap-4">
+                      {/* Icon - scales with screen size */}
+                      <div className={`w-8 h-8 md:w-9 md:h-9 lg:w-12 lg:h-12 rounded-lg md:rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
                         selected 
                           ? 'bg-white/90 shadow-sm' 
                           : disabled
@@ -189,7 +196,7 @@ export default function GoalsPage() {
                             : `${goal.iconBg} group-hover:scale-110`
                       }`}>
                         <Icon 
-                          className="w-4 h-4 transition-all duration-300"
+                          className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-all duration-300"
                           style={{
                             color: selected ? goal.baseColor : disabled ? '#9CA3AF' : goal.baseColor
                           }}
@@ -197,25 +204,29 @@ export default function GoalsPage() {
                         />
                       </div>
                       
-                      {/* Text - Compact */}
+                      {/* Text - scales with screen size */}
                       <div className="flex-1 min-w-0">
-                        <h3 className={`font-bold text-base mb-0 transition-all duration-300 ${
-                          selected ? 'text-white' : disabled ? 'text-gray-400' : 'text-gray-900'
-                        }`}>
+                        <h3 
+                          className={`font-bold mb-0 md:mb-0.5 lg:mb-1 transition-all duration-300 text-base md:text-lg lg:text-2xl ${
+                            selected ? 'text-white' : disabled ? 'text-gray-400' : 'text-gray-900'
+                          }`}
+                        >
                           {goal.name}
                         </h3>
-                        <p className={`font-medium text-xs transition-all duration-300 ${
-                          selected ? 'text-white/90' : disabled ? 'text-gray-400' : 'text-gray-600'
-                        }`}>
+                        <p 
+                          className={`font-medium transition-all duration-300 text-xs md:text-sm lg:text-base ${
+                            selected ? 'text-white/90' : disabled ? 'text-gray-400' : 'text-gray-600'
+                          }`}
+                        >
                           {goal.description}
                         </p>
                       </div>
 
-                      {/* Checkmark - Smaller */}
+                      {/* Checkmark - scales with screen size */}
                       {selected && (
-                        <div className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-lg shrink-0">
+                        <div className="absolute -right-1.5 -top-1.5 md:-right-2 md:-top-2 flex h-6 w-6 md:h-7 md:w-7 items-center justify-center rounded-full bg-white shadow-lg shrink-0">
                           <svg 
-                            className="h-3.5 w-3.5" 
+                            className="h-3.5 w-3.5 md:h-4 md:w-4" 
                             fill={goal.baseColor} 
                             viewBox="0 0 20 20"
                             aria-hidden="true"
@@ -231,13 +242,13 @@ export default function GoalsPage() {
             })}
           </div>
 
-          {/* Continue button - Compact */}
-          <div className={`shrink-0 transition-all duration-1000 delay-1000 ${
+          {/* Continue button - scales with screen size */}
+          <div className={`transition-all duration-1000 delay-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <button
               onClick={handleContinue}
-              className={`w-full py-3 px-8 rounded-xl font-bold text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              className={`w-full py-3 md:py-4 lg:py-5 px-8 rounded-xl md:rounded-2xl font-bold text-base md:text-lg lg:text-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 selectedGoals.length > 0
                   ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 focus:ring-blue-500'
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed shadow-none'
