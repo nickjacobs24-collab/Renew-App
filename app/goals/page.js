@@ -65,22 +65,24 @@ export default function GoalsPage() {
       <main className="flex-1 flex items-start justify-center overflow-y-auto scroll-smooth px-4 py-3 pb-8">
         <div className="w-full max-w-lg mx-auto">
           
-          {/* Hero - ONE LINE, COMPACT */}
+          {/* Hero - 15% LARGER TEXT */}
           <div className="text-center mb-3">
-            <h1 className={`font-black text-gray-900 text-2xl mb-1.5 leading-tight tracking-tight transition-all duration-1000 ${
+            <h1 className={`font-black text-gray-900 mb-1.5 leading-tight tracking-tight transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
+            }`}
+            style={{ fontSize: '1.725rem' }}>
               Choose your wellness goals.
             </h1>
-            <p className={`text-gray-600 font-medium text-sm transition-all duration-1000 delay-300 ${
+            <p className={`text-gray-600 font-medium transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
+            }`}
+            style={{ fontSize: '0.9375rem' }}>
               Select up to 2 goals
             </p>
           </div>
 
-          {/* Goals - COMPRESSED FOR LAPTOP */}
-          <div className="space-y-2 mb-3">
+          {/* Goals - MORE SPACING, TALLER PILLS */}
+          <div className="space-y-2.5 mb-3">
             {goals.map((goal, index) => {
               const Icon = goal.icon;
               const selected = isSelected(goal.id);
@@ -99,7 +101,7 @@ export default function GoalsPage() {
                     disabled={disabled}
                     role="checkbox"
                     aria-checked={selected}
-                    className={`w-full p-2.5 rounded-xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
+                    className={`w-full p-3 rounded-xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
                       selected
                         ? 'text-white shadow-xl border-transparent focus:ring-white/50'
                         : disabled
@@ -127,16 +129,18 @@ export default function GoalsPage() {
                         />
                       </div>
 
-                      {/* Text */}
+                      {/* Text - 10% LARGER */}
                       <div className="flex-1 min-w-0">
-                        <h3 className={`font-bold text-base mb-0 transition-all duration-300 ${
+                        <h3 className={`font-bold mb-0 transition-all duration-300 ${
                           selected ? 'text-white' : disabled ? 'text-gray-400' : 'text-gray-900'
-                        }`}>
+                        }`}
+                        style={{ fontSize: '1.1rem' }}>
                           {goal.name}
                         </h3>
-                        <p className={`font-medium text-xs transition-all duration-300 ${
+                        <p className={`font-medium transition-all duration-300 ${
                           selected ? 'text-white/90' : disabled ? 'text-gray-400' : 'text-gray-600'
-                        }`}>
+                        }`}
+                        style={{ fontSize: '0.825rem' }}>
                           {goal.description}
                         </p>
                       </div>
@@ -156,7 +160,7 @@ export default function GoalsPage() {
             })}
           </div>
 
-          {/* Continue Button */}
+          {/* Continue Button - 12% LARGER TEXT */}
           <div className={`transition-all duration-1000 delay-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
@@ -164,11 +168,12 @@ export default function GoalsPage() {
               onClick={handleContinue}
               disabled={selectedGoals.length === 0}
               aria-disabled={selectedGoals.length === 0}
-              className={`w-full py-3 px-8 rounded-xl font-bold text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+              className={`w-full py-3 px-8 rounded-xl font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
                 selectedGoals.length > 0
                   ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0'
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
               }`}
+              style={{ fontSize: '1.075rem' }}
             >
               {selectedGoals.length === 0 ? 'Select a goal to continue' : 'Continue'}
             </button>
