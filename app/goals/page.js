@@ -81,8 +81,8 @@ export default function GoalsPage() {
             </p>
           </div>
 
-          {/* Goals - MORE SPACING, TALLER PILLS */}
-          <div className="space-y-2.5 mb-3">
+          {/* Goals - Calm-style tighter spacing */}
+          <div className="space-y-2 mb-3">
             {goals.map((goal, index) => {
               const Icon = goal.icon;
               const selected = isSelected(goal.id);
