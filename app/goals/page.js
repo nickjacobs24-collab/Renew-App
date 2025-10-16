@@ -144,15 +144,15 @@ export default function GoalsPage() {
       </header>
 
       {/* Main content - flex grow for vertical centering */}
-      <main className="relative z-10 flex grow items-center justify-center px-4 pb-8 md:pb-16">
-        <div className="max-w-xl mx-auto w-full">
+      <main className="relative z-10 flex grow items-center justify-center px-4 py-4 sm:py-6 md:pb-16">
+        <div className="w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto">
           {/* Hero text - responsive sizing added */}
           <div className="text-center mb-6 md:mb-10">
             <h1 className={`font-black text-gray-900 mb-2 md:mb-3 leading-tight transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              fontSize: 'clamp(1.75rem, 5vw, 3rem)',
+              fontSize: 'clamp(1.5rem, 4vw, 3rem)',
               lineHeight: 1.1,
               letterSpacing: '-0.02em'
             }}
@@ -173,7 +173,7 @@ export default function GoalsPage() {
           </div>
 
           {/* Goals grid - responsive padding and spacing */}
-          <div className="space-y-2 md:space-y-3 mb-6 md:mb-10">
+          <div className="space-y-1.5 sm:space-y-2 md:space-y-3 mb-6 md:mb-10">
             {goals.map((goal, index) => {
               const Icon = goal.icon;
               const selected = isSelected(goal.id);
@@ -190,7 +190,7 @@ export default function GoalsPage() {
                   <button
                     onClick={() => handleGoalSelect(goal.id)}
                     disabled={disabled}
-                    className={`w-full p-3 md:p-4 lg:p-5 rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
+                    className={`w-full p-2.5 sm:p-3 md:p-4 lg:p-5 rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
                       selected 
                         ? `text-white shadow-xl border-transparent focus:ring-white/50`
                         : disabled
@@ -205,7 +205,7 @@ export default function GoalsPage() {
                   >
                     <div className="flex items-center space-x-3 md:space-x-4">
                       {/* Icon container - responsive sizing */}
-                      <div className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                      <div className={`w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 ${
                         selected 
                           ? 'bg-white/90 shadow-sm' 
                           : disabled
@@ -230,7 +230,7 @@ export default function GoalsPage() {
                               : 'text-gray-900'
                         }`}
                         style={{
-                          fontSize: 'clamp(1rem, 2.5vw, 1.5rem)'
+                          fontSize: 'clamp(0.875rem, 2vw, 1.5rem)'
                         }}
                         >
                           {goal.name}
@@ -243,7 +243,7 @@ export default function GoalsPage() {
                               : 'text-gray-600'
                         }`}
                         style={{
-                          fontSize: 'clamp(0.75rem, 1.5vw, 1rem)'
+                          fontSize: 'clamp(0.625rem, 1.25vw, 1rem)'
                         }}
                         >
                           {goal.description}
