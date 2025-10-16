@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -144,15 +145,15 @@ export default function GoalsPage() {
       </header>
 
       {/* Main content - flex grow for vertical centering */}
-      <main className="relative z-10 flex grow items-center justify-center px-4 pb-16">
-        <div className="max-w-xl mx-auto w-full">
+      <main className="relative z-10 flex grow items-center justify-center px-4 py-8">
+        <div className="max-w-md mx-auto w-full">
           {/* Hero text - keeping your original structure */}
-          <div className="text-center mb-10">
-            <h1 className={`font-black text-gray-900 mb-3 leading-tight transition-all duration-1000 ${
+          <div className="text-center mb-6 sm:mb-10">
+            <h1 className={`font-black text-gray-900 mb-2 sm:mb-3 leading-tight transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              fontSize: 'clamp(2rem, 6vw, 3rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 2.5rem)',
               lineHeight: 1.1,
               letterSpacing: '-0.02em'
             }}
@@ -165,7 +166,7 @@ export default function GoalsPage() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              fontSize: 'clamp(1rem, 2vw, 1.125rem)'
+              fontSize: 'clamp(0.875rem, 1.5vw, 1rem)'
             }}
             >
               Select up to 2 goals
@@ -173,7 +174,7 @@ export default function GoalsPage() {
           </div>
 
           {/* Goals grid - enhanced visibility */}
-          <div className="space-y-3 mb-10">
+          <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-10">
             {goals.map((goal, index) => {
               const Icon = goal.icon;
               const selected = isSelected(goal.id);
@@ -190,7 +191,7 @@ export default function GoalsPage() {
                   <button
                     onClick={() => handleGoalSelect(goal.id)}
                     disabled={disabled}
-                    className={`w-full p-4 md:p-5 rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
+                    className={`w-full p-3 sm:p-4 md:p-5 rounded-2xl border-2 transition-all duration-300 ease-out text-left group relative focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.99] ${
                       selected 
                         ? `text-white shadow-xl border-transparent focus:ring-white/50`
                         : disabled
@@ -203,16 +204,16 @@ export default function GoalsPage() {
                     aria-label={`${selected ? 'Deselect' : 'Select'} ${goal.name}: ${goal.description}`}
                     aria-pressed={selected}
                   >
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-3 sm:space-x-4">
                       {/* Icon container */}
-                      <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                      <div className={`w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
                         selected 
                           ? 'bg-white/90 shadow-sm' 
                           : disabled
                             ? 'bg-gray-100'
                             : `${goal.iconBg} group-hover:scale-110`
                       }`}>
-                        <Icon className={`w-5 h-5 md:w-6 md:h-6 transition-all duration-300`}
+                        <Icon className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 transition-all duration-300`}
                           style={{
                             color: selected ? goal.baseColor : disabled ? '#9CA3AF' : goal.baseColor
                           }}
@@ -222,7 +223,7 @@ export default function GoalsPage() {
                       
                       {/* Text content */}
                       <div className="flex-1">
-                        <h3 className={`font-bold mb-1 transition-all duration-300 ${
+                        <h3 className={`font-bold mb-0.5 sm:mb-1 transition-all duration-300 ${
                           selected 
                             ? 'text-white' 
                             : disabled
@@ -230,7 +231,7 @@ export default function GoalsPage() {
                               : 'text-gray-900'
                         }`}
                         style={{
-                          fontSize: 'clamp(1.25rem, 3vw, 1.5rem)'
+                          fontSize: 'clamp(1rem, 2.5vw, 1.375rem)'
                         }}
                         >
                           {goal.name}
@@ -243,7 +244,7 @@ export default function GoalsPage() {
                               : 'text-gray-600'
                         }`}
                         style={{
-                          fontSize: 'clamp(0.875rem, 2vw, 1rem)'
+                          fontSize: 'clamp(0.75rem, 1.5vw, 0.9375rem)'
                         }}
                         >
                           {goal.description}
