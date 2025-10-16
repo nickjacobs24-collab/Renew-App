@@ -126,7 +126,7 @@ export default function GoalsPage() {
                           ? 'bg-gray-50/50 border-gray-200 text-gray-400 cursor-not-allowed opacity-60'
                           : 'bg-white border-gray-300 text-gray-900 hover:border-gray-400 hover:shadow-lg shadow-md focus:ring-gray-400'
                       } 
-                      p-3 md:p-3.5 lg:p-5 rounded-xl md:rounded-2xl
+                      p-2.5 md:p-3 lg:p-5 rounded-xl md:rounded-2xl
                       `}
                       style={{
                         background: selected
