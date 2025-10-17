@@ -104,7 +104,7 @@ export default function LandingPage() {
     Too many products. Too much noise. Renew makes it simple to find what really works
   </span>
   <br />
-  <span className="text-white/90" style={{ fontWeight: 500 }}>
+  <span className="text-white font-medium">
     for your goals.
   </span>
 </p>
