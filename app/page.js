@@ -89,26 +89,32 @@ export default function LandingPage() {
           </h1>
 
           {/* Subheading */}
-          <p
-            className={`mt-8 md:mt-10 text-white/60 transition-all duration-1000 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-            style={{
-              fontSize: "clamp(1.125rem, 2.5vw, 1.5rem)",
-              fontWeight: 400,
-              lineHeight: 1.5,
-              letterSpacing: "0.01em"
-            }}
-          >
-            Clear, evidence-backed guidance.
-          </p>
+<p
+  className={`mt-8 md:mt-10 transition-all duration-1000 delay-200 ${
+    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+  }`}
+  style={{
+    fontSize: "clamp(1.125rem, 2.5vw, 1.5rem)",
+    fontWeight: 400,
+    lineHeight: 1.5,
+    letterSpacing: "0.01em"
+  }}
+>
+  <span className="text-white/60">
+    Too many products. Too much noise. Renew makes it simple to find what really works
+  </span>
+  <br />
+  <span className="text-white/90" style={{ fontWeight: 500 }}>
+    for your goals.
+  </span>
+</p>
 
           {/* CTA */}
-          <div
-            className={`mt-10 md:mt-12 transition-all duration-1000 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
+<div
+  className={`mt-14 md:mt-16 transition-all duration-1000 delay-300 ${
+    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+  }`}
+>
             <button
               onClick={() => router.push("/goals")}
               className="group relative inline-flex items-center rounded-full bg-white/95 px-8 py-4 md:px-10 md:py-5 text-base md:text-lg font-medium text-blue-600 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-blue-600/50 active:scale-100"
