@@ -15,9 +15,9 @@ export default function LandingPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-[#0f2554] to-[#2563eb]">
       {/* NAV - Fixed height for predictable layout */}
-      <nav className="relative z-10 h-20 shrink-0 px-6">
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between">
-          {/* Logo */}
+      <nav className="relative z-10 h-20 shrink-0 w-full">
+        <div className="flex h-full items-center justify-between px-6">
+          {/* Logo - Far Left */}
           <div className="flex items-center">
             <Image
               src="/images/renew-logo-white.png"
@@ -29,8 +29,8 @@ export default function LandingPage() {
             />
           </div>
 
-          {/* Right links */}
-          <div className="hidden items-center space-x-8 md:flex">
+          {/* Right links - Far Right */}
+          <div className="flex items-center space-x-8">
             <a
               href="/results/appprivacy"
               onClick={(e) => {
