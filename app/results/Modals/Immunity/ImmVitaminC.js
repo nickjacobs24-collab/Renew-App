@@ -104,8 +104,8 @@ export default function EnergyVitaminB({ onClose }) {
           </div>
 
           {/* Trust Line - Final Apple Hybrid */}
-          <div className="mt-10 mb-6 px-6">
-            <div className="bg-gray-100/50 rounded-2xl px-6 py-4 ring-1 ring-gray-200/40 shadow-sm">
+          <div className="mt-6 mb-6 px-6">
+            <div className="bg-gray-100/50 rounded-2xl px-6 py-3 ring-1 ring-gray-200/40 shadow-sm">
               <div className="flex items-start gap-2 justify-center">
                 <svg
                   className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0"
