@@ -32,6 +32,26 @@ export default function LandingPage() {
           {/* Right links - Far Right */}
           <div className="flex items-center space-x-8">
             <a
+              href="/results/appaboutrenew"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("/results/appaboutrenew", "_blank", "width=1000,height=800");
+              }}
+              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+            >
+              About Renew
+            </a>
+            <a
+              href="/results/apphowwechoose"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("/results/apphowwechoose", "_blank", "width=1000,height=800");
+              }}
+              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+            >
+              How We Choose
+            </a>
+            <a
               href="/results/appprivacy"
               onClick={(e) => {
                 e.preventDefault();
