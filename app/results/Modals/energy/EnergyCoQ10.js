@@ -31,7 +31,7 @@ export default function EnergyVitaminB({ onClose }) {
         style={{ 
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.4)' // slight white tint for better blur visibility
+          backgroundColor: 'rgba(255, 255, 255, 0.4)'
         }}
         onClick={onClose}
       />
@@ -63,24 +63,21 @@ export default function EnergyVitaminB({ onClose }) {
           </p>
 
           <p className="text-2xl md:text-3xl font-bold leading-snug text-center text-black max-w-2xl mx-auto mb-4">
-          <span className="bg-gradient-to-r text-3xl md:text-4xl  from-orange-700 to-orange-500 bg-clip-text text-transparent">
-            Keeps your body’s energy topped up
+            <span className="bg-gradient-to-r text-3xl md:text-4xl from-orange-700 to-orange-500 bg-clip-text text-transparent">
+              Keeps your body's energy topped up
             </span>
           </p>
 
-<p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-  Your natural supply of CoQ10 can run low with everything you do in a day.
-</p>
-<p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-  When it drops, tiredness builds. Raising your levels keeps daily energy higher, so you can do more with lasting energy.
-</p>
-<br></br>
-
-
-          
+          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+            Your natural supply of CoQ10 can run low with everything you do in a day.
+          </p>
+          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+            When it drops, tiredness builds. Raising your levels keeps daily energy higher, so you can do more with lasting energy.
+          </p>
+          <br />
 
           {/* Info grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm text-gray-700 space-y-1.5">
@@ -90,22 +87,42 @@ export default function EnergyVitaminB({ onClose }) {
               </ul>
             </div>
 
-
-
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
-             <ul className="text-sm text-gray-700 space-y-1.5">
+              <ul className="text-sm text-gray-700 space-y-1.5">
                 <li>• First lift in weeks</li>
                 <li>• Strong results with daily use</li>
               </ul>
             </div>
-
 
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm text-gray-700 space-y-1.5">
                 <li>• Generally well tolerated</li>
               </ul>
+            </div>
+          </div>
+
+          {/* Trust Line */}
+          <div className="mt-6 mb-6 px-6">
+            <div className="bg-gray-100/50 rounded-2xl px-6 py-3 ring-1 ring-gray-200/40 shadow-sm">
+              <div className="flex items-start gap-2 justify-center">
+                <svg
+                  className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+
+                <p className="text-[15px] text-gray-700 font-medium leading-relaxed text-center max-w-md">
+                  Naturally produced in every cell of your body — supplemented and trusted for over 40 years with proven results.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -118,7 +135,7 @@ export default function EnergyVitaminB({ onClose }) {
               <a href="https://www.hollandandbarrett.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                 <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
               </a>
-              <a href="https://www.idherb.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+              <a href="https://www.iherb.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                 <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
               </a>
               <a href="https://healf.com/en-uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">

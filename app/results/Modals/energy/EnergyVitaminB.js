@@ -31,7 +31,7 @@ export default function EnergyVitaminB({ onClose }) {
         style={{ 
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.4)' // slight white tint for better blur visibility
+          backgroundColor: 'rgba(255, 255, 255, 0.4)'
         }}
         onClick={onClose}
       />
@@ -63,24 +63,21 @@ export default function EnergyVitaminB({ onClose }) {
           </p>
 
           <p className="text-2xl md:text-3xl font-bold leading-snug text-center text-black max-w-2xl mx-auto mb-4">
-          <span className="bg-gradient-to-r text-3xl md:text-4xl  from-orange-700 to-orange-500 bg-clip-text text-transparent">
-            Helps your body turn food into energy
-            </span>
-            <span className="bg-gradient-to-r  from-orange-700 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r text-3xl md:text-4xl from-orange-700 to-orange-500 bg-clip-text text-transparent">
+              Helps your body turn food into energy
             </span>
           </p>
 
-<p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-Your body can’t store B vitamins well. They get used up quickly, leaving you tired without realising why. 
-</p>
-<p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-Raising your levels increases your energy so you feel energised all day.
-</p>
-<br></br>
-
+          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+            Your body can't store B vitamins well. They get used up quickly, leaving you tired without realising why. 
+          </p>
+          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+            Raising your levels increases your energy so you feel energised all day.
+          </p>
+          <br />
 
           {/* Info grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm text-gray-700 space-y-1.5">
@@ -90,22 +87,42 @@ Raising your levels increases your energy so you feel energised all day.
               </ul>
             </div>
 
-
-
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
-             <ul className="text-sm text-gray-700 space-y-1.5">
+              <ul className="text-sm text-gray-700 space-y-1.5">
                 <li>• Boost in about a week</li>
                 <li>• Strong results with daily use</li>
               </ul>
             </div>
-
 
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm text-gray-700 space-y-1.5">
                 <li>• Safe and well studied</li>
               </ul>
+            </div>
+          </div>
+
+          {/* Trust Line */}
+          <div className="mt-6 mb-6 px-6">
+            <div className="bg-gray-100/50 rounded-2xl px-6 py-3 ring-1 ring-gray-200/40 shadow-sm">
+              <div className="flex items-start gap-2 justify-center">
+                <svg
+                  className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+
+                <p className="text-[15px] text-gray-700 font-medium leading-relaxed text-center max-w-md">
+                  Safely used for generations — one of the most widely taken vitamins worldwide.
+                </p>
+              </div>
             </div>
           </div>
 

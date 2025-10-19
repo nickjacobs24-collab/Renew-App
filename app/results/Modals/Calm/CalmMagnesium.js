@@ -78,7 +78,7 @@ Most people don't get enough from food, and stress reduces it further. Getting m
 <br></br>
 
           {/* Info grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm text-gray-700 space-y-1.5">
@@ -105,6 +105,29 @@ Most people don't get enough from food, and stress reduces it further. Getting m
               <ul className="text-sm text-gray-700 space-y-1.5">
                 <li>• Generally well-tolerated </li>
               </ul>
+            </div>
+          </div>
+
+          {/* Trust Line */}
+          <div className="mt-6 mb-6 px-6">
+            <div className="bg-gray-100/50 rounded-2xl px-6 py-3 ring-1 ring-gray-200/40 shadow-sm">
+              <div className="flex items-start gap-2 justify-center">
+                <svg
+                  className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+
+                <p className="text-[15px] text-gray-700 font-medium leading-relaxed text-center max-w-md">
+                  Gentle, well-absorbed form of magnesium — safely used for decades and trusted worldwide.
+                </p>
+              </div>
             </div>
           </div>
 

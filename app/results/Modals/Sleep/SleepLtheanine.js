@@ -31,7 +31,7 @@ export default function EnergyVitaminB({ onClose }) {
         style={{ 
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.4)' // slight white tint for better blur visibility
+          backgroundColor: 'rgba(255, 255, 255, 0.4)'
         }}
         onClick={onClose}
       />
@@ -63,22 +63,21 @@ export default function EnergyVitaminB({ onClose }) {
           </p>
 
           <p className="text-2xl md:text-3xl font-bold leading-snug text-center text-black max-w-2xl mx-auto mb-4">
-          <span className="bg-gradient-to-r text-3xl md:text-4xl  from-blue-900 via-blue-700 to-sky-500  bg-clip-text text-transparent"> 
-                 Helps your mind wind down at bedtime
+            <span className="bg-gradient-to-r text-3xl md:text-4xl from-blue-900 via-blue-700 to-sky-500 bg-clip-text text-transparent"> 
+              Helps your mind wind down at bedtime
             </span>
           </p>
 
-
-<p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
- Stress and screens can keep your mind buzzing at night, making it harder to fall asleep.
-</p>
-<p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-L-Theanine helps your mind wind down so you fall asleep faster and more easily 
-</p>
-<br></br>
+          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+            Stress and screens can keep your mind buzzing at night, making it harder to fall asleep.
+          </p>
+          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+            L-Theanine helps your mind wind down so you fall asleep faster and more easily 
+          </p>
+          <br />
 
           {/* Info grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm text-gray-700 space-y-1.5">
@@ -88,22 +87,42 @@ L-Theanine helps your mind wind down so you fall asleep faster and more easily
               </ul>
             </div>
 
-
-
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
-             <ul className="text-sm text-gray-700 space-y-1.5">
+              <ul className="text-sm text-gray-700 space-y-1.5">
                 <li>• Calming effect within 30–60 minutes</li>
                 <li>• Sleep benefits within days to weeks</li>
               </ul>
             </div>
 
-
             <div className="bg-gray-50 rounded-lg p-5">
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm text-gray-700 space-y-1.5">
-                <li>• Generally well-tolerated </li>
+                <li>• Generally well-tolerated</li>
               </ul>
+            </div>
+          </div>
+
+          {/* Trust Line */}
+          <div className="mt-6 mb-6 px-6">
+            <div className="bg-gray-100/50 rounded-2xl px-6 py-3 ring-1 ring-gray-200/40 shadow-sm">
+              <div className="flex items-start gap-2 justify-center">
+                <svg
+                  className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+
+                <p className="text-[15px] text-gray-700 font-medium leading-relaxed text-center max-w-md">
+                  Naturally found in green tea — enjoyed safely for centuries and taken daily by millions worldwide.
+                </p>
+              </div>
             </div>
           </div>
 
