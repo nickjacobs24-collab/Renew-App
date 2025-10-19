@@ -38,12 +38,13 @@ export default function EnergyVitaminB({ onClose }) {
       
       {/* Center the modal */}
       <div className="flex min-h-screen items-center justify-center p-4">
-        {/* Modal content - WIDER + BLUE GLOW */}
+        {/* Modal content - WIDER + STRONGER BLUE GLOW + BETTER PROPORTIONS */}
         <div
-          className="relative bg-white rounded-2xl ring-1 ring-gray-200
-                     w-full max-w-5xl px-8 md:px-12 py-12 md:py-16 z-10"
+          className="relative bg-white/95 rounded-2xl ring-1 ring-blue-900/10
+                     w-full max-w-5xl px-8 md:px-12 py-10 md:py-12 z-10"
           style={{
-            boxShadow: '0 0 60px -15px rgba(15, 37, 84, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+            boxShadow: '0 0 80px -10px rgba(15, 60, 160, 0.35), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(240, 245, 255, 0.95))'
           }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -60,24 +61,26 @@ export default function EnergyVitaminB({ onClose }) {
             </svg>
           </button>
 
-          {/* Header */}
-          <p className="text-xs font-semibold tracking-wider uppercase tracking-widest text-sm font-medium text-black text-center mb-2">
+          {/* Header - pulled up slightly */}
+          <p className="text-xs font-semibold tracking-wider uppercase text-sm font-medium text-black text-center mb-1">
             ENERGY ESSENTIALS
           </p>
 
-          <p className="text-2xl md:text-3xl font-bold leading-snug text-center text-black max-w-2xl mx-auto mb-4">
+          <p className="text-2xl md:text-3xl font-bold leading-snug text-center text-black max-w-3xl mx-auto mb-6">
             <span className="bg-gradient-to-r text-3xl md:text-4xl from-orange-700 to-orange-500 bg-clip-text text-transparent">
               Keeps your body's energy topped up
             </span>
           </p>
 
-          {/* Body copy with increased line-height */}
-          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
-            Your natural supply of CoQ10 can run low with everything you do in a day.
-          </p>
-          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
-            When it drops, tiredness builds. Raising your levels keeps daily energy higher, so you can do more with lasting energy.
-          </p>
+          {/* Body copy with increased line-height and wider text container */}
+          <div className="max-w-3xl mx-auto">
+            <p className="mt-0 text-lg md:text-xl text-gray-700 text-center" style={{ lineHeight: '1.7' }}>
+              Your natural supply of CoQ10 can run low with everything you do in a day.
+            </p>
+            <p className="mt-3 text-lg md:text-xl text-gray-700 text-center" style={{ lineHeight: '1.7' }}>
+              When it drops, tiredness builds. Raising your levels keeps daily energy higher, so you can do more with lasting energy.
+            </p>
+          </div>
           <br />
 
           {/* Info grid */}
@@ -107,8 +110,8 @@ export default function EnergyVitaminB({ onClose }) {
             </div>
           </div>
 
-          {/* Trust Line */}
-          <div className="mt-6 mb-6 px-6">
+          {/* Trust Line - matched to grid width */}
+          <div className="mt-6 mb-6">
             <div className="bg-gray-100/50 rounded-2xl px-6 py-3 ring-1 ring-gray-200/40 shadow-sm">
               <div className="flex items-start gap-2 justify-center">
                 <svg
@@ -123,7 +126,7 @@ export default function EnergyVitaminB({ onClose }) {
                   />
                 </svg>
 
-                <p className="text-[15px] text-gray-700 font-medium leading-relaxed text-center max-w-md">
+                <p className="text-[15px] text-gray-700 font-medium leading-relaxed text-center max-w-xl">
                   Naturally produced in every cell of your body — supplemented and trusted for over 40 years with proven results.
                 </p>
               </div>
