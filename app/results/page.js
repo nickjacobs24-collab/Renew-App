@@ -34,9 +34,6 @@ const energySupplements = [
     name: 'Vitamin B',
     benefitStatement: 'Turns food into all-day energy',
     stat: 'Without it, you can’t fully use food for energy',
-    description: 'B vitamins are essential cofactors in energy metabolism. Without adequate B vitamins, your body cannot efficiently convert nutrients into usable energy.',
-    keyBenefits: ['Helps convert food to energy','Supports brain function','Reduces tiredness and fatigue'],
-    timeToEffect: '3-7 days',
     image: '/images/vitamin-b-energy.jpg'
   },
   {
@@ -44,9 +41,6 @@ const energySupplements = [
     name: 'Creatine',
     benefitStatement: 'Recharges energy faster',
     stat: 'The body makes only half of what it needs',
-    description: 'Boosts cellular energy for muscles and brain. One of the most evidence-backed supplements for performance.',
-    keyBenefits: ['Boosts cellular ATP energy','Improves workout performance','Enhances mental focus'],
-    timeToEffect: '1-2 weeks',
     image: '/images/creatine-energy.jpg'
   },
   {
@@ -54,9 +48,6 @@ const energySupplements = [
     name: 'CoQ10',
     benefitStatement: 'Helps reduce daily tiredness',
     stat: 'Your body uses it up each day',
-    description: 'Powers cellular energy production and heart health. Essential for mitochondrial function, especially over 40.',
-    keyBenefits: ['Supports cellular energy','Essential for heart health','Powerful antioxidant'],
-    timeToEffect: '2-4 weeks',
     image: '/images/coq10-energy.jpg'
   }
 ];
@@ -67,9 +58,6 @@ const energyAdvanced = [
     name: 'Magnesium Glycinate',
     benefitStatement: 'Relaxation and recovery',
     stat: 'Better sleep in 3-7 days',
-    description: 'Relaxes muscles, calms nerves, and improves sleep quality. The most gentle and absorbable form of magnesium.',
-    keyBenefits: ['Promotes muscle relaxation','Improves sleep quality','Reduces stress and tension'],
-    timeToEffect: '3-7 days',
     image: '/images/magnesium.jpg'
   },
   {
@@ -77,9 +65,6 @@ const energyAdvanced = [
     name: 'Rhodiola Rosea',
     benefitStatement: 'All-day energy without crashes',
     stat: '20% less fatigue in studies',
-    description: 'This powerful adaptogen has been used for centuries in traditional medicine. Modern research confirms it helps your body adapt to stress while maintaining energy levels throughout the day.',
-    keyBenefits: ['Clinically proven to reduce mental fatigue','Supports physical endurance','Helps manage stress response'],
-    timeToEffect: '2-3 weeks',
     image: '/images/rhodiola.jpg'
   }
 ];
@@ -89,11 +74,8 @@ const mindSupplements = [
   {
     id: 'MindOmega3',
     name: 'Omega-3',
-    benefitStatement: 'Protects long-term brain health',
-    stat: 'The brain needs it, but cannot make it',
-    description: 'Your brain is 60% fat, and omega-3s are essential building blocks. These crucial fats support everything from memory formation to mood regulation.',
-    keyBenefits: ['Supports cognitive performance','Reduces brain inflammation','Protects against cognitive decline'],
-    timeToEffect: '8-12 weeks',
+    benefitStatement: 'Protects long-term mind health',
+    stat: 'The mind needs it, but cannot make it',
     image: '/images/omega-3-mind.jpg'
   },
   {
@@ -101,9 +83,6 @@ const mindSupplements = [
     name: 'Vitamin B',
     benefitStatement: 'Helps sharpen your thinking',
     stat: 'Your body can’t store it - needs daily top ups',
-    description: 'B vitamins are crucial for brain function, supporting neurotransmitter synthesis and mental energy production.',
-    keyBenefits: ['Enhances mental clarity','Supports mood balance','Reduces brain fog'],
-    timeToEffect: '3-7 days',
     image: '/images/vitamin-b-mind.jpg'
   },
   {
@@ -111,9 +90,6 @@ const mindSupplements = [
     name: 'Citicoline',
     benefitStatement: 'Keeps you focused longer',
     stat: 'Hard to get enough from food alone',
-    description: 'Enhances focus, memory, and brain energy. Supports acetylcholine and brain energy production.',
-    keyBenefits: ['Improves focus and attention','Enhances memory formation','Boosts brain energy'],
-    timeToEffect: '1-2 weeks',
     image: '/images/citicoline-mind.jpg'
   }
 ];
@@ -122,11 +98,8 @@ const mindAdvanced = [
   {
     id: 'lions-mane',
     name: "Lion's Mane",
-    benefitStatement: 'Natural brain boost',
+    benefitStatement: 'Natural mind boost',
     stat: 'Builds new neural pathways',
-    description: 'This remarkable mushroom contains compounds that stimulate nerve growth factor (NGF) production, literally helping your brain build new neural connections.',
-    keyBenefits: ['Promotes neurogenesis','Improves concentration','Supports memory formation'],
-    timeToEffect: '4-6 weeks',
     image: '/images/lions-mane.jpg'
   },
   {
@@ -134,9 +107,6 @@ const mindAdvanced = [
     name: 'Rhodiola Rosea',
     benefitStatement: 'Mental stamina and resilience',
     stat: 'Reduces mental fatigue by 20%',
-    description: 'Adapts body to stress, boosts resilience and mental stamina. Excellent for mental fatigue and burnout.',
-    keyBenefits: ['Reduces mental fatigue','Builds stress resilience','Improves mental stamina'],
-    timeToEffect: '1-2 weeks',
     image: '/images/rhodiola-mind.jpg'
   }
 ];
@@ -149,9 +119,6 @@ const SleepSupplements = [
     name: 'L-Theanine',
     benefitStatement: 'Helps calm your mind for sleep',
     stat: 'A busy mind makes it hard to wind down',
-    description: 'B vitamins are crucial for brain function, supporting neurotransmitter synthesis and mental energy production.',
-    keyBenefits: ['Enhances mental clarity','Supports mood balance','Reduces brain fog'],
-    timeToEffect: '3-7 days',
     image: '/images/l-theanine-sleep.jpg'
   },
   {
@@ -159,9 +126,6 @@ const SleepSupplements = [
     name: 'Magnesium',
     benefitStatement: 'Helps you fall asleep faster',
     stat: 'Hard to get enough from diet alone',
-    description: 'Enhances focus, memory, and brain energy. Supports acetylcholine and brain energy production.',
-    keyBenefits: ['Improves focus and attention','Enhances memory formation','Boosts brain energy'],
-    timeToEffect: '1-2 weeks',
     image: '/images/magnesium-sleep.jpg'
   },
    {
@@ -169,9 +133,6 @@ const SleepSupplements = [
     name: 'Glycine',
     benefitStatement: 'Helps you sleep more deeply',
     stat: 'Your body needs it for quality sleep',
-    description: 'Your brain is 60% fat, and omega-3s are essential building blocks. These crucial fats support everything from memory formation to mood regulation.',
-    keyBenefits: ['Supports cognitive performance','Reduces brain inflammation','Protects against cognitive decline'],
-    timeToEffect: '8-12 weeks',
     image: '/images/glycine-sleep.jpg'
   }
 ];
@@ -182,9 +143,6 @@ const SleepAdvanced = [
     name: "Lion's Mane",
     benefitStatement: 'Natural brain boost',
     stat: 'Builds new neural pathways',
-    description: 'This remarkable mushroom contains compounds that stimulate nerve growth factor (NGF) production, literally helping your brain build new neural connections.',
-    keyBenefits: ['Promotes neurogenesis','Improves concentration','Supports memory formation'],
-    timeToEffect: '4-6 weeks',
     image: '/images/lions-mane.jpg'
   },
   {
@@ -192,9 +150,6 @@ const SleepAdvanced = [
     name: 'Rhodiola Rosea',
     benefitStatement: 'Mental stamina and resilience',
     stat: 'Reduces mental fatigue by 20%',
-    description: 'Adapts body to stress, boosts resilience and mental stamina. Excellent for mental fatigue and burnout.',
-    keyBenefits: ['Reduces mental fatigue','Builds stress resilience','Improves mental stamina'],
-    timeToEffect: '1-2 weeks',
     image: '/images/rhodiola-mind.jpg'
   }
 ];
@@ -206,9 +161,6 @@ const CalmSupplements = [
     name: 'Glycine',
     benefitStatement: 'Helps ease everyday stress',
     stat: 'Stress builds up throughout the day',
-    description: 'Supports deeper, more restorative sleep and helps regulate core body temperature before bedtime.',
-    keyBenefits: ['Supports deeper sleep', 'May improve sleep quality', 'Gentle, non-habit forming'],
-    timeToEffect: '1â€“2 weeks',
     image: '/images/glycine-calm.jpg'
   },
   {
@@ -216,9 +168,6 @@ const CalmSupplements = [
     name: 'L-Theanine',
     benefitStatement: 'Helps quiet your mind without drowsiness',
     stat: 'Works in under an hour',
-    description: 'An amino acid from tea that promotes relaxation without drowsiness, helping you unwind before bed.',
-    keyBenefits: ['Reduces pre-bed tension', 'Non-drowsy relaxation', 'Pairs well with magnesium'],
-    timeToEffect: '3â€“7 days',
     image: '/images/l-theanine-calm.jpg'
   },
   {
@@ -226,9 +175,6 @@ const CalmSupplements = [
     name: 'Magnesium',
     benefitStatement: 'Helps the body relax',
     stat: 'Hard to get enough from diet alone',
-    description: 'Helps relax muscles and supports the neurotransmitters involved in sleep quality.',
-    keyBenefits: ['Eases muscle tension', 'Supports sleep quality', 'Helps you feel rested'],
-    timeToEffect: '1â€“2 weeks',
     image: '/images/magnesium-calm.jpg'
   }
 ];
@@ -241,14 +187,6 @@ const immunitySupplements = [
     name: 'Vitamin D',
     benefitStatement: 'Builds your body’s immune defences',
     stat: "Half of adults do not get enough",
-    description:
-      "Vitamin D helps your immune system respond effectively. Sunlight and food often arenâ€™t enough year-round, so maintaining healthy levels supports your bodyâ€™s natural defenses.",
-    keyBenefits: [
-      'Supports immune function',
-      'Helps maintain overall health',
-      'May support mood and energy'
-    ],
-    timeToEffect: '2â€“4 weeks',
     image: '/images/zinc-immunity.jpg'
   },
   {
@@ -256,14 +194,6 @@ const immunitySupplements = [
     name: 'Vitamin C',
     benefitStatement: 'Maintains immune defences',
     stat: "Your body cannot store it - daily top-ups matter",
-    description:
-      "Vitamin C supports immune function and antioxidant defenses. Because itâ€™s water-soluble and not stored, regular intake helps keep levels topped up.",
-    keyBenefits: [
-      'Supports normal immune function',
-      'Antioxidant support',
-      'Helps reduce tiredness when deficient'
-    ],
-    timeToEffect: '1 to 2 weeks',
     image: '/images/vitamin-c-immunity.jpg'
   },
    {
@@ -271,14 +201,6 @@ const immunitySupplements = [
     name: 'Zinc',
     benefitStatement: 'Protects when you need to recover',
     stat: 'Your body uses more when fighting illness',
-    description:
-      "Zinc is required for normal immune cell development and function. Keeping intake consistent supports your bodyâ€™s first line of defense.",
-    keyBenefits: [
-      'Supports daily immune resilience',
-      'Involved in immune cell function',
-      'Helps maintain healthy recovery'
-    ],
-    timeToEffect: '1 to 2 weeks',
     image: '/images/vitamin-d-immunity.jpg'
   }
 ];
@@ -289,14 +211,6 @@ const immunityAdvanced = [
     name: 'Quercetin',
     benefitStatement: 'Antioxidant support for defenses',
     stat: 'Commonly paired with Vitamin C',
-    description:
-      "A plant polyphenol that supports antioxidant defenses and is often combined with Vitamin C in immune-focused protocols.",
-    keyBenefits: [
-      'Antioxidant support',
-      'May support immune balance',
-      'Often used seasonally'
-    ],
-    timeToEffect: '2â€“3 weeks',
     image: '/images/quercetin.jpg'
   },
   {
@@ -304,14 +218,6 @@ const immunityAdvanced = [
     name: 'Probiotics',
     benefitStatement: 'Gutâ€“immune connection',
     stat: '~70% of immune cells live in the gut',
-    description:
-      "Gut health and immunity are closely linked. Quality probiotic strains can help support a healthy gut environment.",
-    keyBenefits: [
-      'Supports gutâ€“immune axis',
-      'May improve resilience',
-      'Complements daily nutrition'
-    ],
-    timeToEffect: '2â€“4 weeks',
     image: '/images/probiotics.jpg'
   }
 ];
@@ -323,14 +229,6 @@ const wellnessSupplements = [
     name: 'Vitamin D',
     benefitStatement: 'Keeps your bones and immunity strong',
     stat: 'Half of adults do not get enough',
-    description:
-      "Daily D3 helps maintain healthy levels year-round; K2 supports proper calcium handling. Together theyâ€™re a strong foundation for overall wellness.",
-    keyBenefits: [
-      'Supports immune & bone health',
-      'Helps maintain mood & energy',
-      'Complements everyday nutrition'
-    ],
-    timeToEffect: '2â€“4 weeks',
     image: '/images/vitamin-d-welllness.jpg'
   },
   {
@@ -338,14 +236,6 @@ const wellnessSupplements = [
     name: 'Omega-3',
     benefitStatement: 'Keeps your heart and mind healthy',
     stat: 'Hard to get enough from food alone',
-    description:
-      "High-quality EPA/DHA supports heart, brain and inflammation balance. Triglyceride form is typically well-absorbed.",
-    keyBenefits: [
-      'Supports heart & brain',
-      'Helps balance inflammation',
-      'Everyday foundational nutrient'
-    ],
-    timeToEffect: '4â€“8 weeks',
     image: '/images/omega-3-wellness.jpg'
   },
   {
@@ -353,14 +243,6 @@ const wellnessSupplements = [
     name: 'Multivitamins',
     benefitStatement: 'Fills daily nutrient gaps',
     stat: '9 out of 10 people dont get enough nutrients from food alone',
-    description:
-      "Gentle, well-absorbed form that supports muscle relaxation, sleep quality and stress regulation.",
-    keyBenefits: [
-      'Supports sleep quality',
-      'Helps muscle relaxation',
-      'Aids stress balance'
-    ],
-    timeToEffect: '3â€“7 days',
     image: '/images/multivitamin-wellness.jpg'
   }
 ];
@@ -371,14 +253,6 @@ const wellnessAdvanced = [
     name: 'Vitamin C (Liposomal)',
     benefitStatement: 'Daily antioxidant support',
     stat: 'Not stored by the body',
-    description:
-      "Supports antioxidant defenses and collagen formation. Liposomal formats can improve tolerability and absorption for some people.",
-    keyBenefits: [
-      'Antioxidant support',
-      'Skin & collagen formation',
-      'Complements immune health'
-    ],
-    timeToEffect: '1â€“2 weeks',
     image: '/images/vitamin-c.jpg'
   },
   {
@@ -386,14 +260,6 @@ const wellnessAdvanced = [
     name: 'High-Quality Multivitamin',
     benefitStatement: 'Fills everyday gaps',
     stat: 'Broad micronutrient coverage',
-    description:
-      "A well-formulated multi can cover small gaps in daily intake. Look for sensible doses and bioavailable forms.",
-    keyBenefits: [
-      'Covers common shortfalls',
-      'Supports overall vitality',
-      'Pairs with whole foods diet'
-    ],
-    timeToEffect: '2â€“4 weeks',
     image: '/images/multivitamin.jpg'
   }
 ];
@@ -888,10 +754,10 @@ function ResultsPageContent() {
                   title={<><span style={{ color: '#7c3aed' }}>Mind</span> that performs.</>}
                   description={
                     <>
-                        Clear thinking <span className="font-extrabold">helps you work better, learn faster and stay focused</span>.  Mental sharpness depends on brain health. Two out of three adults say they struggle with focus or memory<sup className="text-sm">2</sup>.
+                        Clear thinking <span className="font-extrabold">helps you work better, learn faster and stay focused</span>.  Mental sharpness depends on mind health. Two out of three adults say they struggle with focus or memory<sup className="text-sm">2</sup>.
                     </>
                   }
-                  secondParagraph="These natural supports help protect long-term brain health, sharpen your thinking, and keep you focused."
+                  secondParagraph="These natural supports help protect long-term mind health, sharpen your thinking, and keep you focused."
                 />
 
                 <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">

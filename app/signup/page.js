@@ -53,11 +53,46 @@ export default function SignupPage() {
             className="object-contain" 
             priority 
           />
-          <div className="flex gap-6 text-sm">
-            <a href="/privacy" className="text-white/70 hover:text-white transition-colors">
+          {/* Right links - Far Right */}
+          <div className="flex items-center space-x-8">
+            <a
+              href="/results/appaboutrenew"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("/results/appaboutrenew", "_blank", "width=1000,height=800");
+              }}
+              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+            >
+              About Renew
+            </a>
+            <a
+              href="/results/apphowwechoose"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("/results/apphowwechoose", "_blank", "width=1000,height=800");
+              }}
+              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+            >
+              How We Choose
+            </a>
+            <a
+              href="/results/appprivacy"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("/results/appprivacy", "_blank", "width=1000,height=800");
+              }}
+              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+            >
               Privacy Policy
             </a>
-            <a href="/disclaimer" className="text-white/80 hover:text-white transition-colors">
+            <a
+              href="/results/appdisclaimer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("/results/appdisclaimer", "_blank", "width=1000,height=800");
+              }}
+              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+            >
               Disclaimer
             </a>
           </div>
@@ -69,25 +104,34 @@ export default function SignupPage() {
         <div className="w-full max-w-md mx-auto">
           
           {/* Hero Text */}
-          <div className={`text-center mb-8 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <h1 className="text-white font-extrabold mb-3 leading-tight tracking-tight" style={{ fontSize: '1.75rem' }}>
-              Your personalized results are ready.
+          <div className="text-center mb-10">
+            <h1 className="text-white mb-6 tracking-tight" style={{ lineHeight: '1.2em' }}>
+              <span className={`block font-bold transition-all duration-300 ease-in ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`} style={{ fontSize: '2rem' }}>
+                Your personalised results
+              </span>
+              <span className={`block font-normal text-white/90 mt-6 transition-all duration-400 ease-in delay-[400ms] ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`} style={{ fontSize: '1.75rem' }}>
+                are ready.
+              </span>
             </h1>
-            <p className="text-white/80 font-medium" style={{ fontSize: '1rem' }}>
-              Create a free Renew account to view your tailored supplement insights.
+            <p className={`text-white/80 font-medium mt-8 transition-all duration-1000 delay-[600ms] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`} style={{ fontSize: '1rem' }}>
+              Create a free Renew account to view your personalized results.
             </p>
           </div>
 
           {/* Auth Buttons */}
-          <div className={`space-y-3 mb-6 transition-all duration-1000 delay-200 ${
+          <div className={`space-y-3 mb-6 transition-all duration-1000 delay-[800ms] ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             {/* Email Button */}
             <button
               onClick={handleEmailSignup}
-              className="w-full py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 bg-white text-gray-900 hover:bg-gray-50 shadow-lg hover:shadow-xl active:scale-[0.99] flex items-center justify-center gap-3"
+              className="w-full py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 bg-white text-gray-900 hover:bg-gray-50 shadow-lg shadow-gray-900/20 hover:shadow-xl hover:shadow-gray-900/30 active:scale-[0.99] flex items-center justify-center gap-3"
               style={{ fontSize: '1rem' }}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -100,7 +144,7 @@ export default function SignupPage() {
             {/* Apple Button */}
             <button
               onClick={handleAppleSignup}
-              className="w-full py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 bg-white text-gray-900 hover:bg-gray-50 shadow-lg hover:shadow-xl active:scale-[0.99] flex items-center justify-center gap-3"
+              className="w-full py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 bg-white text-gray-900 hover:bg-gray-50 shadow-lg shadow-gray-900/20 hover:shadow-xl hover:shadow-gray-900/30 active:scale-[0.99] flex items-center justify-center gap-3"
               style={{ fontSize: '1rem' }}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -112,7 +156,7 @@ export default function SignupPage() {
             {/* Google Button */}
             <button
               onClick={handleGoogleSignup}
-              className="w-full py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 bg-white text-gray-900 hover:bg-gray-50 shadow-lg hover:shadow-xl active:scale-[0.99] flex items-center justify-center gap-3"
+              className="w-full py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 bg-white text-gray-900 hover:bg-gray-50 shadow-lg shadow-gray-900/20 hover:shadow-xl hover:shadow-gray-900/30 active:scale-[0.99] flex items-center justify-center gap-3"
               style={{ fontSize: '1rem' }}
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
@@ -126,14 +170,14 @@ export default function SignupPage() {
           </div>
 
           {/* Reassurance Text */}
-          <p className={`text-center text-white/60 text-sm mb-8 transition-all duration-1000 delay-400 ${
+          <p className={`text-center text-white/60 text-sm mb-8 transition-all duration-1000 delay-[1000ms] ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             We'll safely store your answers so you can return anytime.
           </p>
 
           {/* Skip Link */}
-          <div className={`text-center transition-all duration-1000 delay-600 ${
+          <div className={`text-center transition-all duration-1000 delay-[1200ms] ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <button

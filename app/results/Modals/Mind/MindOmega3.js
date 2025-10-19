@@ -64,7 +64,7 @@ export default function EnergyVitaminB({ onClose }) {
 
           <p className="text-2xl md:text-3xl font-bold leading-snug text-center text-black max-w-2xl mx-auto mb-4">
             <span className="bg-gradient-to-r text-3xl md:text-4xl from-purple-900 via-violet-800 to-purple-600 bg-clip-text text-transparent">
-              Helps your brain build and repair
+              Helps your mind naturally build and repair
             </span>
           </p>
 
@@ -72,7 +72,7 @@ export default function EnergyVitaminB({ onClose }) {
             Your brain needs omega-3 to stay healthy, focused, and clear. But your body can't make it, and most diets don't provide enough. 
           </p>
           <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-            Daily omega-3 gives your brain what it needs to think clearly and remember better.
+            Daily omega-3 gives your mind what it needs to think clearly and remember better.
           </p>
           <br />
 

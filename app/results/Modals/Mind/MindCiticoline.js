@@ -64,7 +64,7 @@ export default function EnergyVitaminB({ onClose }) {
 
           <p className="text-2xl md:text-3xl font-bold leading-snug text-center text-black max-w-2xl mx-auto mb-4">
             <span className="bg-gradient-to-r text-3xl md:text-4xl from-purple-900 via-violet-800 to-purple-600 bg-clip-text text-transparent">
-              Helps your brain stay focused and form memories.
+              Helps your mind stay focused and form memories.
             </span>
           </p>
 
