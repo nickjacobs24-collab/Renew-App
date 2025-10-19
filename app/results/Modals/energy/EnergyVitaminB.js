@@ -5,13 +5,11 @@ import { createPortal } from "react-dom";
 export default function EnergyVitaminB({ onClose }) {
   const [mounted, setMounted] = useState(false);
 
-  // Ensure component is mounted before using portal
   useEffect(() => {
     setMounted(true);
     return () => setMounted(false);
   }, []);
 
-  // Close modal with ESC key
   useEffect(() => {
     const handleKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", handleKey);
@@ -19,32 +17,31 @@ export default function EnergyVitaminB({ onClose }) {
   }, [onClose]);
 
   const modalContent = (
-    // Full screen overlay with blur
     <div
       className="fixed inset-0 z-[9999] overflow-y-auto"
       role="dialog"
       aria-modal="true"
     >
-      {/* Blur background */}
       <div 
         className="fixed inset-0" 
         style={{ 
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.4)'
+          backgroundColor: 'rgba(0, 0, 0, 0.4)'
         }}
         onClick={onClose}
       />
       
-      {/* Center the modal */}
       <div className="flex min-h-screen items-center justify-center p-4">
-        {/* Modal content */}
         <div
-          className="relative bg-white rounded-2xl shadow-2xl ring-1 ring-gray-200
-                     w-full max-w-4xl px-8 md:px-12 py-12 md:py-16 z-10"
+          className="relative rounded-2xl w-full px-10 md:px-14 py-8 md:py-10 z-10"
+          style={{
+            maxWidth: '1220px',
+            boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+            backgroundColor: '#FFFFFF'
+          }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close button */}
           <button
             type="button"
             onClick={onClose}
@@ -58,59 +55,64 @@ export default function EnergyVitaminB({ onClose }) {
           </button>
 
           {/* Header */}
-          <p className="text-xs font-semibold tracking-wider uppercase tracking-widest text-sm font-medium text-black text-center mb-2">
+          <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
             ENERGY ESSENTIALS
           </p>
 
-          <p className="text-2xl md:text-3xl font-bold leading-snug text-center text-black max-w-2xl mx-auto mb-4">
-            <span className="bg-gradient-to-r text-3xl md:text-4xl from-orange-700 to-orange-500 bg-clip-text text-transparent">
-              Helps your body turn food into energy
+          {/* Title with increased bottom spacing */}
+          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
+            <span className="bg-gradient-to-r from-orange-700 to-orange-500 bg-clip-text text-transparent">
+              Keeps your body's energy topped up
             </span>
           </p>
 
-          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-            Your body can't store B vitamins well. They get used up quickly, leaving you tired without realising why. 
-          </p>
-          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-            Raising your levels increases your energy so you feel energised all day.
-          </p>
-          <br />
+          {/* Unified Description Paragraph with line break */}
+          <div className="max-w-4xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
+            <span style={{ fontWeight: 600, color: '#1F2937' }}>
+              Your natural supply of CoQ10 can run low with everything you do in a day.
+            </span>
+            <br />
+            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+              When it drops, tiredness builds. Raising your levels keeps daily energy higher, so you can do more with lasting energy.
+            </span>
+          </div>
 
-          {/* Info grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            <div className="bg-gray-50 rounded-lg p-5">
+          {/* Info Panels */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ marginBottom: '30px' }}>
+            <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
-              <ul className="text-sm text-gray-700 space-y-1.5">
-                <li>• Fewer energy dips</li>
-                <li>• Higher daily energy</li>
-                <li>• Stay mentally sharp</li>
+              <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
+                <li>• Maintain daily energy</li>
+                <li>• Support stamina</li>
+                <li>• Reduce tiredness</li>
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-5">
+            <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
-              <ul className="text-sm text-gray-700 space-y-1.5">
-                <li>• Boost in about a week</li>
+              <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
+                <li>• First lift in weeks</li>
                 <li>• Strong results with daily use</li>
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-5">
+            <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
-              <ul className="text-sm text-gray-700 space-y-1.5">
-                <li>• Safe and well studied</li>
+              <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
+                <li>• Generally well tolerated</li>
               </ul>
             </div>
           </div>
 
-          {/* Trust Line */}
-          <div className="mt-6 mb-6 px-6">
-            <div className="bg-gray-100/50 rounded-2xl px-6 py-3 ring-1 ring-gray-200/40 shadow-sm">
-              <div className="flex items-start gap-2 justify-center">
+          {/* Trust Statement */}
+          <div style={{ marginBottom: '26px' }}>
+            <div className="rounded-xl px-6 py-3" style={{ backgroundColor: '#FAFAFA' }}>
+              <p className="text-[15px] leading-relaxed text-center" style={{ fontWeight: 400, color: '#4B5563' }}>
                 <svg
-                  className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0"
+                  className="inline-block w-4 h-4 mr-2 -mt-0.5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
+                  style={{ color: '#9CA3AF', opacity: 0.7 }}
                 >
                   <path
                     fillRule="evenodd"
@@ -118,35 +120,34 @@ export default function EnergyVitaminB({ onClose }) {
                     clipRule="evenodd"
                   />
                 </svg>
-
-                <p className="text-[15px] text-gray-700 font-medium leading-relaxed text-center max-w-md">
-                  Safely used for generations — one of the most widely taken vitamins worldwide.
-                </p>
-              </div>
+                Naturally produced in every cell of your body — supplemented and trusted for over 40 years with proven results.
+              </p>
             </div>
           </div>
 
-          {/* Retail pills */}
-          <div className="bg-gray-50 rounded-lg p-6">
-            <p className="text-sm font-semibold italic tracking-wide text-gray-500 text-center mb-4">
-              Take me there.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <a href="https://www.hollandandbarrett.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
-              </a>
-              <a href="https://www.iherb.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
-              </a>
-              <a href="https://healf.com/en-uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
-              </a>
-              <a href="https://www.thorne.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                <img src="/images/thornepill.png" alt="Thorne" width="80" height="50" />
-              </a>
-              <a href="https://www.amazon.co.uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
-              </a>
+          {/* Retail Section */}
+          <div>
+            <div className="rounded-xl px-6 py-4" style={{ backgroundColor: '#FAFAFA' }}>
+              <p className="text-sm text-center" style={{ fontWeight: 400, color: '#4B5563', marginBottom: '16px', paddingTop: '12px' }}>
+                Take me there.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <a href="https://www.hollandandbarrett.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                  <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
+                </a>
+                <a href="https://www.iherb.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                  <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
+                </a>
+                <a href="https://healf.com/en-uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                  <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
+                </a>
+                <a href="https://www.thorne.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                  <img src="/images/thornepill.png" alt="Thorne" width="80" height="50" />
+                </a>
+                <a href="https://www.amazon.co.uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                  <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -154,6 +155,5 @@ export default function EnergyVitaminB({ onClose }) {
     </div>
   );
 
-  // Use portal to render modal at document body level
   return mounted ? createPortal(modalContent, document.body) : null;
 }
