@@ -38,10 +38,13 @@ export default function EnergyVitaminB({ onClose }) {
       
       {/* Center the modal */}
       <div className="flex min-h-screen items-center justify-center p-4">
-        {/* Modal content */}
+        {/* Modal content - WIDER + BLUE GLOW */}
         <div
-          className="relative bg-white rounded-2xl shadow-2xl ring-1 ring-gray-200
-                     w-full max-w-4xl px-8 md:px-12 py-12 md:py-16 z-10"
+          className="relative bg-white rounded-2xl ring-1 ring-gray-200
+                     w-full max-w-5xl px-8 md:px-12 py-12 md:py-16 z-10"
+          style={{
+            boxShadow: '0 0 60px -15px rgba(15, 37, 84, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+          }}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close button */}
@@ -68,10 +71,11 @@ export default function EnergyVitaminB({ onClose }) {
             </span>
           </p>
 
-          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+          {/* Body copy with increased line-height */}
+          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             Your natural supply of CoQ10 can run low with everything you do in a day.
           </p>
-          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-3 text-lg md:text-xl text-gray-700 text-center max-w-2xl mx-auto" style={{ lineHeight: '1.7' }}>
             When it drops, tiredness builds. Raising your levels keeps daily energy higher, so you can do more with lasting energy.
           </p>
           <br />
