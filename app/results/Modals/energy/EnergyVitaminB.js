@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function EnergyVitaminB({ onClose }) {
+export default function VitaminB({ onClose }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -54,44 +54,44 @@ export default function EnergyVitaminB({ onClose }) {
             </svg>
           </button>
 
-          {/* Header */}
           <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
             ENERGY ESSENTIALS
           </p>
 
-          {/* Title with increased bottom spacing */}
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-orange-700 to-orange-500 bg-clip-text text-transparent">
-              Keeps your body's energy topped up
+              Helps your body turn food into energy
             </span>
           </p>
 
-          {/* Unified Description Paragraph with line break */}
-          <div className="max-w-4xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="max-w-3xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
-              Your natural supply of CoQ10 can run low with everything you do in a day.
+              Your body can't store B vitamins well.
             </span>
             <br />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
-              When it drops, tiredness builds. Raising your levels keeps daily energy higher, so you can do more with lasting energy.
+              They get used up quickly, leaving you tired without realising why.
+            </span>
+            <br />
+            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+              Raising your levels increases your energy so you feel energised all day.
             </span>
           </div>
 
-          {/* Info Panels */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ marginBottom: '30px' }}>
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Maintain daily energy</li>
-                <li>• Support stamina</li>
-                <li>• Reduce tiredness</li>
+                <li>• Fewer energy dips</li>
+                <li>• Higher daily energy</li>
+                <li>• Stay mentally sharp</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• First lift in weeks</li>
+                <li>• Boost in about a week</li>
                 <li>• Strong results with daily use</li>
               </ul>
             </div>
@@ -99,12 +99,11 @@ export default function EnergyVitaminB({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Generally well tolerated</li>
+                <li>• Safe and well studied</li>
               </ul>
             </div>
           </div>
 
-          {/* Trust Statement */}
           <div style={{ marginBottom: '26px' }}>
             <div className="rounded-xl px-6 py-3" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-[15px] leading-relaxed text-center" style={{ fontWeight: 400, color: '#4B5563' }}>
@@ -120,12 +119,11 @@ export default function EnergyVitaminB({ onClose }) {
                     clipRule="evenodd"
                   />
                 </svg>
-                Naturally produced in every cell of your body — supplemented and trusted for over 40 years with proven results.
+                Safely used for generations — one of the most widely taken vitamins worldwide.
               </p>
             </div>
           </div>
 
-          {/* Retail Section */}
           <div>
             <div className="rounded-xl px-6 py-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm text-center" style={{ fontWeight: 400, color: '#4B5563', marginBottom: '16px', paddingTop: '12px' }}>

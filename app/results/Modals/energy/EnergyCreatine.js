@@ -64,7 +64,7 @@ export default function Creatine({ onClose }) {
             </span>
           </p>
 
-          <div className="max-w-4xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="max-w-2xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Your body makes some creatine, but not enough for full support.
             </span>
