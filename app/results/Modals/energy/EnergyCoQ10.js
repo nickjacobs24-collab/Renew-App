@@ -32,9 +32,9 @@ export default function EnergyVitaminB({ onClose }) {
         onClick={onClose}
       />
       
-      <div className="flex min-h-screen items-center justify-center p-4" style={{ paddingTop: '48px' }}>
+      <div className="flex min-h-screen items-center justify-center p-4">
         <div
-          className="relative rounded-2xl w-full max-w-5xl px-8 md:px-12 py-10 md:py-12 z-10"
+          className="relative rounded-2xl w-full max-w-6xl px-10 md:px-14 py-8 md:py-10 z-10"
           style={{
             boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
             backgroundColor: '#FFFFFF'
@@ -54,19 +54,19 @@ export default function EnergyVitaminB({ onClose }) {
           </button>
 
           {/* Header */}
-          <p className="text-xs font-semibold tracking-wider uppercase text-center mb-1" style={{ color: '#000000' }}>
+          <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
             ENERGY ESSENTIALS
           </p>
 
           {/* Title with increased bottom spacing */}
-          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '28px' }}>
+          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-orange-700 to-orange-500 bg-clip-text text-transparent">
               Keeps your body's energy topped up
             </span>
           </p>
 
           {/* Unified Description Paragraph with line break */}
-          <div className="max-w-3xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '32px' }}>
+          <div className="max-w-4xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Your natural supply of CoQ10 can run low with everything you do in a day.
             </span>
