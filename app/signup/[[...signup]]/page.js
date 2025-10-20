@@ -53,7 +53,7 @@ export default function SignupPage() {
       {/* Background - Deep blue gradient */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0047AB] via-[#002D72] to-[#001F54]" />
 
-      {/* Header - Made more compact */}
+      {/* Header - Compact */}
       <header className="h-16 shrink-0 px-6 py-3">
         <div className="flex h-full items-center justify-between">
           <Image 
@@ -64,7 +64,7 @@ export default function SignupPage() {
             className="object-contain" 
             priority 
           />
-          {/* Right links - Smaller text */}
+          {/* Right links */}
           <div className="flex items-center space-x-6 text-sm">
             <a
               href="/results/appaboutrenew"
@@ -110,94 +110,98 @@ export default function SignupPage() {
         </div>
       </header>
 
-      {/* Main Content - Adjusted padding */}
-      <main className="flex-1 flex items-center justify-center px-4 py-2">
-        <div className="w-full max-w-md">
+      {/* Main Content */}
+      <main className="flex-1 flex items-center justify-center px-4 py-4">
+        {/* WIDER CONTAINER */}
+        <div className="w-full max-w-2xl">
           
-          {/* Hero Text - More Compact */}
-          <div className="text-center mb-3">
-            <h1 className="text-white mb-2 tracking-tight" style={{ lineHeight: '1.15em' }}>
+          {/* Hero Text - MASSIVE like the reference image */}
+          <div className="text-center mb-8">
+            <h1 className="text-white mb-4">
               <span className={`block font-bold transition-all duration-300 ease-in ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`} style={{ fontSize: '1.5rem' }}>
+              }`} style={{ fontSize: '3.5rem', lineHeight: '1', letterSpacing: '-0.02em' }}>
                 Your personalised results
               </span>
-              <span className={`block font-normal text-white/90 mt-1 transition-all duration-400 ease-in delay-[400ms] ${
+              <span className={`block font-normal text-white mt-3 transition-all duration-400 ease-in delay-[400ms] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`} style={{ fontSize: '1.25rem' }}>
+              }`} style={{ fontSize: '2.5rem', lineHeight: '1' }}>
                 are ready.
               </span>
             </h1>
-            <p className={`text-white/80 font-medium mt-2 transition-all duration-1000 delay-[600ms] ${
+            <p className={`text-white/90 font-medium mt-6 transition-all duration-1000 delay-[600ms] ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ fontSize: '0.875rem' }}>
+            }`} style={{ fontSize: '1.125rem' }}>
               Create a free Renew account to view your personalized results.
             </p>
           </div>
 
-          {/* Clerk Sign Up Component - Compact styling */}
-          <div className={`transition-all duration-1000 delay-[800ms] ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <SignUp
-              routing="hash"
-              signInUrl="/sign-in"
-              afterSignUpUrl={getRedirectUrl()}
-              appearance={{
-                elements: {
-                  rootBox: "w-full mx-auto",
-                  card: "bg-white shadow-xl rounded-xl px-5 py-3 max-h-[400px] overflow-y-auto",
-                  headerTitle: "hidden",
-                  headerSubtitle: "hidden",
-                  socialButtonsBlockButton: "bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 shadow-sm py-1.5 px-3 text-xs mb-1.5",
-                  socialButtonsBlockButtonText: "font-semibold text-xs",
-                  socialButtonsIconButton: "border border-gray-300 p-1.5",
-                  dividerRow: "my-1.5",
-                  dividerLine: "bg-gray-200",
-                  dividerText: "text-gray-500 text-xs px-2",
-                  formFieldLabel: "text-xs font-semibold text-gray-700 mb-0.5",
-                  formFieldInput: "w-full px-2.5 py-1 border-2 border-gray-200 rounded-md focus:border-blue-500 text-xs mb-1.5",
-                  formFieldInputShowPasswordButton: "text-xs",
-                  formButtonPrimary: "w-full bg-gray-900 text-white hover:bg-gray-800 font-semibold py-1.5 text-sm rounded-lg shadow-lg mt-1.5",
-                  footerActionLink: "text-blue-600 hover:text-blue-700 font-semibold text-xs",
-                  footerActionText: "text-gray-600 text-xs mt-1",
-                  formFieldRow: "gap-1.5 mb-1.5",
-                  formFieldAction: "text-xs",
-                  identityPreviewText: "text-xs",
-                  identityPreviewEditButton: "text-xs",
-                  alternativeMethodsBlockButton: "text-xs py-1.5",
-                  footer: "mt-1.5",
-                  internal: "gap-1.5",
-                  form: "gap-1",
-                },
-                layout: {
-                  socialButtonsPlacement: "top",
-                  socialButtonsVariant: "blockButton",
-                },
-                variables: {
-                  spacingUnit: '0.75rem', // Reduce overall spacing
-                },
-              }}
-            />
-          </div>
+          {/* Center the signup box within the wider container */}
+          <div className="max-w-md mx-auto">
+            {/* Clerk Sign Up Component - Compact */}
+            <div className={`transition-all duration-1000 delay-[800ms] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              <SignUp
+                routing="hash"
+                signInUrl="/sign-in"
+                afterSignUpUrl={getRedirectUrl()}
+                appearance={{
+                  elements: {
+                    rootBox: "w-full mx-auto",
+                    card: "bg-white shadow-xl rounded-xl px-5 py-3",
+                    headerTitle: "hidden",
+                    headerSubtitle: "hidden",
+                    socialButtonsBlockButton: "bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 shadow-sm py-2 px-3 text-sm mb-2",
+                    socialButtonsBlockButtonText: "font-semibold text-sm",
+                    socialButtonsIconButton: "border border-gray-300 p-2",
+                    dividerRow: "my-2",
+                    dividerLine: "bg-gray-200",
+                    dividerText: "text-gray-500 text-xs px-2",
+                    formFieldLabel: "text-xs font-semibold text-gray-700 mb-1",
+                    formFieldInput: "w-full px-3 py-1.5 border-2 border-gray-200 rounded-md focus:border-blue-500 text-sm mb-2",
+                    formFieldInputShowPasswordButton: "text-xs",
+                    formButtonPrimary: "w-full bg-gray-900 text-white hover:bg-gray-800 font-semibold py-2 text-sm rounded-lg shadow-lg mt-2",
+                    footerActionLink: "text-blue-600 hover:text-blue-700 font-semibold text-xs",
+                    footerActionText: "text-gray-600 text-xs mt-2",
+                    formFieldRow: "gap-2 mb-2",
+                    formFieldAction: "text-xs",
+                    identityPreviewText: "text-xs",
+                    identityPreviewEditButton: "text-xs",
+                    alternativeMethodsBlockButton: "text-xs py-1.5",
+                    footer: "mt-2",
+                    internal: "gap-2",
+                    form: "gap-1.5",
+                  },
+                  layout: {
+                    socialButtonsPlacement: "top",
+                    socialButtonsVariant: "blockButton",
+                  },
+                  variables: {
+                    spacingUnit: '0.875rem',
+                  },
+                }}
+              />
+            </div>
 
-          {/* Reassurance Text - Smaller and closer */}
-          <p className={`text-center text-white/60 text-xs mb-2 mt-2 transition-all duration-1000 delay-[1000ms] ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            We'll safely store your answers so you can return anytime.
-          </p>
+            {/* Reassurance Text */}
+            <p className={`text-center text-white/70 text-sm mb-4 mt-4 transition-all duration-1000 delay-[1000ms] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              We'll safely store your answers so you can return anytime.
+            </p>
 
-          {/* Skip Link - Smaller */}
-          <div className={`text-center transition-all duration-1000 delay-[1200ms] ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <button
-              onClick={handleSkip}
-              className="text-white/50 hover:text-white/80 text-xs transition-colors underline decoration-white/30 hover:decoration-white/60"
-            >
-              Prefer to browse first? View results once →
-            </button>
+            {/* Skip Link - Clear and visible */}
+            <div className={`text-center transition-all duration-1000 delay-[1200ms] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              <button
+                onClick={handleSkip}
+                className="text-white/80 hover:text-white text-base font-medium transition-all underline decoration-white/40 hover:decoration-white/70 underline-offset-2"
+              >
+                View results once without account →
+              </button>
+            </div>
           </div>
         </div>
       </main>
