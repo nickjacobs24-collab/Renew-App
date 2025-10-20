@@ -115,24 +115,24 @@ export default function SignupPage() {
         {/* WIDER CONTAINER */}
         <div className="w-full max-w-2xl">
           
-          {/* Hero Text - MASSIVE like the reference image */}
-          <div className="text-center mb-8">
-            <h1 className="text-white mb-4">
+          {/* Hero Text - Reduced size but still prominent */}
+          <div className="text-center mb-6">
+            <h1 className="text-white mb-3">
               <span className={`block font-bold transition-all duration-300 ease-in ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`} style={{ fontSize: '3.5rem', lineHeight: '1', letterSpacing: '-0.02em' }}>
+              }`} style={{ fontSize: '2.75rem', lineHeight: '1.1', letterSpacing: '-0.02em' }}>
                 Your personalised results
               </span>
-              <span className={`block font-normal text-white mt-3 transition-all duration-400 ease-in delay-[400ms] ${
+              <span className={`block font-normal text-white mt-2 transition-all duration-400 ease-in delay-[400ms] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`} style={{ fontSize: '2.5rem', lineHeight: '1' }}>
+              }`} style={{ fontSize: '2rem', lineHeight: '1.1' }}>
                 are ready.
               </span>
             </h1>
-            <p className={`text-white/90 font-medium mt-6 transition-all duration-1000 delay-[600ms] ${
+            <p className={`text-white/90 font-medium mt-5 transition-all duration-1000 delay-[600ms] ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`} style={{ fontSize: '1.125rem' }}>
-              Create a free Renew account to view your personalized results.
+              Create a free Renew account to view your personalised results.
             </p>
           </div>
 
@@ -184,15 +184,8 @@ export default function SignupPage() {
               />
             </div>
 
-            {/* Reassurance Text */}
-            <p className={`text-center text-white/70 text-sm mb-4 mt-4 transition-all duration-1000 delay-[1000ms] ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
-              We'll safely store your answers so you can return anytime.
-            </p>
-
-            {/* Skip Link - Clear and visible */}
-            <div className={`text-center transition-all duration-1000 delay-[1200ms] ${
+            {/* Skip Link - Moved up where the deleted text was */}
+            <div className={`text-center mt-4 transition-all duration-1000 delay-[1000ms] ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               <button
