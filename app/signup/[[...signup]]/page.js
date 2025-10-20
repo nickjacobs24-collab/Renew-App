@@ -129,9 +129,9 @@ export default function SignupPage() {
                 are ready.
               </span>
             </h1>
-            <p className={`text-white/90 font-medium mt-5 transition-all duration-1000 delay-[600ms] ${
+            <p className={`text-white/90 font-medium mt-5 px-8 transition-all duration-1000 delay-[600ms] ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ fontSize: '1.125rem' }}>
+            }`} style={{ fontSize: '0.95rem' }}>
               Create a free Renew account to view your personalised results.
             </p>
           </div>
