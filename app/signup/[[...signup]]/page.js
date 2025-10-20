@@ -53,8 +53,8 @@ export default function SignupPage() {
       {/* Background - Deep blue gradient */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0047AB] via-[#002D72] to-[#001F54]" />
 
-      {/* Header */}
-      <header className="h-20 shrink-0 px-6 py-4">
+      {/* Header - Made more compact */}
+      <header className="h-16 shrink-0 px-6 py-3">
         <div className="flex h-full items-center justify-between">
           <Image 
             src="/images/renew-logo-white.png" 
@@ -64,8 +64,8 @@ export default function SignupPage() {
             className="object-contain" 
             priority 
           />
-          {/* Right links */}
-          <div className="flex items-center space-x-8">
+          {/* Right links - Smaller text */}
+          <div className="flex items-center space-x-6 text-sm">
             <a
               href="/results/appaboutrenew"
               onClick={(e) => {
@@ -110,80 +110,91 @@ export default function SignupPage() {
         </div>
       </header>
 
-      {/* Main Content - Centered */}
-      <main className="flex-1 flex items-center justify-center px-4">
+      {/* Main Content - Adjusted padding */}
+      <main className="flex-1 flex items-center justify-center px-4 py-2">
         <div className="w-full max-w-md">
           
-          {/* Hero Text */}
-          <div className="text-center mb-8">
-            <h1 className="text-white mb-6 tracking-tight" style={{ lineHeight: '1.2em' }}>
+          {/* Hero Text - More Compact */}
+          <div className="text-center mb-3">
+            <h1 className="text-white mb-2 tracking-tight" style={{ lineHeight: '1.15em' }}>
               <span className={`block font-bold transition-all duration-300 ease-in ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`} style={{ fontSize: '2rem' }}>
+              }`} style={{ fontSize: '1.5rem' }}>
                 Your personalised results
               </span>
-              <span className={`block font-normal text-white/90 mt-6 transition-all duration-400 ease-in delay-[400ms] ${
+              <span className={`block font-normal text-white/90 mt-1 transition-all duration-400 ease-in delay-[400ms] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`} style={{ fontSize: '1.75rem' }}>
+              }`} style={{ fontSize: '1.25rem' }}>
                 are ready.
               </span>
             </h1>
-            <p className={`text-white/80 font-medium mt-8 transition-all duration-1000 delay-[600ms] ${
+            <p className={`text-white/80 font-medium mt-2 transition-all duration-1000 delay-[600ms] ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ fontSize: '1rem' }}>
+            }`} style={{ fontSize: '0.875rem' }}>
               Create a free Renew account to view your personalized results.
             </p>
           </div>
 
-          {/* Clerk Sign Up Component */}
+          {/* Clerk Sign Up Component - Compact styling */}
           <div className={`transition-all duration-1000 delay-[800ms] ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <SignUp
-              path="/signup"
-              routing="path"
+              routing="hash"
               signInUrl="/sign-in"
               afterSignUpUrl={getRedirectUrl()}
               appearance={{
                 elements: {
                   rootBox: "w-full mx-auto",
-                  card: "bg-white shadow-xl rounded-2xl",
+                  card: "bg-white shadow-xl rounded-xl px-5 py-3 max-h-[400px] overflow-y-auto",
                   headerTitle: "hidden",
                   headerSubtitle: "hidden",
-                  socialButtonsBlockButton: "bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 shadow-sm",
-                  socialButtonsBlockButtonText: "font-semibold text-base",
-                  socialButtonsIconButton: "border border-gray-300",
-                  dividerRow: "my-4",
+                  socialButtonsBlockButton: "bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 shadow-sm py-1.5 px-3 text-xs mb-1.5",
+                  socialButtonsBlockButtonText: "font-semibold text-xs",
+                  socialButtonsIconButton: "border border-gray-300 p-1.5",
+                  dividerRow: "my-1.5",
                   dividerLine: "bg-gray-200",
-                  dividerText: "text-gray-500 text-sm",
-                  formFieldLabel: "text-sm font-semibold text-gray-700",
-                  formFieldInput: "w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 text-base",
-                  formButtonPrimary: "w-full bg-gray-900 text-white hover:bg-gray-800 font-semibold py-3.5 rounded-xl shadow-lg",
-                  footerActionLink: "text-blue-600 hover:text-blue-700 font-semibold text-sm",
-                  footerActionText: "text-gray-600 text-sm",
+                  dividerText: "text-gray-500 text-xs px-2",
+                  formFieldLabel: "text-xs font-semibold text-gray-700 mb-0.5",
+                  formFieldInput: "w-full px-2.5 py-1 border-2 border-gray-200 rounded-md focus:border-blue-500 text-xs mb-1.5",
+                  formFieldInputShowPasswordButton: "text-xs",
+                  formButtonPrimary: "w-full bg-gray-900 text-white hover:bg-gray-800 font-semibold py-1.5 text-sm rounded-lg shadow-lg mt-1.5",
+                  footerActionLink: "text-blue-600 hover:text-blue-700 font-semibold text-xs",
+                  footerActionText: "text-gray-600 text-xs mt-1",
+                  formFieldRow: "gap-1.5 mb-1.5",
+                  formFieldAction: "text-xs",
+                  identityPreviewText: "text-xs",
+                  identityPreviewEditButton: "text-xs",
+                  alternativeMethodsBlockButton: "text-xs py-1.5",
+                  footer: "mt-1.5",
+                  internal: "gap-1.5",
+                  form: "gap-1",
                 },
                 layout: {
                   socialButtonsPlacement: "top",
                   socialButtonsVariant: "blockButton",
                 },
+                variables: {
+                  spacingUnit: '0.75rem', // Reduce overall spacing
+                },
               }}
             />
           </div>
 
-          {/* Reassurance Text */}
-          <p className={`text-center text-white/60 text-sm mb-6 mt-6 transition-all duration-1000 delay-[1000ms] ${
+          {/* Reassurance Text - Smaller and closer */}
+          <p className={`text-center text-white/60 text-xs mb-2 mt-2 transition-all duration-1000 delay-[1000ms] ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             We'll safely store your answers so you can return anytime.
           </p>
 
-          {/* Skip Link */}
+          {/* Skip Link - Smaller */}
           <div className={`text-center transition-all duration-1000 delay-[1200ms] ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <button
               onClick={handleSkip}
-              className="text-white/50 hover:text-white/80 text-sm transition-colors underline decoration-white/30 hover:decoration-white/60"
+              className="text-white/50 hover:text-white/80 text-xs transition-colors underline decoration-white/30 hover:decoration-white/60"
             >
               Prefer to browse first? View results once →
             </button>
