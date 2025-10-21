@@ -127,19 +127,13 @@ export default function CalmMagnesium({ onClose }) {
                 Take me there.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <a href="https://www.hollandandbarrett.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                  <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
-                </a>
-                <a href="https://www.iherb.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://uk.iherb.com/c/magnesium-glycinate" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
                 </a>
-                <a href="https://healf.com/en-uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://healf.com/en-uk/search?q=magnesium%20bi" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
                 </a>
-                <a href="https://www.thorne.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                  <img src="/images/thornepill.png" alt="Thorne" width="80" height="50" />
-                </a>
-                <a href="https://www.amazon.co.uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.amazon.co.uk/s?k=magnesium+bisglycinate" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
                 </a>
               </div>

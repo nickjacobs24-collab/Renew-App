@@ -81,7 +81,6 @@ export default function VitaminD({ onClose }) {
                 <li>• Keeps bones strong</li>
                 <li>• Helps muscles work well</li>
                 <li>• Supports immune health</li>
-                <li style={{ fontWeight: 600 }}>• Look for Vitamin D3</li>
               </ul>
             </div>
 
@@ -127,21 +126,18 @@ export default function VitaminD({ onClose }) {
                 Take me there.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <a href="https://www.hollandandbarrett.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                  <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
-                </a>
-                <a href="https://www.iherb.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                  <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
-                </a>
-                <a href="https://healf.com/en-uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                  <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
-                </a>
-                <a href="https://www.thorne.com/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                  <img src="/images/thornepill.png" alt="Thorne" width="80" height="50" />
-                </a>
-                <a href="https://www.amazon.co.uk/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                  <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
-                </a>
+              <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/vitamins/vitamin-d/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
+              </a>
+              <a href="https://uk.iherb.com/c/vitamin-d" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
+              </a>
+              <a href="https://healf.com/en-uk/collections/vitamin-d" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
+              </a>
+              <a href="https://www.amazon.co.uk/s?k=vitamin+d" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
+              </a>
               </div>
             </div>
           </div>
