@@ -81,7 +81,6 @@ export default function CalmMagnesium({ onClose }) {
                 <li>• Relieves physical tension</li>
                 <li>• Promotes calmer mood</li>
                 <li>• Supports relaxation</li>
-                <li style={{ fontWeight: 600 }}>• Look for: Magnesium Bisglycinate</li>
               </ul>
             </div>
 

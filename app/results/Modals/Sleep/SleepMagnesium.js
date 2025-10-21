@@ -81,7 +81,6 @@ export default function Magnesium({ onClose }) {
                 <li>• Relaxes body for deeper sleep</li>
                 <li>• Promotes uninterrupted, restorative rest</li>
                 <li>• Supports clearer mornings</li>
-                <li style={{ fontWeight: 600 }}>• Look for: Magnesium L-Threonate</li>
               </ul>
             </div>
 
