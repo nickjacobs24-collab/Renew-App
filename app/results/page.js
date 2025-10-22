@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { ArrowLeft, Sparkles, Zap, Brain, SmileIcon, HeartIcon } from 'lucide-react';
+import PersonalisationTail from './PersonalisationTail';
 import EnergyVitaminB from "./Modals/energy/EnergyVitaminB";
 import EnergyCreatine from "./Modals/energy/EnergyCreatine";
 import EnergyCoQ10 from "./Modals/energy/EnergyCoQ10";
@@ -706,7 +707,12 @@ function ResultsPageContent() {
                       Energy <span className="font-extrabold">powers everthing you do</span>. Without enough, even small things can feel harder. Three in four adults regularly feel fatigued <sup className="text-sm">1</sup>.
                     </>
                   }
-                  secondParagraph="These natural supports help turn food into energy, recharge when you're low, and reduce daily tiredness."
+                  secondParagraph={
+                    <>
+                      These natural supports help turn food into energy, recharge when you're low, and reduce daily tiredness
+                      <PersonalisationTail />
+                    </>
+                  }
                 />
 
                 <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
@@ -757,7 +763,12 @@ function ResultsPageContent() {
                         Clear thinking <span className="font-extrabold">helps you work better, learn faster and stay focused</span>.  Mental sharpness depends on mind health. Two out of three adults say they struggle with focus or memory<sup className="text-sm">2</sup>.
                     </>
                   }
-                  secondParagraph="These natural supports help protect long-term mind health, sharpen your thinking, and keep you focused."
+                  secondParagraph={
+                    <>
+                      These natural supports help protect long-term mind health, sharpen thinking, and keep you focused
+                      <PersonalisationTail />
+                    </>
+                  }
                 />
 
                 <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
@@ -787,39 +798,44 @@ function ResultsPageContent() {
         )}
 
         {/* ---------- SLEEP (conditional) ---------- */}
-        {showSleep && (
-          <section
-            className="relative py-12 lg:py-16"
-            style={{
-              background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 70, 229, ${mindOpacity * 0.6}) 50%, rgba(79, 70, 229, ${mindOpacity}) 100%)`,
-              transition: 'background 0.3s ease'
-            }}
-          >
-            <div className="max-w-7xl mx-auto px-4 lg:px-8">
-              <div className="max-w-6xl mx-auto">
-                <SectionHeader
-                  icon={IconClock}
-                  color={{ from: '#3B82F6', to: '#1E40AF' }}
-                  title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>}
-                  description={
-                    <>
-                      Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.
-                    </>
-                  }
-                  secondParagraph="These natural supports help calm your mind for sleep, fall asleep faster, and sleep more deeply"
-                />
+{showSleep && (
+  <section
+    className="relative py-12 lg:py-16"
+    style={{
+      background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 70, 229, ${mindOpacity * 0.6}) 50%, rgba(79, 70, 229, ${mindOpacity}) 100%)`,
+      transition: 'background 0.3s ease'
+    }}
+  >
+    <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader
+          icon={IconClock}
+          color={{ from: '#3B82F6', to: '#1E40AF' }}
+          title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>}
+          description={
+            <>
+              Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.
+            </>
+          }
+          secondParagraph={
+            <>
+              These natural supports help calm your mind for sleep, fall asleep faster, and sleep more deeply
+              <PersonalisationTail />
+            </>
+          }
+        />
 
-                <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
-                  {displayedSleepSupplements.map((supplement, index) => (
-                    <SupplementCard
-                      key={supplement.id}
-                      supplement={supplement}
-                      index={index}
-                      category="Sleep"
-                      categoryColor="#1E40AF"
-                    />
-                  ))}
-                </div>
+        <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
+          {displayedSleepSupplements.map((supplement, index) => (
+            <SupplementCard
+              key={supplement.id}
+              supplement={supplement}
+              index={index}
+              category="Sleep"
+              categoryColor="#1E40AF"
+            />
+          ))}
+        </div>
 
                 <div className="mt-12 text-center">
                   <button
@@ -854,11 +870,15 @@ function ResultsPageContent() {
           description={
             <>
               Stress <span className="font-extrabold">affects how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus, and relationships. Three out of four adults regularly experience physical symptoms of stress <sup className="text-sm">4</sup>.
-                    </>
-                  }
-                  secondParagraph="These natural supports help ease stress, quiet your mind, and relax your body"
-                />
-
+            </>
+          }
+          secondParagraph={
+            <>
+              These natural supports help ease stress, quiet your mind, and relax your body
+              <PersonalisationTail />
+            </>
+          }
+        />
 
         <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
           {(typeof CalmSupplements !== 'undefined' ? CalmSupplements : calmSupplements).map((supplement, index) => (
@@ -888,7 +908,7 @@ function ResultsPageContent() {
 )}
 
        {/* ---------- IMMUNITY (conditional) ---------- */}
-        {showImm && (
+{showImm && (
   <section
     className="relative py-12 lg:py-16"
     style={{
@@ -906,10 +926,15 @@ function ResultsPageContent() {
           description={
             <>
               Your immune system <span className="font-extrabold">protects you from everyday threats </span>. When it is strong, you body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength <sup className="text-sm">6</sup>.
-                    </>
-                  }
-                  secondParagraph="These natural supports help build, maintain, and protect your defenses."
-                />
+            </>
+          }
+          secondParagraph={
+            <>
+              These natural supports help build, maintain, and protect your defenses
+              <PersonalisationTail />
+            </>
+          }
+        />
 
         <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
           {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
@@ -923,15 +948,6 @@ function ResultsPageContent() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-  <button
-    onClick={() => setShowImmunityAdvanced(!showImmunityAdvanced)}
-    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-emerald-700 hover:bg-emerald-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
-  >
-    {showImmunityAdvanced ? 'Show less' : 'Advanced results coming soon'}
-  </button>
-</div>
-
 
       </div>
     </div>
@@ -941,7 +957,7 @@ function ResultsPageContent() {
 
 
 {/* ---------- WELLNESS (conditional) ---------- */}
-{showWellness && (
+javascript{showWellness && (
   <section
     className="relative py-12 lg:py-16"
     style={{
@@ -961,12 +977,17 @@ function ResultsPageContent() {
           }
           description={
             <>
-              Good health is more than avoiding illness — it’s about{" "}
+              Good health is more than avoiding illness — it's about{" "}
               <span className="font-extrabold">feeling your best each day</span>. 
-              Energy, clarity, and resilience all depend on essential nutrients, yet nine out of ten people don’t get enough from food alone <sup className="text-sm">5</sup>.
+              Energy, clarity, and resilience all depend on essential nutrients, yet nine out of ten people don't get enough from food alone <sup className="text-sm">5</sup>.
             </>
           }
-          secondParagraph="These natural supports help fill nutrient gaps and support your overall health."
+          secondParagraph={
+            <>
+              These natural supports help fill nutrient gaps and support your overall health
+              <PersonalisationTail />
+            </>
+          }
         />
 
         {/* Wellness Cards */}

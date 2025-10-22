@@ -42,15 +42,15 @@ const otherQuestions = [
       { id: 'routine', label: 'I have a routine already' }
     ]
   },
-  {
-    id: 4,
-    question: "How do you think about progress?",
-    options: [
-      { id: 'quick', label: 'I like noticing quick shifts' },
-      { id: 'gradual', label: 'I prefer steady, gradual change' },
-      { id: 'results', label: 'Results matter more than timing' }
-    ]
-  },
+{
+  id: 4,
+  question: "How do you think about progress?",
+  options: [
+    { id: 'fast', label: 'I like noticing quick shifts' },
+    { id: 'steady', label: 'I prefer steady, gradual change' },
+    { id: 'impact', label: 'Results matter more than timing' }
+  ]
+},
   {
     id: 5,
     question: "What's your age range?",
