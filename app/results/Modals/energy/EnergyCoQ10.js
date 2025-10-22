@@ -36,7 +36,7 @@ export default function CoQ10({ onClose }) {
         <div
           className="relative rounded-2xl w-full px-10 md:px-14 py-8 md:py-10 z-10"
           style={{
-            maxWidth: '1220px',
+            maxWidth: '1280px',
             boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
             backgroundColor: '#FFFFFF'
           }}

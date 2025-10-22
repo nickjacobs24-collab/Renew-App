@@ -36,7 +36,7 @@ export default function WellnessOmega3({ onClose }) {
         <div
           className="relative rounded-2xl w-full px-10 md:px-14 py-8 md:py-10 z-10"
           style={{
-            maxWidth: '1220px',
+            maxWidth: '1340px',
             boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
             backgroundColor: '#FFFFFF'
           }}
@@ -60,11 +60,11 @@ export default function WellnessOmega3({ onClose }) {
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-orange-900 via-amber-800 to-orange-700 bg-clip-text text-transparent">
-              The good fats your body can't make.
+              The good fats your body can't make
             </span>
           </p>
 
-          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '820px', lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '900px', lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Not all fats are bad — omega-3s are essential fats your body can't make on its own.
             </span>
@@ -122,9 +122,34 @@ export default function WellnessOmega3({ onClose }) {
 
           <div>
             <div className="rounded-xl px-6 py-4" style={{ backgroundColor: '#FAFAFA' }}>
-              <p className="text-sm text-center" style={{ fontWeight: 400, color: '#4B5563', marginBottom: '16px', paddingTop: '12px' }}>
-                Take me there.
-              </p>
+              <div className="flex items-center justify-center" style={{ marginBottom: '16px' }}>
+                <p style={{ color: '#4B5563', fontSize: '15px', fontWeight: 400 }}>Take me there.</p>
+                <div className="relative group" style={{ marginLeft: '4px' }}>
+                  <p className="flex items-center cursor-pointer" style={{ color: '#0284C7', fontSize: '15px', fontWeight: 400, gap: '2px', opacity: 0.9, transition: 'opacity 0.15s ease' }}
+                     onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                     onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
+                    What to look for
+                    <svg className="transition-transform group-hover:translate-x-0.5" style={{ width: '13px', height: '13px' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </p>
+                  <span 
+                    className="absolute left-full top-1/2 bg-white rounded-xl px-4 py-2 shadow-md pointer-events-none transition-opacity duration-150 ease-out opacity-0 group-hover:opacity-100 whitespace-nowrap"
+                    style={{ 
+                      transform: 'translateY(-50%)',
+                      marginLeft: '12px',
+                      border: '1px solid #E5E7EB',
+                      fontSize: '13px',
+                      color: '#4B5563',
+                      fontWeight: 400,
+                      zIndex: 50
+                    }}
+                  >
+                    Omega-3 (EPA & DHA) — your body absorbs these forms easily so you get real results.
+                  </span>
+                </div>
+              </div>
+              
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/supplements/omega-fish-oils/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />

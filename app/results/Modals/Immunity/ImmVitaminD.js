@@ -36,7 +36,7 @@ export default function VitaminD({ onClose }) {
         <div
           className="relative rounded-2xl w-full px-10 md:px-14 py-8 md:py-10 z-10"
           style={{
-            maxWidth: '1220px',
+            maxWidth: '1280px',
             boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
             backgroundColor: '#FFFFFF'
           }}
@@ -122,9 +122,34 @@ export default function VitaminD({ onClose }) {
 
           <div>
             <div className="rounded-xl px-6 py-4" style={{ backgroundColor: '#FAFAFA' }}>
-              <p className="text-sm text-center" style={{ fontWeight: 400, color: '#4B5563', marginBottom: '16px', paddingTop: '12px' }}>
-                Take me there.
-              </p>
+              <div className="flex items-center justify-center" style={{ marginBottom: '16px' }}>
+                <p style={{ color: '#4B5563', fontSize: '15px', fontWeight: 400 }}>Take me there.</p>
+                <div className="relative group" style={{ marginLeft: '4px' }}>
+                  <p className="flex items-center cursor-pointer" style={{ color: '#0284C7', fontSize: '15px', fontWeight: 400, gap: '2px', opacity: 0.9, transition: 'opacity 0.15s ease' }}
+                     onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                     onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
+                    What to look for
+                    <svg className="transition-transform group-hover:translate-x-0.5" style={{ width: '13px', height: '13px' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </p>
+                  <span 
+                    className="absolute left-full top-1/2 bg-white rounded-xl px-4 py-2 shadow-md pointer-events-none transition-opacity duration-150 ease-out opacity-0 group-hover:opacity-100 whitespace-nowrap"
+                    style={{ 
+                      transform: 'translateY(-50%)',
+                      marginLeft: '12px',
+                      border: '1px solid #E5E7EB',
+                      fontSize: '13px',
+                      color: '#4B5563',
+                      fontWeight: 400,
+                      zIndex: 50
+                    }}
+                  >
+                    Vitamin D (D3 with K2) — K2 helps your body get the most out of vitamin D.
+                  </span>
+                </div>
+              </div>
+              
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/vitamins/vitamin-d/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
