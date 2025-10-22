@@ -125,11 +125,11 @@ export default function CoQ10({ onClose }) {
               <div className="flex items-center justify-center" style={{ marginBottom: '16px' }}>
                 <p style={{ color: '#4B5563', fontSize: '15px', fontWeight: 400 }}>Take me there.</p>
                 <div className="relative group" style={{ marginLeft: '4px' }}>
-                  <p className="flex items-center cursor-pointer" style={{ color: '#0284C7', fontSize: '13px', fontWeight: 400, gap: '2px', opacity: 0.9, transition: 'opacity 0.15s ease' }}
+                  <p className="flex items-center cursor-pointer" style={{ color: '#0284C7', fontSize: '15px', fontWeight: 400, gap: '2px', opacity: 0.9, transition: 'opacity 0.15s ease' }}
                      onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
                      onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
                     What to look for
-                    <svg className="transition-transform group-hover:translate-x-0.5" style={{ width: '12px', height: '12px' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <svg className="transition-transform group-hover:translate-x-0.5" style={{ width: '13px', height: '13px' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
                     </svg>
                   </p>
