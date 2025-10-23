@@ -17,34 +17,31 @@ export default function SignupPage() {
   }, []);
 
   // Store quiz params
-useEffect(() => {
-  const urlParams = searchParams.toString();
-  if (urlParams) {
-    sessionStorage.setItem("renew_quiz_params", urlParams);
-    localStorage.setItem("renew_quiz_params", urlParams);
-  }
-}, [searchParams]);
+  useEffect(() => {
+    const urlParams = searchParams.toString();
+    if (urlParams) {
+      sessionStorage.setItem("renew_quiz_params", urlParams);
+    }
+  }, [searchParams]);
 
   // Calculate redirect URL
-const getRedirectUrl = () => {
-  if (typeof window !== 'undefined') {
-    const urlParams = searchParams.toString();
-    const sessionParams = sessionStorage.getItem("renew_quiz_params");
-    const localParams = localStorage.getItem("renew_quiz_params");
-    const finalParams = urlParams || sessionParams || localParams;
-    return finalParams ? `/results?${finalParams}` : "/results";
-  }
-  return "/results";
-};
+  const getRedirectUrl = () => {
+    if (typeof window !== 'undefined') {
+      const urlParams = searchParams.toString();
+      const storedParams = sessionStorage.getItem("renew_quiz_params");
+      const finalParams = urlParams || storedParams;
+      return finalParams ? `/results?${finalParams}` : "/results";
+    }
+    return "/results";
+  };
 
   // Redirect after sign-up
-useEffect(() => {
-  if (isSignedIn) {
-    sessionStorage.removeItem("renew_quiz_params");
-    localStorage.removeItem("renew_quiz_params");
-    router.push(getRedirectUrl());
-  }
-}, [isSignedIn, router]);
+  useEffect(() => {
+    if (isSignedIn) {
+      sessionStorage.removeItem("renew_quiz_params");
+      router.push(getRedirectUrl());
+    }
+  }, [isSignedIn, router]);
 
   // Skip authentication
   const handleSkip = () => {
@@ -148,7 +145,7 @@ useEffect(() => {
               <SignUp
                 routing="hash"
                 signInUrl="/sign-in"
-                afterSignUpUrl={getRedirectUrl()}
+                afterSignUpUrl={`/results?${searchParams.toString()}`}
                 appearance={{
                   elements: {
                     rootBox: "w-full mx-auto",
