@@ -122,7 +122,7 @@ export default function OnboardingPage() {
             params.append(`q${key}`, value);
           }
         });
-        router.push(`/signup?${params.toString()}`);
+        router.push(`/create-account?${params.toString()}`);
       }, 2000); // 2 second curating screen
     }
   };
