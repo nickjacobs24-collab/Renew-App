@@ -1,38 +1,35 @@
 "use client";
 
 import { SignIn, useUser } from "@clerk/nextjs";
-import { useEffect, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Page() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { isSignedIn } = useUser();
+  const [redirectUrl, setRedirectUrl] = useState("/results");
 
-  // Calculate redirect URL with params
-  const redirectUrl = useMemo(() => {
-    if (typeof window !== 'undefined') {
-      const urlParams = searchParams.toString();
-      const storedParams = sessionStorage.getItem("renew_quiz_params");
-      const finalParams = urlParams || storedParams;
-      return finalParams ? `/results?${finalParams}` : "/results";
-    }
-    return "/results";
-  }, [searchParams]);
-
-  // Store params from URL to sessionStorage when page loads
+  // Store params and calculate redirect URL
   useEffect(() => {
     const urlParams = searchParams.toString();
     if (urlParams) {
       sessionStorage.setItem("renew_quiz_params", urlParams);
+      setRedirectUrl(`/results?${urlParams}`);
+    } else {
+      const storedParams = sessionStorage.getItem("renew_quiz_params");
+      if (storedParams) {
+        setRedirectUrl(`/results?${storedParams}`);
+      }
     }
   }, [searchParams]);
 
-  // Fallback redirect (in case Clerk doesn't use afterSignInUrl)
+  // Fallback redirect
   useEffect(() => {
     if (isSignedIn) {
+      const finalUrl = redirectUrl;
       sessionStorage.removeItem("renew_quiz_params");
-      router.push(redirectUrl);
+      router.push(finalUrl);
     }
   }, [isSignedIn, router, redirectUrl]);
 
