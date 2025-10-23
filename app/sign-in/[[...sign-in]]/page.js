@@ -10,25 +10,29 @@ export default function Page() {
   const { isSignedIn } = useUser();
   const [redirectUrl, setRedirectUrl] = useState("/results");
 
-  // Store params and calculate redirect URL
+  // Store params and calculate redirect URL with localStorage backup
   useEffect(() => {
     const urlParams = searchParams.toString();
     if (urlParams) {
       sessionStorage.setItem("renew_quiz_params", urlParams);
+      localStorage.setItem("renew_quiz_params", urlParams);
       setRedirectUrl(`/results?${urlParams}`);
     } else {
-      const storedParams = sessionStorage.getItem("renew_quiz_params");
+      const sessionParams = sessionStorage.getItem("renew_quiz_params");
+      const localParams = localStorage.getItem("renew_quiz_params");
+      const storedParams = sessionParams || localParams;
       if (storedParams) {
         setRedirectUrl(`/results?${storedParams}`);
       }
     }
   }, [searchParams]);
 
-  // Fallback redirect
+  // Fallback redirect with cleanup
   useEffect(() => {
     if (isSignedIn) {
       const finalUrl = redirectUrl;
       sessionStorage.removeItem("renew_quiz_params");
+      localStorage.removeItem("renew_quiz_params");
       router.push(finalUrl);
     }
   }, [isSignedIn, router, redirectUrl]);
