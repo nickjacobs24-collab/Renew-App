@@ -34,9 +34,9 @@ export default function CalmMagnesium({ onClose }) {
       
       <div className="flex min-h-screen items-center justify-center p-4">
         <div
-          className="relative rounded-2xl w-full px-10 md:px-14 py-8 md:py-10 z-10"
+          className="relative rounded-2xl w-full px-16 md:px-24 py-8 md:py-10 z-10"
           style={{
-            maxWidth: '1280px',
+            maxWidth: '1350px',
             boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
             backgroundColor: '#FFFFFF'
           }}
@@ -101,7 +101,7 @@ export default function CalmMagnesium({ onClose }) {
           </div>
 
           <div style={{ marginBottom: '26px' }}>
-            <div className="rounded-xl px-6 py-3" style={{ backgroundColor: '#FAFAFA' }}>
+            <div className="rounded-xl px-6 py-3 relative" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-[15px] leading-relaxed text-center" style={{ fontWeight: 400, color: '#4B5563' }}>
                 <svg
                   className="inline-block w-4 h-4 mr-2 -mt-0.5"
@@ -116,6 +116,39 @@ export default function CalmMagnesium({ onClose }) {
                   />
                 </svg>
                 Gentle, well-absorbed form of magnesium — safely used for decades and trusted worldwide.
+                <span className="inline-block group" style={{ marginLeft: '8px', top: '-6px', position: 'relative' }}>
+                  <span
+                    className="inline-flex items-center justify-center rounded-full text-white cursor-pointer transition-all duration-150 ease-out hover:scale-105"
+                    style={{ 
+                      width: '15px', 
+                      height: '15px',
+                      fontSize: '9px', 
+                      fontWeight: 600,
+                      fontStyle: 'italic',
+                      backgroundColor: '#111111',
+                      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.3)'
+                    }}
+                    aria-label="More information"
+                  >
+                    i
+                  </span>
+                  <span
+                    className="absolute text-white rounded-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity ease-out whitespace-normal"
+                    style={{
+                      width: '280px',
+                      bottom: '32px',
+                      left: '0',
+                      padding: '4px 8px',
+                      backgroundColor: '#111111',
+                      fontSize: '13px',
+                      lineHeight: '1.35',
+                      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
+                      transitionDuration: '150ms'
+                    }}
+                  >
+                    Magnesium glycinate is a gentle form that's easy on the stomach and well absorbed by the body (Cleveland Clinic, 2024).
+                  </span>
+                </span>
               </p>
             </div>
           </div>

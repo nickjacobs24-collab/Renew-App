@@ -11,11 +11,11 @@ import Image from "next/image";
 
 const goals = [
   { id: 'energy', name: 'More energy', icon: Zap, baseColor: '#F97316', lightColor: '#FB923C', darkColor: '#EA580C', iconBg: 'bg-orange-100' },
-  { id: 'mind', name: 'Sharper focus', icon: Brain, baseColor: '#7C3AED', lightColor: '#9333EA', darkColor: '#6D28D9', iconBg: 'bg-purple-100' },
   { id: 'sleep', name: 'Better sleep', icon: Moon, baseColor: '#1E40AF', lightColor: '#3B82F6', darkColor: '#1E3A8A', iconBg: 'bg-indigo-100' },
-  { id: 'calm', name: 'Feeling calmer', icon: Heart, baseColor: '#0D9488', lightColor: '#14B8A6', darkColor: '#0F766E', iconBg: 'bg-teal-100' },
   { id: 'immunity', name: 'Supporting immunity', icon: Shield, baseColor: '#059669', lightColor: '#10B981', darkColor: '#047857', iconBg: 'bg-emerald-100' },
-  { id: 'wellness', name: 'General wellbeing', icon: Smile, baseColor: '#F59E0B', lightColor: '#FBBF24', darkColor: '#D97706', iconBg: 'bg-amber-100' }
+  { id: 'wellness', name: 'General wellbeing', icon: Smile, baseColor: '#F59E0B', lightColor: '#FBBF24', darkColor: '#D97706', iconBg: 'bg-amber-100' },
+  { id: 'mind', name: 'Sharper focus', icon: Brain, baseColor: '#7C3AED', lightColor: '#9333EA', darkColor: '#6D28D9', iconBg: 'bg-purple-100' },
+  { id: 'calm', name: 'Feeling calmer', icon: Heart, baseColor: '#0D9488', lightColor: '#14B8A6', darkColor: '#0F766E', iconBg: 'bg-teal-100' }
 ];
 
 // ============================================================================

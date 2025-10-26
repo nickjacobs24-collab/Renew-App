@@ -30,12 +30,13 @@ import WellnessMultivitamins from "./Modals/Wellness/WellnessMultivitamins";
 
 // HARDCODED ENERGY SUPPLEMENTS - Design phase
 const energySupplements = [
-  {
-    id: 'EnergyVitaminB',
-    name: 'Vitamin B',
-    benefitStatement: 'Turns food into all-day energy',
-    stat: 'Without it, you can’t fully use food for energy',
-    image: '/images/vitamin-b-energy.jpg'
+ {
+  id: 'EnergyVitaminB',
+  name: 'Vitamin B',
+  benefitStatement: 'Turns food into all-day energy',
+  stat: 'Without it, you can’t fully use food for energy',
+  image: '/images/vitamin-b-energy.jpg',
+  isPriority: true
   },
   {
     id: 'EnergyCreatine',
@@ -53,31 +54,15 @@ const energySupplements = [
   }
 ];
 
-const energyAdvanced = [
-  {
-    id: 'magnesium-glycinate',
-    name: 'Magnesium Glycinate',
-    benefitStatement: 'Relaxation and recovery',
-    stat: 'Better sleep in 3-7 days',
-    image: '/images/magnesium.jpg'
-  },
-  {
-    id: 'rhodiola',
-    name: 'Rhodiola Rosea',
-    benefitStatement: 'All-day energy without crashes',
-    stat: '20% less fatigue in studies',
-    image: '/images/rhodiola.jpg'
-  }
-];
-
 // HARDCODED MIND SUPPLEMENTS - Design phase
 const mindSupplements = [
-  {
-    id: 'MindOmega3',
-    name: 'Omega-3',
-    benefitStatement: 'Protects long-term mind health',
-    stat: 'The mind needs it, but cannot make it',
-    image: '/images/omega-3-mind.jpg'
+{
+  id: 'MindOmega3',
+  name: 'Omega-3',
+  benefitStatement: 'Protects long-term mind health',
+  stat: 'The mind needs it, but cannot make it',
+  image: '/images/omega-3-mind.jpg',
+  isPriority: true
   },
   {
     id: 'MindVitaminB',
@@ -95,39 +80,23 @@ const mindSupplements = [
   }
 ];
 
-const mindAdvanced = [
-  {
-    id: 'lions-mane',
-    name: "Lion's Mane",
-    benefitStatement: 'Natural mind boost',
-    stat: 'Builds new neural pathways',
-    image: '/images/lions-mane.jpg'
-  },
-  {
-    id: 'rhodiola-mind',
-    name: 'Rhodiola Rosea',
-    benefitStatement: 'Mental stamina and resilience',
-    stat: 'Reduces mental fatigue by 20%',
-    image: '/images/rhodiola-mind.jpg'
-  }
-];
-
 // HARDCODED SLEEP SUPPLEMENTS - Design phase (you can edit content later)
 const SleepSupplements = [
  
-  {
-    id: 'SleepLtheanine',
-    name: 'L-Theanine',
-    benefitStatement: 'Helps calm your mind for sleep',
-    stat: 'A busy mind makes it hard to wind down',
-    image: '/images/l-theanine-sleep.jpg'
+{
+  id: 'SleepMagnesium',
+  name: 'Magnesium',
+  benefitStatement: 'Helps you fall asleep faster',
+  stat: 'Hard to get enough from diet alone',
+  image: '/images/magnesium-sleep.jpg',
+  isPriority: true
   },
   {
-    id: 'SleepMagnesium',
-    name: 'Magnesium',
-    benefitStatement: 'Helps you fall asleep faster',
-    stat: 'Hard to get enough from diet alone',
-    image: '/images/magnesium-sleep.jpg'
+  id: 'SleepLtheanine',
+  name: 'L-Theanine',
+  benefitStatement: 'Helps calm your mind for sleep',
+  stat: 'A busy mind makes it hard to wind down',
+  image: '/images/l-theanine-sleep.jpg',
   },
    {
     id: 'SleepGlycine',
@@ -138,38 +107,22 @@ const SleepSupplements = [
   }
 ];
 
-const SleepAdvanced = [
-  {
-    id: 'lions-mane',
-    name: "Lion's Mane",
-    benefitStatement: 'Natural brain boost',
-    stat: 'Builds new neural pathways',
-    image: '/images/lions-mane.jpg'
-  },
-  {
-    id: 'rhodiola-mind',
-    name: 'Rhodiola Rosea',
-    benefitStatement: 'Mental stamina and resilience',
-    stat: 'Reduces mental fatigue by 20%',
-    image: '/images/rhodiola-mind.jpg'
-  }
-];
-
 // HARDCODED CALM SUPPLEMENTS - Design phase (3 items)
 const CalmSupplements = [
+{
+  id: 'CalmLtheanine',
+  name: 'L-Theanine',
+  benefitStatement: 'Helps quiet your mind without drowsiness',
+  stat: 'Works in under an hour',
+  image: '/images/l-theanine-calm.jpg',
+  isPriority: true
+  },
   {
     id: 'CalmGlycine',
     name: 'Glycine',
     benefitStatement: 'Helps ease everyday stress',
     stat: 'Stress builds up throughout the day',
     image: '/images/glycine-calm.jpg'
-  },
-  {
-    id: 'CalmLtheanine',
-    name: 'L-Theanine',
-    benefitStatement: 'Helps quiet your mind without drowsiness',
-    stat: 'Works in under an hour',
-    image: '/images/l-theanine-calm.jpg'
   },
   {
     id: 'CalmMagnesium',
@@ -183,12 +136,13 @@ const CalmSupplements = [
 
 // HARDCODED IMMUNITY SUPPLEMENTS - Design phase
 const immunitySupplements = [
-  {
-    id: 'ImmVitaminD',
-    name: 'Vitamin D',
-    benefitStatement: 'Builds your body’s immune defences',
-    stat: "Half of adults do not get enough",
-    image: '/images/zinc-immunity.jpg'
+{
+  id: 'ImmVitaminD',
+  name: 'Vitamin D',
+  benefitStatement: 'Builds your body’s immune defences',
+  stat: "Half of adults do not get enough",
+  image: '/images/zinc-immunity.jpg',
+  isPriority: true
   },
   {
     id: 'ImmVitaminC',
@@ -206,25 +160,16 @@ const immunitySupplements = [
   }
 ];
 
-const immunityAdvanced = [
-  {
-    id: 'quercetin',
-    name: 'Quercetin',
-    benefitStatement: 'Antioxidant support for defenses',
-    stat: 'Commonly paired with Vitamin C',
-    image: '/images/quercetin.jpg'
-  },
-  {
-    id: 'probiotics',
-    name: 'Probiotics',
-    benefitStatement: 'Gutâ€“immune connection',
-    stat: '~70% of immune cells live in the gut',
-    image: '/images/probiotics.jpg'
-  }
-];
-
 // HARDCODED WELLNESS SUPPLEMENTS â€” Design phase
 const wellnessSupplements = [
+{
+  id: 'WellnessMultivitamins',
+  name: 'Multivitamins',
+  benefitStatement: 'Fills daily nutrient gaps',
+  stat: '9 out of 10 people dont get enough nutrients from food alone',
+  image: '/images/multivitamin-wellness.jpg',
+  isPriority: true
+  },
   {
     id: 'WellnessVitaminD',
     name: 'Vitamin D',
@@ -238,34 +183,8 @@ const wellnessSupplements = [
     benefitStatement: 'Keeps your heart and mind healthy',
     stat: 'Hard to get enough from food alone',
     image: '/images/omega-3-wellness.jpg'
-  },
-  {
-    id: 'WellnessMultivitamins',
-    name: 'Multivitamins',
-    benefitStatement: 'Fills daily nutrient gaps',
-    stat: '9 out of 10 people dont get enough nutrients from food alone',
-    image: '/images/multivitamin-wellness.jpg'
   }
 ];
-
-const wellnessAdvanced = [
-  {
-    id: 'vitamin-c-liposomal',
-    name: 'Vitamin C (Liposomal)',
-    benefitStatement: 'Daily antioxidant support',
-    stat: 'Not stored by the body',
-    image: '/images/vitamin-c.jpg'
-  },
-  {
-    id: 'multivitamin-premium',
-    name: 'High-Quality Multivitamin',
-    benefitStatement: 'Fills everyday gaps',
-    stat: 'Broad micronutrient coverage',
-    image: '/images/multivitamin.jpg'
-  }
-];
-
-
 
 //
 // ---------------------------
@@ -427,13 +346,17 @@ const getTextTint = () => {
 
           <div className={`absolute inset-0 pointer-events-none ${getOverlayClasses()}`}></div>
 
-          <div className="relative z-20 flex h-[320px] items-center p-5 md:p-8">
-            <div className="ml-auto w-full md:w-[55%] bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-7 shadow-lg ring-1 ring-black/5">
-              <div className={`text-[11px] tracking-wide uppercase font-semibold ${getTextTint()}`}>{category}</div>
-              <h3 className="mt-1 text-[20px] md:text-[22px] font-semibold text-gray-900 tracking-tight">{supplement.name}</h3>
-              <p className="mt-1 text-[15px] text-gray-800 leading-relaxed">{supplement.benefitStatement || 'Learn more below'}</p>
-              <p className="mt-1 text-sm text-gray-600 font-medium">{supplement.stat}</p>
-
+<div className="relative z-20 flex h-[320px] items-center p-5 md:p-8">
+  <div className="relative ml-auto w-full md:w-[55%] bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-7 shadow-lg ring-1 ring-black/5">
+    {supplement.isPriority && (
+      <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
+        TRY THIS FIRST
+      </div>
+    )}
+    <div className={`text-[11px] tracking-wide uppercase font-semibold ${getTextTint()}`}>{category}</div>
+    <h3 className="mt-1 text-[20px] md:text-[22px] font-semibold text-gray-900 tracking-tight">{supplement.name}</h3>
+    <p className="mt-1 text-[15px] text-gray-800 leading-relaxed">{supplement.benefitStatement || 'Learn more below'}</p>
+    <p className="mt-1 text-sm text-gray-600 font-medium">{supplement.stat}</p>
               <button
                 type="button"
                 onClick={() => setShowModal(true)}
@@ -990,35 +913,75 @@ javascript{showWellness && (
           }
         />
 
-        {/* Wellness Cards */}
-        <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
-          {displayedWellnessSupplements.map((supplement, index) => (
-            <SupplementCard
-              key={supplement.id}
-              supplement={supplement}
-              index={index}
-              category="Wellness"
-              categoryColor="#B45309"
-            />
-          ))}
-        </div>
+{/* Wellness Cards */}
+<div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
+  {displayedWellnessSupplements.map((supplement, index) => (
+    <SupplementCard
+      key={supplement.id}
+      supplement={supplement}
+      index={index}
+      category="Wellness"
+      categoryColor="#B45309"
+    />
+  ))}
+</div>
 
-        {/* Advanced Wellness Toggle */}
-        <div className="mt-12 text-center">
-          <button
-            onClick={() => setShowWellnessAdvanced(!showWellnessAdvanced)}
-            className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-amber-700 hover:bg-amber-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            {showWellnessAdvanced ? 'Show less' : 'Advanced results coming soon'}
-          </button>
-        </div>
+{/* Trust bar */}
+<div className="flex flex-col items-center justify-center mt-16 mb-10">
+  
+  <div className="w-full h-px bg-gray-300/20 mb-6" />
+  
+  <p className="uppercase text-[12px] tracking-[0.06em] font-semibold text-gray-600 mb-4">
+    Evidence-led guidance from
+  </p>
+  
+  <div className="flex items-center gap-10 sm:gap-12">
+    <Image 
+      src="/images/nhs-logo.png" 
+      alt="NHS" 
+      width={120} 
+      height={60} 
+      className="object-contain filter grayscale" 
+    />
+    <Image 
+      src="/images/harvard-health-logo.png" 
+      alt="Harvard Health" 
+      width={125} 
+      height={65} 
+      className="object-contain filter grayscale" 
+    />
+    <Image 
+      src="/images/mayo-clinic-logo.png" 
+      alt="Mayo Clinic" 
+      width={125} 
+      height={60} 
+      className="object-contain filter grayscale" 
+    />
+    <Image 
+      src="/images/world-health-organization-logo.png" 
+      alt="World Health Organization" 
+      width={160} 
+      height={70} 
+      className="object-contain filter grayscale" 
+    />
+  </div>
+  
+</div>
+
+{/* Advanced Wellness Toggle */}
+<div className="mt-12 text-center">
+  <button
+    onClick={() => setShowWellnessAdvanced(!showWellnessAdvanced)}
+    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-amber-700 hover:bg-amber-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
+  >
+    {showWellnessAdvanced ? 'Show less' : 'Advanced results coming soon'}
+  </button>
+</div>
+
       </div>
     </div>
   </section>
 )}
-
-
-
 
         {/* Citations (kept at the bottom) */}
         {(showEnergy || showMind || showSleep || showCalm || showImm || showWellness) && (
