@@ -926,43 +926,34 @@ javascript{showWellness && (
   ))}
 </div>
 
-{/* Trust bar */}
-<div className="flex flex-col items-center justify-center mt-16 mb-10">
+{/* Trust bar - subtle, supporting evidence */}
+<div className="flex flex-col items-center justify-center mt-12 mb-16">
   
-  <div className="w-full h-px bg-gray-300/20 mb-6" />
-  
-  <p className="uppercase text-[12px] tracking-[0.06em] font-semibold text-gray-600 mb-4">
+  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-500 mb-3">
     Evidence-led guidance from
   </p>
   
-  <div className="flex items-center gap-10 sm:gap-12">
+  <div className="flex items-center gap-6">
     <Image 
       src="/images/nhs-logo.png" 
       alt="NHS" 
-      width={120} 
-      height={60} 
-      className="object-contain filter grayscale" 
+      width={70} 
+      height={25} 
+      className="object-contain filter grayscale opacity-30" 
     />
     <Image 
       src="/images/harvard-health-logo.png" 
       alt="Harvard Health" 
-      width={125} 
-      height={65} 
-      className="object-contain filter grayscale" 
-    />
-    <Image 
-      src="/images/mayo-clinic-logo.png" 
-      alt="Mayo Clinic" 
-      width={125} 
-      height={60} 
-      className="object-contain filter grayscale" 
+      width={70} 
+      height={32} 
+      className="object-contain filter grayscale opacity-30" 
     />
     <Image 
       src="/images/world-health-organization-logo.png" 
       alt="World Health Organization" 
-      width={160} 
-      height={70} 
-      className="object-contain filter grayscale" 
+      width={95} 
+      height={30} 
+      className="object-contain filter grayscale opacity-30" 
     />
   </div>
   
