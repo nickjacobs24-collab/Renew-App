@@ -15,22 +15,22 @@ export default function LandingPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-[#0f2554] to-[#2563eb]">
       {/* NAV - Fixed height for predictable layout */}
-      <nav className="relative z-10 h-20 shrink-0 w-full">
-        <div className="flex h-full items-center justify-between px-6">
-          {/* Logo - Far Left */}
-          <div className="flex items-center">
-            <Image
-              src="/images/renew-logo-white.png"
-              alt="Renew logo"
-              width={100}
-              height={40}
-              className="object-contain"
-              priority
-            />
-          </div>
+<nav className="relative z-10 h-16 md:h-20 shrink-0 w-full">
+  <div className="flex h-full items-center justify-between px-4 md:px-6">
+    {/* Logo - Far Left */}
+    <div className="flex items-center">
+      <Image
+        src="/images/renew-logo-white.png"
+        alt="Renew logo"
+        width={80}
+        height={32}
+        className="object-contain md:w-[100px] md:h-[40px]"
+        priority
+      />
+    </div>
 
           {/* Right links - Far Right */}
-          <div className="flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <a
               href="/results/appaboutrenew"
               onClick={(e) => {

@@ -53,19 +53,19 @@ export default function SignupPage() {
       {/* Background - Deep blue gradient */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0047AB] via-[#002D72] to-[#001F54]" />
 
-      {/* Header - Compact */}
-      <header className="h-16 shrink-0 px-6 py-3">
-        <div className="flex h-full items-center justify-between">
-          <Image 
-            src="/images/renew-logo-white.png" 
-            alt="Renew logo" 
-            width={90} 
-            height={30} 
-            className="object-contain" 
-            priority 
-          />
+{/* Header - Compact and responsive */}
+<header className="h-14 md:h-16 shrink-0 px-4 md:px-6 py-3">
+  <div className="flex h-full items-center justify-between">
+    <Image 
+      src="/images/renew-logo-white.png" 
+      alt="Renew logo" 
+      width={80} 
+      height={28}
+      className="object-contain md:w-[90px] md:h-[30px]" 
+      priority 
+    />
           {/* Right links */}
-          <div className="flex items-center space-x-6 text-sm">
+          <div className="hidden md:flex items-center space-x-6 text-sm">
             <a
               href="/results/appaboutrenew"
               onClick={(e) => {

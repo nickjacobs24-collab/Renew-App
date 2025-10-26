@@ -650,6 +650,39 @@ function ResultsPageContent() {
                   ))}
                 </div>
 
+{/* Trust bar - subtle, supporting evidence */}
+<div className="flex flex-col items-center justify-center mt-12 mb-16">
+  
+  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-400 mb-2">
+    Evidence-led guidance
+  </p>
+  
+  <div className="flex items-center gap-7 ml-6">
+    <Image 
+      src="/images/nhs-logo.png" 
+      alt="NHS" 
+      width={70} 
+      height={25} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/harvard-health-logo.png" 
+      alt="Harvard Health" 
+      width={75} 
+      height={32} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/world-health-organization-logo.png" 
+      alt="World Health Organization" 
+      width={100} 
+      height={30} 
+      className="object-contain filter grayscale opacity-40" 
+    />
+  </div>
+  
+</div>
+
                 <div className="mt-12 text-center">
                   <button
                     onClick={() => setShowEnergyAdvanced(!showEnergyAdvanced)}
@@ -706,6 +739,39 @@ function ResultsPageContent() {
                   ))}
                 </div>
 
+{/* Trust bar - subtle, supporting evidence */}
+<div className="flex flex-col items-center justify-center mt-12 mb-16">
+  
+  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-400 mb-2">
+    Evidence-led guidance
+  </p>
+  
+  <div className="flex items-center gap-7 ml-6">
+    <Image 
+      src="/images/nhs-logo.png" 
+      alt="NHS" 
+      width={70} 
+      height={25} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/harvard-health-logo.png" 
+      alt="Harvard Health" 
+      width={75} 
+      height={32} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/world-health-organization-logo.png" 
+      alt="World Health Organization" 
+      width={100} 
+      height={30} 
+      className="object-contain filter grayscale opacity-40" 
+    />
+  </div>
+  
+</div>
+
                 <div className="mt-12 text-center">
                   <button
                     onClick={() => setShowMindAdvanced(!showMindAdvanced)}
@@ -759,6 +825,39 @@ function ResultsPageContent() {
             />
           ))}
         </div>
+
+{/* Trust bar - subtle, supporting evidence */}
+<div className="flex flex-col items-center justify-center mt-12 mb-16">
+  
+  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-400 mb-2">
+    Evidence-led guidance
+  </p>
+  
+  <div className="flex items-center gap-7 ml-6">
+    <Image 
+      src="/images/nhs-logo.png" 
+      alt="NHS" 
+      width={70} 
+      height={25} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/harvard-health-logo.png" 
+      alt="Harvard Health" 
+      width={75} 
+      height={32} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/world-health-organization-logo.png" 
+      alt="World Health Organization" 
+      width={100} 
+      height={30} 
+      className="object-contain filter grayscale opacity-40" 
+    />
+  </div>
+  
+</div>
 
                 <div className="mt-12 text-center">
                   <button
@@ -814,6 +913,39 @@ function ResultsPageContent() {
             />
           ))}
         </div>
+
+{/* Trust bar - subtle, supporting evidence */}
+<div className="flex flex-col items-center justify-center mt-12 mb-16">
+  
+  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-400 mb-2">
+    Evidence-led guidance
+  </p>
+  
+  <div className="flex items-center gap-7 ml-6">
+    <Image 
+      src="/images/nhs-logo.png" 
+      alt="NHS" 
+      width={70} 
+      height={25} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/harvard-health-logo.png" 
+      alt="Harvard Health" 
+      width={75} 
+      height={32} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/world-health-organization-logo.png" 
+      alt="World Health Organization" 
+      width={100} 
+      height={30} 
+      className="object-contain filter grayscale opacity-40" 
+    />
+  </div>
+  
+</div>
 
 <div className="mt-12 text-center">
   <button
@@ -871,6 +1003,48 @@ function ResultsPageContent() {
           ))}
         </div>
 
+{/* Trust bar - subtle, supporting evidence */}
+<div className="flex flex-col items-center justify-center mt-12 mb-16">
+  
+  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-400 mb-2">
+    Evidence-led guidance
+  </p>
+  
+  <div className="flex items-center gap-7 ml-6">
+    <Image 
+      src="/images/nhs-logo.png" 
+      alt="NHS" 
+      width={70} 
+      height={25} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/harvard-health-logo.png" 
+      alt="Harvard Health" 
+      width={75} 
+      height={32} 
+      className="object-contain filter grayscale opacity-35" 
+    />
+    <Image 
+      src="/images/world-health-organization-logo.png" 
+      alt="World Health Organization" 
+      width={100} 
+      height={30} 
+      className="object-contain filter grayscale opacity-40" 
+    />
+  </div>
+  
+</div>
+
+<div className="mt-12 text-center">
+  <button
+    onClick={() => setShowCalmAdvanced(!showCalmAdvanced)}
+    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-teal-700 hover:bg-teal-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
+  >
+    {showCalmAdvanced ? 'Show less' : 'Advanced results coming soon'}
+  </button>
+</div>
+
 
       </div>
     </div>
@@ -880,7 +1054,7 @@ function ResultsPageContent() {
 
 
 {/* ---------- WELLNESS (conditional) ---------- */}
-javascript{showWellness && (
+{showWellness && (
   <section
     className="relative py-12 lg:py-16"
     style={{
@@ -926,7 +1100,6 @@ javascript{showWellness && (
   ))}
 </div>
 
-{/* Trust bar - subtle, supporting evidence */}
 {/* Trust bar - subtle, supporting evidence */}
 <div className="flex flex-col items-center justify-center mt-12 mb-16">
   
