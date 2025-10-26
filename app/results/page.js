@@ -927,33 +927,34 @@ javascript{showWellness && (
 </div>
 
 {/* Trust bar - subtle, supporting evidence */}
+{/* Trust bar - subtle, supporting evidence */}
 <div className="flex flex-col items-center justify-center mt-12 mb-16">
   
-  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-500 mb-3">
-    Evidence-led guidance from
+  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-400 mb-2">
+    Evidence-led guidance
   </p>
   
-  <div className="flex items-center gap-6">
+  <div className="flex items-center gap-7 ml-6">
     <Image 
       src="/images/nhs-logo.png" 
       alt="NHS" 
       width={70} 
       height={25} 
-      className="object-contain filter grayscale opacity-30" 
+      className="object-contain filter grayscale opacity-35" 
     />
     <Image 
       src="/images/harvard-health-logo.png" 
       alt="Harvard Health" 
-      width={70} 
+      width={75} 
       height={32} 
-      className="object-contain filter grayscale opacity-30" 
+      className="object-contain filter grayscale opacity-35" 
     />
     <Image 
       src="/images/world-health-organization-logo.png" 
       alt="World Health Organization" 
-      width={95} 
+      width={100} 
       height={30} 
-      className="object-contain filter grayscale opacity-30" 
+      className="object-contain filter grayscale opacity-40" 
     />
   </div>
   
