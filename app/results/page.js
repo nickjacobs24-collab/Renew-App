@@ -826,9 +826,24 @@ function ResultsPageContent() {
           ))}
         </div>
 
-{/* Trust bar - subtle, supporting evidence */}
-<div className="flex flex-col items-center justify-center mt-12 mb-16">
-  
+{/* CTA Block - FIRST */}
+<div className="mt-12 text-center">
+  <p className="text-gray-600 mb-5">
+    Not focused on one goal? Check out four foundational supplements that benefit everyone.
+  </p>
+  <button
+    onClick={() => window.location.href = '/results/essentials'}
+    className="mx-auto inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black hover:bg-gray-800 text-white shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 uppercase tracking-wider text-sm"
+  >
+    Start with the essentials
+    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>
+
+{/* Trust bar - SECOND (moved below CTA) */}
+<div className="flex flex-col items-center justify-center mt-8 mb-16">
   <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-400 mb-2">
     Evidence-led guidance
   </p>
@@ -856,18 +871,7 @@ function ResultsPageContent() {
       className="object-contain filter grayscale opacity-40" 
     />
   </div>
-  
 </div>
-
-                <div className="mt-12 text-center">
-                  <button
-                    onClick={() => setShowSleepAdvanced(!showSleepAdvanced)}
-                    className="mx-auto mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold bg-blue-700 hover:bg-blue-800 text-white shadow-md hover:shadow-lg transition-all duration-300"
-                  >
-                    {showSleepAdvanced ? 'Show less' : 'Advanced results coming soon'}
-                    
-                  </button>
-                </div>
               </div>
             </div>
           </section>
