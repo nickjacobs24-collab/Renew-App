@@ -664,7 +664,7 @@ function ResultsPageContent() {
           </p>
           
           <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-            Start with four essential supplements that benefit everyone.
+            Start with four essentials that benefit everyone.
           </p>
           
           <button
@@ -781,7 +781,7 @@ function ResultsPageContent() {
           </p>
           
           <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-            Start with four essential supplements that benefit everyone.
+            Start with four essentials that benefit everyone.
           </p>
           
           <button
@@ -898,7 +898,7 @@ function ResultsPageContent() {
       
       {/* Line 2: Normal font */}
       <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-        Start with four essential supplements that benefit everyone.
+        Start with four essentials that benefit everyone.
       </p>
       
       <button
@@ -1014,7 +1014,7 @@ function ResultsPageContent() {
           </p>
           
           <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-            Start with four essential supplements that benefit everyone.
+            Start with four essentials that benefit everyone.
           </p>
           
           <button
@@ -1129,7 +1129,7 @@ function ResultsPageContent() {
           </p>
           
           <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-            Start with four essential supplements that benefit everyone.
+            Start with four essentials that benefit everyone.
           </p>
           
           <button
@@ -1252,7 +1252,7 @@ function ResultsPageContent() {
           </p>
           
           <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-            Start with four essential supplements that benefit everyone.
+            Start with four essentials that benefit everyone.
           </p>
           
           <button
