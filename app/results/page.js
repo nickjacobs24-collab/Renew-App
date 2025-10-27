@@ -786,96 +786,123 @@ function ResultsPageContent() {
           </section>
         )}
 
-        {/* ---------- SLEEP (conditional) ---------- */}
+{/* ---------- SLEEP (conditional) ---------- */}
 {showSleep && (
-  <section
-    className="relative py-12 lg:py-16"
-    style={{
-      background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 70, 229, ${mindOpacity * 0.6}) 50%, rgba(79, 70, 229, ${mindOpacity}) 100%)`,
-      transition: 'background 0.3s ease'
-    }}
-  >
-    <div className="max-w-7xl mx-auto px-4 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader
-          icon={IconClock}
-          color={{ from: '#3B82F6', to: '#1E40AF' }}
-          title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>}
-          description={
-            <>
-              Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.
-            </>
-          }
-          secondParagraph={
-            <>
-              These natural supports help calm your mind for sleep, fall asleep faster, and sleep more deeply
-              <PersonalisationTail />
-            </>
-          }
-        />
+  <>
+    <section
+      className="relative py-12 lg:py-16 mb-20"
+      style={{
+        background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 70, 229, ${mindOpacity * 0.6}) 50%, rgba(79, 70, 229, ${mindOpacity}) 100%)`,
+        transition: 'background 0.3s ease'
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader
+            icon={IconClock}
+            color={{ from: '#3B82F6', to: '#1E40AF' }}
+            title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>}
+            description={
+              <>
+                Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.
+              </>
+            }
+            secondParagraph={
+              <>
+                These natural supports help calm your mind for sleep, fall asleep faster, and sleep more deeply
+                <PersonalisationTail />
+              </>
+            }
+          />
 
-        <div className="mt-16 flex flex-col space-y-8 md:space-y-10 pb-10">
-          {displayedSleepSupplements.map((supplement, index) => (
-            <SupplementCard
-              key={supplement.id}
-              supplement={supplement}
-              index={index}
-              category="Sleep"
-              categoryColor="#1E40AF"
-            />
-          ))}
+          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+            {displayedSleepSupplements.map((supplement, index) => (
+              <SupplementCard
+                key={supplement.id}
+                supplement={supplement}
+                index={index}
+                category="Sleep"
+                categoryColor="#1E40AF"
+              />
+            ))}
+          </div>
         </div>
+      </div>
+    </section>
 
-{/* CTA Block - FIRST */}
-<div className="mt-12 text-center">
-  <p className="text-gray-600 mb-5">
-    Not focused on one goal? Check out four foundational supplements that benefit everyone.
-  </p>
-  <button
-    onClick={() => window.location.href = '/results/essentials'}
-    className="mx-auto inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black hover:bg-gray-800 text-white shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 uppercase tracking-wider text-sm"
-  >
-    Start with the essentials
-    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-    </svg>
-  </button>
-</div>
-
-{/* Trust bar - SECOND (moved below CTA) */}
-<div className="flex flex-col items-center justify-center mt-8 mb-16">
-  <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-400 mb-2">
-    Evidence-led guidance
-  </p>
-  
-  <div className="flex items-center gap-7 ml-6">
-    <Image 
-      src="/images/nhs-logo.png" 
-      alt="NHS" 
-      width={70} 
-      height={25} 
-      className="object-contain filter grayscale opacity-35" 
-    />
-    <Image 
-      src="/images/harvard-health-logo.png" 
-      alt="Harvard Health" 
-      width={75} 
-      height={32} 
-      className="object-contain filter grayscale opacity-35" 
-    />
-    <Image 
-      src="/images/world-health-organization-logo.png" 
-      alt="World Health Organization" 
-      width={100} 
-      height={30} 
-      className="object-contain filter grayscale opacity-40" 
-    />
+{/* CTA Block - White background (final version) */}
+<section className="bg-white pt-6 pb-20">
+  <div className="max-w-7xl mx-auto px-4 lg:px-8">
+    <div className="max-w-6xl mx-auto text-center">
+      
+      {/* Line 1: Bold, larger */}
+      <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+        Not focused on one goal?
+      </p>
+      
+      {/* Line 2: Normal font */}
+      <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+        Start with four essential supplements that benefit everyone.
+      </p>
+      
+      <button
+        onClick={() => window.location.href = '/results/essentials'}
+        className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+      >
+        Start with the essentials
+        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      
+    </div>
   </div>
-</div>
-              </div>
+</section>
+
+    {/* Trust Block - Slightly darker grey background (2-3% darker) */}
+    <section className="bg-[#F3F3F4] pt-10 pb-16">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Trust bar */}
+          <div className="flex flex-col items-center justify-center">
+            <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700 mb-2">
+              Evidence-led guidance
+            </p>
+            
+            <div className="flex items-center gap-7 ml-6">
+              <Image 
+                src="/images/nhs-logo.png" 
+                alt="NHS" 
+                width={70} 
+                height={25} 
+                className="object-contain filter grayscale opacity-35" 
+              />
+              <Image 
+                src="/images/harvard-health-logo.png" 
+                alt="Harvard Health" 
+                width={75} 
+                height={32} 
+                className="object-contain filter grayscale opacity-35" 
+              />
+              <Image 
+                src="/images/world-health-organization-logo.png" 
+                alt="World Health Organization" 
+                width={100} 
+                height={30} 
+                className="object-contain filter grayscale opacity-40" 
+              />
             </div>
-          </section>
-        )}
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    {/* 80px spacing buffer before Immunity section */}
+    <div className="h-20"></div>
+  </>
+)}
 
        {/* ---------- CALM (conditional) ---------- */}
 {showCalm && (
