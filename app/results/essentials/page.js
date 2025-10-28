@@ -2,38 +2,69 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { ArrowLeft, Sparkles } from 'lucide-react';
+import { ArrowLeft, Sparkles, Heart, Brain, Activity, Shield, Sun, Bone, Moon, Waves, Zap, Target, Flame } from 'lucide-react';
+import EssentialsOmega3 from './modals/EssentialsOmega3';
+import EssentialsVitaminD from './modals/EssentialsVitaminD';
+import EssentialsMagnesium from './modals/EssentialsMagnesium';
+import EssentialsVitaminB from './modals/EssentialsVitaminB';
+
+// Reusable Benefit Tag Component
+const BenefitTag = ({ icon: Icon, children }) => (
+  <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100/70 px-3 py-1.5 text-[13px] font-medium text-neutral-800 border border-neutral-300 shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
+    <Icon className="w-4 h-4 stroke-[1.75] text-neutral-700" />
+    {children}
+  </span>
+);
 
 // HARDCODED ESSENTIALS SUPPLEMENTS - Universal supplements for everyone
 const essentialsSupplements = [
   {
     id: 'EssentialsOmega3',
     name: 'Omega-3',
-    benefitStatement: 'Keeps your heart and mind healthy',
-    stat: 'Hard to get enough from food alone',
-    image: '/images/omega-3-essentials.jpg',
-    isPriority: true
+    role: 'HEART & MIND',
+    benefits: [
+      { icon: Heart, text: 'Heart health' },
+      { icon: Brain, text: 'Focus' },
+      { icon: Activity, text: 'Movement' }
+    ],
+    burningPlatform: 'Your body finds it hard to get enough from food alone.',
+    image: '/images/omega3-essentials.jpg',
   },
   {
     id: 'EssentialsVitaminD',
     name: 'Vitamin D',
-    benefitStatement: 'Keeps your bones and immunity strong',
-    stat: 'Half of adults do not get enough',
-    image: '/images/vitamin-d-essentials.jpg'
+    role: 'DAILY PROTECTION',
+    benefits: [
+      { icon: Shield, text: 'Immunity' },
+      { icon: Sun, text: 'Mood' },
+      { icon: Bone, text: 'Bone health' }
+    ],
+    burningPlatform: 'Your body can’t make it without sunlight.',
+    image: '/images/vitamind-essentials.jpg'
   },
   {
     id: 'EssentialsMagnesium',
-    name: 'Magnesium',
-    benefitStatement: 'Supports muscle and nerve function',
-    stat: 'Hard to get enough from diet alone',
+    name: 'Magnesium Glycinate',
+    role: 'REST & RECOVERY',
+    benefits: [
+      { icon: Moon, text: 'Sleep' },
+      { icon: Waves, text: 'Calm' },
+      { icon: Activity, text: 'Stress' }
+    ],
+    burningPlatform: 'Your body uses it for hundreds of processes daily.',
     image: '/images/magnesium-essentials.jpg'
   },
   {
     id: 'EssentialsVitaminB',
-    name: 'Vitamin B',
-    benefitStatement: 'Turns food into all-day energy',
-    stat: 'Your body can\'t store it - needs daily top ups',
-    image: '/images/vitamin-b-essentials.jpg'
+    name: 'Vitamin B-Complex',
+    role: 'DAILY PERFORMANCE',
+    benefits: [
+      { icon: Zap, text: 'Energy' },
+      { icon: Target, text: 'Focus' },
+      { icon: Flame, text: 'Metabolism' }
+    ],
+    burningPlatform: 'Your body can’t store it — it needs daily top-ups.',
+    image: '/images/vitaminb-essentials.jpg'
   }
 ];
 
@@ -92,37 +123,15 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
   }, [showModal]);
 
   const getImageClasses = () => {
-    switch(supplement.id) {
-      case 'EssentialsVitaminB':
-        return 'filter brightness-105 saturate-90 contrast-95';
-      case 'EssentialsOmega3':
-        return 'filter brightness-105 saturate-85 contrast-95';
-      case 'EssentialsMagnesium':
-        return 'filter brightness-105 saturate-95 contrast-95';
-      case 'EssentialsVitaminD':
-        return 'filter brightness-105 saturate-90 contrast-95';
-      default:
-        return '';
-    }
+    return 'brightness-105 saturate-90 contrast-95';
   };
 
   const getOverlayClasses = () => {
-    switch(supplement.id) {
-      case 'EssentialsVitaminB':
-        return 'bg-gradient-to-t from-amber-50/25 via-white/10 to-transparent';
-      case 'EssentialsOmega3':
-        return 'bg-gradient-to-t from-blue-50/30 via-white/15 to-transparent';
-      case 'EssentialsMagnesium':
-        return 'bg-gradient-to-t from-white/35 via-white/15 to-transparent';
-      case 'EssentialsVitaminD':
-        return 'bg-gradient-to-t from-amber-50/20 via-white/10 to-transparent';
-      default:
-        return 'bg-gradient-to-t from-white/35 via-white/15 to-transparent';
-    }
+    return 'bg-gradient-to-t from-white/55 via-white/25 to-transparent';
   };
 
   const getTextTint = () => {
-    return 'text-[#2563eb]/80'; // Essentials gets PRIMARY Renew blue tint - matches icon
+    return 'text-[#2563eb]'; // Renew Blue - matches the Essentials headline gradient
   };
 
   return (
@@ -144,21 +153,33 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
 
           <div className={`absolute inset-0 pointer-events-none ${getOverlayClasses()}`}></div>
 
-          <div className="relative z-20 flex h-[320px] items-center p-5 md:p-8">
-            <div className="relative ml-auto w-full md:w-[55%] bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-7 shadow-lg ring-1 ring-black/5">
-              {supplement.isPriority && (
-                <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
-                  TRY THIS FIRST
-                </div>
-              )}
-              <div className={`text-[11px] tracking-wide uppercase font-semibold ${getTextTint()}`}>{category}</div>
-              <h3 className="mt-1 text-[20px] md:text-[22px] font-semibold text-gray-900 tracking-tight">{supplement.name}</h3>
-              <p className="mt-1 text-[15px] text-gray-800 leading-relaxed">{supplement.benefitStatement || 'Learn more below'}</p>
-              <p className="mt-1 text-sm text-gray-600 font-medium">{supplement.stat}</p>
+          <div className="relative z-20 flex min-h-[240px] md:min-h-[260px] items-end p-7 md:p">
+            <div className="relative w-full md:w-[55%] md:ml-auto bg-white/90 backdrop-blur-sm rounded-xl shadow-
+            [0_8px_30px_rgba(0,0,0,0.06)] p-6 md:p-9 pb-7 md:pb-7">
+              <div className="text-[22px] md:text-[24px] font-bold tracking-tight text-neutral-900">
+                {supplement.name}
+              </div>
+
+              <div className="text-[13px] font-medium uppercase tracking-wide text-neutral-700 mt-2">
+                {supplement.role}
+              </div>
+
+              <div className="flex gap-2 mt-5 flex-wrap">
+                {supplement.benefits.map((benefit, idx) => (
+                  <BenefitTag key={idx} icon={benefit.icon}>
+                    {benefit.text}
+                  </BenefitTag>
+                ))}
+              </div>
+
+              <div className="mt-5 text-[15px] leading-relaxed text-neutral-600 mb-1">
+                {supplement.burningPlatform}
+              </div>
+
               <button
                 type="button"
                 onClick={() => setShowModal(true)}
-                className={`mt-3 inline-flex items-center gap-1.5 text-sm font-semibold ${getTextTint()} hover:underline transition-colors`}
+                className="mt-3 inline-block text-[15px] font-medium text-blue-600 hover:text-blue-700 underline-offset-2 hover:underline transition-colors"
               >
                 Learn more
               </button>
@@ -166,20 +187,18 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
           </div>
         </div>
         
-        {/* Modal placeholders - you'll add these later */}
-        {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-            <div className="bg-white rounded-2xl p-8 max-w-2xl w-full">
-              <h2 className="text-2xl font-bold mb-4">{supplement.name}</h2>
-              <p className="text-gray-600 mb-6">Modal content for {supplement.name} coming soon...</p>
-              <button
-                onClick={() => setShowModal(false)}
-                className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800"
-              >
-                Close
-              </button>
-            </div>
-          </div>
+        {/* Modals */}
+        {showModal && supplement.id === 'EssentialsOmega3' && (
+          <EssentialsOmega3 onClose={() => setShowModal(false)} />
+        )}
+        {showModal && supplement.id === 'EssentialsVitaminD' && (
+          <EssentialsVitaminD onClose={() => setShowModal(false)} />
+        )}
+        {showModal && supplement.id === 'EssentialsMagnesium' && (
+          <EssentialsMagnesium onClose={() => setShowModal(false)} />
+        )}
+        {showModal && supplement.id === 'EssentialsVitaminB' && (
+          <EssentialsVitaminB onClose={() => setShowModal(false)} />
         )}
       </div>      
     </>
@@ -223,7 +242,7 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
         {title}
       </h1>
 
-      <p className={`text-2xl md:text-3xl font-medium text-gray-900 leading-tight pr-12 lg:pr-20 whitespace-nowrap transition-all duration-1000 ${visibleElements.description ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <p className={`text-xl md:text-2xl font-semibold text-gray-900 leading-tight pr-12 lg:pr-20 whitespace-nowrap transition-all duration-1000 ${visibleElements.description ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {description}
       </p>
 
@@ -340,23 +359,23 @@ export default function EssentialsPage() {
                   <Image 
                     src="/images/nhs-logo.png" 
                     alt="NHS" 
-                    width={70} 
+                    width={90} 
                     height={25} 
-                    className="object-contain filter grayscale opacity-35" 
+                    className="object-contain filter grayscale opacity-25" 
                   />
                   <Image 
                     src="/images/harvard-health-logo.png" 
                     alt="Harvard Health" 
-                    width={75} 
+                    width={95} 
                     height={32} 
-                    className="object-contain filter grayscale opacity-35" 
+                    className="object-contain filter grayscale opacity-30" 
                   />
                   <Image 
                     src="/images/world-health-organization-logo.png" 
                     alt="World Health Organization" 
-                    width={100} 
+                    width={125} 
                     height={30} 
-                    className="object-contain filter grayscale opacity-40" 
+                    className="object-contain filter grayscale opacity-35" 
                   />
                 </div>
               </div>
@@ -371,11 +390,3 @@ export default function EssentialsPage() {
     </div>
   );
 }
-
-
-
-
-
-
-
-

@@ -140,7 +140,7 @@ const immunitySupplements = [
   id: 'ImmVitaminD',
   name: 'Vitamin D',
   benefitStatement: 'Builds your body’s immune defences',
-  stat: "Half of adults do not get enough",
+  stat: "The sunshine vitamin your body can’t make without sun",
   image: '/images/zinc-immunity.jpg',
   isPriority: true
   },
@@ -174,7 +174,7 @@ const wellnessSupplements = [
     id: 'WellnessVitaminD',
     name: 'Vitamin D',
     benefitStatement: 'Keeps your bones and immunity strong',
-    stat: 'Half of adults do not get enough',
+    stat: 'The sunshine vitamin your body can’t make without sun',
     image: '/images/vitamin-d-welllness.jpg'
   },
   {
