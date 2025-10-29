@@ -60,13 +60,13 @@ export default function EssentialsVitaminB({ onClose }) {
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-[#2563eb] to-[#0f2554] bg-clip-text text-transparent">
-              Helps your body turn food into energy
+              Helps your body create energy
             </span>
           </p>
 
           <div className="max-w-3xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
-              Your body can't store B vitamins well.
+              Your body uses B vitamins fast - and can't store them.
             </span>
             <br />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
@@ -82,9 +82,9 @@ export default function EssentialsVitaminB({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Fewer energy dips</li>
-                <li>• Higher daily energy</li>
-                <li>• Stay mentally sharp</li>
+                <li>• Increases daily energy</li>
+                <li>• Improves mental clarity</li>
+                <li>• Supports metabolism</li>
               </ul>
             </div>
 

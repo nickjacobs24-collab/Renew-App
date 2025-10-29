@@ -58,9 +58,9 @@ export default function VitaminD({ onClose }) {
             WELLNESS ESSENTIALS
           </p>
 
-          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
-            <span className="bg-gradient-to-r from-orange-900 via-amber-800 to-orange-700 bg-clip-text text-transparent">
-              Essential support for whole-body wellness
+          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-5xl mx-auto whitespace-nowrap" style={{ marginBottom: '20px' }}>
+                        <span className="bg-gradient-to-r from-[#2563eb] to-[#0f2554] bg-clip-text text-transparent">
+              Daily protection for immunity, mood and bones
             </span>
           </p>
 
@@ -70,7 +70,7 @@ export default function VitaminD({ onClose }) {
             </span>
             <br />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
-              Most people don't get enough. Daily top-ups support stronger bones, muscles, immunity.
+              Most people don't get enough. Daily top-ups help strengthen immunity, mood and bones
             </span>
           </div>
 
@@ -78,9 +78,9 @@ export default function VitaminD({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Keeps bones strong</li>
-                <li>• Helps muscles work well</li>
-                <li>• Supports immune health</li>
+                <li>• Supports immune health </li>
+                <li>• Helps balance mood </li>
+                <li>• Keeps bones strong </li>
               </ul>
             </div>
 

@@ -60,13 +60,13 @@ export default function EssentialsMagnesium({ onClose }) {
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-[#2563eb] to-[#0f2554] bg-clip-text text-transparent">
-              Helps your body relax and stay calm
+              Helps your mind and body relax
             </span>
           </p>
 
           <div className="max-w-2xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
-              Magnesium helps muscles relax and keep mood steady.
+              Magnesium helps with relaxation and can support natural sleep.
             </span>
             <br />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
@@ -78,9 +78,9 @@ export default function EssentialsMagnesium({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Relieves physical tension</li>
+                <li>• Supports sleep</li>
                 <li>• Promotes calmer mood</li>
-                <li>• Supports relaxation</li>
+                <li>• Relaxes muscles</li>
               </ul>
             </div>
 

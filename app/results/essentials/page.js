@@ -44,7 +44,7 @@ const essentialsSupplements = [
   },
   {
     id: 'EssentialsMagnesium',
-    name: 'Magnesium Glycinate',
+    name: 'Magnesium',
     role: 'REST & RECOVERY',
     benefits: [
       { icon: Moon, text: 'Sleep' },
@@ -56,7 +56,7 @@ const essentialsSupplements = [
   },
   {
     id: 'EssentialsVitaminB',
-    name: 'Vitamin B-Complex',
+    name: 'Vitamin B',
     role: 'DAILY PERFORMANCE',
     benefits: [
       { icon: Zap, text: 'Energy' },
@@ -160,11 +160,11 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
                 {supplement.name}
               </div>
 
-              <div className="text-[13px] font-medium uppercase tracking-wide text-neutral-700 mt-2">
+              <div className="text-[14px] font-medium uppercase tracking-wider text-neutral-700 mt-2">
                 {supplement.role}
               </div>
 
-              <div className="flex gap-2 mt-5 flex-wrap">
+              <div className="flex gap-1.5 mt-3 flex-wrap">
                 {supplement.benefits.map((benefit, idx) => (
                   <BenefitTag key={idx} icon={benefit.icon}>
                     {benefit.text}
@@ -172,14 +172,14 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
                 ))}
               </div>
 
-              <div className="mt-5 text-[15px] leading-relaxed text-neutral-600 mb-1">
+              <div className="mt-6 text-[16px] leading-relaxed text-neutral-600 mb-1">
                 {supplement.burningPlatform}
               </div>
 
               <button
                 type="button"
                 onClick={() => setShowModal(true)}
-                className="mt-3 inline-block text-[15px] font-medium text-blue-600 hover:text-blue-700 underline-offset-2 hover:underline transition-colors"
+                className="mt-4 inline-block text-[17px] font-medium text-blue-600 hover:text-blue-700 underline-offset-2 hover:underline transition-colors"
               >
                 Learn more
               </button>
@@ -359,21 +359,21 @@ export default function EssentialsPage() {
                   <Image 
                     src="/images/nhs-logo.png" 
                     alt="NHS" 
-                    width={90} 
+                    width={75} 
                     height={25} 
                     className="object-contain filter grayscale opacity-25" 
                   />
                   <Image 
                     src="/images/harvard-health-logo.png" 
                     alt="Harvard Health" 
-                    width={95} 
+                    width={75} 
                     height={32} 
                     className="object-contain filter grayscale opacity-30" 
                   />
                   <Image 
                     src="/images/world-health-organization-logo.png" 
                     alt="World Health Organization" 
-                    width={125} 
+                    width={100} 
                     height={30} 
                     className="object-contain filter grayscale opacity-35" 
                   />

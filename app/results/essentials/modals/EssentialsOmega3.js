@@ -60,27 +60,31 @@ export default function EssentialsOmega3({ onClose }) {
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-[#2563eb] to-[#0f2554] bg-clip-text text-transparent">
-              The good fats your body can't make
+              Protection for heart, mind and movement
             </span>
           </p>
 
-          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '900px', lineHeight: '1.7', marginBottom: '36px' }}>
-            <span style={{ fontWeight: 600, color: '#1F2937' }}>
-              Not all fats are bad — omega-3s are essential fats your body can't make on its own.
-            </span>
-            <br />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
-              They support your heart, joints, and brain, yet most diets fall short. Daily omega-3 helps you feel and perform at your best.
-            </span>
-          </div>
+<div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '900px', lineHeight: '1.7', marginBottom: '36px' }}>
+  <span style={{ fontWeight: 600, color: '#1F2937' }}>
+    Not all fats are bad — omega-3s are essential fats your body can't make on its own.
+  </span>
+  <br />
+  <span style={{ fontWeight: 400, color: '#4B5563' }}>
+    They support your heart, brain and joints yet most diets fall short.
+  </span>
+  <br />
+  <span style={{ fontWeight: 400, color: '#4B5563' }}>
+    Daily omega-3 helps you feel and perform at your best.
+  </span>
+</div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ marginBottom: '30px' }}>
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
                 <li>• Supports heart health</li>
+                <li>• Improves mind performance</li>
                 <li>• Keeps joints comfortable</li>
-                <li>• Boosts brain performance</li>
               </ul>
             </div>
 
