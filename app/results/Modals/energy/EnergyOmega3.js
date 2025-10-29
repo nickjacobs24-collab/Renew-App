@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function CoQ10({ onClose }) {
+export default function Omega3({ onClose }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function CoQ10({ onClose }) {
       
       <div className="flex min-h-screen items-center justify-center p-4">
         <div
-          className="relative rounded-2xl w-full px-20 md:px-32 py-8 md:py-10 z-10"
+          className="relative rounded-2xl w-full px-16 md:px-24 py-8 md:py-10 z-10"
           style={{
             maxWidth: '1350px',
             boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
@@ -55,22 +55,22 @@ export default function CoQ10({ onClose }) {
           </button>
 
           <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
-            ENERGY ESSENTIALS - TEST VERSION
+            ENERGY & FOCUS ESSENTIALS
           </p>
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-orange-700 to-orange-500 bg-clip-text text-transparent">
-              Keeps your body's energy topped up
+              Keeps your mind clear and focused
             </span>
           </p>
 
-          <div className="max-w-2xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="max-w-3xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
-              Your natural supply of CoQ10 can run low with everything you do in a day.
+              Your brain needs omega-3 to stay healthy, focused, and clear.
             </span>
             <br />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
-              When it drops, tiredness builds. Raising your levels keeps daily energy higher, so you can do more with lasting energy.
+              But your body can't make it, and most diets don't provide enough. Daily omega-3 gives your mind what it needs to think clearly and remember better.
             </span>
           </div>
 
@@ -78,24 +78,24 @@ export default function CoQ10({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Maintain daily energy</li>
-                <li>• Support stamina</li>
-                <li>• Reduce tiredness</li>
+                <li>• Improves focus</li>
+                <li>• Supports memory</li>
+                <li>• Promotes long-term brain health</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• First lift in weeks</li>
-                <li>• Strong results with daily use</li>
+                <li>• Builds gradually over weeks</li>
+                <li>• Strong results with steady use</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Generally well tolerated</li>
+                <li>• Generally well-tolerated</li>
               </ul>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function CoQ10({ onClose }) {
                     clipRule="evenodd"
                   />
                 </svg>
-                Naturally produced in every cell of your body — supplemented and trusted for over 40 years with proven results.
+                One of the most widely taken supplements worldwide — trusted by millions for over 60 years.
                 <span className="inline-block group" style={{ marginLeft: '8px', top: '-6px', position: 'relative' }}>
                   <span
                     className="inline-flex items-center justify-center rounded-full text-white cursor-pointer transition-all duration-150 ease-out hover:scale-105"
@@ -135,10 +135,10 @@ export default function CoQ10({ onClose }) {
                   <span
                     className="absolute text-white rounded-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity ease-out whitespace-normal"
                     style={{
-                      width: '280px',
+                      width: '330px',
                       bottom: '32px',
                       left: '0',
-                      padding: '8px 12px',
+                      padding: '4px 8px',
                       backgroundColor: '#111111',
                       fontSize: '13px',
                       lineHeight: '1.35',
@@ -146,7 +146,7 @@ export default function CoQ10({ onClose }) {
                       transitionDuration: '150ms'
                     }}
                   >
-                    CoQ10 has been used safely for over 40 years to support heart health and cellular energy (Mayo Clinic, 2024).
+                    Omega-3 is among the top five most commonly used supplements globally and supports brain health (World Health Organisation, 2022–23).
                   </span>
                 </span>
               </p>
@@ -178,22 +178,22 @@ export default function CoQ10({ onClose }) {
                       zIndex: 50
                     }}
                   >
-                    CoQ10 (Ubiquinol) — your body uses it right away so you feel results faster.
+                    Omega-3 (EPA & DHA) — your body absorbs these forms easily so you get real results.
                   </span>
                 </div>
               </div>
               
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/supplements/co-enzyme-q10/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/supplements/omega-fish-oils/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
                 </a>
-                <a href="https://uk.iherb.com/c/coenzyme-q10-ubiquinone" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://uk.iherb.com/c/omega-3-fish-oil" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
                 </a>
-                <a href="https://healf.com/en-uk/collections/coq10-supplements" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://healf.com/en-uk/collections/omega-3" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
                 </a>
-                <a href="https://www.amazon.co.uk/s?k=coq+10" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.amazon.co.uk/s?k=omega+3" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
                 </a>
               </div>

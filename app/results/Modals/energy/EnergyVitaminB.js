@@ -55,12 +55,12 @@ export default function VitaminB({ onClose }) {
           </button>
 
           <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
-            ENERGY ESSENTIALS
+            ENERGY & FOCUS ESSENTIALS
           </p>
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-orange-700 to-orange-500 bg-clip-text text-transparent">
-              Helps your body turn food into energy
+              Helps your body create energy
             </span>
           </p>
 

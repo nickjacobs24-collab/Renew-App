@@ -6,10 +6,7 @@ import { ArrowLeft, Sparkles, Zap, Brain, SmileIcon, HeartIcon } from 'lucide-re
 import PersonalisationTail from './PersonalisationTail';
 import EnergyVitaminB from "./Modals/energy/EnergyVitaminB";
 import EnergyCreatine from "./Modals/energy/EnergyCreatine";
-import EnergyCoQ10 from "./Modals/energy/EnergyCoQ10";
-import MindOmega3 from "./Modals/Mind/MindOmega3";
-import MindCiticoline from "./Modals/Mind/MindCiticoline";
-import MindVitaminB from "./Modals/Mind/MindVitaminB";
+import EnergyOmega3 from "./Modals/energy/EnergyOmega3";
 import SleepGlycine from "./Modals/Sleep/SleepGlycine";
 import SleepLtheanine from "./Modals/Sleep/SleepLtheanine";
 import SleepMagnesium from "./Modals/Sleep/SleepMagnesium";
@@ -19,9 +16,9 @@ import CalmGlycine from "./Modals/Calm/CalmGlycine";
 import ImmZinc from "./Modals/Immunity/ImmZinc.js";
 import ImmVitaminC from "./Modals/Immunity/ImmVitaminC";
 import ImmVitaminD from "./Modals/Immunity/ImmVitaminD";
-import WellnessVitaminD from "./Modals/Wellness/WellnessVitaminD";
-import WellnessOmega3 from "./Modals/Wellness/WellnessOmega3";
-import WellnessMultivitamins from "./Modals/Wellness/WellnessMultivitamins";
+import GuthealthPrebioticsFibre from "./Modals/Guthealth/GuthealthPrebioticsFibre";
+import GuthealthDigestiveEnzymes from "./Modals/Guthealth/GuthealthDigestiveEnzymes";
+import GuthealthProbiotics from "./Modals/Guthealth/GuthealthProbiotics";
 //
 // ---------------------------
 // DATA (unchanged)
@@ -34,49 +31,23 @@ const energySupplements = [
   id: 'EnergyVitaminB',
   name: 'Vitamin B',
   benefitStatement: 'Turns food into all-day energy',
-  stat: 'Without it, you can’t fully use food for energy',
+  stat: 'Your body can’t store it — it needs daily top-ups',
   image: '/images/vitamin-b-energy.jpg',
   isPriority: true
   },
   {
-    id: 'EnergyCreatine',
-    name: 'Creatine',
-    benefitStatement: 'Recharges energy faster',
-    stat: 'The body makes only half of what it needs',
-    image: '/images/creatine-energy.jpg'
-  },
-  {
-    id: 'EnergyCoQ10',
-    name: 'CoQ10',
-    benefitStatement: 'Helps reduce daily tiredness',
-    stat: 'Your body uses it up each day',
-    image: '/images/coq10-energy.jpg'
-  }
-];
-
-// HARDCODED MIND SUPPLEMENTS - Design phase
-const mindSupplements = [
-{
-  id: 'MindOmega3',
+  id: 'EnergyOmega3',
   name: 'Omega-3',
   benefitStatement: 'Protects long-term mind health',
   stat: 'The mind needs it, but cannot make it',
-  image: '/images/omega-3-mind.jpg',
-  isPriority: true
+  image: '/images/omega3-energy.jpg',
   },
   {
-    id: 'MindVitaminB',
-    name: 'Vitamin B',
-    benefitStatement: 'Helps sharpen your thinking',
-    stat: 'Your body can’t store it - needs daily top ups',
-    image: '/images/vitamin-b-mind.jpg'
-  },
-  {
-    id: 'MindCiticoline',
-    name: 'Citicoline',
-    benefitStatement: 'Keeps you focused longer',
-    stat: 'Hard to get enough from food alone',
-    image: '/images/citicoline-mind.jpg'
+  id: 'EnergyCreatine',
+  name: 'Creatine',
+  benefitStatement: 'Recharges energy faster',
+  stat: 'The body makes only half of what it needs',
+  image: '/images/creatine-energy.jpg'
   }
 ];
 
@@ -160,27 +131,27 @@ const immunitySupplements = [
   }
 ];
 
-// HARDCODED WELLNESS SUPPLEMENTS â€” Design phase
-const wellnessSupplements = [
-{
-  id: 'WellnessMultivitamins',
-  name: 'Multivitamins',
-  benefitStatement: 'Fills daily nutrient gaps',
-  stat: '9 out of 10 people dont get enough nutrients from food alone',
-  image: '/images/multivitamin-wellness.jpg',
-  isPriority: true
+// HARDCODED WELLNESS SUPPLEMENTS Design phase
+const gutHealthSupplements = [
+  {
+    id: 'GuthealthProbiotics',
+    name: 'Probiotics',
+    benefitStatement: 'Keeps your gut in balance',
+    stat: '9 out of 10 people don’t get enough nutrients from food alone',
+    image: '/images/multivitamin-wellness.jpg',
+    isPriority: true
   },
   {
-    id: 'WellnessVitaminD',
-    name: 'Vitamin D',
-    benefitStatement: 'Keeps your bones and immunity strong',
+    id: 'GuthealthDigestiveEnzymes',
+    name: 'Digestive Enzymes',
+    benefitStatement: 'Eases bloating and supports digestion',
     stat: 'The sunshine vitamin your body can’t make without sun',
-    image: '/images/vitamin-d-welllness.jpg'
+    image: '/images/vitamin-d-wellness.jpg'
   },
   {
-    id: 'WellnessOmega3',
-    name: 'Omega-3',
-    benefitStatement: 'Keeps your heart and mind healthy',
+    id: 'GuthealthPrebioticsFibre',
+    name: 'Prebiotics & Fibre',
+    benefitStatement: 'Helps keep you regular',
     stat: 'Hard to get enough from food alone',
     image: '/images/omega-3-wellness.jpg'
   }
@@ -322,7 +293,7 @@ const getTextTint = () => {
       if (category === 'Sleep') return 'text-blue-700/80';
       if (category === 'Calm') return 'text-teal-700/80';
       if (category === 'Immunity') return 'text-teal-700/80';
-      if (category === 'Wellness') return 'text-orange-700/80';
+      if (category === 'GutHealth') return 'text-orange-700/80';
       return 'text-gray-700/80'; // fallback
   }
 };
@@ -375,20 +346,8 @@ const getTextTint = () => {
     <EnergyCreatine onClose={() => setShowModal(false)} />
   )}
 
- {showModal && supplement.id === "EnergyCoQ10" && (
-    <EnergyCoQ10 onClose={() => setShowModal(false)} />
-  )}
-
-   {showModal && supplement.id === "MindVitaminB" && (
-    <MindVitaminB onClose={() => setShowModal(false)} />
-  )}
-
-   {showModal && supplement.id === "MindOmega3" && (
-    <MindOmega3 onClose={() => setShowModal(false)} />
-  )}
-
-     {showModal && supplement.id === "MindCiticoline" && (
-    <MindCiticoline onClose={() => setShowModal(false)} />
+ {showModal && supplement.id === "EnergyOmega3" && (
+    <EnergyOmega3 onClose={() => setShowModal(false)} />
   )}
 
        {showModal && supplement.id === "SleepGlycine" && (
@@ -426,16 +385,16 @@ const getTextTint = () => {
     <ImmZinc onClose={() => setShowModal(false)} />
   )}
 
-{showModal && supplement.id === "WellnessMultivitamins" && (
-  <WellnessMultivitamins onClose={() => setShowModal(false)} />
+{showModal && supplement.id === "GuthealthProbiotics" && (
+  <GuthealthProbiotics onClose={() => setShowModal(false)} />
 )}
 
-{showModal && supplement.id === "WellnessOmega3" && (
-  <WellnessOmega3 onClose={() => setShowModal(false)} />
+{showModal && supplement.id === "GuthealthDigestiveEnzymes" && (
+  <GuthealthDigestiveEnzymes onClose={() => setShowModal(false)} />
 )}
 
-{showModal && supplement.id === "WellnessVitaminD" && (
-  <WellnessVitaminD onClose={() => setShowModal(false)} />
+{showModal && supplement.id === "GuthealthPrebioticsFibre" && (
+  <GuthealthPrebioticsFibre onClose={() => setShowModal(false)} />
 )}
 
       </div>      
@@ -519,27 +478,24 @@ function ResultsPageContent() {
 
   // Booleans for each section
   const showEnergy = selectedGoals.includes('energy');
-  const showMind   = selectedGoals.includes('mind');
   const showSleep  = selectedGoals.includes('sleep');
   const showCalm   = selectedGoals.includes('calm');
   const showImm    = selectedGoals.includes('immunity');
-  const showWellness   = selectedGoals.includes('wellness');
+  const showGutHealth = selectedGoals.includes('guthealth');
 
   // UI state
   const [showEnergyAdvanced, setShowEnergyAdvanced] = useState(false);
-  const [showMindAdvanced, setShowMindAdvanced] = useState(false);
   const [showSleepAdvanced, setShowSleepAdvanced] = useState(false); 
   const [showImmunityAdvanced, setShowImmunityAdvanced] = useState(false);
-  const [showWellnessAdvanced, setShowWellnessAdvanced] = useState(false);
+  const [showGutHealthAdvanced, setShowGutHealthAdvanced] = useState(false);
   const [showCalmAdvanced, setShowCalmAdvanced] = useState(false);
 // NEW: sleep advanced toggle
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const displayedEnergySupplements = showEnergyAdvanced ? [...energySupplements, ...energyAdvanced] : energySupplements;
-  const displayedMindSupplements   = showMindAdvanced   ? [...mindSupplements,   ...mindAdvanced]   : mindSupplements;
   const displayedSleepSupplements  = showSleepAdvanced  ? [...SleepSupplements,  ...SleepAdvanced]  : SleepSupplements; // NEW
   const displayedImmunitySupplements = showImmunityAdvanced ? [...immunitySupplements, ...immunityAdvanced]  : immunitySupplements;
-  const displayedWellnessSupplements = showWellnessAdvanced ? [...wellnessSupplements, ...wellnessAdvanced]  : wellnessSupplements;
+  const displayedGutHealthSupplements = gutHealthSupplements;
 
   useEffect(() => {
     let ticking = false;
@@ -725,122 +681,6 @@ function ResultsPageContent() {
   </>
 )}
 
-        
-
-{/* ---------- MIND (conditional) ---------- */}
-{showMind && (
-  <>
-    <section
-      className="relative py-12 lg:py-16 mb-20"
-      style={{
-        background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(139, 92, 246, ${mindOpacity * 0.6}) 50%, rgba(139, 92, 246, ${mindOpacity}) 100%)`,
-        transition: 'background 0.3s ease'
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            icon={Brain}
-            color={{ from: '#a855f7', to: '#7c3aed' }}
-            title={<><span style={{ color: '#7c3aed' }}>Mind</span> that performs.</>}
-            description={
-              <>
-                Clear thinking <span className="font-extrabold">helps you work better, learn faster and stay focused</span>. Mental sharpness depends on mind health. Two out of three adults say they struggle with focus or memory<sup className="text-sm">2</sup>.
-              </>
-            }
-            secondParagraph={
-              <>
-                These natural supports help protect long-term mind health, sharpen thinking, and keep you focused
-                <PersonalisationTail />
-              </>
-            }
-          />
-
-          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
-            {displayedMindSupplements.map((supplement, index) => (
-              <SupplementCard
-                key={supplement.id}
-                supplement={supplement}
-                index={index}
-                category="Mind"
-                categoryColor="#7c3aed"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* CTA Block - White background */}
-    <section className="bg-white pb-22">
-      <div className="max-w-7xl mx-auto px-4 lg:px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          
-          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
-            Not focused on one goal?
-          </p>
-          
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-            Start with four essentials that benefit everyone.
-          </p>
-          
-          <button
-            onClick={() => window.location.href = '/results/essentials'}
-            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            Start with the essentials
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-        </div>
-      </div>
-    </section>
-
-    {/* Trust Block - Grey background */}
-    <section className="bg-[#F3F3F4] pt-10 pb-16">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="flex flex-col items-center justify-center">
-            <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700 mb-2">
-              Evidence-led guidance
-            </p>
-            
-            <div className="flex items-center gap-7 ml-6">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={70} 
-                height={25} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={75} 
-                height={32} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={100} 
-                height={30} 
-                className="object-contain filter grayscale opacity-40" 
-              />
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-
-    {/* 80px spacing buffer before next section */}
-    <div className="h-20"></div>
-  </>
-)}
 
 {/* ---------- SLEEP (conditional) ---------- */}
 {showSleep && (
@@ -1192,8 +1032,8 @@ function ResultsPageContent() {
 
 
 
-{/* ---------- WELLNESS (conditional) ---------- */}
-{showWellness && (
+{/* ---------- GUT HEALTH (conditional) ---------- */}
+{showGutHealth && (
   <>
     <section
       className="relative py-12 lg:py-16 mb-20"
@@ -1209,31 +1049,31 @@ function ResultsPageContent() {
             color={{ from: '#B45309', to: '#FBBF24' }}
             title={
               <>
-                <span style={{ color: '#B45309' }}>Wellness</span> that supports.
+                <span style={{ color: '#B45309' }}>Digestion</span> that eases.
               </>
             }
             description={
               <>
-                Good health is more than avoiding illness — it's about{" "}
-                <span className="font-extrabold">feeling your best each day</span>. 
-                Energy, clarity, and resilience all depend on essential nutrients, yet nine out of ten people don't get enough from food alone<sup className="text-sm">5</sup>.
+                A healthy gut does more than digest food — it{" "}
+                <span className="font-extrabold">fuels energy, mood and immunity</span>. 
+                When it's off balance, it can cause bloating, discomfot, and low energy. One in two adults experience digestive issues each year <sup className="text-sm">5</sup>.
               </>
             }
             secondParagraph={
               <>
-                These natural supports help fill nutrient gaps and support your overall health
+                These natural supports help ease discomfort, support healthy digestion, and keep your gut in balance
                 <PersonalisationTail />
               </>
             }
           />
 
           <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
-            {displayedWellnessSupplements.map((supplement, index) => (
+            {displayedGutHealthSupplements.map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
                 supplement={supplement}
                 index={index}
-                category="Wellness"
+                category="GutHealth"
                 categoryColor="#B45309"
               />
             ))}
@@ -1314,7 +1154,7 @@ function ResultsPageContent() {
 )}
 
         {/* Citations (kept at the bottom) */}
-        {(showEnergy || showMind || showSleep || showCalm || showImm || showWellness) && (
+        {(showEnergy || showSleep || showCalm || showImm || showGutHealth) && (
           <footer className="bg-gray-50 py-12 mt-20">
             <div className="max-w-6xl mx-auto px-4 lg:px-8">
               <div className="text-xs text-gray-500 space-y-1">

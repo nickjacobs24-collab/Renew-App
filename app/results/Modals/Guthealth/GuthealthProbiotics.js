@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function VitaminB({ onClose }) {
+export default function Multivitamin({ onClose }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -55,26 +55,22 @@ export default function VitaminB({ onClose }) {
           </button>
 
           <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
-            MIND ESSENTIALS
+            WELLNESS ESSENTIALS
           </p>
 
-          <p className="text-3xl md:text-4xl font-bold leading-snug text-center mx-auto" style={{ maxWidth: '950px', marginBottom: '20px' }}>
-            <span className="bg-gradient-to-r from-purple-900 via-violet-800 to-purple-600 bg-clip-text text-transparent">
-              Provides the energy your mind needs to think
+          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
+            <span className="bg-gradient-to-r from-orange-900 via-amber-800 to-orange-700 bg-clip-text text-transparent">
+              Covers your essential vitamins and minerals every day.
             </span>
           </p>
 
-          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '920px', lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '860px', lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
-              B vitamins help your brain turn food into energy for focus and memory.
+              Even with good food and habits, it's hard to get everything your body needs daily.
             </span>
             <br />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
-              But daily thinking uses them up quickly, leaving your mind foggy.
-            </span>
-            <br />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
-              Daily Vitamin B helps keep your mind energised and clear.
+              A quality multivitamin fills the gaps so that you feel supported and well everyday.
             </span>
           </div>
 
@@ -82,24 +78,24 @@ export default function VitaminB({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Provides the energy your brain needs to think</li>
-                <li>• Supports focus and recall</li>
-                <li>• Helps reduce mental fatigue</li>
+                <li>• Helps maintain daily energy</li>
+                <li>• Supports immunity</li>
+                <li>• Promotes overall health</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• First lift in days</li>
-                <li>• Strong results with daily use</li>
+                <li>• Ongoing daily support</li>
+                <li>• Benefits build with steady use</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Generally well tolerated</li>
+                <li>• Generally well-tolerated</li>
               </ul>
             </div>
           </div>
@@ -119,7 +115,7 @@ export default function VitaminB({ onClose }) {
                     clipRule="evenodd"
                   />
                 </svg>
-                Safely used for generations — one of the most widely taken vitamins worldwide.
+                The most common daily supplement worldwide — trusted foundation of health for over 80 years.
                 <span className="inline-block group" style={{ marginLeft: '8px', top: '-6px', position: 'relative' }}>
                   <span
                     className="inline-flex items-center justify-center rounded-full text-white cursor-pointer transition-all duration-150 ease-out hover:scale-105"
@@ -142,7 +138,7 @@ export default function VitaminB({ onClose }) {
                       width: '300px',
                       bottom: '32px',
                       left: '0',
-                      padding: '6px 8px',
+                      padding: '4px 8px',
                       backgroundColor: '#111111',
                       fontSize: '13px',
                       lineHeight: '1.35',
@@ -150,7 +146,7 @@ export default function VitaminB({ onClose }) {
                       transitionDuration: '150ms'
                     }}
                   >
-                    B vitamins support energy release and normal nervous-system function (NHS, 2023).
+                    Most people can benefit from a daily multivitamin to help meet nutritional needs and support overall health (Mayo Clinic, 2023).
                   </span>
                 </span>
               </p>
@@ -163,16 +159,16 @@ export default function VitaminB({ onClose }) {
                 Take me there.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/vitamins/vitamin-b/vitamin-b-complexes/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/vitamins/multivitamins/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
                 </a>
-                <a href="https://uk.iherb.com/c/vitamin-b-complex" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://uk.iherb.com/c/multivitamins" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
                 </a>
-                <a href="https://healf.com/en-uk/search?q=vitamin%20b%20complex" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://healf.com/en-uk/search?q=multivita" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
                 </a>
-                <a href="https://www.amazon.co.uk/s?k=vitamin+b+complex" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.amazon.co.uk/s?k=multivitamin" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
                 </a>
               </div>

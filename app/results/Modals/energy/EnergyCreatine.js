@@ -55,7 +55,7 @@ export default function Creatine({ onClose }) {
           </button>
 
           <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
-            ENERGY ESSENTIALS
+            ENERGY & FOCUS ESSENTIALS
           </p>
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
