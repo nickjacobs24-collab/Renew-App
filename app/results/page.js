@@ -953,7 +953,7 @@ function ResultsPageContent() {
 
           {/* Trust Banner */}
           <div className="w-screen bg-[#F3F3F4] py-4 mt-10 -mx-4 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-            <p className="text-[15px] text-gray-600 text-center font-medium">
+            <p className="text-[14px] text-gray-600 text-center font-medium">
               Independent, evidence-backed guidance — drawn from NHS, Harvard Health, and Mayo Clinic research. You can buy anywhere: Amazon, Healf, Holland & Barrett, or iHerb.
             </p>
           </div>
