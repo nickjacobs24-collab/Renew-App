@@ -24,7 +24,7 @@ const goals = [
 const otherQuestions = [
   {
     id: 2,
-    question: "When do you feel most like yourself?",
+    question: "When do you usually feel most like yourself?",
     options: [
       { id: 'morning', label: 'Morning person' },
       { id: 'afternoon', label: 'Afternoon momentum' },
@@ -34,7 +34,7 @@ const otherQuestions = [
   },
   {
     id: 3,
-    question: "Where are you starting from?",
+    question: "Where are you starting from today?",
     options: [
       { id: 'new', label: 'Totally new to this' },
       { id: 'tried', label: "I've tried a few things" },
@@ -43,7 +43,7 @@ const otherQuestions = [
   },
 {
   id: 4,
-  question: "How do you think about progress?",
+  question: "How do you like to make progress?",
   options: [
     { id: 'fast', label: 'I like noticing quick shifts' },
     { id: 'steady', label: 'I prefer steady, gradual change' },
@@ -228,31 +228,31 @@ export default function OnboardingPage() {
 
         {/* Main */}
         <main className="flex-1 flex items-start justify-center overflow-y-auto scroll-smooth px-4 py-3 pb-8">
-          <div className="w-full max-w-lg mx-auto">
+          <div className="w-full max-w-xl mx-auto">
             
-            {/* Hero */}
-            <div className="text-center mb-3">
-              <p className={`text-gray-500 text-sm font-medium mb-2 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-                Question 1 of 5
-              </p>
-              <h1 className={`font-extrabold text-gray-900 mb-1.5 leading-tight tracking-tight transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ fontSize: '1.6rem' }}>
-                What matters most to you right now?
-              </h1>
-              <p className={`text-gray-600 font-medium transition-all duration-1000 delay-300 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ fontSize: '0.9375rem' }}>
-                Select up to 2 goals
-              </p>
-            </div>
+{/* Hero */}
+<div className="text-center mb-3">
+  <p className={`text-gray-500 text-sm font-medium mb-2 transition-all duration-700 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+  }`}>
+    Question 1 of 5
+  </p>
+  <h1 className={`font-extrabold text-gray-900 mb-3 leading-tight tracking-tight transition-all duration-1000 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+  }`}
+  style={{ fontSize: '1.6rem' }}>
+    Choose what you want to improve
+  </h1>
+  <p className={`text-gray-600 font-medium transition-all duration-1000 delay-300 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+  }`}
+  style={{ fontSize: '0.9375rem' }}>
+    Pick your main goals — we'll guide you to the safest, most effective options
+  </p>
+</div>
 
             {/* Goals */}
-            <div className="space-y-2 mb-3">
+            <div className="space-y-2 mb-3 mt-6">
               {goals.map((goal, index) => {
                 const Icon = goal.icon;
                 const selected = isSelected(goal.id);
@@ -336,6 +336,13 @@ export default function OnboardingPage() {
               >
                 {!canContinue ? 'Select a goal to continue' : 'Continue'}
               </button>
+              
+              {/* Trust Bar */}
+              <div className="w-screen bg-[#F3F3F4] py-4 mt-14 -mx-4 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+                <p className="text-base text-gray-600 text-center font-medium">
+                  Independent, evidence-backed advice. We don't sell supplements.
+                </p>
+              </div>
             </div>
           </div>
         </main>
@@ -375,7 +382,7 @@ export default function OnboardingPage() {
 
       {/* Main */}
       <main className="flex-1 flex items-start justify-center overflow-y-auto scroll-smooth px-4 py-3 pb-8">
-        <div className="w-full max-w-lg mx-auto">
+        <div className="w-full max-w-xl mx-auto">
           
           {/* Question Header */}
           <div className="text-center mb-3">

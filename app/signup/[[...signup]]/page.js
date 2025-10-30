@@ -129,11 +129,16 @@ export default function SignupPage() {
                 are ready.
               </span>
             </h1>
-            <p className={`text-white/90 font-medium mt-5 mx-auto transition-all duration-1000 delay-[600ms] ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ fontSize: '0.95rem', maxWidth: '480px' }}>
-              Create a free Renew account to view your personalised results.
-            </p>
+<p className={`text-white/90 font-medium mt-3 mx-auto transition-all duration-1000 delay-[600ms] ${
+  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+}`} style={{ fontSize: '0.95rem', maxWidth: '600px' }}>
+  Renew gives you clear, independent supplement guidance — not sales pitches.
+</p>
+<p className={`text-white/80 font-normal mt-4 mx-auto transition-all duration-1000 delay-[700ms] ${
+  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+}`} style={{ fontSize: '0.9rem', maxWidth: '480px' }}>
+  Create a free account to view your personalised results.
+</p>
           </div>
 
           {/* Center the signup box within the wider container */}

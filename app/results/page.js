@@ -137,23 +137,23 @@ const gutHealthSupplements = [
     id: 'GuthealthProbiotics',
     name: 'Probiotics',
     benefitStatement: 'Keeps your gut in balance',
-    stat: '9 out of 10 people don’t get enough nutrients from food alone',
-    image: '/images/multivitamin-wellness.jpg',
+    stat: 'Your gut needs good bacteria to support immunity, mood, digestion',
+    image: '/images/probiotics-guthealth.jpg',
     isPriority: true
   },
   {
     id: 'GuthealthDigestiveEnzymes',
     name: 'Digestive Enzymes',
     benefitStatement: 'Eases bloating and supports digestion',
-    stat: 'The sunshine vitamin your body can’t make without sun',
-    image: '/images/vitamin-d-wellness.jpg'
+    stat: 'Your body makes enzymes to digest food - extra support helps it work smoothly',
+    image: '/images/digestive-enzymes-guthealth.jpg'
   },
   {
     id: 'GuthealthPrebioticsFibre',
     name: 'Prebiotics & Fibre',
     benefitStatement: 'Helps keep you regular',
-    stat: 'Hard to get enough from food alone',
-    image: '/images/omega-3-wellness.jpg'
+    stat: 'Your body relies on fibre for smooth digestion, most diets don’t provide enough',
+    image: '/images/fibre-prebiotics-guthealth.jpg'
   }
 ];
 
@@ -589,7 +589,7 @@ function ResultsPageContent() {
             }
             secondParagraph={
               <>
-                These natural supports help turn food into energy, recharge when you're low, and reduce daily tiredness
+                These supplements help turn food into energy, recharge when you're low, and reduce daily tiredness
                 <PersonalisationTail />
               </>
             }
@@ -705,7 +705,7 @@ function ResultsPageContent() {
             }
             secondParagraph={
               <>
-                These natural supports help calm your mind for sleep, fall asleep faster, and sleep more deeply
+                These supplements help calm your mind for sleep, fall asleep faster, and sleep more deeply
                 <PersonalisationTail />
               </>
             }
@@ -823,7 +823,7 @@ function ResultsPageContent() {
             }
             secondParagraph={
               <>
-                These natural supports help ease stress, quiet your mind, and relax your body
+                These supplements help ease stress, quiet your mind, and relax your body
                 <PersonalisationTail />
               </>
             }
@@ -938,7 +938,7 @@ function ResultsPageContent() {
             }
             secondParagraph={
               <>
-                These natural supports help build, maintain, and protect your defenses
+                These supplements help build, maintain, and protect your defenses
                 <PersonalisationTail />
               </>
             }
@@ -1061,7 +1061,7 @@ function ResultsPageContent() {
             }
             secondParagraph={
               <>
-                These natural supports help ease discomfort, support healthy digestion, and keep your gut in balance
+                These supplements help ease discomfort, support healthy digestion, and keep your gut in balance
                 <PersonalisationTail />
               </>
             }

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function WellnessOmega3({ onClose }) {
+export default function DigestiveEnzymes({ onClose }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -60,17 +60,17 @@ export default function WellnessOmega3({ onClose }) {
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-orange-900 via-amber-800 to-orange-700 bg-clip-text text-transparent">
-              The good fats your body can't make
+              Helps your body break down food
             </span>
           </p>
 
           <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '900px', lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
-              Not all fats are bad — omega-3s are essential fats your body can't make on its own.
+              Your body naturally makes enzymes to turn food into nutrients it can use.
             </span>
             <br />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
-              They support your heart, joints, and brain, yet most diets fall short. Daily omega-3 helps you feel and perform at your best.
+              Sometimes it needs a little extra help. Digestive enzymes give that gentle support — helping you feel lighter and more comfortable after eating.
             </span>
           </div>
 
@@ -78,24 +78,24 @@ export default function WellnessOmega3({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Supports heart health</li>
-                <li>• Keeps joints comfortable</li>
-                <li>• Boosts brain performance</li>
+                <li>• Reduces bloating and post-meal heaviness</li>
+                <li>• Helps your body absorb more nutrients from food</li>
+                <li>• Supports smoother, more comfortable digestion</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• First lift in 4–8 weeks</li>
-                <li>• Strong results with daily use</li>
+                <li>• Most people notice improvements within 1–2 weeks</li>
+                <li>• Works best with consistent use alongside meals</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Generally well-tolerated</li>
+                <li>• Well-tolerated when taken with food</li>
               </ul>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function WellnessOmega3({ onClose }) {
                     clipRule="evenodd"
                   />
                 </svg>
-                One of the most widely taken supplements worldwide — trusted by millions for over 60 years.
+                Widely used for digestive support — researched and documented for decades.
                 <span className="inline-block group" style={{ marginLeft: '8px', top: '-6px', position: 'relative' }}>
                   <span
                     className="inline-flex items-center justify-center rounded-full text-white cursor-pointer transition-all duration-150 ease-out hover:scale-105"
@@ -146,7 +146,7 @@ export default function WellnessOmega3({ onClose }) {
                       transitionDuration: '150ms'
                     }}
                   >
-                    Omega-3 is among the top five most commonly used supplements globally and supports heart and brain health (World Health Organisation, 2022–23).
+                  Digestive enzymes are well-tolerated and can help reduce common digestive symptoms such as gas and bloating. (Cleveland Clinic).
                   </span>
                 </span>
               </p>
@@ -155,45 +155,21 @@ export default function WellnessOmega3({ onClose }) {
 
           <div>
             <div className="rounded-xl px-6 py-4" style={{ backgroundColor: '#FAFAFA' }}>
-              <div className="flex items-center justify-center" style={{ marginBottom: '16px' }}>
-                <p style={{ color: '#4B5563', fontSize: '15px', fontWeight: 400 }}>Take me there.</p>
-                <div className="relative group" style={{ marginLeft: '4px' }}>
-                  <p className="flex items-center cursor-pointer" style={{ color: '#0284C7', fontSize: '15px', fontWeight: 400, gap: '2px', opacity: 0.9, transition: 'opacity 0.15s ease' }}
-                     onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
-                     onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    What to look for
-                    <svg className="transition-transform group-hover:translate-x-0.5" style={{ width: '13px', height: '13px' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </p>
-                  <span 
-                    className="absolute left-full top-1/2 bg-white rounded-xl px-4 py-2 shadow-md pointer-events-none transition-opacity duration-150 ease-out opacity-0 group-hover:opacity-100 whitespace-nowrap"
-                    style={{ 
-                      transform: 'translateY(-50%)',
-                      marginLeft: '12px',
-                      border: '1px solid #E5E7EB',
-                      fontSize: '13px',
-                      color: '#4B5563',
-                      fontWeight: 400,
-                      zIndex: 50
-                    }}
-                  >
-                    Omega-3 (EPA & DHA) — your body absorbs these forms easily so you get real results.
-                  </span>
-                </div>
-              </div>
+              <p className="text-sm text-center" style={{ fontWeight: 400, color: '#4B5563', marginBottom: '16px', paddingTop: '12px' }}>
+                Take me there.
+              </p>
               
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/supplements/omega-fish-oils/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/condition/digestive-health/digestive-enzymes" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
                 </a>
-                <a href="https://uk.iherb.com/c/omega-3-fish-oil" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://uk.iherb.com/c/digestive-enzymes" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
                 </a>
-                <a href="https://healf.com/en-uk/collections/omega-3" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://healf.com/collections/digestive-enzymes" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
                 </a>
-                <a href="https://www.amazon.co.uk/s?k=omega+3" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.amazon.co.uk/s?k=digestive+enzymes" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
                 </a>
               </div>
@@ -204,5 +180,5 @@ export default function WellnessOmega3({ onClose }) {
     </div>
   );
 
-  return mounted ? createPortal(modalContent, document.body) : null;
+  return mounted ? createPortal(modalContent, document.body) : null; 
 }

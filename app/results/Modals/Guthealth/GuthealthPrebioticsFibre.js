@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function Multivitamin({ onClose }) {
+export default function PrebioticsFibre({ onClose }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -60,17 +60,17 @@ export default function Multivitamin({ onClose }) {
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-orange-900 via-amber-800 to-orange-700 bg-clip-text text-transparent">
-              Covers your essential vitamins and minerals every day.
+              Helps keep you regular
             </span>
           </p>
 
-          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '860px', lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '1000px', lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
-              Even with good food and habits, it's hard to get everything your body needs daily.
+              Fibre helps food move smoothly through your system, while prebiotics feed the good bacteria in your gut.
             </span>
             <br />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
-              A quality multivitamin fills the gaps so that you feel supported and well everyday.
+              Together they keep things moving comfortably and consistently — helping you feel more balanced each day.
             </span>
           </div>
 
@@ -78,24 +78,24 @@ export default function Multivitamin({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Benefits</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Helps maintain daily energy</li>
-                <li>• Supports immunity</li>
-                <li>• Promotes overall health</li>
+                <li>• Supports healthy, regular bathroom habits</li>
+                <li>• Balances healthy gut bacteria</li>
+                <li>• Helps reduce bloating and heaviness</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Timeline</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Ongoing daily support</li>
-                <li>• Benefits build with steady use</li>
+                <li>• Most people notice improvements within 3–5 days</li>
+                <li>• Benefits build with daily use</li>
               </ul>
             </div>
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Generally well-tolerated</li>
+                <li>• Well-tolerated and safe for daily use</li>
               </ul>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function Multivitamin({ onClose }) {
                     clipRule="evenodd"
                   />
                 </svg>
-                The most common daily supplement worldwide — trusted foundation of health for over 80 years.
+                Recommended by health authorities worldwide — essential for digestive health.
                 <span className="inline-block group" style={{ marginLeft: '8px', top: '-6px', position: 'relative' }}>
                   <span
                     className="inline-flex items-center justify-center rounded-full text-white cursor-pointer transition-all duration-150 ease-out hover:scale-105"
@@ -146,7 +146,7 @@ export default function Multivitamin({ onClose }) {
                       transitionDuration: '150ms'
                     }}
                   >
-                    Most people can benefit from a daily multivitamin to help meet nutritional needs and support overall health (Mayo Clinic, 2023).
+                    Consuming enough fibre each day supports smooth digestion and is linked to a lower risk of heart disease, diabetes, and bowel problems. (NHS).
                   </span>
                 </span>
               </p>
@@ -159,16 +159,13 @@ export default function Multivitamin({ onClose }) {
                 Take me there.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/vitamins/multivitamins/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.hollandandbarrett.com/shop/vitamins-supplements/supplements/fibre-supplements/" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/hbpill.png" alt="Holland & Barrett" width="80" height="50" />
                 </a>
-                <a href="https://uk.iherb.com/c/multivitamins" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://uk.iherb.com/c/fiber" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/iherbpill.png" alt="iHerb" width="80" height="50" />
                 </a>
-                <a href="https://healf.com/en-uk/search?q=multivita" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
-                  <img src="/images/healfpill.png" alt="Healf" width="80" height="50" />
-                </a>
-                <a href="https://www.amazon.co.uk/s?k=multivitamin" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
+                <a href="https://www.amazon.co.uk/s?k=fibre" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
                   <img src="/images/amazonpill.png" alt="Amazon UK" width="80" height="50" />
                 </a>
               </div>
