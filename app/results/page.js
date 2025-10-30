@@ -581,7 +581,7 @@ function ResultsPageContent() {
           <SectionHeader
             icon={Zap}
             color={{ from: '#fb923c', to: '#ea580c' }}
-            title={<><span style={{ color: '#ea580c' }}>Energy</span> that powers.</>}
+            title={<><span style={{ color: '#ea580c' }}>Energy</span>&nbsp;that&nbsp;powers.</>}
             description={
               <>
                 Energy <span className="font-extrabold">powers everything you do</span>. Without enough, even small things can feel harder. Three in four adults regularly feel fatigued<sup className="text-sm">1</sup>.
@@ -611,7 +611,7 @@ function ResultsPageContent() {
     </section>
 
     {/* CTA Block - White background */}
-    <section className="bg-white pb-22">
+    <section className="bg-white pb -mt-6">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -637,41 +637,47 @@ function ResultsPageContent() {
       </div>
     </section>
 
-    {/* Trust Block - Grey background */}
-    <section className="bg-[#F3F3F4] pt-10 pb-16">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="flex flex-col items-center justify-center">
-            <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700 mb-2">
-              Evidence-led guidance
-            </p>
-            
-            <div className="flex items-center gap-7 ml-6">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={70} 
-                height={25} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={75} 
-                height={32} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={100} 
-                height={30} 
-                className="object-contain filter grayscale opacity-40" 
-              />
-            </div>
-          </div>
-          
+    {/* Combined Trust Section */}
+    <section className="bg-[#F3F3F4] py-6 mt-10">
+      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
+        <p className="text-base leading-snug">
+          Finding reliable guidance is hard when most sites sell supplements.
+        </p>
+        <p className="text-base text-gray-700">
+          We don't sell supplements.
+        </p>
+        <p className="text-base text-gray-600 leading-snug">
+          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
+        </p>
+
+        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
+
+        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
+          Evidence-led guidance
+        </p>
+
+        <div className="flex justify-center items-center gap-7 opacity-35">
+          <Image 
+            src="/images/nhs-logo.png" 
+            alt="NHS" 
+            width={70} 
+            height={25} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/harvard-health-logo.png" 
+            alt="Harvard Health" 
+            width={75} 
+            height={32} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/world-health-organization-logo.png" 
+            alt="World Health Organization" 
+            width={100} 
+            height={30} 
+            className="object-contain filter grayscale" 
+          />
         </div>
       </div>
     </section>
@@ -697,7 +703,7 @@ function ResultsPageContent() {
           <SectionHeader
             icon={IconClock}
             color={{ from: '#3B82F6', to: '#1E40AF' }}
-            title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>}
+            title={<><span style={{ color: '#1E40AF' }}>Sleep</span>&nbsp;that&nbsp;restores.</>}
             description={
               <>
                 Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.
@@ -726,71 +732,74 @@ function ResultsPageContent() {
       </div>
     </section>
 
-{/* CTA Block - White background (final version) */}
-<section className="bg-white pb-22">
-  <div className="max-w-7xl mx-auto px-4 lg:px-8">
-    <div className="max-w-6xl mx-auto text-center">
-      
-      {/* Line 1: Bold, larger */}
-      <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
-        Not focused on one goal?
-      </p>
-      
-      {/* Line 2: Normal font */}
-      <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-        Start with four essentials that benefit everyone.
-      </p>
-      
-      <button
-        onClick={() => window.location.href = '/results/essentials'}
-        className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-      >
-        Start with the essentials
-        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-      
-    </div>
-  </div>
-</section>
-
-    {/* Trust Block - Slightly darker grey background (2-3% darker) */}
-    <section className="bg-[#F3F3F4] pt-10 pb-16">
+    {/* CTA Block - White background */}
+    <section className="bg-white pb -mt-6">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto text-center">
           
-          {/* Trust bar */}
-          <div className="flex flex-col items-center justify-center">
-            <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700 mb-2">
-              Evidence-led guidance
-            </p>
-            
-            <div className="flex items-center gap-7 ml-6">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={70} 
-                height={25} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={75} 
-                height={32} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={100} 
-                height={30} 
-                className="object-contain filter grayscale opacity-40" 
-              />
-            </div>
-          </div>
+          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+            Not focused on one goal?
+          </p>
           
+          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+            Start with four essentials that benefit everyone.
+          </p>
+          
+          <button
+            onClick={() => window.location.href = '/results/essentials'}
+            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            Start with the essentials
+            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+        </div>
+      </div>
+    </section>
+
+    {/* Combined Trust Section */}
+    <section className="bg-[#F3F3F4] py-6 mt-10">
+      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
+        <p className="text-base leading-snug">
+          Finding reliable guidance is hard when most sites sell supplements.
+        </p>
+        <p className="text-base text-gray-700">
+          We don't sell supplements.
+        </p>
+        <p className="text-base text-gray-600 leading-snug">
+          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
+        </p>
+
+        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
+
+        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
+          Evidence-led guidance
+        </p>
+
+        <div className="flex justify-center items-center gap-7 opacity-35">
+          <Image 
+            src="/images/nhs-logo.png" 
+            alt="NHS" 
+            width={70} 
+            height={25} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/harvard-health-logo.png" 
+            alt="Harvard Health" 
+            width={75} 
+            height={32} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/world-health-organization-logo.png" 
+            alt="World Health Organization" 
+            width={100} 
+            height={30} 
+            className="object-contain filter grayscale" 
+          />
         </div>
       </div>
     </section>
@@ -815,7 +824,7 @@ function ResultsPageContent() {
           <SectionHeader
             icon={HeartIcon}
             color={{ from: '#14b8a6', to: '#0F766E' }}
-            title={<><span style={{ color: '#0F766E' }}>Calm</span> that relaxes.</>}
+            title={<><span style={{ color: '#0F766E' }}>Calm</span>&nbsp;that&nbsp;relaxes.</>}
             description={
               <>
                 Stress <span className="font-extrabold">affects how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus, and relationships. Three out of four adults regularly experience physical symptoms of stress<sup className="text-sm">4</sup>.
@@ -845,7 +854,7 @@ function ResultsPageContent() {
     </section>
 
     {/* CTA Block - White background */}
-    <section className="bg-white pb-22">
+    <section className="bg-white pb -mt-6">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -871,41 +880,47 @@ function ResultsPageContent() {
       </div>
     </section>
 
-    {/* Trust Block - Grey background */}
-    <section className="bg-[#F3F3F4] pt-10 pb-16">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="flex flex-col items-center justify-center">
-            <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700 mb-2">
-              Evidence-led guidance
-            </p>
-            
-            <div className="flex items-center gap-7 ml-6">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={70} 
-                height={25} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={75} 
-                height={32} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={100} 
-                height={30} 
-                className="object-contain filter grayscale opacity-40" 
-              />
-            </div>
-          </div>
-          
+    {/* Combined Trust Section */}
+    <section className="bg-[#F3F3F4] py-6 mt-10">
+      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
+        <p className="text-base leading-snug">
+          Finding reliable guidance is hard when most sites sell supplements.
+        </p>
+        <p className="text-base text-gray-700">
+          We don't sell supplements.
+        </p>
+        <p className="text-base text-gray-600 leading-snug">
+          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
+        </p>
+
+        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
+
+        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
+          Evidence-led guidance
+        </p>
+
+        <div className="flex justify-center items-center gap-7 opacity-35">
+          <Image 
+            src="/images/nhs-logo.png" 
+            alt="NHS" 
+            width={70} 
+            height={25} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/harvard-health-logo.png" 
+            alt="Harvard Health" 
+            width={75} 
+            height={32} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/world-health-organization-logo.png" 
+            alt="World Health Organization" 
+            width={100} 
+            height={30} 
+            className="object-contain filter grayscale" 
+          />
         </div>
       </div>
     </section>
@@ -960,7 +975,7 @@ function ResultsPageContent() {
     </section>
 
 {/* CTA Block - White background */}
-    <section className="bg-white pb">
+    <section className="bg-white pb -mt-6">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -1055,7 +1070,7 @@ function ResultsPageContent() {
             color={{ from: '#B45309', to: '#FBBF24' }}
             title={
               <>
-                <span style={{ color: '#B45309' }}>Digestion</span> that eases.
+                <span style={{ color: '#B45309' }}>Digestion</span>&nbsp;that&nbsp;eases.
               </>
             }
             description={
@@ -1089,7 +1104,7 @@ function ResultsPageContent() {
     </section>
 
     {/* CTA Block - White background */}
-    <section className="bg-white pb-22">
+    <section className="bg-white pb -mt-6">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -1115,41 +1130,47 @@ function ResultsPageContent() {
       </div>
     </section>
 
-    {/* Trust Block - Grey background */}
-    <section className="bg-[#F3F3F4] pt-10 pb-16">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="flex flex-col items-center justify-center">
-            <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700 mb-2">
-              Evidence-led guidance
-            </p>
-            
-            <div className="flex items-center gap-7 ml-6">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={70} 
-                height={25} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={75} 
-                height={32} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={100} 
-                height={30} 
-                className="object-contain filter grayscale opacity-40" 
-              />
-            </div>
-          </div>
-          
+    {/* Combined Trust Section */}
+    <section className="bg-[#F3F3F4] py-6 mt-10">
+      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
+        <p className="text-base leading-snug">
+          Finding reliable guidance is hard when most sites sell supplements.
+        </p>
+        <p className="text-base text-gray-700">
+          We don't sell supplements.
+        </p>
+        <p className="text-base text-gray-600 leading-snug">
+          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
+        </p>
+
+        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
+
+        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
+          Evidence-led guidance
+        </p>
+
+        <div className="flex justify-center items-center gap-7 opacity-35">
+          <Image 
+            src="/images/nhs-logo.png" 
+            alt="NHS" 
+            width={70} 
+            height={25} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/harvard-health-logo.png" 
+            alt="Harvard Health" 
+            width={75} 
+            height={32} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/world-health-organization-logo.png" 
+            alt="World Health Organization" 
+            width={100} 
+            height={30} 
+            className="object-contain filter grayscale" 
+          />
         </div>
       </div>
     </section>
