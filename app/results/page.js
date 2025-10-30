@@ -403,21 +403,22 @@ const getTextTint = () => {
 };
 
 // Section header component
-const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph }) => {
+const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph, thirdParagraph }) => {
   const headerRef = useRef(null);
   const [visibleElements, setVisibleElements] = useState({
-    icon: false, title: false, description: false, secondPara: false
+    icon: false, title: false, description: false, secondPara: false, thirdPara: false
   });
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setVisibleElements({ icon: false, title: false, description: false, secondPara: false });
+          setVisibleElements({ icon: false, title: false, description: false, secondPara: false, thirdPara: false });
           setTimeout(() => setVisibleElements(prev => ({ ...prev, icon: true })), 100);
           setTimeout(() => setVisibleElements(prev => ({ ...prev, title: true })), 400);
           setTimeout(() => setVisibleElements(prev => ({ ...prev, description: true })), 800);
           setTimeout(() => setVisibleElements(prev => ({ ...prev, secondPara: true })), 1200);
+          setTimeout(() => setVisibleElements(prev => ({ ...prev, thirdPara: true })), 1600);
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
@@ -446,6 +447,12 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
       {secondParagraph && (
         <p className={`text-xl text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-6 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {secondParagraph}
+        </p>
+      )}
+
+      {thirdParagraph && (
+        <p className={`text-base text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-3 transition-all duration-1000 ${visibleElements.thirdPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {thirdParagraph}
         </p>
       )}
     </div>
@@ -930,7 +937,7 @@ function ResultsPageContent() {
           <SectionHeader
             icon={IconShield}
             color={{ from: '#14b8a6', to: '#0F766E' }}
-            title={<><span style={{ color: '#0F766E' }}>Immunity</span> that protects.</>}
+            title={<><span style={{ color: '#0F766E' }}>Immunity</span>&nbsp;that&nbsp;protects.</>}
             description={
               <>
                 Your immune system <span className="font-extrabold">protects you from everyday threats</span>. When it is strong, your body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength<sup className="text-sm">6</sup>.
@@ -943,6 +950,13 @@ function ResultsPageContent() {
               </>
             }
           />
+
+          {/* Trust Banner */}
+          <div className="w-screen bg-[#F3F3F4] py-4 mt-10 -mx-4 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+            <p className="text-[15px] text-gray-600 text-center font-medium">
+              Independent, evidence-backed guidance — drawn from NHS, Harvard Health, and Mayo Clinic research. You can buy anywhere: Amazon, Healf, Holland & Barrett, or iHerb.
+            </p>
+          </div>
 
           <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
             {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
