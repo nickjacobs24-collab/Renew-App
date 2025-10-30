@@ -403,22 +403,21 @@ const getTextTint = () => {
 };
 
 // Section header component
-const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph, thirdParagraph }) => {
+const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph }) => {
   const headerRef = useRef(null);
   const [visibleElements, setVisibleElements] = useState({
-    icon: false, title: false, description: false, secondPara: false, thirdPara: false
+    icon: false, title: false, description: false, secondPara: false
   });
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setVisibleElements({ icon: false, title: false, description: false, secondPara: false, thirdPara: false });
+          setVisibleElements({ icon: false, title: false, description: false, secondPara: false });
           setTimeout(() => setVisibleElements(prev => ({ ...prev, icon: true })), 100);
           setTimeout(() => setVisibleElements(prev => ({ ...prev, title: true })), 400);
           setTimeout(() => setVisibleElements(prev => ({ ...prev, description: true })), 800);
           setTimeout(() => setVisibleElements(prev => ({ ...prev, secondPara: true })), 1200);
-          setTimeout(() => setVisibleElements(prev => ({ ...prev, thirdPara: true })), 1600);
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
@@ -447,12 +446,6 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph,
       {secondParagraph && (
         <p className={`text-xl text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-6 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {secondParagraph}
-        </p>
-      )}
-
-      {thirdParagraph && (
-        <p className={`text-base text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-3 transition-all duration-1000 ${visibleElements.thirdPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {thirdParagraph}
         </p>
       )}
     </div>
@@ -951,13 +944,6 @@ function ResultsPageContent() {
             }
           />
 
-          {/* Trust Banner */}
-          <div className="w-screen bg-[#F3F3F4] py-4 mt-10 -mx-4 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-            <p className="text-[14px] text-gray-600 text-center font-medium">
-              Independent, evidence-backed guidance — drawn from NHS, Harvard Health, and Mayo Clinic research. You can buy anywhere: Amazon, Healf, Holland & Barrett, or iHerb.
-            </p>
-          </div>
-
           <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
             {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
               <SupplementCard
@@ -973,8 +959,8 @@ function ResultsPageContent() {
       </div>
     </section>
 
-    {/* CTA Block - White background */}
-    <section className="bg-white pb-22">
+{/* CTA Block - White background */}
+    <section className="bg-white pb-12">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -1000,41 +986,47 @@ function ResultsPageContent() {
       </div>
     </section>
 
-    {/* Trust Block - Grey background */}
-    <section className="bg-[#F3F3F4] pt-10 pb-16">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="flex flex-col items-center justify-center">
-            <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700 mb-2">
-              Evidence-led guidance
-            </p>
-            
-            <div className="flex items-center gap-7 ml-6">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={70} 
-                height={25} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={75} 
-                height={32} 
-                className="object-contain filter grayscale opacity-35" 
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={100} 
-                height={30} 
-                className="object-contain filter grayscale opacity-40" 
-              />
-            </div>
-          </div>
-          
+    {/* Combined Trust Section */}
+    <section className="bg-[#F3F3F4] py-12 mt-16">
+      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
+        <p className="text-base leading-snug">
+          Finding reliable guidance is hard when most sites sell supplements.
+        </p>
+        <p className="text-base text-gray-700">
+          We don't sell supplements.
+        </p>
+        <p className="text-base text-gray-600 leading-snug">
+          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
+        </p>
+
+        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
+
+        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
+          Evidence-led guidance
+        </p>
+
+        <div className="flex justify-center items-center gap-7 opacity-35">
+          <Image 
+            src="/images/nhs-logo.png" 
+            alt="NHS" 
+            width={70} 
+            height={25} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/harvard-health-logo.png" 
+            alt="Harvard Health" 
+            width={75} 
+            height={32} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/world-health-organization-logo.png" 
+            alt="World Health Organization" 
+            width={100} 
+            height={30} 
+            className="object-contain filter grayscale" 
+          />
         </div>
       </div>
     </section>
