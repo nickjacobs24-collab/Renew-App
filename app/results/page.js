@@ -987,7 +987,7 @@ function ResultsPageContent() {
     </section>
 
     {/* Combined Trust Section */}
-    <section className="bg-[#F3F3F4] py-12 mt-16">
+    <section className="bg-[#F3F3F4] py-6 mt-10">
       <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
         <p className="text-base leading-snug">
           Finding reliable guidance is hard when most sites sell supplements.
