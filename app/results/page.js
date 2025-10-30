@@ -960,7 +960,7 @@ function ResultsPageContent() {
     </section>
 
 {/* CTA Block - White background */}
-    <section className="bg-white pb-12">
+    <section className="bg-white pb-8">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
