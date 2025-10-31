@@ -160,7 +160,7 @@ export default function LandingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-            className="text-white text-center mb-24"
+            className="text-white text-center mb-12"
             style={{
               fontSize: "clamp(3rem, 8vw, 5rem)",
               fontWeight: 800,
