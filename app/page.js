@@ -151,7 +151,7 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 2: HOW RENEW WORKS - Same gradient background continues */}
-      <section id="how-renew-works" className="relative min-h-screen flex items-center justify-center -mt-[100px] px-6">
+      <section id="how-renew-works" className="relative min-h-screen flex items-center justify-center -mt-[80px] px-6">
         <div className="max-w-7xl mx-auto w-full">
           
           {/* Section Title */}
