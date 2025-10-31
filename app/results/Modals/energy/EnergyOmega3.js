@@ -95,7 +95,7 @@ export default function Omega3({ onClose }) {
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FAFAFA' }}>
               <p className="text-sm font-semibold text-gray-900 mb-2">Safety</p>
               <ul className="text-sm space-y-1.5" style={{ fontWeight: 400, color: '#4B5563' }}>
-                <li>• Generally well-tolerated</li>
+                <li>• Safe and well studied</li>
               </ul>
             </div>
           </div>

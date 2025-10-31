@@ -6,12 +6,12 @@ export default function PersonalisationTail() {
   const pace = searchParams.get('q4');
 
   const variants = {
-    fast: 'for results you may notice a little sooner.',
-    steady: 'for steady progress that builds over time.',
-    impact: 'for results that favour lasting impact over quick wins.',
+    fast: 'for faster results.',
+    steady: 'for consistent progress.',
+    impact: 'for lasting results.',
   };
 
   const tail = variants[pace] || '';
 
-  return tail ? ` - ${tail}` : '';
+  return tail ? ` ${tail}` : '';
 }

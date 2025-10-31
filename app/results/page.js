@@ -30,24 +30,76 @@ const energySupplements = [
  {
   id: 'EnergyVitaminB',
   name: 'Vitamin B',
-  benefitStatement: 'Turns food into all-day energy',
-  stat: 'Your body can’t store it — it needs daily top-ups',
+  benefitStatement: 'Turns food into energy',
+  stat: 'Your body can’t store it',
   image: '/images/vitamin-b-energy.jpg',
   isPriority: true
   },
   {
   id: 'EnergyOmega3',
   name: 'Omega-3',
-  benefitStatement: 'Protects long-term mind health',
-  stat: 'The mind needs it, but cannot make it',
+  benefitStatement: 'Helps your mind stay focused',
+  stat: 'Your body can’t make it',
   image: '/images/omega3-energy.jpg',
   },
   {
   id: 'EnergyCreatine',
   name: 'Creatine',
-  benefitStatement: 'Recharges energy faster',
-  stat: 'The body makes only half of what it needs',
+  benefitStatement: 'Supports steady energy levels',
+  stat: 'Your body makes it in small amounts',
   image: '/images/creatine-energy.jpg'
+  }
+];
+
+// HARDCODED IMMUNITY SUPPLEMENTS - Design phase
+const immunitySupplements = [
+{
+  id: 'ImmVitaminD',
+  name: 'Vitamin D',
+  benefitStatement: 'Helps build immune defences',
+  stat: "Your body makes it from sunlight but it’s hard to get enough all year round",
+  image: '/images/zinc-immunity.jpg',
+  isPriority: true
+  },
+  {
+    id: 'ImmVitaminC',
+    name: 'Vitamin C',
+    benefitStatement: 'Maintains immune defences',
+    stat: "Your body can’t store it",
+    image: '/images/vitamin-c-immunity.jpg'
+  },
+   {
+    id: 'ImmZinc',
+    name: 'Zinc',
+    benefitStatement: 'Helps you recover when unwell',
+    stat: 'Your body uses more when fighting illness',
+    image: '/images/vitamin-d-immunity.jpg'
+  }
+];
+
+// HARDCODED GUT HEALTH SUPPLEMENTS Design phase
+const gutHealthSupplements = [
+  {
+    id: 'GuthealthProbiotics',
+    name: 'Probiotics',
+    benefitStatement: 'Helps keeps your gut in balance',
+    stat: 'Your gut needs good bacteria to support immunity, mood, digestion',
+    image: '/images/probiotics-guthealth.jpg',
+    isPriority: true
+  },
+  {
+    id: 'GuthealthDigestiveEnzymes',
+    name: 'Digestive Enzymes',
+    benefitStatement: 'Eases bloating and supports digestion',
+    stat: 'Your body makes enzymes to digest food but sometimes needs extra help',
+    image: '/images/digestive-enzymes-guthealth.jpg'
+  },
+  {
+    id: 'GuthealthPrebioticsFibre',
+    name: 'Fibre',
+    benefitStatement: 'Helps keep you regular',
+    stat: 'Most diets don’t provide enough Fibre',
+    image: '/images/fibre-prebiotics-guthealth.jpg'
   }
 ];
 
@@ -65,15 +117,15 @@ const SleepSupplements = [
   {
   id: 'SleepLtheanine',
   name: 'L-Theanine',
-  benefitStatement: 'Helps calm your mind for sleep',
+  benefitStatement: 'Calms the mind before sleep',
   stat: 'A busy mind makes it hard to wind down',
   image: '/images/l-theanine-sleep.jpg',
   },
    {
     id: 'SleepGlycine',
     name: 'Glycine',
-    benefitStatement: 'Helps you sleep more deeply',
-    stat: 'Your body needs it for quality sleep',
+    benefitStatement: 'Supports deeper, more restful sleep',
+    stat: 'Made naturally in the body but often in small amounts',
     image: '/images/glycine-sleep.jpg'
   }
 ];
@@ -83,77 +135,24 @@ const CalmSupplements = [
 {
   id: 'CalmLtheanine',
   name: 'L-Theanine',
-  benefitStatement: 'Helps quiet your mind without drowsiness',
-  stat: 'Works in under an hour',
+  benefitStatement: 'Calms your mind without drowsiness',
+  stat: 'Your body can’t make it',
   image: '/images/l-theanine-calm.jpg',
   isPriority: true
   },
   {
     id: 'CalmGlycine',
     name: 'Glycine',
-    benefitStatement: 'Helps ease everyday stress',
-    stat: 'Stress builds up throughout the day',
+    benefitStatement: 'Helps ease stress',
+    stat: 'Your body makes some but uses more under stress',
     image: '/images/glycine-calm.jpg'
   },
   {
     id: 'CalmMagnesium',
     name: 'Magnesium',
-    benefitStatement: 'Helps the body relax',
+    benefitStatement: 'Supports muscle releaxation',
     stat: 'Hard to get enough from diet alone',
     image: '/images/magnesium-calm.jpg'
-  }
-];
-
-
-// HARDCODED IMMUNITY SUPPLEMENTS - Design phase
-const immunitySupplements = [
-{
-  id: 'ImmVitaminD',
-  name: 'Vitamin D',
-  benefitStatement: 'Builds your body’s immune defences',
-  stat: "The sunshine vitamin your body can’t make without sun",
-  image: '/images/zinc-immunity.jpg',
-  isPriority: true
-  },
-  {
-    id: 'ImmVitaminC',
-    name: 'Vitamin C',
-    benefitStatement: 'Maintains immune defences',
-    stat: "Your body cannot store it - daily top-ups matter",
-    image: '/images/vitamin-c-immunity.jpg'
-  },
-   {
-    id: 'ImmZinc',
-    name: 'Zinc',
-    benefitStatement: 'Protects when you need to recover',
-    stat: 'Your body uses more when fighting illness',
-    image: '/images/vitamin-d-immunity.jpg'
-  }
-];
-
-// HARDCODED WELLNESS SUPPLEMENTS Design phase
-const gutHealthSupplements = [
-  {
-    id: 'GuthealthProbiotics',
-    name: 'Probiotics',
-    benefitStatement: 'Keeps your gut in balance',
-    stat: 'Your gut needs good bacteria to support immunity, mood, digestion',
-    image: '/images/probiotics-guthealth.jpg',
-    isPriority: true
-  },
-  {
-    id: 'GuthealthDigestiveEnzymes',
-    name: 'Digestive Enzymes',
-    benefitStatement: 'Eases bloating and supports digestion',
-    stat: 'Your body makes enzymes to digest food - extra support helps it work smoothly',
-    image: '/images/digestive-enzymes-guthealth.jpg'
-  },
-  {
-    id: 'GuthealthPrebioticsFibre',
-    name: 'Prebiotics & Fibre',
-    benefitStatement: 'Helps keep you regular',
-    stat: 'Your body relies on fibre for smooth digestion, most diets don’t provide enough',
-    image: '/images/fibre-prebiotics-guthealth.jpg'
   }
 ];
 
@@ -589,7 +588,7 @@ function ResultsPageContent() {
             }
             secondParagraph={
               <>
-                These supplements help turn food into energy, recharge when you're low, and reduce daily tiredness
+                These supplements help turn food into energy, support focus, and help you stay energised throughout the day
                 <PersonalisationTail />
               </>
             }
@@ -687,6 +686,253 @@ function ResultsPageContent() {
   </>
 )}
 
+{/* ---------- IMMUNITY (conditional) ---------- */}
+{showImm && (
+  <>
+    <section
+      className="relative py-12 lg:py-16 mb-20"
+      style={{
+        background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(15, 118, 110, ${mindOpacity * 0.6}) 50%, rgba(15, 118, 110, ${mindOpacity}) 100%)`,
+        transition: 'background 0.3s ease'
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader
+            icon={IconShield}
+            color={{ from: '#14b8a6', to: '#0F766E' }}
+            title={<><span style={{ color: '#0F766E' }}>Immunity</span>&nbsp;that&nbsp;protects.</>}
+            description={
+              <>
+                Your immune system <span className="font-extrabold">protects you from everyday threats</span>. When it is strong, your body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength<sup className="text-sm">6</sup>.
+              </>
+            }
+            secondParagraph={
+              <>
+                These supplements help build, maintain, and protect your immune defenses
+                <PersonalisationTail />
+              </>
+            }
+          />
+
+          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+            {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
+              <SupplementCard
+                key={supplement.id}
+                supplement={supplement}
+                index={index}
+                category="Immunity"
+                categoryColor="#0F766E"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+{/* CTA Block - White background */}
+    <section className="bg-white pb -mt-6">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center">
+          
+          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+            Not focused on one goal?
+          </p>
+          
+          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+            Start with four essentials that benefit everyone.
+          </p>
+          
+          <button
+            onClick={() => window.location.href = '/results/essentials'}
+            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            Start with the essentials
+            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+        </div>
+      </div>
+    </section>
+
+    {/* Combined Trust Section */}
+    <section className="bg-[#F3F3F4] py-6 mt-10">
+      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
+        <p className="text-base leading-snug">
+          Finding reliable guidance is hard when most sites sell supplements.
+        </p>
+        <p className="text-base text-gray-700">
+          We don't sell supplements.
+        </p>
+        <p className="text-base text-gray-600 leading-snug">
+          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
+        </p>
+
+        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
+
+        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
+          Evidence-led guidance
+        </p>
+
+        <div className="flex justify-center items-center gap-7 opacity-35">
+          <Image 
+            src="/images/nhs-logo.png" 
+            alt="NHS" 
+            width={70} 
+            height={25} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/harvard-health-logo.png" 
+            alt="Harvard Health" 
+            width={75} 
+            height={32} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/world-health-organization-logo.png" 
+            alt="World Health Organization" 
+            width={100} 
+            height={30} 
+            className="object-contain filter grayscale" 
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* 80px spacing buffer before next section */}
+    <div className="h-20"></div>
+  </>
+)}
+
+{/* ---------- GUT HEALTH (conditional) ---------- */}
+{showGutHealth && (
+  <>
+    <section
+      className="relative py-12 lg:py-16 mb-20"
+      style={{
+        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,146,60,0.08) 50%, rgba(234,88,12,0.12) 100%)`,
+        transition: 'background 0.3s ease'
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader
+            icon={SmileIcon}
+            color={{ from: '#B45309', to: '#FBBF24' }}
+            title={
+              <>
+                <span style={{ color: '#B45309' }}>Digestion</span>&nbsp;that&nbsp;eases.
+              </>
+            }
+            description={
+              <>
+                A healthy gut does more than digest food - it{" "}
+                <span className="font-extrabold">fuels energy, mood and immunity</span>. 
+                When it's off balance, it can cause bloating, discomfot, and low energy. One in two adults experience digestive issues each year <sup className="text-sm">5</sup>.
+              </>
+            }
+            secondParagraph={
+              <>
+                These supplements help ease discomfort, support healthy digestion, and keep your gut in balance
+                <PersonalisationTail />
+              </>
+            }
+          />
+
+          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+            {displayedGutHealthSupplements.map((supplement, index) => (
+              <SupplementCard
+                key={supplement.id}
+                supplement={supplement}
+                index={index}
+                category="GutHealth"
+                categoryColor="#B45309"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Block - White background */}
+    <section className="bg-white pb -mt-6">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center">
+          
+          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+            Not focused on one goal?
+          </p>
+          
+          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+            Start with four essentials that benefit everyone.
+          </p>
+          
+          <button
+            onClick={() => window.location.href = '/results/essentials'}
+            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            Start with the essentials
+            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+        </div>
+      </div>
+    </section>
+
+    {/* Combined Trust Section */}
+    <section className="bg-[#F3F3F4] py-6 mt-10">
+      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
+        <p className="text-base leading-snug">
+          Finding reliable guidance is hard when most sites sell supplements.
+        </p>
+        <p className="text-base text-gray-700">
+          We don't sell supplements.
+        </p>
+        <p className="text-base text-gray-600 leading-snug">
+          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
+        </p>
+
+        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
+
+        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
+          Evidence-led guidance
+        </p>
+
+        <div className="flex justify-center items-center gap-7 opacity-35">
+          <Image 
+            src="/images/nhs-logo.png" 
+            alt="NHS" 
+            width={70} 
+            height={25} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/harvard-health-logo.png" 
+            alt="Harvard Health" 
+            width={75} 
+            height={32} 
+            className="object-contain filter grayscale" 
+          />
+          <Image 
+            src="/images/world-health-organization-logo.png" 
+            alt="World Health Organization" 
+            width={100} 
+            height={30} 
+            className="object-contain filter grayscale" 
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* 80px spacing buffer before next section */}
+    <div className="h-20"></div>
+  </>
+)}
 
 {/* ---------- SLEEP (conditional) ---------- */}
 {showSleep && (
@@ -711,7 +957,7 @@ function ResultsPageContent() {
             }
             secondParagraph={
               <>
-                These supplements help calm your mind for sleep, fall asleep faster, and sleep more deeply
+                These supplements calm the mind before bed, help you fall asleep faster and support deep, restful sleep
                 <PersonalisationTail />
               </>
             }
@@ -846,256 +1092,6 @@ function ResultsPageContent() {
                 index={index}
                 category="Calm"
                 categoryColor="#0F766E"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* CTA Block - White background */}
-    <section className="bg-white pb -mt-6">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          
-          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
-            Not focused on one goal?
-          </p>
-          
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-            Start with four essentials that benefit everyone.
-          </p>
-          
-          <button
-            onClick={() => window.location.href = '/results/essentials'}
-            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            Start with the essentials
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-        </div>
-      </div>
-    </section>
-
-    {/* Combined Trust Section */}
-    <section className="bg-[#F3F3F4] py-6 mt-10">
-      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
-        <p className="text-base leading-snug">
-          Finding reliable guidance is hard when most sites sell supplements.
-        </p>
-        <p className="text-base text-gray-700">
-          We don't sell supplements.
-        </p>
-        <p className="text-base text-gray-600 leading-snug">
-          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
-        </p>
-
-        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
-
-        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
-          Evidence-led guidance
-        </p>
-
-        <div className="flex justify-center items-center gap-7 opacity-35">
-          <Image 
-            src="/images/nhs-logo.png" 
-            alt="NHS" 
-            width={70} 
-            height={25} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/harvard-health-logo.png" 
-            alt="Harvard Health" 
-            width={75} 
-            height={32} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/world-health-organization-logo.png" 
-            alt="World Health Organization" 
-            width={100} 
-            height={30} 
-            className="object-contain filter grayscale" 
-          />
-        </div>
-      </div>
-    </section>
-
-    {/* 80px spacing buffer before next section */}
-    <div className="h-20"></div>
-  </>
-)}
-
-{/* ---------- IMMUNITY (conditional) ---------- */}
-{showImm && (
-  <>
-    <section
-      className="relative py-12 lg:py-16 mb-20"
-      style={{
-        background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(15, 118, 110, ${mindOpacity * 0.6}) 50%, rgba(15, 118, 110, ${mindOpacity}) 100%)`,
-        transition: 'background 0.3s ease'
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            icon={IconShield}
-            color={{ from: '#14b8a6', to: '#0F766E' }}
-            title={<><span style={{ color: '#0F766E' }}>Immunity</span>&nbsp;that&nbsp;protects.</>}
-            description={
-              <>
-                Your immune system <span className="font-extrabold">protects you from everyday threats</span>. When it is strong, your body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength<sup className="text-sm">6</sup>.
-              </>
-            }
-            secondParagraph={
-              <>
-                These supplements help build, maintain, and protect your defenses
-                <PersonalisationTail />
-              </>
-            }
-          />
-
-          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
-            {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
-              <SupplementCard
-                key={supplement.id}
-                supplement={supplement}
-                index={index}
-                category="Immunity"
-                categoryColor="#0F766E"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-{/* CTA Block - White background */}
-    <section className="bg-white pb -mt-6">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          
-          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
-            Not focused on one goal?
-          </p>
-          
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
-            Start with four essentials that benefit everyone.
-          </p>
-          
-          <button
-            onClick={() => window.location.href = '/results/essentials'}
-            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            Start with the essentials
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-        </div>
-      </div>
-    </section>
-
-    {/* Combined Trust Section */}
-    <section className="bg-[#F3F3F4] py-6 mt-10">
-      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
-        <p className="text-base leading-snug">
-          Finding reliable guidance is hard when most sites sell supplements.
-        </p>
-        <p className="text-base text-gray-700">
-          We don't sell supplements.
-        </p>
-        <p className="text-base text-gray-600 leading-snug">
-          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
-        </p>
-
-        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
-
-        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
-          Evidence-led guidance
-        </p>
-
-        <div className="flex justify-center items-center gap-7 opacity-35">
-          <Image 
-            src="/images/nhs-logo.png" 
-            alt="NHS" 
-            width={70} 
-            height={25} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/harvard-health-logo.png" 
-            alt="Harvard Health" 
-            width={75} 
-            height={32} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/world-health-organization-logo.png" 
-            alt="World Health Organization" 
-            width={100} 
-            height={30} 
-            className="object-contain filter grayscale" 
-          />
-        </div>
-      </div>
-    </section>
-
-    {/* 80px spacing buffer before next section */}
-    <div className="h-20"></div>
-  </>
-)}
-
-
-
-{/* ---------- GUT HEALTH (conditional) ---------- */}
-{showGutHealth && (
-  <>
-    <section
-      className="relative py-12 lg:py-16 mb-20"
-      style={{
-        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,146,60,0.08) 50%, rgba(234,88,12,0.12) 100%)`,
-        transition: 'background 0.3s ease'
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            icon={SmileIcon}
-            color={{ from: '#B45309', to: '#FBBF24' }}
-            title={
-              <>
-                <span style={{ color: '#B45309' }}>Digestion</span>&nbsp;that&nbsp;eases.
-              </>
-            }
-            description={
-              <>
-                A healthy gut does more than digest food — it{" "}
-                <span className="font-extrabold">fuels energy, mood and immunity</span>. 
-                When it's off balance, it can cause bloating, discomfot, and low energy. One in two adults experience digestive issues each year <sup className="text-sm">5</sup>.
-              </>
-            }
-            secondParagraph={
-              <>
-                These supplements help ease discomfort, support healthy digestion, and keep your gut in balance
-                <PersonalisationTail />
-              </>
-            }
-          />
-
-          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
-            {displayedGutHealthSupplements.map((supplement, index) => (
-              <SupplementCard
-                key={supplement.id}
-                supplement={supplement}
-                index={index}
-                category="GutHealth"
-                categoryColor="#B45309"
               />
             ))}
           </div>
