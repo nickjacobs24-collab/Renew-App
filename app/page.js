@@ -93,7 +93,7 @@ export default function LandingPage() {
               lineHeight: 1.1
             }}
           >
-            Find the supplements that actually work — safely.
+            Find the supplements that actually work - safely.
           </motion.h1>
 
           {/* Subline */}
@@ -117,34 +117,41 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            className="mt-24"
           >
-            <a
+          <a  
               href="#how-renew-works"
-              className="text-white/70 hover:text-white text-base font-medium transition-colors inline-block"
+              className="text-white/80 hover:text-white text-xl font-medium transition-colors inline-block"
             >
-              How Renew Works
+              See How Renew Works
             </a>
           </motion.div>
 
-          {/* Bouncing scroll indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="mt-16 pointer-events-none"
-          >
-            <div className="inline-block animate-bounce">
-              <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    {/* Apple-style fade pulse arrow - CENTERED & MORE OBVIOUS */}
+          <div className="mt-8 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0.3 }}
+              animate={{ 
+                opacity: [0.3, 1, 0.3]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="pointer-events-none"
+            >
+              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
         </div>
       </section>
 
       {/* SECTION 2: HOW RENEW WORKS - Same gradient background continues */}
-      <section id="how-renew-works" className="relative min-h-screen flex items-center justify-center -mt-160 px-6">
+       <section id="how-renew-works" className="relative min-h-screen flex items-center justify-center -mt-[250px] px-6">
         <div className="max-w-7xl mx-auto w-full">
           
           {/* Section Title */}
@@ -155,7 +162,7 @@ export default function LandingPage() {
             transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
             className="text-white text-center mb-24"
             style={{
-              fontSize: "clamp(2.5rem, 6vw, 3.5rem)",
+              fontSize: "clamp(3rem, 8vw, 5rem)",
               fontWeight: 800,
               letterSpacing: "-0.02em",
               lineHeight: 1.1
@@ -175,8 +182,8 @@ export default function LandingPage() {
               transition={{ duration: 1, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
               className="text-center relative"
             >
-              <div className="text-8xl font-bold text-white mb-6" style={{ fontWeight: 700 }}>1</div>
-              <p className="text-white/90 text-lg leading-relaxed font-medium">
+                 <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>1</div>
+                  <p className="text-gray-100 text-sm leading-relaxed" style={{ fontWeight: 500 }}>
                 Tell us your goals — energy, sleep, calm, immunity, and more.
               </p>
             </motion.div>
@@ -184,12 +191,12 @@ export default function LandingPage() {
             {/* Arrow 1→2 */}
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.4 }}
+              whileInView={{ opacity: 0.6 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-              className="hidden md:flex absolute left-1/3 top-16 items-center justify-center pointer-events-none"
+               className="hidden md:flex absolute left-[33.333%] -translate-x-1/2 top-8 items-center justify-center pointer-events-none drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]"
             >
-              <svg className="w-8 h-8 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-16 h-16 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </motion.div>
@@ -202,21 +209,33 @@ export default function LandingPage() {
               transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
               className="text-center relative"
             >
-              <div className="text-8xl font-bold text-white mb-6" style={{ fontWeight: 700 }}>2</div>
-              <p className="text-white/90 text-lg leading-relaxed font-medium">
+              <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>2</div>
+              <p className="text-gray-100 text-sm leading-relaxed" style={{ fontWeight: 500 }}>
                 We narrow it to 3–5 proven, evidence-backed options.
               </p>
+               <span className="text-gray-300 text-sm mt-1 block">
+                Learn more about{" "}
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open("/results/apphowwechoose", "_blank", "width=1000,height=800");
+                  }}
+                  className="underline hover:text-white/90 transition-colors"
+                >
+                  how we choose
+                </button>.
+              </span>
             </motion.div>
 
             {/* Arrow 2→3 */}
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.4 }}
+              whileInView={{ opacity: 0.6 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              className="hidden md:flex absolute left-2/3 top-16 items-center justify-center pointer-events-none"
+               className="hidden md:flex absolute left-[66.666%] -translate-x-1/2 top-8 items-center justify-center pointer-events-none drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]"
             >
-              <svg className="w-8 h-8 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-16 h-16 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </motion.div>
@@ -229,8 +248,8 @@ export default function LandingPage() {
               transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
               className="text-center relative"
             >
-              <div className="text-8xl font-bold text-white mb-6" style={{ fontWeight: 700 }}>3</div>
-              <p className="text-white/90 text-lg leading-relaxed font-medium">
+               <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>3</div>
+                 <p className="text-gray-100 text-sm leading-relaxed" style={{ fontWeight: 500 }}>
                 You choose where to buy — we don't sell supplements.
               </p>
             </motion.div>
