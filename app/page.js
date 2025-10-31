@@ -264,7 +264,7 @@ export default function LandingPage() {
             transition={{ duration: 1, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="text-center"
           >
-            <p className="text-white text-xl font-semibold mb-6">
+            <p className="text-white text-2xl font-semibold mb-6">
               Ready to see your options?
             </p>
             <button
