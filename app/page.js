@@ -183,7 +183,7 @@ export default function LandingPage() {
               className="text-center relative"
             >
                  <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>1</div>
-                  <p className="text-gray-100 text-sm leading-relaxed" style={{ fontWeight: 500 }}>
+                   <p className="text-gray-100 text-base leading-relaxed" style={{ fontWeight: 500 }}>
                 Tell us your goals — energy, sleep, calm, immunity, and more.
               </p>
             </motion.div>
@@ -210,7 +210,7 @@ export default function LandingPage() {
               className="text-center relative"
             >
               <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>2</div>
-              <p className="text-gray-100 text-sm leading-relaxed" style={{ fontWeight: 500 }}>
+               <p className="text-gray-100 text-base leading-relaxed" style={{ fontWeight: 500 }}>
                 We narrow it to 3–5 proven, evidence-backed options.
               </p>
                <span className="text-gray-300 text-sm mt-1 block">
@@ -249,7 +249,7 @@ export default function LandingPage() {
               className="text-center relative"
             >
                <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>3</div>
-                 <p className="text-gray-100 text-sm leading-relaxed" style={{ fontWeight: 500 }}>
+                  <p className="text-gray-100 text-base leading-relaxed" style={{ fontWeight: 500 }}>
                 You choose where to buy — we don't sell supplements.
               </p>
             </motion.div>
