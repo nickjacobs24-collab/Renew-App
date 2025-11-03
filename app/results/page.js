@@ -317,7 +317,7 @@ const getTextTint = () => {
           <div className={`absolute inset-0 pointer-events-none ${getOverlayClasses()}`}></div>
 
 <div className="relative z-20 flex h-[280px] items-center p-5 md:p-8">
-  <div className="relative ml-auto w-full md:w-[55%] bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-7 shadow-md ring-1 ring-black/10 border border-white/60">
+  <div className="relative ml-auto w-full md:w-[55%] bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-7 shadow-lg ring-1 ring-black/5">
     {supplement.isPriority && (
       <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
         TRY THIS FIRST
