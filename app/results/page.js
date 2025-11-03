@@ -571,7 +571,7 @@ function ResultsPageContent() {
     <section
       className="relative py-12 lg:py-16 mb-20"
       style={{
-        background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(251, 146, 60, ${energyOpacity * 0.6}) 50%, rgba(251, 146, 60, ${energyOpacity}) 100%)`,
+        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,146,60,${energyOpacity * 1}) 25%, rgba(251,146,60,${energyOpacity * 1.5}) 100%)`,
         transition: 'background 0.3s ease'
       }}
     >
@@ -692,7 +692,7 @@ function ResultsPageContent() {
     <section
       className="relative py-12 lg:py-16 mb-20"
       style={{
-        background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(15, 118, 110, ${mindOpacity * 0.6}) 50%, rgba(15, 118, 110, ${mindOpacity}) 100%)`,
+        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(15,118,110,${mindOpacity * 0.9}) 20%, rgba(15,118,110,${mindOpacity * 1.6}) 100%)`,
         transition: 'background 0.3s ease'
       }}
     >
@@ -813,7 +813,7 @@ function ResultsPageContent() {
     <section
       className="relative py-12 lg:py-16 mb-20"
       style={{
-        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,146,60,0.08) 50%, rgba(234,88,12,0.12) 100%)`,
+background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 18%, rgba(251,146,60,0.20) 30%, rgba(234,88,12,0.35) 100%)`,
         transition: 'background 0.3s ease'
       }}
     >
