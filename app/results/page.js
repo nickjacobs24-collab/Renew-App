@@ -593,7 +593,7 @@ function ResultsPageContent() {
 {showEnergy && (
   <>
     <section
-      className="relative py-12 lg:py-16 mb-20"
+      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
       style={{
         background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(251,146,60,0.15) 50%, rgba(234,88,12,0.30) 100%)`,
         transition: 'background 0.3s ease'
@@ -634,15 +634,15 @@ function ResultsPageContent() {
     </section>
 
     {/* CTA Block - White background */}
-    <section className="bg-white pb -mt-6">
+    <section className="bg-white pb -mt0">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
-          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+          <p className="text-gray-800 text-[22px] font-bold mb-2">
             Not focused on one goal?
           </p>
           
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
             Start with four essentials that benefit everyone.
           </p>
           
@@ -661,7 +661,7 @@ function ResultsPageContent() {
     </section>
 
 {/* Trust Strip – Refined Minimal Version */}
-<section className="bg-transparent mt-10 mb-6">
+<section className="bg-transparent mt-16 mb-0">
   <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
     <p className="text-[15px] md:text-base font-medium leading-relaxed">
       Evidence-led guidance – not marketing.
@@ -694,7 +694,7 @@ function ResultsPageContent() {
 </section>
 
     {/* 80px spacing buffer before next section */}
-    <div className="h-20"></div>
+    <div className="h-2"></div>
   </>
 )}
 
@@ -702,7 +702,7 @@ function ResultsPageContent() {
 {showImm && (
   <>
     <section
-      className="relative py-12 lg:py-16 mb-20"
+      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
       style={{
         background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(15,118,110,0.10) 50%, rgba(15,118,110,0.28) 100%)`,
         transition: 'background 0.3s ease'
@@ -743,7 +743,7 @@ function ResultsPageContent() {
     </section>
 
 {/* CTA Block - White background */}
-    <section className="bg-white pb -mt-6">
+    <section className="bg-white pb -mt-0">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -751,7 +751,7 @@ function ResultsPageContent() {
             Not focused on one goal?
           </p>
           
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
             Start with four essentials that benefit everyone.
           </p>
           
@@ -815,7 +815,7 @@ function ResultsPageContent() {
     </section>
 
     {/* 80px spacing buffer before next section */}
-    <div className="h-20"></div>
+    <div className="h-2"></div>
   </>
 )}
 
@@ -823,7 +823,7 @@ function ResultsPageContent() {
 {showGutHealth && (
   <>
     <section
-      className="relative py-12 lg:py-16 mb-20"
+      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
       style={{
 background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(251,146,60,0.15) 45%, rgba(234,88,12,0.25) 100%)`,
         transition: 'background 0.3s ease'
@@ -870,7 +870,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
     </section>
 
     {/* CTA Block - White background */}
-    <section className="bg-white pb -mt-6">
+    <section className="bg-white pb -mt-0">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -878,7 +878,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
             Not focused on one goal?
           </p>
           
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
             Start with four essentials that benefit everyone.
           </p>
           
@@ -942,7 +942,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
     </section>
 
     {/* 80px spacing buffer before next section */}
-    <div className="h-20"></div>
+    <div className="h-2"></div>
   </>
 )}
 
@@ -950,7 +950,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
 {showSleep && (
   <>
     <section
-      className="relative py-12 lg:py-16 mb-20"
+      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
       style={{
        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(79,70,229,0.08) 50%, rgba(79,70,229,0.25) 100%)`,
         transition: 'background 0.3s ease'
@@ -991,7 +991,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
     </section>
 
     {/* CTA Block - White background */}
-    <section className="bg-white pb -mt-6">
+    <section className="bg-white pb -0">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -999,7 +999,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
             Not focused on one goal?
           </p>
           
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
             Start with four essentials that benefit everyone.
           </p>
           
@@ -1063,7 +1063,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
     </section>
 
     {/* 80px spacing buffer before Immunity section */}
-    <div className="h-20"></div>
+    <div className="h-2"></div>
   </>
 )}
 
@@ -1071,7 +1071,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
 {showCalm && (
   <>
     <section
-      className="relative py-12 lg:py-16 mb-20"
+      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
       style={{
         background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(15,118,110,0.10) 47%, rgba(15,118,110,0.28) 100%)`,
         transition: 'background 0.3s ease'
@@ -1112,7 +1112,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
     </section>
 
     {/* CTA Block - White background */}
-    <section className="bg-white pb -mt-6">
+    <section className="bg-white pb -mt-0">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
@@ -1120,7 +1120,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
             Not focused on one goal?
           </p>
           
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-8">
+          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
             Start with four essentials that benefit everyone.
           </p>
           
@@ -1184,7 +1184,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
     </section>
 
     {/* 80px spacing buffer before next section */}
-    <div className="h-20"></div>
+    <div className="h-2"></div>
   </>
 )}
 
