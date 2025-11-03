@@ -661,7 +661,7 @@ function ResultsPageContent() {
     </section>
 
 {/* Trust Strip – Refined Minimal Version */}
-<section className="bg-transparent mt-16 mb-0">
+<section className="bg-transparent mt-22 mb-0">
   <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
     <p className="text-[15px] md:text-base font-medium leading-relaxed">
       Evidence-led guidance – not marketing.
@@ -747,7 +747,7 @@ function ResultsPageContent() {
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
-          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+          <p className="text-gray-800 text-[22px] font-bold mb-2">
             Not focused on one goal?
           </p>
           
@@ -874,7 +874,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
-          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+          <p className="text-gray-800 text-[22px] font-bold mb-2">
             Not focused on one goal?
           </p>
           
@@ -995,7 +995,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
-          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+          <p className="text-gray-800 text-[22px] font-bold mb-2">
             Not focused on one goal?
           </p>
           
@@ -1116,7 +1116,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           
-          <p className="text-gray-800 text-lg md:text-xl font-bold mb-2">
+          <p className="text-gray-800 text-[22px] font-bold mb-2">
             Not focused on one goal?
           </p>
           
