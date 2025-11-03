@@ -245,13 +245,9 @@ const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor 
           ? 'filter brightness-115 saturate-90 contrast-95'
           : 'filter brightness-105 saturate-90 contrast-95';
       case 'creatine':
-        return 'filter brightness-110 saturate-95 hue-rotate-[6deg] contrast-95 [filter:sepia(6%)]';
-      case 'coq10':
-        return 'filter brightness-105 saturate-95 contrast-95 blur-[1px]';
-      case 'citicoline':
-        return 'filter brightness-105 saturate-65 contrast-95';
+        return '';
       case 'omega3':
-        return 'filter brightness-105 saturate-85 contrast-95';
+        return '';
       default:
         return '';
     }
@@ -261,13 +257,13 @@ const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor 
     switch(supplement.id) {
       case 'Vitamin B':
       case 'Vitamin B-mind':
-        return 'bg-gradient-to-t from-black/10 via-transparent to-transparent';
+        return '';
       case 'creatine':
-        return 'bg-gradient-to-t from-black/10 via-transparent to-transparent';
+        return '';
       case 'omega3':
-        return 'bg-gradient-to-t from-black/10 via-transparent to-transparent';
+        return '';
       default:
-        return 'bg-gradient-to-t from-black/10 via-transparent to-transparent';
+        return '';
     }
   };
 
@@ -310,10 +306,11 @@ const getTextTint = () => {
             />
           </div>
 
-          <div className={`absolute inset-0 pointer-events-none ${getOverlayClasses()}`}></div>
+{/* overlay removed for maximum image sharpness */}
 
 <div className="relative z-20 flex h-[280px] items-center p-5 md:p-8">
-<div className="relative ml-auto w-full md:w-[55%] bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-7 shadow-md ring-1 ring-black/10 border border-white/60">
+
+<div className="relative ml-auto w-full md:w-[55%] bg-white/95 rounded-2xl p-6 md:p-7 shadow-sm ring-1 ring-black/10 border border-white/60">
     {supplement.isPriority && (
       <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
         TRY THIS FIRST
