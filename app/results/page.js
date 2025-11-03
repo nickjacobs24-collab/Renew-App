@@ -446,7 +446,7 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
       </p>
 
       {secondParagraph && (
-        <p className={`text-lg text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-6 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <p className={`text-lg text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-3 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {secondParagraph}
         </p>
       )}
