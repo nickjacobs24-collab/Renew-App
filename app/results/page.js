@@ -813,7 +813,7 @@ function ResultsPageContent() {
     <section
       className="relative py-12 lg:py-16 mb-20"
       style={{
-background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 18%, rgba(251,146,60,0.20) 30%, rgba(234,88,12,0.35) 100%)`,
+background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,146,60,0.10) 25%, rgba(234,88,12,0.22) 100%)`,
         transition: 'background 0.3s ease'
       }}
     >
