@@ -325,7 +325,7 @@ const getTextTint = () => {
     )}
     <div className={`text-[11px] tracking-wide uppercase font-semibold ${getTextTint()}`}>{category}</div>
     <h3 className="mt-1 text-[20px] md:text-[22px] font-semibold text-gray-900 tracking-tight">{supplement.name}</h3>
-<p className="mt-1 text-[16px] font-semibold text-gray-600/95 leading-snug">
+<p className="mt-1 text-[16px] font-semibold text-gray-600/85 leading-snug">
   {supplement.benefitStatement}
 </p>
 <p className="mt-1 text-[15px] text-gray-500">
