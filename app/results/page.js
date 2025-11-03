@@ -303,7 +303,7 @@ const getTextTint = () => {
         ref={cardRef}
         className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-[280px] max-w-[1100px] mx-auto">
+<div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-[280px] w-full">
           <div className="absolute inset-0 w-full h-full">
             <Image
               src={supplement.image || '/images/Vitamin B.jpg'}
@@ -718,7 +718,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
             {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
@@ -845,7 +845,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
             {displayedGutHealthSupplements.map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
@@ -966,7 +966,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
             {displayedSleepSupplements.map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
@@ -1087,7 +1087,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
             {(typeof CalmSupplements !== 'undefined' ? CalmSupplements : calmSupplements).map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
