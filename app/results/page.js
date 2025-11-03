@@ -594,7 +594,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
+          <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
             {displayedEnergySupplements.map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
@@ -715,7 +715,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
+<div className="mt-10 flex flex-col space-y-5 md:space-y-6">
             {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
@@ -842,7 +842,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
+          <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
             {displayedGutHealthSupplements.map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
@@ -963,7 +963,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
+          <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
             {displayedSleepSupplements.map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
@@ -1084,7 +1084,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
+          <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
             {(typeof CalmSupplements !== 'undefined' ? CalmSupplements : calmSupplements).map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
