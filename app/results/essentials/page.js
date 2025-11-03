@@ -357,7 +357,7 @@ description={
         </section>
 
   {/* Trust Strip – Refined Minimal Version */}
-       <section className="bg-transparent py-8">
+       <section className="bg-transparent pt-4 pb-3">
           <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
             <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
               Evidence-led guidance - not marketing.
