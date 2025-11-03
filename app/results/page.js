@@ -940,7 +940,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
     <section
       className="relative py-12 lg:py-16 mb-20"
       style={{
-        background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 70, 229, ${mindOpacity * 0.6}) 50%, rgba(79, 70, 229, ${mindOpacity}) 100%)`,
+       background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(79,70,229,0.08) 50%, rgba(79,70,229,0.25) 100%)`,
         transition: 'background 0.3s ease'
       }}
     >
