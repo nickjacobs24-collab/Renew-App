@@ -428,22 +428,25 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
   return (
     <div ref={headerRef}>
       <div className={`transition-all duration-1000 ${visibleElements.icon ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="w-14 h-14 bg-gradient-to-br rounded-2xl flex items-center justify-center mb-8 shadow-lg"
+        <div className="w-14 h-14 bg-gradient-to-br rounded-2xl flex items-center justify-center mb-4 shadow-lg"
              style={{ background: `linear-gradient(135deg, ${color.from}, ${color.to})` }}>
           <Icon className="w-7 h-7 text-white" />
         </div>
       </div>
 
-      <h1 className={`text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight pr-12 lg:pr-20 transition-all duration-1000 ${visibleElements.title ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        {title}
-      </h1>
+<h1
+  className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight pr-12 lg:pr-20"
+  style={{ fontWeight: 800 }}
+>
+  {title}
+</h1>
 
-      <p className={`text-xl text-gray-700 leading-relaxed pr-12 lg:pr-20 transition-all duration-1000 ${visibleElements.description ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <p className={`text-lg text-gray-700 leading-relaxed pr-12 lg:pr-20 transition-all duration-1000 ${visibleElements.description ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {description}
       </p>
 
       {secondParagraph && (
-        <p className={`text-xl text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-6 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <p className={`text-lg text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-6 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {secondParagraph}
         </p>
       )}
