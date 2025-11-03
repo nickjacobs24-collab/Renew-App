@@ -303,7 +303,7 @@ const getTextTint = () => {
         ref={cardRef}
         className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-[320px] max-w-[1100px] mx-auto">
+        <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-[280px] max-w-[1100px] mx-auto">
           <div className="absolute inset-0 w-full h-full">
             <Image
               src={supplement.image || '/images/Vitamin B.jpg'}
@@ -316,7 +316,7 @@ const getTextTint = () => {
 
           <div className={`absolute inset-0 pointer-events-none ${getOverlayClasses()}`}></div>
 
-<div className="relative z-20 flex h-[320px] items-center p-5 md:p-8">
+<div className="relative z-20 flex h-[280px] items-center p-5 md:p-8">
   <div className="relative ml-auto w-full md:w-[55%] bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-7 shadow-lg ring-1 ring-black/5">
     {supplement.isPriority && (
       <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
