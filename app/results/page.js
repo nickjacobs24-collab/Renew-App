@@ -310,7 +310,23 @@ const getTextTint = () => {
 
 <div className="relative z-20 flex h-[280px] items-center p-5 md:p-8">
 
-<div className="relative ml-auto w-full md:w-[55%] bg-white/95 rounded-2xl p-6 md:p-7 shadow-sm ring-1 ring-black/10 border border-white/60">
+<div
+  className="relative ml-auto w-full md:w-[55%] bg-white/95 rounded-2xl p-6 md:p-7 border border-white/60"
+  style={{
+  boxShadow:
+    category === 'Energy'
+      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(251,146,60,0.06)'
+      : category === 'Sleep'
+      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(79,70,229,0.06)'
+      : category === 'Calm'
+      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(15,118,110,0.06)'
+      : category === 'Immunity'
+      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(5,150,105,0.06)'
+      : category === 'GutHealth'
+      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(234,88,12,0.06)'
+      : '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(0,0,0,0.05)'
+}}
+>
     {supplement.isPriority && (
       <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
         TRY THIS FIRST
@@ -521,6 +537,14 @@ function ResultsPageContent() {
 
   return (
     <div className="min-h-screen bg-white">
+  {/* Subtle grain overlay */}
+  <div className="fixed inset-0 pointer-events-none z-[9999]" 
+       style={{ 
+         backgroundImage: 'url(/images/grain-texture.png)',
+         opacity: 0.03,
+         mixBlendMode: 'overlay'
+       }} 
+  />
 
 
 {/* Header */}
@@ -571,7 +595,7 @@ function ResultsPageContent() {
     <section
       className="relative py-12 lg:py-16 mb-20"
       style={{
-        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,146,60,${energyOpacity * 1}) 25%, rgba(251,146,60,${energyOpacity * 1.5}) 100%)`,
+        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(251,146,60,0.15) 50%, rgba(234,88,12,0.30) 100%)`,
         transition: 'background 0.3s ease'
       }}
     >
@@ -636,50 +660,38 @@ function ResultsPageContent() {
       </div>
     </section>
 
-    {/* Combined Trust Section */}
-    <section className="bg-[#F3F3F4] py-6 mt-10">
-      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
-        <p className="text-base leading-snug">
-          Finding reliable guidance is hard when most sites sell supplements.
-        </p>
-        <p className="text-base text-gray-700">
-          We don't sell supplements.
-        </p>
-        <p className="text-base text-gray-600 leading-snug">
-          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
-        </p>
+{/* Trust Strip – Refined Minimal Version */}
+<section className="bg-transparent mt-10 mb-6">
+  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+    <p className="text-[15px] md:text-base font-medium leading-relaxed">
+      Evidence-led guidance – not marketing.
+    </p>
 
-        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
-
-        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
-          Evidence-led guidance
-        </p>
-
-        <div className="flex justify-center items-center gap-7 opacity-35">
-          <Image 
-            src="/images/nhs-logo.png" 
-            alt="NHS" 
-            width={70} 
-            height={25} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/harvard-health-logo.png" 
-            alt="Harvard Health" 
-            width={75} 
-            height={32} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/world-health-organization-logo.png" 
-            alt="World Health Organization" 
-            width={100} 
-            height={30} 
-            className="object-contain filter grayscale" 
-          />
-        </div>
-      </div>
-    </section>
+    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+      <Image 
+        src="/images/nhs-logo.png" 
+        alt="NHS" 
+        width={60} 
+        height={22} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/harvard-health-logo.png" 
+        alt="Harvard Health" 
+        width={65} 
+        height={28} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/world-health-organization-logo.png" 
+        alt="World Health Organization" 
+        width={90} 
+        height={28} 
+        className="object-contain"
+      />
+    </div>
+  </div>
+</section>
 
     {/* 80px spacing buffer before next section */}
     <div className="h-20"></div>
@@ -692,7 +704,7 @@ function ResultsPageContent() {
     <section
       className="relative py-12 lg:py-16 mb-20"
       style={{
-        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(15,118,110,${mindOpacity * 0.9}) 20%, rgba(15,118,110,${mindOpacity * 1.6}) 100%)`,
+        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(15,118,110,0.10) 50%, rgba(15,118,110,0.28) 100%)`,
         transition: 'background 0.3s ease'
       }}
     >
@@ -1061,7 +1073,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
     <section
       className="relative py-12 lg:py-16 mb-20"
       style={{
-        background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(15, 118, 110, ${mindOpacity * 0.6}) 50%, rgba(15, 118, 110, ${mindOpacity}) 100%)`,
+        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(15,118,110,0.10) 47%, rgba(15,118,110,0.28) 100%)`,
         transition: 'background 0.3s ease'
       }}
     >
@@ -1176,22 +1188,19 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
   </>
 )}
 
-        {/* Citations (kept at the bottom) */}
-        {(showEnergy || showSleep || showCalm || showImm || showGutHealth) && (
-          <footer className="bg-gray-50 py-12 mt-20">
-            <div className="max-w-6xl mx-auto px-4 lg:px-8">
-              <div className="text-xs text-gray-500 space-y-1">
-                <p><sup>1</sup> National Safety Council. (2023). Fatigue in the Workplace Survey Report.</p>
-                <p><sup>2</sup> Harvard Medical School. (2023). Brain Fog: Memory and Attention After COVID-19.</p>
-                <p><sup>3</sup> Gallup & Casper (2022). Sleep Survey.</p>
-                <p><sup>4</sup> American Psychological Association. (2022). Stress in America Survey</p>
-                <p><sup>5</sup> Wallace, T.C., McBurney & Fulgoni, V.L.  (2024). Multivitamin/mineral supplement contribution to micronutrient intakes in the United States, 2007–2010. Journal of the American College of Nutrition.
-               </p>
-                <p><sup>6</sup> Forrest, K.Y., & Stuhldreher, W.L. (2011). Prevalence and correlates of vitamin D deficiency in US adults. </p>
-              </div>
-            </div>
-          </footer>
-        )}
+{/* Citations – Tightened Spacing */}
+<footer className="bg-[#F8F8F9] py-9 mt-4">
+  <div className="max-w-6xl mx-auto px-4 lg:px-8">
+    <div className="text-[11px] text-gray-500/90 leading-relaxed space-y-[3px]">
+      <p><sup>1</sup> National Safety Council. (2023). Fatigue in the Workplace Survey Report.</p>
+      <p><sup>2</sup> Harvard Medical School. (2023). Brain Fog: Memory and Attention After COVID-19.</p>
+      <p><sup>3</sup> Gallup & Casper (2022). Sleep Survey.</p>
+      <p><sup>4</sup> American Psychological Association. (2022). Stress in America Survey.</p>
+      <p><sup>5</sup> Wallace, T.C., McBurney & Fulgoni, V.L. (2024). Multivitamin/mineral supplement contribution … Journal of the American College of Nutrition.</p>
+      <p><sup>6</sup> Forrest, K.Y., & Stuhldreher, W.L. (2011). Prevalence and correlates of vitamin D deficiency in US adults.</p>
+    </div>
+  </div>
+</footer>
       </div>
     </div>
   );
