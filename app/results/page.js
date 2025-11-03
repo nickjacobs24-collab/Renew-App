@@ -661,10 +661,10 @@ function ResultsPageContent() {
     </section>
 
 {/* Trust Strip – Refined Minimal Version */}
-<section className="bg-transparent mt-20 mb-0">
+<section className="bg-transparent mt-18 mb-0">
   <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-    <p className="text-[15px] md:text-base font-medium leading-relaxed">
-      Evidence-led guidance – not marketing.
+    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+      Evidence-led guidance - not marketing.
     </p>
 
     <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
@@ -769,50 +769,38 @@ function ResultsPageContent() {
       </div>
     </section>
 
-    {/* Combined Trust Section */}
-    <section className="bg-[#F3F3F4] py-6 mt-10">
-      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
-        <p className="text-base leading-snug">
-          Finding reliable guidance is hard when most sites sell supplements.
-        </p>
-        <p className="text-base text-gray-700">
-          We don't sell supplements.
-        </p>
-        <p className="text-base text-gray-600 leading-snug">
-          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
-        </p>
+{/* Trust Strip – Refined Minimal Version */}
+<section className="bg-transparent mt-18 mb-0">
+  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+      Evidence-led guidance - not marketing.
+    </p>
 
-        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
-
-        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
-          Evidence-led guidance
-        </p>
-
-        <div className="flex justify-center items-center gap-7 opacity-35">
-          <Image 
-            src="/images/nhs-logo.png" 
-            alt="NHS" 
-            width={70} 
-            height={25} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/harvard-health-logo.png" 
-            alt="Harvard Health" 
-            width={75} 
-            height={32} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/world-health-organization-logo.png" 
-            alt="World Health Organization" 
-            width={100} 
-            height={30} 
-            className="object-contain filter grayscale" 
-          />
-        </div>
-      </div>
-    </section>
+    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+      <Image 
+        src="/images/nhs-logo.png" 
+        alt="NHS" 
+        width={60} 
+        height={22} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/harvard-health-logo.png" 
+        alt="Harvard Health" 
+        width={65} 
+        height={28} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/world-health-organization-logo.png" 
+        alt="World Health Organization" 
+        width={90} 
+        height={28} 
+        className="object-contain"
+      />
+    </div>
+  </div>
+</section>
 
     {/* 80px spacing buffer before next section */}
     <div className="h-2"></div>
@@ -896,50 +884,38 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       </div>
     </section>
 
-    {/* Combined Trust Section */}
-    <section className="bg-[#F3F3F4] py-6 mt-10">
-      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
-        <p className="text-base leading-snug">
-          Finding reliable guidance is hard when most sites sell supplements.
-        </p>
-        <p className="text-base text-gray-700">
-          We don't sell supplements.
-        </p>
-        <p className="text-base text-gray-600 leading-snug">
-          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
-        </p>
+{/* Trust Strip – Refined Minimal Version */}
+<section className="bg-transparent mt-18 mb-0">
+  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+      Evidence-led guidance - not marketing.
+    </p>
 
-        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
-
-        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
-          Evidence-led guidance
-        </p>
-
-        <div className="flex justify-center items-center gap-7 opacity-35">
-          <Image 
-            src="/images/nhs-logo.png" 
-            alt="NHS" 
-            width={70} 
-            height={25} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/harvard-health-logo.png" 
-            alt="Harvard Health" 
-            width={75} 
-            height={32} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/world-health-organization-logo.png" 
-            alt="World Health Organization" 
-            width={100} 
-            height={30} 
-            className="object-contain filter grayscale" 
-          />
-        </div>
-      </div>
-    </section>
+    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+      <Image 
+        src="/images/nhs-logo.png" 
+        alt="NHS" 
+        width={60} 
+        height={22} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/harvard-health-logo.png" 
+        alt="Harvard Health" 
+        width={65} 
+        height={28} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/world-health-organization-logo.png" 
+        alt="World Health Organization" 
+        width={90} 
+        height={28} 
+        className="object-contain"
+      />
+    </div>
+  </div>
+</section>
 
     {/* 80px spacing buffer before next section */}
     <div className="h-2"></div>
@@ -1017,52 +993,40 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       </div>
     </section>
 
-    {/* Combined Trust Section */}
-    <section className="bg-[#F3F3F4] py-6 mt-10">
-      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
-        <p className="text-base leading-snug">
-          Finding reliable guidance is hard when most sites sell supplements.
-        </p>
-        <p className="text-base text-gray-700">
-          We don't sell supplements.
-        </p>
-        <p className="text-base text-gray-600 leading-snug">
-          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
-        </p>
+{/* Trust Strip – Refined Minimal Version */}
+<section className="bg-transparent mt-18 mb-0">
+  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+      Evidence-led guidance - not marketing.
+    </p>
 
-        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
+    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+      <Image 
+        src="/images/nhs-logo.png" 
+        alt="NHS" 
+        width={60} 
+        height={22} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/harvard-health-logo.png" 
+        alt="Harvard Health" 
+        width={65} 
+        height={28} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/world-health-organization-logo.png" 
+        alt="World Health Organization" 
+        width={90} 
+        height={28} 
+        className="object-contain"
+      />
+    </div>
+  </div>
+</section>
 
-        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
-          Evidence-led guidance
-        </p>
-
-        <div className="flex justify-center items-center gap-7 opacity-35">
-          <Image 
-            src="/images/nhs-logo.png" 
-            alt="NHS" 
-            width={70} 
-            height={25} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/harvard-health-logo.png" 
-            alt="Harvard Health" 
-            width={75} 
-            height={32} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/world-health-organization-logo.png" 
-            alt="World Health Organization" 
-            width={100} 
-            height={30} 
-            className="object-contain filter grayscale" 
-          />
-        </div>
-      </div>
-    </section>
-
-    {/* 80px spacing buffer before Immunity section */}
+    {/* 80px spacing buffer before next section */}
     <div className="h-2"></div>
   </>
 )}
@@ -1138,50 +1102,38 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       </div>
     </section>
 
-    {/* Combined Trust Section */}
-    <section className="bg-[#F3F3F4] py-6 mt-10">
-      <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
-        <p className="text-base leading-snug">
-          Finding reliable guidance is hard when most sites sell supplements.
-        </p>
-        <p className="text-base text-gray-700">
-          We don't sell supplements.
-        </p>
-        <p className="text-base text-gray-600 leading-snug">
-          We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
-        </p>
+{/* Trust Strip – Refined Minimal Version */}
+<section className="bg-transparent mt-18 mb-0">
+  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+      Evidence-led guidance - not marketing.
+    </p>
 
-        <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
-
-        <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
-          Evidence-led guidance
-        </p>
-
-        <div className="flex justify-center items-center gap-7 opacity-35">
-          <Image 
-            src="/images/nhs-logo.png" 
-            alt="NHS" 
-            width={70} 
-            height={25} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/harvard-health-logo.png" 
-            alt="Harvard Health" 
-            width={75} 
-            height={32} 
-            className="object-contain filter grayscale" 
-          />
-          <Image 
-            src="/images/world-health-organization-logo.png" 
-            alt="World Health Organization" 
-            width={100} 
-            height={30} 
-            className="object-contain filter grayscale" 
-          />
-        </div>
-      </div>
-    </section>
+    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+      <Image 
+        src="/images/nhs-logo.png" 
+        alt="NHS" 
+        width={60} 
+        height={22} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/harvard-health-logo.png" 
+        alt="Harvard Health" 
+        width={65} 
+        height={28} 
+        className="object-contain"
+      />
+      <Image 
+        src="/images/world-health-organization-logo.png" 
+        alt="World Health Organization" 
+        width={90} 
+        height={28} 
+        className="object-contain"
+      />
+    </div>
+  </div>
+</section>
 
     {/* 80px spacing buffer before next section */}
     <div className="h-2"></div>
