@@ -115,7 +115,7 @@ export default function Magnesium({ onClose }) {
                     clipRule="evenodd"
                   />
                 </svg>
-                One of the most effective forms of magnesium for the mind — proven safe with excellent tolerability over decades.
+              Gentle, well-absorbed form of magnesium — safely used for decades and trusted worldwide.
                 <span className="inline-block group" style={{ marginLeft: '8px', top: '-6px', position: 'relative' }}>
                   <span
                     className="inline-flex items-center justify-center rounded-full text-white cursor-pointer transition-all duration-150 ease-out hover:scale-105"
@@ -146,7 +146,7 @@ export default function Magnesium({ onClose }) {
                       transitionDuration: '150ms'
                     }}
                   >
-                    Developed at MIT and tested in clinical trials showing improvements in memory and cognitive function (MIT, 2021).
+                  Magnesium Glycinate is a gentle form that's easy on the stomach and well absorbed by the body (Cleveland Clinic, 2024).
                   </span>
                 </span>
               </p>
@@ -178,7 +178,7 @@ export default function Magnesium({ onClose }) {
                       zIndex: 50
                     }}
                   >
-                    Magnesium (L-Threonate) — absorbs completely so you feel the difference.
+                    Magnesium (Glycinate): the form most easily absorbed by the body muscles.
                   </span>
                 </div>
               </div>

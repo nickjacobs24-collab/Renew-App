@@ -434,7 +434,7 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
         </div>
       </div>
 
-      <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight pr-12 lg:pr-20 transition-all duration-1000 ${visibleElements.title ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <h1 className={`text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight pr-12 lg:pr-20 transition-all duration-1000 ${visibleElements.title ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {title}
       </h1>
 

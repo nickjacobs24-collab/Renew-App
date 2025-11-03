@@ -10,7 +10,7 @@ import Image from "next/image";
 // ============================================================================
 
 const goals = [
-  { id: 'energy', name: 'Boosting energy and focus', icon: Zap, baseColor: '#F97316', lightColor: '#FB923C', darkColor: '#EA580C', iconBg: 'bg-orange-100' },
+  { id: 'energy', name: 'Improving energy and focus', icon: Zap, baseColor: '#F97316', lightColor: '#FB923C', darkColor: '#EA580C', iconBg: 'bg-orange-100' },
   { id: 'immunity', name: 'Strenthening immunity', icon: Shield, baseColor: '#059669', lightColor: '#10B981', darkColor: '#047857', iconBg: 'bg-emerald-100' }, 
   { id: 'gutHealth', name: 'Supporting digestion and gut health', icon: Smile, baseColor: '#F59E0B', lightColor: '#FBBF24', darkColor: '#D97706', iconBg: 'bg-amber-100' },
   { id: 'sleep', name: 'Better sleep', icon: Moon, baseColor: '#1E40AF', lightColor: '#3B82F6', darkColor: '#1E3A8A', iconBg: 'bg-indigo-100' },
