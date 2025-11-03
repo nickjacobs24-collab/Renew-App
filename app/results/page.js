@@ -597,7 +597,7 @@ function ResultsPageContent() {
             }
           />
 
-          <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+          <div className="mt-12 flex flex-col space-y-6 md:space-y-8">
             {displayedEnergySupplements.map((supplement, index) => (
               <SupplementCard
                 key={supplement.id}
