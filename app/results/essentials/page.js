@@ -10,10 +10,10 @@ import EssentialsVitaminB from './modals/EssentialsVitaminB';
 
 // Reusable Benefit Tag Component
 const BenefitTag = ({ icon: Icon, children }) => (
-  <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100/70 px-3 py-1.5 text-[13px] font-medium text-neutral-800 border border-neutral-300 shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
-    <Icon className="w-4 h-4 stroke-[1.75] text-neutral-700" />
-    {children}
-  </span>
+<span className="inline-flex items-center gap-2.5 rounded-full bg-neutral-100/70 px-5 py-1.5 text-[13px] font-medium text-neutral-800 border border-neutral-300 shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
+  <Icon className="w-4 h-4 stroke-[1.75] text-neutral-700" />
+  {children}
+</span>
 );
 
 // HARDCODED ESSENTIALS SUPPLEMENTS - Universal supplements for everyone
@@ -126,9 +126,9 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
     return 'brightness-105 saturate-90 contrast-95';
   };
 
-  const getOverlayClasses = () => {
-    return 'bg-gradient-to-t from-white/55 via-white/25 to-transparent';
-  };
+const getOverlayClasses = () => {
+  return 'bg-transparent';
+};
 
   const getTextTint = () => {
     return 'text-[#2563eb]'; // Renew Blue - matches the Essentials headline gradient
@@ -140,7 +140,7 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
         ref={cardRef}
         className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-[320px] max-w-[1100px] mx-auto">
+        <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-[280px] w-full">
           <div className="absolute inset-0 w-full h-full">
             <Image
               src={supplement.image || '/images/placeholder.jpg'}
@@ -153,10 +153,14 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
 
           <div className={`absolute inset-0 pointer-events-none ${getOverlayClasses()}`}></div>
 
-          <div className="relative z-20 flex min-h-[240px] md:min-h-[260px] items-end p-7 md:p">
-            <div className="relative w-full md:w-[55%] md:ml-auto bg-white/90 backdrop-blur-sm rounded-xl shadow-
-            [0_8px_30px_rgba(0,0,0,0.06)] p-6 md:p-9 pb-7 md:pb-7">
-              <div className="text-[22px] md:text-[24px] font-bold tracking-tight text-neutral-900">
+          <div className="relative z-20 flex min-h-[220px] md:min-h-[240px] items-center p-5 md:p-6">
+<div className={`relative w-full md:w-[55%] md:ml-auto rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] pt-3 pb-3 px-5 md:pt-4 md:pb-4 md:px-6 transition-all duration-300 ${
+    ['vitaminb', 'vitamind'].includes(supplement.id.toLowerCase())
+      ? 'bg-white/ backdrop-blur-[2px]'
+      : 'bg-white/92 backdrop-blur-[2px]'
+  }`}
+>
+              <div className="text-[20px] md:text-[22px] font-bold tracking-tight text-neutral-900">
                 {supplement.name}
               </div>
 
@@ -164,7 +168,7 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
                 {supplement.role}
               </div>
 
-              <div className="flex gap-1.5 mt-3 flex-wrap">
+              <div className="flex gap-1.5 mt-4 flex-wrap">
                 {supplement.benefits.map((benefit, idx) => (
                   <BenefitTag key={idx} icon={benefit.icon}>
                     {benefit.text}
@@ -172,7 +176,7 @@ const SupplementCard = ({ supplement, index, category = 'Essentials', categoryCo
                 ))}
               </div>
 
-              <div className="mt-6 text-[16px] leading-relaxed text-neutral-600 mb-1">
+              <div className="mt-4 text-[16px] leading-relaxed text-neutral-600 mb-1">
                 {supplement.burningPlatform}
               </div>
 
@@ -232,22 +236,27 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
   return (
     <div ref={headerRef}>
       <div className={`transition-all duration-1000 ${visibleElements.icon ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="w-14 h-14 bg-gradient-to-br rounded-2xl flex items-center justify-center mb-8 shadow-lg"
-             style={{ background: `linear-gradient(135deg, ${color.from}, ${color.to})` }}>
+<div
+  className="w-14 h-14 bg-gradient-to-br rounded-2xl flex items-center justify-center mb-5 shadow-lg"
+  style={{ background: `linear-gradient(135deg, ${color.from}, ${color.to})` }}
+>
           <Icon className="w-7 h-7 text-white" />
         </div>
       </div>
 
-      <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black mb-3 leading-tight pr-12 lg:pr-20 whitespace-nowrap transition-all duration-1000 ${visibleElements.title ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        {title}
-      </h1>
+<h1
+  className="text-5xl md:text-6xl lg:text-7xl mb-1 leading-tight pr-12 lg:pr-20"
+  style={{ fontWeight: 800 }}
+>
+  {title}
+</h1>
 
-      <p className={`text-xl md:text-2xl font-semibold text-gray-900 leading-tight pr-12 lg:pr-20 whitespace-nowrap transition-all duration-1000 ${visibleElements.description ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <p className={`text-lg text-gray-700 leading-relaxed pr-12 lg:pr-20 transition-all duration-1000 ${visibleElements.description ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {description}
       </p>
 
       {secondParagraph && (
-        <p className={`text-xl text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-6 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <p className={`text-lg text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-3 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {secondParagraph}
         </p>
       )}
@@ -311,9 +320,9 @@ export default function EssentialsPage() {
       <div className="relative">
  {/* ---------- ESSENTIALS SECTION ---------- */}
         <section
-          className="relative py-12 lg:py-16 mb-20"
+          className="relative py-12 lg:py-16 mb-5"
           style={{
-            background: `linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(37, 99, 235, 0.06) 45%, rgba(37, 99, 235, 0.12) 70%, rgba(37, 99, 235, 0.15) 100%)`,
+          background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 18%, rgba(37,99,235,0.15) 38%, rgba(37,99,235,0.25) 100%)`,
             transition: 'background 0.3s ease'
           }}
         >
@@ -323,14 +332,16 @@ export default function EssentialsPage() {
                 icon={Sparkles}
                 color={{ from: '#2563eb', to: '#0f2554' }}
                 title={<><span style={{ background: 'linear-gradient(135deg, #2563eb, #0f2554)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Essentials</span>&nbsp;that&nbsp;elevate.</>}
-                description={
-                  <>
-                    Four essentials. Everything starts here.
-                  </>
-                }
+description={
+  <>
+    <span className="text-[22px] md:text-[24px] font-bold leading-snug">
+      Four essentials. Everything starts here.
+    </span>
+  </>
+}
               />
 
-              <div className="mt-16 flex flex-col space-y-8 md:space-y-10">
+              <div className="mt-12 flex flex-col space-y-8 md:space-y-6">
                 {essentialsSupplements.map((supplement, index) => (
                   <SupplementCard
                     key={supplement.id}
@@ -345,53 +356,40 @@ export default function EssentialsPage() {
           </div>
         </section>
 
-        {/* Combined Trust Section */}
-        <section className="bg-[#F3F3F4] py-6 mt-10">
-          <div className="max-w-3xl mx-auto text-center px-6 space-y-4 text-gray-700">
-            <p className="text-base leading-snug">
-              Finding reliable guidance is hard when most sites sell supplements.
-            </p>
-            <p className="text-base text-gray-700">
-              We don't sell supplements.
-            </p>
-            <p className="text-base text-gray-600 leading-snug">
-              We focus on what's proven, evidence-backed, and safe — so you can choose with confidence.
+  {/* Trust Strip – Refined Minimal Version */}
+       <section className="bg-transparent py-8">
+          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+              Evidence-led guidance - not marketing.
             </p>
 
-            <div className="border-t border-gray-300 my-8 max-w-md mx-auto"></div>
-
-            <p className="uppercase text-[10px] tracking-[0.08em] font-medium text-gray-700">
-              Evidence-led guidance
-            </p>
-
-            <div className="flex justify-center items-center gap-7 opacity-35">
+            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
               <Image 
                 src="/images/nhs-logo.png" 
                 alt="NHS" 
-                width={70} 
-                height={25} 
-                className="object-contain filter grayscale" 
+                width={60} 
+                height={22} 
+                className="object-contain"
               />
               <Image 
                 src="/images/harvard-health-logo.png" 
                 alt="Harvard Health" 
-                width={75} 
-                height={32} 
-                className="object-contain filter grayscale" 
+                width={65} 
+                height={28} 
+                className="object-contain"
               />
               <Image 
                 src="/images/world-health-organization-logo.png" 
                 alt="World Health Organization" 
-                width={100} 
-                height={30} 
-                className="object-contain filter grayscale" 
+                width={90} 
+                height={28} 
+                className="object-contain"
               />
             </div>
           </div>
         </section>
 
-        {/* Bottom spacing */}
-        <div className="h-20"></div>
+        <div className="h-2"></div>
       </div>
     </div>
   );

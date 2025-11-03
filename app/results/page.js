@@ -343,7 +343,7 @@ const getTextTint = () => {
               <button
                 type="button"
                 onClick={() => setShowModal(true)}
-                className={`mt-3 inline-flex items-center gap-1.5 text-sm font-semibold ${getTextTint()} hover:underline transition-colors`}
+                className={`mt-4 mb-1 inline-flex items-center gap-1.5 text-[15px] font-semibold ${getTextTint()} hover:underline underline-offset-[3px] transition-colors`}
               >
                 Learn more
               </button>
@@ -498,6 +498,20 @@ function ResultsPageContent() {
   const showImm    = selectedGoals.includes('immunity');
   const showGutHealth = selectedGoals.includes('guthealth');
 
+  // NEW CODE - determines which goal section appears last
+const visibleGoals = [
+  { name: 'energy', isVisible: showEnergy },
+  { name: 'immunity', isVisible: showImm },
+  { name: 'guthealth', isVisible: showGutHealth },
+  { name: 'sleep', isVisible: showSleep },
+  { name: 'calm', isVisible: showCalm }
+].filter(goal => goal.isVisible);
+
+const lastVisibleGoal = visibleGoals[visibleGoals.length - 1]?.name;
+
+// Helper function - checks if this section is the last one showing
+const isLastSection = (goalName) => goalName === lastVisibleGoal;
+
   // UI state
   const [showEnergyAdvanced, setShowEnergyAdvanced] = useState(false);
   const [showSleepAdvanced, setShowSleepAdvanced] = useState(false); 
@@ -633,68 +647,72 @@ function ResultsPageContent() {
       </div>
     </section>
 
-    {/* CTA Block - White background */}
-    <section className="bg-white pb -mt0">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          
-          <p className="text-gray-800 text-[22px] font-bold mb-2">
-            Not focused on one goal?
-          </p>
-          
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-            Start with four essentials that benefit everyone.
-          </p>
-          
-          <button
-            onClick={() => window.location.href = '/results/essentials'}
-            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            Start with the essentials
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-        </div>
-      </div>
-    </section>
+{/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
+    {isLastSection('energy') && (
+      <>
+        {/* CTA Block - White background */}
+        <section className="bg-white pb -mt0">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="max-w-6xl mx-auto text-center">
+              
+              <p className="text-gray-800 text-[22px] font-bold mb-2">
+                Not focused on one goal?
+              </p>
+              
+              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
+                Start with four essentials that benefit everyone.
+              </p>
+              
+              <button
+                onClick={() => window.location.href = '/results/essentials'}
+                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                Start with the essentials
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+            </div>
+          </div>
+        </section>
 
-{/* Trust Strip – Refined Minimal Version */}
-<section className="bg-transparent mt-18 mb-0">
-  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-      Evidence-led guidance - not marketing.
-    </p>
+        {/* Trust Strip – Refined Minimal Version */}
+        <section className="bg-transparent mt-18 mb-0">
+          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+              Evidence-led guidance - not marketing.
+            </p>
 
-    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-      <Image 
-        src="/images/nhs-logo.png" 
-        alt="NHS" 
-        width={60} 
-        height={22} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/harvard-health-logo.png" 
-        alt="Harvard Health" 
-        width={65} 
-        height={28} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/world-health-organization-logo.png" 
-        alt="World Health Organization" 
-        width={90} 
-        height={28} 
-        className="object-contain"
-      />
-    </div>
-  </div>
-</section>
+            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+              <Image 
+                src="/images/nhs-logo.png" 
+                alt="NHS" 
+                width={60} 
+                height={22} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/harvard-health-logo.png" 
+                alt="Harvard Health" 
+                width={65} 
+                height={28} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/world-health-organization-logo.png" 
+                alt="World Health Organization" 
+                width={90} 
+                height={28} 
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </section>
 
-    {/* 80px spacing buffer before next section */}
-    <div className="h-2"></div>
+        <div className="h-2"></div>
+      </>
+    )}
   </>
 )}
 
@@ -742,68 +760,72 @@ function ResultsPageContent() {
       </div>
     </section>
 
-{/* CTA Block - White background */}
-    <section className="bg-white pb -mt-0">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          
-          <p className="text-gray-800 text-[22px] font-bold mb-2">
-            Not focused on one goal?
-          </p>
-          
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-            Start with four essentials that benefit everyone.
-          </p>
-          
-          <button
-            onClick={() => window.location.href = '/results/essentials'}
-            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            Start with the essentials
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-        </div>
-      </div>
-    </section>
+{/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
+    {isLastSection('immunity') && (
+      <>
+        {/* CTA Block - White background */}
+        <section className="bg-white pb -mt0">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="max-w-6xl mx-auto text-center">
+              
+              <p className="text-gray-800 text-[22px] font-bold mb-2">
+                Not focused on one goal?
+              </p>
+              
+              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
+                Start with four essentials that benefit everyone.
+              </p>
+              
+              <button
+                onClick={() => window.location.href = '/results/essentials'}
+                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                Start with the essentials
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+            </div>
+          </div>
+        </section>
 
-{/* Trust Strip – Refined Minimal Version */}
-<section className="bg-transparent mt-18 mb-0">
-  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-      Evidence-led guidance - not marketing.
-    </p>
+        {/* Trust Strip – Refined Minimal Version */}
+        <section className="bg-transparent mt-18 mb-0">
+          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+              Evidence-led guidance - not marketing.
+            </p>
 
-    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-      <Image 
-        src="/images/nhs-logo.png" 
-        alt="NHS" 
-        width={60} 
-        height={22} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/harvard-health-logo.png" 
-        alt="Harvard Health" 
-        width={65} 
-        height={28} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/world-health-organization-logo.png" 
-        alt="World Health Organization" 
-        width={90} 
-        height={28} 
-        className="object-contain"
-      />
-    </div>
-  </div>
-</section>
+            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+              <Image 
+                src="/images/nhs-logo.png" 
+                alt="NHS" 
+                width={60} 
+                height={22} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/harvard-health-logo.png" 
+                alt="Harvard Health" 
+                width={65} 
+                height={28} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/world-health-organization-logo.png" 
+                alt="World Health Organization" 
+                width={90} 
+                height={28} 
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </section>
 
-    {/* 80px spacing buffer before next section */}
-    <div className="h-2"></div>
+        <div className="h-2"></div>
+      </>
+        )}
   </>
 )}
 
@@ -857,68 +879,72 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       </div>
     </section>
 
-    {/* CTA Block - White background */}
-    <section className="bg-white pb -mt-0">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          
-          <p className="text-gray-800 text-[22px] font-bold mb-2">
-            Not focused on one goal?
-          </p>
-          
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-            Start with four essentials that benefit everyone.
-          </p>
-          
-          <button
-            onClick={() => window.location.href = '/results/essentials'}
-            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            Start with the essentials
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-        </div>
-      </div>
-    </section>
+{/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
+    {isLastSection('guthealth') && (
+      <>
+        {/* CTA Block - White background */}
+        <section className="bg-white pb -mt0">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="max-w-6xl mx-auto text-center">
+              
+              <p className="text-gray-800 text-[22px] font-bold mb-2">
+                Not focused on one goal?
+              </p>
+              
+              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
+                Start with four essentials that benefit everyone.
+              </p>
+              
+              <button
+                onClick={() => window.location.href = '/results/essentials'}
+                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                Start with the essentials
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+            </div>
+          </div>
+        </section>
 
-{/* Trust Strip – Refined Minimal Version */}
-<section className="bg-transparent mt-18 mb-0">
-  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-      Evidence-led guidance - not marketing.
-    </p>
+        {/* Trust Strip – Refined Minimal Version */}
+        <section className="bg-transparent mt-18 mb-0">
+          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+              Evidence-led guidance - not marketing.
+            </p>
 
-    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-      <Image 
-        src="/images/nhs-logo.png" 
-        alt="NHS" 
-        width={60} 
-        height={22} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/harvard-health-logo.png" 
-        alt="Harvard Health" 
-        width={65} 
-        height={28} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/world-health-organization-logo.png" 
-        alt="World Health Organization" 
-        width={90} 
-        height={28} 
-        className="object-contain"
-      />
-    </div>
-  </div>
-</section>
+            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+              <Image 
+                src="/images/nhs-logo.png" 
+                alt="NHS" 
+                width={60} 
+                height={22} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/harvard-health-logo.png" 
+                alt="Harvard Health" 
+                width={65} 
+                height={28} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/world-health-organization-logo.png" 
+                alt="World Health Organization" 
+                width={90} 
+                height={28} 
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </section>
 
-    {/* 80px spacing buffer before next section */}
-    <div className="h-2"></div>
+        <div className="h-2"></div>
+      </>
+        )}
   </>
 )}
 
@@ -966,68 +992,72 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       </div>
     </section>
 
-    {/* CTA Block - White background */}
-    <section className="bg-white pb -0">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          
-          <p className="text-gray-800 text-[22px] font-bold mb-2">
-            Not focused on one goal?
-          </p>
-          
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-            Start with four essentials that benefit everyone.
-          </p>
-          
-          <button
-            onClick={() => window.location.href = '/results/essentials'}
-            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            Start with the essentials
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-        </div>
-      </div>
-    </section>
+ {/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
+    {isLastSection('sleep') && (
+      <>
+        {/* CTA Block - White background */}
+        <section className="bg-white pb -mt0">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="max-w-6xl mx-auto text-center">
+              
+              <p className="text-gray-800 text-[22px] font-bold mb-2">
+                Not focused on one goal?
+              </p>
+              
+              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
+                Start with four essentials that benefit everyone.
+              </p>
+              
+              <button
+                onClick={() => window.location.href = '/results/essentials'}
+                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                Start with the essentials
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+            </div>
+          </div>
+        </section>
 
-{/* Trust Strip – Refined Minimal Version */}
-<section className="bg-transparent mt-18 mb-0">
-  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-      Evidence-led guidance - not marketing.
-    </p>
+        {/* Trust Strip – Refined Minimal Version */}
+        <section className="bg-transparent mt-18 mb-0">
+          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+              Evidence-led guidance - not marketing.
+            </p>
 
-    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-      <Image 
-        src="/images/nhs-logo.png" 
-        alt="NHS" 
-        width={60} 
-        height={22} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/harvard-health-logo.png" 
-        alt="Harvard Health" 
-        width={65} 
-        height={28} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/world-health-organization-logo.png" 
-        alt="World Health Organization" 
-        width={90} 
-        height={28} 
-        className="object-contain"
-      />
-    </div>
-  </div>
-</section>
+            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+              <Image 
+                src="/images/nhs-logo.png" 
+                alt="NHS" 
+                width={60} 
+                height={22} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/harvard-health-logo.png" 
+                alt="Harvard Health" 
+                width={65} 
+                height={28} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/world-health-organization-logo.png" 
+                alt="World Health Organization" 
+                width={90} 
+                height={28} 
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </section>
 
-    {/* 80px spacing buffer before next section */}
-    <div className="h-2"></div>
+        <div className="h-2"></div>
+      </>
+        )}
   </>
 )}
 
@@ -1075,68 +1105,72 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
       </div>
     </section>
 
-    {/* CTA Block - White background */}
-    <section className="bg-white pb -mt-0">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          
-          <p className="text-gray-800 text-[22px] font-bold mb-2">
-            Not focused on one goal?
-          </p>
-          
-          <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-            Start with four essentials that benefit everyone.
-          </p>
-          
-          <button
-            onClick={() => window.location.href = '/results/essentials'}
-            className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            Start with the essentials
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          
-        </div>
-      </div>
-    </section>
+ {/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
+    {isLastSection('calm') && (
+      <>
+        {/* CTA Block - White background */}
+        <section className="bg-white pb -mt0">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="max-w-6xl mx-auto text-center">
+              
+              <p className="text-gray-800 text-[22px] font-bold mb-2">
+                Not focused on one goal?
+              </p>
+              
+              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
+                Start with four essentials that benefit everyone.
+              </p>
+              
+              <button
+                onClick={() => window.location.href = '/results/essentials'}
+                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                Start with the essentials
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+            </div>
+          </div>
+        </section>
 
-{/* Trust Strip – Refined Minimal Version */}
-<section className="bg-transparent mt-18 mb-0">
-  <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-    <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-      Evidence-led guidance - not marketing.
-    </p>
+        {/* Trust Strip – Refined Minimal Version */}
+        <section className="bg-transparent mt-18 mb-0">
+          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+              Evidence-led guidance - not marketing.
+            </p>
 
-    <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-      <Image 
-        src="/images/nhs-logo.png" 
-        alt="NHS" 
-        width={60} 
-        height={22} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/harvard-health-logo.png" 
-        alt="Harvard Health" 
-        width={65} 
-        height={28} 
-        className="object-contain"
-      />
-      <Image 
-        src="/images/world-health-organization-logo.png" 
-        alt="World Health Organization" 
-        width={90} 
-        height={28} 
-        className="object-contain"
-      />
-    </div>
-  </div>
-</section>
+            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+              <Image 
+                src="/images/nhs-logo.png" 
+                alt="NHS" 
+                width={60} 
+                height={22} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/harvard-health-logo.png" 
+                alt="Harvard Health" 
+                width={65} 
+                height={28} 
+                className="object-contain"
+              />
+              <Image 
+                src="/images/world-health-organization-logo.png" 
+                alt="World Health Organization" 
+                width={90} 
+                height={28} 
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </section>
 
-    {/* 80px spacing buffer before next section */}
-    <div className="h-2"></div>
+        <div className="h-2"></div>
+      </>
+    )}
   </>
 )}
 
