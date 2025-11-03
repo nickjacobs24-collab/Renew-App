@@ -261,17 +261,13 @@ const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor 
     switch(supplement.id) {
       case 'Vitamin B':
       case 'Vitamin B-mind':
-        return 'bg-gradient-to-t from-amber-50/25 via-white/10 to-transparent';
+        return 'bg-gradient-to-t from-black/10 via-transparent to-transparent';
       case 'creatine':
-        return 'bg-gradient-to-t from-amber-50/15 via-white/15 to-transparent';
-      case 'coq10':
-        return 'bg-gradient-to-t from-white/30 via-white/20 to-transparent';
-      case 'citicoline':
-        return 'bg-gradient-to-t from-white/40 via-slate-100/30 to-transparent';
+        return 'bg-gradient-to-t from-black/10 via-transparent to-transparent';
       case 'omega3':
-        return 'bg-gradient-to-t from-blue-50/30 via-white/15 to-transparent';
+        return 'bg-gradient-to-t from-black/10 via-transparent to-transparent';
       default:
-        return 'bg-gradient-to-t from-white/35 via-white/15 to-transparent';
+        return 'bg-gradient-to-t from-black/10 via-transparent to-transparent';
     }
   };
 
@@ -317,7 +313,7 @@ const getTextTint = () => {
           <div className={`absolute inset-0 pointer-events-none ${getOverlayClasses()}`}></div>
 
 <div className="relative z-20 flex h-[280px] items-center p-5 md:p-8">
-  <div className="relative ml-auto w-full md:w-[55%] bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-7 shadow-lg ring-1 ring-black/5">
+<div className="relative ml-auto w-full md:w-[55%] bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-7 shadow-md ring-1 ring-black/10 border border-white/60">
     {supplement.isPriority && (
       <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
         TRY THIS FIRST
