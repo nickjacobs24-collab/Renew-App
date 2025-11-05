@@ -39,16 +39,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% / 3));
+    transform: translateX(-33.333333%);
   }
-}
-
-.trust-logo {
-  filter: brightness(0) invert(1) contrast(0.85);
-  opacity: 0.45;
-  transition: opacity 0.3s ease;
-}
-
-.trust-logo:hover {
-  opacity: 0.6;
 }
