@@ -176,30 +176,30 @@ export default function LandingPage() {
     >
       
       <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
+                <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
       </div>
       
       <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
+        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
       </div>
       
       <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
+        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
       </div>
       
     </div>
