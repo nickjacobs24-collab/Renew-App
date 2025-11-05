@@ -92,7 +92,7 @@ export default function LandingPage() {
   
   {/* Dark Overlay (40-50% darkness) */}
   <div 
-    className="absolute inset-0 z-10 bg-black/50"
+    className="absolute inset-0 z-10 bg-black/60"
   />
   
   {/* Content (Text + Button) */}
@@ -105,7 +105,7 @@ export default function LandingPage() {
       transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
       className="text-white mb-12"
       style={{
-        fontSize: "clamp(3rem, 8vw, 6rem)",
+        fontSize: "clamp(2.75rem, 7.5vw, 5.5rem)",
         fontWeight: 600,
         letterSpacing: "-0.02em",
         lineHeight: 1.1,
