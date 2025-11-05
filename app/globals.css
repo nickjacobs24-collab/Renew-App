@@ -34,16 +34,11 @@
   background: linear-gradient(90deg, #2FB7A6 0%, #0F2C3F 100%);
   }
 
-@keyframes scroll-continuous {
+@keyframes scroll-logos {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%);
+    transform: translateX(calc(-100% / 3));
   }
-}
-
-.animate-scroll-continuous {
-  animation: scroll-continuous 15s linear infinite;
-  display: flex;
 }
