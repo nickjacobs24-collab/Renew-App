@@ -162,7 +162,14 @@ export default function LandingPage() {
   
   <div className="relative overflow-hidden">
     
-    <div className="flex animate-scroll-continuous">
+    {/* Scrolling Container with Mask Gradient */}
+    <div 
+      className="flex animate-scroll-continuous"
+      style={{
+        WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
+        maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
+      }}
+    >
       
       {/* Set 1 */}
       <div className="flex items-center gap-24 px-12 shrink-0">
@@ -171,7 +178,7 @@ export default function LandingPage() {
         <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
         <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
         <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-12 brightness-0 invert opacity-40 mix-blend-screen" />
       </div>
       
       {/* Set 2 */}
@@ -181,7 +188,7 @@ export default function LandingPage() {
         <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
         <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
         <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-12 brightness-0 invert opacity-40 mix-blend-screen" />
       </div>
       
       {/* Set 3 */}
@@ -191,7 +198,7 @@ export default function LandingPage() {
         <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
         <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
         <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-12 brightness-0 invert opacity-40 mix-blend-screen" />
       </div>
       
     </div>
