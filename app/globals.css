@@ -33,3 +33,17 @@
 .button-gradient {
   background: linear-gradient(90deg, #2FB7A6 0%, #0F2C3F 100%);
   }
+
+@keyframes scroll-continuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+.animate-scroll-continuous {
+  animation: scroll-continuous 40s linear infinite;
+  display: flex;
+}

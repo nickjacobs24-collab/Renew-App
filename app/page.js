@@ -77,7 +77,7 @@ export default function LandingPage() {
       </nav>
 
 {/* SECTION 1: HERO */}
-<section className="relative flex min-h-screen items-center justify-center px-6 overflow-hidden">
+<section className="relative min-h-screen overflow-hidden">
   
   {/* Background Image */}
   <div 
@@ -90,64 +90,118 @@ export default function LandingPage() {
     }}
   />
   
-  {/* Dark Overlay (40-50% darkness) */}
-  <div 
-    className="absolute inset-0 z-10 bg-black/60"
-  />
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 z-10 bg-black/60" />
   
-  {/* Content (Text + Button) */}
-  <div className="relative z-20 w-full max-w-7xl text-center">
+  {/* Content Container */}
+  <div className="relative z-20 min-h-screen flex flex-col">
     
-    {/* Headline */}
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-      className="text-white mb-12"
-      style={{
-        fontSize: "clamp(2.75rem, 7.5vw, 5.5rem)",
-        fontWeight: 600,
-        letterSpacing: "-0.02em",
-        lineHeight: 1.1,
-        maxWidth: "100%",
-        margin: "0 auto 1.5rem"
-      }}
-    >
-      Lasting health. Easier way.
-    </motion.h1>
+    {/* Main Content (Headline + Subhead + Button) */}
+    <div className="flex-1 flex items-center justify-center px-6 py-20">
+      <div className="w-full max-w-7xl text-center">
+        
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          className="text-white"
+          style={{
+            fontSize: "clamp(2.75rem, 7.5vw, 5.5rem)",
+            fontWeight: 600,
+            letterSpacing: "-0.02em",
+            lineHeight: 1.1,
+            marginBottom: "1.5rem",
+            textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
+          }}
+        >
+          Lasting health. Easier way.
+        </motion.h1>
 
-    {/* Subline */}
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-      className="text-white/90 mb-12 max-w-3xl mx-auto"
-      style={{
-        fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
-        fontWeight: 400,
-        lineHeight: 1.6,
-        letterSpacing: "0.01em"
-      }}
-    >
-      Supplement guidance for your goals. Proven and unbiased.
-    </motion.p>
+        {/* Subline */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+          className="text-white/90 mb-12 max-w-3xl mx-auto"
+          style={{
+            fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
+            fontWeight: 400,
+            lineHeight: 1.6,
+            letterSpacing: "0.01em",
+            textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
+          }}
+        >
+          Supplement guidance for your goals. Proven and unbiased.
+        </motion.p>
 
-    {/* Get Started Button */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-      className="mt-12"
-    >
-      <a  
-        href="#how-renew-works"
-        className="inline-flex items-center justify-center rounded-2xl bg-white/95 px-16 py-4 text-xl font-semibold text-gray-800 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2"
-      >
-        Get Started
-      </a>
-    </motion.div>
+        {/* Get Started Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        >
+          <a  
+            href="#how-renew-works"
+            className="inline-flex items-center justify-center rounded-2xl bg-white/95 px-16 py-4 text-xl font-semibold text-gray-800 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2"
+          >
+            Get Started
+          </a>
+        </motion.div>
+        
+      </div>
+    </div>
+    {/* ↑ THIS CLOSES "flex-1 flex items-center..." */}
+    
+{/* Trust Logos - Bottom of Hero */}
+<div className="w-full pb-8">
+  
+  <p className="text-center text-white/25 text-xs mb-4 tracking-wider uppercase">
+    Informed by
+  </p>
+  
+  <div className="relative overflow-hidden">
+    
+    <div className="flex animate-scroll-continuous">
+      
+      {/* Set 1 */}
+      <div className="flex items-center gap-24 px-12 shrink-0">
+        <img src="/images/nhs-logo.png" alt="NHS" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+      </div>
+      
+      {/* Set 2 */}
+      <div className="flex items-center gap-24 px-12 shrink-0">
+        <img src="/images/nhs-logo.png" alt="NHS" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+      </div>
+      
+      {/* Set 3 */}
+      <div className="flex items-center gap-24 px-12 shrink-0">
+        <img src="/images/nhs-logo.png" alt="NHS" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-10 brightness-0 invert opacity-50 mix-blend-screen" />
+        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-8 brightness-0 invert opacity-40 mix-blend-screen" />
+        <img src="/images/nih-logo.png" alt="NIH" className="h-10 brightness-0 invert opacity-40 mix-blend-screen" />
+      </div>
+      
+    </div>
     
   </div>
+  
+</div>
+    
+  </div>
+  
 </section>
 
       {/* SECTION 2: HOW RENEW WORKS - Same gradient background continues */}
@@ -287,46 +341,6 @@ export default function LandingPage() {
           </motion.div>
 
         </div>
-      </section>
-
-      {/* SECTION 3: TRUST BAR - White background for contrast */}
-      <section className="bg-white pt-4 pb-16">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-          className="max-w-6xl mx-auto px-6 text-center"
-        >
-          <p className="text-gray-600 text-sm mb-8">
-            Evidence-led guidance. Sources include:
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
-            <Image 
-              src="/images/nhs-logo.png" 
-              alt="NHS" 
-              width={75} 
-              height={28} 
-              className="object-contain filter grayscale opacity-60" 
-            />
-            <span className="text-gray-400 text-sm">•</span>
-            <Image 
-              src="/images/harvard-health-logo.png" 
-              alt="Harvard Health" 
-              width={80} 
-              height={34} 
-              className="object-contain filter grayscale opacity-60" 
-            />
-            <span className="text-gray-400 text-sm">•</span>
-            <Image 
-              src="/images/world-health-organization-logo.png" 
-              alt="Mayo Clinic" 
-              width={100} 
-              height={32} 
-              className="object-contain filter grayscale opacity-60" 
-            />
-          </div>
-        </motion.div>
       </section>
 
     </div>
