@@ -76,79 +76,79 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* SECTION 1: HERO */}
-      <section className="relative flex min-h-screen items-center justify-center px-6">
-        <div className="w-full max-w-4xl text-center">
-          
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-            className="text-white mb-6"
-            style={{
-              fontSize: "clamp(2.5rem, 8vw, 4.5rem)",
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.1
-            }}
-          >
-            Find the supplements that actually work - safely.
-          </motion.h1>
+{/* SECTION 1: HERO */}
+<section className="relative flex min-h-screen items-center justify-center px-6 overflow-hidden">
+  
+  {/* Background Image */}
+  <div 
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundImage: "url('/images/hero-background.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat"
+    }}
+  />
+  
+  {/* Dark Overlay (40-50% darkness) */}
+  <div 
+    className="absolute inset-0 z-10 bg-black/50"
+  />
+  
+  {/* Content (Text + Button) */}
+  <div className="relative z-20 w-full max-w-7xl text-center">
+    
+    {/* Headline */}
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+      className="text-white mb-12"
+      style={{
+        fontSize: "clamp(3.5rem, 10vw, 7rem)",
+        fontWeight: 600,
+        letterSpacing: "-0.02em",
+        lineHeight: 1.1,
+        maxWidth: "100%",
+        margin: "0 auto 3rem"
+      }}
+    >
+      Lasting health. Easier way.
+    </motion.h1>
 
-          {/* Subline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-            className="text-white/85 mb-12 max-w-3xl mx-auto"
-            style={{
-              fontSize: "clamp(1.125rem, 2vw, 1.375rem)",
-              fontWeight: 400,
-              lineHeight: 1.6,
-              letterSpacing: "0.01em"
-            }}
-          >
-            Most sites sell supplements. We don't. We show you what's proven, evidence-backed, and safe — so you can choose with confidence.
-          </motion.p>
+    {/* Subline */}
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+      className="text-white/90 mb-16 max-w-3xl mx-auto"
+      style={{
+        fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+        fontWeight: 400,
+        lineHeight: 1.6,
+        letterSpacing: "0.01em"
+      }}
+    >
+      Supplement guidance for your goals. Proven and unbiased.
+    </motion.p>
 
-          {/* Scroll Link */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="mt-24"
-          >
-          <a  
-              href="#how-renew-works"
-              className="text-white/80 hover:text-white text-xl font-medium transition-colors inline-block"
-            >
-              See How Renew Works
-            </a>
-          </motion.div>
-
-    {/* Apple-style fade pulse arrow - CENTERED & MORE OBVIOUS */}
-          <div className="mt-8 flex justify-center">
-            <motion.div
-              initial={{ opacity: 0.3 }}
-              animate={{ 
-                opacity: [0.3, 1, 0.3]
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="pointer-events-none"
-            >
-              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </motion.div>
-          </div>
-
-        </div>
-      </section>
+    {/* Get Started Button */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
+      className="mt-12"
+    >
+      <a  
+        href="#how-renew-works"
+        className="inline-flex items-center justify-center rounded-2xl bg-white/95 px-16 py-4 text-xl font-semibold text-gray-800 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2"
+      >
+        Get Started
+      </a>
+    </motion.div>
+    
+  </div>
+</section>
 
       {/* SECTION 2: HOW RENEW WORKS - Same gradient background continues */}
       <section id="how-renew-works" className="relative min-h-screen flex items-center justify-center -mt-[80px] px-6">
