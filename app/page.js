@@ -105,12 +105,12 @@ export default function LandingPage() {
       transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
       className="text-white mb-12"
       style={{
-        fontSize: "clamp(3.5rem, 10vw, 7rem)",
+        fontSize: "clamp(3rem, 8vw, 6rem)",
         fontWeight: 600,
         letterSpacing: "-0.02em",
         lineHeight: 1.1,
         maxWidth: "100%",
-        margin: "0 auto 3rem"
+        margin: "0 auto 1.5rem"
       }}
     >
       Lasting health. Easier way.
@@ -121,9 +121,9 @@ export default function LandingPage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-      className="text-white/90 mb-16 max-w-3xl mx-auto"
+      className="text-white/90 mb-12 max-w-3xl mx-auto"
       style={{
-        fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+        fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
         fontWeight: 400,
         lineHeight: 1.6,
         letterSpacing: "0.01em"
