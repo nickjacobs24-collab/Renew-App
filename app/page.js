@@ -213,7 +213,7 @@ export default function LandingPage() {
 </section>
 
 {/* SECTION 2: HOW IT WORKS */}
-<section id="how-renew-works" className="relative py-40 px-6" style={{ backgroundColor: '#F8F5EE' }}>
+<section id="how-renew-works" className="relative py-46 px-6" style={{ backgroundColor: '#F8F5EE' }}>
   <div className="max-w-[90vw] mx-auto">
     
     {/* Header with Button */}
