@@ -213,95 +213,92 @@ export default function LandingPage() {
 </section>
 
 {/* SECTION 2: HOW IT WORKS */}
-<section id="how-renew-works" className="relative py-52 px-6" style={{ backgroundColor: '#F8F5EE' }}>
+<section id="how-renew-works" className="relative py-40 px-6" style={{ backgroundColor: '#F8F5EE' }}>
   <div className="max-w-[90vw] mx-auto">
     
     {/* Header with Button */}
-    <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-6">
+    <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
       
       {/* Left: Title + Description */}
       <div className="max-w-3xl">
-        <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
           How it works
         </h2>
-        <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
           Evidence-based supplement guidance in three steps. Clear answers, no sales pitch.
         </p>
       </div>
       
       {/* Right: Get Started Button */}
-      
-{/* Right: Get Started Button */}
-<a
-  href="/goals"
-  className="inline-flex items-center gap-2 rounded-2xl bg-gray-900 px-13 py-2.25 text-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-black hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-gray-900/50 focus:ring-offset-2"
->
-  Get Started
-  <span style={{ fontSize: '2.05rem', transform: 'translateY(-2px)', display: 'inline-block' }}>›</span>
-
-</a>
+      <a
+        href="/goals"
+        className="inline-flex items-center gap-2 rounded-2xl bg-gray-900 px-11 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-black hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-gray-900/50 focus:ring-offset-2"
+      >
+        Get Started
+        <span style={{ fontSize: '1.2rem', transform: 'translateY(-2px)', display: 'inline-block' }}>›</span>
+      </a>
       
     </div>
     
     {/* 3 Step Cards */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
       
       {/* Step 1 */}
       <div className="flex flex-col">
-        <div className="relative w-full h-[370px] mb-6 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-[296px] mb-5 rounded-2xl overflow-hidden">
           <img 
             src="/images/howitworks-step1-visual.jpg" 
             alt="Tell us your goals"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded mb-4 self-start">
+        <div className="inline-block bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded mb-3 self-start">
           Step 1
         </div>
-        <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+        <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
           Tell us your goals
         </h3>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-base text-gray-600 leading-relaxed">
           Choose what you want to improve — energy, sleep, immunity, or focus. Takes 2 minutes.
         </p>
       </div>
       
       {/* Step 2 */}
       <div className="flex flex-col">
-        <div className="relative w-full h-[370px] mb-6 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-[296px] mb-5 rounded-2xl overflow-hidden">
           <img 
             src="/images/howitworks-step2-visual.jpg" 
             alt="We match proven options"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded mb-4 self-start">
+        <div className="inline-block bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded mb-3 self-start">
           Step 2
         </div>
-        <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+        <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
           We match proven options
         </h3>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-base text-gray-600 leading-relaxed">
           We analyze trusted research and narrow it to 2-3 supplements that work for your goals.
         </p>
       </div>
       
       {/* Step 3 */}
       <div className="flex flex-col">
-        <div className="relative w-full h-[370px] mb-6 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-[296px] mb-5 rounded-2xl overflow-hidden">
           <img 
             src="/images/howitworks-step3-visual.jpg" 
             alt="You choose where to buy"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded mb-4 self-start">
+        <div className="inline-block bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded mb-3 self-start">
           Step 3
         </div>
-        <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+        <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
           You choose where to buy
         </h3>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-base text-gray-600 leading-relaxed">
           Pick your retailer. We don't sell — we guide. You stay in control.
         </p>
       </div>
