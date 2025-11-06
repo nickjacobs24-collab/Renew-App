@@ -212,144 +212,104 @@ export default function LandingPage() {
   
 </section>
 
-      {/* SECTION 2: HOW RENEW WORKS - Same gradient background continues */}
-      <section id="how-renew-works" className="relative min-h-screen flex items-center justify-center -mt-[80px] px-6">
-        <div className="max-w-7xl mx-auto w-full">
-          
-          {/* Section Title */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-            className="text-white text-center mb-12"
-            style={{
-              fontSize: "clamp(3rem, 8vw, 5rem)",
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.1
-            }}
-          >
-            How Renew Works
-          </motion.h2>
+{/* SECTION 2: HOW IT WORKS */}
+<section id="how-renew-works" className="relative py-52 px-6" style={{ backgroundColor: '#F8F5EE' }}>
+  <div className="max-w-[90vw] mx-auto">
+    
+    {/* Header with Button */}
+    <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-6">
+      
+      {/* Left: Title + Description */}
+      <div className="max-w-3xl">
+        <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          How it works
+        </h2>
+        <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+          Evidence-based supplement guidance in three steps. Clear answers, no sales pitch.
+        </p>
+      </div>
+      
+      {/* Right: Get Started Button */}
+      
+{/* Right: Get Started Button */}
+<a
+  href="/goals"
+  className="inline-flex items-center gap-2 rounded-2xl bg-gray-900 px-13 py-2.25 text-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-black hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-gray-900/50 focus:ring-offset-2"
+>
+  Get Started
+  <span style={{ fontSize: '2.05rem', transform: 'translateY(-2px)', display: 'inline-block' }}>›</span>
 
-          {/* 3 Steps with arrows */}
-          <div className="relative grid md:grid-cols-3 gap-12 mb-20 items-start">
-            
-            {/* Step 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-              className="text-center relative"
-            >
-                 <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>1</div>
-                      <p className="text-gray-100 text-lg leading-relaxed" style={{ fontWeight: 500 }}>
-                Tell us your goals — energy, sleep, calm, immunity, and more.
-              </p>
-            </motion.div>
-
-            {/* Arrow 1→2 */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.6 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-               className="hidden md:flex absolute left-[33.333%] -translate-x-1/2 top-8 items-center justify-center pointer-events-none drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]"
-            >
-              <svg className="w-16 h-16 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </motion.div>
-
-            {/* Step 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-              className="text-center relative"
-            >
-              <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>2</div>
-                  <p className="text-gray-100 text-lg leading-relaxed" style={{ fontWeight: 500 }}>
-                We narrow it to 3–5 proven, evidence-backed options.
-              </p>
-               <span className="text-gray-300 text-base mt-1 block">
-                Learn more about{" "}
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open("/results/apphowwechoose", "_blank", "width=1000,height=800");
-                  }}
-                  className="underline hover:text-white/90 transition-colors"
-                >
-                  how we choose
-                </button>.
-              </span>
-            </motion.div>
-
-            {/* Arrow 2→3 */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.6 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-               className="hidden md:flex absolute left-[66.666%] -translate-x-1/2 top-8 items-center justify-center pointer-events-none drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]"
-            >
-              <svg className="w-16 h-16 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </motion.div>
-
-            {/* Step 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              className="text-center relative"
-            >
-               <div className="font-bold text-slate-300 mb-6" style={{ fontSize: "4.95rem", fontWeight: 700 }}>3</div>
-                     <p className="text-gray-100 text-lg leading-relaxed" style={{ fontWeight: 500 }}>
-                You choose where to buy — we don't sell supplements.
-              </p>
-            </motion.div>
-
-          </div>
-
-          {/* CTA Block */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-            className="text-center"
-          >
-            <p className="text-white text-2xl font-semibold mb-6">
-              Ready to see your options?
-            </p>
-            <button
-              onClick={() => router.push("/goals")}
-              className="group relative inline-flex items-center rounded-full bg-white/95 px-8 py-4 text-base font-semibold text-blue-600 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
-            >
-              Take the quiz — 2 minutes
-              <svg
-                className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-            <p className="text-white/70 text-sm mt-4">
-              No sales pitch. Just clarity.
-            </p>
-          </motion.div>
-
+</a>
+      
+    </div>
+    
+    {/* 3 Step Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      
+      {/* Step 1 */}
+      <div className="flex flex-col">
+        <div className="relative w-full h-[370px] mb-6 rounded-2xl overflow-hidden">
+          <img 
+            src="/images/howitworks-step1-visual.jpg" 
+            alt="Tell us your goals"
+            className="w-full h-full object-cover"
+          />
         </div>
-      </section>
+        <div className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded mb-4 self-start">
+          Step 1
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+          Tell us your goals
+        </h3>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Choose what you want to improve — energy, sleep, immunity, or focus. Takes 2 minutes.
+        </p>
+      </div>
+      
+      {/* Step 2 */}
+      <div className="flex flex-col">
+        <div className="relative w-full h-[370px] mb-6 rounded-2xl overflow-hidden">
+          <img 
+            src="/images/howitworks-step2-visual.jpg" 
+            alt="We match proven options"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded mb-4 self-start">
+          Step 2
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+          We match proven options
+        </h3>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          We analyze trusted research and narrow it to 2-3 supplements that work for your goals.
+        </p>
+      </div>
+      
+      {/* Step 3 */}
+      <div className="flex flex-col">
+        <div className="relative w-full h-[370px] mb-6 rounded-2xl overflow-hidden">
+          <img 
+            src="/images/howitworks-step3-visual.jpg" 
+            alt="You choose where to buy"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded mb-4 self-start">
+          Step 3
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+          You choose where to buy
+        </h3>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Pick your retailer. We don't sell — we guide. You stay in control.
+        </p>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
 
     </div>
   );
