@@ -249,7 +249,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
       className="text-5xl md:text-6xl font-bold text-gray-900 mb-14 text-center"
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-      transition={{ duration: 1.4, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
     >
       Our approach
     </motion.h2>
@@ -271,7 +271,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
         Designed to be convenient, they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
       </motion.p>
@@ -294,7 +294,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.6, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
         It's hard to know what works. When companies make money from selling to you, it's difficult to know who to trust. Health advice shouldn't be influenced by profit.
       </motion.p>
@@ -315,7 +315,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-3" style={{ lineHeight: 1.7 }}>
           We show you what works for your goals, based on research from leading institutions. We provide trusted places to buy, but don't profit from your purchases.
