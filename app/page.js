@@ -226,7 +226,7 @@ export default function LandingPage() {
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-  className="relative py-24 flex items-center justify-center px-6 overflow-hidden"
+  className="relative py-18 flex items-center justify-center px-6 overflow-hidden"
   style={{ backgroundColor: '#E9F1EC' }}
 >
   {/* Subtle Parallax Background */}
