@@ -24,7 +24,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[#0f2554] via-[#1e3a8a] to-[#2563eb]">
+      <div className="relative min-h-screen bg-white">
       {/* NAV - Fixed */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-16 md:h-20 bg-transparent">
         <div className="flex h-full items-center justify-between px-4 md:px-6">
@@ -222,14 +222,12 @@ export default function LandingPage() {
   
 </section>
 
-<section></section> 
-
 {/* PARALLAX BELIEF BLOCK */}
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
   className="relative py-24 flex items-center justify-center px-6 overflow-hidden"
-  style={{ backgroundColor: '#FFFFFF' }}
+  style={{ backgroundColor: '#F0F6F2' }}
 >
   {/* Subtle Parallax Background */}
   <motion.div
@@ -239,16 +237,8 @@ export default function LandingPage() {
     transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
   />
   
-  {/* Soft Fade Gradient at Bottom */}
-  <div 
-    className="absolute bottom-0 left-0 right-0 h-[150px] pointer-events-none z-10"
-    style={{
-      background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, #E9ECE8 100%)'
-    }}
-  />
-  
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-[750px] mx-auto text-center">
+  <div className="relative z-10 max-w-[700px] mx-auto text-center">
     
     {/* Paragraph 1 Group */}
     <div className="mb-10">
@@ -315,7 +305,8 @@ export default function LandingPage() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        We show you what works for your goals, based on research from leading institutions — so you can choose with confidence. We provide trusted places to buy. We never profit from your purchases.
+        We show you what works for your goals, based on research from leading institutions — so you can choose with confidence. 
+        We provide trusted places to buy, but we don't profit if you purchase.
       </motion.p>
     </div>
     
