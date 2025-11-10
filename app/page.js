@@ -369,24 +369,31 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
       </div>
       
       {/* Step 2 */}
-      <div className="flex flex-col">
-        <div className="relative w-full h-[296px] mb-5 rounded-2xl overflow-hidden">
-          <img 
-            src="/images/howitworks-step2-visual.jpg" 
-            alt="We match proven options"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="inline-block bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded mb-3 self-start">
-          Step 2
-        </div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
-          We match proven options
-        </h3>
-        <p className="text-base text-gray-600 leading-relaxed">
-          We analyse trusted research and narrow it to 2-3 supplements that work for your goals.
-        </p>
-      </div>
+{/* Step 2 */}
+<div className="flex flex-col">
+  <div className="relative w-full h-[296px] mb-5 rounded-2xl overflow-hidden">
+    <img 
+      src="/images/howitworks-step2-visual.jpg" 
+      alt="We match proven options"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="inline-block bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded mb-3 self-start">
+    Step 2
+  </div>
+  <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
+    We match proven options
+  </h3>
+  <p className="text-base text-gray-600 leading-relaxed mb-3">
+    We analyze trusted research and narrow it to 2-3 supplements that work for your goals.
+  </p>
+<a 
+  href="/results/apphowwechoose" 
+  className="text-gray-500 hover:text-blue-600 text-sm font-medium underline hover:no-underline transition-colors"
+>
+  How we choose
+</a>
+</div>
       
       {/* Step 3 */}
       <div className="flex flex-col">
