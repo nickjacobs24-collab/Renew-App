@@ -227,7 +227,7 @@ export default function LandingPage() {
   ref={howItWorksRef}
   id="how-renew-works"
   className="relative py-24 flex items-center justify-center px-6 overflow-hidden"
-  style={{ backgroundColor: '#F0F6F2' }}
+  style={{ backgroundColor: '#E9F1EC' }}
 >
   {/* Subtle Parallax Background */}
   <motion.div
@@ -238,7 +238,7 @@ export default function LandingPage() {
   />
   
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-[700px] mx-auto text-center">
+  <div className="relative z-10 max-w-[780px] mx-auto text-center">
     
     {/* Paragraph 1 Group */}
     <div className="mb-10">
