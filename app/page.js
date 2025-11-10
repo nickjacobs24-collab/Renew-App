@@ -222,84 +222,89 @@ export default function LandingPage() {
   
 </section>
 
+<section></section> 
+{/* PARALLAX BELIEF BLOCK */}
 <section 
-  id="how-renew-works" 
   ref={howItWorksRef}
-  className="relative py-36 px-6 overflow-hidden" 
-  style={{ backgroundColor: '#F8F5EE' }}
+  id="how-renew-works"
+  className="relative py-24 flex items-center justify-center px-6 overflow-hidden"
+  style={{ backgroundColor: '#FAFAF9' }}
 >
-  {/* Subtle Parallax Background Layer */}
+  {/* Subtle Parallax Background */}
   <motion.div
     className="absolute inset-0 z-0"
-    style={{ backgroundColor: '#F8F5EE' }}
+    style={{ backgroundColor: '#FAFAF9' }}
     animate={isInView ? { y: 0 } : { y: -10 }}
     transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
   />
   
-  <div className="relative z-10 max-w-[90vw] mx-auto">
+  {/* Belief Text - Center Aligned */}
+  <div className="relative z-10 max-w-4xl mx-auto text-center">
     
-    {/* Header with Button */}
-    <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
-      
-      {/* Left: Title + Description */}
-      <div className="max-w-3xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
-          How it works
-        </h2>
-      <motion.p 
-        className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6"
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        variants={textBlockVariants}
-        transition={{ duration: 0.8, delay: 0, ease: [0.4, 0, 0.2, 1] }}
-      >
-        Supplements should be simple.
-        They take seconds a day, designed to be effortless — 
-        one of the highest-impact ways to improve your health.
-      </motion.p>
+    {/* Bold Headline */}
+    <motion.h2 
+      className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={textBlockVariants}
+      transition={{ duration: 0.8, delay: 0, ease: [0.4, 0, 0.2, 1] }}
+    >
+      Supplements should be simple
+    </motion.h2>
+    
+    {/* Paragraph 1 */}
+    <motion.p 
+      className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={textBlockVariants}
+      transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
+    >
+      They take seconds a day, designed to be effortless — 
+      one of the highest-impact ways to improve your health.
+    </motion.p>
+    
+    {/* Paragraph 2 */}
+    <motion.p 
+      className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={textBlockVariants}
+      transition={{ duration: 0.8, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
+    >
+      But advice online is often sales-driven or unclear.
+    </motion.p>
+    
+    {/* Paragraph 3 */}
+    <motion.p 
+      className="text-lg md:text-xl text-gray-600 leading-relaxed"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={textBlockVariants}
+      transition={{ duration: 0.8, delay: 0.9, ease: [0.4, 0, 0.2, 1] }}
+    >
+      We show you what works — backed by research from leading institutions, 
+      not marketing. Matched to your goals.
+    </motion.p>
+    
+  </div>
+</section>
 
-        {/* NEW PARAGRAPH 2 */}
-        <motion.p 
-          className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={textBlockVariants}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-        >
-          But advice online is often sales-driven or unclear.
-        </motion.p>
-
-        {/* PARAGRAPH 3 */}
-        <motion.p 
-          className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={textBlockVariants}
-          transition={{ duration: 0.8, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-        >
-          We show you what works — backed by research from leading institutions, 
-          not marketing. Matched to your goals.
-        </motion.p>
-
-      </div>
-      
-      {/* Right: Get Started Button */}
-      <a
-        href="/goals"
-        className="inline-flex items-center gap-2 rounded-2xl bg-gray-900 px-11 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-black hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-gray-900/50 focus:ring-offset-2"
-      >
-        Get Started
-        <span style={{ fontSize: '1.2rem', transform: 'translateY(-2px)', display: 'inline-block' }}>›</span>
-      </a>
-      
-    </div>
+{/* HOW IT WORKS SECTION */}
+<section className="relative py-36 px-6" style={{ backgroundColor: '#F8F5EE' }}>
+  <div className="max-w-[90vw] mx-auto">
+    
+    {/* Section Heading - Center Aligned */}
+    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-20 text-center">
+      How it works
+    </h2>
     
     {/* 3 Step Cards */}
     <motion.div 
       className="grid grid-cols-1 md:grid-cols-3 gap-10"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.8, delay: 0.9, ease: [0.4, 0, 0.2, 1] }}
+      transition={{ duration: 0.8, delay: 1.2, ease: [0.4, 0, 0.2, 1] }}
     >
       
       {/* Step 1 */}
@@ -363,6 +368,17 @@ export default function LandingPage() {
       </div>
       
     </motion.div>
+    
+    {/* CTA Button - Center Aligned */}
+    <div className="text-center mt-20">
+      <a
+        href="/goals"
+        className="inline-flex items-center gap-2 rounded-2xl bg-gray-900 px-14 py-3.5 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-black hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-gray-900/50 focus:ring-offset-2"
+      >
+        Get Started
+        <span style={{ fontSize: '1.2rem', transform: 'translateY(-2px)', display: 'inline-block' }}>›</span>
+      </a>
+    </div>
     
   </div>
 </section>
