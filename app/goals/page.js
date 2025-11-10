@@ -337,12 +337,6 @@ export default function OnboardingPage() {
                 {!canContinue ? 'Select a goal to continue' : 'Continue'}
               </button>
               
-              {/* Trust Bar */}
-              <div className="w-screen bg-[#F3F3F4] py-4 mt-14 -mx-4 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-                <p className="text-base text-gray-600 text-center font-medium">
-                  Independent, evidence-backed advice.
-                </p>
-              </div>
             </div>
           </div>
         </main>
