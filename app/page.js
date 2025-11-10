@@ -230,7 +230,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-  className="relative py-18 flex items-center justify-center px-6 overflow-hidden"
+  className="relative py-12 flex items-center justify-center px-6 overflow-hidden"
   style={{ backgroundColor: '#FFFFFF' }}
 >
   {/* Subtle Parallax Background */}
@@ -242,7 +242,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
   />
   
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-[700px] mx-auto text-center">
+  <div className="relative z-10 max-w-[780px] mx-auto text-center">
     
     {/* SECTION HEADING - NEW */}
     <motion.h2 
@@ -273,7 +273,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Designed for convenience — they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
+        Designed to be convenient, they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
       </motion.p>
     </div>
     
@@ -286,7 +286,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        But most advice is designed to sell - not help
+        Most advice is designed to sell - not help
       </motion.p>
       {/* Supporting text - SMALLER */}
       <motion.p 
