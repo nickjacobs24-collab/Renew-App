@@ -118,7 +118,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 1.8, ease: [0.4, 0, 0.2, 1] }}
           className="text-white"
           style={{
             fontSize: "clamp(2.75rem, 7.5vw, 5.5rem)",
@@ -136,7 +136,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 1.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
           className="text-white/90 mb-12 max-w-3xl mx-auto"
           style={{
             fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
@@ -153,7 +153,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 1.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
         >
           <a  
             href="#how-renew-works"
@@ -332,7 +332,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
 {/* HOW IT WORKS SECTION - WITH FADE-IN ON SCROLL */}
 <motion.section 
   ref={cardsRef}
-  className="relative pt-20 pb-36 px-6" 
+  className="relative pt-20 pb-24 px-6" 
   style={{ backgroundColor: '#F0F6F2' }}
   initial={{ opacity: 0 }}
   animate={cardsInView ? { opacity: 1 } : { opacity: 0 }}
