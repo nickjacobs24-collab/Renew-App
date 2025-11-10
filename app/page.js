@@ -1,8 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 export default function LandingPage() {
   const router = useRouter();
@@ -12,6 +12,16 @@ export default function LandingPage() {
     const t = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(t);
   }, []);
+
+  // Ref for "How It Works" section to trigger animations
+  const howItWorksRef = useRef(null);
+  const isInView = useInView(howItWorksRef, { once: true, margin: "-100px" });
+
+  // Animation variants for text blocks
+  const textBlockVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#0f2554] via-[#1e3a8a] to-[#2563eb]">
@@ -212,9 +222,21 @@ export default function LandingPage() {
   
 </section>
 
-{/* SECTION 2: HOW IT WORKS */}
-<section id="how-renew-works" className="relative py-26 px-6" style={{ backgroundColor: '#F8F5EE' }}>
-  <div className="max-w-[90vw] mx-auto">
+<section 
+  id="how-renew-works" 
+  ref={howItWorksRef}
+  className="relative py-36 px-6 overflow-hidden" 
+  style={{ backgroundColor: '#F8F5EE' }}
+>
+  {/* Subtle Parallax Background Layer */}
+  <motion.div
+    className="absolute inset-0 z-0"
+    style={{ backgroundColor: '#F8F5EE' }}
+    animate={isInView ? { y: 0 } : { y: -10 }}
+    transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
+  />
+  
+  <div className="relative z-10 max-w-[90vw] mx-auto">
     
     {/* Header with Button */}
     <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
@@ -224,9 +246,41 @@ export default function LandingPage() {
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
           How it works
         </h2>
-        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-          Evidence-based supplement guidance in three steps. Clear answers, no sales pitch.
-        </p>
+      <motion.p 
+        className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={textBlockVariants}
+        transition={{ duration: 0.8, delay: 0, ease: [0.4, 0, 0.2, 1] }}
+      >
+        Supplements should be simple.
+        They take seconds a day, designed to be effortless — 
+        one of the highest-impact ways to improve your health.
+      </motion.p>
+
+        {/* NEW PARAGRAPH 2 */}
+        <motion.p 
+          className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={textBlockVariants}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        >
+          But advice online is often sales-driven or unclear.
+        </motion.p>
+
+        {/* PARAGRAPH 3 */}
+        <motion.p 
+          className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={textBlockVariants}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
+        >
+          We show you what works — backed by research from leading institutions, 
+          not marketing. Matched to your goals.
+        </motion.p>
+
       </div>
       
       {/* Right: Get Started Button */}
@@ -241,7 +295,12 @@ export default function LandingPage() {
     </div>
     
     {/* 3 Step Cards */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <motion.div 
+      className="grid grid-cols-1 md:grid-cols-3 gap-10"
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.8, delay: 0.9, ease: [0.4, 0, 0.2, 1] }}
+    >
       
       {/* Step 1 */}
       <div className="flex flex-col">
@@ -303,7 +362,7 @@ export default function LandingPage() {
         </p>
       </div>
       
-    </div>
+    </motion.div>
     
   </div>
 </section>
