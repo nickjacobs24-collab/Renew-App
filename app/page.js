@@ -238,7 +238,7 @@ export default function LandingPage() {
   />
   
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-[780px] mx-auto text-center">
+  <div className="relative z-10 max-w-[820px] mx-auto text-center">
     
     {/* Paragraph 1 Group */}
     <div className="mb-10">
@@ -259,7 +259,7 @@ export default function LandingPage() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Designed for convenience — they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
+        Designed for convenience, they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
       </motion.p>
     </div>
     
