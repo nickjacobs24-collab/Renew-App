@@ -17,6 +17,10 @@ export default function LandingPage() {
   const howItWorksRef = useRef(null);
   const isInView = useInView(howItWorksRef, { once: true, margin: "-100px" });
 
+  // Ref for green cards section
+const cardsRef = useRef(null);
+const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
+
   // Animation variants for text blocks
   const textBlockVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -227,7 +231,7 @@ export default function LandingPage() {
   ref={howItWorksRef}
   id="how-renew-works"
   className="relative py-18 flex items-center justify-center px-6 overflow-hidden"
-  style={{ backgroundColor: '#E9F1EC' }}
+  style={{ backgroundColor: '#F0F6F2' }}
 >
   {/* Subtle Parallax Background */}
   <motion.div
@@ -315,10 +319,11 @@ export default function LandingPage() {
 
 {/* HOW IT WORKS SECTION - WITH FADE-IN ON SCROLL */}
 <motion.section 
+  ref={cardsRef}
   className="relative pt-20 pb-36 px-6" 
-  style={{ backgroundColor: '#E9ECE8' }}
+  style={{ backgroundColor: '#F0F6F2' }}
   initial={{ opacity: 0 }}
-  animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+  animate={cardsInView ? { opacity: 1 } : { opacity: 0 }}
   transition={{ duration: 0.8, delay: 3.0, ease: [0.4, 0, 0.2, 1] }}
 >
   <div className="max-w-[90vw] mx-auto">
