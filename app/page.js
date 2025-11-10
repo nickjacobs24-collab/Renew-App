@@ -223,89 +223,122 @@ export default function LandingPage() {
 </section>
 
 <section></section> 
+
 {/* PARALLAX BELIEF BLOCK */}
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-  className="relative py-24 flex items-center justify-center px-6 overflow-hidden"
-  style={{ backgroundColor: '#FAFAF9' }}
+  className="relative py-40 flex items-center justify-center px-6 overflow-hidden"
+  style={{ backgroundColor: '#FFFFFF' }}
 >
   {/* Subtle Parallax Background */}
   <motion.div
     className="absolute inset-0 z-0"
-    style={{ backgroundColor: '#FAFAF9' }}
+    style={{ backgroundColor: '#FFFFFF' }}
     animate={isInView ? { y: 0 } : { y: -10 }}
     transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
   />
   
+  {/* Soft Fade Gradient at Bottom */}
+  <div 
+    className="absolute bottom-0 left-0 right-0 h-[150px] pointer-events-none z-10"
+    style={{
+      background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, #E9ECE8 100%)'
+    }}
+  />
+  
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-4xl mx-auto text-center">
+  <div className="relative z-10 max-w-[750px] mx-auto text-center">
     
-    {/* Bold Headline */}
-    <motion.h2 
-      className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={textBlockVariants}
-      transition={{ duration: 0.8, delay: 0, ease: [0.4, 0, 0.2, 1] }}
-    >
-      Supplements should be simple
-    </motion.h2>
+    {/* Paragraph 1 Group */}
+    <div className="mb-16">
+      {/* Bold heading - BIGGER */}
+      <motion.p 
+        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-5"
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.4, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        Supplements should be simple
+      </motion.p>
+      {/* Supporting text */}
+      <motion.p 
+        className="text-lg md:text-xl text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.7 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.4, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        They take seconds of your time each day and are designed for convenience — one of the easiest, simplest, and highest-impact ways to support your health.
+      </motion.p>
+    </div>
     
-    {/* Paragraph 1 */}
-    <motion.p 
-      className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6"
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={textBlockVariants}
-      transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-    >
-      They take seconds a day, designed to be effortless — 
-      one of the highest-impact ways to improve your health.
-    </motion.p>
+    {/* Paragraph 2 Group */}
+    <div className="mb-16">
+      {/* Bold heading - BIGGER */}
+      <motion.p 
+        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-5"
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.4, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        But most advice is sales-driven or unclear
+      </motion.p>
+      {/* Supporting text */}
+      <motion.p 
+        className="text-lg md:text-xl text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.7 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        It's hard to know what works — especially when companies make more money the more you buy. That makes it difficult to know who to trust. When it comes to health, advice shouldn't be influenced by how much money companies can make.
+      </motion.p>
+    </div>
     
-    {/* Paragraph 2 */}
-    <motion.p 
-      className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6"
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={textBlockVariants}
-      transition={{ duration: 0.8, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
-    >
-      But advice online is often sales-driven or unclear.
-    </motion.p>
-    
-    {/* Paragraph 3 */}
-    <motion.p 
-      className="text-lg md:text-xl text-gray-600 leading-relaxed"
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={textBlockVariants}
-      transition={{ duration: 0.8, delay: 0.9, ease: [0.4, 0, 0.2, 1] }}
-    >
-      We show you what works — backed by research from leading institutions, 
-      not marketing. Matched to your goals.
-    </motion.p>
+    {/* Paragraph 3 Group */}
+    <div>
+      {/* Bold heading - BIGGER */}
+      <motion.p 
+        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-5"
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.4, delay: 2.0, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        How we help
+      </motion.p>
+      {/* Supporting text */}
+      <motion.p 
+        className="text-lg md:text-xl text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.7 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.4, delay: 2.5, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        We show you what works for your goals — based on research from leading institutions. We don't sell supplements or profit when you buy them. We simply help you choose what's right for you, with confidence.
+      </motion.p>
+    </div>
     
   </div>
 </section>
 
-{/* HOW IT WORKS SECTION */}
-<section className="relative py-36 px-6" style={{ backgroundColor: '#F8F5EE' }}>
+{/* HOW IT WORKS SECTION - WITH FADE-IN ON SCROLL */}
+<motion.section 
+  className="relative pt-20 pb-36 px-6" 
+  style={{ backgroundColor: '#E9ECE8' }}
+  initial={{ opacity: 0 }}
+  animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+  transition={{ duration: 0.8, delay: 3.0, ease: [0.4, 0, 0.2, 1] }}
+>
   <div className="max-w-[90vw] mx-auto">
     
     {/* Section Heading - Center Aligned */}
-    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-20 text-center">
+    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 text-center">
       How it works
     </h2>
     
     {/* 3 Step Cards */}
-    <motion.div 
-      className="grid grid-cols-1 md:grid-cols-3 gap-10"
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.8, delay: 1.2, ease: [0.4, 0, 0.2, 1] }}
-    >
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
       
       {/* Step 1 */}
       <div className="flex flex-col">
@@ -367,11 +400,11 @@ export default function LandingPage() {
         </p>
       </div>
       
-    </motion.div>
+    </div>
     
     {/* CTA Button - Center Aligned */}
-    <div className="text-center mt-20">
-      <a
+    <div className="text-center">
+     <a 
         href="/goals"
         className="inline-flex items-center gap-2 rounded-2xl bg-gray-900 px-14 py-3.5 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-black hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-gray-900/50 focus:ring-offset-2"
       >
@@ -381,7 +414,7 @@ export default function LandingPage() {
     </div>
     
   </div>
-</section>
+</motion.section>
 
     </div>
   );
