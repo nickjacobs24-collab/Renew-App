@@ -258,7 +258,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     <div className="mb-10">
       {/* Bold heading - SMALLER */}
       <motion.p 
-        className="text-xl md:text-2xl font-bold text-gray-900 leading-relaxed mb-2"
+        className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
@@ -281,7 +281,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     <div className="mb-10">
       {/* Bold heading - SMALLER */}
       <motion.p 
-        className="text-xl md:text-2xl font-bold text-gray-900 leading-relaxed mb-2"
+        className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
@@ -304,7 +304,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     <div>
       {/* Bold heading - SMALLER */}
       <motion.p 
-        className="text-xl md:text-2xl font-bold text-gray-900 leading-relaxed mb-2"
+        className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.1, ease: [0.25, 0.1, 0.25, 1] }}
