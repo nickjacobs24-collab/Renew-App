@@ -228,7 +228,7 @@ export default function LandingPage() {
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-  className="relative py-40 flex items-center justify-center px-6 overflow-hidden"
+  className="relative py-32 flex items-center justify-center px-6 overflow-hidden"
   style={{ backgroundColor: '#FFFFFF' }}
 >
   {/* Subtle Parallax Background */}
@@ -254,7 +254,7 @@ export default function LandingPage() {
     <div className="mb-16">
       {/* Bold heading - BIGGER */}
       <motion.p 
-        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-5"
+        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
@@ -263,7 +263,7 @@ export default function LandingPage() {
       </motion.p>
       {/* Supporting text */}
       <motion.p 
-        className="text-lg md:text-xl text-gray-600 leading-relaxed"
+        className="text-base md:text-lg text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -277,7 +277,7 @@ export default function LandingPage() {
     <div className="mb-16">
       {/* Bold heading - BIGGER */}
       <motion.p 
-        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-5"
+        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
@@ -286,7 +286,7 @@ export default function LandingPage() {
       </motion.p>
       {/* Supporting text */}
       <motion.p 
-        className="text-lg md:text-xl text-gray-600 leading-relaxed"
+        className="text-base md:text-lg text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -300,7 +300,7 @@ export default function LandingPage() {
     <div>
       {/* Bold heading - BIGGER */}
       <motion.p 
-        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-5"
+        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.0, ease: [0.25, 0.1, 0.25, 1] }}
@@ -309,7 +309,7 @@ export default function LandingPage() {
       </motion.p>
       {/* Supporting text */}
       <motion.p 
-        className="text-lg md:text-xl text-gray-600 leading-relaxed"
+        className="text-base md:text-lg text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
