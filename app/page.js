@@ -305,7 +305,7 @@ export default function LandingPage() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        We show you what works for your goals, based on research from leading institutions — so you can choose with confidence. 
+        We show you what works for your goals, based on research from leading institutions. 
         We provide trusted places to buy, but we don't profit if you purchase.
       </motion.p>
     </div>
