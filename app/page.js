@@ -231,7 +231,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
   ref={howItWorksRef}
   id="how-renew-works"
   className="relative py-18 flex items-center justify-center px-6 overflow-hidden"
-  style={{ backgroundColor: '#F0F6F2' }}
+  style={{ backgroundColor: '#FFFFFF' }}
 >
   {/* Subtle Parallax Background */}
   <motion.div
@@ -242,45 +242,55 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
   />
   
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-[820px] mx-auto text-center">
+  <div className="relative z-10 max-w-[700px] mx-auto text-center">
+    
+    {/* SECTION HEADING - NEW */}
+    <motion.h2 
+      className="text-5xl md:text-6xl font-bold text-gray-900 mb-14 text-center"
+      initial={{ opacity: 0, y: 10 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+      transition={{ duration: 1.4, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      Our approach
+    </motion.h2>
     
     {/* Paragraph 1 Group */}
     <div className="mb-10">
-      {/* Bold heading - BIGGER */}
+      {/* Bold heading - SMALLER */}
       <motion.p 
-        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-2"
+        className="text-xl md:text-2xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.4, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       >
         Supplements should be simple
       </motion.p>
-      {/* Supporting text */}
+      {/* Supporting text - SMALLER */}
       <motion.p 
-        className="text-base md:text-lg text-gray-600 leading-relaxed"
+        className="text-sm md:text-base text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.4, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Designed for convenience, they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
+        Designed for convenience — they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
       </motion.p>
     </div>
     
     {/* Paragraph 2 Group */}
     <div className="mb-10">
-      {/* Bold heading - BIGGER */}
+      {/* Bold heading - SMALLER */}
       <motion.p 
-        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-2"
+        className="text-xl md:text-2xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.4, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
         But most advice is designed to sell - not help
       </motion.p>
-      {/* Supporting text */}
+      {/* Supporting text - SMALLER */}
       <motion.p 
-        className="text-base md:text-lg text-gray-600 leading-relaxed"
+        className="text-sm md:text-base text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -292,26 +302,28 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     
     {/* Paragraph 3 Group */}
     <div>
-      {/* Bold heading - BIGGER */}
+      {/* Bold heading - SMALLER */}
       <motion.p 
-        className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-2"
+        className="text-xl md:text-2xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 2.0, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.4, delay: 2.1, ease: [0.25, 0.1, 0.25, 1] }}
       >
         We make it simple again
       </motion.p>
-      {/* Supporting text */}
-      <motion.p 
-        className="text-base md:text-lg text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.7 }}
+      {/* Supporting text - SMALLER + SPLIT */}
+      <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 2.5, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.4, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        We show you what works for your goals, based on research from leading institutions. 
-        We provide trusted places to buy, but we don't profit if you purchase.
-      </motion.p>
+        <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-3" style={{ lineHeight: 1.7 }}>
+          We show you what works for your goals, based on research from leading institutions. We provide trusted places to buy, but don't profit from your purchases.
+        </p>
+        <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-3" style={{ lineHeight: 1.7 }}>
+          
+        </p>
+      </motion.div>
     </div>
     
   </div>
@@ -372,7 +384,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
           We match proven options
         </h3>
         <p className="text-base text-gray-600 leading-relaxed">
-          We analyze trusted research and narrow it to 2-3 supplements that work for your goals.
+          We analyse trusted research and narrow it to 2-3 supplements that work for your goals.
         </p>
       </div>
       
