@@ -332,7 +332,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
 {/* HOW IT WORKS SECTION - WITH FADE-IN ON SCROLL */}
 <motion.section 
   ref={cardsRef}
-  className="relative pt-20 pb-24 px-6" 
+  className="relative pt-20 pb-18 px-6" 
   style={{ backgroundColor: '#F0F6F2' }}
   initial={{ opacity: 0 }}
   animate={cardsInView ? { opacity: 1 } : { opacity: 0 }}
