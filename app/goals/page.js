@@ -252,7 +252,7 @@ export default function OnboardingPage() {
 </div>
 
             {/* Goals */}
-            <div className="space-y-2 mb-3 mt-6">
+            <div className="space-y-2 mb-3 mt-8">
               {goals.map((goal, index) => {
                 const Icon = goal.icon;
                 const selected = isSelected(goal.id);
