@@ -251,7 +251,7 @@ export default function LandingPage() {
   <div className="relative z-10 max-w-[750px] mx-auto text-center">
     
     {/* Paragraph 1 Group */}
-    <div className="mb-12">
+    <div className="mb-10">
       {/* Bold heading - BIGGER */}
       <motion.p 
         className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-2"
@@ -269,12 +269,12 @@ export default function LandingPage() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        They take seconds of your time each day and are designed for convenience — one of the easiest, simplest, and highest-impact ways to support your health.
+        Designed for convenience — they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
       </motion.p>
     </div>
     
     {/* Paragraph 2 Group */}
-    <div className="mb-12">
+    <div className="mb-10">
       {/* Bold heading - BIGGER */}
       <motion.p 
         className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed mb-2"
@@ -282,7 +282,7 @@ export default function LandingPage() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        But most advice is sales-driven or unclear
+        But most advice is designed to sell - not help
       </motion.p>
       {/* Supporting text */}
       <motion.p 
@@ -292,7 +292,7 @@ export default function LandingPage() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        It's hard to know what works — especially when companies make more money the more you buy. That makes it difficult to know who to trust. When it comes to health, advice shouldn't be influenced by how much money companies can make.
+        It's hard to know what works. When companies make money from selling to you, it's difficult to know who to trust. Health advice shouldn't be influenced by profit.
       </motion.p>
     </div>
     
@@ -305,7 +305,7 @@ export default function LandingPage() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.0, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        How we help
+        We make it simple again
       </motion.p>
       {/* Supporting text */}
       <motion.p 
@@ -315,7 +315,7 @@ export default function LandingPage() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        We show you what works for your goals — based on research from leading institutions. We don't sell supplements or profit when you buy them. We simply help you choose what's right for you, with confidence.
+        We show you what works for your goals, based on research from leading institutions — so you can choose with confidence. We provide trusted places to buy. We never profit from your purchases.
       </motion.p>
     </div>
     
