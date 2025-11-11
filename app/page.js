@@ -230,7 +230,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-className="relative pt-12 pb-8 flex items-center justify-center px-6 overflow-hidden"
+className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hidden"
   style={{ backgroundColor: '#FFFFFF' }}
 >
   {/* Subtle Parallax Background */}
