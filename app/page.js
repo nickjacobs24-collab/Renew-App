@@ -244,19 +244,18 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
   {/* Belief Text - Center Aligned */}
   <div className="relative z-10 max-w-[780px] mx-auto text-center">
     
-    {/* SECTION HEADING - NEW */}
+    {/* SECTION HEADING */}
     <motion.h2 
       className="text-5xl md:text-6xl font-bold text-gray-900 mb-14 text-center"
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
       transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      Our approach
+      What we believe
     </motion.h2>
     
-    {/* Paragraph 1 Group */}
+    {/* Paragraph 1 Group - The Ideal */}
     <div className="mb-10">
-      {/* Bold heading - SMALLER */}
       <motion.p 
         className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
@@ -265,7 +264,6 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
       >
         Supplements should be simple
       </motion.p>
-      {/* Supporting text - SMALLER */}
       <motion.p 
         className="text-sm md:text-base text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
@@ -273,36 +271,54 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Designed to be convenient, they take seconds of your time each day. One of the easiest, simplest, and highest-impact ways to support your health.
+        They can be one of the highest-impact ways to support your health — quick to take, easy to understand, and backed by evidence.
       </motion.p>
     </div>
     
-    {/* Paragraph 2 Group */}
+    {/* Paragraph 2 Group - The Requirement */}
     <div className="mb-10">
-      {/* Bold heading - SMALLER */}
       <motion.p 
         className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.4, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Most advice is designed to sell - not help
+        Guidance should be based on evidence
       </motion.p>
-      {/* Supporting text - SMALLER */}
       <motion.p 
         className="text-sm md:text-base text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        It's hard to know what works. When companies make money from selling to you, it's difficult to know who to trust. Health advice shouldn't be influenced by profit.
+        But for it to be that simple, you need to know what works and why, based on clear, unbiased facts.
       </motion.p>
     </div>
     
-    {/* Paragraph 3 Group */}
+    {/* Paragraph 3 Group - The Problem */}
+    <div className="mb-10">
+      <motion.p 
+        className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        But most advice is designed to sell, not help
+      </motion.p>
+      <motion.p 
+        className="text-sm md:text-base text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.7 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.6, delay: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        Most brands profit from what they recommend, meaning marketing claims often trump evidence — making it hard to know what actually works. Health guidance should never be driven by sales targets.
+      </motion.p>
+    </div>
+    
+    {/* Paragraph 4 Group - The Solution */}
     <div>
-      {/* Bold heading - SMALLER */}
       <motion.p 
         className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
@@ -311,19 +327,15 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
       >
         We make it simple again
       </motion.p>
-      {/* Supporting text - SMALLER + SPLIT */}
-      <motion.div
+      <motion.p 
+        className="text-sm md:text-base text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-3" style={{ lineHeight: 1.7 }}>
-          We show you what works for your goals, based on research from leading institutions. We provide trusted places to buy, but don't profit from your purchases.
-        </p>
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-3" style={{ lineHeight: 1.7 }}>
-          
-        </p>
-      </motion.div>
+        We show you what works for your goals, based on research from leading institutions. We share where you can buy them, but we never profit from it.
+      </motion.p>
     </div>
     
   </div>
