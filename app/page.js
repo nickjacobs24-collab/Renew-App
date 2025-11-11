@@ -230,7 +230,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-  className="relative py-12 flex items-center justify-center px-6 overflow-hidden"
+className="relative pt-12 pb-0 flex items-center justify-center px-6 overflow-hidden"
   style={{ backgroundColor: '#FFFFFF' }}
 >
   {/* Subtle Parallax Background */}
@@ -246,7 +246,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     
     {/* SECTION HEADING */}
     <motion.h2 
-      className="text-5xl md:text-6xl font-bold text-gray-900 mb-20 text-center"
+      className="text-5xl md:text-6xl font-bold text-gray-900 mb-18 text-center"
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
       transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
