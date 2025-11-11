@@ -242,11 +242,11 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
   />
   
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-[780px] mx-auto text-center">
+  <div className="relative z-10 max-w-[700px] mx-auto text-center">
     
     {/* SECTION HEADING */}
     <motion.h2 
-      className="text-5xl md:text-6xl font-bold text-gray-900 mb-14 text-center"
+      className="text-5xl md:text-6xl font-bold text-gray-900 mb-20 text-center"
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
       transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
