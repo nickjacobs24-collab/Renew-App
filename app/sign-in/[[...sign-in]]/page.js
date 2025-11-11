@@ -1,41 +1,12 @@
 "use client";
 
-import { SignIn, useUser } from "@clerk/nextjs";
-import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { SignIn } from "@clerk/nextjs";
+import { useSearchParams } from "next/navigation";
 
 export default function Page() {
-  const router = useRouter();
   const searchParams = useSearchParams();
-  const { isSignedIn } = useUser();
-  const [redirectUrl, setRedirectUrl] = useState("/results");
-
-  // Store params and calculate redirect URL with localStorage backup
-  useEffect(() => {
-    const urlParams = searchParams.toString();
-    if (urlParams) {
-      sessionStorage.setItem("renew_quiz_params", urlParams);
-      localStorage.setItem("renew_quiz_params", urlParams);
-      setRedirectUrl(`/results?${urlParams}`);
-    } else {
-      const sessionParams = sessionStorage.getItem("renew_quiz_params");
-      const localParams = localStorage.getItem("renew_quiz_params");
-      const storedParams = sessionParams || localParams;
-      if (storedParams) {
-        setRedirectUrl(`/results?${storedParams}`);
-      }
-    }
-  }, [searchParams]);
-
-  // Fallback redirect with cleanup
-  useEffect(() => {
-    if (isSignedIn) {
-      const finalUrl = redirectUrl;
-      sessionStorage.removeItem("renew_quiz_params");
-      localStorage.removeItem("renew_quiz_params");
-      router.push(finalUrl);
-    }
-  }, [isSignedIn, router, redirectUrl]);
+  const urlParams = searchParams.toString();
+  const redirectUrl = urlParams ? `/results?${urlParams}` : "/results";
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-900 to-blue-700">
@@ -43,8 +14,8 @@ export default function Page() {
         path="/sign-in"
         routing="path"
         signUpUrl="/create-account"
-        afterSignInUrl={redirectUrl}
-        afterSignUpUrl={redirectUrl}
+        forceRedirectUrl={redirectUrl}
+        fallbackRedirectUrl={redirectUrl}
         appearance={{
           elements: {
             formButtonPrimary:

@@ -281,7 +281,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Guidance should be based on evidence
+        Guidance must be based on evidence
       </motion.p>
       <motion.p 
         className="text-sm md:text-base text-gray-600 leading-relaxed"
@@ -290,7 +290,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        But for it to be that simple, you need to know what works and why, based on clear, unbiased facts.
+        To trust what you take, you need to know what works and why, based on clear, unbiased facts.
       </motion.p>
     </div>
     
@@ -301,7 +301,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Most advice is designed to sell, not help
+        Most advice puts sales before science
       </motion.p>
       <motion.p 
         className="text-sm md:text-base text-gray-600 leading-relaxed"
@@ -310,12 +310,12 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Most brands profit from what they recommend. Marketing claims often trump evidence, making it hard to know what actually works.
+        Brands profit from what they recommend. Marketing claims often trump evidence, making it hard to know what actually works.
       </motion.p>
     </div>
     
     {/* Paragraph 4 Group - The Solution */}
-<div className="max-w-[620px] mx-auto mb-7">
+<div className="max-w-[640px] mx-auto mb-7">
   <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -330,7 +330,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        We show you what works for your goals, based on research from leading institutions. We'll share where you can buy them, but never profit from it.
+        Showing what works for your goals, based on research from leading institutions. We'll share where you can buy them, but never profit from it.
       </motion.p>
     </div>
     
