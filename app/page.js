@@ -265,13 +265,13 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         Supplements should be simple
       </motion.p>
       <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
+className="text-xs md:text-sm text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        They can be one of the highest-impact ways to support your health — quick to take, easy to understand, and backed by evidence.
+        They can be one of the highest-impact ways to support your health — quick to take, easy to understand, and backed by science.
       </motion.p>
     </div>
     
@@ -286,7 +286,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         Guidance should be based on evidence
       </motion.p>
       <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
+className="text-xs md:text-sm text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -304,16 +304,16 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        But most advice is designed to sell, not help
+        Most advice is designed to sell, not help
       </motion.p>
       <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
+className="text-xs md:text-sm text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Most brands profit from what they recommend, meaning marketing claims often trump evidence — making it hard to know what actually works. Health guidance should never be driven by sales targets.
+        Most brands profit from what they recommend. Marketing claims often trump evidence, making it hard to know what actually works. Health guidance should never be driven by sales targets.
       </motion.p>
     </div>
     
@@ -328,7 +328,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         We make it simple again
       </motion.p>
       <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
+className="text-xs md:text-sm text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.7 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
