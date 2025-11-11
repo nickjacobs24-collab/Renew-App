@@ -334,7 +334,7 @@ className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Health guidance shouldn't driven by sales targets. We show you what works for your goals, based on research from leading institutions. We'll share where you can buy them, but never profit from it.
+        We show you what works for your goals, based on research from leading institutions. We'll share where you can buy them, but never profit from it.
       </motion.p>
     </div>
     
