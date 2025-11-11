@@ -246,7 +246,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     
     {/* SECTION HEADING */}
     <motion.h2 
-      className="text-5xl md:text-6xl font-bold text-gray-900 mb-18 text-center"
+      className="text-5xl md:text-6xl font-bold text-gray-900 mb-20 text-center"
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
       transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
@@ -339,7 +339,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
 
 {/* HOW IT WORKS SECTION */}
 <section 
-  className="relative pt-20 pb-12 px-6" 
+  className="relative pt-18 pb-12 px-6" 
   style={{ backgroundColor: '#F0F6F2' }}
 >
   <div className="max-w-[90vw] mx-auto">
