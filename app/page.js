@@ -275,7 +275,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     </div>
     
     {/* Paragraph 2 Group - The Requirement */}
-<div className="max-w-[540px] mx-auto mb-7">
+<div className="max-w-[510px] mx-auto mb-7">
   <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
