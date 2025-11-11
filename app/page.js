@@ -255,9 +255,9 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     </motion.h2>
     
     {/* Paragraph 1 Group - The Ideal */}
-    <div className="mb-10">
+    <div className="mb-7">
       <motion.p 
-        className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
+className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
@@ -265,8 +265,8 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
         Supplements should be simple
       </motion.p>
       <motion.p 
-className="text-xs md:text-sm text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.7 }}
+        className="text-sm md:text-base text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.6 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
@@ -276,9 +276,9 @@ className="text-xs md:text-sm text-gray-600 leading-relaxed"
     </div>
     
     {/* Paragraph 2 Group - The Requirement */}
-    <div className="mb-10">
+    <div className="mb-7">
       <motion.p 
-        className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
+className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
@@ -286,8 +286,8 @@ className="text-xs md:text-sm text-gray-600 leading-relaxed"
         Guidance should be based on evidence
       </motion.p>
       <motion.p 
-className="text-xs md:text-sm text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.7 }}
+        className="text-sm md:text-base text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.6 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
@@ -297,9 +297,9 @@ className="text-xs md:text-sm text-gray-600 leading-relaxed"
     </div>
     
     {/* Paragraph 3 Group - The Problem */}
-    <div className="mb-10">
+    <div className="mb-7">
       <motion.p 
-        className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
+className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
@@ -307,20 +307,20 @@ className="text-xs md:text-sm text-gray-600 leading-relaxed"
         Most advice is designed to sell, not help
       </motion.p>
       <motion.p 
-className="text-xs md:text-sm text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.7 }}
+        className="text-sm md:text-base text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.6 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Most brands profit from what they recommend. Marketing claims often trump evidence, making it hard to know what actually works. Health guidance should never be driven by sales targets.
+        Most brands profit from what they recommend. Marketing claims often trump evidence, making it hard to know what actually works.
       </motion.p>
     </div>
     
     {/* Paragraph 4 Group - The Solution */}
     <div>
       <motion.p 
-        className="text-lg md:text-xl font-bold text-gray-900 leading-relaxed mb-2"
+className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.1, ease: [0.25, 0.1, 0.25, 1] }}
@@ -328,13 +328,13 @@ className="text-xs md:text-sm text-gray-600 leading-relaxed"
         We make it simple again
       </motion.p>
       <motion.p 
-className="text-xs md:text-sm text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.7 }}
+        className="text-sm md:text-base text-gray-600 leading-relaxed"
+        style={{ lineHeight: 1.6 }}
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        We show you what works for your goals, based on research from leading institutions. We share where you can buy them, but we never profit from it.
+        Health guidance shouldn't driven by sales targets. We show you what works for your goals, based on research from leading institutions. We'll share where you can buy them, but never profit from it.
       </motion.p>
     </div>
     
