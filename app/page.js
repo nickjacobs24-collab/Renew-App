@@ -242,7 +242,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
   />
   
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-[600px] mx-auto text-center">
+<div className="relative z-10 mx-auto text-center">
     
     {/* SECTION HEADING */}
     <motion.h2 
@@ -255,9 +255,8 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     </motion.h2>
     
     {/* Paragraph 1 Group - The Ideal */}
-    <div className="mb-7">
-      <motion.p 
-className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
+<div className="max-w-[600px] mx-auto mb-7">
+  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
@@ -276,9 +275,8 @@ className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
     </div>
     
     {/* Paragraph 2 Group - The Requirement */}
-    <div className="mb-7">
-      <motion.p 
-className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
+<div className="max-w-[600px] mx-auto mb-7">
+  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
@@ -297,9 +295,8 @@ className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
     </div>
     
     {/* Paragraph 3 Group - The Problem */}
-    <div className="mb-7">
-      <motion.p 
-className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
+<div className="max-w-[600px] mx-auto mb-7">
+  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
@@ -318,9 +315,8 @@ className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
     </div>
     
     {/* Paragraph 4 Group - The Solution */}
-    <div>
-      <motion.p 
-className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-2"
+<div className="max-w-[600px] mx-auto mb-7">
+  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.1, ease: [0.25, 0.1, 0.25, 1] }}
