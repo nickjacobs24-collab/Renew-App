@@ -230,7 +230,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-className="relative pt-12 pb-0 flex items-center justify-center px-6 overflow-hidden"
+className="relative pt-12 pb-8 flex items-center justify-center px-6 overflow-hidden"
   style={{ backgroundColor: '#FFFFFF' }}
 >
   {/* Subtle Parallax Background */}
@@ -337,14 +337,10 @@ className="relative pt-12 pb-0 flex items-center justify-center px-6 overflow-hi
   </div>
 </section>
 
-{/* HOW IT WORKS SECTION - WITH FADE-IN ON SCROLL */}
-<motion.section 
-  ref={cardsRef}
+{/* HOW IT WORKS SECTION */}
+<section 
   className="relative pt-20 pb-12 px-6" 
   style={{ backgroundColor: '#F0F6F2' }}
-  initial={{ opacity: 0 }}
-  animate={cardsInView ? { opacity: 1 } : { opacity: 0 }}
-  transition={{ duration: 0.8, delay: 3.0, ease: [0.4, 0, 0.2, 1] }}
 >
   <div className="max-w-[90vw] mx-auto">
     
@@ -437,7 +433,7 @@ className="relative pt-12 pb-0 flex items-center justify-center px-6 overflow-hi
     </div>
     
   </div>
-</motion.section>
+</section>
 
     </div>
   );
