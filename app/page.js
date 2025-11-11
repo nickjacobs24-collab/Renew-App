@@ -339,7 +339,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
 
 {/* HOW IT WORKS SECTION */}
 <section 
-  className="relative pt-17 pb-12 px-6" 
+  className="relative pt-16 pb-12 px-6" 
   style={{ backgroundColor: '#F0F6F2' }}
 >
   <div className="max-w-[90vw] mx-auto">
