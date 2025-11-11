@@ -242,7 +242,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
   />
   
   {/* Belief Text - Center Aligned */}
-  <div className="relative z-10 max-w-[720px] mx-auto text-center">
+  <div className="relative z-10 max-w-[600px] mx-auto text-center">
     
     {/* SECTION HEADING */}
     <motion.h2 
