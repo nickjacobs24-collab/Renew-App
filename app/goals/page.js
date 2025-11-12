@@ -12,7 +12,7 @@ import Image from "next/image";
 const goals = [
   { id: 'energy', name: 'Improving energy and focus', icon: Zap, baseColor: '#F97316', lightColor: '#FB923C', darkColor: '#EA580C', iconBg: 'bg-orange-100' },
   { id: 'immunity', name: 'Strenthening immunity', icon: Shield, baseColor: '#059669', lightColor: '#10B981', darkColor: '#047857', iconBg: 'bg-emerald-100' }, 
-  { id: 'gutHealth', name: 'Supporting digestion and gut health', icon: Smile, baseColor: '#F59E0B', lightColor: '#FBBF24', darkColor: '#D97706', iconBg: 'bg-amber-100' },
+  { id: 'guthealth', name: 'Supporting digestion and gut health', icon: Smile, baseColor: '#F59E0B', lightColor: '#FBBF24', darkColor: '#D97706', iconBg: 'bg-amber-100' },
   { id: 'sleep', name: 'Better sleep', icon: Moon, baseColor: '#1E40AF', lightColor: '#3B82F6', darkColor: '#1E3A8A', iconBg: 'bg-indigo-100' },
   { id: 'calm', name: 'Feeling calmer', icon: Heart, baseColor: '#0D9488', lightColor: '#14B8A6', darkColor: '#0F766E', iconBg: 'bg-teal-100' }
 ];
@@ -109,22 +109,27 @@ export default function OnboardingPage() {
       setCurrentStep(2);
     } else if (currentStep < 5) {
       setCurrentStep(prev => prev + 1);
-    } else {
-      // Show curating screen, then redirect
-      setIsCurating(true);
-      
-      setTimeout(() => {
-        const params = new URLSearchParams();
-        params.append('goals', selectedGoals.join(','));
-        Object.entries(answers).forEach(([key, value]) => {
-          if (key !== 'goals') {
-            params.append(`q${key}`, value);
-          }
-        });
-        router.push(`/signup?${params.toString()}`);
-      }, 2000); // 2 second curating screen
-    }
-  };
+} else {
+  // Show curating screen, then redirect to Renew sign-in (NextAuth)
+  setIsCurating(true);
+
+  setTimeout(() => {
+    const params = new URLSearchParams();
+    params.append('goals', selectedGoals.join(','));
+    Object.entries(answers).forEach(([key, value]) => {
+      if (key !== 'goals') {
+        params.append(`q${key}`, value);
+      }
+    });
+
+    // Callback = where we want the user to go *after* login
+    const callback = `/results?${params.toString()}`;
+
+    // Redirect to new NextAuth sign-in page with callback param
+    router.push(`/signin?callback=${encodeURIComponent(callback)}`);
+  }, 2000); // simulate "curating" animation
+}
+};
 
   const progress = (currentStep / 5) * 100;
   const canContinue = currentStep === 1 ? selectedGoals.length > 0 : !!answers[currentStep];

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
@@ -19,6 +19,10 @@ import ImmVitaminD from "./Modals/Immunity/ImmVitaminD";
 import GuthealthPrebioticsFibre from "./Modals/Guthealth/GuthealthPrebioticsFibre";
 import GuthealthDigestiveEnzymes from "./Modals/Guthealth/GuthealthDigestiveEnzymes";
 import GuthealthProbiotics from "./Modals/Guthealth/GuthealthProbiotics";
+
+// ✅ NEW IMPORT for auth session
+import { useSession } from "next-auth/react";
+
 //
 // ---------------------------
 // DATA (unchanged)
@@ -486,10 +490,25 @@ export default function ResultsPage() {
 function ResultsPageContent() {
   const router = useRouter();
   const params = useSearchParams();
+  const { data: session } = useSession();
 
   // Read goals from query: /results?goals=energy,mind
   const goalsParam = params.get('goals') || '';
   const selectedGoals = goalsParam.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+
+  // ✅ Automatically save quiz results if logged in
+  useEffect(() => {
+    if (!goalsParam) return;
+    const goals = goalsParam.split(",");
+
+    if (session?.user?.email) {
+      fetch("/api/saveQuiz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ goals }),
+      }).catch((err) => console.error("Failed to save quiz:", err));
+    }
+  }, [session, goalsParam]);
 
   // Booleans for each section
   const showEnergy = selectedGoals.includes('energy');
