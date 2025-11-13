@@ -105,7 +105,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
   />
   
   {/* Dark Overlay */}
-  <div className="absolute inset-0 z-10 bg-black/60" />
+  <div className="absolute inset-0 z-10 bg-black/55" />
   
   {/* Content Container */}
   <div className="relative z-20 min-h-screen flex flex-col">
