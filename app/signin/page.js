@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { signIn } from "next-auth/react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { Mail } from "lucide-react";
 
 export default function SignInPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignInPageContent />
+    </Suspense>
+  );
+}
+
+function SignInPageContent() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
