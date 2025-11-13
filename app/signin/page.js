@@ -77,12 +77,12 @@ function SignInPageContent() {
           />
         </div>
 
-        {/* Main Content - PUSHED DOWN */}
-        <div className="flex-1 flex items-end justify-center px-6 pb-20 pt-32">
-          <div className="w-full max-w-md mb-12">
-            
-            {/* Card - ALL CONTENT INSIDE */}
-            <div className="bg-white rounded-2xl shadow-2xl p-8">
+{/* Main Content - CENTERED */}
+<div className="flex-1 flex items-center justify-center px-6 py-20">
+  <div className="w-full max-w-md">
+    
+    {/* Card - ALL CONTENT INSIDE */}
+    <div className="bg-white rounded-2xl shadow-2xl p-8">
               
               {/* Title - INSIDE CARD */}
               <div className="text-center mb-6">
