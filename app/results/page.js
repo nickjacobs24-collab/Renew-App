@@ -20,9 +20,6 @@ import GuthealthPrebioticsFibre from "./Modals/Guthealth/GuthealthPrebioticsFibr
 import GuthealthDigestiveEnzymes from "./Modals/Guthealth/GuthealthDigestiveEnzymes";
 import GuthealthProbiotics from "./Modals/Guthealth/GuthealthProbiotics";
 
-// ✅ NEW IMPORT for auth session
-import { useSession } from "next-auth/react";
-
 //
 // ---------------------------
 // DATA (unchanged)
@@ -478,6 +475,7 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
 //
 
 import { Suspense } from 'react';
+import { useSession } from "next-auth/react";
 
 export default function ResultsPage() {
   return (
@@ -490,25 +488,28 @@ export default function ResultsPage() {
 function ResultsPageContent() {
   const router = useRouter();
   const params = useSearchParams();
-  const { data: session } = useSession();
+  const { data: session, status } = useSession({ required: false });
 
-  // Read goals from query: /results?goals=energy,mind
+ // Read goals from query: /results?goals=energy,mind
   const goalsParam = params.get('goals') || '';
-  const selectedGoals = goalsParam.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  const [selectedGoals, setSelectedGoals] = useState(
+    goalsParam ? goalsParam.split(',').map(s => s.trim().toLowerCase()).filter(Boolean) : []
+  );
 
   // ✅ Automatically save quiz results if logged in
   useEffect(() => {
     if (!goalsParam) return;
+    if (status === "loading") return;
+    if (!session?.user?.email) return;
+
     const goals = goalsParam.split(",");
 
-    if (session?.user?.email) {
-      fetch("/api/saveQuiz", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ goals }),
-      }).catch((err) => console.error("Failed to save quiz:", err));
-    }
-  }, [session, goalsParam]);
+    fetch("/api/saveQuiz", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ goals }),
+    }).catch((err) => console.error("Failed to save quiz:", err));
+  }, [goalsParam, session, status]);
 
   // Booleans for each section
   const showEnergy = selectedGoals.includes('energy');
