@@ -48,7 +48,7 @@ function SignInPageContent() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       
-      {/* Background Image - NO MODIFICATIONS */}
+      {/* Background Image - UNTOUCHED */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -59,55 +59,41 @@ function SignInPageContent() {
         }}
       />
       
-      {/* Dark Overlay - DARKER */}
-      <div className="absolute inset-0 z-10 bg-black/10" />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 z-10 bg-black/50" />
       
       {/* Content Container */}
       <div className="relative z-20 min-h-screen flex flex-col">
         
-        {/* NAV - NO BAR, JUST LOGO */}
-        <nav className="fixed top-0 left-0 right-0 z-50 h-16 md:h-20 bg-transparent">
-          <div className="flex h-full items-start justify-start px-4 md:px-6 pt-4">
-            <Image
-              src="/images/renew-logo-white.png"
-              alt="Renew logo"
-              width={80}
-              height={32}
-              className="object-contain md:w-[100px] md:h-[40px]"
-              priority
-            />
-          </div>
-        </nav>
+        {/* Logo - Top Left */}
+        <div className="absolute top-6 left-6 z-50">
+          <Image
+            src="/images/renew-logo-white.png"
+            alt="Renew logo"
+            width={90}
+            height={36}
+            className="object-contain"
+            priority
+          />
+        </div>
 
-        {/* Main Content */}
-        <div className="flex-1 flex items-center justify-center px-6 py-20">
-          <div className="w-full max-w-md">
+        {/* Main Content - PUSHED DOWN */}
+        <div className="flex-1 flex items-end justify-center px-6 pb-20 pt-32">
+          <div className="w-full max-w-md mb-12">
             
-            {/* Title */}
-            <div className="text-center mb-8">
-              <h1 
-                className="font-extrabold text-white mb-3 leading-tight tracking-tight"
-                style={{
-                  fontSize: '1.875rem',
-                  textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
-                }}
-              >
-                Create your Renew profile
-              </h1>
-              <p 
-                className="text-white/90 font-medium"
-                style={{
-                  fontSize: '0.9375rem',
-                  textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
-                }}
-              >
-                Save your personalised results and track your progress over time.
-              </p>
-            </div>
-
-            {/* Card - WHITE AND PROMINENT */}
+            {/* Card - ALL CONTENT INSIDE */}
             <div className="bg-white rounded-2xl shadow-2xl p-8">
               
+              {/* Title - INSIDE CARD */}
+              <div className="text-center mb-6">
+                <h1 className="text-3xl font-extrabold text-gray-900 mb-2 leading-tight tracking-tight">
+                  Create your Renew profile
+                </h1>
+                <p className="text-gray-600 font-medium text-sm">
+                  Save your personalised results and track your progress over time.
+                </p>
+              </div>
+
               {/* Google button */}
               <button
                 onClick={handleGoogle}
@@ -147,20 +133,18 @@ function SignInPageContent() {
                   {loading ? "Sending magic link..." : "Continue with Email"}
                 </button>
               </form>
-            </div>
 
-            {/* Skip option */}
-            <div className="mt-8 text-center">
-              <button
-                onClick={handleBypass}
-                className="text-sm text-white/90 hover:text-white font-medium underline underline-offset-2 transition-colors inline-flex items-center gap-1"
-                style={{
-                  textShadow: "0 1px 4px rgba(0, 0, 0, 0.3)"
-                }}
-              >
-                View results once without saving
-                <span className="text-white/70">→</span>
-              </button>
+              {/* Skip option - INSIDE CARD */}
+              <div className="mt-6 text-center pt-4 border-t border-gray-200">
+                <button
+                  onClick={handleBypass}
+                  className="text-sm text-gray-600 hover:text-gray-900 font-medium underline underline-offset-2 transition-colors inline-flex items-center gap-1"
+                >
+                  View results once without saving
+                  <span className="text-gray-400">→</span>
+                </button>
+              </div>
+              
             </div>
             
           </div>
