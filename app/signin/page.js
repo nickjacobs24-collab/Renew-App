@@ -60,7 +60,7 @@ function SignInPageContent() {
       />
       
       {/* Dark Overlay */}
-      <div className="absolute inset-0 z-10 bg-black/10" />
+      <div className="absolute inset-0 z-10 bg-black/40" />
       
       {/* Content Container */}
       <div className="relative z-20 min-h-screen flex flex-col">
