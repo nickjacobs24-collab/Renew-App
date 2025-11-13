@@ -389,7 +389,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     We match proven options
   </h3>
   <p className="text-base text-gray-600 leading-relaxed mb-3">
-    We analyze trusted research and narrow it to 2-3 supplements that work for your goals.
+    We analyse trusted research and narrow it to 2-3 supplements that work for your goals.
   </p>
 <a 
   href="/results/apphowwechoose" 

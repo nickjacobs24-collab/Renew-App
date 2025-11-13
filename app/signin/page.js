@@ -60,7 +60,7 @@ function SignInPageContent() {
         }}
       />
       
-      <div className="absolute inset-0 z-10 bg-black/25" />
+      <div className="absolute inset-0 z-10 bg-black/40" />
       
       <div className="relative z-20 min-h-screen flex flex-col">
         
