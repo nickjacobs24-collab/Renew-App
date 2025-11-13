@@ -52,7 +52,7 @@ export default function SignInPage() {
       />
       
       {/* Dark Overlay - DARKER */}
-      <div className="absolute inset-0 z-10 bg-black/30" />
+      <div className="absolute inset-0 z-10 bg-black/10" />
       
       {/* Content Container */}
       <div className="relative z-20 min-h-screen flex flex-col">
