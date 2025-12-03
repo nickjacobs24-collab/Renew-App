@@ -104,50 +104,49 @@ export default function AccountPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header - 3-part layout: Logo far left, Title center, Back far right */}
-      <header className="bg-white border-b border-gray-200 px-8 py-5 sticky top-0 z-50">
+      {/* Header - matches Results page pattern: Logo left, Back + My Account right */}
+      <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 px-6 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Left - Logo */}
-          <div className="flex-1">
+          <div className="flex items-center">
             <Image
               src="/images/renew-logo-black.png"
               alt="Renew logo"
-              width={100}
-              height={34}
+              width={90}
+              height={30}
               className="object-contain"
               priority
             />
           </div>
           
-          {/* Center - Page title */}
-          <div className="flex-1 flex justify-center">
-            <h1 className="text-xl font-bold text-gray-900">My Account</h1>
-          </div>
-          
-          {/* Right - Back button */}
-          <div className="flex-1 flex justify-end">
+          {/* Right - Back + My Account (same size, same style) */}
+          <div className="flex items-center gap-4">
             <button
               onClick={() => router.push('/results')}
               className="flex items-center text-gray-500 hover:text-gray-900 transition-colors"
             >
-              <ArrowLeft className="w-4 h-4 mr-1.5" />
-              <span className="text-sm font-medium">Back</span>
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              <span className="font-medium">Back</span>
             </button>
+            
+            <span className="text-gray-300">|</span>
+            
+            <span className="font-semibold text-gray-900">My Account</span>
           </div>
         </div>
       </header>
 
-      {/* Main content - 2-column equal grid with breathing room */}
-      <main className="max-w-7xl mx-auto px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      {/* Main content - wider left column (60/40 split) */}
+      <main className="max-w-7xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           
-          {/* Left column - Saved supplements */}
-          <div>
+          {/* Left column - Saved supplements (3/5 = 60%) */}
+          <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-              {/* Card header */}
-              <div className="px-8 py-6 border-b border-gray-100">
-                <h2 className="text-lg font-bold text-gray-900">Your saved supplements</h2>
-                <p className="text-sm text-gray-500 mt-1">Your personalised shortlist with guidance and tips</p>
+              {/* Card header - larger, more prominent */}
+              <div className="px-8 pt-8 pb-6 border-b border-gray-100">
+                <h2 className="text-2xl font-bold text-gray-900">Your Saved Supplements</h2>
+                <p className="text-gray-500 mt-2">Your personalised shortlist with guidance and tips</p>
               </div>
 
               {/* Loading state */}
@@ -159,7 +158,7 @@ export default function AccountPage() {
 
               {/* Empty state */}
               {isLoaded && savedSupplements.length === 0 && (
-                <div className="px-8 py-14 text-center">
+                <div className="px-8 py-16 text-center">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-5">
                     <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
@@ -185,27 +184,28 @@ export default function AccountPage() {
                     
                     return (
                       <li key={id} className="px-8 py-6">
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-6">
+                          {/* Content - constrained width so it doesn't run into Remove */}
+                          <div className="flex-1 max-w-[85%]">
                             {/* Name and category */}
-                            <div className="flex items-baseline gap-3 mb-2">
+                            <div className="flex items-baseline gap-3 mb-1.5">
                               <p className="text-lg font-bold text-gray-900">{supplement.name}</p>
                               <span className="text-xs font-medium text-gray-400 uppercase tracking-wide">{supplement.category}</span>
                             </div>
                             
                             {/* Headline */}
-                            <p className="text-gray-600 mb-3">{supplement.headline}</p>
+                            <p className="text-gray-600 mb-2.5">{supplement.headline}</p>
                             
                             {/* Tip */}
-                            <p className="text-sm text-gray-500">
-                              <span className="font-semibold text-gray-700">Tip:</span> {supplement.tip}
+                            <p className="text-sm text-gray-500 leading-relaxed">
+                              <span className="font-semibold text-gray-600">Tip:</span> {supplement.tip}
                             </p>
                           </div>
                           
-                          {/* Remove button - blue link style */}
+                          {/* Remove button - anchored right */}
                           <button
                             onClick={() => removeSupplement(id)}
-                            className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors flex-shrink-0"
+                            className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors flex-shrink-0 pt-1"
                           >
                             Remove
                           </button>
@@ -218,17 +218,17 @@ export default function AccountPage() {
             </div>
           </div>
 
-          {/* Right column - App CTA (content coming tomorrow) */}
-          <div>
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden h-full">
+          {/* Right column - App CTA (2/5 = 40%) */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
               {/* Card header */}
-              <div className="px-8 py-6 border-b border-gray-100">
-                <h2 className="text-lg font-bold text-gray-900">Renew App</h2>
-                <p className="text-sm text-gray-500 mt-1">Coming soon</p>
+              <div className="px-8 pt-8 pb-6 border-b border-gray-100">
+                <h2 className="text-2xl font-bold text-gray-900">Renew App</h2>
+                <p className="text-gray-500 mt-2">Coming soon</p>
               </div>
               
               {/* Placeholder content */}
-              <div className="px-8 py-14 text-center">
+              <div className="px-8 py-16 text-center">
                 <p className="text-gray-400">App CTA content coming tomorrow</p>
               </div>
             </div>
