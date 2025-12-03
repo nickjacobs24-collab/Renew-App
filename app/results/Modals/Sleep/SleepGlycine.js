@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import SaveButton from "@/components/SaveButton";
 
 export default function Glycine({ onClose }) {
   const [mounted, setMounted] = useState(false);
@@ -42,17 +43,20 @@ export default function Glycine({ onClose }) {
           }}
           onClick={(e) => e.stopPropagation()}
         >
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="absolute top-4 right-4 h-10 w-10 flex items-center justify-center
-                       rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          <div className="absolute top-4 right-4 flex items-center gap-1">
+            <SaveButton id="sleep-glycine" />
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close"
+              className="h-10 w-10 flex items-center justify-center
+                         rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
 
           <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
             SLEEP ESSENTIALS

@@ -596,14 +596,27 @@ const isLastSection = (goalName) => goalName === lastVisibleGoal;
       />
     </div>
     
-    {/* Right side - Back button */}
-    <button
-      onClick={() => router.push('/goals')}
-      className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50"
-    >
-      <ArrowLeft className="w-5 h-5 mr-2" />
-      <span className="font-large">Back</span>
-    </button>
+    {/* Right side - Back button + Account button */}
+    <div className="flex items-center gap-4">
+      <button
+        onClick={() => router.push('/goals')}
+        className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50"
+      >
+        <ArrowLeft className="w-5 h-5 mr-2" />
+        <span className="font-large">Back</span>
+      </button>
+      
+      <button
+        onClick={() => router.push('/account')}
+        aria-label="My Account"
+        className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-300 hover:bg-gray-400 text-gray-700 transition-colors"
+      >
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+        </svg>
+        <span className="text-sm font-medium">My Account</span>
+      </button>
+    </div>
   </div>
 </header>
 
