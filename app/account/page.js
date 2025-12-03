@@ -96,6 +96,30 @@ const SUPPLEMENT_DATA = {
     headline: "Helps you fall asleep faster",
     tip: "Take 30–60 minutes before bed — aligns with its natural calming effects"
   },
+  "essentials-omega3": { 
+    name: "Omega-3", 
+    category: "Essentials",
+    headline: "Supports heart and brain health",
+    tip: "Take with your biggest meal — absorption can be 3× higher with dietary fat"
+  },
+  "essentials-vitamind": { 
+    name: "Vitamin D", 
+    category: "Essentials",
+    headline: "Supports immunity, mood, and bone health",
+    tip: "Take with a fatty meal — absorption improves significantly"
+  },
+  "essentials-vitaminb": { 
+    name: "Vitamin B", 
+    category: "Essentials",
+    headline: "Turns food into energy",
+    tip: "Take in the morning — B vitamins can improve daytime energy and sleep quality is better when not taken late"
+  },
+  "essentials-magnesium": { 
+    name: "Magnesium", 
+    category: "Essentials",
+    headline: "Supports sleep, calm, and recovery",
+    tip: "Evening works best — calming effects support both relaxation and sleep depth"
+  },
 };
 
 export default function AccountPage() {
@@ -104,48 +128,39 @@ export default function AccountPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header - matches Results page pattern: Logo left, Back + My Account right */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 px-6 py-4 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Left - Logo */}
+      {/* Header - edge-to-edge like landing page */}
+      <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 sticky top-0 z-50">
+        <div className="flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
+          {/* Logo - far left */}
           <div className="flex items-center">
             <Image
               src="/images/renew-logo-black.png"
               alt="Renew logo"
-              width={90}
-              height={30}
-              className="object-contain"
+              width={80}
+              height={32}
+              className="object-contain md:w-[100px] md:h-[40px]"
               priority
             />
           </div>
           
-          {/* Right - Back + My Account (same size, same style) */}
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => router.push('/results')}
-              className="flex items-center text-gray-500 hover:text-gray-900 transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              <span className="font-medium">Back</span>
-            </button>
-            
-            <span className="text-gray-300">|</span>
-            
-            <span className="font-semibold text-gray-900">My Account</span>
-          </div>
+{/* Right side - My Account label only */}
+<span className="text-lg font-semibold text-gray-900">My Account</span>
         </div>
       </header>
 
-      {/* Main content - wider left column (60/40 split) */}
-      <main className="max-w-7xl mx-auto px-6 py-12">
+      {/* Main content - centered with max-width */}
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           
           {/* Left column - Saved supplements (3/5 = 60%) */}
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-              {/* Card header - larger, more prominent */}
-              <div className="px-8 pt-8 pb-6 border-b border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900">Your Saved Supplements</h2>
+              {/* Card header - pure white with bottom border */}
+              <div 
+                className="px-8 pt-8 pb-6"
+                style={{ borderBottom: '1px solid #E5E7EB' }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900">Your Saved Supplements</h2>
                 <p className="text-gray-500 mt-2">Your personalised shortlist with guidance and tips</p>
               </div>
 
@@ -221,9 +236,12 @@ export default function AccountPage() {
           {/* Right column - App CTA (2/5 = 40%) */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-              {/* Card header */}
-              <div className="px-8 pt-8 pb-6 border-b border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900">Renew App</h2>
+              {/* Card header - matching style */}
+              <div 
+                className="px-8 pt-8 pb-6"
+                style={{ borderBottom: '1px solid #E5E7EB' }}
+              >
+                <h2 className="text-3xl font-bold text-gray-900">Renew App</h2>
                 <p className="text-gray-500 mt-2">Coming soon</p>
               </div>
               

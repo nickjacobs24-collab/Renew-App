@@ -291,30 +291,43 @@ export default function EssentialsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 px-6 py-4 sticky top-0 z-50">
-        <div className="flex items-center justify-between">
-          {/* Logo - positioned far left */}
-          <div className="flex items-center">
-            <Image
-              src="/images/renew-logo-black.png"
-              alt="Renew logo"
-              width={90}
-              height={30}
-              className="object-contain"
-              priority
-            />
-          </div>
-          
-          {/* Right side - Back button */}
-          <button
-            onClick={() => router.push('/goals')}
-            className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            <span className="font-large">Back</span>
-          </button>
-        </div>
-      </header>
+{/* Header */}
+<header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 sticky top-0 z-50">
+  <div className="flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
+    {/* Logo - far left */}
+    <div className="flex items-center">
+      <Image
+        src="/images/renew-logo-black.png"
+        alt="Renew logo"
+        width={80}
+        height={32}
+        className="object-contain md:w-[100px] md:h-[40px]"
+        priority
+      />
+    </div>
+    
+    {/* Right side - Back + My Account */}
+    <div className="flex items-center gap-4">
+      <button
+        onClick={() => router.push('/results')}
+        className="flex items-center text-gray-500 hover:text-gray-900 transition-colors"
+      >
+        <ArrowLeft className="w-5 h-5 mr-2" />
+        <span className="font-medium">Back</span>
+      </button>
+      
+      <button
+        onClick={() => router.push('/account')}
+        className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-300 hover:bg-gray-400 text-gray-700 transition-colors"
+      >
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+        </svg>
+        <span className="text-sm font-medium">My Account</span>
+      </button>
+    </div>
+  </div>
+</header>
 
       {/* Content */}
       <div className="relative">
