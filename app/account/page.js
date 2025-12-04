@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
@@ -125,12 +126,16 @@ const SUPPLEMENT_DATA = {
 export default function AccountPage() {
   const router = useRouter();
   const { savedSupplements, removeSupplement, isLoaded } = useSavedSupplements();
+  const [showModal, setShowModal] = useState(false);
+const [email, setEmail] = useState("");
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [submitted, setSubmitted] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header - edge-to-edge like landing page */}
       <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 sticky top-0 z-50">
-       <div className="flex h-13 md:h-15 items-center justify-between px-4 md:px-6">
+       <div className="flex h-13 md:h-14 items-center justify-between px-4 md:px-6">
           {/* Logo - far left */}
           <div className="flex items-center">
             <Image
@@ -159,13 +164,13 @@ export default function AccountPage() {
     <div className="px-8 py-8 flex flex-col items-center">
       
 {/* Hero image with stacked card effect */}
-<div className="relative mb-2" style={{ width: '360px', height: '220px' }}>
+<div className="relative mb-6" style={{ width: '360px', height: '220px' }}>
   {/* Back card - furthest, peeks out left and right */}
   <div 
     className="absolute rounded-2xl bg-white"
     style={{ 
-      width: '400px', 
-      height: '150px', 
+      width: '480px', 
+      height: '160px', 
       top: '29px', 
       left: '50%', 
       transform: 'translateX(-50%)',
@@ -177,8 +182,8 @@ export default function AccountPage() {
   <div 
     className="absolute rounded-2xl bg-white"
     style={{ 
-      width: '340px', 
-      height: '180px', 
+      width: '440px', 
+      height: '190px', 
       top: '14px', 
       left: '50%', 
       transform: 'translateX(-50%)',
@@ -190,8 +195,8 @@ export default function AccountPage() {
 <div 
   className="absolute rounded-2xl overflow-hidden"
   style={{ 
-    width: '270px', 
-    height: '210px', 
+    width: '380px', 
+    height: '220px', 
     top: '0', 
     left: '50%',
     transform: 'translateX(-50%)',
@@ -206,44 +211,44 @@ export default function AccountPage() {
     height={208}
     className="object-cover w-full h-full"
   />
-  {/* Text content */}
+ {/* Text content */}
   <div className="absolute inset-0 flex flex-col items-center justify-center">
     <p 
-      className="text-white text-xs font-semibold uppercase tracking-widest mb-1"
+      className="text-white text-sm font-semibold uppercase tracking-widest mb-2"
       style={{ textShadow: '0 0 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.9)' }}
     >
       Immunity
     </p>
     <p 
-      className="text-white text-xl font-bold mb-4"
+      className="text-white text-3xl font-bold mb-5"
       style={{ textShadow: '0 0 10px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.9)' }}
     >
       Vitamin D
     </p>
-    <div className="flex gap-1.5">
+    <div className="flex gap-4">
       <span 
-        className="px-2 py-1 text-white text-xs font-medium rounded-full"
+        className="px-2.5 py-1.5 text-white text-sm font-medium rounded-full"
         style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
       >
         Routine
       </span>
       <span 
-        className="px-2 py-1 text-white text-xs font-medium rounded-full"
+        className="px-2.5 py-1.5 text-white text-sm font-medium rounded-full"
+        style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
+      >
+        Guidance
+      </span>
+      <span 
+        className="px-2.5 py-1.5 text-white text-sm font-medium rounded-full"
         style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
       >
         Tracking
       </span>
       <span 
-        className="px-2 py-1 text-white text-xs font-medium rounded-full"
+        className="px-2.5 py-1.5 text-white text-sm font-medium rounded-full"
         style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
       >
-        Tips
-      </span>
-      <span 
-        className="px-2 py-1 text-white text-xs font-medium rounded-full"
-        style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
-      >
-        Insights
+        Results
       </span>
     </div>
   </div>
@@ -251,12 +256,12 @@ export default function AccountPage() {
 </div>
       
 {/* Headline - centered */}
-<h2 className="text-4xl font-bold text-gray-900 text-center mb-9">
-  Get the app today
+<h2 className="text-5xl font-bold text-gray-900 text-center mb-11">
+  Get the app
 </h2>
       
       {/* Benefits list - left-aligned within centered block, wider margins */}
-      <div className="space-y-4 mb-8 w-full max-w-xl">
+      <div className="space-y-4 mb-10 w-full max-w-lg">
         
         {/* Benefit 1 */}
         <div className="flex items-start gap-3">
@@ -266,8 +271,8 @@ export default function AccountPage() {
             </svg>
           </div>
           <div>
-            <p className="text-lg font-semibold text-gray-900">Build your routine</p>
-            <p className="text-base text-gray-500">Get reminders and timing advice so you always know when to take what.</p>
+            <p className="text-base font-semibold text-gray-900">Build your routine</p>
+            <p className="text-sm text-gray-500">Get reminders and timing advice so you always know when to take what.</p>
           </div>
         </div>
         
@@ -279,8 +284,8 @@ export default function AccountPage() {
             </svg>
           </div>
           <div>
-            <p className="text-lg font-semibold text-gray-900">Know what to expect</p>
-            <p className="text-base text-gray-500">Week-by-week guidance so you're never left guessing if it's working.</p>
+            <p className="text-base font-semibold text-gray-900">Know what to expect</p>
+            <p className="text-sm text-gray-500">Week-by-week guidance so you're never left guessing if it's working.</p>
           </div>
         </div>
         
@@ -292,8 +297,8 @@ export default function AccountPage() {
             </svg>
           </div>
           <div>
-            <p className="text-lg font-semibold text-gray-900">Track how you feel</p>
-            <p className="text-base text-gray-500">Simple check-ins that build your confidence over time.</p>
+            <p className="text-base font-semibold text-gray-900">Track how you feel</p>
+            <p className="text-sm text-gray-500">Simple check-ins that build your confidence over time.</p>
           </div>
         </div>
         
@@ -305,20 +310,20 @@ export default function AccountPage() {
     </svg>
   </div>
   <div>
-    <p className="text-lg font-semibold text-gray-900">See the evidence</p>
-    <p className="text-base text-gray-500">Use your wearable data or daily check-ins to see real progress over time.</p>
+    <p className="text-base font-semibold text-gray-900">See the evidence</p>
+    <p className="text-sm text-gray-500">Use your wearable data or daily check-ins to see real progress over time.</p>
   </div>
 </div>
         
       </div>
       
       {/* CTA Button - black */}
-      <button
-        onClick={() => router.push('/waitlist')}
-        className="px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-colors"
-      >
-        Pre-register for the app
-      </button>
+<button
+  onClick={() => setShowModal(true)}
+  className="px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-colors"
+>
+  Pre-register for the app
+</button>
       
     </div>
   </div>
@@ -387,6 +392,69 @@ export default function AccountPage() {
 
   </div>
 </main>
+
+{/* Email capture modal */}
+{showModal && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+    <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-xl">
+      {!submitted ? (
+        <>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Get early access</h3>
+          <p className="text-gray-500 mb-6">Be the first to know when the Renew app launches.</p>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-gray-900"
+          />
+          <button
+            onClick={async () => {
+              if (!email) return;
+              setIsSubmitting(true);
+              try {
+                await fetch("/api/auth/waitlist", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ email }),
+                });
+                setSubmitted(true);
+              } catch (error) {
+                alert("Something went wrong. Please try again.");
+              }
+              setIsSubmitting(false);
+            }}
+            disabled={isSubmitting}
+            className="w-full px-4 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
+          >
+            {isSubmitting ? "Submitting..." : "Notify me"}
+          </button>
+          <button
+            onClick={() => setShowModal(false)}
+            className="w-full mt-3 text-gray-500 hover:text-gray-700 text-sm"
+          >
+            Cancel
+          </button>
+        </>
+      ) : (
+        <>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h3>
+          <p className="text-gray-500 mb-6">We'll let you know as soon as the app is ready.</p>
+          <button
+            onClick={() => {
+              setShowModal(false);
+              setSubmitted(false);
+              setEmail("");
+            }}
+            className="w-full px-4 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-colors"
+          >
+            Done
+          </button>
+        </>
+      )}
+    </div>
+  </div>
+)}
 
     </div>
   );
