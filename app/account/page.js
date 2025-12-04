@@ -153,52 +153,89 @@ export default function AccountPage() {
 <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
   <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
     
-    {/* Left column - App CTA (3/5 = 60%) - PRIMARY */}
-    <div className="lg:col-span-3">
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden h-full">
-        {/* Card header */}
-        <div 
-          className="px-8 pt-8 pb-6"
-          style={{ borderBottom: '1px solid #E5E7EB' }}
-        >
-          <h2 className="text-3xl font-bold text-gray-900">Get the Renew App</h2>
-          <p className="text-gray-500 mt-2">Coming soon</p>
-        </div>
+{/* Left column - App CTA (3/5 = 60%) - PRIMARY */}
+<div className="lg:col-span-3">
+  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden h-full">
+    <div className="px-8 py-8 flex flex-col items-center">
+      
+      {/* Image placeholder - centered, rounded */}
+      <div className="w-80 h-52 bg-gray-200 rounded-2xl mb-5 flex items-center justify-center">
+        <span className="text-gray-400 text-sm">Image placeholder</span>
+      </div>
+      
+      {/* Headline - centered */}
+      <h2 className="text-4xl font-bold text-gray-900 text-center mb-8">
+        Get the app today
+      </h2>
+      
+      {/* Benefits list - left-aligned within centered block, wider */}
+      <div className="space-y-5 mb-10 w-full max-w-lg">
         
-        {/* Content */}
-        <div className="px-8 py-8">
-          {/* Bullet list */}
-          <ul className="space-y-4 mb-10">
-            <li className="flex items-start gap-3">
-              <span className="text-green-600 mt-1">•</span>
-              <span className="text-gray-700">Placeholder 1</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-green-600 mt-1">•</span>
-              <span className="text-gray-700">Placeholder 2</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-green-600 mt-1">•</span>
-              <span className="text-gray-700">Placeholder 3</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-green-600 mt-1">•</span>
-              <span className="text-gray-700">Placeholder 4</span>
-            </li>
-          </ul>
-          
-          {/* CTA Button */}
-          <div className="text-center">
-            <button
-              onClick={() => router.push('/waitlist')}
-              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-full transition-colors"
-            >
-              Pre-register for the app
-            </button>
+        {/* Benefit 1 */}
+        <div className="flex items-start gap-4">
+          <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-lg font-semibold text-gray-900">Build your routine</p>
+            <p className="text-base text-gray-500">Get reminders and timing advice so you know exactly when to take what.</p>
           </div>
         </div>
+        
+        {/* Benefit 2 */}
+        <div className="flex items-start gap-4">
+          <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-lg font-semibold text-gray-900">Know what to expect</p>
+            <p className="text-base text-gray-500">Week-by-week guidance so you're never guessing if it's working.</p>
+          </div>
+        </div>
+        
+        {/* Benefit 3 */}
+        <div className="flex items-start gap-4">
+          <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-lg font-semibold text-gray-900">Track how you feel</p>
+            <p className="text-base text-gray-500">Simple check-ins that build your confidence over time.</p>
+          </div>
+        </div>
+        
+        {/* Benefit 4 */}
+        <div className="flex items-start gap-4">
+          <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-lg font-semibold text-gray-900">See the evidence</p>
+            <p className="text-base text-gray-500">Connect your wearables and see real data that proves it's working.</p>
+          </div>
+        </div>
+        
       </div>
+      
+      {/* CTA Button - black */}
+      <button
+        onClick={() => router.push('/waitlist')}
+        className="px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-colors"
+      >
+        Pre-register for the app
+      </button>
+      
     </div>
+  </div>
+</div>
 
 {/* Right column - Saved supplements (2/5 = 40%) - SECONDARY */}
 <div className="lg:col-span-2">
