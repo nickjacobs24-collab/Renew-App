@@ -155,52 +155,98 @@ export default function AccountPage() {
     
 {/* Left column - App CTA (3/5 = 60%) - PRIMARY */}
 <div className="lg:col-span-3">
-  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden h-full">
+<div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-visible h-full">
     <div className="px-8 py-8 flex flex-col items-center">
       
-      {/* Image placeholder - centered, rounded */}
-      <div className="w-80 h-52 bg-gray-200 rounded-2xl mb-5 flex items-center justify-center">
-        <span className="text-gray-400 text-sm">Image placeholder</span>
-      </div>
+{/* Hero image with stacked card effect */}
+<div className="relative mb-8" style={{ width: '360px', height: '220px' }}>
+  {/* Back card - furthest, peeks out left and right */}
+  <div 
+    className="absolute rounded-2xl bg-white"
+    style={{ 
+      width: '400px', 
+      height: '150px', 
+      top: '29px', 
+      left: '50%', 
+      transform: 'translateX(-50%)',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+      zIndex: 1
+    }}
+  />
+  {/* Middle card */}
+  <div 
+    className="absolute rounded-2xl bg-white"
+    style={{ 
+      width: '340px', 
+      height: '180px', 
+      top: '14px', 
+      left: '50%', 
+      transform: 'translateX(-50%)',
+      boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+      zIndex: 2
+    }}
+  />
+  {/* Main image - front */}
+  <div 
+    className="absolute rounded-2xl overflow-hidden"
+    style={{ 
+      width: '280px', 
+      height: '208px', 
+      top: '0', 
+      left: '50%',
+      transform: 'translateX(-50%)',
+      boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+      zIndex: 3
+    }}
+  >
+    <Image
+      src="/images/accountpage-pill.jpg"
+      alt="Renew app"
+      width={280}
+      height={208}
+      className="object-cover w-full h-full"
+    />
+  </div>
+</div>
       
       {/* Headline - centered */}
       <h2 className="text-4xl font-bold text-gray-900 text-center mb-8">
         Get the app today
       </h2>
       
-      {/* Benefits list - left-aligned within centered block, wider */}
-      <div className="space-y-5 mb-10 w-full max-w-lg">
+      {/* Benefits list - left-aligned within centered block, wider margins */}
+      <div className="space-y-4 mb-8 w-full max-w-xl">
         
         {/* Benefit 1 */}
-        <div className="flex items-start gap-4">
-          <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex items-start gap-3">
+          <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
           </div>
           <div>
             <p className="text-lg font-semibold text-gray-900">Build your routine</p>
-            <p className="text-base text-gray-500">Get reminders and timing advice so you know exactly when to take what.</p>
+            <p className="text-base text-gray-500">Get reminders and timing advice so you always know when to take what.</p>
           </div>
         </div>
         
         {/* Benefit 2 */}
-        <div className="flex items-start gap-4">
-          <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex items-start gap-3">
+          <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
           </div>
           <div>
             <p className="text-lg font-semibold text-gray-900">Know what to expect</p>
-            <p className="text-base text-gray-500">Week-by-week guidance so you're never guessing if it's working.</p>
+            <p className="text-base text-gray-500">Week-by-week guidance so you're never left guessing if it's working.</p>
           </div>
         </div>
         
         {/* Benefit 3 */}
-        <div className="flex items-start gap-4">
-          <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex items-start gap-3">
+         <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
           </div>
@@ -210,18 +256,18 @@ export default function AccountPage() {
           </div>
         </div>
         
-        {/* Benefit 4 */}
-        <div className="flex items-start gap-4">
-          <div className="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <div>
-            <p className="text-lg font-semibold text-gray-900">See the evidence</p>
-            <p className="text-base text-gray-500">Connect your wearables and see real data that proves it's working.</p>
-          </div>
-        </div>
+{/* Benefit 4 */}
+<div className="flex items-start gap-3">
+  <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+    </svg>
+  </div>
+  <div>
+    <p className="text-lg font-semibold text-gray-900">See the evidence</p>
+    <p className="text-base text-gray-500">Use your wearable data or daily check-ins to see real progress over time.</p>
+  </div>
+</div>
         
       </div>
       
@@ -256,18 +302,12 @@ export default function AccountPage() {
       </div>
     )}
 
-    {/* Empty state */}
-    {isLoaded && savedSupplements.length === 0 && (
-      <div className="px-8 py-12 text-center">
-        <p className="text-gray-500">No supplements saved yet.</p>
-        <button
-          onClick={() => router.push('/results')}
-          className="mt-4 text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline"
-        >
-          Browse supplements
-        </button>
-      </div>
-    )}
+{/* Empty state */}
+{isLoaded && savedSupplements.length === 0 && (
+  <div className="px-8 py-12 text-center">
+    <p className="text-gray-500">No supplements saved yet.</p>
+  </div>
+)}
 
     {/* Supplements list */}
     {isLoaded && savedSupplements.length > 0 && (
