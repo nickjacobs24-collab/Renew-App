@@ -159,7 +159,7 @@ export default function AccountPage() {
     <div className="px-8 py-8 flex flex-col items-center">
       
 {/* Hero image with stacked card effect */}
-<div className="relative mb-8" style={{ width: '360px', height: '220px' }}>
+<div className="relative mb-3" style={{ width: '360px', height: '220px' }}>
   {/* Back card - furthest, peeks out left and right */}
   <div 
     className="absolute rounded-2xl bg-white"
@@ -209,10 +209,10 @@ export default function AccountPage() {
   </div>
 </div>
       
-      {/* Headline - centered */}
-      <h2 className="text-4xl font-bold text-gray-900 text-center mb-8">
-        Get the app today
-      </h2>
+{/* Headline - centered */}
+<h2 className="text-4xl font-bold text-gray-900 text-center mb-9">
+  Get the app today
+</h2>
       
       {/* Benefits list - left-aligned within centered block, wider margins */}
       <div className="space-y-4 mb-8 w-full max-w-xl">
