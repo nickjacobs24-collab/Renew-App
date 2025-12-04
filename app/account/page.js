@@ -159,7 +159,7 @@ export default function AccountPage() {
     <div className="px-8 py-8 flex flex-col items-center">
       
 {/* Hero image with stacked card effect */}
-<div className="relative mb-3" style={{ width: '360px', height: '220px' }}>
+<div className="relative mb-2" style={{ width: '360px', height: '220px' }}>
   {/* Back card - furthest, peeks out left and right */}
   <div 
     className="absolute rounded-2xl bg-white"
@@ -186,27 +186,68 @@ export default function AccountPage() {
       zIndex: 2
     }}
   />
-  {/* Main image - front */}
-  <div 
-    className="absolute rounded-2xl overflow-hidden"
-    style={{ 
-      width: '280px', 
-      height: '208px', 
-      top: '0', 
-      left: '50%',
-      transform: 'translateX(-50%)',
-      boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-      zIndex: 3
-    }}
-  >
-    <Image
-      src="/images/accountpage-pill.jpg"
-      alt="Renew app"
-      width={280}
-      height={208}
-      className="object-cover w-full h-full"
-    />
+{/* Main image - front */}
+<div 
+  className="absolute rounded-2xl overflow-hidden"
+  style={{ 
+    width: '270px', 
+    height: '210px', 
+    top: '0', 
+    left: '50%',
+    transform: 'translateX(-50%)',
+    boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+    zIndex: 3
+  }}
+>
+  <Image
+    src="/images/howitworks-step1-visual.jpg"
+    alt="Renew app"
+    width={280}
+    height={208}
+    className="object-cover w-full h-full"
+  />
+  {/* Text content */}
+  <div className="absolute inset-0 flex flex-col items-center justify-center">
+    <p 
+      className="text-white text-xs font-semibold uppercase tracking-widest mb-1"
+      style={{ textShadow: '0 0 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.9)' }}
+    >
+      Immunity
+    </p>
+    <p 
+      className="text-white text-xl font-bold mb-4"
+      style={{ textShadow: '0 0 10px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.9)' }}
+    >
+      Vitamin D
+    </p>
+    <div className="flex gap-1.5">
+      <span 
+        className="px-2 py-1 text-white text-xs font-medium rounded-full"
+        style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
+      >
+        Routine
+      </span>
+      <span 
+        className="px-2 py-1 text-white text-xs font-medium rounded-full"
+        style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
+      >
+        Tracking
+      </span>
+      <span 
+        className="px-2 py-1 text-white text-xs font-medium rounded-full"
+        style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
+      >
+        Tips
+      </span>
+      <span 
+        className="px-2 py-1 text-white text-xs font-medium rounded-full"
+        style={{ backgroundColor: 'rgba(0,0,0,0.65)' }}
+      >
+        Insights
+      </span>
+    </div>
   </div>
+</div>
 </div>
       
 {/* Headline - centered */}
