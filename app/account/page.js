@@ -130,7 +130,7 @@ export default function AccountPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header - edge-to-edge like landing page */}
       <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 sticky top-0 z-50">
-        <div className="flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
+       <div className="flex h-13 md:h-15 items-center justify-between px-4 md:px-6">
           {/* Logo - far left */}
           <div className="flex items-center">
             <Image
