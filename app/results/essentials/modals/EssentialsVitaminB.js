@@ -73,7 +73,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Your body uses B vitamins fast - and can't store them.
             </span>
-            <br />
+            <div className="h-2 md:h-0" />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
               They get used up quickly, leaving you tired without realising why.
             </span>
