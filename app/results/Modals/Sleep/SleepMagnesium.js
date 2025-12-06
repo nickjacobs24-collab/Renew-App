@@ -121,38 +121,41 @@ const [showTooltip, setShowTooltip] = useState(false);
                   />
                 </svg>
               Gentle, well-absorbed form of magnesium — safely used for decades and trusted worldwide.
-                <span className="inline-block group" style={{ marginLeft: '8px', top: '-6px', position: 'relative' }}>
-                  <span
-                    className="inline-flex items-center justify-center rounded-full text-white cursor-pointer transition-all duration-150 ease-out hover:scale-105"
-                    style={{ 
-                      width: '15px', 
-                      height: '15px',
-                      fontSize: '9px', 
-                      fontWeight: 600,
-                      fontStyle: 'italic',
-                      backgroundColor: '#111111',
-                      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.3)'
-                    }}
-                    aria-label="More information"
-                  >
-                    i
-                  </span>
-                  <span
-                    className="absolute text-white rounded-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity ease-out whitespace-normal"
-                    style={{
-                      width: '280px',
-                      bottom: '32px',
-                      left: '0',
-                      padding: '4px 8px',
-                      backgroundColor: '#111111',
-                      fontSize: '13px',
-                      lineHeight: '1.35',
-                      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
-                      transitionDuration: '150ms'
-                    }}
-                  >
+<span className="inline-block" style={{ marginLeft: '8px', top: '-6px', position: 'relative' }}>
+  <span
+    onClick={() => setShowTooltip(!showTooltip)}
+    className="inline-flex items-center justify-center rounded-full text-white cursor-pointer transition-all duration-150 ease-out hover:scale-105"
+    style={{ 
+      width: '15px', 
+      height: '15px',
+      fontSize: '9px', 
+      fontWeight: 600,
+      fontStyle: 'italic',
+      backgroundColor: '#111111',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.3)'
+    }}
+    aria-label="More information"
+  >
+    i
+  </span>
+  {showTooltip && (
+    <span
+      className="absolute text-white rounded-lg whitespace-normal"
+      style={{
+        width: '280px',
+        bottom: '32px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        padding: '8px 12px',
+        backgroundColor: '#111111',
+        fontSize: '13px',
+        lineHeight: '1.35',
+        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
+      }}
+    >
                   Magnesium Glycinate is a gentle form that's easy on the stomach and well absorbed by the body (Cleveland Clinic, 2024).
                   </span>
+                    )}
                 </span>
               </p>
             </div>
