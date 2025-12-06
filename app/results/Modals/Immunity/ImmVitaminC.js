@@ -59,7 +59,7 @@ export default function VitaminC({ onClose }) {
           </div>
 
 
-          <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
+          <p className="text-xs font-semibold tracking-wider uppercase text-center pt-12" style={{ color: '#000000', marginBottom: '6px' }}>
             IMMUNITY ESSENTIALS
           </p>
 
