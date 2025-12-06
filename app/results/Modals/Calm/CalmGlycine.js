@@ -35,7 +35,7 @@ export default function CalmGlycine({ onClose }) {
       
       <div className="flex min-h-screen items-center justify-center p-4">
         <div
-          className="relative rounded-2xl w-full px-16 md:px-24 py-8 md:py-10 z-10"
+          className="relative rounded-2xl w-full px-6 md:px-24 py-8 md:py-10 z-10"
           style={{
             maxWidth: '1350px',
             boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
@@ -61,10 +61,6 @@ export default function CalmGlycine({ onClose }) {
 <p className="text-xs font-semibold tracking-wider uppercase text-center px-24" style={{ color: '#000000', marginBottom: '6px' }}>
   CALM ESSENTIALS
 </p>
-
-          <p className="text-xs font-semibold tracking-wider uppercase text-center" style={{ color: '#000000', marginBottom: '6px' }}>
-            CALM ESSENTIALS
-          </p>
 
           <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-green-700 via-emerald-600 to-green-500 bg-clip-text text-transparent">
