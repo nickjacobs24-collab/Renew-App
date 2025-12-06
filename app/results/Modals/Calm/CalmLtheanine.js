@@ -69,7 +69,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             </span>
           </p>
 
-          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '860px', lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="mx-auto text-left md:text-center text-lg md:text-xl" style={{ maxWidth: '860px', lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Stress can leave you restless or unfocused.
             </span>

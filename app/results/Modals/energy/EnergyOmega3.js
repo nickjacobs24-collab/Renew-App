@@ -69,7 +69,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             </span>
           </p>
 
-          <div className="max-w-3xl mx-auto text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="mx-auto text-left md:text-center text-lg md:text-xl" style={{ lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Your brain needs omega-3 to stay healthy, focused, and clear.
             </span>
