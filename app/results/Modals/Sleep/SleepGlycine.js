@@ -69,7 +69,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             </span>
           </p>
 
-          <div className="mx-auto text-center text-lg md:text-xl" style={{ maxWidth: '780px', lineHeight: '1.7', marginBottom: '36px' }}>
+          <div className="max-w-2xl mx-auto text-left md:text-center text-lg md:text-xl" style={{ maxWidth: '780px', lineHeight: '1.7', marginBottom: '36px' }}>
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Stress and diet can reduce how much your body makes, making it harder to fall asleep or causing you to wake up in the night.
             </span>
