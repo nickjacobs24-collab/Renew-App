@@ -4,7 +4,8 @@ import { createPortal } from "react-dom";
 import SaveButton from "@/components/SaveButton";
 
 export default function LTheanine({ onClose }) {
-  const [mounted, setMounted] = useState(false);
+const [mounted, setMounted] = useState(false);
+const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
     setMounted(true);
