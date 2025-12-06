@@ -73,7 +73,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Your gut is home to trillions of bacteria that keep your body healthy.
             </span>
-            <br />
+            <div className="h-2 md:h-0" />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
               When there aren't enough of the good kind, it can cause bloating or discomfort.
             </span>

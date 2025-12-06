@@ -73,7 +73,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Zinc supports your immune system when you need it most.
             </span>
-            <br />
+            <div className="h-2 md:h-0" />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
               Getting enough means your body responds quicker and recovers faster, so you spend less time feeling run down.
             </span>

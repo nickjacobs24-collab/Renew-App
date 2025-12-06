@@ -73,7 +73,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Vitamin D is essential for your immune system.
             </span>
-            <br />
+            <div className="h-2 md:h-0" />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
               Sunlight and food often don't provide enough. Daily vitamin D helps you stay healthy year-round.
             </span>

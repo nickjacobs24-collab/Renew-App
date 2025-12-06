@@ -73,7 +73,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Glycine helps you stay calm under daily stress.
             </span>
-            <br />
+            <div className="h-2 md:h-0" />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
               This form works throughout your body and brain, helping you relax into deeper, better sleep.
             </span>

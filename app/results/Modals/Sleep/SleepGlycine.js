@@ -73,7 +73,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Stress and diet can reduce how much your body makes, making it harder to fall asleep or causing you to wake up in the night.
             </span>
-            <br />
+            <div className="h-2 md:h-0" />
             <span style={{ fontWeight: 400, color: '#4B5563' }}>
               Taking glycine helps you fall asleep faster and stay asleep longer.
             </span>

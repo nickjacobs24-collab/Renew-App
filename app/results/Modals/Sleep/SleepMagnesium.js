@@ -73,8 +73,8 @@ const [showTooltip, setShowTooltip] = useState(false);
             <span style={{ fontWeight: 600, color: '#1F2937' }}>
               Many people don't get enough magnesium for quality sleep.
             </span>
-            <br />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <div className="h-2 md:h-0" />
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               This form works throughout your body and brain, helping you relax into deeper, better sleep.
             </span>
           </div>
