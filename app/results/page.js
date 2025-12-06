@@ -651,7 +651,7 @@ const isLastSection = (goalName) => goalName === lastVisibleGoal;
           <SectionHeader
             icon={Zap}
             color={{ from: '#fb923c', to: '#ea580c' }}
-            title={<><span style={{ color: '#ea580c' }}>Energy</span>&nbsp;that&nbsp;powers.</>}
+            title={<><span style={{ color: '#ea580c' }}>Energy</span> that powers.</>}
             description={
               <>
                 Energy <span className="font-extrabold">powers everything you do</span>. Without enough, even small things can feel harder. Three in four adults regularly feel fatigued<sup className="text-sm">1</sup>.
@@ -764,7 +764,7 @@ const isLastSection = (goalName) => goalName === lastVisibleGoal;
           <SectionHeader
             icon={IconShield}
             color={{ from: '#14b8a6', to: '#0F766E' }}
-            title={<><span style={{ color: '#0F766E' }}>Immunity</span>&nbsp;that&nbsp;protects.</>}
+            title={<><span style={{ color: '#0F766E' }}>Immunity</span> that protects.</>}
             description={
               <>
                 Your immune system <span className="font-extrabold">protects you from everyday threats</span>. When it is strong, your body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength<sup className="text-sm">6</sup>.
@@ -879,7 +879,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
             color={{ from: '#B45309', to: '#FBBF24' }}
             title={
               <>
-                <span style={{ color: '#B45309' }}>Digestion</span>&nbsp;that&nbsp;eases.
+                <span style={{ color: '#B45309' }}>Digestion</span> that eases.
               </>
             }
             description={
@@ -996,7 +996,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
           <SectionHeader
             icon={IconClock}
             color={{ from: '#3B82F6', to: '#1E40AF' }}
-            title={<><span style={{ color: '#1E40AF' }}>Sleep</span>&nbsp;that&nbsp;restores.</>}
+            title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>}
             description={
               <>
                 Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.
@@ -1109,7 +1109,7 @@ background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1)
           <SectionHeader
             icon={HeartIcon}
             color={{ from: '#14b8a6', to: '#0F766E' }}
-            title={<><span style={{ color: '#0F766E' }}>Calm</span>&nbsp;that&nbsp;relaxes.</>}
+            title={<><span style={{ color: '#0F766E' }}>Calm</span> that relaxes.</>}
             description={
               <>
                 Stress <span className="font-extrabold">affects how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus, and relationships. Three out of four adults regularly experience physical symptoms of stress<sup className="text-sm">4</sup>.
