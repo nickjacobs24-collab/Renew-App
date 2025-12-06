@@ -106,7 +106,7 @@ export default function CalmGlycine({ onClose }) {
 
           <div style={{ marginBottom: '26px' }}>
             <div className="rounded-xl px-6 py-3 relative" style={{ backgroundColor: '#FAFAFA' }}>
-              <p className="text-[15px] leading-relaxed text-center" style={{ fontWeight: 400, color: '#4B5563' }}>
+              <p className="text-[15px] leading-relaxed text-left" style={{ fontWeight: 400, color: '#4B5563' }}>
                 <svg
                   className="inline-block w-4 h-4 mr-2 -mt-0.5"
                   fill="currentColor"
