@@ -7,6 +7,7 @@ export default function EssentialsMagnesium({ onClose }) {
 const [mounted, setMounted] = useState(false);
 const [showTooltip, setShowTooltip] = useState(false);
 
+
   useEffect(() => {
     setMounted(true);
     return () => setMounted(false);
