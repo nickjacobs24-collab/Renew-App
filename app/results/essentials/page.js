@@ -344,7 +344,7 @@ export default function EssentialsPage() {
               <SectionHeader
                 icon={Sparkles}
                 color={{ from: '#2563eb', to: '#0f2554' }}
-                title={<><span style={{ background: 'linear-gradient(135deg, #2563eb, #0f2554)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Essentials</span>&nbsp;that&nbsp;elevate.</>}
+                title={<><span style={{ background: 'linear-gradient(135deg, #2563eb, #0f2554)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Essentials</span> that elevate.</>}
 description={
   <>
     <span className="text-[22px] md:text-[24px] font-bold leading-snug">
