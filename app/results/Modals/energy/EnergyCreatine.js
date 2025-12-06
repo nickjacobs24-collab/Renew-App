@@ -74,7 +74,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Your body makes some creatine, but not enough for full support.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               Without it, energy dips can leave you tired. Topping up recharges your supply so you can keep steady energy all day.
             </span>
           </div>

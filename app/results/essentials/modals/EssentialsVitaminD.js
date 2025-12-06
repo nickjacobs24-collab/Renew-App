@@ -74,7 +74,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Your body makes vitamin D from sunlight, and food provides very little.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               Most people don't get enough. Daily top-ups help strengthen immunity, mood and bones
             </span>
           </div>

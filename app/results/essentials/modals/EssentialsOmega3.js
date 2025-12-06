@@ -74,11 +74,11 @@ const [showTooltip, setShowTooltip] = useState(false);
     Not all fats are bad — omega-3s are essential fats your body can't make on its own.
   </span>
   <div className="h-2 md:h-0" />
-  <span style={{ fontWeight: 400, color: '#4B5563' }}>
+  <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
     They support your heart, brain and joints yet most diets fall short.
   </span>
   <br />
-  <span style={{ fontWeight: 400, color: '#4B5563' }}>
+  <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
     Daily omega-3 helps you feel and perform at your best.
   </span>
 </div>

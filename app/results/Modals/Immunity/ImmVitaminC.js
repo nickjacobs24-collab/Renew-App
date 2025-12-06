@@ -75,7 +75,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Vitamin C gets used up quickly, especially when you're stressed or tired.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               Daily top-ups keep your defenses strong so you stay healthy and bounce back faster.
             </span>
           </div>

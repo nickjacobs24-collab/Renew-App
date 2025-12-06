@@ -74,7 +74,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Stress can leave you restless or unfocused.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               L-Theanine helps you feel calmer without making you sleepy, so you stay calm and clear-headed.
             </span>
           </div>

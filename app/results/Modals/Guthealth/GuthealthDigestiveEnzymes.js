@@ -74,7 +74,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Your body naturally makes enzymes to turn food into nutrients it can use.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               Sometimes it needs a little extra help. Digestive enzymes give that gentle support — helping you feel lighter and more comfortable after eating.
             </span>
           </div>

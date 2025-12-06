@@ -74,7 +74,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Fibre helps food move smoothly through your system, while prebiotics feed the good bacteria in your gut.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               Together they keep things moving comfortably and consistently — helping you feel more balanced each day.
             </span>
           </div>

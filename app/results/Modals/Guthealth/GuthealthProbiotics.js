@@ -74,11 +74,11 @@ const [showTooltip, setShowTooltip] = useState(false);
               Your gut is home to trillions of bacteria that keep your body healthy.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               When there aren't enough of the good kind, it can cause bloating or discomfort.
             </span>
             <br />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               Probiotics restore healthy bacteria — supporting digestion, immunity, and gut comfort each day.
             </span>
           </div>

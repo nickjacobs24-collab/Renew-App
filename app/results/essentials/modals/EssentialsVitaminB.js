@@ -74,11 +74,11 @@ const [showTooltip, setShowTooltip] = useState(false);
               Your body uses B vitamins fast - and can't store them.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               They get used up quickly, leaving you tired without realising why.
             </span>
             <br />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               Raising your levels increases your energy so you feel energised all day.
             </span>
           </div>

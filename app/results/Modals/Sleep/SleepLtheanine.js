@@ -74,7 +74,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Stress and screens can keep your mind buzzing at night, making it harder to fall asleep.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               L-Theanine helps your mind wind down so you fall asleep faster and more easily.
             </span>
           </div>

@@ -74,7 +74,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Your brain needs omega-3 to stay healthy, focused, and clear.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               But your body can't make it, and most diets don't provide enough. Daily omega-3 gives your mind what it needs to think clearly and remember better.
             </span>
           </div>

@@ -75,7 +75,7 @@ const [showTooltip, setShowTooltip] = useState(false);
               Magnesium helps with relaxation and can support natural sleep.
             </span>
             <div className="h-2 md:h-0" />
-            <span style={{ fontWeight: 400, color: '#4B5563' }}>
+            <span className="text-base md:text-lg" style={{ fontWeight: 400, color: '#4B5563' }}>
               Most people don't get enough from food, and stress reduces it further. Getting more helps your body restore calm again.
             </span>
           </div>
