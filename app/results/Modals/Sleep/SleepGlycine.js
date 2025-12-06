@@ -35,7 +35,7 @@ export default function Glycine({ onClose }) {
       
       <div className="flex min-h-screen items-center justify-center p-4">
         <div
-          className="relative rounded-2xl w-full px-16 md:px-24 py-8 md:py-10 z-10"
+          className="relative rounded-2xl w-full px-6 md:px-24 py-8 md:py-10 z-10"
           style={{
             maxWidth: '1350px',
             boxShadow: '0 0 70px -10px rgba(15, 60, 160, 0.3), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
