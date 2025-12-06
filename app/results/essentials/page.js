@@ -10,8 +10,8 @@ import EssentialsVitaminB from './modals/EssentialsVitaminB';
 
 // Reusable Benefit Tag Component
 const BenefitTag = ({ icon: Icon, children }) => (
-<span className="inline-flex items-center gap-2.5 rounded-full bg-neutral-100/70 px-5 py-1.5 text-[13px] font-medium text-neutral-800 border border-neutral-300 shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
-  <Icon className="w-4 h-4 stroke-[1.75] text-neutral-700" />
+<span className="inline-flex items-center gap-1.5 md:gap-2.5 rounded-full bg-neutral-100/70 px-3 md:px-5 py-1 md:py-1.5 text-[11px] md:text-[13px] font-medium text-neutral-800 border border-neutral-300 shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
+  <Icon className="w-3 h-3 md:w-4 md:h-4 stroke-[1.75] text-neutral-700" />
   {children}
 </span>
 );
