@@ -62,7 +62,7 @@ export default function CalmGlycine({ onClose }) {
   CALM ESSENTIALS
 </p>
 
-          <p className="text-3xl md:text-4xl font-bold leading-snug text-left md:text-center max-w-3xl md:mx-auto" style={{ marginBottom: '20px' }}>
+          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
             <span className="bg-gradient-to-r from-green-700 via-emerald-600 to-green-500 bg-clip-text text-transparent">
               Stress can leave you tense and on edge, making it harder to feel calm.
             </span>
