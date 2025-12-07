@@ -181,7 +181,7 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
   </p>
   {showWhatToLook && (
     <span 
-      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md whitespace-normal max-w-[280px] text-center"
+      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md whitespace-normal max-w-[90vw] text-center"
       style={{ 
         transform: 'translateX(-50%)',
         marginBottom: '8px',
