@@ -147,7 +147,7 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
       width: '280px',
       bottom: '32px',
       left: '50%',
-      transform: 'translateX(-50%)',
+      transform: 'translateX(-80%)',
       padding: '8px 12px',
       backgroundColor: '#111111',
       fontSize: '13px',
