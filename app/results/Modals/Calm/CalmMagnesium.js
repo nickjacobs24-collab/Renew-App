@@ -142,17 +142,19 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
   </span>
 {showTooltip && (
   <span
-    className="absolute text-white rounded-lg whitespace-normal"
+    className="fixed text-white rounded-lg whitespace-normal"
     style={{
       width: '280px',
-      bottom: '50px',
-      left: '70%',
-      transform: 'translateX(-50%)',
+      bottom: 'auto',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
       padding: '8px 12px',
       backgroundColor: '#111111',
       fontSize: '13px',
       lineHeight: '1.35',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
+      zIndex: 9999,
     }}
   >
                     Developed at MIT and tested in clinical trials showing improvements in memory and cognitive function (MIT, 2021).
