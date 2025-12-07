@@ -149,7 +149,7 @@ const [showTooltip, setShowTooltip] = useState(false);
     style={{
       width: '280px',
       bottom: '32px',
-      right: '-140px',
+      right: '0px',
       padding: '8px 12px',
       backgroundColor: '#111111',
       fontSize: '13px',
