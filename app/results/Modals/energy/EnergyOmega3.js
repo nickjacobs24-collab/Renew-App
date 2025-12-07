@@ -63,7 +63,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             ENERGY & FOCUS ESSENTIALS
           </p>
 
-          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
+          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '14px' }}>
             <span className="bg-gradient-to-r from-orange-700 to-orange-500 bg-clip-text text-transparent">
               Keeps your mind clear and focused
             </span>

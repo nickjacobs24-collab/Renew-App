@@ -63,7 +63,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             ESSENTIALS
           </p>
 
-          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '20px' }}>
+          <p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-3xl mx-auto" style={{ marginBottom: '14px' }}>
             <span className="bg-gradient-to-r from-[#2563eb] to-[#0f2554] bg-clip-text text-transparent">
               Protection for heart, mind and movement
             </span>

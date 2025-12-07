@@ -63,7 +63,7 @@ const [showTooltip, setShowTooltip] = useState(false);
             WELLNESS ESSENTIALS
           </p>
 
-<p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-5xl mx-auto" style={{ marginBottom: '20px' }}>
+<p className="text-3xl md:text-4xl font-bold leading-snug text-center max-w-5xl mx-auto" style={{ marginBottom: '14px' }}>
   <span className="bg-gradient-to-r from-[#2563eb] to-[#0f2554] bg-clip-text text-transparent">
     Daily protection for immunity, mood and bones
   </span>
