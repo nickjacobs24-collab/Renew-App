@@ -140,23 +140,20 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
   >
     i
   </span>
-{showTooltip && (
-  <span
-    className="fixed text-white rounded-lg whitespace-normal"
-    style={{
-      width: '280px',
-      bottom: 'auto',
-      top: '30%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      padding: '8px 12px',
-      backgroundColor: '#111111',
-      fontSize: '13px',
-      lineHeight: '1.35',
-      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
-      zIndex: 9999,
-    }}
-  >
+  {showTooltip && (
+    <span
+      className="absolute text-white rounded-lg whitespace-normal"
+style={{
+  width: '280px',
+  bottom: '32px',
+  right: '0',
+  padding: '8px 12px',
+  backgroundColor: '#111111',
+  fontSize: '13px',
+  lineHeight: '1.35',
+  boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
+}}
+    >
                   Magnesium Glycinate is a gentle form that's easy on the stomach and well absorbed by the body (Cleveland Clinic, 2024).
                   </span>
                     )}
@@ -182,7 +179,7 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
   </p>
   {showWhatToLook && (
     <span 
-      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md text-center"
+      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md whitespace-normal max-w-[90vw] text-center"
       style={{ 
         transform: 'translateX(-50%)',
         marginBottom: '8px',
@@ -190,9 +187,7 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
         fontSize: '13px',
         color: '#4B5563',
         fontWeight: 400,
-        zIndex: 50,
-        width: '300px',
-        whiteSpace: 'normal'
+        zIndex: 50
       }}
     >
                     Magnesium (Glycinate): the form most easily absorbed by the body muscles.
