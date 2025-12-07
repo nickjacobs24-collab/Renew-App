@@ -140,21 +140,21 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
   >
     i
   </span>
-  {showTooltip && (
-    <span
-      className="absolute text-white rounded-lg whitespace-normal"
-      style={{
-        width: '280px',
-        bottom: '32px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        padding: '8px 12px',
-        backgroundColor: '#111111',
-        fontSize: '13px',
-        lineHeight: '1.35',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
-      }}
-    >
+{showTooltip && (
+  <span
+    className="absolute text-white rounded-lg whitespace-normal"
+    style={{
+      width: '280px',
+      bottom: '32px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      padding: '8px 12px',
+      backgroundColor: '#111111',
+      fontSize: '13px',
+      lineHeight: '1.35',
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
+    }}
+  >
                     Omega-3 is among the top five most commonly used supplements globally and supports brain health (World Health Organisation, 2022–23).
                   </span>
                     )}

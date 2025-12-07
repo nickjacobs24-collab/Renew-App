@@ -139,21 +139,21 @@ const [showTooltip, setShowTooltip] = useState(false);
   >
     i
   </span>
-  {showTooltip && (
-    <span
-      className="absolute text-white rounded-lg whitespace-normal"
-      style={{
-        width: '280px',
-        bottom: '32px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        padding: '8px 12px',
-        backgroundColor: '#111111',
-        fontSize: '13px',
-        lineHeight: '1.35',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
-      }}
-    >
+{showTooltip && (
+  <span
+    className="absolute text-white rounded-lg whitespace-normal"
+    style={{
+      width: '280px',
+      bottom: '32px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      padding: '8px 12px',
+      backgroundColor: '#111111',
+      fontSize: '13px',
+      lineHeight: '1.35',
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
+    }}
+  >
                     Consuming enough fibre each day supports smooth digestion and is linked to a lower risk of heart disease, diabetes, and bowel problems. (NHS).
                   </span>
                     )}

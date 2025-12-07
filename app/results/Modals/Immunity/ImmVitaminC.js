@@ -140,21 +140,21 @@ const [showTooltip, setShowTooltip] = useState(false);
   >
     i
   </span>
-  {showTooltip && (
-    <span
-      className="absolute text-white rounded-lg whitespace-normal"
-      style={{
-        width: '280px',
-        bottom: '32px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        padding: '8px 12px',
-        backgroundColor: '#111111',
-        fontSize: '13px',
-        lineHeight: '1.35',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
-      }}
-    >
+{showTooltip && (
+  <span
+    className="absolute text-white rounded-lg whitespace-normal"
+    style={{
+      width: '280px',
+      bottom: '32px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      padding: '8px 12px',
+      backgroundColor: '#111111',
+      fontSize: '13px',
+      lineHeight: '1.35',
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
+    }}
+  >
                     Vitamin C is one of the most widely used supplements globally and supports immune health (World Health Organization, 2023).
                   </span>
                     )}
