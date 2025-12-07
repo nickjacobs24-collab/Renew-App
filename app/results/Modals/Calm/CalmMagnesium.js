@@ -145,8 +145,8 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
       className="absolute text-white rounded-lg whitespace-normal"
 style={{
   width: '280px',
-  bottom: '55px',
-  right: '0',
+  bottom: '70px',
+  right: '-40',
   padding: '8px 12px',
   backgroundColor: '#111111',
   fontSize: '13px',
