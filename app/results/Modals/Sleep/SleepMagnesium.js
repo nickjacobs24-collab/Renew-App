@@ -146,7 +146,7 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
     style={{
       width: '280px',
       bottom: '32px',
-      right: '-140px',
+      left: '-30%',
       padding: '8px 12px',
       backgroundColor: '#111111',
       fontSize: '13px',
