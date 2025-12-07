@@ -180,7 +180,7 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
   </p>
   {showWhatToLook && (
     <span 
-      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md whitespace-normal max-w-[90vw] text-center"
+      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md text-center"
       style={{ 
         transform: 'translateX(-50%)',
         marginBottom: '8px',
@@ -188,7 +188,9 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
         fontSize: '13px',
         color: '#4B5563',
         fontWeight: 400,
-        zIndex: 50
+        zIndex: 50,
+        width: '300px',
+        whiteSpace: 'normal'
       }}
     >
                     Omega-3 (EPA & DHA) — your body absorbs these forms easily so you get real results.

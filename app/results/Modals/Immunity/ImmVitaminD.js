@@ -179,7 +179,7 @@ style={{
   </p>
   {showWhatToLook && (
     <span 
-      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md whitespace-normal max-w-[90vw] text-center"
+      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md text-center"
       style={{ 
         transform: 'translateX(-50%)',
         marginBottom: '8px',
@@ -187,7 +187,9 @@ style={{
         fontSize: '13px',
         color: '#4B5563',
         fontWeight: 400,
-        zIndex: 50
+        zIndex: 50,
+        width: '300px',
+        whiteSpace: 'normal'
       }}
     >
                     Vitamin D (D3 with K2) — K2 helps your body get the most out of vitamin D.
