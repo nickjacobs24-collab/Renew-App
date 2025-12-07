@@ -191,11 +191,10 @@ const [showTooltip, setShowTooltip] = useState(false);
         zIndex: 50
       }}
     >
-                    Magnesium (Glycinate) — gentle on your stomach so you can take it daily.
-                  </span>
-                    )}
-                </div>
-              </div>
+      Magnesium (Glycinate) — gentle on your stomach so you can take it daily.
+    </span>
+  )}
+</div>
               
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <a href="https://www.hollandandbarrett.com/search?query=magnesium%20glycinate" target="_blank" rel="noreferrer" className="transition-transform hover:scale-105">
