@@ -167,29 +167,33 @@ const [showTooltip, setShowTooltip] = useState(false);
             <div className="rounded-xl px-6 py-4" style={{ backgroundColor: '#FAFAFA' }}>
               <div className="flex items-center justify-center" style={{ marginBottom: '16px' }}>
                 <p style={{ color: '#4B5563', fontSize: '15px', fontWeight: 400 }}>Take me there.</p>
-                <div className="relative group" style={{ marginLeft: '4px' }}>
-                  <p className="flex items-center cursor-pointer" style={{ color: '#0284C7', fontSize: '15px', fontWeight: 400, gap: '2px', opacity: 0.9, transition: 'opacity 0.15s ease' }}
-                     onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
-                     onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}>
-                    What to look for
-                    <svg className="transition-transform group-hover:translate-x-0.5" style={{ width: '13px', height: '13px' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </p>
-                  <span 
-                    className="absolute left-full top-1/2 bg-white rounded-xl px-4 py-2 shadow-md pointer-events-none transition-opacity duration-150 ease-out opacity-0 group-hover:opacity-100 whitespace-nowrap"
-                    style={{ 
-                      transform: 'translateY(-50%)',
-                      marginLeft: '12px',
-                      border: '1px solid #E5E7EB',
-                      fontSize: '13px',
-                      color: '#4B5563',
-                      fontWeight: 400,
-                      zIndex: 50
-                    }}
-                  >
+<div className="relative" style={{ marginLeft: '4px' }}>
+  <p 
+    className="flex items-center cursor-pointer"
+    onClick={() => setShowWhatToLook(!showWhatToLook)}
+    style={{ color: '#0284C7', fontSize: '15px', fontWeight: 400, gap: '2px', opacity: 0.9, transition: 'opacity 0.15s ease' }}
+  >
+    What to look for
+    <svg className="transition-transform" style={{ width: '13px', height: '13px' }} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+    </svg>
+  </p>
+  {showWhatToLook && (
+    <span 
+      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md whitespace-nowrap"
+      style={{ 
+        transform: 'translateX(-50%)',
+        marginBottom: '8px',
+        border: '1px solid #E5E7EB',
+        fontSize: '13px',
+        color: '#4B5563',
+        fontWeight: 400,
+        zIndex: 50
+      }}
+    >
                     Magnesium (Glycinate) — gentle on your stomach so you can take it daily.
                   </span>
+                    )}
                 </div>
               </div>
               
