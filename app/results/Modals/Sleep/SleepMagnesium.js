@@ -142,17 +142,19 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
   </span>
 {showTooltip && (
   <span
-    className="absolute text-white rounded-lg whitespace-normal"
+    className="fixed text-white rounded-lg whitespace-normal"
     style={{
       width: '280px',
-      bottom: '50px',
-      left: '20%',
-      transform: 'translateX(-50%)',
+      bottom: 'auto',
+      top: '30%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
       padding: '8px 12px',
       backgroundColor: '#111111',
       fontSize: '13px',
       lineHeight: '1.35',
       boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
+      zIndex: 9999,
     }}
   >
                   Magnesium Glycinate is a gentle form that's easy on the stomach and well absorbed by the body (Cleveland Clinic, 2024).
@@ -178,23 +180,21 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
     </svg>
   </p>
-{showTooltip && (
-  <span
-    className="fixed text-white rounded-lg whitespace-normal"
-    style={{
-      width: '280px',
-      bottom: 'auto',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      padding: '8px 12px',
-      backgroundColor: '#111111',
-      fontSize: '13px',
-      lineHeight: '1.35',
-      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.25)',
-      zIndex: 9999,
-    }}
-  >
+  {showWhatToLook && (
+    <span 
+      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md text-center"
+      style={{ 
+        transform: 'translateX(-50%)',
+        marginBottom: '8px',
+        border: '1px solid #E5E7EB',
+        fontSize: '13px',
+        color: '#4B5563',
+        fontWeight: 400,
+        zIndex: 50,
+        width: '300px',
+        whiteSpace: 'normal'
+      }}
+    >
                     Magnesium (Glycinate): the form most easily absorbed by the body muscles.
                   </span>
                     )}
