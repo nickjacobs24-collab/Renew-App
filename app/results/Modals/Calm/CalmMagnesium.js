@@ -146,7 +146,7 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
     style={{
       width: '280px',
       bottom: 'auto',
-      top: '50%',
+      top: '30%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
       padding: '8px 12px',
