@@ -6,6 +6,7 @@ import SaveButton from "@/components/SaveButton";
 export default function EssentialsOmega3({ onClose }) {
 const [mounted, setMounted] = useState(false);
 const [showTooltip, setShowTooltip] = useState(false);
+const [showWhatToLook, setShowWhatToLook] = useState(false);
 
   useEffect(() => {
     setMounted(true);

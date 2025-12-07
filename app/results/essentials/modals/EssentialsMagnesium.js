@@ -181,7 +181,7 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
   </p>
   {showWhatToLook && (
     <span 
-      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md whitespace-nowrap"
+      className="absolute left-1/2 bottom-full bg-white rounded-xl px-4 py-2 shadow-md whitespace-normal max-w-[280px] text-center"
       style={{ 
         transform: 'translateX(-50%)',
         marginBottom: '8px',
@@ -192,10 +192,10 @@ const [showWhatToLook, setShowWhatToLook] = useState(false);
         zIndex: 50
       }}
     >
-                    Magnesium (Glycinate) — gentle on your stomach so you can take it daily.
-                  </span>
-                    )}
-                </div>
+      Magnesium (Glycinate) — gentle on your stomach so you can take it daily.
+    </span>
+  )}
+</div>
               </div>
               
               <div className="flex flex-wrap items-center justify-center gap-4">
