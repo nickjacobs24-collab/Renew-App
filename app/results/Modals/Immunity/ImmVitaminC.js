@@ -107,8 +107,9 @@ const [showTooltip, setShowTooltip] = useState(false);
           </div>
 
           <div style={{ marginBottom: '26px' }}>
-            <div className="rounded-xl px-6 py-3 relative" style={{ backgroundColor: '#FAFAFA' }}>
-              <p className="text-[15px] leading-relaxed text-center" style={{ fontWeight: 400, color: '#4B5563' }}>
+<div className="rounded-xl p-4 relative" style={{ backgroundColor: '#FAFAFA' }}>
+  <p className="text-sm font-semibold text-gray-900 mb-2 text-left md:text-center">Trust</p>
+  <p className="text-[15px] leading-relaxed text-left md:text-center" style={{ fontWeight: 400, color: '#4B5563' }}>
                 <svg
                   className="inline-block w-4 h-4 mr-2 -mt-0.5"
                   fill="currentColor"
