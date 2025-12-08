@@ -87,7 +87,7 @@ function SignInPageContent() {
                       Create your Renew profile
                     </h1>
                     <p className="text-gray-600 font-medium text-sm">
-                      Save your personalised results and track your progress over time.
+                      Save your personalised results to your account.
                     </p>
                   </div>
 
