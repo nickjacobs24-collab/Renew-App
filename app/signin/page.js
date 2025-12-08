@@ -110,7 +110,7 @@ function SignInPageContent() {
   <div className="flex-grow h-px bg-gray-300" />
 </div> */}
 
-                  <form onSubmit={handleEmailSignIn}>
+{/* <form onSubmit={handleEmailSignIn}>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Email address
                     </label>
@@ -142,7 +142,14 @@ function SignInPageContent() {
                       View results once without saving
                       <span className="text-gray-400">→</span>
                     </button>
-                  </div>
+                  </div> */}
+
+                  <button
+                    onClick={handleBypass}
+                    className="w-full py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
+                    View my results
+                  </button>
                 </>
               ) : (
                 <div className="text-center py-4">
