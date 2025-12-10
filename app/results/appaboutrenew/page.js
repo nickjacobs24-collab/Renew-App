@@ -20,7 +20,7 @@ export default function AboutRenew() {
     <div className="min-h-screen" style={{ backgroundColor: '#FDFBF7' }}>
       
       {/* HERO SECTION */}
-      <section ref={heroRef} className="py-16 md:py-20">
+      <section ref={heroRef} className="pt-16 pb-8 md:pt-20 md:pb-10">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h1 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -53,7 +53,7 @@ export default function AboutRenew() {
       </section>
 
       {/* HERO IMAGE */}
-      <section className="w-full py-16 md:py-20">
+      <section className="w-full py-4 md:py-6">
         <img 
           src="/images/about-renew2.jpg" 
           alt="Aerial view of sunlit forest"
@@ -63,7 +63,7 @@ export default function AboutRenew() {
       </section>
 
       {/* WHY RENEW EXISTS */}
-      <section ref={whyRef} className="py-16 md:py-20">
+      <section ref={whyRef} className="pt-8 pb-16 md:pt-10 md:pb-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -124,7 +124,7 @@ export default function AboutRenew() {
       </section>
 
       {/* NATURE IMAGE DIVIDER */}
-      <section className="w-full py-12 md:py-16">
+  <section className="w-full py-4 md:py-6">
         <img 
           src="/images/about-renew.jpg" 
           alt="Sunlit forest"
@@ -134,7 +134,7 @@ export default function AboutRenew() {
       </section>
 
       {/* WHO RENEW IS FOR */}
-      <section ref={whoRef} className="pt-14 pb-20 md:pt-16 md:pb-24">
+      <section ref={whoRef} className="pt-8 pb-16 md:pt-10 md:pb-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
