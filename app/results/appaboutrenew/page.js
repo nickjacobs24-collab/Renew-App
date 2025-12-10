@@ -20,7 +20,7 @@ export default function AboutRenew() {
     <div className="min-h-screen" style={{ backgroundColor: '#FDFBF7' }}>
       
       {/* HERO SECTION */}
-      <section ref={heroRef} className="pt-16 pb-8 md:pt-20 md:pb-10">
+      <section ref={heroRef} className="pt-16 pb-2 md:pt-20 md:pb-3">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h1 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -58,28 +58,22 @@ export default function AboutRenew() {
           src="/images/about-renew2.jpg" 
           alt="Aerial view of sunlit forest"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: '380px' }}
+          style={{ maxHeight: '420px' }}
         />
       </section>
 
-      {/* WHY RENEW EXISTS */}
-      <section ref={whyRef} className="pt-4 pb-8 md:pt-6 md:pb-10">
+          {/* WHY RENEW EXISTS */}
+      <section ref={whyRef} className="pt-2 pb-8 md:pt-3 md:pb-10">
         <div className="max-w-3xl mx-auto px-6">
-          <motion.h2 
+          <h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
             style={{ fontSize: '28px' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             Why Renew Exists
-          </motion.h2>
-          <motion.div 
+          </h2>
+          <div 
             className="space-y-4 text-gray-600" 
             style={{ fontSize: '16px', lineHeight: '1.85' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
               The supplement world isn't working as it should. Marketing is often prioritised over evidence. Brands promote what sells, not what works. And most advice comes from someone trying to make money — not someone trying to help you stay healthy.
@@ -87,39 +81,30 @@ export default function AboutRenew() {
             <p>
               When money's involved, transparency and truth often come second.
             </p>
-          </motion.div>
-          <motion.p 
+          </div>
+          <p 
             className="font-medium text-gray-900 mt-6" 
             style={{ fontSize: '20px', lineHeight: '1.5' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
             Renew was created to be a counterweight.
-          </motion.p>
-          <motion.div 
+          </p>
+          <div 
             className="space-y-4 text-gray-600 mt-6" 
             style={{ fontSize: '16px', lineHeight: '1.85' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
               We give you guidance that isn't influenced by sales, sponsorships, or commissions — just clear, human, evidence-led information you can trust.
             </p>
-            <motion.p 
+            <p 
               className="font-medium text-gray-800" 
               style={{ fontSize: '18px' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
               No motive to sell. Only to inform.
-            </motion.p>
+            </p>
             <p>
               We believe something simple: you are the only person who can truly know what's right for your health. Our job is to give you the information and clarity you need to make those decisions with confidence.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
