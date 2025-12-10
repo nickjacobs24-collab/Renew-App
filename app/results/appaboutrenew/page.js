@@ -52,8 +52,18 @@ export default function AboutRenew() {
         </div>
       </section>
 
+      {/* HERO IMAGE */}
+      <div className="max-w-3xl mx-auto px-6 pb-8">
+        <img 
+          src="/images/howitworks-step1-visual.jpg" 
+          alt="Aerial view of sunlit forest"
+          className="w-full rounded-2xl object-cover"
+          style={{ height: '400px' }}
+        />
+      </div>
+
       {/* WHY RENEW EXISTS */}
-      <section ref={heroRef} className="py-16 md:py-20">
+      <section ref={whyRef} className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -243,7 +253,7 @@ export default function AboutRenew() {
       </section>
 
             {/* HOW WE CHOOSE */}
-      <section ref={heroRef} className="py-16 md:py-20">
+      <section className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -300,7 +310,7 @@ export default function AboutRenew() {
       </section>
 
       {/* THE RESULT */}
-      <section ref={heroRef} className="py-16 md:py-20">
+      <section ref={resultRef} className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
