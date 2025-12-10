@@ -52,7 +52,7 @@ export default function AboutRenew() {
         </div>
       </section>
 
-   {/* WHY RENEW EXISTS */}
+       {/* WHY RENEW EXISTS */}
       <section ref={whyRef} className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
@@ -72,47 +72,18 @@ export default function AboutRenew() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
-              The supplement world isn't working as it should. Marketing is often prioritised over evidence. Brands promote what sells, not what works. And most advice comes from someone trying to make money — not someone trying to help you stay healthy.
+              <span className="font-semibold text-gray-900">Marketing often comes before evidence.</span> Brands promote what sells, not what works — and most advice comes from someone trying to make money, not someone trying to help you stay healthy.
             </p>
             <p>
-              When money's involved, transparency and truth often come second.
+              When money's involved, transparency and truth often come second. Renew was created to be a counterweight — clear, human, evidence-led information you can trust.
             </p>
-          </motion.div>
-          <motion.p 
-            className="font-medium text-gray-900 mt-6" 
-            style={{ fontSize: '20px', lineHeight: '1.5' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            Renew was created to be a counterweight.
-          </motion.p>
-          <motion.div 
-            className="space-y-4 text-gray-600 mt-6" 
-            style={{ fontSize: '16px', lineHeight: '1.85' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          >
             <p>
-              We give you guidance that isn't influenced by sales, sponsorships, or commissions — just clear, human, evidence-led information you can trust.
-            </p>
-            <motion.p 
-              className="font-medium text-gray-800" 
-              style={{ fontSize: '18px' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              No motive to sell. Only to inform.
-            </motion.p>
-            <p>
-              We believe something simple: you are the only person who can truly know what's right for your health. Our job is to give you the information and clarity you need to make those decisions with confidence.
+              <span className="font-semibold text-gray-900">No motive to sell. Only to inform.</span> You're the only person who can truly know what's right for your health. Our job is to give you the clarity and confidence to make those decisions.
             </p>
           </motion.div>
         </div>
       </section>
-
+      
       {/* NATURE IMAGE DIVIDER */}
   <section className="w-full pt-4 pb-0 md:pt-6 md:pb-0">
         <img 
