@@ -311,7 +311,7 @@ export default function AboutRenew() {
 
       {/* THE RESULT */}
  {/* THE RESULT */}
-      <section ref={resultRef} className="py-16 md:py-20" style={{ backgroundColor: '#EFEFEB' }}>
+      <section ref={resultRef} className="py-16 md:py-20" style={{ backgroundColor: '#F2F2EE' }}>
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
