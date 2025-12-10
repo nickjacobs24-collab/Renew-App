@@ -1,125 +1,130 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 export default function AboutRenew() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-indigo-50 to-indigo-100">
-      <div className="max-w-4xl mx-auto px-5 py-16">
-        {/* HEADER */}
-        <div className="text-center mb-20 pb-10 border-b border-gray-200/60">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
-            About Renew
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-500">
-            Supplements aren't for the 1%. They're for everyone — because health should be simple, safe, and accessible
-          </p>
-        </div>
+    <div className="min-h-screen" style={{ backgroundColor: '#FDFBF7' }}>
+      
+      {/* HERO SECTION */}
+      <div className="max-w-5xl mx-auto px-8 pt-24 pb-16">
+        <h1 className="font-bold tracking-tight text-gray-900 mb-5" style={{ fontSize: '42px', lineHeight: '1.15' }}>
+          About Renew
+        </h1>
+        <p className="text-gray-500 leading-relaxed max-w-3xl" style={{ fontSize: '18px', lineHeight: '1.7' }}>
+          Health advice should be honest. Most of it isn't. Supplements can be one of the simplest ways to support your health — but the industry has made them confusing, commercial, and hard to trust.
+        </p>
+      </div>
 
-        {/* WHY RENEW EXISTS */}
-        <div className="mb-14 bg-white/60 backdrop-blur-sm p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-gray-900 relative inline-block">
-            Why Renew Exists
-            <span className="absolute bottom-0 left-0 w-16 h-1 bg-indigo-500 rounded-full"></span>
-          </h2>
-          <p className="text-lg text-gray-700/90 mb-4 leading-relaxed">
-            The supplement world is broken — full of marketing hype, biased advice, and confusing information.
-            Products that don't work are oversold. Products that do work are buried in noise.
-          </p>
-          <p className="text-lg text-gray-700/90 mb-4 leading-relaxed">
-            Most people waste money, time, and trust trying to figure out what's actually safe and effective.
-          </p>
-          <p className="text-lg text-gray-700/90 leading-relaxed font-medium">
-            Renew was created to change that.
-          </p>
-        </div>
+      {/* OPTIONAL IMAGE SLOT 1 */}
+      {/* 
+      <div className="w-full h-[350px] relative">
+        <Image
+          src="/images/about-hero.jpg"
+          alt="Natural wellness"
+          fill
+          className="object-cover"
+        />
+      </div>
+      */}
 
-        {/* WHO SUPPLEMENTS ARE REALLY FOR */}
-        <div className="mb-14 bg-gradient-to-br from-indigo-50 to-purple-50 p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-gray-900 relative inline-block">
-            Who Supplements Are Really For
-            <span className="absolute bottom-0 left-0 w-16 h-1 bg-indigo-500 rounded-full"></span>
-          </h2>
-          <p className="text-lg text-gray-700/90 mb-4 leading-relaxed">
-            Supplements aren't just for athletes or the 1% chasing peak performance.
-            They're for everyone — anyone who wants better sleep, more energy, clearer thinking, or greater calm.
+      {/* WHY RENEW EXISTS */}
+      <div className="max-w-5xl mx-auto px-8 py-16">
+        <h2 className="font-bold tracking-tight text-gray-900 mb-6" style={{ fontSize: '28px' }}>
+          Why Renew Exists
+        </h2>
+        <div className="max-w-4xl space-y-5" style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <p className="text-gray-700">
+            The supplement world isn't working as it should. <span className="text-gray-500">Marketing is often prioritised over evidence. Brands promote what sells, not what works. And most advice comes from someone trying to make money — not someone trying to help you stay healthy.</span>
           </p>
-          <p className="text-lg text-gray-700/90 mb-4 leading-relaxed">
-            The truth is simple: supplements are the lowest-effort, highest-return way to improve your wellbeing.
-            Ten seconds a day. From home. Real results that build quietly over time.
+          <p className="text-gray-700">
+            When money's involved, transparency and truth often come second. <span className="font-medium text-gray-900">Renew was created to be a counterweight.</span>
           </p>
-          <p className="text-lg text-gray-700/90 mb-4 leading-relaxed">
-            But the industry hasn't caught up.
-            It still markets to extremes — the obsessed or the unwell — missing the vast majority of people who just want to feel good and stay well.
+          <p className="text-gray-500">
+            We give you guidance that isn't influenced by sales, sponsorships, or commissions — just clear, human, evidence-led information you can trust. No motive to sell. Only to inform.
           </p>
-          <p className="text-lg text-gray-700/90 leading-relaxed font-medium">
-            Renew was built for them. For you. For everyone who wants better health without the hype, hard work, or confusion.
-          </p>
-        </div>
-
-        {/* WHAT WE BELIEVE */}
-        <div className="mb-14 bg-white/60 backdrop-blur-sm p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-gray-900 relative inline-block">
-            What We Believe
-            <span className="absolute bottom-0 left-0 w-16 h-1 bg-indigo-500 rounded-full"></span>
-          </h2>
-          <p className="text-lg text-gray-700/90 mb-5 leading-relaxed">
-            Supplements should be:
-          </p>
-          <ul className="space-y-3 text-lg text-gray-700/90 leading-relaxed">
-            <li>
-              <strong>Safe</strong> — built on evidence, not hype
-            </li>
-            <li>
-              <strong>Effective</strong> — chosen because they work, not because they sell
-            </li>
-            <li>
-              <strong>Clear</strong> — explained in plain language anyone can understand
-            </li>
-            <li>
-              <strong>Unbiased</strong> — no hidden agendas, no brand loyalty, no marketing spin
-            </li>
-          </ul>
-        </div>
-
-        {/* OUR PURPOSE */}
-        <div className="mb-14 bg-gradient-to-br from-indigo-50 to-purple-50 p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-gray-900 relative inline-block">
-            Our Purpose
-            <span className="absolute bottom-0 left-0 w-16 h-1 bg-indigo-500 rounded-full"></span>
-          </h2>
-          <p className="text-lg text-gray-700/90 mb-4 leading-relaxed">
-            Renew helps you make confident, informed choices.
-            Every supplement we include is backed by research, reviewed for safety, and presented clearly — so you understand what it does, why it matters, and how it fits your goals.
-          </p>
-          <p className="text-lg text-gray-700/90 leading-relaxed">
-            We don't sell supplements.<br />
-            We don't take sides.<br />
-            We just bring clarity, honesty, and trust back to health.
-          </p>
-        </div>
-
-        {/* THE RESULT */}
-        <div className="mb-14 bg-gradient-to-br from-white via-indigo-50 to-purple-50 p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-gray-900 relative inline-block">
-            The Result
-            <span className="absolute bottom-0 left-0 w-16 h-1 bg-indigo-500 rounded-full"></span>
-          </h2>
-          <p className="text-lg text-gray-700/90 mb-4 leading-relaxed">
-            Less confusion. Less noise.<br />
-            More confidence, safety, and results.
-          </p>
-          <p className="text-lg text-gray-700/90 leading-relaxed">
-            Renew makes it simple to find what really works — so you can take care of your health with clarity, not complexity.
-          </p>
-        </div>
-
-        {/* FOOTER TAGLINE */}
-        <div className="bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100 p-10 md:p-12 rounded-3xl text-center mt-14 shadow-md">
-          <p className="text-2xl md:text-3xl font-semibold text-gray-900">
-            Renew — clarity for everyday health
+          <p className="text-gray-700">
+            We believe something simple: <span className="text-gray-900">you are the only person who can truly know what's right for your health.</span> <span className="text-gray-500">Our job is to give you the information and clarity you need to make those decisions with confidence.</span>
           </p>
         </div>
       </div>
+
+      {/* OPTIONAL IMAGE SLOT 2 */}
+      {/* 
+      <div className="w-full h-[300px] relative my-8">
+        <Image
+          src="/images/about-nature.jpg"
+          alt="Calm and clarity"
+          fill
+          className="object-cover"
+        />
+      </div>
+      */}
+
+      {/* WHO RENEW IS FOR */}
+      <div className="max-w-5xl mx-auto px-8 py-16">
+        <h2 className="font-bold tracking-tight text-gray-900 mb-6" style={{ fontSize: '28px' }}>
+          Who Renew Is For
+        </h2>
+        <div className="max-w-4xl space-y-5" style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <p className="text-gray-700">
+            Supplements aren't just for athletes, biohackers, or the 1% chasing ultimate performance. <span className="text-gray-500">And they're not just for the version of "health" you see online or on Instagram — the gym selfies and protein shake posts.</span>
+          </p>
+          <p className="text-gray-700">
+            They're for <span className="text-gray-900 font-medium">real people with real goals</span>. <span className="text-gray-500">Whether that's moving better, sleeping better, thinking clearer, feeling calmer, having more energy, or simply digesting food more comfortably.</span>
+          </p>
+          <p className="text-gray-500">
+            The industry markets to extremes. Renew is built for everyone else — the vast majority who just want to feel good and stay well, without pressure, noise, or complexity.
+          </p>
+          <p className="text-gray-700">
+            Ten seconds a day. From home. <span className="text-gray-900 font-medium">Real benefits you can see and feel</span> <span className="text-gray-500">— when someone finally tells you honestly what works for you and your goals.</span>
+          </p>
+        </div>
+      </div>
+
+      {/* WHAT WE BELIEVE - DARK SECTION */}
+      <div className="bg-gray-900 text-white py-16">
+        <div className="max-w-5xl mx-auto px-8">
+          <h2 className="font-bold tracking-tight mb-8" style={{ fontSize: '28px' }}>
+            What We Believe
+          </h2>
+          <div className="max-w-3xl space-y-4" style={{ fontSize: '15px', lineHeight: '1.7' }}>
+            <p><span className="font-semibold text-white">Safe</span> <span className="text-gray-400">— based on evidence, nothing else</span></p>
+            <p><span className="font-semibold text-white">Effective</span> <span className="text-gray-400">— chosen because it works</span></p>
+            <p><span className="font-semibold text-white">Human</span> <span className="text-gray-400">— real and written for everyday life</span></p>
+            <p><span className="font-semibold text-white">Honest</span> <span className="text-gray-400">— the full picture, so you can choose what's right</span></p>
+            <p><span className="font-semibold text-white">Respectful</span> <span className="text-gray-400">— nobody cares more about your health than you</span></p>
+          </div>
+          <p className="font-medium mt-10 text-gray-300" style={{ fontSize: '17px' }}>
+            We offer guidance. You decide.
+          </p>
+        </div>
+      </div>
+
+      {/* THE RESULT */}
+      <div className="max-w-5xl mx-auto px-8 py-16">
+        <h2 className="font-bold tracking-tight text-gray-900 mb-6" style={{ fontSize: '28px' }}>
+          The Result
+        </h2>
+        <div className="max-w-3xl" style={{ fontSize: '16px', lineHeight: '1.8' }}>
+          <p className="text-gray-700 mb-3">
+            Less confusion. Less noise. Less risk.
+          </p>
+          <p className="text-gray-900 font-medium">
+            More confidence. More safety. More control.
+          </p>
+        </div>
+      </div>
+
+      {/* CLOSING TAGLINE */}
+      <div className="py-14" style={{ backgroundColor: '#F5F2EC' }}>
+        <div className="max-w-5xl mx-auto px-8 text-center">
+          <p className="font-semibold text-gray-900" style={{ fontSize: '22px' }}>
+            Renew — honest guidance for everyday health.
+          </p>
+        </div>
+      </div>
+
     </div>
   );
 }
