@@ -53,17 +53,17 @@ export default function AboutRenew() {
       </section>
 
       {/* HERO IMAGE */}
-      <section className="w-full py-4 md:py-6">
+      <section className="w-full pt-4 pb-0 md:pt-6 md:pb-0">
         <img 
           src="/images/about-renew2.jpg" 
           alt="Aerial view of sunlit forest"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: '500px' }}
+          style={{ maxHeight: '380px' }}
         />
       </section>
 
       {/* WHY RENEW EXISTS */}
-      <section ref={whyRef} className="pt-8 pb-16 md:pt-10 md:pb-20">
+      <section ref={whyRef} className="pt-4 pb-8 md:pt-6 md:pb-10">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -124,17 +124,17 @@ export default function AboutRenew() {
       </section>
 
       {/* NATURE IMAGE DIVIDER */}
-  <section className="w-full py-4 md:py-6">
+  <section className="w-full pt-4 pb-0 md:pt-6 md:pb-0">
         <img 
           src="/images/about-renew.jpg" 
           alt="Sunlit forest"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: '500px' }}
+          style={{ maxHeight: '400px' }}
         />
       </section>
 
       {/* WHO RENEW IS FOR */}
-      <section ref={whoRef} className="pt-8 pb-16 md:pt-10 md:pb-20">
+      <section ref={whoRef} className="pt-4 pb-16 md:pt-6 md:pb-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
