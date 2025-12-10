@@ -20,7 +20,7 @@ export default function AboutRenew() {
     <div className="min-h-screen" style={{ backgroundColor: '#FDFBF7' }}>
       
       {/* HERO SECTION */}
-      <section ref={heroRef} className="py-14 md:py-20">
+      <section ref={heroRef} className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h1 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -53,7 +53,7 @@ export default function AboutRenew() {
       </section>
 
       {/* WHY RENEW EXISTS */}
-      <section ref={whyRef} className="py-14 md:py-16">
+      <section ref={heroRef} className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -113,8 +113,18 @@ export default function AboutRenew() {
         </div>
       </section>
 
+      {/* NATURE IMAGE DIVIDER */}
+      <section className="w-full py-12 md:py-16">
+        <img 
+          src="/images/about-renew.jpg" 
+          alt="Sunlit forest"
+          className="w-full h-auto object-cover"
+          style={{ maxHeight: '500px' }}
+        />
+      </section>
+
       {/* WHO RENEW IS FOR */}
-      <section ref={whoRef} className="py-14 md:py-16">
+      <section ref={whoRef} className="pt-14 pb-20 md:pt-16 md:pb-24">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -181,7 +191,7 @@ export default function AboutRenew() {
       </section>
 
       {/* WHAT WE BELIEVE - DARK SECTION */}
-      <section ref={believeRef} className="py-12 md:py-16 bg-gray-900 text-white">
+      <section ref={believeRef} className="pt-16 pb-20 md:pt-20 md:pb-24 bg-gray-900 text-white">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight mb-8" 
@@ -233,7 +243,7 @@ export default function AboutRenew() {
       </section>
 
             {/* HOW WE CHOOSE */}
-      <section className="py-14 md:py-16">
+      <section ref={heroRef} className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -290,7 +300,7 @@ export default function AboutRenew() {
       </section>
 
       {/* THE RESULT */}
-      <section ref={resultRef} className="py-14 md:py-20">
+      <section ref={heroRef} className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
