@@ -47,50 +47,17 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
           {/* Right links */}
           <div className="hidden md:flex items-center space-x-8">
             <a
-              href="/results/appaboutrenew"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("/results/appaboutrenew", "_blank", "width=1000,height=800");
-              }}
-              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
-            >
-              About Renew
-            </a>
-            <a
-              href="/results/apphowwechoose"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("/results/apphowwechoose", "_blank", "width=1000,height=800");
-              }}
-              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
-            >
-              How We Choose
-            </a>
-            <a
-              href="/results/appprivacy"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("/results/appprivacy", "_blank", "width=1000,height=800");
-              }}
-              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="/results/appdisclaimer"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("/results/appdisclaimer", "_blank", "width=1000,height=800");
-              }}
-              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
-            >
-              Disclaimer
-            </a>
+href="/results/appaboutrenew"
+  className="text-white/90 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+>
+  About Renew
+</a>
           </div>
         </div>
       </nav>
 
 {/* SECTION 1: HERO */}
+
 <section className="relative min-h-screen overflow-hidden">
   
   {/* Background Image */}
@@ -372,7 +339,6 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         </p>
       </div>
       
-      {/* Step 2 */}
 {/* Step 2 */}
 <div className="flex flex-col">
   <div className="relative w-full h-[296px] mb-5 rounded-2xl overflow-hidden">
@@ -392,7 +358,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     We analyse trusted research and narrow it to 2-3 supplements that work for your goals.
   </p>
 <a 
-  href="/results/apphowwechoose" 
+  href="/results/appaboutrenew" 
   className="text-gray-500 hover:text-blue-600 text-sm font-medium underline hover:no-underline transition-colors"
 >
   How we choose
@@ -431,9 +397,26 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         <span style={{ fontSize: '1.2rem', transform: 'translateY(-2px)', display: 'inline-block' }}>›</span>
       </a>
     </div>
-    
   </div>
-</section>
+  </section>
+
+{/* FOOTER */}
+<footer className="bg-gray-900 py-6">
+  <div className="flex flex-col md:flex-row items-center justify-end gap-6 px-4 md:px-6">
+    <a 
+      href="/results/applegal" 
+      className="text-white/70 hover:text-white text-sm transition-colors"
+    >
+      Legal
+    </a>
+    <a 
+      href="mailto:nick.jacobs24@gmail.com" 
+      className="text-white/70 hover:text-white text-sm transition-colors"
+    >
+      Contact
+    </a>
+  </div>
+</footer>
 
     </div>
   );
