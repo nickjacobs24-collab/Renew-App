@@ -52,8 +52,8 @@ export default function AboutRenew() {
         </div>
       </section>
 
-       {/* WHY RENEW EXISTS */}
-      <section ref={whyRef} className="py-16 md:py-20">
+      {/* WHY RENEW EXISTS */}
+      <section ref={whyRef} className="pt-16 pb-8 md:pt-20 md:pb-10">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
             className="font-bold tracking-tight text-gray-900 mb-6" 
@@ -72,10 +72,10 @@ export default function AboutRenew() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
-              <span className="font-semibold text-gray-900">Marketing often comes before evidence.</span> Brands promote what sells, not what works — and most advice comes from someone trying to make money, not someone trying to help you stay healthy.
+              <span className="font-semibold text-gray-900">Marketing often comes before evidence.</span> Brands promote what sells, not what works — and most advice comes from someone trying to make money, not someone trying to help you stay healthy. When money's involved, transparency and truth often come second.
             </p>
             <p>
-              When money's involved, transparency and truth often come second. Renew was created to be a counterweight — clear, human, evidence-led information you can trust.
+              <span className="font-semibold text-gray-900">Renew was created to be a counterweight</span> — clear, human, evidence-led information you can trust.
             </p>
             <p>
               <span className="font-semibold text-gray-900">No motive to sell. Only to inform.</span> You're the only person who can truly know what's right for your health. Our job is to give you the clarity and confidence to make those decisions.
