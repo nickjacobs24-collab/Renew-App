@@ -45,7 +45,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
           </div>
 
           {/* Right links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-8">
             <a
 href="/results/appaboutrenew"
   className="text-white/90 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
