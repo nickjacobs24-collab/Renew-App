@@ -96,7 +96,7 @@ href="/results/appaboutrenew"
             textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
           }}
         >
-          Lasting Health. The Easier Way.
+          Lasting Health. Made Simple.
         </motion.h1>
 
         {/* Subline */}
@@ -230,7 +230,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Supplements can be one of the simplest ways to support your health - but the way they’re often presented can make them seem confusing, sales-driven, and hard to trust.
+        Supplements can be one of the simplest ways to support your health - but the way they’re presented can make them confusing and hard to trust.
       </motion.p>
     </div>
     
@@ -250,7 +250,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        In health, evidence should always come first. Companies are often incentivised to promote what sells, and the advice people encounter can be influenced by this. As a result, clarity and transparency can be harder to find.
+        In health, evidence should always come first. Companies are often incentivised to promote what sells. This can influence the advice people encounter. As a result, clarity and transparency can be hard to find.
       </motion.p>
     </div>
     
@@ -270,7 +270,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Renew was created to be a counterweight - clear, human, evidence-led information. It doesn’t sell supplements. It explains what’s supported by evidence, informed by guidance from leading health institutions.
+       Renew was created to be a counterweight - clear, human and grounded in science. Renew doesn’t sell supplements. It shows which ones are supported by evidence from leading health institutions.
       </motion.p>
     </div>
     
@@ -290,7 +290,9 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        You’re the only person who knows what’s right for your health. Renew exists to give you the clarity and confidence to make those decisions.
+        You're the only person who knows what's right for your health. Renew exists to give you the clarity and confidence to make those decisions.
+
+
       </motion.p>
     </div>
     

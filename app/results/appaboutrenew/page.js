@@ -47,7 +47,16 @@ export default function AboutRenew() {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            Supplements can be one of the simplest ways to support your health - but the way they’re often presented can make them seem confusing, sales-driven and hard to trust.
+            Supplements can be one of the simplest ways to support your health.
+          </motion.p>
+          <motion.p 
+            className="text-gray-600" 
+            style={{ fontSize: '17px', lineHeight: '1.8' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            But the way they're presented can make them confusing and hard to trust.
           </motion.p>
         </div>
       </section>
@@ -72,13 +81,13 @@ export default function AboutRenew() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
-              <span className="font-semibold text-gray-900">In health, evidence should always come first.</span> Companies are often incentivised to promote what sells, and the advice people encounter can be influenced by this. As a result, clarity and transparency can be harder to find.
+              <span className="text-gray-600 font-medium">In health, evidence should always come first.</span> Companies are often incentivised to promote what sells. This can influence the advice people encounter. As a result, clarity and transparency can be hard to find.
             </p>
             <p>
-              <span className="font-semibold text-gray-900">Renew was created to be a counterweight</span> - clear, human, evidence-led information. It doesn't sell supplements. It explains what’s supported by evidence, informed by guidance from leading health institutions.
+              <span className="text-gray-600 font-medium">Renew was created to be a counterweight</span> - clear, human and grounded in science. Renew doesn’t sell supplements. It shows which ones are supported by evidence from leading health institutions.
             </p>
             <p>
-<span className="font-semibold text-gray-900">You're the only person who knows what's right for your health.</span> Renew exists to give you the clarity and confidence to make those decisions.
+<span className="text-gray-600 font-medium">You're the only person who knows what's right for your health.</span> Renew exists to give you the clarity and confidence to make those decisions.
 </p>
           </motion.div>
         </div>
@@ -107,7 +116,7 @@ export default function AboutRenew() {
             Who Renew Is For
           </motion.h2>
           <motion.div 
-            className="space-y-4 text-gray-600" 
+            className="space-y-4 text-gray-700" 
             style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -118,7 +127,7 @@ export default function AboutRenew() {
             </p>
           </motion.div>
           <motion.p 
-            className="font-medium text-gray-900 my-6" 
+            className="text-gray-700 font-medium my-6" 
             style={{ fontSize: '17px', lineHeight: '1.5' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -127,21 +136,21 @@ export default function AboutRenew() {
             They're for everyday health. Real people with real goals.
           </motion.p>
           <motion.div 
-            className="space-y-4 text-gray-600" 
+            className="space-y-4 text-gray-700" 
             style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
-            Whether that's moving better, sleeping better, thinking clearer, feeling calmer, having more energy, or simply digesting food more comfortably.
+            Whether that’s moving better, sleeping better, thinking clearer, feeling calmer, having more energy, or digesting food more comfortably.
             </p>
             <p>
-            People who want to feel good and stay well, without pressure, noise, or complexity.
+            People who want to feel good and stay well, without pressure, complexity, or confusion.
             </p>
           </motion.div>
           <motion.p 
-            className="font-medium text-gray-900 mt-6" 
+            className="text-gray-700 font-medium my-6" 
             style={{ fontSize: '17px', lineHeight: '1.5' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -179,21 +188,8 @@ export default function AboutRenew() {
             animate={believeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p className="text-gray-400 mb-6">Supplements should be:</p>
-            <ul className="space-y-4 pl-5">
-              <li>
-                <p className="font-semibold">Grounded in evidence</p>
-                <p className="text-gray-400">Guided by credible science.</p>
-              </li>
-              <li>
-                <p className="font-semibold">Effective</p>
-                <p className="text-gray-400">Chosen because they deliver real benefit.</p>
-              </li>
-              <li>
-                <p className="font-semibold">Designed for everyday life</p>
-                <p className="text-gray-400">Simple, practical, and sustainable.</p>
-              </li>
-            </ul>
+            <p className="text-gray-400 mb-4">Supplements should be grounded in evidence, effective, and designed for everyday life.</p>
+            <p className="text-gray-400">Simple, practical, and sustainable.</p>
           </motion.div>
           <motion.p 
             className="mt-10 text-gray-300 font-medium" 
@@ -227,7 +223,7 @@ export default function AboutRenew() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            To keep Renew focused on safety and trust, every supplement must meet three criteria.
+            To keep Renew focused on safety and trust, supplements are reviewed against three criteria:
           </motion.p>
           <motion.ul 
             className="space-y-3 mb-6"
@@ -237,15 +233,9 @@ export default function AboutRenew() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <li className="text-gray-600">
-              <span className="font-semibold text-gray-900">Safe</span> — suitable for everyday use, and shown to be safe over the long term.
-            </li>
-            <li className="text-gray-600">
-              <span className="font-semibold text-gray-900">Proven</span> — delivers real benefits, supported by long-term human trials and real-world results.
-            </li>
-            <li className="text-gray-600">
-              <span className="font-semibold text-gray-900">Science-led</span> — selected using a structured, evidence-led approach.
-            </li>
+<li className="text-gray-600 font-medium pl-6">An established safety profile</li>
+<li className="text-gray-600 font-medium pl-6">Evidence from human trials and real-world use</li>
+<li className="text-gray-600 font-medium pl-6">A basis in scientific research</li>
           </motion.ul>
           <motion.p 
             className="text-gray-500 italic" 
@@ -255,7 +245,7 @@ export default function AboutRenew() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            All three criteria are informed by guidance from leading health institutions — including the NHS, Mayo Clinic, and Harvard Health.
+            These criteria are informed by guidance from leading health institutions — including the NHS, Mayo Clinic, and Harvard Health.
           </motion.p>
         </div>
       </section>
