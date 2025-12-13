@@ -88,7 +88,7 @@ href="/results/appaboutrenew"
           transition={{ duration: 1.8, ease: [0.4, 0, 0.2, 1] }}
           className="text-white"
           style={{
-            fontSize: "clamp(2.75rem, 7.5vw, 5.5rem)",
+            fontSize: "clamp(2.25rem, 6vw, 4.5rem)",
             fontWeight: 600,
             letterSpacing: "-0.02em",
             lineHeight: 1.1,
@@ -96,7 +96,7 @@ href="/results/appaboutrenew"
             textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
           }}
         >
-          Lasting health. Easier way.
+          Lasting Health. The Easier Way.
         </motion.h1>
 
         {/* Subline */}
@@ -113,7 +113,7 @@ href="/results/appaboutrenew"
             textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
           }}
         >
-          Supplement guidance for your goals. Proven and unbiased.
+          Supplement guidance for your goals.
         </motion.p>
 
         {/* Get Started Button */}
@@ -213,23 +213,16 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     
     {/* SECTION HEADING */}
     <motion.h2 
-      className="text-5xl md:text-6xl font-bold text-gray-900 mb-19 text-center"
+      className="text-5xl md:text-6xl font-bold text-gray-900 mb-13 text-center"
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
       transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      What we believe
+      What we believe.
     </motion.h2>
     
     {/* Paragraph 1 Group - The Ideal */}
-<div className="max-w-[600px] mx-auto mb-7">
-  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        Supplements should be simple
-      </motion.p>
+<div className="max-w-[620px] mx-auto mb-12">
       <motion.p 
         className="text-sm md:text-base text-gray-600 leading-relaxed"
         style={{ lineHeight: 1.6 }}
@@ -237,18 +230,18 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        They can be one of the highest-impact ways to support your health — quick to take, easy to understand, and backed by science.
+        Supplements can be one of the simplest ways to support your health - but the way they’re often presented can make them seem confusing, sales-driven, and hard to trust.
       </motion.p>
     </div>
     
     {/* Paragraph 2 Group - The Requirement */}
-<div className="max-w-[510px] mx-auto mb-7">
+<div className="max-w-[580px] mx-auto mb-7">
   <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Guidance must be based on evidence
+        Evidence comes first.
       </motion.p>
       <motion.p 
         className="text-sm md:text-base text-gray-600 leading-relaxed"
@@ -257,7 +250,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        To trust what you take, you need to know what works and why, based on clear, unbiased facts.
+        In health, evidence should always come first. Companies are often incentivised to promote what sells, and the advice people encounter can be influenced by this. As a result, clarity and transparency can be harder to find.
       </motion.p>
     </div>
     
@@ -268,7 +261,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Most advice puts sales before science
+        Clear, independent guidance.
       </motion.p>
       <motion.p 
         className="text-sm md:text-base text-gray-600 leading-relaxed"
@@ -277,7 +270,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Brands profit from what they recommend. Marketing claims often trump evidence, making it hard to know what actually works.
+        Renew was created to be a counterweight - clear, human, evidence-led information. It doesn’t sell supplements. It explains what’s supported by evidence, informed by guidance from leading health institutions.
       </motion.p>
     </div>
     
@@ -288,7 +281,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.4, delay: 2.1, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        We make it simple again
+        Your health, your decision.
       </motion.p>
       <motion.p 
         className="text-sm md:text-base text-gray-600 leading-relaxed"
@@ -297,7 +290,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Showing what works for your goals, based on research from leading institutions. We'll share where you can buy them, but never profit from it.
+        You’re the only person who knows what’s right for your health. Renew exists to give you the clarity and confidence to make those decisions.
       </motion.p>
     </div>
     
@@ -313,7 +306,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     
     {/* Section Heading - Center Aligned */}
     <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 text-center">
-      How it works
+      How it works.
     </h2>
     
     {/* 3 Step Cards */}
@@ -335,7 +328,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
           Tell us your goals
         </h3>
         <p className="text-base text-gray-600 leading-relaxed">
-          Choose what you want to improve — energy, sleep, immunity, or focus. Takes 2 minutes.
+          Choose what you want to improve - energy, sleep, immunity, or focus.
         </p>
       </div>
       
@@ -352,10 +345,10 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     Step 2
   </div>
   <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
-    We match proven options
+    Renew matches supplements to your goals.
   </h3>
   <p className="text-base text-gray-600 leading-relaxed mb-3">
-    We analyse trusted research and narrow it to 2-3 supplements that work for your goals.
+    It analyses the research and narrows it to 2–3 supplements most relevant to your goals.
   </p>
 <a 
   href="/results/appaboutrenew" 
@@ -381,7 +374,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
           You choose where to buy
         </h3>
         <p className="text-base text-gray-600 leading-relaxed">
-          Pick your retailer. We don't sell — we guide. You stay in control.
+          Buy from a store you trust. We show you where - we don’t sell. You stay in control.
         </p>
       </div>
       

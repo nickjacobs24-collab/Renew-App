@@ -38,7 +38,7 @@ export default function AboutRenew() {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            Health advice should be honest. Most of it isn't.
+            Health advice should be honest.
           </motion.p>
           <motion.p 
             className="text-gray-600" 
@@ -47,7 +47,7 @@ export default function AboutRenew() {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            Supplements can be one of the simplest ways to support your health — but the industry has made them confusing, commercial, and hard to trust.
+            Supplements can be one of the simplest ways to support your health - but the way they’re often presented can make them seem confusing, sales-driven and hard to trust.
           </motion.p>
         </div>
       </section>
@@ -72,14 +72,14 @@ export default function AboutRenew() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
-              <span className="font-semibold text-gray-900">Marketing often comes before evidence.</span> Brands promote what sells, not what works — and most advice comes from someone trying to make money, not someone trying to help you stay healthy. When money's involved, transparency and truth often come second.
+              <span className="font-semibold text-gray-900">In health, evidence should always come first.</span> Companies are often incentivised to promote what sells, and the advice people encounter can be influenced by this. As a result, clarity and transparency can be harder to find.
             </p>
             <p>
-              <span className="font-semibold text-gray-900">Renew was created to be a counterweight</span> — clear, human, evidence-led information you can trust.
+              <span className="font-semibold text-gray-900">Renew was created to be a counterweight</span> - clear, human, evidence-led information. It doesn't sell supplements. It explains what’s supported by evidence, informed by guidance from leading health institutions.
             </p>
             <p>
-              <span className="font-semibold text-gray-900">No motive to sell. Only to inform.</span> You're the only person who can truly know what's right for your health. Our job is to give you the clarity and confidence to make those decisions.
-            </p>
+<span className="font-semibold text-gray-900">You're the only person who knows what's right for your health.</span> Renew exists to give you the clarity and confidence to make those decisions.
+</p>
           </motion.div>
         </div>
       </section>
@@ -114,17 +114,17 @@ export default function AboutRenew() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
-              Supplements aren't just for athletes, biohackers, or the 1% chasing ultimate performance. And they're not just for the version of "health" you see online or on Instagram — the gym selfies and protein shake posts.
+              Supplements aren't just for athletes or the 1% chasing peak performance. They're not just for the version of "health" you see online.
             </p>
           </motion.div>
           <motion.p 
             className="font-medium text-gray-900 my-6" 
-            style={{ fontSize: '20px', lineHeight: '1.5' }}
+            style={{ fontSize: '17px', lineHeight: '1.5' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            They're for real people with real goals.
+            They're for everyday health. Real people with real goals.
           </motion.p>
           <motion.div 
             className="space-y-4 text-gray-600" 
@@ -134,15 +134,15 @@ export default function AboutRenew() {
             transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p>
-              Whether that's moving better, sleeping better, thinking clearer, feeling calmer, having more energy, or simply digesting food more comfortably.
+            Whether that's moving better, sleeping better, thinking clearer, feeling calmer, having more energy, or simply digesting food more comfortably.
             </p>
             <p>
-              The industry markets to extremes. Renew is built for everyone else — the vast majority who just want to feel good and stay well, without pressure, noise, or complexity.
+            People who want to feel good and stay well, without pressure, noise, or complexity.
             </p>
           </motion.div>
           <motion.p 
             className="font-medium text-gray-900 mt-6" 
-            style={{ fontSize: '20px', lineHeight: '1.5' }}
+            style={{ fontSize: '17px', lineHeight: '1.5' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
@@ -156,7 +156,7 @@ export default function AboutRenew() {
             animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            Benefits you can see and feel — when someone finally tells you honestly what works for you and your goals.
+            Real benefits you can see and feel.
           </motion.p>
         </div>
       </section>
@@ -174,32 +174,26 @@ export default function AboutRenew() {
             What We Believe
           </motion.h2>
           <motion.div 
-            className="space-y-3" 
             style={{ fontSize: '17px', lineHeight: '1.7' }}
             initial={{ opacity: 0, y: 20 }}
             animate={believeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p>
-              <span className="font-semibold">Safe</span>
-              <span className="text-gray-400"> — based on evidence, nothing else</span>
-            </p>
-            <p>
-              <span className="font-semibold">Effective</span>
-              <span className="text-gray-400"> — chosen because it works</span>
-            </p>
-            <p>
-              <span className="font-semibold">Human</span>
-              <span className="text-gray-400"> — real and written for everyday life</span>
-            </p>
-            <p>
-              <span className="font-semibold">Honest</span>
-              <span className="text-gray-400"> — the full picture, so you can choose what's right</span>
-            </p>
-            <p>
-              <span className="font-semibold">Respectful</span>
-              <span className="text-gray-400"> — nobody cares more about your health than you</span>
-            </p>
+            <p className="text-gray-400 mb-6">Supplements should be:</p>
+            <ul className="space-y-4 pl-5">
+              <li>
+                <p className="font-semibold">Grounded in evidence</p>
+                <p className="text-gray-400">Guided by credible science.</p>
+              </li>
+              <li>
+                <p className="font-semibold">Effective</p>
+                <p className="text-gray-400">Chosen because they deliver real benefit.</p>
+              </li>
+              <li>
+                <p className="font-semibold">Designed for everyday life</p>
+                <p className="text-gray-400">Simple, practical, and sustainable.</p>
+              </li>
+            </ul>
           </motion.div>
           <motion.p 
             className="mt-10 text-gray-300 font-medium" 
@@ -212,8 +206,7 @@ export default function AboutRenew() {
           </motion.p>
         </div>
       </section>
-
-            {/* HOW WE CHOOSE */}
+      
       <section className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
@@ -226,7 +219,7 @@ export default function AboutRenew() {
           >
             How We Choose
           </motion.h2>
-                    <motion.p 
+          <motion.p 
             className="text-gray-600 mb-6" 
             style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
@@ -234,38 +227,35 @@ export default function AboutRenew() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            To keep Renew safe and trustworthy, every supplement must meet three criteria.
+            To keep Renew focused on safety and trust, every supplement must meet three criteria.
           </motion.p>
-          <motion.div 
-            className="space-y-3" 
-            style={{ fontSize: '17px', lineHeight: '1.7' }}
+          <motion.ul 
+            className="space-y-3 mb-6"
+            style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p className="text-gray-700">
-              <span className="font-semibold text-gray-900">Safe</span>
-              <span> — suitable for everyday use, and shown to be safe over the long term.</span>
-            </p>
-            <p className="text-gray-700">
-              <span className="font-semibold text-gray-900">Proven</span>
-              <span> — delivers real benefits, supported by decades of human trials and real-world results.</span>
-            </p>
-            <p className="text-gray-700">
-              <span className="font-semibold text-gray-900">Science-led</span>
-              <span> — chosen using guidance from leading medical and scientific organisations.</span>
-            </p>
-          </motion.div>
+            <li className="text-gray-600">
+              <span className="font-semibold text-gray-900">Safe</span> — suitable for everyday use, and shown to be safe over the long term.
+            </li>
+            <li className="text-gray-600">
+              <span className="font-semibold text-gray-900">Proven</span> — delivers real benefits, supported by long-term human trials and real-world results.
+            </li>
+            <li className="text-gray-600">
+              <span className="font-semibold text-gray-900">Science-led</span> — selected using a structured, evidence-led approach.
+            </li>
+          </motion.ul>
           <motion.p 
-            className="text-gray-600 mt-6" 
-            style={{ fontSize: '16px', lineHeight: '1.85' }}
+            className="text-gray-500 italic" 
+            style={{ fontSize: '15px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            All three filters are informed by the world's most trusted health institutions — including the NHS, Mayo Clinic, and Harvard Health.
+            All three criteria are informed by guidance from leading health institutions — including the NHS, Mayo Clinic, and Harvard Health.
           </motion.p>
         </div>
       </section>
@@ -290,7 +280,7 @@ export default function AboutRenew() {
             animate={resultInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            Less confusion. Less noise. Less risk.
+            Less confusion. Less noise.
           </motion.p>
           <motion.p 
             className="font-medium text-gray-900" 
@@ -299,7 +289,7 @@ export default function AboutRenew() {
             animate={resultInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            More confidence. More safety. More control.
+            More confidence. More control.
           </motion.p>
         </div>
       </section>
