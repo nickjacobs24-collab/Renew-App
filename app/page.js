@@ -302,7 +302,7 @@ href="/results/appaboutrenew"
   <div className="max-w-[90vw] mx-auto">
     
     {/* Section Heading - Center Aligned */}
-    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 pl-18">
+    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 text-center">
       How it works.
     </h2>
     
