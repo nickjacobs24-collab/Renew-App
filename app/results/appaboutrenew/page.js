@@ -74,21 +74,24 @@ export default function AboutRenew() {
             Why Renew Exists
           </motion.h2>
           <motion.div 
-            className="space-y-4 text-gray-600" 
+            className="space-y-6" 
             style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p>
-              <span className="text-gray-600 font-medium">In health, evidence should always come first.</span> Companies are often incentivised to promote what sells. This can influence the advice people encounter. As a result, clarity and transparency can be hard to find.
-            </p>
-            <p>
-              <span className="text-gray-600 font-medium">Renew was created to be a counterweight</span> - clear, human and grounded in science. Renew doesn’t sell supplements. It shows which ones are supported by evidence from leading health institutions.
-            </p>
-            <p>
-<span className="text-gray-600 font-medium">You're the only person who knows what's right for your health.</span> Renew exists to give you the clarity and confidence to make those decisions.
-</p>
+            <div>
+              <p className="text-gray-600 font-medium mb-2">In health, evidence should always come first.</p>
+              <p className="text-gray-500">Companies are often incentivised to promote what sells. This can influence the advice people encounter. As a result, clarity and transparency can be hard to find.</p>
+            </div>
+            <div>
+              <p className="text-gray-600 font-medium mb-2">Renew was created to be a counterweight.</p>
+              <p className="text-gray-500">Clear, practical and grounded in science. Renew doesn't sell supplements. It shows which ones are supported by evidence from leading health institutions.</p>
+            </div>
+            <div>
+              <p className="text-gray-600 font-medium mb-2">You're the only person who knows what's right for your health.</p>
+              <p className="text-gray-500">Renew exists to give you the clarity and confidence to make those decisions.</p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -116,60 +119,32 @@ export default function AboutRenew() {
             Who Renew Is For
           </motion.h2>
           <motion.div 
-            className="space-y-4 text-gray-700" 
+            className="space-y-6" 
             style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p>
-              Supplements aren't just for athletes or the 1% chasing peak performance. They're not just for the version of "health" you see online.
+            <p className="text-gray-500">
+              Supplements aren't just for athletes or the 1% chasing peak performance.<br />
+              They're not just for the version of "health" you see online.
+            </p>
+            <p className="text-gray-600 font-medium">
+              They're for everyday health. Real people with real goals.
+            </p>
+              <p className="text-gray-500">
+              Whether that's moving better, sleeping better or having more energy.<br />
+              They're for people who want to support their health without pressure, complexity, or confusion.
+            </p>
+            <p className="text-gray-500">
+              
+            </p>
+            <p className="text-gray-600 font-medium">
+              Ten seconds a day. From home.  Benefits you can see and feel.
             </p>
           </motion.div>
-          <motion.p 
-            className="text-gray-700 font-medium my-6" 
-            style={{ fontSize: '17px', lineHeight: '1.5' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            They're for everyday health. Real people with real goals.
-          </motion.p>
-          <motion.div 
-            className="space-y-4 text-gray-700" 
-            style={{ fontSize: '16px', lineHeight: '1.85' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <p>
-            Whether that’s moving better, sleeping better, thinking clearer, feeling calmer, having more energy, or digesting food more comfortably.
-            </p>
-            <p>
-            People who want to feel good and stay well, without pressure, complexity, or confusion.
-            </p>
-          </motion.div>
-          <motion.p 
-            className="text-gray-700 font-medium my-6" 
-            style={{ fontSize: '17px', lineHeight: '1.5' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            Ten seconds a day. From home.
-          </motion.p>
-          <motion.p 
-            className="text-gray-600 mt-4" 
-            style={{ fontSize: '16px', lineHeight: '1.85' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={whoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1.2, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            Real benefits you can see and feel.
-          </motion.p>
         </div>
       </section>
-
       {/* WHAT WE BELIEVE - DARK SECTION */}
       <section ref={believeRef} className="pt-16 pb-20 md:pt-20 md:pb-24 bg-gray-900 text-white">
         <div className="max-w-3xl mx-auto px-6">
@@ -182,18 +157,18 @@ export default function AboutRenew() {
           >
             What We Believe
           </motion.h2>
-          <motion.div 
-            style={{ fontSize: '17px', lineHeight: '1.7' }}
+          <motion.p 
+            className="text-gray-300"
+            style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             animate={believeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p className="text-gray-400 mb-4">Supplements should be grounded in evidence, effective, and designed for everyday life.</p>
-            <p className="text-gray-400">Simple, practical, and sustainable.</p>
-          </motion.div>
+            Supplements should be designed for everyday life. Simple, practical, and sustainable.
+          </motion.p>
           <motion.p 
-            className="mt-10 text-gray-300 font-medium" 
-            style={{ fontSize: '19px' }}
+            className="mt-8 text-gray-200 font-medium" 
+            style={{ fontSize: '20px' }}
             initial={{ opacity: 0, y: 20 }}
             animate={believeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
@@ -213,7 +188,7 @@ export default function AboutRenew() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            How We Choose
+  How We Choose
           </motion.h2>
           <motion.p 
             className="text-gray-600 mb-6" 
@@ -233,12 +208,12 @@ export default function AboutRenew() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-<li className="text-gray-600 font-medium pl-6">An established safety profile</li>
-<li className="text-gray-600 font-medium pl-6">Evidence from human trials and real-world use</li>
-<li className="text-gray-600 font-medium pl-6">A basis in scientific research</li>
+            <li className="text-gray-600 font-medium">An established safety profile</li>
+            <li className="text-gray-600 font-medium">Evidence from human trials and real-world use</li>
+            <li className="text-gray-600 font-medium">A basis in scientific research</li>
           </motion.ul>
           <motion.p 
-            className="text-gray-500 italic" 
+            className="text-gray-500" 
             style={{ fontSize: '15px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
