@@ -10,7 +10,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      <head />
+      <body className="antialiased">
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
             <Script
@@ -27,8 +28,6 @@ export default function RootLayout({ children }) {
             </Script>
           </>
         )}
-      </head>
-      <body className="antialiased">
         <Providers>{children}</Providers>
       </body>
     </html>
