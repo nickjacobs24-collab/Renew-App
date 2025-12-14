@@ -135,12 +135,10 @@ href="/results/appaboutrenew"
     {/* ↑ THIS CLOSES "flex-1 flex items-center..." */}
     
 {/* Trust Logos - Bottom of Hero */}
-<div className="w-full pb-8">
-  
+<div className="w-full pb-8">  
   <p className="text-center text-white/25 text-xs mb-4 tracking-wider uppercase">
     Informed by
-  </p>
-  
+  </p>  
   <div className="flex items-center justify-center gap-12 px-6">
     <img src="/images/nhs-logo.png" alt="NHS" className="h-5 brightness-0 invert opacity-35" />
     <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-7 brightness-0 invert opacity-40" />
@@ -148,11 +146,9 @@ href="/results/appaboutrenew"
     <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-8 brightness-0 invert opacity-40" />
     <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-5 brightness-0 invert opacity-30" />
     <img src="/images/nih-logo.png" alt="NIH" className="h-7 brightness-0 invert opacity-30" />
-  </div>
-  
+  </div>  
+</div>    
 </div>
-    
-  </div>
   
 </section>
 
