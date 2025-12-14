@@ -197,7 +197,7 @@ href="/results/appaboutrenew"
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hidden"
+  className="relative pt-10 pb-4 px-33 overflow-hidden"
   style={{ backgroundColor: '#FFFFFF' }}
 >
   {/* Subtle Parallax Background */}
@@ -208,12 +208,12 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
   />
   
-  {/* Belief Text - Center Aligned */}
-<div className="relative z-10 mx-auto text-center">
+  {/* Content Container - matches How it works section */}
+  <div className="relative z-10 max-w-[90vw] mx-auto">
     
     {/* SECTION HEADING */}
     <motion.h2 
-      className="text-5xl md:text-6xl font-bold text-gray-900 mb-13 text-center"
+      className="text-5xl md:text-6xl font-bold text-gray-900 mb-13"
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
       transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
@@ -221,79 +221,74 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
       What we believe.
     </motion.h2>
     
-    {/* Paragraph 1 Group - The Ideal */}
-<div className="max-w-[620px] mx-auto mb-12">
-      <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.6 }}
+    {/* Text content - constrained width but aligned to title */}
+    <div className="max-w-[620px]">
+    
+      {/* Paragraph 1 - The Problem */}
+      <motion.div 
+        className="mb-10"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Supplements can be one of the simplest ways to support your health - but the way they’re presented can make them confusing and hard to trust.
-      </motion.p>
-    </div>
-    
-    {/* Paragraph 2 Group - The Requirement */}
-<div className="max-w-[580px] mx-auto mb-7">
-  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
+        <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+          Health advice should be honest.
+        </p>
+        <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+          Supplements can be one of the simplest ways to support your health.<br />
+          But the way they're presented can make them confusing and hard to trust.
+        </p>
+      </motion.div>
+      
+      {/* Paragraph 2 - Why Renew Exists */}
+      <motion.div 
+        className="mb-10"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1.6, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        Evidence comes first.
-      </motion.p>
-      <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.6 }}
+        <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+          In health, evidence should always come first.
+        </p>
+        <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+          Companies are often incentivised to promote what sells.<br />
+          This can influence the advice people encounter.<br />
+          As a result, clarity and transparency can be hard to find.
+        </p>
+      </motion.div>
+      
+      {/* Paragraph 3 - The Counterweight */}
+      <motion.div 
+        className="mb-10"
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        In health, evidence should always come first. Companies are often incentivised to promote what sells. This can influence the advice people encounter. As a result, clarity and transparency can be hard to find.
-      </motion.p>
-    </div>
+        <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+          Renew was created to be a counterweight.
+        </p>
+        <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+          Clear, practical and grounded in science.<br />
+          Renew doesn't sell supplements.<br />
+          It shows which ones are supported by evidence from leading health institutions.
+        </p>
+      </motion.div>
+      
+      {/* Paragraph 4 - Your Decision */}
+      <motion.div 
+        className="mb-7"
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 1.6, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+          You're the only person who knows what's right for your health.
+        </p>
+        <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+          Renew exists to give you the clarity and confidence to make those decisions.
+        </p>
+      </motion.div>
     
-    {/* Paragraph 3 Group - The Problem */}
-<div className="max-w-[600px] mx-auto mb-7">
-  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        Clear, independent guidance.
-      </motion.p>
-      <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.6 }}
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-       Renew was created to be a counterweight - clear, human and grounded in science. Renew doesn’t sell supplements. It shows which ones are supported by evidence from leading health institutions.
-      </motion.p>
-    </div>
-    
-    {/* Paragraph 4 Group - The Solution */}
-<div className="max-w-[600px] mx-auto mb-7">
-  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 2.1, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        Your health, your decision.
-      </motion.p>
-      <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.6 }}
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        You're the only person who knows what's right for your health. Renew exists to give you the clarity and confidence to make those decisions.
-
-
-      </motion.p>
     </div>
     
   </div>
@@ -307,7 +302,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
   <div className="max-w-[90vw] mx-auto">
     
     {/* Section Heading - Center Aligned */}
-    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 text-center">
+    <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 pl-18">
       How it works.
     </h2>
     
