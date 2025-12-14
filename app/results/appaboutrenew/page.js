@@ -145,7 +145,7 @@ export default function AboutRenew() {
           </motion.div>
         </div>
       </section>
-      
+
  {/* WHAT WE BELIEVE - DARK SECTION */}
       <section ref={believeRef} className="pt-16 pb-20 md:pt-20 md:pb-24 bg-gray-900 text-white">
         <div className="max-w-3xl mx-auto px-6">
@@ -221,7 +221,8 @@ export default function AboutRenew() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            These criteria are informed by guidance from leading health institutions — including the NHS, Mayo Clinic, and Harvard Health.
+            These criteria are informed by guidance from leading health institutions.<br />
+            Including the NHS, Mayo Clinic, and Harvard Health.
           </motion.p>
         </div>
       </section>
