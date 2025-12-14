@@ -81,15 +81,15 @@ export default function AboutRenew() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <div>
-              <p className="text-gray-600 font-medium mb-2">In health, evidence should always come first.</p>
+              <p className="text-gray-700 font-medium mb-2">In health, evidence should always come first.</p>
               <p className="text-gray-500">Companies are often incentivised to promote what sells. This can influence the advice people encounter. As a result, clarity and transparency can be hard to find.</p>
             </div>
             <div>
-              <p className="text-gray-600 font-medium mb-2">Renew was created to be a counterweight.</p>
+              <p className="text-gray-700 font-medium mb-2">Renew was created to be a counterweight.</p>
               <p className="text-gray-500">Clear, practical and grounded in science. Renew doesn't sell supplements. It shows which ones are supported by evidence from leading health institutions.</p>
             </div>
             <div>
-              <p className="text-gray-600 font-medium mb-2">You're the only person who knows what's right for your health.</p>
+              <p className="text-gray-700 font-medium mb-2">You're the only person who knows what's right for your health.</p>
               <p className="text-gray-500">Renew exists to give you the clarity and confidence to make those decisions.</p>
             </div>
           </motion.div>
@@ -129,7 +129,7 @@ export default function AboutRenew() {
               Supplements aren't just for athletes or the 1% chasing peak performance.<br />
               They're not just for the version of "health" you see online.
             </p>
-            <p className="text-gray-600 font-medium">
+            <p className="text-gray-700 font-medium">
               They're for everyday health. Real people with real goals.
             </p>
               <p className="text-gray-500">
@@ -139,13 +139,14 @@ export default function AboutRenew() {
             <p className="text-gray-500">
               
             </p>
-            <p className="text-gray-600 font-medium">
+            <p className="text-gray-700 font-medium">
               Ten seconds a day. From home.  Benefits you can see and feel.
             </p>
           </motion.div>
         </div>
       </section>
-      {/* WHAT WE BELIEVE - DARK SECTION */}
+      
+ {/* WHAT WE BELIEVE - DARK SECTION */}
       <section ref={believeRef} className="pt-16 pb-20 md:pt-20 md:pb-24 bg-gray-900 text-white">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h2 
@@ -158,7 +159,7 @@ export default function AboutRenew() {
             What We Believe
           </motion.h2>
           <motion.p 
-            className="text-gray-300"
+            className="text-gray-400"
             style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             animate={believeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -167,8 +168,8 @@ export default function AboutRenew() {
             Supplements should be designed for everyday life. Simple, practical, and sustainable.
           </motion.p>
           <motion.p 
-            className="mt-8 text-gray-200 font-medium" 
-            style={{ fontSize: '20px' }}
+            className="mt-6 text-gray-100 font-medium" 
+            style={{ fontSize: '16px' }}
             initial={{ opacity: 0, y: 20 }}
             animate={believeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
@@ -214,7 +215,7 @@ export default function AboutRenew() {
           </motion.ul>
           <motion.p 
             className="text-gray-500" 
-            style={{ fontSize: '15px', lineHeight: '1.85' }}
+            style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
