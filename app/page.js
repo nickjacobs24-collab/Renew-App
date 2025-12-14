@@ -141,50 +141,13 @@ href="/results/appaboutrenew"
     Informed by
   </p>
   
-  <div 
-    className="relative overflow-hidden"
-    style={{
-      maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-      WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
-    }}
-  >
-    
-    <div 
-      style={{
-        display: 'flex',
-        animation: 'scroll-logos 30s linear infinite',
-      }}
-    >
-      
-      <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
-                <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
-      </div>
-      
-      <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
-        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
-      </div>
-      
-      <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
-        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
-      </div>
-      
-    </div>
-    
+  <div className="flex items-center justify-center gap-12 px-6">
+    <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35" />
+    <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40" />
+    <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40" />
+    <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40" />
+    <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30" />
+    <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30" />
   </div>
   
 </div>
@@ -197,10 +160,9 @@ href="/results/appaboutrenew"
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-  className="relative pt-10 pb-4 px-33 overflow-hidden"
+  className="relative pt-10 pb-4 overflow-hidden"
   style={{ backgroundColor: '#FFFFFF' }}
 >
-  {/* Subtle Parallax Background */}
   <motion.div
     className="absolute inset-0 z-0"
     style={{ backgroundColor: '#FFFFFF' }}
@@ -208,90 +170,78 @@ href="/results/appaboutrenew"
     transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
   />
   
-  {/* Content Container - matches How it works section */}
-  <div className="relative z-10 max-w-[90vw] mx-auto">
-    
-    {/* SECTION HEADING */}
-    <motion.h2 
-      className="text-5xl md:text-6xl font-bold text-gray-900 mb-13"
-      initial={{ opacity: 0, y: 10 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-      transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
-    >
-      What we believe.
-    </motion.h2>
-    
-    {/* Text content - constrained width but aligned to title */}
-    <div className="max-w-[620px]">
-    
-      {/* Paragraph 1 - The Problem */}
-      <motion.div 
-        className="mb-10"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
-          Health advice should be honest.
-        </p>
-        <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
-          Supplements can be one of the simplest ways to support your health.<br />
-          But the way they're presented can make them confusing and hard to trust.
-        </p>
-      </motion.div>
-      
-      {/* Paragraph 2 - Why Renew Exists */}
-      <motion.div 
-        className="mb-10"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
-          In health, evidence should always come first.
-        </p>
-        <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
-          Companies are often incentivised to promote what sells.<br />
-          This can influence the advice people encounter.<br />
-          As a result, clarity and transparency can be hard to find.
-        </p>
-      </motion.div>
-      
-      {/* Paragraph 3 - The Counterweight */}
-      <motion.div 
-        className="mb-10"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
-          Renew was created to be a counterweight.
-        </p>
-        <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
-          Clear, practical and grounded in science.<br />
-          Renew doesn't sell supplements.<br />
-          It shows which ones are supported by evidence from leading health institutions.
-        </p>
-      </motion.div>
-      
-      {/* Paragraph 4 - Your Decision */}
-      <motion.div 
-        className="mb-7"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
-          You're the only person who knows what's right for your health.
-        </p>
-        <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
-          Renew exists to give you the clarity and confidence to make those decisions.
-        </p>
-      </motion.div>
-    
-    </div>
-    
-  </div>
+{/* Centered column, centered text */}
+<div className="relative z-10 max-w-[960px] mx-auto px-6">
+  
+  <motion.h2 
+    className="text-5xl md:text-6xl font-bold text-gray-900 mb-13 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    What we believe.
+  </motion.h2>
+  
+  <motion.div 
+    className="mb-10 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Health advice should be honest.
+    </p>
+    <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Supplements can be one of the simplest ways to support your health.<br />
+      But the way they're presented can make them confusing and hard to trust.
+    </p>
+  </motion.div>
+  
+  <motion.div 
+    className="mb-10 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.6, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      In health, evidence should always come first.
+    </p>
+    <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Companies are often incentivised to promote what sells.<br/> This can influence the advice people encounter. <br/>
+      As a result, clarity and transparency can be hard to find.
+    </p>
+  </motion.div>
+  
+  <motion.div 
+    className="mb-10 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Renew was created to be a counterweight.
+    </p>
+    <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Clear, practical and grounded in science. Renew doesn't sell supplements.<br/>
+      It shows which ones are supported by evidence from leading health institutions.
+    </p>
+  </motion.div>
+  
+  <motion.div 
+    className="mb-7 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.6, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      You're the only person who knows what's right for your health.
+    </p>
+    <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Renew exists to give you the clarity and confidence to make those decisions.
+    </p>
+  </motion.div>
+  
+</div>
 </section>
 
 {/* HOW IT WORKS SECTION */}
@@ -325,7 +275,7 @@ href="/results/appaboutrenew"
           Tell us your goals
         </h3>
         <p className="text-base text-gray-600 leading-relaxed">
-          Choose what you want to improve - energy, sleep, immunity, or focus.
+          Choose what you want to improve. <br/> Energy, sleep, immunity, focus and more
         </p>
       </div>
       
@@ -342,10 +292,10 @@ href="/results/appaboutrenew"
     Step 2
   </div>
   <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
-    Renew matches supplements to your goals.
+    Renew matches supplements to your goals
   </h3>
   <p className="text-base text-gray-600 leading-relaxed mb-3">
-    It analyses the research and narrows it to 2–3 supplements most relevant to your goals.
+    It reviews the research and identifies three supplements for your goals.
   </p>
 <a 
   href="/results/appaboutrenew" 
@@ -371,7 +321,7 @@ href="/results/appaboutrenew"
           You choose where to buy
         </h3>
         <p className="text-base text-gray-600 leading-relaxed">
-          Buy from a store you trust. We show you where - we don’t sell. You stay in control.
+          Buy from a store you trust. We show you where.<br/> We don’t sell. You stay in control.
         </p>
       </div>
       
