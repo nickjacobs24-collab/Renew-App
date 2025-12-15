@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
+import { useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { ArrowLeft, Sparkles, Zap, Brain, SmileIcon, HeartIcon } from 'lucide-react';
@@ -20,19 +21,12 @@ import GuthealthPrebioticsFibre from "./Modals/Guthealth/GuthealthPrebioticsFibr
 import GuthealthDigestiveEnzymes from "./Modals/Guthealth/GuthealthDigestiveEnzymes";
 import GuthealthProbiotics from "./Modals/Guthealth/GuthealthProbiotics";
 
-//
-// ---------------------------
-// DATA (unchanged)
-// ---------------------------
-//
-
-// HARDCODED ENERGY SUPPLEMENTS - Design phase
 const energySupplements = [
  {
   id: 'EnergyVitaminB',
   name: 'Vitamin B',
   benefitStatement: 'Turns food into energy',
-  stat: 'Your body can’t store it',
+  stat: "Your body can't store it",
   image: '/images/vitamin-b-energy.jpg',
   isPriority: true
   },
@@ -40,7 +34,7 @@ const energySupplements = [
   id: 'EnergyOmega3',
   name: 'Omega-3',
   benefitStatement: 'Helps your mind stay focused',
-  stat: 'Your body can’t make it',
+  stat: "Your body can't make it",
   image: '/images/omega3-energy.jpg',
   },
   {
@@ -52,13 +46,12 @@ const energySupplements = [
   }
 ];
 
-// HARDCODED IMMUNITY SUPPLEMENTS - Design phase
 const immunitySupplements = [
 {
   id: 'ImmVitaminD',
   name: 'Vitamin D',
   benefitStatement: 'Helps build immune defences',
-  stat: "Your body makes it from sunlight but it’s hard to get enough all year round",
+  stat: "Your body makes it from sunlight but it's hard to get enough all year round",
   image: '/images/zinc-immunity.jpg',
   isPriority: true
   },
@@ -66,7 +59,7 @@ const immunitySupplements = [
     id: 'ImmVitaminC',
     name: 'Vitamin C',
     benefitStatement: 'Maintains immune defences',
-    stat: "Your body can’t store it",
+    stat: "Your body can't store it",
     image: '/images/vitamin-c-immunity.jpg'
   },
    {
@@ -78,7 +71,6 @@ const immunitySupplements = [
   }
 ];
 
-// HARDCODED GUT HEALTH SUPPLEMENTS Design phase
 const gutHealthSupplements = [
   {
     id: 'GuthealthProbiotics',
@@ -99,14 +91,12 @@ const gutHealthSupplements = [
     id: 'GuthealthPrebioticsFibre',
     name: 'Fibre',
     benefitStatement: 'Helps keep you regular',
-    stat: 'Most diets don’t provide enough Fibre',
+    stat: "Most diets don't provide enough Fibre",
     image: '/images/fibre-prebiotics-guthealth.jpg'
   }
 ];
 
-// HARDCODED SLEEP SUPPLEMENTS - Design phase (you can edit content later)
 const SleepSupplements = [
- 
 {
   id: 'SleepMagnesium',
   name: 'Magnesium',
@@ -131,13 +121,12 @@ const SleepSupplements = [
   }
 ];
 
-// HARDCODED CALM SUPPLEMENTS - Design phase (3 items)
 const CalmSupplements = [
 {
   id: 'CalmLtheanine',
   name: 'L-Theanine',
   benefitStatement: 'Calms your mind without drowsiness',
-  stat: 'Your body can’t make it',
+  stat: "Your body can't make it",
   image: '/images/l-theanine-calm.jpg',
   isPriority: true
   },
@@ -156,12 +145,6 @@ const CalmSupplements = [
     image: '/images/magnesium-calm.jpg'
   }
 ];
-
-//
-// ---------------------------
-// PRESENTATIONAL PARTS (unchanged)
-// ---------------------------
-//
 
 const IconBolt = (props) => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -191,7 +174,6 @@ const IconShield = (props) => (
   </svg>
 );
 
-// Premium full-width supplement card component
 const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor = '#F97316' }) => {
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -202,7 +184,6 @@ const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor 
     const node = cardRef.current;
     if (!node) return;
     let timeoutId;
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -213,7 +194,6 @@ const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor 
       },
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
-
     observer.observe(node);
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
@@ -245,50 +225,31 @@ const SupplementCard = ({ supplement, index, category = 'Energy', categoryColor 
         return supplement.id === 'Vitamin B-mind'
           ? 'filter brightness-115 saturate-90 contrast-95'
           : 'filter brightness-105 saturate-90 contrast-95';
-      case 'creatine':
-        return '';
-      case 'omega3':
-        return '';
       default:
         return '';
     }
   };
 
-  const getOverlayClasses = () => {
+  const getTextTint = () => {
     switch(supplement.id) {
       case 'Vitamin B':
+        return 'text-amber-700/80';
       case 'Vitamin B-mind':
-        return '';
+        return 'text-purple-700/80';
       case 'creatine':
-        return '';
-      case 'omega3':
-        return '';
+        return 'text-amber-700/80';
+      case 'coq10':
+        return 'text-orange-700/80';
       default:
-        return '';
+        if (category === 'Energy') return 'text-amber-700/80';
+        if (category === 'Mind') return 'text-purple-700/80';
+        if (category === 'Sleep') return 'text-blue-700/80';
+        if (category === 'Calm') return 'text-teal-700/80';
+        if (category === 'Immunity') return 'text-teal-700/80';
+        if (category === 'GutHealth') return 'text-orange-700/80';
+        return 'text-gray-700/80';
     }
   };
-
-const getTextTint = () => {
-  switch(supplement.id) {
-    case 'Vitamin B':
-      return 'text-amber-700/80'; // Energy Vitamin B gets amber
-    case 'Vitamin B-mind':
-      return 'text-purple-700/80'; // Mind Vitamin B gets purple
-    case 'creatine':
-      return 'text-amber-700/80'; // Energy creatine gets amber
-    case 'coq10':
-      return 'text-orange-700/80';
-    default:
-      // Handle by category
-      if (category === 'Energy') return 'text-amber-700/80';
-      if (category === 'Mind') return 'text-purple-700/80';
-      if (category === 'Sleep') return 'text-blue-700/80';
-      if (category === 'Calm') return 'text-teal-700/80';
-      if (category === 'Immunity') return 'text-teal-700/80';
-      if (category === 'GutHealth') return 'text-orange-700/80';
-      return 'text-gray-700/80'; // fallback
-  }
-};
 
   return (
     <>
@@ -296,7 +257,7 @@ const getTextTint = () => {
         ref={cardRef}
         className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-<div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-[280px] w-full">
+        <div className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 h-[280px] w-full">
           <div className="absolute inset-0 w-full h-full">
             <Image
               src={supplement.image || '/images/Vitamin B.jpg'}
@@ -306,41 +267,33 @@ const getTextTint = () => {
               className={`object-cover ${getImageClasses()} ${category === 'Mind' ? 'opacity-96' : ''}`}
             />
           </div>
-
-{/* overlay removed for maximum image sharpness */}
-
-<div className="relative z-20 flex h-[280px] items-center p-5 md:p-8">
-
-<div
-  className="relative ml-auto w-full md:w-[55%] bg-white/95 rounded-2xl p-6 md:p-7 border border-white/60"
-  style={{
-  boxShadow:
-    category === 'Energy'
-      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(251,146,60,0.06)'
-      : category === 'Sleep'
-      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(79,70,229,0.06)'
-      : category === 'Calm'
-      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(15,118,110,0.06)'
-      : category === 'Immunity'
-      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(5,150,105,0.06)'
-      : category === 'GutHealth'
-      ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(234,88,12,0.06)'
-      : '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(0,0,0,0.05)'
-}}
->
-    {supplement.isPriority && (
-      <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
-        TRY THIS FIRST
-      </div>
-    )}
-    <div className={`text-[11px] tracking-wide uppercase font-semibold ${getTextTint()}`}>{category}</div>
-    <h3 className="mt-1 text-[20px] md:text-[22px] font-semibold text-gray-900 tracking-tight">{supplement.name}</h3>
-<p className="mt-1 text-[16px] font-semibold text-gray-600/83 leading-snug">
-  {supplement.benefitStatement}
-</p>
-<p className="mt-1 text-[15px] text-gray-500">
-  {supplement.stat}
-</p>
+          <div className="relative z-20 flex h-[280px] items-center p-5 md:p-8">
+            <div
+              className="relative ml-auto w-full md:w-[55%] bg-white/95 rounded-2xl p-6 md:p-7 border border-white/60"
+              style={{
+                boxShadow:
+                  category === 'Energy'
+                    ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(251,146,60,0.06)'
+                    : category === 'Sleep'
+                    ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(79,70,229,0.06)'
+                    : category === 'Calm'
+                    ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(15,118,110,0.06)'
+                    : category === 'Immunity'
+                    ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(5,150,105,0.06)'
+                    : category === 'GutHealth'
+                    ? '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(234,88,12,0.06)'
+                    : '0 20px 60px rgba(0,0,0,0.12), 0 0 60px rgba(0,0,0,0.05)'
+              }}
+            >
+              {supplement.isPriority && (
+                <div className="absolute top-2 right-2 bg-black text-white text-[11px] font-medium uppercase tracking-normal rounded-md px-4 py-[3px] z-10">
+                  TRY THIS FIRST
+                </div>
+              )}
+              <div className={`text-[11px] tracking-wide uppercase font-semibold ${getTextTint()}`}>{category}</div>
+              <h3 className="mt-1 text-[20px] md:text-[22px] font-semibold text-gray-900 tracking-tight">{supplement.name}</h3>
+              <p className="mt-1 text-[16px] font-semibold text-gray-600/83 leading-snug">{supplement.benefitStatement}</p>
+              <p className="mt-1 text-[15px] text-gray-500">{supplement.stat}</p>
               <button
                 type="button"
                 onClick={() => setShowModal(true)}
@@ -351,71 +304,26 @@ const getTextTint = () => {
             </div>
           </div>
         </div>
-        {showModal && supplement.id === "EnergyVitaminB" && (
-    <EnergyVitaminB onClose={() => setShowModal(false)} />
-  )}
-
-  {showModal && supplement.id === "EnergyCreatine" && (
-    <EnergyCreatine onClose={() => setShowModal(false)} />
-  )}
-
- {showModal && supplement.id === "EnergyOmega3" && (
-    <EnergyOmega3 onClose={() => setShowModal(false)} />
-  )}
-
-       {showModal && supplement.id === "SleepGlycine" && (
-    <SleepGlycine onClose={() => setShowModal(false)} />
-  )}
-
-     {showModal && supplement.id === "SleepLtheanine" && (
-    <SleepLtheanine onClose={() => setShowModal(false)} />
-  )}
-
-     {showModal && supplement.id === "SleepMagnesium" && (
-    <SleepMagnesium onClose={() => setShowModal(false)} />
-  )}
-
-       {showModal && supplement.id === "CalmGlycine" && (
-    <CalmGlycine onClose={() => setShowModal(false)} />
-  )}
-       {showModal && supplement.id === "CalmMagnesium" && (
-    <CalmMagnesium onClose={() => setShowModal(false)} />
-  )}
-
-       {showModal && supplement.id === "CalmLtheanine" && (
-    <CalmLtheanine onClose={() => setShowModal(false)} />
-  )}
-
-         {showModal && supplement.id === "ImmVitaminC" && (
-    <ImmVitaminC onClose={() => setShowModal(false)} />
-  )}
-
-         {showModal && supplement.id === "ImmVitaminD" && (
-    <ImmVitaminD onClose={() => setShowModal(false)} />
-  )}
-
-           {showModal && supplement.id === "ImmZinc" && (
-    <ImmZinc onClose={() => setShowModal(false)} />
-  )}
-
-{showModal && supplement.id === "GuthealthProbiotics" && (
-  <GuthealthProbiotics onClose={() => setShowModal(false)} />
-)}
-
-{showModal && supplement.id === "GuthealthDigestiveEnzymes" && (
-  <GuthealthDigestiveEnzymes onClose={() => setShowModal(false)} />
-)}
-
-{showModal && supplement.id === "GuthealthPrebioticsFibre" && (
-  <GuthealthPrebioticsFibre onClose={() => setShowModal(false)} />
-)}
-
-      </div>      
+        {showModal && supplement.id === "EnergyVitaminB" && <EnergyVitaminB onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "EnergyCreatine" && <EnergyCreatine onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "EnergyOmega3" && <EnergyOmega3 onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "SleepGlycine" && <SleepGlycine onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "SleepLtheanine" && <SleepLtheanine onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "SleepMagnesium" && <SleepMagnesium onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "CalmGlycine" && <CalmGlycine onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "CalmMagnesium" && <CalmMagnesium onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "CalmLtheanine" && <CalmLtheanine onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "ImmVitaminC" && <ImmVitaminC onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "ImmVitaminD" && <ImmVitaminD onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "ImmZinc" && <ImmZinc onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "GuthealthProbiotics" && <GuthealthProbiotics onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "GuthealthDigestiveEnzymes" && <GuthealthDigestiveEnzymes onClose={() => setShowModal(false)} />}
+        {showModal && supplement.id === "GuthealthPrebioticsFibre" && <GuthealthPrebioticsFibre onClose={() => setShowModal(false)} />}
+      </div>
     </>
   );
 };
 
-// Section header component
 const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph }) => {
   const headerRef = useRef(null);
   const [visibleElements, setVisibleElements] = useState({
@@ -447,18 +355,10 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
           <Icon className="w-7 h-7 text-white" />
         </div>
       </div>
-
-<h1
-  className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight pr-12 lg:pr-20"
-  style={{ fontWeight: 800 }}
->
-  {title}
-</h1>
-
+      <h1 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight pr-12 lg:pr-20" style={{ fontWeight: 800 }}>{title}</h1>
       <p className={`text-lg text-gray-700 leading-relaxed pr-12 lg:pr-20 transition-all duration-1000 ${visibleElements.description ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {description}
       </p>
-
       {secondParagraph && (
         <p className={`text-lg text-gray-700 leading-relaxed pr-12 lg:pr-20 mt-3 transition-all duration-1000 ${visibleElements.secondPara ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {secondParagraph}
@@ -468,14 +368,104 @@ const SectionHeader = ({ icon: Icon, color, title, description, secondParagraph 
   );
 };
 
-//
-// ---------------------------
-// RESULTS PAGE (updated)
-// ---------------------------
-//
+const GetTheAppSection = ({ onOpenModal }) => (
+  <section className="bg-white py-16">
+    <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-2xl mx-auto">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-10 flex flex-col items-center shadow-sm">
+          <h2 className="text-4xl font-bold text-gray-900 text-center mb-8">Get the app</h2>
+          <div className="space-y-4 mb-10 w-full max-w-lg">
+            <div className="flex items-start gap-3">
+              <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-base font-semibold text-gray-900">Build your routine</p>
+                <p className="text-sm text-gray-500">Get reminders and timing advice so you always know when to take what.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-base font-semibold text-gray-900">Know what to expect</p>
+                <p className="text-sm text-gray-500">Week-by-week guidance so you're never left guessing if it's working.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-base font-semibold text-gray-900">Track how you feel</p>
+                <p className="text-sm text-gray-500">Simple check-ins that build your confidence over time.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-base font-semibold text-gray-900">See the evidence</p>
+                <p className="text-sm text-gray-500">Use your wearable data or daily check-ins to see real progress over time.</p>
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={onOpenModal}
+            className="px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-full transition-colors"
+          >
+            Pre-register for the app
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
-import { Suspense } from 'react';
-import { useSession } from "next-auth/react";
+const TrustStrip = () => (
+  <section className="bg-transparent mt-18 mb-0">
+    <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
+      <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
+        Evidence-led guidance - not marketing.
+      </p>
+      <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
+        <Image src="/images/nhs-logo.png" alt="NHS" width={60} height={22} className="object-contain" />
+        <Image src="/images/harvard-health-logo.png" alt="Harvard Health" width={65} height={28} className="object-contain" />
+        <Image src="/images/world-health-organization-logo.png" alt="World Health Organization" width={90} height={28} className="object-contain" />
+      </div>
+    </div>
+  </section>
+);
+
+const EssentialsCTA = () => (
+  <section className="bg-white pb -mt0">
+    <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-6xl mx-auto text-center">
+        <p className="text-gray-800 text-[22px] font-bold mb-2">Not focused on one goal?</p>
+        <p className="text-gray-700 text-base md:text-lg font-medium mb-5">Start with four essentials that benefit everyone.</p>
+        <button
+          onClick={() => window.location.href = '/results/essentials'}
+          className="mt-2 inline-flex items-center justify-center rounded-full px-5 py-2 font-semibold bg-gray-200 text-gray-700 uppercase tracking-wide hover:bg-gray-300 hover:scale-[1.02] shadow-sm hover:shadow-md transition-all duration-300"
+        >
+          Start with the essentials
+          <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+);
 
 export default function ResultsPage() {
   return (
@@ -490,20 +480,16 @@ function ResultsPageContent() {
   const params = useSearchParams();
   const { data: session, status } = useSession({ required: false });
 
- // Read goals from query: /results?goals=energy,mind
   const goalsParam = params.get('goals') || '';
   const [selectedGoals, setSelectedGoals] = useState(
     goalsParam ? goalsParam.split(',').map(s => s.trim().toLowerCase()).filter(Boolean) : []
   );
 
-  // ✅ Automatically save quiz results if logged in
   useEffect(() => {
     if (!goalsParam) return;
     if (status === "loading") return;
     if (!session?.user?.email) return;
-
     const goals = goalsParam.split(",");
-
     fetch("/api/saveQuiz", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -511,40 +497,28 @@ function ResultsPageContent() {
     }).catch((err) => console.error("Failed to save quiz:", err));
   }, [goalsParam, session, status]);
 
-  // Booleans for each section
   const showEnergy = selectedGoals.includes('energy');
-  const showSleep  = selectedGoals.includes('sleep');
-  const showCalm   = selectedGoals.includes('calm');
-  const showImm    = selectedGoals.includes('immunity');
+  const showSleep = selectedGoals.includes('sleep');
+  const showCalm = selectedGoals.includes('calm');
+  const showImm = selectedGoals.includes('immunity');
   const showGutHealth = selectedGoals.includes('guthealth');
 
-  // NEW CODE - determines which goal section appears last
-const visibleGoals = [
-  { name: 'energy', isVisible: showEnergy },
-  { name: 'immunity', isVisible: showImm },
-  { name: 'guthealth', isVisible: showGutHealth },
-  { name: 'sleep', isVisible: showSleep },
-  { name: 'calm', isVisible: showCalm }
-].filter(goal => goal.isVisible);
+  const visibleGoals = [
+    { name: 'energy', isVisible: showEnergy },
+    { name: 'immunity', isVisible: showImm },
+    { name: 'guthealth', isVisible: showGutHealth },
+    { name: 'sleep', isVisible: showSleep },
+    { name: 'calm', isVisible: showCalm }
+  ].filter(goal => goal.isVisible);
 
-const lastVisibleGoal = visibleGoals[visibleGoals.length - 1]?.name;
+  const lastVisibleGoal = visibleGoals[visibleGoals.length - 1]?.name;
+  const isLastSection = (goalName) => goalName === lastVisibleGoal;
 
-// Helper function - checks if this section is the last one showing
-const isLastSection = (goalName) => goalName === lastVisibleGoal;
-
-  // UI state
-  const [showEnergyAdvanced, setShowEnergyAdvanced] = useState(false);
-  const [showSleepAdvanced, setShowSleepAdvanced] = useState(false); 
-  const [showImmunityAdvanced, setShowImmunityAdvanced] = useState(false);
-  const [showGutHealthAdvanced, setShowGutHealthAdvanced] = useState(false);
-  const [showCalmAdvanced, setShowCalmAdvanced] = useState(false);
-// NEW: sleep advanced toggle
+  const [showAppModal, setShowAppModal] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-
-  const displayedEnergySupplements = showEnergyAdvanced ? [...energySupplements, ...energyAdvanced] : energySupplements;
-  const displayedSleepSupplements  = showSleepAdvanced  ? [...SleepSupplements,  ...SleepAdvanced]  : SleepSupplements; // NEW
-  const displayedImmunitySupplements = showImmunityAdvanced ? [...immunitySupplements, ...immunityAdvanced]  : immunitySupplements;
-  const displayedGutHealthSupplements = gutHealthSupplements;
 
   useEffect(() => {
     let ticking = false;
@@ -562,664 +536,171 @@ const isLastSection = (goalName) => goalName === lastVisibleGoal;
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Dynamic background tints (safe even if a section isn't shown)
-  const energyOpacity = Math.min(0.08 + (scrollProgress * 0.08), 0.15);
-  const mindOpacity   = Math.min(0.06 + (scrollProgress * 0.12), 0.15);
-
-  // If someone lands here with no goals, nudge them back
   const noGoals = selectedGoals.length === 0;
 
   return (
     <div className="min-h-screen bg-white">
-  {/* Subtle grain overlay */}
-  <div className="fixed inset-0 pointer-events-none z-[9999]" 
-       style={{ 
-         backgroundImage: 'url(/images/grain-texture.png)',
-         opacity: 0.03,
-         mixBlendMode: 'overlay'
-       }} 
-  />
+      <div className="fixed inset-0 pointer-events-none z-[9999]" style={{ backgroundImage: 'url(/images/grain-texture.png)', opacity: 0.03, mixBlendMode: 'overlay' }} />
 
+      <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 px-6 py-4 sticky top-0 z-50">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <Image src="/images/renew-logo-black.png" alt="Renew logo" width={90} height={30} className="object-contain" priority />
+          </div>
+          <div className="flex items-center gap-4">
+            <button onClick={() => router.push('/goals')} className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50">
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              <span className="font-large">Back</span>
+            </button>
+            <button onClick={() => router.push('/account')} aria-label="My Account" className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-300 hover:bg-gray-400 text-gray-700 transition-colors">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+              <span className="text-sm font-medium">My Account</span>
+            </button>
+          </div>
+        </div>
+      </header>
 
-{/* Header */}
-<header className="bg-white/95 backdrop-blur-md border-b border-gray-200/30 shadow-lg shadow-gray-300/40 px-6 py-4 sticky top-0 z-50">
-  <div className="flex items-center justify-between">
-    {/* Logo - positioned far left */}
-    <div className="flex items-center">
-      <Image
-        src="/images/renew-logo-black.png"
-        alt="Renew logo"
-        width={90}
-        height={30}
-        className="object-contain"
-        priority
-      />
-    </div>
-    
-    {/* Right side - Back button + Account button */}
-    <div className="flex items-center gap-4">
-      <button
-        onClick={() => router.push('/goals')}
-        className="flex items-center text-gray-400 hover:text-gray-900 transition-colors p-2 -m-2 rounded-lg hover:bg-gray-100/50"
-      >
-        <ArrowLeft className="w-5 h-5 mr-2" />
-        <span className="font-large">Back</span>
-      </button>
-      
-      <button
-        onClick={() => router.push('/account')}
-        aria-label="My Account"
-        className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-300 hover:bg-gray-400 text-gray-700 transition-colors"
-      >
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-        </svg>
-        <span className="text-sm font-medium">My Account</span>
-      </button>
-    </div>
-  </div>
-</header>
-
-      {/* Empty-state if no goals */}
       {noGoals && (
         <div className="max-w-3xl mx-auto px-6 py-16 text-center">
           <h2 className="text-3xl font-bold mb-2">Choose a goal to see your options</h2>
-          <p className="text-gray-600 mb-6">Head back and pick up to two goals â€” weâ€™ll tailor this page to you.</p>
-          <button
-            onClick={() => router.push('/goals')}
-            className="inline-flex items-center px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700"
-          >
-            Select goals
-          </button>
+          <p className="text-gray-600 mb-6">Head back and pick up to two goals — we'll tailor this page to you.</p>
+          <button onClick={() => router.push('/goals')} className="inline-flex items-center px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700">Select goals</button>
         </div>
       )}
 
-      {/* Content */}
       <div className="relative">
-{/* ---------- ENERGY (conditional) ---------- */}
-{showEnergy && (
-  <>
-    <section
-      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
-      style={{
-        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(251,146,60,0.15) 50%, rgba(234,88,12,0.30) 100%)`,
-        transition: 'background 0.3s ease'
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            icon={Zap}
-            color={{ from: '#fb923c', to: '#ea580c' }}
-            title={<><span style={{ color: '#ea580c' }}>Energy</span> that powers.</>}
-            description={
-              <>
-                Energy <span className="font-extrabold">powers everything you do</span>. Without enough, even small things can feel harder. Three in four adults regularly feel fatigued<sup className="text-sm">1</sup>.
-              </>
-            }
-            secondParagraph={
-              <>
-                These supplements help turn food into energy, support focus, and help you stay energised throughout the day
-                <PersonalisationTail />
-              </>
-            }
-          />
-
-          <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
-            {displayedEnergySupplements.map((supplement, index) => (
-              <SupplementCard
-                key={supplement.id}
-                supplement={supplement}
-                index={index}
-                category="Energy"
-                categoryColor="#F97316"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-{/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
-    {isLastSection('energy') && (
-      <>
-        {/* CTA Block - White background */}
-        <section className="bg-white pb -mt0">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="max-w-6xl mx-auto text-center">
-              
-              <p className="text-gray-800 text-[22px] font-bold mb-2">
-                Not focused on one goal?
-              </p>
-              
-              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-                Start with four essentials that benefit everyone.
-              </p>
-              
-              <button
-                onClick={() => window.location.href = '/results/essentials'}
-                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                Start with the essentials
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Strip – Refined Minimal Version */}
-        <section className="bg-transparent mt-18 mb-0">
-          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-              Evidence-led guidance - not marketing.
-            </p>
-
-            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={60} 
-                height={22} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={65} 
-                height={28} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={90} 
-                height={28} 
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </section>
-
-        <div className="h-2"></div>
-      </>
-    )}
-  </>
-)}
-
-{/* ---------- IMMUNITY (conditional) ---------- */}
-{showImm && (
-  <>
-    <section
-      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
-      style={{
-        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(15,118,110,0.10) 50%, rgba(15,118,110,0.28) 100%)`,
-        transition: 'background 0.3s ease'
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            icon={IconShield}
-            color={{ from: '#14b8a6', to: '#0F766E' }}
-            title={<><span style={{ color: '#0F766E' }}>Immunity</span> that protects.</>}
-            description={
-              <>
-                Your immune system <span className="font-extrabold">protects you from everyday threats</span>. When it is strong, your body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength<sup className="text-sm">6</sup>.
-              </>
-            }
-            secondParagraph={
-              <>
-                These supplements help build, maintain, and protect your immune defenses
-                <PersonalisationTail />
-              </>
-            }
-          />
-
-<div className="mt-10 flex flex-col space-y-5 md:space-y-6">
-            {(typeof immunitySupplementsSupplements !== 'undefined' ? immunitySupplementsSupplements : immunitySupplements).map((supplement, index) => (
-              <SupplementCard
-                key={supplement.id}
-                supplement={supplement}
-                index={index}
-                category="Immunity"
-                categoryColor="#0F766E"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-{/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
-    {isLastSection('immunity') && (
-      <>
-        {/* CTA Block - White background */}
-        <section className="bg-white pb -mt0">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="max-w-6xl mx-auto text-center">
-              
-              <p className="text-gray-800 text-[22px] font-bold mb-2">
-                Not focused on one goal?
-              </p>
-              
-              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-                Start with four essentials that benefit everyone.
-              </p>
-              
-              <button
-                onClick={() => window.location.href = '/results/essentials'}
-                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                Start with the essentials
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Strip – Refined Minimal Version */}
-        <section className="bg-transparent mt-18 mb-0">
-          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-              Evidence-led guidance - not marketing.
-            </p>
-
-            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={60} 
-                height={22} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={65} 
-                height={28} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={90} 
-                height={28} 
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </section>
-
-        <div className="h-2"></div>
-      </>
+        {showEnergy && (
+          <>
+            <section className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(251,146,60,0.15) 50%, rgba(234,88,12,0.30) 100%)' }}>
+              <div className="max-w-7xl mx-auto px-4 lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                  <SectionHeader icon={Zap} color={{ from: '#fb923c', to: '#ea580c' }} title={<><span style={{ color: '#ea580c' }}>Energy</span> that powers.</>} description={<>Energy <span className="font-extrabold">powers everything you do</span>. Without enough, even small things can feel harder. Three in four adults regularly feel fatigued<sup className="text-sm">1</sup>.</>} secondParagraph={<>These supplements help turn food into energy, support focus, and help you stay energised throughout the day<PersonalisationTail /></>} />
+                  <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
+                    {energySupplements.map((supplement, index) => (<SupplementCard key={supplement.id} supplement={supplement} index={index} category="Energy" categoryColor="#F97316" />))}
+                  </div>
+                </div>
+              </div>
+            </section>
+            {isLastSection('energy') && (<><EssentialsCTA /><GetTheAppSection onOpenModal={() => setShowAppModal(true)} /><TrustStrip /><div className="h-2"></div></>)}
+          </>
         )}
-  </>
-)}
 
-{/* ---------- GUT HEALTH (conditional) ---------- */}
-{showGutHealth && (
-  <>
-    <section
-      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
-      style={{
-background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(251,146,60,0.15) 45%, rgba(234,88,12,0.25) 100%)`,
-        transition: 'background 0.3s ease'
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            icon={SmileIcon}
-            color={{ from: '#B45309', to: '#FBBF24' }}
-            title={
-              <>
-                <span style={{ color: '#B45309' }}>Digestion</span> that eases.
-              </>
-            }
-            description={
-              <>
-                A healthy gut does more than digest food - it{" "}
-                <span className="font-extrabold">fuels energy, mood and immunity</span>. 
-                When it's off balance, it can cause bloating, discomfot, and low energy. One in two adults experience digestive issues each year <sup className="text-sm">5</sup>.
-              </>
-            }
-            secondParagraph={
-              <>
-                These supplements help ease discomfort, support healthy digestion, and keep your gut in balance
-                <PersonalisationTail />
-              </>
-            }
-          />
-
-          <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
-            {displayedGutHealthSupplements.map((supplement, index) => (
-              <SupplementCard
-                key={supplement.id}
-                supplement={supplement}
-                index={index}
-                category="GutHealth"
-                categoryColor="#B45309"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-{/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
-    {isLastSection('guthealth') && (
-      <>
-        {/* CTA Block - White background */}
-        <section className="bg-white pb -mt0">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="max-w-6xl mx-auto text-center">
-              
-              <p className="text-gray-800 text-[22px] font-bold mb-2">
-                Not focused on one goal?
-              </p>
-              
-              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-                Start with four essentials that benefit everyone.
-              </p>
-              
-              <button
-                onClick={() => window.location.href = '/results/essentials'}
-                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                Start with the essentials
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Strip – Refined Minimal Version */}
-        <section className="bg-transparent mt-18 mb-0">
-          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-              Evidence-led guidance - not marketing.
-            </p>
-
-            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={60} 
-                height={22} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={65} 
-                height={28} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={90} 
-                height={28} 
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </section>
-
-        <div className="h-2"></div>
-      </>
+        {showImm && (
+          <>
+            <section className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(15,118,110,0.10) 50%, rgba(15,118,110,0.28) 100%)' }}>
+              <div className="max-w-7xl mx-auto px-4 lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                  <SectionHeader icon={IconShield} color={{ from: '#14b8a6', to: '#0F766E' }} title={<><span style={{ color: '#0F766E' }}>Immunity</span> that protects.</>} description={<>Your immune system <span className="font-extrabold">protects you from everyday threats</span>. When it is strong, your body stays resilient. Half of adults are low in vitamin D, a key nutrient for immune strength<sup className="text-sm">6</sup>.</>} secondParagraph={<>These supplements help build, maintain, and protect your immune defenses<PersonalisationTail /></>} />
+                  <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
+                    {immunitySupplements.map((supplement, index) => (<SupplementCard key={supplement.id} supplement={supplement} index={index} category="Immunity" categoryColor="#0F766E" />))}
+                  </div>
+                </div>
+              </div>
+            </section>
+            {isLastSection('immunity') && (<><EssentialsCTA /><GetTheAppSection onOpenModal={() => setShowAppModal(true)} /><TrustStrip /><div className="h-2"></div></>)}
+          </>
         )}
-  </>
-)}
 
-{/* ---------- SLEEP (conditional) ---------- */}
-{showSleep && (
-  <>
-    <section
-      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
-      style={{
-       background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(79,70,229,0.08) 50%, rgba(79,70,229,0.25) 100%)`,
-        transition: 'background 0.3s ease'
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            icon={IconClock}
-            color={{ from: '#3B82F6', to: '#1E40AF' }}
-            title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>}
-            description={
-              <>
-                Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.
-              </>
-            }
-            secondParagraph={
-              <>
-                These supplements calm the mind before bed, help you fall asleep faster and support deep, restful sleep
-                <PersonalisationTail />
-              </>
-            }
-          />
-
-          <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
-            {displayedSleepSupplements.map((supplement, index) => (
-              <SupplementCard
-                key={supplement.id}
-                supplement={supplement}
-                index={index}
-                category="Sleep"
-                categoryColor="#1E40AF"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
- {/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
-    {isLastSection('sleep') && (
-      <>
-        {/* CTA Block - White background */}
-        <section className="bg-white pb -mt0">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="max-w-6xl mx-auto text-center">
-              
-              <p className="text-gray-800 text-[22px] font-bold mb-2">
-                Not focused on one goal?
-              </p>
-              
-              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-                Start with four essentials that benefit everyone.
-              </p>
-              
-              <button
-                onClick={() => window.location.href = '/results/essentials'}
-                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                Start with the essentials
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Strip – Refined Minimal Version */}
-        <section className="bg-transparent mt-18 mb-0">
-          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-              Evidence-led guidance - not marketing.
-            </p>
-
-            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={60} 
-                height={22} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={65} 
-                height={28} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={90} 
-                height={28} 
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </section>
-
-        <div className="h-2"></div>
-      </>
+        {showGutHealth && (
+          <>
+            <section className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(251,146,60,0.15) 45%, rgba(234,88,12,0.25) 100%)' }}>
+              <div className="max-w-7xl mx-auto px-4 lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                  <SectionHeader icon={SmileIcon} color={{ from: '#B45309', to: '#FBBF24' }} title={<><span style={{ color: '#B45309' }}>Digestion</span> that eases.</>} description={<>A healthy gut does more than digest food - it <span className="font-extrabold">fuels energy, mood and immunity</span>. When it's off balance, it can cause bloating, discomfot, and low energy. One in two adults experience digestive issues each year <sup className="text-sm">5</sup>.</>} secondParagraph={<>These supplements help ease discomfort, support healthy digestion, and keep your gut in balance<PersonalisationTail /></>} />
+                  <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
+                    {gutHealthSupplements.map((supplement, index) => (<SupplementCard key={supplement.id} supplement={supplement} index={index} category="GutHealth" categoryColor="#B45309" />))}
+                  </div>
+                </div>
+              </div>
+            </section>
+            {isLastSection('guthealth') && (<><EssentialsCTA /><GetTheAppSection onOpenModal={() => setShowAppModal(true)} /><TrustStrip /><div className="h-2"></div></>)}
+          </>
         )}
-  </>
-)}
 
-{/* ---------- CALM (conditional) ---------- */}
-{showCalm && (
-  <>
-    <section
-      className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10"
-      style={{
-        background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(15,118,110,0.10) 47%, rgba(15,118,110,0.28) 100%)`,
-        transition: 'background 0.3s ease'
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            icon={HeartIcon}
-            color={{ from: '#14b8a6', to: '#0F766E' }}
-            title={<><span style={{ color: '#0F766E' }}>Calm</span> that relaxes.</>}
-            description={
-              <>
-                Stress <span className="font-extrabold">affects how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus, and relationships. Three out of four adults regularly experience physical symptoms of stress<sup className="text-sm">4</sup>.
-              </>
-            }
-            secondParagraph={
-              <>
-                These supplements help ease stress, quiet your mind, and relax your body
-                <PersonalisationTail />
-              </>
-            }
-          />
+        {showSleep && (
+          <>
+            <section className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(79,70,229,0.08) 50%, rgba(79,70,229,0.25) 100%)' }}>
+              <div className="max-w-7xl mx-auto px-4 lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                  <SectionHeader icon={IconClock} color={{ from: '#3B82F6', to: '#1E40AF' }} title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>} description={<>Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.</>} secondParagraph={<>These supplements calm the mind before bed, help you fall asleep faster and support deep, restful sleep<PersonalisationTail /></>} />
+                  <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
+                    {SleepSupplements.map((supplement, index) => (<SupplementCard key={supplement.id} supplement={supplement} index={index} category="Sleep" categoryColor="#1E40AF" />))}
+                  </div>
+                </div>
+              </div>
+            </section>
+            {isLastSection('sleep') && (<><EssentialsCTA /><GetTheAppSection onOpenModal={() => setShowAppModal(true)} /><TrustStrip /><div className="h-2"></div></>)}
+          </>
+        )}
 
-          <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
-            {(typeof CalmSupplements !== 'undefined' ? CalmSupplements : calmSupplements).map((supplement, index) => (
-              <SupplementCard
-                key={supplement.id}
-                supplement={supplement}
-                index={index}
-                category="Calm"
-                categoryColor="#0F766E"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+        {showCalm && (
+          <>
+            <section className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(15,118,110,0.10) 47%, rgba(15,118,110,0.28) 100%)' }}>
+              <div className="max-w-7xl mx-auto px-4 lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                  <SectionHeader icon={HeartIcon} color={{ from: '#14b8a6', to: '#0F766E' }} title={<><span style={{ color: '#0F766E' }}>Calm</span> that relaxes.</>} description={<>Stress <span className="font-extrabold">affects how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus, and relationships. Three out of four adults regularly experience physical symptoms of stress<sup className="text-sm">4</sup>.</>} secondParagraph={<>These supplements help ease stress, quiet your mind, and relax your body<PersonalisationTail /></>} />
+                  <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
+                    {CalmSupplements.map((supplement, index) => (<SupplementCard key={supplement.id} supplement={supplement} index={index} category="Calm" categoryColor="#0F766E" />))}
+                  </div>
+                </div>
+              </div>
+            </section>
+            {isLastSection('calm') && (<><EssentialsCTA /><GetTheAppSection onOpenModal={() => setShowAppModal(true)} /><TrustStrip /><div className="h-2"></div></>)}
+          </>
+        )}
 
- {/* Show CTA + Trust Strip only if single-goal OR this is the last section */}
-    {isLastSection('calm') && (
-      <>
-        {/* CTA Block - White background */}
-        <section className="bg-white pb -mt0">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="max-w-6xl mx-auto text-center">
-              
-              <p className="text-gray-800 text-[22px] font-bold mb-2">
-                Not focused on one goal?
-              </p>
-              
-              <p className="text-gray-700 text-base md:text-lg font-medium mb-5">
-                Start with four essentials that benefit everyone.
-              </p>
-              
-              <button
-                onClick={() => window.location.href = '/results/essentials'}
-                className="mt-2 inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold bg-black text-white uppercase tracking-wide hover:bg-gray-800 hover:scale-[1.02] shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                Start with the essentials
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              
+        {showAppModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-xl">
+              {!submitted ? (
+                <>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Get early access</h3>
+                  <p className="text-gray-500 mb-6">Be the first to know when the Renew app launches.</p>
+                  <input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-gray-900" />
+                  <button
+                    onClick={async () => {
+                      if (!email) return;
+                      setIsSubmitting(true);
+                      try {
+                        await fetch("/api/auth/waitlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) });
+                        setSubmitted(true);
+                      } catch (error) {
+                        alert("Something went wrong. Please try again.");
+                      }
+                      setIsSubmitting(false);
+                    }}
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
+                  >
+                    {isSubmitting ? "Submitting..." : "Notify me"}
+                  </button>
+                  <button onClick={() => setShowAppModal(false)} className="w-full mt-3 text-gray-500 hover:text-gray-700 text-sm">Cancel</button>
+                </>
+              ) : (
+                <>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h3>
+                  <p className="text-gray-500 mb-6">We'll let you know as soon as the app is ready.</p>
+                  <button onClick={() => { setShowAppModal(false); setSubmitted(false); setEmail(""); }} className="w-full px-4 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-colors">Done</button>
+                </>
+              )}
             </div>
           </div>
-        </section>
+        )}
 
-        {/* Trust Strip – Refined Minimal Version */}
-        <section className="bg-transparent mt-18 mb-0">
-          <div className="max-w-3xl mx-auto text-center px-6 space-y-2 text-gray-500/90">
-            <p className="text-[14px] md:text-[15px] font-normal leading-relaxed text-gray-400/80">
-              Evidence-led guidance - not marketing.
-            </p>
-
-            <div className="flex justify-center items-center gap-9 opacity-30 grayscale mt-3">
-              <Image 
-                src="/images/nhs-logo.png" 
-                alt="NHS" 
-                width={60} 
-                height={22} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/harvard-health-logo.png" 
-                alt="Harvard Health" 
-                width={65} 
-                height={28} 
-                className="object-contain"
-              />
-              <Image 
-                src="/images/world-health-organization-logo.png" 
-                alt="World Health Organization" 
-                width={90} 
-                height={28} 
-                className="object-contain"
-              />
+        <footer className="bg-[#F8F8F9] py-9 mt-4">
+          <div className="max-w-6xl mx-auto px-4 lg:px-8">
+            <div className="text-[11px] text-gray-500/90 leading-relaxed space-y-[3px]">
+              <p><sup>1</sup> National Safety Council. (2023). Fatigue in the Workplace Survey Report.</p>
+              <p><sup>2</sup> Harvard Medical School. (2023). Brain Fog: Memory and Attention After COVID-19.</p>
+              <p><sup>3</sup> Gallup & Casper (2022). Sleep Survey.</p>
+              <p><sup>4</sup> American Psychological Association. (2022). Stress in America Survey.</p>
+              <p><sup>5</sup> Wallace, T.C., McBurney & Fulgoni, V.L. (2024). Multivitamin/mineral supplement contribution. Journal of the American College of Nutrition.</p>
+              <p><sup>6</sup> Forrest, K.Y., & Stuhldreher, W.L. (2011). Prevalence and correlates of vitamin D deficiency in US adults.</p>
             </div>
           </div>
-        </section>
-
-        <div className="h-2"></div>
-      </>
-    )}
-  </>
-)}
-
-{/* Citations – Tightened Spacing */}
-<footer className="bg-[#F8F8F9] py-9 mt-4">
-  <div className="max-w-6xl mx-auto px-4 lg:px-8">
-    <div className="text-[11px] text-gray-500/90 leading-relaxed space-y-[3px]">
-      <p><sup>1</sup> National Safety Council. (2023). Fatigue in the Workplace Survey Report.</p>
-      <p><sup>2</sup> Harvard Medical School. (2023). Brain Fog: Memory and Attention After COVID-19.</p>
-      <p><sup>3</sup> Gallup & Casper (2022). Sleep Survey.</p>
-      <p><sup>4</sup> American Psychological Association. (2022). Stress in America Survey.</p>
-      <p><sup>5</sup> Wallace, T.C., McBurney & Fulgoni, V.L. (2024). Multivitamin/mineral supplement contribution … Journal of the American College of Nutrition.</p>
-      <p><sup>6</sup> Forrest, K.Y., & Stuhldreher, W.L. (2011). Prevalence and correlates of vitamin D deficiency in US adults.</p>
-    </div>
-  </div>
-</footer>
+        </footer>
       </div>
     </div>
   );
