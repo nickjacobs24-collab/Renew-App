@@ -74,7 +74,7 @@ export default function AboutRenew() {
             Why Renew Exists
           </motion.h2>
           <motion.div 
-            className="space-y-6" 
+            className="space-y-8" 
             style={{ fontSize: '16px', lineHeight: '1.85' }}
             initial={{ opacity: 0, y: 20 }}
             animate={whyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -82,12 +82,19 @@ export default function AboutRenew() {
           >
             <div>
               <p className="text-gray-700 font-medium mb-2">In health, evidence should always come first.</p>
-              <p className="text-gray-500">Companies are often incentivised to promote what sells. This can influence the advice people encounter. As a result, clarity and transparency can be hard to find.</p>
+              <p className="text-gray-500">Companies are often incentivised to promote what sells.</p>
+              <p className="text-gray-500">This can influence the advice people encounter.</p>
+              <p className="text-gray-500">As a result, clarity and transparency can be hard to find.</p>
             </div>
+
             <div>
               <p className="text-gray-700 font-medium mb-2">Renew was created to be a counterweight.</p>
-              <p className="text-gray-500">Clear, practical and grounded in science. Renew doesn't sell supplements. It shows which ones are supported by evidence from leading health institutions.</p>
+              <p className="text-gray-500">Clear, practical and grounded in science.</p>
+              <p className="text-gray-500">Renew doesn't sell supplements.</p>
+              <p className="text-gray-500 mb-4">It shows which ones are supported by evidence from leading health institutions.</p>
+              <p className="text-gray-500 font-semibold italic">We make it simple to choose supplements that work for your goals.</p>
             </div>
+
             <div>
               <p className="text-gray-700 font-medium mb-2">You're the only person who knows what's right for your health.</p>
               <p className="text-gray-500">Renew exists to give you the clarity and confidence to make those decisions.</p>
@@ -134,6 +141,7 @@ export default function AboutRenew() {
             </p>
               <p className="text-gray-500">
               Whether that's moving better, sleeping better or having more energy.<br />
+              New to supplements or more experienced.<br />
               They're for people who want to support their health without pressure, complexity, or confusion.
             </p>
             <p className="text-gray-500">
@@ -199,7 +207,7 @@ export default function AboutRenew() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            To keep Renew focused on safety and trust, supplements are reviewed against three criteria:
+            To keep Renew focused on safety and trust, every recommendation is an evidence-based supplement. It meets three core criteria:
           </motion.p>
           <motion.ul 
             className="space-y-3 mb-6"
