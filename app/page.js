@@ -288,7 +288,7 @@ href="/results/appaboutrenew"
     Step 2
   </div>
   <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
-    Renew matches supplements to your goals
+    Get personalised supplement recommendations for your goals
   </h3>
   <p className="text-base text-gray-600 leading-relaxed mb-3">
     It reviews the research and identifies three supplements for your goals.

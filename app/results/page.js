@@ -624,7 +624,20 @@ function ResultsPageContent() {
             <section className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(79,70,229,0.08) 50%, rgba(79,70,229,0.25) 100%)' }}>
               <div className="max-w-7xl mx-auto px-4 lg:px-8">
                 <div className="max-w-6xl mx-auto">
-                  <SectionHeader icon={IconClock} color={{ from: '#3B82F6', to: '#1E40AF' }} title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>} description={<>Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.</>} secondParagraph={<>These supplements calm the mind before bed, help you fall asleep faster and support deep, restful sleep<PersonalisationTail /></>} />
+                  <SectionHeader 
+       icon={IconClock} 
+       color={{ from: '#3B82F6', to: '#1E40AF' }} 
+       title={<><span style={{ color: '#1E40AF' }}>Sleep</span> that restores.</>} 
+       description={
+         <>
+           Sleep is when your <span className="font-extrabold">body restores itself</span>. Without enough, you can feel tired, irritable and unfocused. Two out of three adults do not get the quality sleep they need<sup className="text-sm">3</sup>.
+           <br /><br />
+           Quality sleep plays a central role in physical and mental recovery.
+         </>
+       } 
+       secondParagraph={<>These supplements calm the mind before bed, help you fall asleep faster and support deep, restful sleep<PersonalisationTail /></>} 
+     />
+
                   <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
                     {SleepSupplements.map((supplement, index) => (<SupplementCard key={supplement.id} supplement={supplement} index={index} category="Sleep" categoryColor="#1E40AF" />))}
                   </div>
@@ -635,12 +648,24 @@ function ResultsPageContent() {
           </>
         )}
 
-        {showCalm && (
+{showCalm && (
           <>
             <section className="relative pt-12 pb-10 lg:pt-16 lg:pb-12 mb-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(15,118,110,0.10) 47%, rgba(15,118,110,0.28) 100%)' }}>
               <div className="max-w-7xl mx-auto px-4 lg:px-8">
                 <div className="max-w-6xl mx-auto">
-                  <SectionHeader icon={HeartIcon} color={{ from: '#14b8a6', to: '#0F766E' }} title={<><span style={{ color: '#0F766E' }}>Calm</span> that relaxes.</>} description={<>Stress <span className="font-extrabold">affects how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus, and relationships. Three out of four adults regularly experience physical symptoms of stress<sup className="text-sm">4</sup>.</>} secondParagraph={<>These supplements help ease stress, quiet your mind, and relax your body<PersonalisationTail /></>} />
+                  <SectionHeader 
+                    icon={HeartIcon} 
+                    color={{ from: '#14b8a6', to: '#0F766E' }} 
+                    title={<><span style={{ color: '#0F766E' }}>Calm</span> that relaxes.</>} 
+                    description={
+                      <>
+                        Stress and anxiety can <span className="font-extrabold">affect how you feel, think and connect with others</span>. When tension builds, it impacts mood, focus and relationships. Three out of four adults regularly experience physical symptoms of stress<sup className="text-sm">4</sup>.
+                        <br /><br />
+                        Certain supplements that support calm can also help ease anxiety by regulating the body's stress response.
+                      </>
+                    } 
+                    secondParagraph={<>The supplements below help ease stress, lift mood and quiet your mind<PersonalisationTail /></>} 
+                  />
                   <div className="mt-10 flex flex-col space-y-5 md:space-y-6">
                     {CalmSupplements.map((supplement, index) => (<SupplementCard key={supplement.id} supplement={supplement} index={index} category="Calm" categoryColor="#0F766E" />))}
                   </div>
