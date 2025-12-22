@@ -210,10 +210,10 @@ export default function CommonQuestions() {
     <div className="min-h-screen" style={{ backgroundColor: '#FDFBF7' }}>
       
       {/* HERO SECTION */}
-      <section ref={heroRef} className="pt-16 pb-2 md:pt-20 md:pb-3">
+      <section ref={heroRef} className="pt-12 pb-2 md:pt-16 md:pb-2">
         <div className="max-w-3xl mx-auto px-6">
           <motion.h1 
-            className="font-bold tracking-tight text-gray-900 mb-6" 
+            className="font-bold tracking-tight text-gray-900 mb-4" 
             style={{ fontSize: '44px', lineHeight: '1.1' }}
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -234,10 +234,10 @@ export default function CommonQuestions() {
       </section>
 
       {/* QUESTIONS SECTION */}
-      <section ref={questionsRef} className="pt-8 pb-20 md:pt-12 md:pb-24">
+      <section ref={questionsRef} className="pt-6 pb-8 md:pt-8 md:pb-10">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div 
-            className="space-y-4"
+            className="space-y-3"
             initial={{ opacity: 0, y: 20 }}
             animate={questionsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
@@ -249,17 +249,17 @@ export default function CommonQuestions() {
               >
                 <button
                   onClick={() => toggleQuestion(index)}
-                  className="w-full py-6 flex items-center justify-between text-left hover:opacity-70 transition-opacity"
+                  className="w-full py-4 flex items-center justify-between text-left hover:opacity-70 transition-opacity"
                 >
                   <h2 
                     className="font-bold tracking-tight text-gray-900 pr-4" 
-                    style={{ fontSize: '22px', lineHeight: '1.3' }}
+                    style={{ fontSize: '19px', lineHeight: '1.3' }}
                   >
                     {q.question}
                   </h2>
                   <ChevronDown 
                     className={`flex-shrink-0 transition-transform duration-300 ${openQuestion === index ? 'rotate-180' : ''}`}
-                    size={24}
+                    size={20}
                     strokeWidth={2}
                     color="#374151"
                   />
@@ -273,7 +273,7 @@ export default function CommonQuestions() {
                       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-6">
+                      <div className="pb-4">
                         {q.content}
                       </div>
                     </motion.div>
@@ -291,7 +291,7 @@ export default function CommonQuestions() {
           src="/images/l-theanine-calm.jpg" 
           alt="Sunlight breaking through forest"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: '400px' }}
+          style={{ maxHeight: '500px' }}
         />
       </section>
 
