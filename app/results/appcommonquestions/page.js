@@ -291,7 +291,7 @@ export default function CommonQuestions() {
           src="/images/l-theanine-calm.jpg" 
           alt="Sunlight breaking through forest"
           className="w-full h-auto object-cover"
-          style={{ maxHeight: '500px' }}
+          style={{ maxHeight: '400px' }}
         />
       </section>
 
