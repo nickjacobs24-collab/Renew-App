@@ -286,13 +286,22 @@ export default function CommonQuestions() {
       </section>
 
       {/* LANDSCAPE IMAGE DIVIDER */}
-      <section className="w-full pt-0 pb-0 mb-0">
-        <img 
-          src="/images/l-theanine-calm.jpg" 
-          alt="Sunlight breaking through forest"
-          className="w-full h-auto object-cover block"
-          style={{ maxHeight: '400px', marginBottom: 0 }}
-        />
+      <section className="w-full pt-0 pb-8 md:pb-12">
+        <div className="relative">
+          {/* Subtle gradient overlay at top */}
+          <div 
+            className="absolute top-0 left-0 right-0 h-24 pointer-events-none z-10"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(253, 251, 247, 0.6) 0%, transparent 100%)'
+            }}
+          />
+          <img 
+            src="/images/l-theanine-calm.jpg" 
+            alt="Sunlight breaking through forest"
+            className="w-full h-auto object-cover"
+            style={{ maxHeight: '500px' }}
+          />
+        </div>
       </section>
 
     </div>
