@@ -286,12 +286,12 @@ export default function CommonQuestions() {
       </section>
 
       {/* LANDSCAPE IMAGE DIVIDER */}
-      <section className="w-full pt-0 pb-0">
+      <section className="w-full pt-0 pb-0 mb-0">
         <img 
           src="/images/l-theanine-calm.jpg" 
           alt="Sunlight breaking through forest"
-          className="w-full h-auto object-cover"
-          style={{ maxHeight: '500px' }}
+          className="w-full h-auto object-cover block"
+          style={{ maxHeight: '400px', marginBottom: 0 }}
         />
       </section>
 
