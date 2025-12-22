@@ -30,7 +30,7 @@ export default function CommonQuestions() {
             <p className="text-gray-700 font-medium mb-2">When might they help?</p>
             <p className="text-gray-500">Modern life, diet, and individual health can all impact how your body functions and what it needs to support you in specific areas such as sleep, stress, and energy levels.</p>
           </div>
-          <p className="text-gray-600 font-semibold italic">Supplements help when you have specific goals or want to support your overall wellbeing.</p>
+          <p className="text-gray-500 font-semibold">Supplements help when you have specific goals or want to support your overall wellbeing.</p>
         </div>
       )
     },
@@ -82,47 +82,51 @@ export default function CommonQuestions() {
         </div>
       )
     },
-    {
+   {
       id: 4,
       question: "How do supplements work?",
       content: (
-        <div className="space-y-6" style={{ fontSize: '16px', lineHeight: '1.85' }}>
+        <div className="space-y-10" style={{ fontSize: '16px', lineHeight: '1.85' }}>
           <p className="text-gray-500">Your body already does a lot on its own. Supplements don't replace that. They support it.</p>
           
-          <p className="text-gray-700 font-medium" style={{ fontSize: '18px' }}>Supplements help in three simple ways:</p>
+          <div className="space-y-6">
+            <p className="text-gray-700 font-medium" style={{ fontSize: '18px' }}>Supplements help in three simple ways:</p>
+            
+            <div>
+              <p className="text-gray-600 font-medium mb-2">They top things up.</p>
+              <p className="text-gray-500">Sometimes your body doesn't get enough of what it needs.</p>
+              <p className="text-gray-500">Vitamin D is a common example.</p>
+              <p className="text-gray-500">Many people don't get enough from sunlight alone, especially in winter.</p>
+            </div>
+            <div>
+              <p className="text-gray-600 font-medium mb-2">They help your body feel and function better.</p>
+              <p className="text-gray-500">Some supplements support things like calm, sleep, or focus.</p>
+              <p className="text-gray-500">Magnesium can help muscles relax, which may make it easier to fall asleep.</p>
+            </div>
+            <div>
+              <p className="text-gray-600 font-medium mb-2">They support long-term health in the background.</p>
+              <p className="text-gray-500">Others work more quietly over time.</p>
+              <p className="text-gray-500">Omega-3 supports heart and brain health, but the benefits tend to build gradually rather than being felt immediately.</p>
+            </div>
+          </div>
           
-          <div>
-            <p className="text-gray-600 font-medium mb-2">They top things up.</p>
-            <p className="text-gray-500">Sometimes your body doesn't get enough of what it needs.</p>
-            <p className="text-gray-500">Vitamin D is a common example.</p>
-             <p className="text-gray-500">Many people don't get enough from sunlight alone, especially in winter.</p>
-          </div>
-          <div>
-            <p className="text-gray-600 font-medium mb-2">They help your body feel and function better.</p>
-            <p className="text-gray-500">Some supplements support things like calm, sleep, or focus.</p>
-            <p className="text-gray-500">Magnesium can help muscles relax, which may make it easier to fall asleep.</p>
-          </div>
-          <div>
-            <p className="text-gray-600 font-medium mb-2">They support long-term health in the background.</p>
-            <p className="text-gray-500">Others work more quietly over time.</p>
-            <p className="text-gray-500">Omega-3 supports heart and brain health, but the benefits tend to build gradually rather than being felt immediately.</p>
-          </div>
-          
-          <p className="text-gray-700 font-medium" style={{ fontSize: '18px' }}>There are a few things worth bearing in mind:</p>
-          
-          <div>
-            <p className="text-gray-600 font-medium mb-2">Not everything works at the same speed.</p>
-            <p className="text-gray-500">Some supplements can make a noticeable difference within days.</p>
-            <p className="text-gray-500">Others need consistent use over weeks or months.</p>
-          </div>
-          <div>
-            <p className="text-gray-600 font-medium mb-2">Think of supplements as part of your routine.</p>
-            <p className="text-gray-500">Taking the right thing once rarely changes much.</p>
-            <p className="text-gray-500">Consistency is what creates real results.</p>
-          </div>
-          <div>
-            <p className="text-gray-600 font-medium mb-2">What matters is picking what fits your goals.</p>
-            <p className="text-gray-500">Whether you're looking for better sleep, more energy, a calmer mind, or long-term health support, choosing supplements that align with what you're trying to improve makes all the difference.</p>
+          <div className="space-y-6">
+            <p className="text-gray-700 font-medium" style={{ fontSize: '18px' }}>There are a few things worth bearing in mind:</p>
+            
+            <div>
+              <p className="text-gray-600 font-medium mb-2">Not everything works at the same speed.</p>
+              <p className="text-gray-500">Some supplements can make a noticeable difference within days.</p>
+              <p className="text-gray-500">Others need consistent use over weeks or months.</p>
+            </div>
+            <div>
+              <p className="text-gray-600 font-medium mb-2">Think of supplements as part of your routine.</p>
+              <p className="text-gray-500">Taking the right thing once rarely changes much.</p>
+              <p className="text-gray-500">Consistency is what creates real results.</p>
+            </div>
+            <div>
+              <p className="text-gray-600 font-medium mb-2">What matters is picking what fits your goals.</p>
+              <p className="text-gray-500">Whether you're looking for better sleep, more energy, a calmer mind, or long-term health support, choosing supplements that align with what you're trying to improve makes all the difference.</p>
+            </div>
           </div>
         </div>
       )
@@ -152,7 +156,7 @@ export default function CommonQuestions() {
             <p className="text-gray-700 font-medium mb-2">Credible health backing.</p>
             <p className="text-gray-500">Support or guidance from leading health organisations such as the NHS, Mayo Clinic, or Harvard Health can be a useful signal that a supplement is grounded in established research.</p>
           </div>
-          <p className="text-gray-600 font-semibold italic">These are the criteria we use when selecting the supplements shown on Renew.</p>
+          <p className="text-gray-500 font-semibold">These criteria are used to identify the supplements shown on Renew.</p>
         </div>
       )
     },
@@ -163,8 +167,7 @@ export default function CommonQuestions() {
         <div className="space-y-6" style={{ fontSize: '16px', lineHeight: '1.85' }}>
           <p className="text-gray-500">Even when you know which supplement you're interested in, choosing a brand can feel overwhelming.</p>
           <p className="text-gray-500">There are many options at different price points, and quality isn't always obvious from the label. While price matters, higher cost doesn't automatically mean better. Good quality exists across different ranges.</p>
-          <p className="text-gray-500">Below are some widely recognised supplement brands, grouped by price tier. This is simply to help make the market easier to navigate.</p>
-          <p className="text-gray-600 font-semibold italic">Renew doesn't partner with or receive payment from any brands.</p>
+          <p className="text-gray-500">Below are some widely recognised supplement brands. They have been grouped by price tier to help make the market easier to navigate. We don't partner with or receive payment from any brands.</p>
           
           <div>
             <p className="text-gray-700 font-medium mb-2">Value / Budget-friendly</p>
@@ -199,7 +202,6 @@ export default function CommonQuestions() {
             </ul>
           </div>
 
-          <p className="text-gray-500">These are some widely recognised brands to help guide you.</p>
           <p className="text-gray-500">What matters most is evidence, safety, and quality standards. The brand you choose should meet those criteria, whatever your budget.</p>
         </div>
       )
