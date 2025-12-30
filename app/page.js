@@ -353,7 +353,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
       Legal
     </a>
     <a 
-      href="mailto:nick.jacobs24@gmail.com" 
+      href="mailto:enquiries@renewhealth.app" 
       className="text-white/70 hover:text-white text-sm transition-colors"
     >
       Contact
