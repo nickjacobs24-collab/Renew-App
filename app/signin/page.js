@@ -24,21 +24,30 @@ function SignInPageContent() {
   const callbackUrl = searchParams.get("callback") || "/results";
   console.log("DEBUG - Full callback URL:", callbackUrl);  // ADD THIS LINE
 
-  async function handleEmailSignIn(e) {
-    e.preventDefault();
-    setLoading(true);
+async function handleEmailSignIn(e) {
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      await signIn("email", {
-        email,
-        redirect: false,
-        callbackUrl,
-      });
-      setEmailSent(true);
-    } finally {
-      setLoading(false);
-    }
+  try {
+    // 1️⃣ WRITE TO AIRTABLE (User Login table)
+    await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    // 2️⃣ THEN DO NEXTAUTH EMAIL SIGN-IN
+    await signIn("email", {
+      email,
+      redirect: false,
+      callbackUrl,
+    });
+
+    setEmailSent(true);
+  } finally {
+    setLoading(false);
   }
+}
 
   async function handleGoogle() {
     await signIn("google", { callbackUrl });
