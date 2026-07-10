@@ -44,53 +44,27 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
             />
           </div>
 
-          {/* Right links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="/results/appaboutrenew"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("/results/appaboutrenew", "_blank", "width=1000,height=800");
-              }}
-              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
-            >
-              About Renew
-            </a>
-            <a
-              href="/results/apphowwechoose"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("/results/apphowwechoose", "_blank", "width=1000,height=800");
-              }}
-              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
-            >
-              How We Choose
-            </a>
-            <a
-              href="/results/appprivacy"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("/results/appprivacy", "_blank", "width=1000,height=800");
-              }}
-              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="/results/appdisclaimer"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("/results/appdisclaimer", "_blank", "width=1000,height=800");
-              }}
-              className="text-white/70 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
-            >
-              Disclaimer
-            </a>
-          </div>
+{/* Right links */}
+<div className="flex items-center space-x-8">
+  <a
+    href="/results/appaboutrenew"
+    className="text-white/90 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+  >
+    About Renew
+  </a>
+
+  <a
+    href="/results/appcommonquestions"
+    className="text-white/90 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+  >
+    Common Questions
+  </a>
+</div>
         </div>
       </nav>
 
 {/* SECTION 1: HERO */}
+
 <section className="relative min-h-screen overflow-hidden">
   
   {/* Background Image */}
@@ -121,7 +95,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
           transition={{ duration: 1.8, ease: [0.4, 0, 0.2, 1] }}
           className="text-white"
           style={{
-            fontSize: "clamp(2.75rem, 7.5vw, 5.5rem)",
+            fontSize: "clamp(2.25rem, 6vw, 4.5rem)",
             fontWeight: 600,
             letterSpacing: "-0.02em",
             lineHeight: 1.1,
@@ -129,7 +103,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
             textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
           }}
         >
-          Lasting health. Easier way.
+          Lasting Health. Made Simple.
         </motion.h1>
 
         {/* Subline */}
@@ -146,7 +120,7 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
             textShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
           }}
         >
-          Supplement guidance for your goals. Proven and unbiased.
+          Supplement guidance for your goals.
         </motion.p>
 
         {/* Get Started Button */}
@@ -168,61 +142,20 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
     {/* ↑ THIS CLOSES "flex-1 flex items-center..." */}
     
 {/* Trust Logos - Bottom of Hero */}
-<div className="w-full pb-8">
-  
+<div className="w-full pb-8">  
   <p className="text-center text-white/25 text-xs mb-4 tracking-wider uppercase">
     Informed by
-  </p>
-  
-  <div 
-    className="relative overflow-hidden"
-    style={{
-      maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-      WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)'
-    }}
-  >
-    
-    <div 
-      style={{
-        display: 'flex',
-        animation: 'scroll-logos 30s linear infinite',
-      }}
-    >
-      
-      <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
-                <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
-      </div>
-      
-      <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
-        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
-      </div>
-      
-      <div className="flex items-center gap-24 px-12 shrink-0">
-        <img src="/images/nhs-logo.png" alt="NHS" className="h-7 brightness-0 invert opacity-35 mix-blend-screen" />
-        <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-9 brightness-0 invert opacity-40 mix-blend-screen" />
-        <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-7 brightness-0 invert opacity-30 mix-blend-screen" />
-        <img src="/images/nih-logo.png" alt="NIH" className="h-9 brightness-0 invert opacity-30 mix-blend-screen" />
-      </div>
-      
-    </div>
-    
-  </div>
-  
+  </p>  
+  <div className="flex items-center justify-center gap-12 px-6">
+    <img src="/images/nhs-logo.png" alt="NHS" className="h-5 brightness-0 invert opacity-35" />
+    <img src="/images/harvard-health-logo.png" alt="Harvard" className="h-7 brightness-0 invert opacity-40" />
+    <img src="/images/world-health-organization-logo.png" alt="WHO" className="h-8 brightness-0 invert opacity-40" />
+    <img src="/images/mayo-clinic-logo.png" alt="Mayo Clinic" className="h-8 brightness-0 invert opacity-40" />
+    <img src="/images/cleveland-clinic-logo.png" alt="Cleveland Clinic" className="h-5 brightness-0 invert opacity-30" />
+    <img src="/images/nih-logo.png" alt="NIH" className="h-7 brightness-0 invert opacity-30" />
+  </div>  
+</div>    
 </div>
-    
-  </div>
   
 </section>
 
@@ -230,10 +163,9 @@ const cardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
 <section 
   ref={howItWorksRef}
   id="how-renew-works"
-className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hidden"
+  className="relative pt-10 pb-4 overflow-hidden"
   style={{ backgroundColor: '#FFFFFF' }}
 >
-  {/* Subtle Parallax Background */}
   <motion.div
     className="absolute inset-0 z-0"
     style={{ backgroundColor: '#FFFFFF' }}
@@ -241,100 +173,78 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
   />
   
-  {/* Belief Text - Center Aligned */}
-<div className="relative z-10 mx-auto text-center">
-    
-    {/* SECTION HEADING */}
-    <motion.h2 
-      className="text-5xl md:text-6xl font-bold text-gray-900 mb-19 text-center"
-      initial={{ opacity: 0, y: 10 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-      transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
-    >
-      What we believe
-    </motion.h2>
-    
-    {/* Paragraph 1 Group - The Ideal */}
-<div className="max-w-[600px] mx-auto mb-7">
-  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        Supplements should be simple
-      </motion.p>
-      <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.6 }}
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        They can be one of the highest-impact ways to support your health — quick to take, easy to understand, and backed by science.
-      </motion.p>
-    </div>
-    
-    {/* Paragraph 2 Group - The Requirement */}
-<div className="max-w-[510px] mx-auto mb-7">
-  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        Guidance must be based on evidence
-      </motion.p>
-      <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.6 }}
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        To trust what you take, you need to know what works and why, based on clear, unbiased facts.
-      </motion.p>
-    </div>
-    
-    {/* Paragraph 3 Group - The Problem */}
-<div className="max-w-[600px] mx-auto mb-7">
-  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        Most advice puts sales before science
-      </motion.p>
-      <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.6 }}
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        Brands profit from what they recommend. Marketing claims often trump evidence, making it hard to know what actually works.
-      </motion.p>
-    </div>
-    
-    {/* Paragraph 4 Group - The Solution */}
-<div className="max-w-[600px] mx-auto mb-7">
-  <motion.p className="text-base md:text-lg font-bold text-gray-900 leading-relaxed mb-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.4, delay: 2.1, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        We make it simple again
-      </motion.p>
-      <motion.p 
-        className="text-sm md:text-base text-gray-600 leading-relaxed"
-        style={{ lineHeight: 1.6 }}
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 1.6, delay: 2.4, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        Showing what works for your goals, based on research from leading institutions. We'll share where you can buy them, but never profit from it.
-      </motion.p>
-    </div>
-    
-  </div>
+{/* Centered column, centered text */}
+<div className="relative z-10 max-w-[960px] mx-auto px-6">
+  
+  <motion.h2 
+    className="text-5xl md:text-6xl font-bold text-gray-900 mb-13 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    What we believe.
+  </motion.h2>
+  
+  <motion.div 
+    className="mb-10 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.6, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Health advice should be honest.
+    </p>
+    <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Supplements can be one of the simplest ways to support your health.<br />
+      But the way they're presented can make them confusing and hard to trust.
+    </p>
+  </motion.div>
+  
+  <motion.div 
+    className="mb-10 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.6, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      In health, evidence should always come first.
+    </p>
+    <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Companies are often incentivised to promote what sells.<br/> This can influence the advice people encounter. <br/>
+      As a result, clarity and transparency can be hard to find.
+    </p>
+  </motion.div>
+  
+  <motion.div 
+    className="mb-10 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Renew was created to be a counterweight.
+    </p>
+    <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Clear, practical and grounded in science. Renew doesn't sell supplements.<br/>
+      It shows which ones are supported by evidence from leading health institutions.
+    </p>
+  </motion.div>
+  
+  <motion.div 
+    className="mb-7 text-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+    transition={{ duration: 1.6, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+  >
+    <p className="text-gray-600 font-medium mb-2" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      You're the only person who knows what's right for your health.
+    </p>
+    <p className="text-gray-500" style={{ fontSize: '16px', lineHeight: 1.85 }}>
+      Renew exists to give you the clarity and confidence to make those decisions.
+    </p>
+  </motion.div>
+  
+</div>
 </section>
 
 {/* HOW IT WORKS SECTION */}
@@ -346,7 +256,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     
     {/* Section Heading - Center Aligned */}
     <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 text-center">
-      How it works
+      How it works.
     </h2>
     
     {/* 3 Step Cards */}
@@ -368,11 +278,10 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
           Tell us your goals
         </h3>
         <p className="text-base text-gray-600 leading-relaxed">
-          Choose what you want to improve — energy, sleep, immunity, or focus. Takes 2 minutes.
+          Choose what you want to improve. <br/> Energy, sleep, immunity, focus and more
         </p>
       </div>
       
-      {/* Step 2 */}
 {/* Step 2 */}
 <div className="flex flex-col">
   <div className="relative w-full h-[296px] mb-5 rounded-2xl overflow-hidden">
@@ -386,13 +295,13 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
     Step 2
   </div>
   <h3 className="text-xl font-semibold text-gray-900 mb-2.5">
-    We match proven options
+    Get personalised supplement recommendations for your goals
   </h3>
   <p className="text-base text-gray-600 leading-relaxed mb-3">
-    We analyse trusted research and narrow it to 2-3 supplements that work for your goals.
+    It reviews the research and identifies three supplements for your goals.
   </p>
 <a 
-  href="/results/apphowwechoose" 
+  href="/results/appaboutrenew" 
   className="text-gray-500 hover:text-blue-600 text-sm font-medium underline hover:no-underline transition-colors"
 >
   How we choose
@@ -415,7 +324,7 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
           You choose where to buy
         </h3>
         <p className="text-base text-gray-600 leading-relaxed">
-          Pick your retailer. We don't sell — we guide. You stay in control.
+          Buy from a store you trust. We show you where.<br/> We don’t sell. You stay in control.
         </p>
       </div>
       
@@ -431,9 +340,26 @@ className="relative pt-10 pb-4 flex items-center justify-center px-6 overflow-hi
         <span style={{ fontSize: '1.2rem', transform: 'translateY(-2px)', display: 'inline-block' }}>›</span>
       </a>
     </div>
-    
   </div>
-</section>
+  </section>
+
+{/* FOOTER */}
+<footer className="bg-gray-900 py-6">
+  <div className="flex flex-col md:flex-row items-center justify-end gap-6 px-4 md:px-6">
+    <a 
+      href="/results/applegal" 
+      className="text-white/70 hover:text-white text-sm transition-colors"
+    >
+      Legal
+    </a>
+    <a 
+      href="mailto:enquiries@renewhealth.app" 
+      className="text-white/70 hover:text-white text-sm transition-colors"
+    >
+      Contact
+    </a>
+  </div>
+</footer>
 
     </div>
   );

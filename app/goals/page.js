@@ -10,10 +10,10 @@ import Image from "next/image";
 // ============================================================================
 
 const goals = [
-  { id: 'energy', name: 'Improving energy and focus', icon: Zap, baseColor: '#F97316', lightColor: '#FB923C', darkColor: '#EA580C', iconBg: 'bg-orange-100' },
-  { id: 'immunity', name: 'Strenthening immunity', icon: Shield, baseColor: '#059669', lightColor: '#10B981', darkColor: '#047857', iconBg: 'bg-emerald-100' }, 
-  { id: 'guthealth', name: 'Supporting digestion and gut health', icon: Smile, baseColor: '#F59E0B', lightColor: '#FBBF24', darkColor: '#D97706', iconBg: 'bg-amber-100' },
-  { id: 'sleep', name: 'Better sleep', icon: Moon, baseColor: '#1E40AF', lightColor: '#3B82F6', darkColor: '#1E3A8A', iconBg: 'bg-indigo-100' },
+  { id: 'energy', name: 'More energy and focus', icon: Zap, baseColor: '#F97316', lightColor: '#FB923C', darkColor: '#EA580C', iconBg: 'bg-orange-100' },
+  { id: 'immunity', name: 'Stronger immunity', icon: Shield, baseColor: '#059669', lightColor: '#10B981', darkColor: '#047857', iconBg: 'bg-emerald-100' }, 
+  { id: 'guthealth', name: 'Better digestion', icon: Smile, baseColor: '#F59E0B', lightColor: '#FBBF24', darkColor: '#D97706', iconBg: 'bg-amber-100' },
+  { id: 'sleep', name: 'Improving sleep', icon: Moon, baseColor: '#1E40AF', lightColor: '#3B82F6', darkColor: '#1E3A8A', iconBg: 'bg-indigo-100' },
   { id: 'calm', name: 'Feeling calmer', icon: Heart, baseColor: '#0D9488', lightColor: '#14B8A6', darkColor: '#0F766E', iconBg: 'bg-teal-100' }
 ];
 
@@ -24,35 +24,35 @@ const goals = [
 const otherQuestions = [
   {
     id: 2,
-    question: "When do you usually feel most like yourself?",
+    question: "When do you usually feel at your best?",
     options: [
-      { id: 'morning', label: 'Morning person' },
-      { id: 'afternoon', label: 'Afternoon momentum' },
-      { id: 'night', label: 'Night owl' },
+      { id: 'morning', label: 'Mornings' },
+      { id: 'afternoon', label: 'Afternoons' },
+      { id: 'night', label: 'Evenings' },
       { id: 'varies', label: 'It varies' }
     ]
   },
   {
     id: 3,
-    question: "Where are you starting from today?",
+    question: "Have you used supplements before?",
     options: [
-      { id: 'new', label: 'Totally new to this' },
-      { id: 'tried', label: "I've tried a few things" },
-      { id: 'routine', label: 'I have a routine already' }
+      { id: 'new', label: "I'm new to this" },
+      { id: 'tried', label: "I've tried a few" },
+      { id: 'routine', label: 'I have a routine' }
     ]
   },
 {
   id: 4,
   question: "How do you like to make progress?",
   options: [
-    { id: 'fast', label: 'I like noticing quick shifts' },
-    { id: 'steady', label: 'I prefer steady, gradual change' },
-    { id: 'impact', label: 'Results matter more than timing' }
+    { id: 'fast', label: 'Quickly' },
+    { id: 'steady', label: 'Steadily' },
+    { id: 'impact', label: "I don't mind" }
   ]
 },
   {
     id: 5,
-    question: "What's your age range?",
+    question: "What is your age range?",
     options: [
       { id: '18-29', label: '18–29' },
       { id: '30-39', label: '30–39' },
@@ -246,13 +246,13 @@ export default function OnboardingPage() {
     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
   }`}
   style={{ fontSize: '1.6rem' }}>
-    Choose what you want to improve
+    What do you want to improve
   </h1>
   <p className={`text-gray-600 font-medium transition-all duration-1000 delay-300 ${
     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
   }`}
   style={{ fontSize: '0.9375rem' }}>
-    Pick your main goals — we'll guide you to the safest, most effective options
+    Tell us your goals — we'll do the research for you
   </p>
 </div>
 
