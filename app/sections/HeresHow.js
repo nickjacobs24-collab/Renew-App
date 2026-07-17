@@ -47,20 +47,21 @@ export default function HeresHow() {
           "linear-gradient(180deg, #000000 0%, #000000 55%, #071a06 80%, #0c2a0d 100%)",
       }}
     >
-      {/* robin hood 4: phone LEFT + text RIGHT pulled toward centre and
-          paired close — a narrower centred container inside the wide
-          grid, not edge-to-edge. */}
+      {/* robin hood 4: phone genuinely LEFT — hugging the left edge of the
+          grid, larger — with the text on the right half. Full grid width
+          (no centred max-w wrapper), so the two are opened up, not jammed
+          toward the middle. */}
       <div className={`${GRID} ${PANEL_PAD}`}>
-       <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-8">
-        {/* Visual — left on desktop, below text on mobile. Slightly
-            angled with soft shadow (never flat/floating). */}
+       <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+        {/* Visual — hard LEFT on desktop, below text on mobile. Larger,
+            with soft shadow (never flat/floating). */}
         <motion.div
           {...enter(0.18)}
-          className="order-2 justify-self-center md:order-1 md:justify-self-end"
+          className="order-2 justify-self-center md:order-1 md:justify-self-start"
         >
           <div
             className="relative rounded-[2.6rem] border border-white/15 bg-black p-[6px] shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
-            style={{ aspectRatio: "853 / 1844", height: "min(66vh, 580px)" }}
+            style={{ aspectRatio: "853 / 1844", height: "min(76vh, 680px)" }}
           >
             <div className="relative h-full w-full overflow-hidden rounded-[2.2rem]">
               <Image

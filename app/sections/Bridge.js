@@ -49,13 +49,18 @@ export default function Bridge() {
         </motion.h2>
 
         <motion.div {...enter(0.14)} className="max-w-2xl space-y-3">
-          {/* Each sentence on its own line — never an awkward mid-sentence
-              wrap. Stays two clean lines rather than free-wrapping. */}
-          <p className={`text-[#14140f]/80 ${BODY_TEXT}`}>
-            The only way to check was a blood test.
-            <br />
-            Expensive, complicated, hard to understand.
-          </p>
+          {/* Each sentence forced to EXACTLY one line: whitespace-nowrap
+              guarantees no wrapping, and the size is stepped down (its own
+              clamp, not BODY_TEXT) so the full sentence fits on one line at
+              every width down to the smallest phone. */}
+          <div className="font-light leading-relaxed text-[#14140f]/80 text-[clamp(0.78rem,3.4vw,1.25rem)]">
+            <p className="whitespace-nowrap">
+              The only way to check was a blood test.
+            </p>
+            <p className="whitespace-nowrap">
+              Expensive, complicated, hard to understand.
+            </p>
+          </div>
           <p className={BODY_TEXT} style={{ color: ACCENT }}>
             The answer has been on your wrist all along.
           </p>
@@ -66,7 +71,7 @@ export default function Bridge() {
           <HumanPlaceholder
             mode="light"
             marker="P2 — Abstract image framing the problem — TBD"
-            className="aspect-[3/1] w-full"
+            className="aspect-[16/9] w-full"
           />
         </motion.div>
       </div>
