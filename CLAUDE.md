@@ -2,9 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Phase 0 — setup. Delete pass not yet run. Update this line as phases complete (delete pass done → rebuilding beats → preview iteration → cutover). Do not re-run completed phases.**
+**STATUS: Phase 0 complete — baseline committed and pushed to `main`, `rebuild` branch created. Next: delete pass, cut list awaiting founder approval. Then: rebuilding beats → preview iteration → cutover. Update this line as phases complete. Do not re-run completed phases.**
 
-This file supersedes `PRISM_WEBSITE_BRIEF.md`, whose content is merged below. The STATUS line above is the live one — do not maintain a second copy in the brief file. See §11 for the open question about deleting the brief.
+This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `bcc6696`).
 
 This is the build specification for the Prism website. It is the single source of truth for structure, copy, brand, and build plan. Do not invent copy, structure, or visuals beyond what is specified. Where a decision is marked "in situ", it is judged by the founder on the live preview, not decided in code.
 
@@ -48,14 +48,13 @@ Beat-to-asset mapping (filenames as supplied by founder; match by content if nam
 
 | Beat | Required asset | File in `brief-assets/` |
 |---|---|---|
-| 1 | Hero: two dark bottles from App Store screen 1 | **MISSING — see §11** |
+| 1 | Hero: two dark bottles from App Store screen 1 | **MISSING — build grey placeholder of correct proportions. Founder supplying a reference image of the full hero composition; do not generate a substitute.** |
 | 3 | Home screen (stage dials — Improving / Maintaining) | `Home.png` ✓ |
 | 4 | Sleep chart with Magnesium marker, shipped App Store version (bright data-green, 8h 12m dataset) | `Progress 1.png` ✓ |
 | 5a | Recommendation screen (Magnesium) | `Gap.png` ✓ |
 | 5b | Plan screen ("Your plan is ready") | `Plan.png` ✓ |
 | 6 | Goals screen ("What do you want to improve?") | `Goal 2.png` ✓ |
 | OG | Hero composition (bottles + headline); build from hero assets | **BLOCKED on hero bottles** |
-| — | not in the manifest; do not use without founder direction | `Lifestyle.png` (unmapped) |
 
 Hero bottles must carry no labels, flavour names or ecommerce cues. They are symbolic user supplements, not Prism products.
 
@@ -158,8 +157,10 @@ Quiz and question flows. Goal selectors. Supplement lists and supplement pages. 
 - Stack: Next.js (App Router), Tailwind CSS, Prisma, deployed on Vercel.
 - Repo: `nickjacobs24-collab/Renew-App` on GitHub. This is the only repo in scope. `renew-backend` and `renew-ios` belong to the app dev agency and are never touched.
 - Vercel project: `renew-app`, currently serving www.renewhealth.app, deploying from `main`. Branch previews available by default.
-- Vercel holds 13 environment variables and a MailerSend integration. **Never delete, rewrite or commit `.env` / `.env.local`.** MailerSend is the likely provider for waitlist emails — treat as keep, not cut. (**Contradicted by the code — see §11.2.**)
-- Prisma and the database exist to support the old auth/quiz era. Database-backed features are on the delete list, but the waitlist email capture needs a storage or send path — propose the simplest option (MailerSend or a minimal table) in the plan before removing Prisma wholesale.
+- Vercel holds 13 environment variables and a MailerSend integration. **Never delete, rewrite or commit `.env` / `.env.local`.**
+- **Waitlist storage: Airtable (founder decision, supersedes the original brief).** The brief assumed MailerSend was the waitlist path; the code showed otherwise — MailerSend was only ever wired to NextAuth sign-in emails. Beat 8 posts to the existing Airtable table. `AIRTABLE_TOKEN` is the only backend credential the new site needs.
+- **MailerSend is cut, not kept** — it dies with the NextAuth route. The Vercel MailerSend integration and its env vars can be retired once the delete pass is merged. Flag before touching anything in the Vercel dashboard; that is founder-side, not a repo change.
+- **Prisma and the database are deleted entirely** (founder decision). No table backs the waitlist. Remove `prisma/`, `lib/prisma.js`, the `prisma generate` build step, and the `prisma` / `@prisma/client` dependencies. `DATABASE_URL` becomes dead.
 - New domain at cutover: prismhealthco.com (DNS in the founder's Cloudflare account). Old domain renewhealth.app is killed at cutover, no redirect.
 
 ## 8. Build plan
@@ -173,7 +174,7 @@ Quiz and question flows. Goal selectors. Supplement lists and supplement pages. 
 7. Nav anchors: "How it works" scrolls to Beat 3. "Join waitlist" scrolls to Beat 8. At launch the waitlist nav item becomes the App Store link (one flag, per Beat 8).
 8. Motion: propose the animation approach in the plan step and prove it on the pinned-phone sequence (Beats 3–6) before building anything else. That sequence is the hardest thing on the page; if the approach janks there, swap before any other beat exists. `prefers-reduced-motion` fallback: static frames, simple crossfades.
 9. Performance budget: LCP under 2.5s on mid-range mobile, 60fps scroll on the pinned sequence, CLS near zero. Jank kills belief on an evidence product.
-10. Waitlist emails: no real sends from preview deployments. Verify MailerSend env variable scoping in the plan step; preview submissions log only.
+10. **Waitlist writes: preview deployments must never write to the live Airtable table** (founder decision, supersedes the original MailerSend-scoping rule). Preview submissions either log only or go to a separate test table. Gate on `VERCEL_ENV === 'production'`, not on `NODE_ENV` — preview builds are production builds and `NODE_ENV` is `production` there too. Verify the gate on the preview URL before the founder starts testing Beat 8.
 11. Analytics: **[TBC — founder to confirm. Recommended: Vercel Analytics for visits and waitlist conversion.]**
 12. OG/share metadata carries the hero line and the OG image from the asset manifest.
 13. Cutover: merge to `main`, point prismhealthco.com (DNS in Cloudflare) at the deployment. Rename the GitHub repo to a Prism name at cutover, not before.
@@ -201,17 +202,26 @@ Cut targets, by §6 category:
 - **Old marketing pages** — [app/page.js](app/page.js) (landing), [app/results/appaboutrenew/](app/results/appaboutrenew/), [app/results/appcommonquestions/](app/results/appcommonquestions/), [app/results/applegal/](app/results/applegal/). Note §4 Beat 9 requires new Privacy/Terms, so `applegal` content may be worth reading before it goes.
 - **Old palette / photography** — the light palette and forest imagery throughout `public/images/`, against the locked §3.1 black/`#0A3C0A` canvas.
 
-**Keep candidates:** [app/api/auth/waitlist/route.js](app/api/auth/waitlist/route.js) is the only existing waitlist path and is the closest thing to a Beat 8 backend (see §11.2). [app/layout.js](app/layout.js) holds the analytics wiring (`NEXT_PUBLIC_GA_MEASUREMENT_ID`, plus a hardcoded Microsoft Clarity tag) — relevant to the §8.11 analytics TBC. [lib/prisma.js](lib/prisma.js) is the client singleton, live only while Prisma stays.
+**Keep:** [app/api/auth/waitlist/route.js](app/api/auth/waitlist/route.js) — the Airtable POST is the Beat 8 backend per §7. It moves out of `app/api/auth/` (nothing else auth-shaped survives) and gains the §8.10 preview gate. [lib/prisma.js](lib/prisma.js) is **cut** — Prisma goes entirely.
 
 The pre-existing bug where `results/page.js` POSTs to `/api/saveQuiz` while the route is at `/api/auth/saveQuiz` (quiz results silently never saved) is **moot** — both sides are on the delete list. Do not spend time fixing it.
 
 ## 11. Open flags (raised per §9, not resolved in code)
 
-1. **Hero bottle asset is missing.** `brief-assets/` holds six files; five map cleanly to Beats 3–6 (verified by opening each). There are no bottle images. Per §3.2 that means Beat 1 gets a grey placeholder of correct proportions, and the OG/share image (§8.12) is blocked, since it builds from hero assets. Founder to supply App Store screen 1.
-2. **§7 says MailerSend is the likely waitlist provider; the code says otherwise.** MailerSend appears in exactly one file — the NextAuth route, which §6 deletes. The live waitlist (`app/api/auth/waitlist/route.js`) POSTs to **Airtable** (base `appaHeYgfCpWRkVLp`, table `Waitlist`) via `AIRTABLE_TOKEN`; `app/api/auth/login/route.js` does the same to a second table. So the delete pass removes the only MailerSend integration while leaving the real waitlist path untouched. This changes the §8.10 plan step: the question is not "verify MailerSend env scoping" but "does the Beat 8 waitlist stay on Airtable, move to MailerSend, or move to a minimal table". Founder decision needed before the delete pass.
-3. **§8.1 is not satisfied.** `PRISM_WEBSITE_BRIEF.md`, `brief-assets/` and `CLAUDE.md` are untracked, and no `rebuild` branch exists. Commit and push before any delete work starts.
-4. **Possible app copy question (§5 / Beat 5 rule).** `Gap.png` reads "A key supplement is missing. / Magnesium. / For your sleep goal." — "is missing" is an assertion rather than observational language, and sits close to the "presents options, never instructs" rule. Per Beat 5 this is flagged as an app question, not patched on the site. The CTA ("See my options") is consistent with the rule.
-5. **`Lifestyle.png` is not in the manifest.** It is a real app screen (Lifestyle tab, "Start this" buttons). No beat calls for it. Left unused pending founder direction.
-6. **Unused dependencies.** `resend` and `nodemailer` are in `package.json` but imported nowhere. Free to drop in the delete pass.
-7. **Display face is still TBC (§3.1).** Blocks final typography on every beat. Build with a flagged fallback; do not substitute a lookalike.
-8. **This file vs the brief.** `PRISM_WEBSITE_BRIEF.md` is now duplicated here. Recommend deleting it so the spec cannot drift — pending founder confirmation.
+1. **Hero bottle asset is missing.** `brief-assets/` holds five screens, all mapped (verified by opening each). There are no bottle images. Beat 1 proceeds with a grey placeholder of correct proportions per founder decision; the OG/share image (§8.12) stays blocked until the hero reference lands. Founder is supplying a reference image of the full hero composition.
+2. **Display face is still TBC (§3.1).** Blocks final typography on every beat. Build with a flagged fallback; do not substitute a lookalike.
+3. **Analytics is still TBC (§8.11).** The old GA and hardcoded Microsoft Clarity tags are cut with `app/layout.js`; nothing replaces them yet.
+4. **Integration list is unconfirmed (§4 Beat 3).** **APPLE WATCH | WHOOP | OURA | GARMIN** is a factual claim and needs confirming before ship.
+5. **FAQ copy is founder-supplied (§4 Beat 9).** Placeholders only, plus the two product-truth checks (wearable required or not; day-14 answer).
+
+### Logged app-side questions (not website work)
+
+- `Gap.png` reads "A key supplement is missing. / Magnesium. / For your sleep goal." — "is missing" is an assertion rather than observational language, and sits close to the §5 "presents options, never instructs" rule. **Founder decision: use the screen as-is on the site; logged as an app question only.** Per the Beat 5 rule, never patch app-screen copy on the website.
+
+### Resolved (do not reopen)
+
+- Waitlist stays on **Airtable**; Prisma, the database, and the MailerSend/NextAuth integration are all cut; `resend` and `nodemailer` dependencies dropped. See §7.
+- Preview deployments must not write to the live Airtable table. See §8.10.
+- `PRISM_WEBSITE_BRIEF.md` deleted; this file is the single source of truth.
+- `Lifestyle.png` removed from `brief-assets/`; no beat uses it. Recoverable from `main` at `bcc6696`.
+- Baseline committed and pushed to `main`; `rebuild` branch created (§8.1, §8.2).
