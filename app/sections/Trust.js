@@ -65,7 +65,7 @@ export default function Trust() {
         >
           Supplements are sold with sales and marketing. Studies on someone
           else, somewhere else. Not you. Not your data. So how can you be sure
-          it&rsquo;s working? Prism just shows you what&rsquo;s changing, using
+          it&rsquo;s working? Prism shows you what&rsquo;s changing, using
           your data.
         </motion.p>
 
