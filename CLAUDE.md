@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **STATUS: Phase 0 complete — baseline committed and pushed to `main`, `rebuild` branch created. Next: delete pass, cut list awaiting founder approval. Then: rebuilding beats → preview iteration → cutover. Update this line as phases complete. Do not re-run completed phases.**
 
-This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `bcc6696`).
+This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
 This is the build specification for the Prism website. It is the single source of truth for structure, copy, brand, and build plan. Do not invent copy, structure, or visuals beyond what is specified. Where a decision is marked "in situ", it is judged by the founder on the live preview, not decided in code.
 
@@ -223,5 +223,5 @@ The pre-existing bug where `results/page.js` POSTs to `/api/saveQuiz` while the 
 - Waitlist stays on **Airtable**; Prisma, the database, and the MailerSend/NextAuth integration are all cut; `resend` and `nodemailer` dependencies dropped. See §7.
 - Preview deployments must not write to the live Airtable table. See §8.10.
 - `PRISM_WEBSITE_BRIEF.md` deleted; this file is the single source of truth.
-- `Lifestyle.png` removed from `brief-assets/`; no beat uses it. Recoverable from `main` at `bcc6696`.
+- `Lifestyle.png` removed from `brief-assets/`; no beat uses it. Recoverable from `main` at `72cde1e`.
 - Baseline committed and pushed to `main`; `rebuild` branch created (§8.1, §8.2).
