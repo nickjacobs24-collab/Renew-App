@@ -49,15 +49,15 @@ export default function Bridge() {
         </motion.h2>
 
         <motion.div {...enter(0.14)} className="max-w-2xl space-y-3">
-          {/* Each sentence forced to EXACTLY one line: whitespace-nowrap
-              guarantees no wrapping, and the size is stepped down (its own
-              clamp, not BODY_TEXT) so the full sentence fits on one line at
-              every width down to the smallest phone. */}
-          <div className="font-light leading-relaxed text-[#14140f]/80 text-[clamp(0.78rem,3.4vw,1.25rem)]">
-            <p className="whitespace-nowrap">
+          {/* Each sentence forced to EXACTLY one line each — inline
+              white-space:nowrap (belt and braces, not reliant on a utility
+              class) plus a stepped-down clamp so the full sentence fits on
+              one line at every width down to the smallest phone. */}
+          <div className="font-light leading-relaxed text-[#14140f]/80 text-[clamp(0.72rem,3.2vw,1.2rem)]">
+            <p style={{ whiteSpace: "nowrap" }}>
               The only way to check was a blood test.
             </p>
-            <p className="whitespace-nowrap">
+            <p style={{ whiteSpace: "nowrap" }}>
               Expensive, complicated, hard to understand.
             </p>
           </div>
@@ -70,8 +70,8 @@ export default function Bridge() {
         <motion.div {...enter(0.2)} className="mt-3 w-full">
           <HumanPlaceholder
             mode="light"
-            marker="P2 — Abstract image framing the problem — TBD"
-            className="aspect-[16/9] w-full"
+            marker=""
+            className="aspect-[16/9] w-full max-w-md"
           />
         </motion.div>
       </div>

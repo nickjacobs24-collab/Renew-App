@@ -57,11 +57,11 @@ export default function HeresHow() {
             moderate size, soft shadow (never flat/floating). */}
         <motion.div
           {...enter(0.18)}
-          className="order-2 justify-self-center md:order-1 md:justify-self-end"
+          className="order-2 justify-self-center md:order-1 md:justify-self-center"
         >
           <div
             className="relative rounded-[2.6rem] border border-white/15 bg-black p-[6px] shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
-            style={{ aspectRatio: "853 / 1844", height: "min(60vh, 520px)" }}
+            style={{ aspectRatio: "853 / 1844", height: "min(64vh, 570px)" }}
           >
             <div className="relative h-full w-full overflow-hidden rounded-[2.2rem]">
               <Image

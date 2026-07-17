@@ -56,23 +56,23 @@ export default function Proof() {
             the page — the proof payoff. Screen contents never altered. */}
         <motion.figure {...enter(0.14)} className="flex w-full flex-col items-center gap-4">
           <div
-            className="relative mx-auto h-[min(84vh,820px)] w-full overflow-hidden rounded-[2rem] ring-1 ring-white/15"
+            className="relative mx-auto h-[min(70vh,660px)] w-full overflow-hidden rounded-[2rem] ring-1 ring-white/10"
             style={{
-              /* Brighter grey/silver, mirror-like: a soft diagonal light
-                 sweep over a brushed metallic gradient. */
+              /* Darker charcoal with only a faint mirror sheen — not bright
+                 silver. Soft diagonal light sweep over a dark metallic grey. */
               background:
-                "linear-gradient(120deg, transparent 8%, rgba(255,255,255,0.07) 30%, transparent 44%), radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.12), rgba(255,255,255,0) 55%), linear-gradient(155deg, #666a71 0%, #43464c 38%, #232529 70%, #35383d 100%)",
+                "linear-gradient(120deg, transparent 8%, rgba(255,255,255,0.04) 30%, transparent 44%), radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.06), rgba(255,255,255,0) 55%), linear-gradient(155deg, #3b3e44 0%, #2a2c31 40%, #161719 72%, #232529 100%)",
               boxShadow: "0 50px 150px rgba(0,0,0,0.75)",
             }}
           >
-            {/* phone: narrow, centred, bigger, in a SILVER metallic case
-                rim, bleeding off the bottom edge */}
+            {/* phone: narrow, centred, in a SILVER metallic case rim,
+                bleeding off the bottom edge */}
             <div className="absolute left-1/2 top-16 -translate-x-1/2">
               <div
                 className="relative rounded-t-[2.5rem] p-[6px] pb-0 shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
                 style={{
                   aspectRatio: "853 / 1844",
-                  height: "min(82vh, 760px)",
+                  height: "min(72vh, 640px)",
                   /* metallic silver case */
                   background:
                     "linear-gradient(145deg, #eef0f2 0%, #b8bbc0 22%, #8f9298 50%, #c6c9ce 78%, #e4e6e9 100%)",
@@ -90,9 +90,6 @@ export default function Proof() {
               </div>
             </div>
           </div>
-          <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-white/45">
-            P4 — v1 static chart / to be replaced by live animation
-          </span>
         </motion.figure>
       </div>
     </section>

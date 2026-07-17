@@ -82,7 +82,7 @@ export default function Trust() {
               key={label}
               mode="dark"
               label={label}
-              marker="Representative / abstract — TBD (not human)"
+              marker=""
               className="aspect-[4/5]"
             />
           ))}
