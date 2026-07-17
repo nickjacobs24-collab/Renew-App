@@ -46,10 +46,11 @@ export default function Hero() {
           gradient the tight stack still reads as composed, not
           floating. */}
       <div
-        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center gap-8 pt-24 pb-16 text-center`}
+        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center gap-12 pt-28 pb-20 text-center`}
       >
-        {/* No supporting line (§4: deliberate, do not add one) */}
-        <h1 className="fade-rise font-display uppercase leading-[0.98] tracking-[-0.045em] text-white text-[clamp(2.8rem,8.5vw,7rem)]">
+        {/* No supporting line (§4: deliberate, do not add one).
+            Calmer scale — 3 lines, not oversized. */}
+        <h1 className="fade-rise font-display uppercase leading-[1.05] tracking-[-0.04em] text-white text-[clamp(2.1rem,6vw,4.75rem)]">
           Know if your
           <br />
           supplements

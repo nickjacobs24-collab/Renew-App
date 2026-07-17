@@ -44,33 +44,38 @@ export default function Proof() {
           and what&rsquo;s <span style={{ color: ACCENT }}>not</span>
         </motion.h2>
 
-        {/* Soft-glow DARK card, phone centred + straight, bleeds off the
-            bottom (robin hood 2). Sparing green highlight in the glow.
+        {/* robin hood 2 card: WIDE dark card, phone NARROW + centred +
+            straight, bleeding off the bottom, generous dark space on both
+            sides. Card glow = subtle NEUTRAL light from bottom-centre
+            (NOT green — the green comes from the phone screen content).
             VISUALS ROUND — P4 slot: v1 = this static Progress 1.png;
             v2 UPGRADE = live proof animation in the same frame (line
             climbing, Magnesium marker). The ONLY product animation on
             the page — the proof payoff. Screen contents never altered. */}
-        <motion.figure {...enter(0.14)} className="flex flex-col items-center gap-4">
+        <motion.figure {...enter(0.14)} className="flex w-full flex-col items-center gap-4">
           <div
-            className="relative flex w-[min(90vw,420px)] justify-center overflow-hidden rounded-[2.4rem] px-10 pt-12 ring-1 ring-white/10"
+            className="relative mx-auto h-[min(64vh,560px)] w-full max-w-4xl overflow-hidden rounded-[2rem] ring-1 ring-white/[0.06]"
             style={{
               background:
-                "radial-gradient(130% 90% at 50% 0%, rgba(58,178,3,0.16), rgba(58,178,3,0) 55%), #0b0b0b",
-              boxShadow: "0 40px 120px rgba(0,0,0,0.7)",
+                "radial-gradient(60% 55% at 50% 92%, rgba(255,255,255,0.08), rgba(255,255,255,0) 62%), linear-gradient(180deg, #0b0b0b 0%, #070707 100%)",
+              boxShadow: "0 50px 150px rgba(0,0,0,0.75)",
             }}
           >
-            <div
-              className="relative rounded-t-[2.4rem] border border-b-0 border-white/12 bg-black p-[6px] pb-0 shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
-              style={{ aspectRatio: "853 / 1500", height: "min(56vh, 480px)" }}
-            >
-              <div className="relative h-full w-full overflow-hidden rounded-t-[2.1rem]">
-                <Image
-                  src="/screens/progress.png"
-                  alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
-                  fill
-                  sizes="(max-width: 768px) 80vw, 320px"
-                  className="object-cover object-top"
-                />
+            {/* phone: narrow, centred, bleeds off the bottom edge */}
+            <div className="absolute left-1/2 top-16 -translate-x-1/2">
+              <div
+                className="relative rounded-t-[2.4rem] border border-b-0 border-white/12 bg-black p-[6px] pb-0 shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
+                style={{ aspectRatio: "853 / 1844", height: "min(70vh, 620px)" }}
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-t-[2.1rem]">
+                  <Image
+                    src="/screens/progress.png"
+                    alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
+                    fill
+                    sizes="(max-width: 768px) 60vw, 280px"
+                    className="object-cover object-top"
+                  />
+                </div>
               </div>
             </div>
           </div>
