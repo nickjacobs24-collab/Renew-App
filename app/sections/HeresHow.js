@@ -47,21 +47,21 @@ export default function HeresHow() {
           "linear-gradient(180deg, #000000 0%, #000000 55%, #071a06 80%, #0c2a0d 100%)",
       }}
     >
-      {/* robin hood 4: phone genuinely LEFT — hugging the left edge of the
-          grid, larger — with the text on the right half. Full grid width
-          (no centred max-w wrapper), so the two are opened up, not jammed
-          toward the middle. */}
+      {/* robin hood 4: phone on the LEFT but pulled back toward the centre
+          (not hugging the edge, not oversized) with a clear gap to the text
+          on the right. P4 is the page's dominant device moment — P3's phone
+          stays a supporting visual, not the star. */}
       <div className={`${GRID} ${PANEL_PAD}`}>
-       <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
-        {/* Visual — hard LEFT on desktop, below text on mobile. Larger,
-            with soft shadow (never flat/floating). */}
+       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
+        {/* Visual — left column, pulled toward centre (justify-self-end),
+            moderate size, soft shadow (never flat/floating). */}
         <motion.div
           {...enter(0.18)}
-          className="order-2 justify-self-center md:order-1 md:justify-self-start"
+          className="order-2 justify-self-center md:order-1 md:justify-self-end"
         >
           <div
             className="relative rounded-[2.6rem] border border-white/15 bg-black p-[6px] shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
-            style={{ aspectRatio: "853 / 1844", height: "min(76vh, 680px)" }}
+            style={{ aspectRatio: "853 / 1844", height: "min(60vh, 520px)" }}
           >
             <div className="relative h-full w-full overflow-hidden rounded-[2.2rem]">
               <Image
