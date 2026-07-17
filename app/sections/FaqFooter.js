@@ -10,16 +10,23 @@ import { GRID, PANEL_PAD, Eyebrow } from "./system";
  */
 
 const QUESTIONS = [
-  "Do I need a wearable?",
-  "Does Prism sell supplements or tell me what to buy?",
-  "Is this medical advice?",
-  "How does Prism show what's working?",
-  "When will I see results?",
-  "Why do results vary from person to person?",
+  {
+    q: "Do I need a wearable?",
+    a: "Yes. Your health data comes from your device, like a watch or a ring. That’s what we use to show you what’s changing.",
+  },
+  {
+    q: "Is this a medical device?",
+    a: "No. It isn’t a medical device or medical advice. Always speak to a doctor or qualified professional before making any decisions about your health.",
+  },
+  {
+    q: "How do I see what’s working?",
+    a: "We track your health data over time and show you what changes after you start, stop, or adjust a supplement. You see the difference for yourself.",
+  },
+  {
+    q: "When will I see results?",
+    a: "Your first view comes after two weeks. That’s once there’s enough data to show how things are starting to change.",
+  },
 ];
-
-const PLACEHOLDER_ANSWER =
-  "Placeholder answer — the founder supplies final copy before ship.";
 
 export default function FaqFooter() {
   return (
@@ -28,19 +35,19 @@ export default function FaqFooter() {
         <Eyebrow mode="dark">Common questions</Eyebrow>
 
         <div className="max-w-2xl divide-y divide-white/10">
-          {QUESTIONS.map((q) => (
+          {QUESTIONS.map(({ q, a }) => (
             <details key={q} className="group py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium text-white md:text-base">
                 {q}
                 <span
                   aria-hidden="true"
-                  className="text-white/40 transition-transform group-open:rotate-45 group-open:text-[#3AB203]"
+                  className="text-white/40 transition-transform group-open:rotate-45"
                 >
                   +
                 </span>
               </summary>
               <p className="pt-3 text-[15px] leading-relaxed text-white/80">
-                {PLACEHOLDER_ANSWER}
+                {a}
               </p>
             </details>
           ))}
