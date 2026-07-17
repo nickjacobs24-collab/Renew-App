@@ -55,7 +55,7 @@ export default function HeresHow() {
           className="order-2 justify-self-center md:order-1 md:justify-self-end"
         >
           <div
-            className="relative rotate-[-3deg] rounded-[2.6rem] border border-white/15 bg-black p-[6px] shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
+            className="relative rounded-[2.6rem] border border-white/15 bg-black p-[6px] shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
             style={{ aspectRatio: "853 / 1844", height: "min(66vh, 580px)" }}
           >
             <div className="relative h-full w-full overflow-hidden rounded-[2.2rem]">

@@ -7,8 +7,9 @@
   --prism-canvas-top: #000000;
   --prism-canvas-bottom: #0a3c0a;
   --prism-accent: #3ab203;
-  /* §2: two colours only. ONE cream, identical in every light band. */
-  --prism-cream: #f7f2e8;
+  /* Light register: near-off-white with only faint warmth (was #f7f2e8,
+     which read too deep/yellow). */
+  --prism-cream: #faf8f3;
   --prism-ink: #14140f;
   /* §2.2: uniform corner radius for every contained visual */
   --prism-radius: 1.25rem;
