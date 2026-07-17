@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Two-mode chaptering + copy/grammar corrections applied (§2 mode map; §4 Panel 3 verbatim copy; required eyebrows). Panels 1–3 rebuilt and pushed to `rebuild`. STOPPED per §8.4 — awaiting founder judgement on the preview before Panels 4–7 build. Update this line as panels clear. Do not re-run completed phases.**
+**STATUS: GATE LIFTED — full page built. All seven panels live on `rebuild` with the mode map, contrast, spacing, Panel 3 copy and eyebrow corrections applied. Preview iteration phase: founder judges the full page on the branch preview. Outstanding before ship: hero bottle extraction (PDF p.1), FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap (IS_LAUNCHED). Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -61,7 +61,7 @@ A small fixed layout vocabulary, varied across panels so **no two consecutive pa
 System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow (required except hero) → headline → support → content.
 
 Current assignments (1–3 built; 4–7 provisional, settled at build time):
-P1 Stacked (headline above, bottles below — bottles float as a cut-out asset, not a contained visual) · P2 Statement · P3 Stacked (strip as the designed visual-row) · P4 Split (framed screen beside copy) · P5 Statement · P6 Stacked (header above, form below) · P7 quiet utility (accordion + footer). **Flag: P6→P7 would be consecutive stacked-ish arrangements — resolve composition at Panel 6/7 build time on the preview.**
+P1 Stacked (headline above, bottles below — bottles float as a cut-out asset, not a contained visual) · P2 Statement · P3 Stacked (strip as the designed visual-row) · P4 Split (framed screen beside copy) · P5 Statement · P6 Stacked (header above, centred form below) · P7 utility (left-aligned narrow accordion + footer). **P6/P7 adjacency resolved:** P7 is built as a left-aligned utility list, visually distinct from P6's centred stack — judge on preview.
 
 In code: the grid and container primitives live in [app/sections/system.js](app/sections/system.js) (`GRID` container class, `Contained` wrapper, `--prism-radius` token). Every panel composes from them — never restyle margins/gutters per panel.
 
@@ -254,7 +254,7 @@ Commands: `npm run dev`, `npm run build` (plain `next build` — the `prisma gen
 What exists now:
 
 - [app/layout.js](app/layout.js) — Prism shell: fonts via `next/font/google` (self-hosted at build, no runtime third-party requests), title, hero-line description. No analytics yet (§8.11 TBC).
-- [app/page.js](app/page.js) — composes the built panels from [app/sections/](app/sections/) (`Hero.js`, `Bridge.js`; one file per panel as they clear the gate).
+- [app/page.js](app/page.js) — composes all seven panels from [app/sections/](app/sections/): `Hero`, `Bridge`, `HeresHow`, `Proof`, `Trust`, `GetPrism`, `FaqFooter`, plus `system.js` (grid/eyebrow/container primitives and the `IS_LAUNCHED` flag).
 - [app/globals.css](app/globals.css) — Tailwind import, §3.1 tokens, font wiring, bottle-drift keyframes (with `prefers-reduced-motion` disable). Band gradients live per-panel in the section components, not on `body`.
 - [public/screens/progress.png](public/screens/progress.png) — the one in-build app screen (Panel 4, not yet built).
 - [app/api/waitlist/route.js](app/api/waitlist/route.js) — the Beat 8 backend: POSTs the email to Airtable, **already carrying the §8.10 gate** (`VERCEL_ENV !== "production"` → log-only, no Airtable write).
@@ -274,7 +274,10 @@ What exists now:
 8. **Eyebrow treatment (closest-match, judge on preview):** 11px small caps, `0.3em` tracking, muted to 60% of the mode's type colour (white/60 dark, ink/60 light) — quiet-label convention; deliberately NOT the accent green, to keep WORK/NOT/EVIDENCE special. One primitive in `system.js`, same treatment both modes per spec.
 9. **Panel 6 header repeat** ("No more guessing") — locked, built as-is when Panel 6 comes; founder resolves on preview (§5 collision check 1).
 10. **Two-mode closest-match calls (judge on preview):** cream `#F7F2E8` / ink `#14140F` (§3.1 — exact warmth is the founder's call); panel transitions built as **hard band edges** (short fade is the fallback if harsh); dark-mode supporting copy at `white/90`+, light-mode at ink `/80`+ per the contrast rule; bridge pacing compressed to ~1.5 viewports total (~50vh per stanza beat).
-11. **Green-on-cream contrast, matters at Panel 4:** `#3AB203` on `#F7F2E8` measures ≈2.5:1 — fine as a display-size accent word by Levels/Oura convention, below WCAG AA large-text (3:1). Panel 4's NOT is the first light-mode accent word. Founder call: accept, or deepen the accent on light panels only (e.g. `#2E8F02`) — the §3.1 token would then be mode-dependent.
+11. **Green-on-cream contrast, live in Panel 4:** `#3AB203` on `#F7F2E8` measures ≈2.5:1 — fine as a display-size accent word by Levels/Oura convention, below WCAG AA large-text (3:1). Built with the locked token as specced. Founder call on preview: accept, or deepen the accent on light panels only (e.g. `#2E8F02`) — the §3.1 token would then be mode-dependent.
+12. **Panels 4–7 closest-match calls (judge on preview):** Panel 4 split puts copy left / device frame right (first split on the page; "alternate sides" applies from the next split); Panel 5's band runs the full range to `#0A3C0A` as the page's deepest green moment; Panel 6's header set sentence-case semibold (a header line, not an all-caps display headline) and its CTA inverted to an ink pill on cream (the white pill is invisible on light ground); Panel 7 accordion uses native `<details>`, no JS.
+13. **Drafted UI microcopy in Panel 6 (not locked §4 copy — founder approves):** placeholder "Email address", submitting "Joining…", success "You're on the list.", error "Something went wrong. Please try again."
+14. **Footer is placeholder-grade:** `/privacy` and `/terms` links 404 until those pages are written (legally required before ship); Contact is a mailto to the founder's address (carried from the old site — confirm); the medical disclaimer renders as a marked placeholder, not drafted copy; "© 2026 Prism" is not yet rendered — add with the legal pages.
 
 ### Logged app-side questions (not website work)
 

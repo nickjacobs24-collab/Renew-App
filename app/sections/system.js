@@ -7,6 +7,12 @@
 // Horizontal grid: same max-width and margins on every panel.
 export const GRID = "mx-auto w-full max-w-6xl px-6 md:px-10";
 
+// §4 Panel 6: THE launch flag. Flipping this swaps the waitlist block
+// to the App Store state (badge + pricing) and the nav CTA to the App
+// Store link — one flag, not scattered edits. Launch state renders are
+// built when the App Store link and badge asset exist.
+export const IS_LAUNCHED = false;
+
 // Vertical rhythm: same block padding on every non-hero panel.
 export const PANEL_PAD = "py-28 md:py-36";
 
