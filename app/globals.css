@@ -24,24 +24,6 @@ body {
   font-family: var(--font-display), system-ui, sans-serif;
 }
 
-/* Panel 1 bottle drift — ambient only, transform-only. */
-@keyframes bottle-drift {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-14px);
-  }
-}
-
-.bottle-drift {
-  animation: bottle-drift 7s ease-in-out infinite alternate;
-}
-
-.bottle-drift-late {
-  animation: bottle-drift 8.5s ease-in-out 1.2s infinite alternate;
-}
-
 /* Panel entrance — one subtle fade-rise on load, staggered via delay. */
 @keyframes fade-rise {
   from {
@@ -63,16 +45,7 @@ body {
   animation-delay: 0.15s;
 }
 
-.fade-rise-3 {
-  animation-delay: 0.3s;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .bottle-drift,
-  .bottle-drift-late {
-    animation: none;
-  }
-
   .fade-rise {
     opacity: 1;
     animation: none;

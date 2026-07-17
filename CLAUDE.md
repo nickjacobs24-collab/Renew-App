@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Consolidated polish + layout round applied — FINAL two-colour band map (D·C·D·C·D·C·D), composition map (centred P1/P5/P6, alternating splits P2–P4, P7 list), visual slots with HUMAN VISUAL TBD markers (P2 + P5×3), P5 final copy. Full page on `rebuild`, preview iteration continues. Outstanding before ship: hero bottle extraction (PDF p.1), human imagery direction, FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap (IS_LAUNCHED). Do not re-run completed phases.**
+**STATUS: Consolidated polish + layout round applied — FINAL two-colour band map (D·C·D·C·D·C·D), composition map (centred P1/P5/P6, alternating splits P2–P4, P7 list), visual slots with HUMAN VISUAL TBD markers (P2 + P5×3), P5 final copy. Full page on `rebuild`, preview iteration continues. Outstanding before ship: hero footage (video slot dormant), OG image redefinition, human imagery direction, FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap (IS_LAUNCHED). Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -43,7 +43,6 @@ Unchanged:
 What may appear:
 
 - **Cropped UI fragments from the real screens in `brief-assets/`** (trend line, Magnesium marker, stage dial, etc.) as visual anchors — crops of real screens only, **never recompositions of UI that doesn't exist as shown**. Test: could a user see exactly this in the app?
-- **The bottles asset.**
 - **The wearable strip as a designed brand row (Fix 5):** recognisable brand wordmarks for Apple Watch, WHOOP, Oura, Garmin — text-based wordmark styling; never fabricate logos that cannot be rendered accurately.
 - **Typography-as-visual — preferred where a panel needs no anchor.**
 
@@ -64,7 +63,7 @@ A small fixed layout vocabulary, varied across panels so **no two consecutive pa
 
 System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow (required except hero) → headline → support → content.
 
-Composition map (consolidated round — FINAL): **Centred:** P1, P5, P6 (hero and promise are the page's centred statement moments; Get Started centres as a conversion block). **Split alternating:** P2 text LEFT / visual right · P3 text RIGHT / visual left · P4 text LEFT / visual right. **P7:** left-aligned questions list. Every split panel has a visual slot opposite its text.
+Composition map (consolidated round — FINAL): **Centred:** P1 (over the dimmed hero video), P5, P6 (hero and promise are the page's centred statement moments; Get Started centres as a conversion block). **Split alternating:** P2 text LEFT / visual right · P3 text RIGHT / visual left · P4 text LEFT / visual right. **P7:** left-aligned questions list. Every split panel has a visual slot opposite its text.
 
 In code: the grid and container primitives live in [app/sections/system.js](app/sections/system.js) (`GRID` container class, `Contained` wrapper, `--prism-radius` token). Every panel composes from them — never restyle margins/gutters per panel.
 
@@ -96,18 +95,17 @@ In code: the grid and container primitives live in [app/sections/system.js](app/
 
 All visual assets live in [brief-assets/](brief-assets/) in the project root. Never invent UI or imagery. A device frame around real app screenshots is allowed and expected. If an asset is missing, build with a grey placeholder of correct proportions and flag it — never generate a substitute.
 
-`Prism - App Store Screens.pdf` is the composed App Store screens — **the source of truth for colour and composition** (founder-supplied 2026-07-17). The Panel 1 bottles are on page 1: extract them and remove the bottle background when the hero visual lands. Not yet visually verified in-session (no PDF renderer in this environment) — verify page 1 before extraction.
+`Prism - App Store Screens.pdf` is the composed App Store screens — **style reference only** (amended round: the hero bottles are removed permanently; no extraction happens). Not yet visually verified in-session (no PDF renderer in this environment).
 
 Asset usage (structural revision: only ONE screen enters the build):
 
 | Asset | Role |
 |---|---|
 | `Progress 1.png` | **The only app screen in the build** — Panel 4, in a device frame. Copied to `public/screens/progress.png`. Sleep chart with Magnesium marker, shipped App Store version (bright data-green, 8h 12m dataset). |
-| `Prism - App Store Screens.pdf` | Look/feel source of truth + Panel 1 bottle source (extract p.1, remove background). Grey placeholder until extracted. |
+| `Prism - App Store Screens.pdf` | Look/feel style reference only (bottle extraction cancelled — hero is video-slot + gradient). |
 | `Home.png`, `Gap.png`, `Plan.png`, `Goal 2.png` | **Style reference only. Never enter the build.** |
-| OG/share image | Hero composition (bottles + headline); blocked until the p.1 extraction lands. |
+| OG/share image | Was bottles + headline; **needs redefinition now the hero is video-based** — founder direction required. |
 
-Hero bottles must carry no labels, flavour names or ecommerce cues. They are symbolic user supplements, not Prism products.
 
 ## 4. Page structure and locked copy (7 panels, one scroll — FINAL, 2026-07-17 revision; supersedes all previous panel maps)
 
@@ -115,8 +113,9 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 
 ### Panel 1 — HERO (DARK)
 
-- Full viewport. Bottles visual from the App Store PDF p.1 (background removed; grey placeholder of correct proportion until extracted), slow drift. Minimal nav: **logo left; "Join waitlist" right.** No other nav items. (Mobile per §8: logo + one CTA, no hamburger — same composition.)
-- **Gradient (Fix 1):** black at top, fading into deep green beginning around the bottles — roughly the lower half carries visible green, matching App Store screen 1. Not a sliver at the foot.
+- Full viewport, centred. **Bottles removed permanently (amended round).** Levels-anatomy: **dimmed background video** → headline → CTA. Video: muted, looping, autoplay, heavily dimmed under the content layer; **poster fallback is the black→green gradient alone** — used on mobile, under reduced-motion, and until footage is supplied (slot dormant in `app/sections/HeroVideo.js`, `HERO_VIDEO_SRC`). Founder supplies footage.
+- Minimal nav: **logo left; "Join waitlist" right.** No other nav items. (Mobile per §8: logo + one CTA, no hamburger — same composition.)
+- **Gradient (Fix 1):** black at top, deep green through roughly the lower half, matching App Store screen 1. Not a sliver at the foot.
 - Headline: **KNOW IF YOUR SUPPLEMENTS ACTUALLY WORK** (green: WORK)
 - CTA: **Join the waitlist** (white pill)
 - No supporting line. Deliberate. Do not add one.
@@ -262,7 +261,7 @@ What exists now:
 
 ## 11. Open flags (raised per §9, not resolved in code)
 
-1. **Hero bottles: extraction pending.** The source is `Prism - App Store Screens.pdf` p.1 (see §3.2) — not yet visually verified in-session (no PDF renderer here). When Beat 1 builds: verify p.1, extract the bottles, remove the background. Grey placeholder until then; OG image follows the extraction.
+1. **Hero footage TBD (amended round):** the hero video slot is built and dormant (`HERO_VIDEO_SRC` in `HeroVideo.js`); gradient-only until the founder supplies footage. The OG/share image needs redefinition too (was the bottle composition).
 2. **Display face is still TBC (§3.1).** Blocks final typography on every beat. Build with a flagged fallback; do not substitute a lookalike.
 3. **Analytics is still TBC (§8.11).** The old GA and hardcoded Microsoft Clarity tags went with the delete pass; nothing replaces them yet.
 4. **Integration list is unconfirmed (§4 Beat 3).** **APPLE WATCH | WHOOP | OURA | GARMIN** is a factual claim and needs confirming before ship.
@@ -295,6 +294,7 @@ What exists now:
 - `framer-motion` and `lucide-react` kept; pruning them is a rebuild-pass call (§8.8).
 - `PRISM_WEBSITE_BRIEF.md` deleted; this file is the single source of truth.
 - `Lifestyle.png` removed from `brief-assets/`; no beat uses it. Recoverable from `main` at `72cde1e`.
+- **Hero bottles removed permanently** (amended round, 2026-07-17): placeholder deleted, PDF p.1 extraction cancelled, PDF stays as style reference. Hero is video-slot + gradient. Do not reintroduce bottles.
 - Baseline committed and pushed to `main`; `rebuild` branch created (§8.1, §8.2).
 - Delete pass executed and verified building clean (§8.3), 2026-07-17.
 - The pinned-phone sequence (original §8.8 motion proof) was built, then **deleted by the 2026-07-17 structural revision** — the five-screen demonstration misread the concept. Panels only. Do not resurrect.
