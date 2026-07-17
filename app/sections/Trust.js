@@ -36,8 +36,11 @@ export default function Trust() {
   return (
     <section
       style={{
+        /* Lean greener, green at the TOP edge (below P4's jet black) so
+           the evidence panel is framed green→black→green; fades to black
+           at the bottom before P6's cream. */
         background:
-          "linear-gradient(180deg, #000000 0%, #052605 70%, #0a3c0a 100%)",
+          "linear-gradient(180deg, #114f15 0%, #0a3d0e 55%, #000000 100%)",
       }}
     >
       <div

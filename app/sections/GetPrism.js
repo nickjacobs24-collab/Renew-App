@@ -1,14 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  GRID,
-  PANEL_PAD,
-  Eyebrow,
-  IS_LAUNCHED,
-  GAP_STACK,
-  HumanPlaceholder,
-} from "./system";
+import { GRID, PANEL_PAD, Eyebrow, IS_LAUNCHED, GAP_STACK } from "./system";
 
 /*
  * Panel 6 — GET PRISM (§4, LIGHT). Stacked: header above, form below.
@@ -59,8 +52,11 @@ export default function GetPrism() {
       id="get-prism"
       style={{ background: "var(--prism-cream)", color: INK }}
     >
+      {/* robin hood 3: CENTRED conversion block. Header two lines, slim
+          field + button. (No images — the ref crop is a centred header;
+          the three placeholders from last round are removed.) */}
       <div
-        className={`${GRID} ${PANEL_PAD} flex flex-col items-start ${GAP_STACK} text-left`}
+        className={`${GRID} ${PANEL_PAD} flex flex-col items-center ${GAP_STACK} text-center`}
       >
         <motion.div {...enter()}>
           <Eyebrow mode="light">Get started</Eyebrow>
@@ -68,10 +64,12 @@ export default function GetPrism() {
 
         <motion.h2
           {...enter(0.06)}
-          className="font-display max-w-2xl tracking-[-0.025em] text-[clamp(2rem,4.4vw,3.4rem)]"
+          className="font-display tracking-[-0.025em] text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.08]"
           style={{ color: INK }}
         >
-          No more guessing. See for yourself.
+          No more guessing.
+          <br />
+          See for yourself.
         </motion.h2>
 
         {status === "success" ? (
@@ -87,7 +85,7 @@ export default function GetPrism() {
           <motion.form
             {...enter(0.14)}
             onSubmit={onSubmit}
-            className="flex w-full max-w-md flex-col items-stretch gap-3 sm:flex-row"
+            className="mx-auto flex w-full max-w-md flex-col items-stretch gap-2.5 sm:flex-row"
           >
             <label htmlFor="waitlist-email" className="sr-only">
               Email address
@@ -100,13 +98,13 @@ export default function GetPrism() {
               placeholder="Email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 rounded-full border border-black/15 bg-white px-6 py-3.5 text-base outline-none placeholder:text-[#14140f]/50 focus:border-black/40"
+              className="flex-1 rounded-full border border-black/15 bg-white px-5 py-2 text-sm outline-none placeholder:text-[#14140f]/50 focus:border-black/40"
               style={{ color: INK }}
             />
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="rounded-full bg-[#14140f] px-8 py-3.5 text-base font-medium text-[#f7f2e8] transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="rounded-full bg-[#14140f] px-6 py-2 text-sm font-medium text-[#fcfbf8] transition-opacity hover:opacity-90 disabled:opacity-60"
             >
               {status === "submitting" ? "Joining…" : "Join the waitlist"}
             </button>
@@ -118,23 +116,6 @@ export default function GetPrism() {
             Something went wrong. Please try again.
           </p>
         )}
-
-        {/* robin hood 3 three-image layout — labelled placeholders.
-            (The supplied ref crop showed only the centred header; built
-            to the written description — see CLAUDE.md flag.) */}
-        <motion.div
-          {...enter(0.2)}
-          className="mt-6 grid w-full grid-cols-1 gap-5 sm:grid-cols-3"
-        >
-          {[0, 1, 2].map((i) => (
-            <HumanPlaceholder
-              key={i}
-              mode="light"
-              marker="P6 — Image — TBD"
-              className="aspect-[4/3]"
-            />
-          ))}
-        </motion.div>
       </div>
     </section>
   );
