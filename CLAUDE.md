@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Structural revision applied (panels replace beats; pinned sequence deleted). Panels 1–2 built and pushed to `rebuild`. STOPPED per §8.4 — awaiting founder judgement on the preview before Panel 3 builds. Panels 3 and 7 are additionally blocked on copy (§4: step sub-lines, FAQ questions). Update this line as panels clear. Do not re-run completed phases.**
+**STATUS: Final structure applied (§4 is the 2026-07-17 FINAL panel map). Panels 1–3 built fully dressed and pushed to `rebuild`. STOPPED per §8.4 — awaiting founder judgement on the preview before Panels 4–7 build. Update this line as panels clear. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -74,41 +74,42 @@ Asset usage (structural revision: only ONE screen enters the build):
 
 Hero bottles must carry no labels, flavour names or ecommerce cues. They are symbolic user supplements, not Prism products.
 
-## 4. Page structure and locked copy (7 panels, one scroll)
+## 4. Page structure and locked copy (7 panels, one scroll — FINAL, 2026-07-17 revision; supersedes all previous panel maps)
 
-Each panel follows the §2 grammar: its own colour band, one message, self-contained. **No pinning, no scroll-driven swapping.**
+Each panel follows the §2 grammar: its own colour band, one message, self-contained. **No pinning, no scroll-driven swapping.** Story through sequence.
 
 ### Panel 1 — HERO
 
-- Full viewport. Bottles visual (from PDF p.1, background removed; grey placeholder until extracted), slow drift. Minimal nav (logo left; How it works / Join waitlist right; mobile per §8: logo + one CTA, no hamburger).
+- Full viewport. Bottles visual from the App Store PDF p.1 (background removed; grey placeholder of correct proportion until extracted), slow drift. Minimal nav: **logo left; "Join waitlist" right.** No other nav items. (Mobile per §8: logo + one CTA, no hamburger — same composition.)
 - Headline: **KNOW IF YOUR SUPPLEMENTS ACTUALLY WORK** (green: WORK)
 - CTA: **Join the waitlist** (white pill)
 - No supporting line. Deliberate. Do not add one.
 
-### Panel 2 — BRIDGE (locked copy)
+### Panel 2 — BRIDGE (locked copy — replaces the earlier bridge lines)
 
-- Typography panel. The three locked lines, paced with scroll spacing — the hook lands first, the lines arrive as you move. **Normal scroll flow, not one stacked viewport.**
+- Typography panel, three stanzas paced down the scroll, in this exact copy:
 
-> Are your supplements working?
-> There's been no clear way to know.
-> Your body has the answer. Prism shows you.
+> Are your supplements making a difference?
+> The only way to check was a blood test. Expensive, complicated, hard to understand.
+> The answer has been on your wrist all along.
 
-### Panel 3 — HOW IT WORKS
+### Panel 3 — HERE'S HOW (mechanism)
 
-- Text-led step panel (the old site's three-column pattern, restyled to the §2 grammar). **No screenshots.**
-- Steps: **Tell us what you take** / **Review your plan** / **Track your results** — each with a locked sub-line. **The sub-lines are not yet supplied; get them from the founder before this panel builds. Do not write them.**
+- Headline: **HERE'S HOW** (no accent word — green is WORK/NOT/EVIDENCE only)
+- Supporting copy theme: Prism reads the health data your wearable already records — followed by a short contrast line on simplicity/cost/always-available. **Draft as best candidate and flag for preview judgement. Observational tone, no superlatives.**
+- Then the strip: **APPLE WATCH | WHOOP | OURA | GARMIN** (factual claim — confirm final integration list before ship)
 
-### Panel 4 — THE PROOF (the one app-screen moment)
+### Panel 4 — PROOF (the one app-screen moment)
 
-- Levels-style: the screen supports the panel, doesn't fill it. `Progress 1.png` in a device frame beside/below the headline pair. This is the most important visual on the site.
-- Headlines: **SEE WHAT'S WORKING** / **AND WHAT'S NOT** (green: NOT)
-- Annotation: **Two-week rolling average against your baseline.**
+- Headline pair: **SEE WHAT'S WORKING** then **AND WHAT'S NOT** (green: NOT)
+- The single app screenshot on the entire site: `Progress 1.png` in a device frame, **supporting the panel Levels-style, not filling it.**
+- Small annotation near the chart: **Two-week rolling average against your baseline.**
 - Rule: app-screen copy is never edited on the website. If a line inside a real screen trips a copy rule, flag it as an app question. Do not patch it on the site.
 
 ### Panel 5 — TRUST (locked copy)
 
 - Typography panel. Headline pair: **WE DON'T SELL SUPPLEMENTS** / **WE SHOW YOU THE EVIDENCE** (green: EVIDENCE)
-- Elaboration, set as three short stanzas with air, not a paragraph:
+- Elaboration stanzas, exact copy:
 
 > Supplements are sold with sales and marketing. Studies on someone else, somewhere else. Not you. Not your data.
 > So how can you be sure it's working?
@@ -119,19 +120,26 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 
 ### Panel 6 — GET PRISM
 
-- Pre-launch: one header line (leading candidate: **No more guessing. See for yourself.** — see collision checks), one email field, one button (**Join the waitlist**). The only input on the entire site. Backend: `app/api/waitlist` (Airtable, §8.10-gated).
+- Header: **No more guessing. See for yourself.** (**flagged: repeats a Panel 5 line — build as-is, founder resolves on preview**)
+- One email field, one button (**Join the waitlist**). The only input on the entire site. Backend: `app/api/waitlist` (Airtable, with the existing §8.10 preview gate).
 - At launch this block swaps to: App Store badge dominant; pricing cards beneath — annual £49.99 highlighted with 7-day free trial flagged and the honest arithmetic shown (£4.17/month, billed annually); monthly £6.99 secondary. No urgency language.
 - Nav "Join waitlist" item swaps to the App Store link at launch. Build the swap as **one flag, not scattered edits**.
 
 ### Panel 7 — FAQ + FOOTER
 
-- Accordion, **six locked questions** (not yet supplied — get them from the founder before this panel builds), closed by default, quiet type. The founder supplies all final answers before ship. **Do not write final FAQ copy.**
+- Accordion, closed by default, quiet type. **These six locked questions**, with clearly-marked placeholder answers (founder supplies final copy — do not write final answers):
+  1. Do I need a wearable?
+  2. Does Prism sell supplements or tell me what to buy?
+  3. Is this medical advice?
+  4. How does Prism show what's working?
+  5. When will I see results?
+  6. Why do results vary from person to person?
 - Product-truth checks before ship: (a) is a wearable strictly required, or is iPhone/Apple Health data alone sufficient; (b) "when will I see results" uses the concrete day-14 answer.
 - Footer: Privacy, Terms, Contact, medical disclaimer. Small, grey, functional. Privacy and Terms are legally required (the waitlist email is personal data under UK GDPR; Apple expects a reachable privacy URL). Rewrite reference: `docs/legacy-legal-copy.md`.
 
-### Beat 3 copy, retired to the bench
+### Deleted from the site entirely (this revision)
 
-The old Beat 3 elements (**HERE'S HOW**, **No blood tests. No guesswork.**, bubble **Based on your health data**, strip **APPLE WATCH | WHOOP | OURA | GARMIN**, whisper **We don't sell supplements.**) have no assigned panel in the seven-panel structure. They are locked copy, not deleted copy — the whisper's job is now done by Panel 5's headline, and the integrations strip / negation lines are candidates for Panels 3 or 4 supporting copy. **Founder assigns or cuts these on the preview; do not place them without direction.** The integration list remains a factual claim to confirm before ship.
+The steps section (Tell us what you take / Review your plan / Track your results). **"No blood tests. No guesswork."** All app screenshots except `Progress 1.png` (others remain in `brief-assets/` as style reference only). The old bridge lines and the benched Beat 3 bubble/whisper are superseded — HERE'S HOW and the integrations strip returned as Panel 3; nothing else from the bench survives.
 
 ## 5. Copy rules (locked — apply to every word on the page)
 
@@ -147,8 +155,8 @@ The old Beat 3 elements (**HERE'S HOW**, **No blood tests. No guesswork.**, bubb
 
 ### Collision checks (judge on the preview, resolve in situ)
 
-1. "No more guessing" appears in the Panel 5 elaboration and in the Panel 6 header candidate. Two appearances is one too many. Keep it in Panel 5; choose a different Panel 6 header from the founder's sign-off stack if the repeat reads badly.
-2. "Working" appears in the Panel 2 question and the Panel 5 question ("So how can you be sure it's working?"). If the echo reads as repetition on screen, rework the Panel 5 question line only. The Panel 2 copy is locked.
+1. "No more guessing" appears in the Panel 5 elaboration and in the locked Panel 6 header. **Build as-is; founder resolves on preview** (final-structure decision).
+2. ~~The Panel 2 / Panel 5 "working" echo~~ — resolved: the final Panel 2 copy opens with "making a difference", the echo is gone.
 
 ## 6. Delete list (everything web-first-product era)
 
@@ -172,10 +180,10 @@ Quiz and question flows. Goal selectors. Supplement lists and supplement pages. 
 1. ~~Baseline commit + push~~ **done** (`main` `72cde1e`).
 2. ~~`rebuild` branch~~ **done.** All work happens on the branch; `main` and the live deployment stay untouched.
 3. ~~Delete pass~~ **done** (verified building clean).
-4. **Panel gating (replaces the old phase plan): build Panels 1 and 2 ONLY, fully designed — matched type, real composition, spacing, colour bands, polish. Push to `rebuild` for preview. STOP. The founder judges on the preview before any further panel is built. Every subsequent panel gates the same way.**
+4. **Panel gating: Panels 1–3 built fully dressed — matched display type (closest match to the App Store face, flagged), real composition, band treatment, spacing, polish. Pushed to `rebuild` for preview. STOP. The founder judges on the preview before Panels 4–7 build.**
 5. Iterate on the branch preview URL. The founder judges copy and visuals there.
 6. Mobile-first: most traffic arrives on phones via shared links. Spec the mobile scroll in parallel, not as a degradation of desktop. Mobile nav: logo + one CTA. No hamburger menu.
-7. Nav anchors: "How it works" scrolls to Panel 3. "Join waitlist" scrolls to Panel 6. At launch the waitlist nav item becomes the App Store link (one flag, per Panel 6). Until those panels exist, the anchors are dead — acceptable during panel gating.
+7. Nav: logo + "Join waitlist" only (per Panel 1 — the "How it works" item is gone). "Join waitlist" scrolls to Panel 6; dead until Panel 6 exists — acceptable during gating. At launch it becomes the App Store link (one flag, per Panel 6).
 8. Motion: panels are static compositions; motion is limited to restrained entrance treatment (fade/rise on scroll-into-view) and ambient touches like the bottle drift. No pinning, no scroll-linked morphing (§2). `prefers-reduced-motion`: everything renders static. (The original pinned-sequence motion proof was built, then killed by the structural revision — do not resurrect it.)
 9. Performance budget: LCP under 2.5s on mid-range mobile, 60fps scroll, CLS near zero. Jank kills belief on an evidence product.
 10. **Waitlist writes: preview deployments must never write to the live Airtable table.** Gate on `VERCEL_ENV === 'production'`, not `NODE_ENV` — implemented in `app/api/waitlist/route.js`. Verify on the preview URL before the founder tests Panel 6.
@@ -217,10 +225,9 @@ What exists now:
 4. **Integration list is unconfirmed (§4 Beat 3).** **APPLE WATCH | WHOOP | OURA | GARMIN** is a factual claim and needs confirming before ship.
 5. **FAQ copy is founder-supplied (§4 Beat 9).** Placeholders only, plus the two product-truth checks (wearable required or not; day-14 answer).
 6. **Vercel-side cleanup after merge (founder-side, not repo work):** retire the MailerSend integration and its env vars, `DATABASE_URL`, `NEXTAUTH_*`, `GOOGLE_CLIENT_*`. Only `AIRTABLE_TOKEN` (and any analytics var) remains needed. Flag, don't touch — the dashboard is the founder's.
-7. **Closest-match design choices in Panels 1–2 (per §3.1a — judge on the preview, flagged not asked):** display face **Archivo Black** via `next/font/google` (nearest available heavy/tight all-caps grotesque; body face **Inter**); "PRISM" text wordmark in the nav (no logo asset supplied); band gradients — hero near-black deepening to green at its base, bridge continuing one step deeper; bottle placeholder proportions and slow-drift timing; bridge line pacing (~70vh spacing per line) and type scale throughout.
-8. **Panel 3 blocked on copy:** step titles are locked (Tell us what you take / Review your plan / Track your results) but the locked sub-lines were never supplied — the old site's step row is Renew-era copy and per §3.1b nothing is taken from it. Founder supplies sub-lines before Panel 3 builds.
-9. **Panel 7 blocked on copy:** the six locked FAQ questions are not yet supplied.
-10. **Old Beat 3 copy is benched, unassigned** (see §4). Founder assigns or cuts on the preview.
+7. **Closest-match design choices in Panels 1–3 (per §3.1a — judge on the preview, flagged not asked):** display face **Archivo Black** via `next/font/google` (nearest available heavy/tight all-caps grotesque; body face **Inter**); "PRISM" text wordmark in the nav (no logo asset supplied); band gradients — hero near-black deepening to green at its base, bridge continuing one step deeper and returning to black, Panel 3 stepping back into green; bottle placeholder proportions and slow-drift timing; stanza pacing (~70vh per stanza) and type scale throughout.
+8. **Panel 3 drafted copy (per §4 — flag for preview judgement):** the mechanism line is set as "Prism reads the health data your wearable already records." and the drafted contrast line is **"Simple to read. Nothing new to buy. With you day and night."** — best candidate for the simplicity/cost/always-available contrast, observational, no superlatives. Founder approves or reworks on the preview.
+9. **Panel 6 header repeat** ("No more guessing") — locked, built as-is when Panel 6 comes; founder resolves on preview (§5 collision check 1).
 
 ### Logged app-side questions (not website work)
 
@@ -239,4 +246,5 @@ What exists now:
 - Baseline committed and pushed to `main`; `rebuild` branch created (§8.1, §8.2).
 - Delete pass executed and verified building clean (§8.3), 2026-07-17.
 - The pinned-phone sequence (original §8.8 motion proof) was built, then **deleted by the 2026-07-17 structural revision** — the five-screen demonstration misread the concept. Panels only. Do not resurrect.
+- The final-structure revision (same day) then: replaced the bridge copy (wrist/blood-test version is final), deleted the steps section and "No blood tests. No guesswork.", dissolved the Beat 3 bench (HERE'S HOW + strip returned as Panel 3; bubble and whisper superseded), locked the Panel 6 header, and supplied the six FAQ questions. §4 is FINAL — earlier panel maps are dead.
 - `Home.png`, `Gap.png`, `Plan.png`, `Goal 2.png` removed from `public/screens/` — style reference only, they stay in `brief-assets/`.

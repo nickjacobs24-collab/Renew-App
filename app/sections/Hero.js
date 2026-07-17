@@ -32,26 +32,17 @@ export default function Hero() {
           "linear-gradient(180deg, #000000 0%, #000000 45%, #031803 82%, #052605 100%)",
       }}
     >
-      {/* Minimal nav — logo left; How it works / Join waitlist right.
-          Mobile (§8.6): logo + one CTA, no hamburger. */}
+      {/* Minimal nav (§4 Panel 1): logo left, "Join waitlist" right — nothing else. */}
       <nav className="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 py-5 md:px-10">
         <a href="/" className="font-display text-sm tracking-[0.35em] text-white">
           PRISM
         </a>
-        <div className="flex items-center gap-8">
-          <a
-            href="#how-it-works"
-            className="hidden text-sm text-white/60 transition-colors hover:text-white md:block"
-          >
-            How it works
-          </a>
-          <a
-            href="#get-prism"
-            className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition-colors hover:bg-white/90"
-          >
-            Join the waitlist
-          </a>
-        </div>
+        <a
+          href="#get-prism"
+          className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition-colors hover:bg-white/90"
+        >
+          Join waitlist
+        </a>
       </nav>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-12 px-6 pb-16 pt-28 text-center md:gap-14">
