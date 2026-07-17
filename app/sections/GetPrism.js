@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow, IS_LAUNCHED } from "./system";
+import { GRID, PANEL_PAD, Eyebrow, IS_LAUNCHED, GAP_STACK } from "./system";
 
 /*
  * Panel 6 — GET PRISM (§4, LIGHT). Stacked: header above, form below.
@@ -54,7 +54,7 @@ export default function GetPrism() {
       style={{ background: "var(--prism-cream)", color: INK }}
     >
       <div
-        className={`${GRID} ${PANEL_PAD} flex flex-col items-start gap-9 text-left`}
+        className={`${GRID} ${PANEL_PAD} flex flex-col items-start ${GAP_STACK} text-left`}
       >
         <motion.div {...enter()}>
           <Eyebrow mode="light">Get started</Eyebrow>
@@ -62,7 +62,7 @@ export default function GetPrism() {
 
         <motion.h2
           {...enter(0.06)}
-          className="max-w-2xl font-semibold tracking-tight text-[clamp(1.9rem,4.2vw,3.1rem)]"
+          className="font-display max-w-2xl tracking-[-0.025em] text-[clamp(2rem,4.4vw,3.4rem)]"
           style={{ color: INK }}
         >
           No more guessing. See for yourself.
@@ -100,7 +100,7 @@ export default function GetPrism() {
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="rounded-full bg-[#14140f] px-8 py-3.5 text-base font-semibold text-[#f7f2e8] transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="rounded-full bg-[#14140f] px-8 py-3.5 text-base font-medium text-[#f7f2e8] transition-opacity hover:opacity-90 disabled:opacity-60"
             >
               {status === "submitting" ? "Joining…" : "Join the waitlist"}
             </button>

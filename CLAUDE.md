@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: P5 recomposed (Whoop pattern: left-aligned, stepped headline, ~60ch paragraph, strap dissolved into three labelled cards). Page-wide headline-scale calibration applied (hero peak; P2–P5 shared stepped tier). P6 left-aligned so the hero is the only centred panel. Full page on `rebuild`, preview iteration continues. Outstanding before ship: hero footage, OG image redefinition, human imagery direction, FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap. Do not re-run completed phases.**
+**STATUS: Global refinement applied as tokens (display weight → medium/large-and-lighter via Archivo; sizes up + tracking tightened; vertical spacing reduced globally; body copy lighter + larger). Hero = tight centred stack with CTA low. Full page on `rebuild`, preview iteration continues. Outstanding before ship: hero footage, OG image redefinition, human imagery direction, FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -67,6 +67,11 @@ Composition map (P5-round revision — FINAL): **Centred: P1 ONLY** (over the di
 
 **Headline-scale calibration (P5 round):** display size for one-line statements, stepped down for multi-line headlines. The hero (P1) is the singular display PEAK (its own larger scale). Every interior headline is multi-line and uses the shared `HEADLINE_STEPPED` tier — subordinate to the hero, consistent across P2–P5. `HEADLINE_DISPLAY` exists for any future one-line interior statement.
 
+**Global type + spacing tokens (global-refinement round — applied to ALL panels, never per-panel):**
+- Display weight: ONE global medium (500) — set on `.font-display`. Headline sizes bumped up and letter-spacing tightened (`tracking-[-0.025em]`, baked into the `HEADLINE_*` tokens) to compensate for the lighter weight. Green accent words unchanged.
+- `BODY_TEXT` — supporting copy at font-light, comfortable size (thinner + larger reads calmer). Colour/contrast still set per mode at the call site.
+- Vertical rhythm reduced for a denser Levels/Whoop feel: `PANEL_PAD` = `py-16 md:py-24` (was `py-28 md:py-36`); `GAP_STACK` = `gap-5` (intra-panel element rhythm — one connected unit); `GAP_SPLIT` = `gap-10 md:gap-12` (between split columns).
+
 In code: the grid and shared primitives live in [app/sections/system.js](app/sections/system.js) (`GRID`, `Contained`, `HumanPlaceholder`, `Eyebrow`, `HEADLINE_DISPLAY`/`HEADLINE_STEPPED`, `--prism-radius`, `IS_LAUNCHED`). Every panel composes from them — never restyle margins/gutters/headline-scale per panel.
 
 ## 3. Brand (locked)
@@ -78,7 +83,7 @@ In code: the grid and shared primitives live in [app/sections/system.js](app/sec
 - Accent green (WORK / NOT / EVIDENCE only): `#3AB203` — an accent in BOTH modes, never a background.
 - Display type colour: `#FFFFFF` on dark panels, the ink colour on light panels; all caps for headlines in both modes.
 - **Trap** — in-app greens (`#5FDC02`, `#A8F161`, `#7AC95D`) belong to app screens only. They arrive on the site inside screenshots. Never use them for website type, buttons, or accents.
-- Display face: exact family still founder-supplied eventually, but per the closest-match rule below, **build now with the nearest available typeface to the App Store display face (heavy, tight, all-caps grotesque) and flag what was chosen.**
+- Display face: **Archivo** (multi-weight grotesque) via `next/font`, set to **medium (500)** globally — large-and-lighter premium feel per the Oura/Levels heroes, not heavy/black (global-refinement round; replaced Archivo Black, which had no lighter weight). One global weight, every headline. Founder swaps the exact family later.
 - Body type and CTA button styling: closest-match from reference images; flag choices.
 - One green accent word per headline, only where meaning lives: WORK, NOT, EVIDENCE.
 - CTA: white pill button.
@@ -115,7 +120,7 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 
 ### Panel 1 — HERO (DARK)
 
-- Full viewport, centred. **Bottles removed permanently (amended round).** Levels-anatomy: **dimmed background video** → headline → CTA. Video: muted, looping, autoplay, heavily dimmed under the content layer; **poster fallback is the black→green gradient alone** — used on mobile, under reduced-motion, and until footage is supplied (slot dormant in `app/sections/HeroVideo.js`, `HERO_VIDEO_SRC`). Founder supplies footage.
+- Full viewport, centred (the ONLY centred panel). **Bottles removed permanently.** Oura/Levels anatomy: dimmed background video → **single tight headline stack (centred)** → **CTA low** (near the viewport base, its own zone). Video: muted, looping, autoplay, heavily dimmed under the content layer; **poster fallback is the black→green gradient alone** — used on mobile, under reduced-motion, and until footage is supplied (slot dormant in `app/sections/HeroVideo.js`, `HERO_VIDEO_SRC`). Founder supplies footage.
 - Minimal nav: **logo left; "Join waitlist" right.** No other nav items. (Mobile per §8: logo + one CTA, no hamburger — same composition.)
 - **Gradient (Fix 1):** black at top, deep green through roughly the lower half, matching App Store screen 1. Not a sliver at the foot.
 - Headline: **KNOW IF YOUR SUPPLEMENTS ACTUALLY WORK** (green: WORK)

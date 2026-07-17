@@ -1,6 +1,14 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, Eyebrow, HumanPlaceholder, HEADLINE_STEPPED } from "./system";
+import {
+  GRID,
+  PANEL_PAD,
+  Eyebrow,
+  HumanPlaceholder,
+  HEADLINE_STEPPED,
+  BODY_TEXT,
+  GAP_STACK,
+} from "./system";
 
 /*
  * Panel 5 — TRUST / OUR PROMISE (§4, DARK; Whoop-pattern recomposition).
@@ -32,14 +40,16 @@ export default function Trust() {
           "linear-gradient(180deg, #000000 0%, #052605 70%, #0a3c0a 100%)",
       }}
     >
-      <div className={`${GRID} flex flex-col items-start gap-7 py-24 text-left md:py-28`}>
+      <div
+        className={`${GRID} ${PANEL_PAD} flex flex-col items-start ${GAP_STACK} text-left`}
+      >
         <motion.div {...enter()}>
           <Eyebrow mode="dark">Our promise</Eyebrow>
         </motion.div>
 
         <motion.h2
           {...enter(0.06)}
-          className={`font-display uppercase leading-[1.02] tracking-[-0.01em] text-white ${HEADLINE_STEPPED}`}
+          className={`font-display uppercase leading-[1.04] text-white ${HEADLINE_STEPPED}`}
         >
           We don&rsquo;t sell supplements
           <br />
@@ -51,7 +61,7 @@ export default function Trust() {
 
         <motion.p
           {...enter(0.14)}
-          className="max-w-[60ch] text-white/85 text-[clamp(1rem,1.6vw,1.15rem)] leading-relaxed"
+          className={`max-w-[60ch] text-white/85 ${BODY_TEXT}`}
         >
           Supplements are sold with sales and marketing. Studies on someone
           else, somewhere else. Not you. Not your data. So how can you be sure
@@ -62,7 +72,7 @@ export default function Trust() {
         {/* Strap dissolved into the card labels — future human imagery */}
         <motion.div
           {...enter(0.22)}
-          className="mt-4 grid w-full grid-cols-1 gap-5 sm:grid-cols-3"
+          className="mt-2 grid w-full grid-cols-1 gap-5 sm:grid-cols-3"
         >
           {CARDS.map((label) => (
             <HumanPlaceholder

@@ -22,6 +22,9 @@ body {
 
 .font-display {
   font-family: var(--font-display), system-ui, sans-serif;
+  /* Global-refinement round: ONE display weight, every headline —
+     medium, not black. Large-and-lighter premium feel. */
+  font-weight: 500;
 }
 
 /* Panel entrance — one subtle fade-rise on load, staggered via delay. */

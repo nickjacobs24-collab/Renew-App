@@ -1,6 +1,15 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow, HumanPlaceholder, HEADLINE_STEPPED } from "./system";
+import {
+  GRID,
+  PANEL_PAD,
+  Eyebrow,
+  HumanPlaceholder,
+  HEADLINE_STEPPED,
+  BODY_TEXT,
+  GAP_STACK,
+  GAP_SPLIT,
+} from "./system";
 
 /*
  * Panel 2 — BRIDGE (§4, LIGHT — correction round: was dark statement,
@@ -31,31 +40,28 @@ export default function Bridge() {
       style={{ background: "var(--prism-cream)", color: INK }}
     >
       <div
-        className={`${GRID} ${PANEL_PAD} grid items-center gap-14 md:grid-cols-2 md:gap-12`}
+        className={`${GRID} ${PANEL_PAD} grid items-center ${GAP_SPLIT} md:grid-cols-2`}
       >
         {/* Text — left, headline-weighted, one unit */}
-        <div className="flex flex-col gap-6">
+        <div className={`flex flex-col ${GAP_STACK}`}>
           <motion.div {...enter()}>
             <Eyebrow mode="light">The problem</Eyebrow>
           </motion.div>
 
           <motion.h2
             {...enter(0.06)}
-            className={`font-display uppercase leading-[0.98] tracking-[-0.01em] ${HEADLINE_STEPPED}`}
+            className={`font-display uppercase leading-[1.0] ${HEADLINE_STEPPED}`}
             style={{ color: INK }}
           >
             Are your supplements making a difference?
           </motion.h2>
 
           <motion.div {...enter(0.14)} className="max-w-xl space-y-3">
-            <p className="text-[#14140f]/80 text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed">
+            <p className={`text-[#14140f]/80 ${BODY_TEXT}`}>
               The only way to check was a blood test. Expensive, complicated,
               hard to understand.
             </p>
-            <p
-              className="text-[clamp(1.05rem,2vw,1.3rem)] font-semibold leading-relaxed"
-              style={{ color: ACCENT }}
-            >
+            <p className={BODY_TEXT} style={{ color: ACCENT }}>
               The answer has been on your wrist all along.
             </p>
           </motion.div>

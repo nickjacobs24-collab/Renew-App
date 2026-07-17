@@ -33,29 +33,32 @@ export default function Hero() {
           </a>
           <a
             href="#get-prism"
-            className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition-colors hover:bg-white/90"
+            className="rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition-colors hover:bg-white/90"
           >
             Join waitlist
           </a>
         </div>
       </nav>
 
+      {/* Headline zone — single tight stack, centred (Oura pattern) */}
       <div
-        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center gap-12 pb-20 pt-28 text-center`}
+        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center pt-28 text-center`}
       >
-        {/* Headline — no supporting line (§4: deliberate, do not add one) */}
-        <h1 className="fade-rise font-display uppercase leading-[0.95] tracking-[-0.01em] text-white text-[clamp(2.6rem,8vw,6.75rem)]">
+        {/* No supporting line (§4: deliberate, do not add one) */}
+        <h1 className="fade-rise font-display uppercase leading-[0.98] tracking-[-0.03em] text-white text-[clamp(2.8rem,8.5vw,7rem)]">
           Know if your
           <br />
           supplements
           <br />
           actually <span style={{ color: ACCENT }}>work</span>
         </h1>
+      </div>
 
-        {/* CTA */}
+      {/* CTA — low (Oura pattern: button near the viewport base) */}
+      <div className={`${GRID} relative z-10 flex justify-center pb-16`}>
         <a
           href="#get-prism"
-          className="fade-rise fade-rise-2 rounded-full bg-white px-10 py-4 text-lg font-semibold text-black shadow-[0_12px_40px_rgba(0,0,0,0.45)] transition-transform hover:scale-[1.03]"
+          className="fade-rise fade-rise-2 rounded-full bg-white px-10 py-4 text-lg font-medium text-black shadow-[0_12px_40px_rgba(0,0,0,0.45)] transition-transform hover:scale-[1.03]"
         >
           Join the waitlist
         </a>

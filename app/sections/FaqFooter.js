@@ -24,8 +24,8 @@ const PLACEHOLDER_ANSWER =
 
 export default function FaqFooter() {
   return (
-    <section className="bg-black pt-24 text-white md:pt-32">
-      <div className={`${GRID} flex flex-col gap-10 pb-24`}>
+    <section className="bg-black pt-16 text-white md:pt-24">
+      <div className={`${GRID} flex flex-col gap-8 pb-16 md:pb-24`}>
         <Eyebrow mode="dark">Common questions</Eyebrow>
 
         <div className="max-w-2xl divide-y divide-white/10">

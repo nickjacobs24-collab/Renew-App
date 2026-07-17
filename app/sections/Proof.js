@@ -1,7 +1,15 @@
 "use client";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow, Contained, HEADLINE_STEPPED } from "./system";
+import {
+  GRID,
+  PANEL_PAD,
+  Eyebrow,
+  Contained,
+  HEADLINE_STEPPED,
+  GAP_STACK,
+  GAP_SPLIT,
+} from "./system";
 
 /*
  * Panel 4 — PROOF (§4, LIGHT). Split panel per §2.2: copy one side,
@@ -30,17 +38,17 @@ export default function Proof() {
       style={{ background: "var(--prism-cream)", color: INK }}
     >
       <div
-        className={`${GRID} ${PANEL_PAD} grid items-center gap-14 md:grid-cols-2 md:gap-10`}
+        className={`${GRID} ${PANEL_PAD} grid items-center ${GAP_SPLIT} md:grid-cols-2`}
       >
         {/* Copy side */}
-        <div className="flex flex-col items-start gap-8 text-left">
+        <div className={`flex flex-col items-start ${GAP_STACK} text-left`}>
           <motion.div {...enter()}>
             <Eyebrow mode="light">The evidence</Eyebrow>
           </motion.div>
 
           <motion.h2
             {...enter(0.06)}
-            className={`font-display uppercase leading-[0.98] tracking-[-0.01em] ${HEADLINE_STEPPED}`}
+            className={`font-display uppercase leading-[1.0] ${HEADLINE_STEPPED}`}
             style={{ color: INK }}
           >
             See what&rsquo;s working

@@ -1,7 +1,15 @@
 "use client";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow, HEADLINE_STEPPED } from "./system";
+import {
+  GRID,
+  PANEL_PAD,
+  Eyebrow,
+  HEADLINE_STEPPED,
+  BODY_TEXT,
+  GAP_STACK,
+  GAP_SPLIT,
+} from "./system";
 
 /*
  * Panel 3 — HOW IT WORKS (§4). DARK band (consolidated round band
@@ -37,7 +45,7 @@ export default function HeresHow() {
       }}
     >
       <div
-        className={`${GRID} ${PANEL_PAD} grid items-center gap-14 md:grid-cols-2 md:gap-12`}
+        className={`${GRID} ${PANEL_PAD} grid items-center ${GAP_SPLIT} md:grid-cols-2`}
       >
         {/* Visual — left on desktop, below text on mobile */}
         <motion.div
@@ -61,21 +69,21 @@ export default function HeresHow() {
         </motion.div>
 
         {/* Text — right */}
-        <div className="order-1 flex flex-col gap-6 md:order-2">
+        <div className={`order-1 flex flex-col ${GAP_STACK} md:order-2`}>
           <motion.div {...enter()}>
             <Eyebrow mode="dark">How it works</Eyebrow>
           </motion.div>
 
           <motion.h2
             {...enter(0.06)}
-            className={`font-display uppercase leading-[0.98] tracking-[-0.01em] text-white ${HEADLINE_STEPPED}`}
+            className={`font-display uppercase leading-[1.0] text-white ${HEADLINE_STEPPED}`}
           >
             Based on your health data
           </motion.h2>
 
           <motion.p
             {...enter(0.14)}
-            className="max-w-xl text-white/90 text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed"
+            className={`max-w-xl text-white/90 ${BODY_TEXT}`}
           >
             Cost-effective. Simple. Easy to understand.
           </motion.p>
@@ -83,7 +91,7 @@ export default function HeresHow() {
           {/* Wearable brand row */}
           <motion.div
             {...enter(0.22)}
-            className="mt-4 flex flex-wrap items-center gap-x-10 gap-y-4"
+            className="mt-2 flex flex-wrap items-center gap-x-10 gap-y-4"
           >
             {BRANDS.map((brand) => (
               <span

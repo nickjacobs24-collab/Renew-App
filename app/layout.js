@@ -1,20 +1,22 @@
 import "./globals.css";
-import { Archivo_Black, Inter } from "next/font/google";
+import { Archivo, Inter } from "next/font/google";
 
 /*
- * §3.1a closest-match: Archivo Black as the display grotesque (heavy,
- * tight, all-caps), Inter for body. Self-hosted by next/font at build —
- * no runtime third-party requests. Swap when the founder supplies the
- * exact family from the Canva marketing file.
+ * §3.1a closest-match: Archivo (multi-weight grotesque) for display,
+ * set to MEDIUM globally (§ global-refinement round — large-and-lighter
+ * premium feel per Oura/Levels heroes, not heavy/black). Inter for
+ * body, with a light weight for supporting copy. Self-hosted by
+ * next/font at build — no runtime third-party requests.
  */
-const display = Archivo_Black({
-  weight: "400",
+const display = Archivo({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
 const body = Inter({
+  weight: ["300", "400", "500"],
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",

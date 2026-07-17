@@ -7,22 +7,34 @@
 // Horizontal grid: same max-width and margins on every panel.
 export const GRID = "mx-auto w-full max-w-6xl px-6 md:px-10";
 
-// §4 headline-scale calibration. The hero (P1) is the singular display
-// PEAK and keeps its own larger bespoke scale. Every interior headline
-// is multi-line (wraps or hard-broken), so all use the STEPPED tier —
-// clearly subordinate to the hero. A one-line interior statement would
-// use DISPLAY; none currently qualify.
-export const HEADLINE_DISPLAY = "text-[clamp(2.3rem,5.4vw,4.25rem)]";
-export const HEADLINE_STEPPED = "text-[clamp(1.9rem,4.4vw,3.4rem)]";
+// ── Global type + spacing tokens (global-refinement round) ──────────
+// Applied to ALL panels; never restyle per-panel.
+
+// §4 headline-scale calibration. Hero (P1) is the singular display PEAK
+// (own larger scale). Interior headlines are multi-line → STEPPED.
+// Sizes bumped up to compensate for the lighter medium weight; tracking
+// tightened. Tracking travels with the size token so it can't be
+// dropped or double-set per panel.
+export const HEADLINE_DISPLAY = "text-[clamp(2.6rem,6vw,4.9rem)] tracking-[-0.025em]";
+export const HEADLINE_STEPPED = "text-[clamp(2.1rem,4.8vw,3.9rem)] tracking-[-0.025em]";
+
+// Supporting/body copy: lighter weight, comfortable size — thinner and
+// larger reads calmer. Colour (contrast) is set per mode at call site.
+export const BODY_TEXT = "font-light leading-relaxed text-[clamp(1.1rem,1.6vw,1.3rem)]";
+
+// Vertical rhythm — tighter/denser than before (Levels/Whoop), so each
+// panel reads as one connected unit. GAP_STACK = intra-panel element
+// gap (eyebrow→headline→support→content); GAP_SPLIT = between the two
+// columns of a split panel.
+export const PANEL_PAD = "py-16 md:py-24";
+export const GAP_STACK = "gap-5";
+export const GAP_SPLIT = "gap-10 md:gap-12";
 
 // §4 Panel 6: THE launch flag. Flipping this swaps the waitlist block
 // to the App Store state (badge + pricing) and the nav CTA to the App
 // Store link — one flag, not scattered edits. Launch state renders are
 // built when the App Store link and badge asset exist.
 export const IS_LAUNCHED = false;
-
-// Vertical rhythm: same block padding on every non-hero panel.
-export const PANEL_PAD = "py-28 md:py-36";
 
 // Every contained visual (UI fragments, device frames' outer wrap,
 // designed elements) shares one radius + treatment, tinted per mode.
