@@ -1,18 +1,27 @@
 "use client";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { GRID, PANEL_PAD, Eyebrow } from "./system";
 
 /*
- * Panel 3 — HERE'S HOW (§4 FINAL — verbatim App Store screen-2
- * narrative; the earlier drafted lines are deleted). LIGHT mode:
- * cream ground, ink type, hard band edge against the bridge's black.
- * Stacked panel: eyebrow → headline → support → contrast → strip
- * (the designed visual-row). Strip is a factual claim; confirm the
- * integration list before ship.
+ * Panel 3 — HOW IT WORKS (§4, LIGHT, deep-cream band). Correction
+ * round: the HERE'S HOW headline is DELETED (it answered its own
+ * question) — "HOW IT WORKS" is the section's small label and
+ * "Based on your health data" carries headline weight. Split with the
+ * visual LEFT (sides alternate down the page): Home.png in a device
+ * frame — the screens-as-split-visuals allowance (§2.1, restriction
+ * lifted). Brand row (Fix 5): text-based wordmark styling only — no
+ * fabricated logos; swap for licensed SVGs when supplied.
  */
 
-const WEARABLES = ["APPLE WATCH", "WHOOP", "OURA", "GARMIN"];
 const INK = "var(--prism-ink)";
+
+const BRANDS = [
+  { name: "APPLE WATCH", cls: "font-medium tracking-[0.1em]" },
+  { name: "WHOOP", cls: "font-extrabold tracking-[0.2em]" },
+  { name: "ŌURA", cls: "font-medium tracking-[0.32em]" },
+  { name: "GARMIN", cls: "font-bold tracking-[0.16em]" },
+];
 
 export default function HeresHow() {
   const prefersReduced = useReducedMotion();
@@ -20,7 +29,7 @@ export default function HeresHow() {
   const enter = (delay = 0) => ({
     initial: prefersReduced ? false : { opacity: 0, y: 26 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.5 },
+    viewport: { once: true, amount: 0.4 },
     transition: { duration: 0.9, delay, ease: [0.25, 0.1, 0.25, 1] },
   });
 
@@ -28,54 +37,68 @@ export default function HeresHow() {
     <section
       id="how-it-works"
       className="flex min-h-screen items-center"
-      style={{ background: "var(--prism-cream)", color: INK }}
+      style={{ background: "var(--prism-cream-deep)", color: INK }}
     >
       <div
-        className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-8 text-center`}
+        className={`${GRID} ${PANEL_PAD} grid items-center gap-14 md:grid-cols-2 md:gap-12`}
       >
-        <motion.div {...enter()}>
-          <Eyebrow mode="light">How it works</Eyebrow>
+        {/* Visual — left on desktop, below text on mobile */}
+        <motion.div
+          {...enter(0.18)}
+          className="order-2 justify-self-center md:order-1 md:justify-self-start"
+        >
+          <div
+            className="relative rounded-[2.6rem] border border-black/10 bg-black p-[6px] shadow-[0_24px_70px_rgba(20,20,15,0.28)]"
+            style={{ aspectRatio: "853 / 1844", height: "min(60vh, 520px)" }}
+          >
+            <div className="relative h-full w-full overflow-hidden rounded-[2.2rem]">
+              <Image
+                src="/screens/home.png"
+                alt="Prism Home screen. Sleep at Stage 2, Improving. Immunity at Stage 3, Maintaining."
+                fill
+                sizes="(max-width: 768px) 60vw, 280px"
+                className="object-cover"
+              />
+            </div>
+          </div>
         </motion.div>
 
-        <motion.h2
-          {...enter(0.06)}
-          className="font-display uppercase leading-[0.95] tracking-[-0.01em] text-[clamp(2.2rem,6.5vw,5rem)]"
-          style={{ color: INK }}
-        >
-          Here&rsquo;s how
-        </motion.h2>
+        {/* Text — right */}
+        <div className="order-1 flex flex-col gap-6 md:order-2">
+          <motion.div {...enter()}>
+            <Eyebrow mode="light">How it works</Eyebrow>
+          </motion.div>
 
-        <motion.div {...enter(0.14)} className="max-w-2xl space-y-4">
-          <p
-            className="text-[clamp(1.15rem,2.4vw,1.5rem)] leading-relaxed"
+          <motion.h2
+            {...enter(0.06)}
+            className="font-display uppercase leading-[0.98] tracking-[-0.01em] text-[clamp(2.1rem,4.8vw,3.9rem)]"
             style={{ color: INK }}
           >
             Based on your health data
-          </p>
-          <p className="text-[#14140f]/80 text-[clamp(1rem,2vw,1.25rem)] leading-relaxed">
-            Cost-effective. Simple. Easy to understand.
-          </p>
-        </motion.div>
+          </motion.h2>
 
-        {/* §2.1: the strip as a designed element — the panel's visual-row */}
-        <motion.div
-          {...enter(0.24)}
-          className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-full bg-black/[0.04] px-8 py-3.5 ring-1 ring-black/10"
-        >
-          {WEARABLES.map((name, i) => (
-            <span
-              key={name}
-              className="flex items-center gap-x-6 text-xs font-medium tracking-[0.25em] text-[#14140f]/75"
-            >
-              {name}
-              {i < WEARABLES.length - 1 && (
-                <span aria-hidden="true" className="text-[#14140f]/20">
-                  |
-                </span>
-              )}
-            </span>
-          ))}
-        </motion.div>
+          <motion.p
+            {...enter(0.14)}
+            className="max-w-xl text-[#14140f]/80 text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed"
+          >
+            Cost-effective. Simple. Easy to understand.
+          </motion.p>
+
+          {/* Fix 5: the wearable strip as a designed brand row */}
+          <motion.div
+            {...enter(0.22)}
+            className="mt-4 flex flex-wrap items-center gap-x-10 gap-y-4"
+          >
+            {BRANDS.map((brand) => (
+              <span
+                key={brand.name}
+                className={`text-sm text-[#14140f]/70 ${brand.cls}`}
+              >
+                {brand.name}
+              </span>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

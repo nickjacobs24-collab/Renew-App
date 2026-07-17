@@ -7,8 +7,10 @@
   --prism-canvas-top: #000000;
   --prism-canvas-bottom: #0a3c0a;
   --prism-accent: #3ab203;
-  /* §2 LIGHT mode (proposed closest-match, flagged in §11.10) */
+  /* §2 LIGHT mode (proposed closest-match, flagged in §11.10).
+     Two cream depths separate adjacent light bands (§2 Fix 3). */
   --prism-cream: #f7f2e8;
+  --prism-cream-deep: #efe8d9;
   --prism-ink: #14140f;
   /* §2.2: uniform corner radius for every contained visual */
   --prism-radius: 1.25rem;

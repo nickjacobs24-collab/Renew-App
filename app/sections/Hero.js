@@ -30,8 +30,11 @@ export default function Hero() {
     <section
       className="relative flex min-h-screen flex-col overflow-hidden"
       style={{
+        /* Fix 1: match App Store screen 1 — black top, fade into deep
+           green beginning around the bottles; the lower half carries
+           visible green. */
         background:
-          "linear-gradient(180deg, #000000 0%, #000000 45%, #031803 82%, #052605 100%)",
+          "linear-gradient(180deg, #000000 0%, #000000 38%, #052605 62%, #0A3C0A 100%)",
       }}
     >
       {/* Minimal nav (§4 Panel 1): logo left, "Join waitlist" right — nothing else. */}

@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: GATE LIFTED — full page built. All seven panels live on `rebuild` with the mode map, contrast, spacing, Panel 3 copy and eyebrow corrections applied. Preview iteration phase: founder judges the full page on the branch preview. Outstanding before ship: hero bottle extraction (PDF p.1), FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap (IS_LAUNCHED). Do not re-run completed phases.**
+**STATUS: Correction round applied (Fixes 1–6: hero gradient, bridge hierarchy rebuild, revised mode map with cream depths, alternating splits, brand row, bridge visual slot). Full seven-panel page rebuilt to the revised spec and pushed to `rebuild`. Preview iteration: founder judges. Outstanding before ship: hero bottle extraction (PDF p.1), FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap (IS_LAUNCHED). Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -25,7 +25,7 @@ The website sells a new capability, not an app. Its one job: make this belief la
 - One continuous scrollable page built as **self-contained panels** — the App Store model on a webpage. Not a multi-page site.
 - Each panel: full-width colour band, one message, one headline moment, self-contained like an App Store card. **No pinning, no scroll-driven screen swapping, no content morphing.** Story through logical sequence, not linkage.
 - **Two-mode chaptering (correction, 2026-07-17 — supersedes the single continuous dark canvas, which was wrong):** the page is chaptered by alternating **LIGHT** and **DARK** panel modes, colour doing the section separation — no divider lines. DARK = the black → deep-green gradient (`#000000` → `#0A3C0A`) with white type. LIGHT = soft cream (not pure white) with near-black type. Green `#3AB203` is an ACCENT in both modes (headline accent words, small elements) and is **never a background colour**.
-- **Mode map:** P1 Hero DARK · P2 Bridge DARK (hero + bridge form one dark opening act) · P3 Here's How LIGHT · P4 Proof LIGHT (the dark app screen contained against cream ground) · P5 Trust DARK · P6 Get Prism LIGHT · P7 FAQ+footer LIGHT.
+- **Mode map (correction round 2026-07-17, Fix 3 — supersedes the earlier map):** P1 Hero DARK (corrected gradient) · P2 Bridge LIGHT · P3 How It Works LIGHT · P4 Proof LIGHT · P5 Trust DARK · P6 Get Prism LIGHT · P7 FAQ+footer LIGHT. Each band edge must be unmistakable. **Adjacent light panels separate via two cream depths** (`--prism-cream` / `--prism-cream-deep`, closest-match call, flagged §11): P2 cream · P3 deep · P4 cream · P6 cream · P7 deep.
 - **Contrast rule:** no washed grey secondary text. Supporting copy is high-contrast in both modes (near-white on dark, near-black on cream). Every line clearly legible.
 - Panels transition at clean band edges — built as **hard colour changes** (closest-match call, flagged; a very short fade is the alternative if the hard cut reads harsh on preview).
 - Panel grammar (from Levels/Oura): small-caps eyebrow label (**REQUIRED on every panel except the hero** — quiet, above the headline, naming the section's job; same treatment in both modes) → large display headline (green accent word where locked) → short supporting copy → content. Generous vertical air. Alternating composition where a panel has a visual.
@@ -35,7 +35,7 @@ Unchanged:
 
 - The site gathers no user input except one waitlist email field. No quiz, no goal selectors, no sign-up, no onboarding. All onboarding lives in the app.
 - The narrative is the App Store narrative, promoted. The website introduces no new ideas.
-- **Only ONE app screen appears anywhere on the site: the sleep chart (`Progress 1.png`), in Panel 4.** The other App Store screens (Home, Plan, Goal 2, Gap) are style reference only — they never enter the build. Never mock up or invent UI. No lifestyle photography. No stock imagery. No supplement-shop composition.
+- App screens appear only per the §2.1 screens allowance (device-framed split-panel supporting visuals). Never mock up or invent UI. No lifestyle photography. No stock imagery. No supplement-shop composition.
 - Copy pattern: every headline is a capability the user gains (Know / See / Change), never a description of software.
 
 ### 2.1 Visual vocabulary (addendum, 2026-07-17 — applies to all panels)
@@ -44,10 +44,12 @@ What may appear:
 
 - **Cropped UI fragments from the real screens in `brief-assets/`** (trend line, Magnesium marker, stage dial, etc.) as visual anchors — crops of real screens only, **never recompositions of UI that doesn't exist as shown**. Test: could a user see exactly this in the app?
 - **The bottles asset.**
-- **The wearable strip as a designed element.**
+- **The wearable strip as a designed brand row (Fix 5):** recognisable brand wordmarks for Apple Watch, WHOOP, Oura, Garmin — text-based wordmark styling; never fabricate logos that cannot be rendered accurately.
 - **Typography-as-visual — preferred where a panel needs no anchor.**
 
-Never: photography of people or nature, stock imagery, generated imagery. Full app screens remain limited to `Progress 1.png` in Panel 4.
+Never: photography of people or nature, stock imagery, generated imagery.
+
+**Screens allowance (correction round, Fix 4 — lifts the one-screen restriction):** real App Store screens from `brief-assets/` may appear **contained in device frames as split-panel supporting visuals**, Levels-style. In use: `Home.png` (Panel 3), `Progress 1.png` (Panel 4), and the `trend.png` crop of Progress 1 (Panel 2). Crops must remain straight viewport crops of real screens.
 
 ### 2.2 Composition system (addendum — how things are arranged)
 
@@ -60,8 +62,8 @@ A small fixed layout vocabulary, varied across panels so **no two consecutive pa
 
 System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow (required except hero) → headline → support → content.
 
-Current assignments (1–3 built; 4–7 provisional, settled at build time):
-P1 Stacked (headline above, bottles below — bottles float as a cut-out asset, not a contained visual) · P2 Statement · P3 Stacked (strip as the designed visual-row) · P4 Split (framed screen beside copy) · P5 Statement · P6 Stacked (header above, centred form below) · P7 utility (left-aligned narrow accordion + footer). **P6/P7 adjacency resolved:** P7 is built as a left-aligned utility list, visually distinct from P6's centred stack — judge on preview.
+Current assignments (correction round — alternating splits per the reference sites, Fix 4):
+P1 Stacked (headline above, bottles below — bottles float as a cut-out asset, not a contained visual) · P2 **Split, text left / visual right** (trend crop) · P3 **Split, visual left / text right** (Home.png in device frame) · P4 Split, text left / visual right (Progress frame) · P5 Statement · P6 Stacked (header above, centred form below) · P7 utility (left-aligned narrow accordion + footer). Split sides alternate down the page. **P6/P7 adjacency resolved:** P7 is a left-aligned utility list, visually distinct from P6's centred stack.
 
 In code: the grid and container primitives live in [app/sections/system.js](app/sections/system.js) (`GRID` container class, `Contained` wrapper, `--prism-radius` token). Every panel composes from them — never restyle margins/gutters per panel.
 
@@ -86,6 +88,7 @@ In code: the grid and container primitives live in [app/sections/system.js](app/
 ### 3.1b Source roles for reference material
 
 - **`brief-assets/` (App Store screens + PDF): LOOK AND FEEL.** Colour, type style, weight, mood. The visual language source.
+- **`brief-assets/layout-reference/` (Levels, Oura, Whoop screenshots): LAYOUT, HIERARCHY, COMPOSITION, SECTION-SEPARATION reference ONLY.** Zero palette, zero typefaces, zero imagery from them — match how they arrange, not how they look. Studied 2026-07-17: eyebrow → dominant headline → subordinate support as one left-aligned unit; alternating split sides; same-tone sections separated by clear tint shifts, hard edges.
 - **The old site (recoverable at `main` `72cde1e`, pre-cut — read `git show 72cde1e:app/page.js`): STRUCTURAL SKELETON.** Section anatomy only: full-viewport hero (visual + dark overlay + centred stacked headline/sub/CTA + quiet bottom strip), stacked full-width banded sections, big centred statement headlines, three-column step row (visual → small eyebrow badge → title → sub-line). **Take structure only. No palette, no imagery, no fonts, no copy from it.**
 
 ### 3.2 Asset manifest
@@ -112,35 +115,34 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 ### Panel 1 — HERO (DARK)
 
 - Full viewport. Bottles visual from the App Store PDF p.1 (background removed; grey placeholder of correct proportion until extracted), slow drift. Minimal nav: **logo left; "Join waitlist" right.** No other nav items. (Mobile per §8: logo + one CTA, no hamburger — same composition.)
+- **Gradient (Fix 1):** black at top, fading into deep green beginning around the bottles — roughly the lower half carries visible green, matching App Store screen 1. Not a sliver at the foot.
 - Headline: **KNOW IF YOUR SUPPLEMENTS ACTUALLY WORK** (green: WORK)
 - CTA: **Join the waitlist** (white pill)
 - No supporting line. Deliberate. Do not add one.
 
-### Panel 2 — BRIDGE (DARK — with the hero, one dark opening act; locked copy)
+### Panel 2 — BRIDGE (LIGHT — correction round Fix 2 rebuild; locked copy)
 
-- Eyebrow: **THE PROBLEM**
+- Eyebrow: **THE PROBLEM** (small caps)
+- Levels text hierarchy, ONE coherent left-aligned text unit, headline-weighted, no viewport gaps:
+  - Headline (large, dominant): **Are your supplements making a difference?**
+  - ONE supporting block directly beneath, lines together, clearly subordinate in size: **The only way to check was a blood test. Expensive, complicated, hard to understand.** followed by **The answer has been on your wrist all along.** — the final line takes the green accent treatment.
+- Visual slot right (Fix 6): built with the `trend.png` straight crop of the Sleep chart (stat + markers + trend line) — proposed candidate, founder judges; the bottles crop was the alternative.
 
-- Typography panel, three stanzas paced with generous air but NOT full empty viewports — the whole bridge reads within roughly 1.5 viewports of scroll, each stanza arriving on a natural scroll beat. No dead screens. Exact copy:
+### Panel 3 — HOW IT WORKS (LIGHT, deep-cream band — correction round Fix 4 rebuild)
 
-> Are your supplements making a difference?
-> The only way to check was a blood test. Expensive, complicated, hard to understand.
-> The answer has been on your wrist all along.
+- Eyebrow (the section's small label): **HOW IT WORKS**
+- **The HERE'S HOW headline is DELETED** (it answered its own question — do not reinstate).
+- Headline-weight line: **Based on your health data**
+- Support: **Cost-effective. Simple. Easy to understand.**
+- Then the wearable brand row (Fix 5): Apple Watch / WHOOP / Oura / Garmin as text-styled wordmarks (factual claim — confirm final integration list before ship).
+- Visual LEFT: **Home.png in a device frame** (per the §2.1 screens allowance). Text right.
 
-### Panel 3 — HERE'S HOW (LIGHT — mechanism)
-
-- Eyebrow: **HOW IT WORKS**
-- Headline: **HERE'S HOW** (no accent word — green is WORK/NOT/EVIDENCE only)
-- Supporting line, verbatim (App Store screen-2 narrative): **Based on your health data**
-- Contrast line, verbatim: **Cost-effective. Simple. Easy to understand.**
-- Then the strip: **APPLE WATCH | WHOOP | OURA | GARMIN** (factual claim — confirm final integration list before ship)
-- The earlier drafted lines ("Prism reads the health data your wearable already records", "Simple to read. Nothing new to buy. With you day and night.") are **deleted** — replaced by this verbatim copy.
-
-### Panel 4 — PROOF (LIGHT — the one app-screen moment)
+### Panel 4 — PROOF (LIGHT — the page's app-screen peak)
 
 - Eyebrow: **THE EVIDENCE**
 
 - Headline pair: **SEE WHAT'S WORKING** then **AND WHAT'S NOT** (green: NOT)
-- The single app screenshot on the entire site: `Progress 1.png` in a device frame — the dark app screen contained against the cream ground, **supporting the panel Levels-style, not filling it.**
+- `Progress 1.png` in a device frame — the dark app screen contained against the cream ground, **supporting the panel Levels-style, not filling it.** Split: text left / visual right (sides alternate from Panel 3).
 - Small annotation near the chart: **Two-week rolling average against your baseline.**
 - Rule: app-screen copy is never edited on the website. If a line inside a real screen trips a copy rule, flag it as an app question. Do not patch it on the site.
 
@@ -278,6 +280,8 @@ What exists now:
 12. **Panels 4–7 closest-match calls (judge on preview):** Panel 4 split puts copy left / device frame right (first split on the page; "alternate sides" applies from the next split); Panel 5's band runs the full range to `#0A3C0A` as the page's deepest green moment; Panel 6's header set sentence-case semibold (a header line, not an all-caps display headline) and its CTA inverted to an ink pill on cream (the white pill is invisible on light ground); Panel 7 accordion uses native `<details>`, no JS.
 13. **Drafted UI microcopy in Panel 6 (not locked §4 copy — founder approves):** placeholder "Email address", submitting "Joining…", success "You're on the list.", error "Something went wrong. Please try again."
 14. **Footer is placeholder-grade:** `/privacy` and `/terms` links 404 until those pages are written (legally required before ship); Contact is a mailto to the founder's address (carried from the old site — confirm); the medical disclaimer renders as a marked placeholder, not drafted copy; "© 2026 Prism" is not yet rendered — add with the legal pages.
+
+15. **Correction-round closest-match calls (judge on preview):** two cream depths (`#F7F2E8` / `#EFE8D9`) separate adjacent light bands; the bridge visual is the `trend.png` crop (bottles crop was the alternative — swap is one line); the bridge's final accent line sits at ~2.5:1 on cream (same §11.11 question as Panel 4's NOT); brand row wordmarks are TEXT approximations (weight/tracking styling per brand, ŌURA with macron) — official logo SVGs cannot be rendered accurately from code and were not fabricated; swap in licensed assets when supplied. Levels-style hierarchy applied: headline dominant, support subordinate, left-aligned units.
 
 ### Logged app-side questions (not website work)
 

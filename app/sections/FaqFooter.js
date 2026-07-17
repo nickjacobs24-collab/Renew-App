@@ -29,7 +29,7 @@ export default function FaqFooter() {
   return (
     <section
       className="pt-24 md:pt-32"
-      style={{ background: "var(--prism-cream)", color: INK }}
+      style={{ background: "var(--prism-cream-deep)", color: INK }}
     >
       <div className={`${GRID} flex flex-col gap-10 pb-24`}>
         <Eyebrow mode="light">Common questions</Eyebrow>
