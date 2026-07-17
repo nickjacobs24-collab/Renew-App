@@ -44,44 +44,52 @@ export default function Proof() {
           and what&rsquo;s <span style={{ color: ACCENT }}>not</span>
         </motion.h2>
 
-        {/* robin hood 2 card: WIDE dark card, phone NARROW + centred +
-            straight, bleeding off the bottom, generous dark space on both
-            sides. Card glow = subtle NEUTRAL light from bottom-centre
-            (NOT green — the green comes from the phone screen content).
+        {/* robin hood 2 card: near FULL-WIDTH card (fills the grid, so only
+            the grid's slight side padding sits between the jet-black section
+            and the silver box), a BRIGHTER GREY/SILVER MIRROR sheen (not
+            near-black), running tall close to the bottom. The phone sits
+            centred and STRAIGHT in a SILVER metallic case rim, larger, and
+            bleeds off the card's bottom edge.
             VISUALS ROUND — P4 slot: v1 = this static Progress 1.png;
             v2 UPGRADE = live proof animation in the same frame (line
             climbing, Magnesium marker). The ONLY product animation on
             the page — the proof payoff. Screen contents never altered. */}
         <motion.figure {...enter(0.14)} className="flex w-full flex-col items-center gap-4">
           <div
-            className="relative mx-auto h-[min(64vh,560px)] w-full max-w-4xl overflow-hidden rounded-[2rem] ring-1 ring-white/[0.06]"
+            className="relative mx-auto h-[min(84vh,820px)] w-full overflow-hidden rounded-[2rem] ring-1 ring-white/15"
             style={{
+              /* Brighter grey/silver, mirror-like: a soft diagonal light
+                 sweep over a brushed metallic gradient. */
               background:
-                "radial-gradient(60% 55% at 50% 92%, rgba(255,255,255,0.08), rgba(255,255,255,0) 62%), linear-gradient(180deg, #0b0b0b 0%, #070707 100%)",
+                "linear-gradient(120deg, transparent 8%, rgba(255,255,255,0.07) 30%, transparent 44%), radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.12), rgba(255,255,255,0) 55%), linear-gradient(155deg, #666a71 0%, #43464c 38%, #232529 70%, #35383d 100%)",
               boxShadow: "0 50px 150px rgba(0,0,0,0.75)",
             }}
           >
-            {/* phone: narrow, centred, bleeds off the bottom edge */}
+            {/* phone: narrow, centred, bigger, in a SILVER metallic case
+                rim, bleeding off the bottom edge */}
             <div className="absolute left-1/2 top-16 -translate-x-1/2">
               <div
-                className="relative rounded-t-[2.4rem] border border-b-0 border-white/12 bg-black p-[6px] pb-0 shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
-                style={{ aspectRatio: "853 / 1844", height: "min(70vh, 620px)" }}
+                className="relative rounded-t-[2.5rem] p-[6px] pb-0 shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
+                style={{
+                  aspectRatio: "853 / 1844",
+                  height: "min(82vh, 760px)",
+                  /* metallic silver case */
+                  background:
+                    "linear-gradient(145deg, #eef0f2 0%, #b8bbc0 22%, #8f9298 50%, #c6c9ce 78%, #e4e6e9 100%)",
+                }}
               >
-                <div className="relative h-full w-full overflow-hidden rounded-t-[2.1rem]">
+                <div className="relative h-full w-full overflow-hidden rounded-t-[2.1rem] bg-black">
                   <Image
                     src="/screens/progress.png"
                     alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
                     fill
-                    sizes="(max-width: 768px) 60vw, 280px"
+                    sizes="(max-width: 768px) 60vw, 300px"
                     className="object-cover object-top"
                   />
                 </div>
               </div>
             </div>
           </div>
-          <figcaption className="text-sm text-white/70">
-            Two-week rolling average against your baseline.
-          </figcaption>
           <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-white/45">
             P4 — v1 static chart / to be replaced by live animation
           </span>
