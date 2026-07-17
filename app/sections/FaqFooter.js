@@ -30,7 +30,7 @@ export default function FaqFooter() {
         <div className="max-w-2xl divide-y divide-white/10">
           {QUESTIONS.map((q) => (
             <details key={q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-white md:text-lg">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium text-white md:text-base">
                 {q}
                 <span
                   aria-hidden="true"

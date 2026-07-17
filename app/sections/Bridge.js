@@ -49,9 +49,12 @@ export default function Bridge() {
         </motion.h2>
 
         <motion.div {...enter(0.14)} className="max-w-2xl space-y-3">
+          {/* Each sentence on its own line — never an awkward mid-sentence
+              wrap. Stays two clean lines rather than free-wrapping. */}
           <p className={`text-[#14140f]/80 ${BODY_TEXT}`}>
-            The only way to check was a blood test. Expensive, complicated,
-            hard to understand.
+            The only way to check was a blood test.
+            <br />
+            Expensive, complicated, hard to understand.
           </p>
           <p className={BODY_TEXT} style={{ color: ACCENT }}>
             The answer has been on your wrist all along.
@@ -63,7 +66,7 @@ export default function Bridge() {
           <HumanPlaceholder
             mode="light"
             marker="P2 — Abstract image framing the problem — TBD"
-            className="aspect-[16/9] w-full"
+            className="aspect-[3/1] w-full"
           />
         </motion.div>
       </div>

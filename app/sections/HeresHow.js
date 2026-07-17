@@ -40,10 +40,11 @@ export default function HeresHow() {
     <section
       id="how-it-works"
       style={{
-        /* Lean greener — reads distinctly green with a black top edge;
-           its green base sits above P4's jet black (green→black frame). */
+        /* Mostly black, with only a subtle DARK MUTED green settling in at
+           the base — enough to sit above P4's jet black (green→black
+           frame) without a bright half-and-half green wall. */
         background:
-          "linear-gradient(180deg, #000000 0%, #0a3d0e 38%, #114f15 100%)",
+          "linear-gradient(180deg, #000000 0%, #000000 55%, #071a06 80%, #0c2a0d 100%)",
       }}
     >
       {/* robin hood 4: phone LEFT + text RIGHT pulled toward centre and

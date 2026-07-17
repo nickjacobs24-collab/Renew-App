@@ -17,10 +17,11 @@ export default function Hero() {
     <section
       className="relative flex min-h-screen flex-col overflow-hidden"
       style={{
-        /* Black at top, deep green through the lower half (App Store
-           screen 1 canvas). Also serves as the video poster fallback. */
+        /* Mostly black, with only a subtle DARK MUTED green settling in
+           at the base (not half-and-half, not bright). Also serves as the
+           video poster fallback. */
         background:
-          "linear-gradient(180deg, #000000 0%, #000000 38%, #052605 62%, #0A3C0A 100%)",
+          "linear-gradient(180deg, #000000 0%, #000000 62%, #071a06 84%, #0c2a0d 100%)",
       }}
     >
       <HeroVideo />
@@ -50,10 +51,10 @@ export default function Hero() {
       >
         {/* No supporting line (§4: deliberate, do not add one).
             Calmer scale — 3 lines, not oversized. */}
-        <h1 className="fade-rise font-display uppercase leading-[1.05] tracking-[-0.04em] text-white text-[clamp(2.1rem,6vw,4.75rem)]">
-          Know if your
-          <br />
-          supplements
+        {/* Forced two-line break — controlled, not free-wrapping:
+            line 1 "KNOW IF YOUR SUPPLEMENTS", line 2 "ACTUALLY WORK". */}
+        <h1 className="fade-rise font-display uppercase leading-[1.05] tracking-[-0.04em] text-white text-[clamp(1.5rem,6vw,4.75rem)]">
+          <span className="whitespace-nowrap">Know if your supplements</span>
           <br />
           actually <span style={{ color: ACCENT }}>work</span>
         </h1>
