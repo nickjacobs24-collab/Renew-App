@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Phase 0 complete — baseline committed and pushed to `main`, `rebuild` branch created. Next: delete pass, cut list awaiting founder approval. Then: rebuilding beats → preview iteration → cutover. Update this line as phases complete. Do not re-run completed phases.**
+**STATUS: Delete pass done (approved cut executed on `rebuild`; site builds clean). Next: rebuilding beats — start with the §8.8 motion proof on the pinned-phone sequence. Then: preview iteration → cutover. Update this line as phases complete. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -44,17 +44,19 @@ The website sells a new capability, not an app. Its one job: make this belief la
 
 All visual assets live in [brief-assets/](brief-assets/) in the project root. Never invent UI or imagery. A device frame around real app screenshots is allowed and expected. If an asset is missing, build with a grey placeholder of correct proportions and flag it — never generate a substitute.
 
-Beat-to-asset mapping (filenames as supplied by founder; match by content if names differ). The file column below was verified by opening each image:
+`Prism - App Store Screens.pdf` is the composed App Store screens — **the source of truth for colour and composition** (founder-supplied 2026-07-17). The Beat 1 bottles are on page 1: extract them and remove the bottle background when Beat 1 builds. Not yet visually verified in-session (no PDF renderer in this environment) — verify page 1 before extraction.
+
+Beat-to-asset mapping (filenames as supplied by founder; match by content if names differ). The PNGs were verified by opening each image:
 
 | Beat | Required asset | File in `brief-assets/` |
 |---|---|---|
-| 1 | Hero: two dark bottles from App Store screen 1 | **MISSING — build grey placeholder of correct proportions. Founder supplying a reference image of the full hero composition; do not generate a substitute.** |
+| 1 | Hero: two dark bottles from App Store screen 1 | Extract from `Prism - App Store Screens.pdf` p.1 (remove background). Grey placeholder until then. |
 | 3 | Home screen (stage dials — Improving / Maintaining) | `Home.png` ✓ |
 | 4 | Sleep chart with Magnesium marker, shipped App Store version (bright data-green, 8h 12m dataset) | `Progress 1.png` ✓ |
 | 5a | Recommendation screen (Magnesium) | `Gap.png` ✓ |
 | 5b | Plan screen ("Your plan is ready") | `Plan.png` ✓ |
 | 6 | Goals screen ("What do you want to improve?") | `Goal 2.png` ✓ |
-| OG | Hero composition (bottles + headline); build from hero assets | **BLOCKED on hero bottles** |
+| OG | Hero composition (bottles + headline); build from hero assets | Blocked until the p.1 extraction lands |
 
 Hero bottles must carry no labels, flavour names or ecommerce cues. They are symbolic user supplements, not Prism products.
 
@@ -188,31 +190,30 @@ Quiz and question flows. Goal selectors. Supplement lists and supplement pages. 
 
 ---
 
-## 10. Current codebase — the delete map
+## 10. Codebase after the delete pass
 
-Everything below is the Renew web-first product. **Per §6 it is all on the delete list**, and it is documented only so the delete pass in §8.3 can be specific. Nothing here is a pattern to follow or extend.
+The delete pass (§8.3) ran on `rebuild` on 2026-07-17: 89 files cut — the entire Renew web-first product (quiz, results, 19 supplement modals, NextAuth/MailerSend, accounts, Prisma and its committed dev.db, old marketing pages, all 42 `public/images/`, favicon). The full Renew tree is recoverable from `main` at `72cde1e`.
 
-Current commands: `npm run dev`, `npm run build` (`prisma generate && next build`), `npm run lint` (eslint — not run during build; `next.config.mjs` sets `eslint.ignoreDuringBuilds`). No test suite exists. Plain JavaScript, no TypeScript; `jsconfig.json` maps `@/*` to the repo root. Tailwind v4 via the PostCSS plugin, configured in `app/globals.css`, not a `tailwind.config.js`.
+Commands: `npm run dev`, `npm run build` (plain `next build` — the `prisma generate` hooks are gone), `npm run lint` (eslint — Next 16 never runs it during build; run it yourself). No test suite exists. Plain JavaScript, no TypeScript; `jsconfig.json` maps `@/*` to the repo root. Tailwind v4 via the PostCSS plugin, configured in `app/globals.css`, not a `tailwind.config.js`.
 
-Cut targets, by §6 category:
+What exists now:
 
-- **Quiz / goal selectors / onboarding** — [app/goals/page.js](app/goals/page.js) (5-step quiz), [app/results/page.js](app/results/page.js), [app/results/PersonalisationTail.js](app/results/PersonalisationTail.js). The quiz serialises answers into query params (`?goals=energy,sleep&q2=…`) which `/results` reads back; the URL is the state. Goal IDs `energy`, `immunity`, `guthealth`, `sleep`, `calm` recur across all three files and the `Modals/` folder names.
-- **Supplement lists and pages** — the five supplement arrays in `results/page.js`, all 15 modals under [app/results/Modals/](app/results/Modals/), the parallel set under [app/results/essentials/](app/results/essentials/), [components/SaveButton.js](components/SaveButton.js), [hooks/useSavedSupplements.js](hooks/useSavedSupplements.js) (localStorage-only; the `SavedSupplement` Prisma model is already dead code), and [components/supplementcard.js](components/supplementcard.js) (already unused and would not compile — it has `&quot;` entities inside JSX and an undefined `isExpandedQuote`).
-- **Auth / accounts / SSO** — [app/api/auth/[...nextauth]/route.js](app/api/auth/[...nextauth]/route.js) (NextAuth v4, PrismaAdapter + JWT strategy, Google provider, and an Email provider whose SMTP block is a placeholder because delivery is a `fetch` to MailerSend inside an overridden `sendVerificationRequest`), [app/signin/page.js](app/signin/page.js), [app/account/page.js](app/account/page.js).
-- **Old marketing pages** — [app/page.js](app/page.js) (landing), [app/results/appaboutrenew/](app/results/appaboutrenew/), [app/results/appcommonquestions/](app/results/appcommonquestions/), [app/results/applegal/](app/results/applegal/). Note §4 Beat 9 requires new Privacy/Terms, so `applegal` content may be worth reading before it goes.
-- **Old palette / photography** — the light palette and forest imagery throughout `public/images/`, against the locked §3.1 black/`#0A3C0A` canvas.
-
-**Keep:** [app/api/auth/waitlist/route.js](app/api/auth/waitlist/route.js) — the Airtable POST is the Beat 8 backend per §7. It moves out of `app/api/auth/` (nothing else auth-shaped survives) and gains the §8.10 preview gate. [lib/prisma.js](lib/prisma.js) is **cut** — Prisma goes entirely.
-
-The pre-existing bug where `results/page.js` POSTs to `/api/saveQuiz` while the route is at `/api/auth/saveQuiz` (quiz results silently never saved) is **moot** — both sides are on the delete list. Do not spend time fixing it.
+- [app/layout.js](app/layout.js) — minimal Prism shell (title, hero-line description). No analytics yet (§8.11 TBC).
+- [app/page.js](app/page.js) — placeholder stub; the nine beats replace it.
+- [app/globals.css](app/globals.css) — Tailwind import plus the §3.1 canvas/accent tokens as CSS custom properties.
+- [app/api/waitlist/route.js](app/api/waitlist/route.js) — the Beat 8 backend: POSTs the email to Airtable, **already carrying the §8.10 gate** (`VERCEL_ENV !== "production"` → log-only, no Airtable write).
+- [docs/legacy-legal-copy.md](docs/legacy-legal-copy.md) — the old Renew legal text, extracted as reference for the Beat 9 rewrite. Not surviving copy; not part of the built site.
+- Dependencies: `next`, `react`, `react-dom`, plus `framer-motion` and `lucide-react` retained for the §8.8 motion decision. Everything auth/db/email is gone.
+- `package.json` `name` stays `renew-app` until cutover (§8.13 renames the repo then, not before).
 
 ## 11. Open flags (raised per §9, not resolved in code)
 
-1. **Hero bottle asset is missing.** `brief-assets/` holds five screens, all mapped (verified by opening each). There are no bottle images. Beat 1 proceeds with a grey placeholder of correct proportions per founder decision; the OG/share image (§8.12) stays blocked until the hero reference lands. Founder is supplying a reference image of the full hero composition.
+1. **Hero bottles: extraction pending.** The source is `Prism - App Store Screens.pdf` p.1 (see §3.2) — not yet visually verified in-session (no PDF renderer here). When Beat 1 builds: verify p.1, extract the bottles, remove the background. Grey placeholder until then; OG image follows the extraction.
 2. **Display face is still TBC (§3.1).** Blocks final typography on every beat. Build with a flagged fallback; do not substitute a lookalike.
-3. **Analytics is still TBC (§8.11).** The old GA and hardcoded Microsoft Clarity tags are cut with `app/layout.js`; nothing replaces them yet.
+3. **Analytics is still TBC (§8.11).** The old GA and hardcoded Microsoft Clarity tags went with the delete pass; nothing replaces them yet.
 4. **Integration list is unconfirmed (§4 Beat 3).** **APPLE WATCH | WHOOP | OURA | GARMIN** is a factual claim and needs confirming before ship.
 5. **FAQ copy is founder-supplied (§4 Beat 9).** Placeholders only, plus the two product-truth checks (wearable required or not; day-14 answer).
+6. **Vercel-side cleanup after merge (founder-side, not repo work):** retire the MailerSend integration and its env vars, `DATABASE_URL`, `NEXTAUTH_*`, `GOOGLE_CLIENT_*`. Only `AIRTABLE_TOKEN` (and any analytics var) remains needed. Flag, don't touch — the dashboard is the founder's.
 
 ### Logged app-side questions (not website work)
 
@@ -220,8 +221,13 @@ The pre-existing bug where `results/page.js` POSTs to `/api/saveQuiz` while the 
 
 ### Resolved (do not reopen)
 
-- Waitlist stays on **Airtable**; Prisma, the database, and the MailerSend/NextAuth integration are all cut; `resend` and `nodemailer` dependencies dropped. See §7.
-- Preview deployments must not write to the live Airtable table. See §8.10.
+- Waitlist stays on **Airtable**; Prisma, the database, and the MailerSend/NextAuth integration are all cut; `resend`, `nodemailer` and `react-icons` dependencies dropped. See §7.
+- Preview deployments must not write to the live Airtable table — gate implemented in `app/api/waitlist/route.js`. See §8.10.
+- The second Airtable capture (`api/auth/login`, "User Login" table) deleted with sign-in — founder-confirmed. The waitlist route is the only capture that survives.
+- `applegal` legal copy extracted to `docs/legacy-legal-copy.md` as rewrite reference before deletion — founder decision: reference only, not surviving copy.
+- Favicon deleted; previews show the default icon until a Prism one is supplied.
+- `framer-motion` and `lucide-react` kept; pruning them is a rebuild-pass call (§8.8).
 - `PRISM_WEBSITE_BRIEF.md` deleted; this file is the single source of truth.
 - `Lifestyle.png` removed from `brief-assets/`; no beat uses it. Recoverable from `main` at `72cde1e`.
 - Baseline committed and pushed to `main`; `rebuild` branch created (§8.1, §8.2).
+- Delete pass executed and verified building clean (§8.3), 2026-07-17.

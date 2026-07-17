@@ -3,10 +3,17 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   try {
     const { email } = await request.json();
-       console.log("Received email:", email);
 
     if (!email) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
+    }
+
+    // §8.10: only production writes to the live Airtable table. Preview and
+    // local submissions log only. VERCEL_ENV, not NODE_ENV — preview builds
+    // run with NODE_ENV=production too.
+    if (process.env.VERCEL_ENV !== "production") {
+      console.log(`[waitlist] non-production (${process.env.VERCEL_ENV || "local"}): logged only —`, email);
+      return NextResponse.json({ success: true, preview: true });
     }
 
     const response = await fetch(
