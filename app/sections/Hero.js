@@ -49,7 +49,7 @@ export default function Hero() {
         className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center gap-8 pt-24 pb-16 text-center`}
       >
         {/* No supporting line (§4: deliberate, do not add one) */}
-        <h1 className="fade-rise font-display uppercase leading-[0.98] tracking-[-0.03em] text-white text-[clamp(2.8rem,8.5vw,7rem)]">
+        <h1 className="fade-rise font-display uppercase leading-[0.98] tracking-[-0.045em] text-white text-[clamp(2.8rem,8.5vw,7rem)]">
           Know if your
           <br />
           supplements

@@ -33,10 +33,7 @@ export default function Proof() {
   });
 
   return (
-    <section
-      className="flex min-h-screen items-center"
-      style={{ background: "var(--prism-cream)", color: INK }}
-    >
+    <section style={{ background: "var(--prism-cream)", color: INK }}>
       <div
         className={`${GRID} ${PANEL_PAD} grid items-center ${GAP_SPLIT} md:grid-cols-2`}
       >

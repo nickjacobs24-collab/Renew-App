@@ -39,7 +39,6 @@ export default function HeresHow() {
   return (
     <section
       id="how-it-works"
-      className="flex min-h-screen items-center"
       style={{
         background: "linear-gradient(180deg, #000000 0%, #052605 100%)",
       }}

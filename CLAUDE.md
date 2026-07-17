@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Global refinement (round 2) applied as tokens — wider/less-padded grid; P2 restructured to a stacked panel with the page's one full-width landscape image (placeholder); hero pulled into one tight centred stack (headline → small gap → button). Builds on the medium-weight / tighter-spacing / lighter-body tokens from the prior commit. Full page on `rebuild`. Outstanding before ship: hero footage, P2 landscape + human imagery, OG image, FAQ answers, Privacy/Terms pages, disclaimer, integration-list confirmation, launch swap. Do not re-run completed phases.**
+**STATUS: Levels-precision density pass — panel padding cut ~50%, interior panels made content-driven (no forced viewport height), intra-panel gaps and headline tracking tightened, display weight → regular (400). P2 confirmed already text-above/full-width-landscape-below. Full page on `rebuild`. Outstanding before ship: hero footage, P2 landscape + human imagery, OG image, FAQ answers, Privacy/Terms pages, disclaimer, integration-list confirmation, launch swap. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -68,9 +68,9 @@ Composition map (P5-round revision — FINAL): **Centred: P1 ONLY** (over the di
 **Headline-scale calibration (P5 round):** display size for one-line statements, stepped down for multi-line headlines. The hero (P1) is the singular display PEAK (its own larger scale). Every interior headline is multi-line and uses the shared `HEADLINE_STEPPED` tier — subordinate to the hero, consistent across P2–P5. `HEADLINE_DISPLAY` exists for any future one-line interior statement.
 
 **Global type + spacing tokens (global-refinement round — applied to ALL panels, never per-panel):**
-- Display weight: ONE global medium (500) — set on `.font-display`. Headline sizes bumped up and letter-spacing tightened (`tracking-[-0.025em]`, baked into the `HEADLINE_*` tokens) to compensate for the lighter weight. Green accent words unchanged.
+- Display weight: ONE global **regular (400)** — set on `.font-display` (dropped from 500; medium still read heavier than Levels/Oura because uppercase reads denser than their sentence-case). Headline letter-spacing tightened to `-0.04em` (hero `-0.045em`), baked into the `HEADLINE_*` tokens — fixes the loose word gaps at display size. Green accent words unchanged.
 - `BODY_TEXT` — supporting copy at font-light, comfortable size (thinner + larger reads calmer). Colour/contrast still set per mode at the call site.
-- Vertical rhythm reduced for a denser Levels/Whoop feel: `PANEL_PAD` = `py-16 md:py-24` (was `py-28 md:py-36`); `GAP_STACK` = `gap-5` (intra-panel element rhythm — one connected unit); `GAP_SPLIT` = `gap-10 md:gap-12` (between split columns).
+- Vertical rhythm — **Levels-precision density.** `PANEL_PAD` = `py-8 md:py-12` (cut ~50% from `py-16 md:py-24`); `GAP_STACK` = `gap-4`; `GAP_SPLIT` = `gap-10 md:gap-12`. **Interior panels are content-driven** — only the hero forces viewport height; P2–P7 size to their content, so the two-colour band edge is the section separator and no viewport-fill dead space remains.
 - Grid width: `GRID` = `max-w-7xl px-5 md:px-8` (was `max-w-6xl px-6 md:px-10`) — wider content, less side padding, matching the less-boxed Levels/Oura/Whoop feel.
 
 In code: the grid and shared primitives live in [app/sections/system.js](app/sections/system.js) (`GRID`, `Contained`, `HumanPlaceholder`, `Eyebrow`, `HEADLINE_DISPLAY`/`HEADLINE_STEPPED`, `--prism-radius`, `IS_LAUNCHED`). Every panel composes from them — never restyle margins/gutters/headline-scale per panel.

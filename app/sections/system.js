@@ -17,19 +17,23 @@ export const GRID = "mx-auto w-full max-w-7xl px-5 md:px-8";
 // Sizes bumped up to compensate for the lighter medium weight; tracking
 // tightened. Tracking travels with the size token so it can't be
 // dropped or double-set per panel.
-export const HEADLINE_DISPLAY = "text-[clamp(2.6rem,6vw,4.9rem)] tracking-[-0.025em]";
-export const HEADLINE_STEPPED = "text-[clamp(2.1rem,4.8vw,3.9rem)] tracking-[-0.025em]";
+// Tracking tightened (was -0.025em) — the loose default left large word
+// gaps at display size ("ARE YOUR"). Travels with the size token.
+export const HEADLINE_DISPLAY = "text-[clamp(2.6rem,6vw,4.9rem)] tracking-[-0.04em]";
+export const HEADLINE_STEPPED = "text-[clamp(2.1rem,4.8vw,3.9rem)] tracking-[-0.04em]";
 
 // Supporting/body copy: lighter weight, comfortable size — thinner and
 // larger reads calmer. Colour (contrast) is set per mode at call site.
 export const BODY_TEXT = "font-light leading-relaxed text-[clamp(1.1rem,1.6vw,1.3rem)]";
 
-// Vertical rhythm — tighter/denser than before (Levels/Whoop), so each
-// panel reads as one connected unit. GAP_STACK = intra-panel element
-// gap (eyebrow→headline→support→content); GAP_SPLIT = between the two
-// columns of a split panel.
-export const PANEL_PAD = "py-16 md:py-24";
-export const GAP_STACK = "gap-5";
+// Vertical rhythm — Levels-precision density. Panel padding cut ~50%
+// (was py-16 md:py-24) AND interior panels are content-driven (no
+// forced viewport height) — the two-colour band edge is the section
+// separator, so tight padding is enough. GAP_STACK = intra-panel
+// element gap (eyebrow→headline→support→content); GAP_SPLIT = between
+// split columns.
+export const PANEL_PAD = "py-8 md:py-12";
+export const GAP_STACK = "gap-4";
 export const GAP_SPLIT = "gap-10 md:gap-12";
 
 // §4 Panel 6: THE launch flag. Flipping this swaps the waitlist block

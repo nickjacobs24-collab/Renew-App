@@ -22,9 +22,11 @@ body {
 
 .font-display {
   font-family: var(--font-display), system-ui, sans-serif;
-  /* Global-refinement round: ONE display weight, every headline —
-     medium, not black. Large-and-lighter premium feel. */
-  font-weight: 500;
+  /* ONE display weight, every headline — regular (400), the lightest of
+     the large-and-lighter Oura/Levels register. Dropped from 500 after
+     the medium still read heavier than the reference (uppercase reads
+     denser than Levels' sentence-case, so it needs the lighter weight). */
+  font-weight: 400;
 }
 
 /* Panel entrance — one subtle fade-rise on load, staggered via delay. */

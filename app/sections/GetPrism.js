@@ -50,7 +50,6 @@ export default function GetPrism() {
   return (
     <section
       id="get-prism"
-      className="flex min-h-[80vh] items-center"
       style={{ background: "var(--prism-cream)", color: INK }}
     >
       <div
