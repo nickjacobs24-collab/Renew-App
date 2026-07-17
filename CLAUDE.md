@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Delete pass done (approved cut executed on `rebuild`; site builds clean). Next: rebuilding beats — start with the §8.8 motion proof on the pinned-phone sequence. Then: preview iteration → cutover. Update this line as phases complete. Do not re-run completed phases.**
+**STATUS: §8.8 motion proof built (Beats 3–6 pinned sequence + Beat 2 lead-in, on `rebuild`). Awaiting founder judgement on the Vercel preview — fps must be verified on real hardware there before other beats build. Then: remaining beats → preview iteration → cutover. Update this line as phases complete. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -214,6 +214,7 @@ What exists now:
 4. **Integration list is unconfirmed (§4 Beat 3).** **APPLE WATCH | WHOOP | OURA | GARMIN** is a factual claim and needs confirming before ship.
 5. **FAQ copy is founder-supplied (§4 Beat 9).** Placeholders only, plus the two product-truth checks (wearable required or not; day-14 answer).
 6. **Vercel-side cleanup after merge (founder-side, not repo work):** retire the MailerSend integration and its env vars, `DATABASE_URL`, `NEXTAUTH_*`, `GOOGLE_CLIENT_*`. Only `AIRTABLE_TOKEN` (and any analytics var) remains needed. Flag, don't touch — the dashboard is the founder's.
+7. **Motion proof — judge on the preview (§8.8).** Approach: CSS `position: sticky` pin + framer-motion scroll-linked transforms, compositor-only (opacity/transform). The 60fps claim is construction-level so far; **measure on real hardware on the preview before building other beats.** In-situ calls made as best-candidates in `app/sections/PinnedPhoneSequence.js`: Beat 3's six elements staggered (not merged); canvas gradient runs continuously down the page (per-beat ramp not tried); scroll gearing via the `BAND` map on a 700vh runway (Beat 4 has the largest share); bubble and annotation placement. All tunable in that one file. The Beat 2 bridge is included as scaffold lead-in (locked copy, no bottle transition yet).
 
 ### Logged app-side questions (not website work)
 
