@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Visual slot map recorded (§2.3, LOCKED) — every panel now carries a correctly-shaped, clearly-labelled placeholder stating exactly what goes there (hero background video, P2 human/atmospheric-no-product, P3/P4 real screens with P4's v2 animated-proof-line upgrade marked, P5 human+Prism-UI hybrid). No imagery sourced/generated. Full page on `rebuild`. Outstanding before ship: hero footage, P2 image, P4 v2 animation, P5 imagery, OG image, FAQ answers, Privacy/Terms pages, disclaimer, integration-list confirmation, launch swap. Do not re-run completed phases.**
+**STATUS: Spacing restored to the P6/P7 rhythm (PANEL_PAD py-16 md:py-24, global). Visual slot map §2.3 updated to the Robinhood/Mercury-restraint approach: P2/P5 abstract-not-human, P3 close-paired robin-hood-4, P4 centred soft-glow card (robin-hood-2, kept on cream — band flag), P6 three-image row. Device frames angled + soft shadow. Rules locked: no fabricated social proof; frames never flat. Full page on `rebuild`. Outstanding before ship: all visuals (video, P2/P5/P6 imagery, P4 v2 animation), OG image, FAQ answers, Privacy/Terms, disclaimer, integration list, launch swap. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -75,17 +75,21 @@ Composition map (P5-round revision — FINAL): **Centred: P1 ONLY** (over the di
 
 ### 2.3 Visual slot map (visuals round — LOCKED; placeholders only until then)
 
-For each panel, a correctly-shaped, clearly-labelled placeholder states exactly what goes there. **Do not source or generate imagery outside the visuals round.** All human imagery = licensed photography sourced in that round.
+**Taste filter for ALL visuals: CALM, not shouty (Robinhood/Mercury restraint). Green used sparingly, never a loud fill.** Do not source or generate imagery outside the visuals round; all human imagery = licensed photography.
 
-- **P1 Hero** — full-bleed **BACKGROUND VIDEO** behind the centred text (dimmed, health/supplement-aligned, atmospheric). Slot in `HeroVideo.js`; on-screen marker "HERO BACKGROUND VIDEO — TBD". **v1 may ship on the gradient alone.**
-- **P2 Problem** — visual slot with the text: **HUMAN or ATMOSPHERIC image** (the frustration/problem mood). **NOT a product screen, NOT an animation — the product must NOT appear here** (this panel states the problem before the solution). Shape: the locked landscape (full-width, below the text — see §4 P2). Marker: "P2 — Human / atmospheric image — TBD (no product)".
-- **P3 How It Works** — real app screen **HOME** (`Home.png`) in a device frame, beside text. **FILLED** (real asset, not a placeholder).
-- **P4 Evidence** — real app screen **sleep chart** (`Progress 1.png`) in a device frame. **v1 = static, FILLED.** **v2 UPGRADE = ANIMATED proof line** (line climbing, Magnesium marker, the change revealing). **This is the ONLY product animation on the page** — it lives here because this is the proof payoff. Marked at the slot in `Proof.js`.
-- **P5 Promise** — three cards: **HUMAN + carved-out real PRISM UI fragment + label** (your body / your goals / your results). Placeholders present; marker "Human + Prism UI — TBD".
-- **P6 Get Prism** — no imagery.
+- **P1 Hero** — full-bleed dimmed **BACKGROUND VIDEO** behind the centred text. Ships on the gradient for v1. Marker "HERO BACKGROUND VIDEO — TBD".
+- **P2 Problem** — a **SHAPE / ABSTRACT / REPRESENTATIVE image** framing the problem or its complexity. **NOT human, NOT a product screen.** Calm, black-green world. Full-width landscape below the text (§4). Marker "P2 — Abstract image framing the problem — TBD".
+- **P3 How It Works** — real **HOME** screen in a device frame (locked asset). Layout = **robin hood 4**: phone LEFT pulled toward centre, large + slightly angled; text RIGHT toward centre; the two paired **CLOSE** (narrower centred container, not edge-to-edge).
+- **P4 Evidence** — layout = **robin hood 2**: phone in a **soft-glow contained card, CENTRED**, device slightly angled. Real sleep chart (`Progress 1.png`) inside as **v1 placeholder**, marked on-screen "P4 — v1 static chart / to be replaced by live animation". **v2 = live proof animation in the same frame** (the ONLY product animation on the page — the proof payoff). **Band flag:** robin hood 2 is on black; P4 is kept on its CREAM band to preserve the alternating chaptering (dark P4 would make P3/P4/P5 three consecutive darks). Flip to dark only on founder confirmation.
+- **P5 Promise** — three cards (layout locked): images **REPRESENTATIVE / ABSTRACT, Mercury-style, NOT human**. Labels your body / your goals / your results. Marker "Representative / abstract — TBD (not human)".
+- **P6 Get Prism** — **robin hood 3** three-image layout: three labelled image placeholders (marker "P6 — Image — TBD") added below the waitlist form. **Flag:** the supplied robin hood 3 crop showed only a centred header (with fabricated "27 million" social proof we must NOT copy); the three-image row is built to the written description.
 - **P7 FAQ + Footer** — no imagery.
 
-**Visual type language for the round:** the primary language is **PRODUCT SCREENS** (P3, P4). **HUMANS are secondary** (P2, P5). Where human + product co-occur (P5), the product appears **only as a carved fragment of the real Prism UI — never fabricated**. Human imagery is licensed photography.
+**Visual type language for the round:** primary = **PRODUCT SCREENS** (P3, P4). **HUMANS secondary** — but per this round P2 and P5 are **abstract/representative, not human** (human photography deferred). Where human + product ever co-occur, product = carved real Prism UI fragment, never fabricated. Human imagery = licensed photography.
+
+**Locked rules (visuals round):**
+- **No fabricated social proof** — no testimonials, member counts, or stat percentages until real data exists (post-launch). Verified: none on the page.
+- **Device frames sit slightly angled with soft shadow/glow — never flat or floating.**
 
 In code: the grid and shared primitives live in [app/sections/system.js](app/sections/system.js) (`GRID`, `Contained`, `HumanPlaceholder`, `Eyebrow`, `HEADLINE_DISPLAY`/`HEADLINE_STEPPED`, `--prism-radius`, `IS_LAUNCHED`). Every panel composes from them — never restyle margins/gutters/headline-scale per panel.
 

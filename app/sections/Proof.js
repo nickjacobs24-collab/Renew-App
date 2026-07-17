@@ -1,15 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  GRID,
-  PANEL_PAD,
-  Eyebrow,
-  Contained,
-  HEADLINE_STEPPED,
-  GAP_STACK,
-  GAP_SPLIT,
-} from "./system";
+import { GRID, PANEL_PAD, Eyebrow, HEADLINE_STEPPED } from "./system";
 
 /*
  * Panel 4 — PROOF (§4, LIGHT). Split panel per §2.2: copy one side,
@@ -34,62 +26,55 @@ export default function Proof() {
 
   return (
     <section style={{ background: "var(--prism-cream)", color: INK }}>
+      {/* robin hood 2 layout: centred text, then the phone in a
+          soft-glow contained card, centred. (Kept on the cream band to
+          preserve the alternating chaptering — see CLAUDE.md flag.) */}
       <div
-        className={`${GRID} ${PANEL_PAD} grid items-center ${GAP_SPLIT} md:grid-cols-2`}
+        className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-10 text-center`}
       >
-        {/* Copy side */}
-        <div className={`flex flex-col items-start ${GAP_STACK} text-left`}>
-          <motion.div {...enter()}>
-            <Eyebrow mode="light">The evidence</Eyebrow>
-          </motion.div>
+        <motion.div {...enter()}>
+          <Eyebrow mode="light">The evidence</Eyebrow>
+        </motion.div>
 
-          <motion.h2
-            {...enter(0.06)}
-            className={`font-display uppercase leading-[1.0] ${HEADLINE_STEPPED}`}
-            style={{ color: INK }}
-          >
-            See what&rsquo;s working
-            <br />
-            and what&rsquo;s <span style={{ color: ACCENT }}>not</span>
-          </motion.h2>
-        </div>
-
-        {/* Visual side — the sleep-chart screen, contained-card
-            treatment: grounded, subtle shadow, deliberate scale.
-            Screen contents never altered.
-            VISUALS ROUND — P4 slot: v1 = this static Progress 1.png.
-            v2 UPGRADE = animated proof line (line climbing, Magnesium
-            marker, change revealing). This is the ONLY product
-            animation on the page — it lives here, the proof payoff. */}
-        <motion.figure
-          {...enter(0.14)}
-          className="flex flex-col items-center gap-4 justify-self-center md:justify-self-end"
+        <motion.h2
+          {...enter(0.06)}
+          className={`font-display uppercase leading-[1.0] ${HEADLINE_STEPPED}`}
+          style={{ color: INK }}
         >
-          <Contained
-            mode="light"
-            className="flex items-end justify-center px-10 pt-10"
-          >
+          See what&rsquo;s working
+          <br />
+          and what&rsquo;s <span style={{ color: ACCENT }}>not</span>
+        </motion.h2>
+
+        {/* Soft-glow contained card, phone centred inside, bleeds off the
+            bottom (robin hood 2). Device slightly angled, soft shadow.
+            VISUALS ROUND — P4 slot: v1 = this static Progress 1.png;
+            v2 UPGRADE = live proof animation in the same frame (line
+            climbing, Magnesium marker). The ONLY product animation on
+            the page — the proof payoff. Screen contents never altered. */}
+        <motion.figure {...enter(0.14)} className="flex flex-col items-center gap-4">
+          <div className="relative flex w-[min(90vw,420px)] justify-center overflow-hidden rounded-[2.4rem] bg-gradient-to-b from-black/[0.06] to-black/[0.02] px-10 pt-12 shadow-[0_40px_100px_rgba(20,20,15,0.22)] ring-1 ring-black/10">
             <div
-              className="relative rounded-t-[2.6rem] border border-b-0 border-black/10 bg-black p-[6px] pb-0 shadow-[0_18px_50px_rgba(20,20,15,0.18)]"
-              style={{
-                aspectRatio: "853 / 1600",
-                height: "min(58vh, 500px)",
-              }}
+              className="relative rotate-[-2deg] rounded-t-[2.4rem] border border-b-0 border-black/15 bg-black p-[6px] pb-0 shadow-[0_20px_60px_rgba(20,20,15,0.28)]"
+              style={{ aspectRatio: "853 / 1500", height: "min(56vh, 480px)" }}
             >
-              <div className="relative h-full w-full overflow-hidden rounded-t-[2.2rem]">
+              <div className="relative h-full w-full overflow-hidden rounded-t-[2.1rem]">
                 <Image
                   src="/screens/progress.png"
                   alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
                   fill
-                  sizes="(max-width: 768px) 70vw, 300px"
+                  sizes="(max-width: 768px) 80vw, 320px"
                   className="object-cover object-top"
                 />
               </div>
             </div>
-          </Contained>
+          </div>
           <figcaption className="text-sm text-[#14140f]/80">
             Two-week rolling average against your baseline.
           </figcaption>
+          <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-[#14140f]/45">
+            P4 — v1 static chart / to be replaced by live animation
+          </span>
         </motion.figure>
       </div>
     </section>

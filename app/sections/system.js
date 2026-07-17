@@ -32,7 +32,10 @@ export const BODY_TEXT = "font-light leading-relaxed text-[clamp(1.1rem,1.6vw,1.
 // separator, so tight padding is enough. GAP_STACK = intra-panel
 // element gap (eyebrow→headline→support→content); GAP_SPLIT = between
 // split columns.
-export const PANEL_PAD = "py-8 md:py-12";
+// PANEL_PAD restored to the P6/P7 rhythm — py-8/12 crammed content
+// against the top edge. Content-driven panels + this padding = composed,
+// not the earlier viewport-forced over-spacing.
+export const PANEL_PAD = "py-16 md:py-24";
 export const GAP_STACK = "gap-4";
 export const GAP_SPLIT = "gap-10 md:gap-12";
 

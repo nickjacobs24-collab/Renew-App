@@ -1,7 +1,14 @@
 "use client";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow, IS_LAUNCHED, GAP_STACK } from "./system";
+import {
+  GRID,
+  PANEL_PAD,
+  Eyebrow,
+  IS_LAUNCHED,
+  GAP_STACK,
+  HumanPlaceholder,
+} from "./system";
 
 /*
  * Panel 6 — GET PRISM (§4, LIGHT). Stacked: header above, form below.
@@ -111,6 +118,23 @@ export default function GetPrism() {
             Something went wrong. Please try again.
           </p>
         )}
+
+        {/* robin hood 3 three-image layout — labelled placeholders.
+            (The supplied ref crop showed only the centred header; built
+            to the written description — see CLAUDE.md flag.) */}
+        <motion.div
+          {...enter(0.2)}
+          className="mt-6 grid w-full grid-cols-1 gap-5 sm:grid-cols-3"
+        >
+          {[0, 1, 2].map((i) => (
+            <HumanPlaceholder
+              key={i}
+              mode="light"
+              marker="P6 — Image — TBD"
+              className="aspect-[4/3]"
+            />
+          ))}
+        </motion.div>
       </div>
     </section>
   );

@@ -43,24 +43,27 @@ export default function HeresHow() {
         background: "linear-gradient(180deg, #000000 0%, #052605 100%)",
       }}
     >
-      <div
-        className={`${GRID} ${PANEL_PAD} grid items-center ${GAP_SPLIT} md:grid-cols-2`}
-      >
-        {/* Visual — left on desktop, below text on mobile */}
+      {/* robin hood 4: phone LEFT + text RIGHT pulled toward centre and
+          paired close — a narrower centred container inside the wide
+          grid, not edge-to-edge. */}
+      <div className={`${GRID} ${PANEL_PAD}`}>
+       <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-8">
+        {/* Visual — left on desktop, below text on mobile. Slightly
+            angled with soft shadow (never flat/floating). */}
         <motion.div
           {...enter(0.18)}
-          className="order-2 justify-self-center md:order-1 md:justify-self-start"
+          className="order-2 justify-self-center md:order-1 md:justify-self-end"
         >
           <div
-            className="relative rounded-[2.6rem] border border-white/15 bg-black p-[6px] shadow-[0_24px_70px_rgba(0,0,0,0.55)]"
-            style={{ aspectRatio: "853 / 1844", height: "min(60vh, 520px)" }}
+            className="relative rotate-[-3deg] rounded-[2.6rem] border border-white/15 bg-black p-[6px] shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
+            style={{ aspectRatio: "853 / 1844", height: "min(66vh, 580px)" }}
           >
             <div className="relative h-full w-full overflow-hidden rounded-[2.2rem]">
               <Image
                 src="/screens/home.png"
                 alt="Prism Home screen. Sleep at Stage 2, Improving. Immunity at Stage 3, Maintaining."
                 fill
-                sizes="(max-width: 768px) 60vw, 280px"
+                sizes="(max-width: 768px) 66vw, 300px"
                 className="object-cover"
               />
             </div>
@@ -102,6 +105,7 @@ export default function HeresHow() {
             ))}
           </motion.div>
         </div>
+       </div>
       </div>
     </section>
   );
