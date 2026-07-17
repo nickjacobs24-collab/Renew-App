@@ -1,14 +1,13 @@
 import { GRID, Eyebrow } from "./system";
 
 /*
- * Panel 7 — FAQ + FOOTER (§4, LIGHT). Quiet utility: left-aligned
- * narrow accordion (native <details>, closed by default) — arrangement
- * deliberately distinct from Panel 6's centred stack (§2.2 adjacency
- * flag, resolved this way). The six questions are locked; every answer
- * is a marked placeholder — the founder supplies final copy before
- * ship. Footer links: /privacy and /terms do not exist yet (legally
- * required before ship, flagged §11); disclaimer is a marked
- * placeholder, not drafted copy.
+ * Panel 7 — FAQ + FOOTER (§4). DARK per the consolidated band map:
+ * flat black band, white type, sparing green accents on accordion
+ * interactions (the +/× marker turns accent green when open). Footer
+ * sits within this black band. Questions are locked; every answer is
+ * a marked placeholder — founder supplies final copy before ship.
+ * /privacy and /terms do not exist yet (legally required before
+ * ship, flagged §11); disclaimer is a marked placeholder.
  */
 
 const QUESTIONS = [
@@ -23,30 +22,25 @@ const QUESTIONS = [
 const PLACEHOLDER_ANSWER =
   "Placeholder answer — the founder supplies final copy before ship.";
 
-const INK = "var(--prism-ink)";
-
 export default function FaqFooter() {
   return (
-    <section
-      className="pt-24 md:pt-32"
-      style={{ background: "var(--prism-cream-deep)", color: INK }}
-    >
+    <section className="bg-black pt-24 text-white md:pt-32">
       <div className={`${GRID} flex flex-col gap-10 pb-24`}>
-        <Eyebrow mode="light">Common questions</Eyebrow>
+        <Eyebrow mode="dark">Common questions</Eyebrow>
 
-        <div className="max-w-2xl divide-y divide-black/10">
+        <div className="max-w-2xl divide-y divide-white/10">
           {QUESTIONS.map((q) => (
             <details key={q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium md:text-lg">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-white md:text-lg">
                 {q}
                 <span
                   aria-hidden="true"
-                  className="text-[#14140f]/40 transition-transform group-open:rotate-45"
+                  className="text-white/40 transition-transform group-open:rotate-45 group-open:text-[#3AB203]"
                 >
                   +
                 </span>
               </summary>
-              <p className="pt-3 text-[15px] leading-relaxed text-[#14140f]/80">
+              <p className="pt-3 text-[15px] leading-relaxed text-white/80">
                 {PLACEHOLDER_ANSWER}
               </p>
             </details>
@@ -54,21 +48,21 @@ export default function FaqFooter() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-black/10 py-10">
+      {/* Footer — within Panel 7's black */}
+      <footer className="border-t border-white/10 py-10">
         <div
-          className={`${GRID} flex flex-col gap-4 text-sm text-[#14140f]/70 md:flex-row md:items-center md:justify-between`}
+          className={`${GRID} flex flex-col gap-4 text-sm text-white/70 md:flex-row md:items-center md:justify-between`}
         >
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <a href="/privacy" className="hover:text-[#14140f]">
+            <a href="/privacy" className="hover:text-white">
               Privacy
             </a>
-            <a href="/terms" className="hover:text-[#14140f]">
+            <a href="/terms" className="hover:text-white">
               Terms
             </a>
             <a
               href="mailto:nick.jacobs24@gmail.com"
-              className="hover:text-[#14140f]"
+              className="hover:text-white"
             >
               Contact
             </a>

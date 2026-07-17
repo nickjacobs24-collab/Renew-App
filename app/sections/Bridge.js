@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow, Contained } from "./system";
+import { GRID, PANEL_PAD, Eyebrow, HumanPlaceholder } from "./system";
 
 /*
  * Panel 2 — BRIDGE (§4, LIGHT — correction round: was dark statement,
@@ -9,8 +8,8 @@ import { GRID, PANEL_PAD, Eyebrow, Contained } from "./system";
  * weighted, left-aligned in the grid: eyebrow → dominant headline →
  * ONE subordinate support block, lines together, no viewport gaps.
  * Final line takes the green accent treatment per spec.
- * Visual right (Fix 6): straight crop of the real Sleep chart
- * (trend.png from Progress 1.png — stat, markers, trend line).
+ * Visual slot right: HUMAN VISUAL TBD placeholder (consolidated round)
+ * — founder supplies imagery direction; never source or generate.
  */
 
 const INK = "var(--prism-ink)";
@@ -62,21 +61,16 @@ export default function Bridge() {
           </motion.div>
         </div>
 
-        {/* Visual — right: real UI fragment, contained */}
+        {/* Visual slot — right: human imagery placeholder (§4, founder
+            supplies direction; the trend crop was the prior occupant) */}
         <motion.div
           {...enter(0.18)}
           className="justify-self-center md:justify-self-end"
         >
-          <Contained className="w-[min(88vw,440px)] overflow-hidden">
-            <Image
-              src="/screens/trend.png"
-              alt="Prism Sleep chart fragment. Total sleep 8h 12m; a rising trend line with markers where Magnesium, a sleep schedule and screens before bed were started."
-              width={853}
-              height={845}
-              sizes="(max-width: 768px) 88vw, 440px"
-              className="h-auto w-full"
-            />
-          </Contained>
+          <HumanPlaceholder
+            mode="light"
+            className="aspect-[4/5] w-[min(80vw,420px)]"
+          />
         </motion.div>
       </div>
     </section>

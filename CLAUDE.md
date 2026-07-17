@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Correction round applied (Fixes 1–6: hero gradient, bridge hierarchy rebuild, revised mode map with cream depths, alternating splits, brand row, bridge visual slot). Full seven-panel page rebuilt to the revised spec and pushed to `rebuild`. Preview iteration: founder judges. Outstanding before ship: hero bottle extraction (PDF p.1), FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap (IS_LAUNCHED). Do not re-run completed phases.**
+**STATUS: Consolidated polish + layout round applied — FINAL two-colour band map (D·C·D·C·D·C·D), composition map (centred P1/P5/P6, alternating splits P2–P4, P7 list), visual slots with HUMAN VISUAL TBD markers (P2 + P5×3), P5 final copy. Full page on `rebuild`, preview iteration continues. Outstanding before ship: hero bottle extraction (PDF p.1), human imagery direction, FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap (IS_LAUNCHED). Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -25,7 +25,7 @@ The website sells a new capability, not an app. Its one job: make this belief la
 - One continuous scrollable page built as **self-contained panels** — the App Store model on a webpage. Not a multi-page site.
 - Each panel: full-width colour band, one message, one headline moment, self-contained like an App Store card. **No pinning, no scroll-driven screen swapping, no content morphing.** Story through logical sequence, not linkage.
 - **Two-mode chaptering (correction, 2026-07-17 — supersedes the single continuous dark canvas, which was wrong):** the page is chaptered by alternating **LIGHT** and **DARK** panel modes, colour doing the section separation — no divider lines. DARK = the black → deep-green gradient (`#000000` → `#0A3C0A`) with white type. LIGHT = soft cream (not pure white) with near-black type. Green `#3AB203` is an ACCENT in both modes (headline accent words, small elements) and is **never a background colour**.
-- **Mode map (correction round 2026-07-17, Fix 3 — supersedes the earlier map):** P1 Hero DARK (corrected gradient) · P2 Bridge LIGHT · P3 How It Works LIGHT · P4 Proof LIGHT · P5 Trust DARK · P6 Get Prism LIGHT · P7 FAQ+footer LIGHT. Each band edge must be unmistakable. **Adjacent light panels separate via two cream depths** (`--prism-cream` / `--prism-cream-deep`, closest-match call, flagged §11): P2 cream · P3 deep · P4 cream · P6 cream · P7 deep.
+- **Band map (consolidated round 2026-07-17 — FINAL; supersedes all earlier maps): two colours only.** DARK = black→`#0A3C0A` fade. CREAM = one exact value (`#F7F2E8`), identical in every light band — no other background values. P1 Hero DARK · P2 Problem CREAM · P3 How It Works DARK · P4 Evidence CREAM · P5 Promise DARK · P6 Get Started CREAM · P7 Questions DARK (black band, white type, sparing green accents on accordion interactions; the footer sits within P7's black). The two-cream-depth mechanism is dead — perfect alternation makes it unnecessary.
 - **Contrast rule:** no washed grey secondary text. Supporting copy is high-contrast in both modes (near-white on dark, near-black on cream). Every line clearly legible.
 - Panels transition at clean band edges — built as **hard colour changes** (closest-match call, flagged; a very short fade is the alternative if the hard cut reads harsh on preview).
 - Panel grammar (from Levels/Oura): small-caps eyebrow label (**REQUIRED on every panel except the hero** — quiet, above the headline, naming the section's job; same treatment in both modes) → large display headline (green accent word where locked) → short supporting copy → content. Generous vertical air. Alternating composition where a panel has a visual.
@@ -49,7 +49,9 @@ What may appear:
 
 Never: photography of people or nature, stock imagery, generated imagery.
 
-**Screens allowance (correction round, Fix 4 — lifts the one-screen restriction):** real App Store screens from `brief-assets/` may appear **contained in device frames as split-panel supporting visuals**, Levels-style. In use: `Home.png` (Panel 3), `Progress 1.png` (Panel 4), and the `trend.png` crop of Progress 1 (Panel 2). Crops must remain straight viewport crops of real screens.
+**Screens allowance (correction round, Fix 4 — lifts the one-screen restriction):** real App Store screens from `brief-assets/` may appear **contained in device frames as split-panel supporting visuals**, Levels-style. In use: `Home.png` (Panel 3), `Progress 1.png` (Panel 4). Crops must remain straight viewport crops of real screens. (The `trend.png` crop was retired by the consolidated round — P2's slot holds a human-imagery placeholder instead.)
+
+**Human imagery (consolidated round):** two placeholder sites — P2's visual slot, and a strip of three under P5's strap (your body / your goals / your results) — rendered as grey blocks labelled "HUMAN VISUAL TBD". Founder supplies direction later. Never source or generate imagery.
 
 ### 2.2 Composition system (addendum — how things are arranged)
 
@@ -62,8 +64,7 @@ A small fixed layout vocabulary, varied across panels so **no two consecutive pa
 
 System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow (required except hero) → headline → support → content.
 
-Current assignments (correction round — alternating splits per the reference sites, Fix 4):
-P1 Stacked (headline above, bottles below — bottles float as a cut-out asset, not a contained visual) · P2 **Split, text left / visual right** (trend crop) · P3 **Split, visual left / text right** (Home.png in device frame) · P4 Split, text left / visual right (Progress frame) · P5 Statement · P6 Stacked (header above, centred form below) · P7 utility (left-aligned narrow accordion + footer). Split sides alternate down the page. **P6/P7 adjacency resolved:** P7 is a left-aligned utility list, visually distinct from P6's centred stack.
+Composition map (consolidated round — FINAL): **Centred:** P1, P5, P6 (hero and promise are the page's centred statement moments; Get Started centres as a conversion block). **Split alternating:** P2 text LEFT / visual right · P3 text RIGHT / visual left · P4 text LEFT / visual right. **P7:** left-aligned questions list. Every split panel has a visual slot opposite its text.
 
 In code: the grid and container primitives live in [app/sections/system.js](app/sections/system.js) (`GRID` container class, `Contained` wrapper, `--prism-radius` token). Every panel composes from them — never restyle margins/gutters per panel.
 
@@ -126,9 +127,9 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 - Levels text hierarchy, ONE coherent left-aligned text unit, headline-weighted, no viewport gaps:
   - Headline (large, dominant): **Are your supplements making a difference?**
   - ONE supporting block directly beneath, lines together, clearly subordinate in size: **The only way to check was a blood test. Expensive, complicated, hard to understand.** followed by **The answer has been on your wrist all along.** — the final line takes the green accent treatment.
-- Visual slot right (Fix 6): built with the `trend.png` straight crop of the Sleep chart (stat + markers + trend line) — proposed candidate, founder judges; the bottles crop was the alternative.
+- Visual slot right (consolidated round): **HUMAN VISUAL TBD placeholder**, clearly marked, correct proportions — founder supplies imagery direction. (The trend crop previously here is retired; regenerate from `Progress 1.png` if ever wanted.)
 
-### Panel 3 — HOW IT WORKS (LIGHT, deep-cream band — correction round Fix 4 rebuild)
+### Panel 3 — HOW IT WORKS (DARK — consolidated band map)
 
 - Eyebrow (the section's small label): **HOW IT WORKS**
 - **The HERE'S HOW headline is DELETED** (it answered its own question — do not reinstate).
@@ -142,23 +143,18 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 - Eyebrow: **THE EVIDENCE**
 
 - Headline pair: **SEE WHAT'S WORKING** then **AND WHAT'S NOT** (green: NOT)
-- `Progress 1.png` in a device frame — the dark app screen contained against the cream ground, **supporting the panel Levels-style, not filling it.** Split: text left / visual right (sides alternate from Panel 3).
+- `Progress 1.png` in a device frame — **contained-card treatment: grounded (device rises from the card's bottom edge), subtle shadow, deliberate scale.** Never alter screen contents (edge-cropping by the card is containment, not alteration). Split: text left / visual right.
 - Small annotation near the chart: **Two-week rolling average against your baseline.**
 - Rule: app-screen copy is never edited on the website. If a line inside a real screen trips a copy rule, flag it as an app question. Do not patch it on the site.
 
-### Panel 5 — TRUST (DARK — locked copy)
+### Panel 5 — TRUST (DARK, centred — FINAL copy, consolidated round)
 
 - Eyebrow: **OUR PROMISE**
-
-- Typography panel. Headline pair: **WE DON'T SELL SUPPLEMENTS** / **WE SHOW YOU THE EVIDENCE** (green: EVIDENCE)
-- Elaboration stanzas, exact copy:
-
-> Supplements are sold with sales and marketing. Studies on someone else, somewhere else. Not you. Not your data.
-> So how can you be sure it's working?
-> Prism shows you what's changing, using your data.
-> No more guessing. Just evidence, from your body.
-
-- Strap, small caps: **YOUR BODY | YOUR GOALS | YOUR RESULTS**
+- Headline pair: **WE DON'T SELL SUPPLEMENTS** / **WE SHOW YOU THE EVIDENCE** (green: EVIDENCE) — re-broken so "THE" never orphans before EVIDENCE (non-breaking space).
+- Elaboration is **ONE paragraph**, exact: **Supplements are sold with sales and marketing. Studies on someone else, somewhere else. Not you. Not your data. So how can you be sure it's working? Prism just shows you what's changing, using your data.**
+- **"No more guessing. Just evidence, from your body." is DELETED** — Panel 6's header is the only "no more guessing" on the page.
+- Strap, small caps: **YOUR BODY | YOUR GOALS | YOUR RESULTS** — with the three HUMAN VISUAL TBD markers beneath (§2.1).
+- Narrower measure; less dead space above the eyebrow.
 
 ### Panel 6 — GET PRISM (LIGHT)
 
@@ -169,7 +165,7 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 - At launch this block swaps to: App Store badge dominant; pricing cards beneath — annual £49.99 highlighted with 7-day free trial flagged and the honest arithmetic shown (£4.17/month, billed annually); monthly £6.99 secondary. No urgency language.
 - Nav "Join waitlist" item swaps to the App Store link at launch. Build the swap as **one flag, not scattered edits**.
 
-### Panel 7 — FAQ + FOOTER (LIGHT)
+### Panel 7 — FAQ + FOOTER (DARK — black band, white type, sparing green accents on accordion interactions)
 
 - Eyebrow: **COMMON QUESTIONS**
 
@@ -202,7 +198,7 @@ The steps section (Tell us what you take / Review your plan / Track your results
 
 ### Collision checks (judge on the preview, resolve in situ)
 
-1. "No more guessing" appears in the Panel 5 elaboration and in the locked Panel 6 header. **Build as-is; founder resolves on preview** (final-structure decision).
+1. ~~The "No more guessing" repeat~~ — resolved by the consolidated round: the Panel 5 closing line is deleted; the Panel 6 header is the only "no more guessing" on the page.
 2. ~~The Panel 2 / Panel 5 "working" echo~~ — resolved: the final Panel 2 copy opens with "making a difference", the echo is gone.
 
 ## 6. Delete list (everything web-first-product era)
@@ -281,7 +277,9 @@ What exists now:
 13. **Drafted UI microcopy in Panel 6 (not locked §4 copy — founder approves):** placeholder "Email address", submitting "Joining…", success "You're on the list.", error "Something went wrong. Please try again."
 14. **Footer is placeholder-grade:** `/privacy` and `/terms` links 404 until those pages are written (legally required before ship); Contact is a mailto to the founder's address (carried from the old site — confirm); the medical disclaimer renders as a marked placeholder, not drafted copy; "© 2026 Prism" is not yet rendered — add with the legal pages.
 
-15. **Correction-round closest-match calls (judge on preview):** two cream depths (`#F7F2E8` / `#EFE8D9`) separate adjacent light bands; the bridge visual is the `trend.png` crop (bottles crop was the alternative — swap is one line); the bridge's final accent line sits at ~2.5:1 on cream (same §11.11 question as Panel 4's NOT); brand row wordmarks are TEXT approximations (weight/tracking styling per brand, ŌURA with macron) — official logo SVGs cannot be rendered accurately from code and were not fabricated; swap in licensed assets when supplied. Levels-style hierarchy applied: headline dominant, support subordinate, left-aligned units.
+15. **Brand row wordmarks are TEXT approximations** (weight/tracking styling per brand, ŌURA with macron) — official logo SVGs cannot be rendered accurately from code and were not fabricated; swap in licensed assets when supplied. Now on P3's dark band.
+16. **Consolidated-round notes (judge on preview):** the two-cream-depth mechanism and the trend-crop bridge visual are dead (superseded); the bridge's final accent line still sits at ~2.5:1 on cream (same §11.11 question); P4's grounded device rises from its card's bottom edge (containment, not content alteration); P7's accordion marker turns accent green on open — the "sparing green accents on interactions" call.
+17. **Human imagery pending founder direction** — P2 slot and P5 strip render HUMAN VISUAL TBD blocks; never source or generate imagery.
 
 ### Logged app-side questions (not website work)
 

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow } from "./system";
+import { GRID, PANEL_PAD, Eyebrow, Contained } from "./system";
 
 /*
  * Panel 4 — PROOF (§4, LIGHT). Split panel per §2.2: copy one side,
@@ -49,28 +49,35 @@ export default function Proof() {
           </motion.h2>
         </div>
 
-        {/* Visual side — the one full app screen on the site */}
+        {/* Visual side — the sleep-chart screen, contained-card
+            treatment: grounded, subtle shadow, deliberate scale.
+            Screen contents never altered. */}
         <motion.figure
           {...enter(0.14)}
           className="flex flex-col items-center gap-4 justify-self-center md:justify-self-end"
         >
-          <div
-            className="relative rounded-[2.6rem] border border-black/10 bg-black p-[6px] shadow-[0_24px_70px_rgba(20,20,15,0.28)]"
-            style={{
-              aspectRatio: "853 / 1844",
-              height: "min(64vh, 560px)",
-            }}
+          <Contained
+            mode="light"
+            className="flex items-end justify-center px-10 pt-10"
           >
-            <div className="relative h-full w-full overflow-hidden rounded-[2.2rem]">
-              <Image
-                src="/screens/progress.png"
-                alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
-                fill
-                sizes="(max-width: 768px) 70vw, 300px"
-                className="object-cover"
-              />
+            <div
+              className="relative rounded-t-[2.6rem] border border-b-0 border-black/10 bg-black p-[6px] pb-0 shadow-[0_18px_50px_rgba(20,20,15,0.18)]"
+              style={{
+                aspectRatio: "853 / 1600",
+                height: "min(58vh, 500px)",
+              }}
+            >
+              <div className="relative h-full w-full overflow-hidden rounded-t-[2.2rem]">
+                <Image
+                  src="/screens/progress.png"
+                  alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
+                  fill
+                  sizes="(max-width: 768px) 70vw, 300px"
+                  className="object-cover object-top"
+                />
+              </div>
             </div>
-          </div>
+          </Contained>
           <figcaption className="text-sm text-[#14140f]/80">
             Two-week rolling average against your baseline.
           </figcaption>

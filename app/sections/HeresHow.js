@@ -4,17 +4,12 @@ import { motion, useReducedMotion } from "framer-motion";
 import { GRID, PANEL_PAD, Eyebrow } from "./system";
 
 /*
- * Panel 3 — HOW IT WORKS (§4, LIGHT, deep-cream band). Correction
- * round: the HERE'S HOW headline is DELETED (it answered its own
- * question) — "HOW IT WORKS" is the section's small label and
- * "Based on your health data" carries headline weight. Split with the
- * visual LEFT (sides alternate down the page): Home.png in a device
- * frame — the screens-as-split-visuals allowance (§2.1, restriction
- * lifted). Brand row (Fix 5): text-based wordmark styling only — no
- * fabricated logos; swap for licensed SVGs when supplied.
+ * Panel 3 — HOW IT WORKS (§4). DARK band (consolidated round band
+ * map). Split: visual LEFT (Home.png in device frame, §2.1 screens
+ * allowance) / text RIGHT, with the wearable brand row beneath the
+ * text. Brand row is text-styled wordmarks only — no fabricated
+ * logos; swap for licensed SVGs when supplied.
  */
-
-const INK = "var(--prism-ink)";
 
 const BRANDS = [
   { name: "APPLE WATCH", cls: "font-medium tracking-[0.1em]" },
@@ -37,7 +32,9 @@ export default function HeresHow() {
     <section
       id="how-it-works"
       className="flex min-h-screen items-center"
-      style={{ background: "var(--prism-cream-deep)", color: INK }}
+      style={{
+        background: "linear-gradient(180deg, #000000 0%, #052605 100%)",
+      }}
     >
       <div
         className={`${GRID} ${PANEL_PAD} grid items-center gap-14 md:grid-cols-2 md:gap-12`}
@@ -48,7 +45,7 @@ export default function HeresHow() {
           className="order-2 justify-self-center md:order-1 md:justify-self-start"
         >
           <div
-            className="relative rounded-[2.6rem] border border-black/10 bg-black p-[6px] shadow-[0_24px_70px_rgba(20,20,15,0.28)]"
+            className="relative rounded-[2.6rem] border border-white/15 bg-black p-[6px] shadow-[0_24px_70px_rgba(0,0,0,0.55)]"
             style={{ aspectRatio: "853 / 1844", height: "min(60vh, 520px)" }}
           >
             <div className="relative h-full w-full overflow-hidden rounded-[2.2rem]">
@@ -66,25 +63,24 @@ export default function HeresHow() {
         {/* Text — right */}
         <div className="order-1 flex flex-col gap-6 md:order-2">
           <motion.div {...enter()}>
-            <Eyebrow mode="light">How it works</Eyebrow>
+            <Eyebrow mode="dark">How it works</Eyebrow>
           </motion.div>
 
           <motion.h2
             {...enter(0.06)}
-            className="font-display uppercase leading-[0.98] tracking-[-0.01em] text-[clamp(2.1rem,4.8vw,3.9rem)]"
-            style={{ color: INK }}
+            className="font-display uppercase leading-[0.98] tracking-[-0.01em] text-white text-[clamp(2.1rem,4.8vw,3.9rem)]"
           >
             Based on your health data
           </motion.h2>
 
           <motion.p
             {...enter(0.14)}
-            className="max-w-xl text-[#14140f]/80 text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed"
+            className="max-w-xl text-white/90 text-[clamp(1.05rem,2vw,1.3rem)] leading-relaxed"
           >
             Cost-effective. Simple. Easy to understand.
           </motion.p>
 
-          {/* Fix 5: the wearable strip as a designed brand row */}
+          {/* Wearable brand row */}
           <motion.div
             {...enter(0.22)}
             className="mt-4 flex flex-wrap items-center gap-x-10 gap-y-4"
@@ -92,7 +88,7 @@ export default function HeresHow() {
             {BRANDS.map((brand) => (
               <span
                 key={brand.name}
-                className={`text-sm text-[#14140f]/70 ${brand.cls}`}
+                className={`text-sm text-white/75 ${brand.cls}`}
               >
                 {brand.name}
               </span>

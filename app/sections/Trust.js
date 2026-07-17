@@ -1,22 +1,18 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow } from "./system";
+import { GRID, Eyebrow, HumanPlaceholder } from "./system";
 
 /*
- * Panel 5 — TRUST (§4, DARK, locked copy). Statement panel: pure
- * typography on the deep band. Elaboration set as stanzas with air,
- * not a paragraph. Strap in small caps, plain (deliberately not the
- * pill treatment — that belongs to the wearable strip).
+ * Panel 5 — TRUST / OUR PROMISE (§4, DARK, centred statement; final
+ * copy from the consolidated round). Elaboration is ONE paragraph.
+ * Headline re-broken so "THE EVIDENCE" never splits (nbsp). Narrower
+ * measure; trimmed vertical padding so the eyebrow doesn't float in
+ * dead space. Beneath the strap: three HUMAN VISUAL TBD markers
+ * (your body / your goals / your results) — founder supplies
+ * direction; never source or generate imagery.
  */
 
 const ACCENT = "var(--prism-accent)";
-
-const STANZAS = [
-  "Supplements are sold with sales and marketing. Studies on someone else, somewhere else. Not you. Not your data.",
-  "So how can you be sure it’s working?",
-  "Prism shows you what’s changing, using your data.",
-  "No more guessing. Just evidence, from your body.",
-];
 
 export default function Trust() {
   const prefersReduced = useReducedMotion();
@@ -30,14 +26,13 @@ export default function Trust() {
 
   return (
     <section
-      className="flex min-h-screen items-center"
       style={{
         background:
           "linear-gradient(180deg, #000000 0%, #052605 70%, #0a3c0a 100%)",
       }}
     >
       <div
-        className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-10 text-center`}
+        className={`${GRID} flex flex-col items-center gap-8 py-24 text-center md:py-28`}
       >
         <motion.div {...enter()}>
           <Eyebrow mode="dark">Our promise</Eyebrow>
@@ -49,28 +44,38 @@ export default function Trust() {
         >
           We don&rsquo;t sell supplements
           <br />
-          we show you the{" "}
-          <span style={{ color: ACCENT }}>evidence</span>
+          we show you{" "}
+          <span className="whitespace-nowrap">
+            the&nbsp;<span style={{ color: ACCENT }}>evidence</span>
+          </span>
         </motion.h2>
 
-        <div className="max-w-2xl space-y-8">
-          {STANZAS.map((stanza, i) => (
-            <motion.p
-              key={i}
-              {...enter(0.12 + i * 0.06)}
-              className="text-white/95 text-[clamp(1.15rem,2.4vw,1.5rem)] leading-relaxed"
-            >
-              {stanza}
-            </motion.p>
-          ))}
-        </div>
+        <motion.p
+          {...enter(0.14)}
+          className="max-w-xl text-white/95 text-[clamp(1.1rem,2.2vw,1.4rem)] leading-relaxed"
+        >
+          Supplements are sold with sales and marketing. Studies on someone
+          else, somewhere else. Not you. Not your data. So how can you be sure
+          it&rsquo;s working? Prism just shows you what&rsquo;s changing, using
+          your data.
+        </motion.p>
 
         <motion.p
-          {...enter(0.4)}
-          className="mt-4 text-xs font-medium uppercase tracking-[0.3em] text-white/75"
+          {...enter(0.2)}
+          className="mt-2 text-xs font-medium uppercase tracking-[0.3em] text-white/75"
         >
           Your body&ensp;|&ensp;Your goals&ensp;|&ensp;Your results
         </motion.p>
+
+        {/* Future human imagery — strip of three under the strap */}
+        <motion.div
+          {...enter(0.26)}
+          className="mt-6 grid w-full max-w-3xl grid-cols-1 gap-5 sm:grid-cols-3"
+        >
+          <HumanPlaceholder mode="dark" className="aspect-[4/5]" />
+          <HumanPlaceholder mode="dark" className="aspect-[4/5]" />
+          <HumanPlaceholder mode="dark" className="aspect-[4/5]" />
+        </motion.div>
       </div>
     </section>
   );

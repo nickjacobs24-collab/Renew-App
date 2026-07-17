@@ -17,14 +17,39 @@ export const IS_LAUNCHED = false;
 export const PANEL_PAD = "py-28 md:py-36";
 
 // Every contained visual (UI fragments, device frames' outer wrap,
-// designed elements) shares one radius + treatment.
-export function Contained({ as: Tag = "div", className = "", children }) {
+// designed elements) shares one radius + treatment, tinted per mode.
+export function Contained({ as: Tag = "div", mode = "dark", className = "", children }) {
   return (
     <Tag
-      className={`rounded-[var(--prism-radius)] bg-white/[0.03] ring-1 ring-white/10 ${className}`}
+      className={`rounded-[var(--prism-radius)] ring-1 ${
+        mode === "dark"
+          ? "bg-white/[0.03] ring-white/10"
+          : "bg-black/[0.03] ring-black/10"
+      } ${className}`}
     >
       {children}
     </Tag>
+  );
+}
+
+// §4 visual slots: marker for future HUMAN imagery. Founder supplies
+// direction later — never source or generate imagery. Grey block,
+// clearly labelled, correct proportions.
+export function HumanPlaceholder({ mode = "light", className = "" }) {
+  return (
+    <div
+      role="img"
+      aria-label="Placeholder for human imagery, to be supplied"
+      className={`flex items-center justify-center rounded-[var(--prism-radius)] ring-1 ${
+        mode === "dark"
+          ? "bg-white/[0.06] ring-white/10 text-white/50"
+          : "bg-black/[0.08] ring-black/10 text-[#14140f]/50"
+      } ${className}`}
+    >
+      <span className="text-[11px] font-medium uppercase tracking-[0.3em]">
+        Human visual TBD
+      </span>
+    </div>
   );
 }
 
