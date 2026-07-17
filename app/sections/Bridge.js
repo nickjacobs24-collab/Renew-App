@@ -1,5 +1,6 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
+import { GRID } from "./system";
 
 /*
  * Panel 2 — BRIDGE (§4 FINAL, locked copy). Typography panel, three
@@ -18,7 +19,6 @@ export default function Bridge() {
 
   return (
     <section
-      className="px-6"
       style={{
         background:
           "linear-gradient(180deg, #052605 0%, #041f04 55%, #000000 100%)",
@@ -27,7 +27,7 @@ export default function Bridge() {
       {STANZAS.map((stanza, i) => (
         <div
           key={i}
-          className={`flex items-center justify-center ${
+          className={`${GRID} flex items-center justify-center ${
             i === 0 ? "min-h-[80vh]" : "min-h-[70vh]"
           }`}
         >

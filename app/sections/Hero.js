@@ -6,6 +6,8 @@
  * under prefers-reduced-motion.
  */
 
+import { GRID } from "./system";
+
 const ACCENT = "var(--prism-accent)";
 
 function BottlePlaceholder({ className = "", height }) {
@@ -33,19 +35,21 @@ export default function Hero() {
       }}
     >
       {/* Minimal nav (§4 Panel 1): logo left, "Join waitlist" right — nothing else. */}
-      <nav className="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 py-5 md:px-10">
-        <a href="/" className="font-display text-sm tracking-[0.35em] text-white">
-          PRISM
-        </a>
-        <a
-          href="#get-prism"
-          className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition-colors hover:bg-white/90"
-        >
-          Join waitlist
-        </a>
+      <nav className="absolute inset-x-0 top-0 z-10 py-5">
+        <div className={`${GRID} flex items-center justify-between`}>
+          <a href="/" className="font-display text-sm tracking-[0.35em] text-white">
+            PRISM
+          </a>
+          <a
+            href="#get-prism"
+            className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition-colors hover:bg-white/90"
+          >
+            Join waitlist
+          </a>
+        </div>
       </nav>
 
-      <div className="flex flex-1 flex-col items-center justify-center gap-12 px-6 pb-16 pt-28 text-center md:gap-14">
+      <div className={`${GRID} flex flex-1 flex-col items-center justify-center gap-12 pb-16 pt-28 text-center md:gap-14`}>
         {/* Headline — no supporting line (§4: deliberate, do not add one) */}
         <h1 className="fade-rise font-display uppercase leading-[0.95] tracking-[-0.01em] text-white text-[clamp(2.6rem,8vw,6.75rem)]">
           Know if your

@@ -35,6 +35,33 @@ Unchanged:
 - **Only ONE app screen appears anywhere on the site: the sleep chart (`Progress 1.png`), in Panel 4.** The other App Store screens (Home, Plan, Goal 2, Gap) are style reference only — they never enter the build. Never mock up or invent UI. No lifestyle photography. No stock imagery. No supplement-shop composition.
 - Copy pattern: every headline is a capability the user gains (Know / See / Change), never a description of software.
 
+### 2.1 Visual vocabulary (addendum, 2026-07-17 — applies to all panels)
+
+What may appear:
+
+- **Cropped UI fragments from the real screens in `brief-assets/`** (trend line, Magnesium marker, stage dial, etc.) as visual anchors — crops of real screens only, **never recompositions of UI that doesn't exist as shown**. Test: could a user see exactly this in the app?
+- **The bottles asset.**
+- **The wearable strip as a designed element.**
+- **Typography-as-visual — preferred where a panel needs no anchor.**
+
+Never: photography of people or nature, stock imagery, generated imagery. Full app screens remain limited to `Progress 1.png` in Panel 4.
+
+### 2.2 Composition system (addendum — how things are arranged)
+
+A small fixed layout vocabulary, varied across panels so **no two consecutive panels use the same arrangement**:
+
+- **Split panel** — copy one side, contained visual the other; alternate sides down the page.
+- **Stacked panel** — headline/copy above, visual or visual-row below.
+- **Statement panel** — full-width pure typography (Bridge and Trust are this).
+- **Full-bleed visual moment** — used sparingly.
+
+System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow → headline → support → content.
+
+Current assignments (1–3 built; 4–7 provisional, settled at build time):
+P1 Stacked (headline above, bottles below — bottles float as a cut-out asset, not a contained visual) · P2 Statement · P3 Stacked (strip as the designed visual-row) · P4 Split (framed screen beside copy) · P5 Statement · P6 Stacked (header above, form below) · P7 quiet utility (accordion + footer). **Flag: P6→P7 would be consecutive stacked-ish arrangements — resolve composition at Panel 6/7 build time on the preview.**
+
+In code: the grid and container primitives live in [app/sections/system.js](app/sections/system.js) (`GRID` container class, `Contained` wrapper, `--prism-radius` token). Every panel composes from them — never restyle margins/gutters per panel.
+
 ## 3. Brand (locked)
 
 ### 3.1 Design tokens (extracted from shipped App Store screens, sRGB)
@@ -225,7 +252,7 @@ What exists now:
 4. **Integration list is unconfirmed (§4 Beat 3).** **APPLE WATCH | WHOOP | OURA | GARMIN** is a factual claim and needs confirming before ship.
 5. **FAQ copy is founder-supplied (§4 Beat 9).** Placeholders only, plus the two product-truth checks (wearable required or not; day-14 answer).
 6. **Vercel-side cleanup after merge (founder-side, not repo work):** retire the MailerSend integration and its env vars, `DATABASE_URL`, `NEXTAUTH_*`, `GOOGLE_CLIENT_*`. Only `AIRTABLE_TOKEN` (and any analytics var) remains needed. Flag, don't touch — the dashboard is the founder's.
-7. **Closest-match design choices in Panels 1–3 (per §3.1a — judge on the preview, flagged not asked):** display face **Archivo Black** via `next/font/google` (nearest available heavy/tight all-caps grotesque; body face **Inter**); "PRISM" text wordmark in the nav (no logo asset supplied); band gradients — hero near-black deepening to green at its base, bridge continuing one step deeper and returning to black, Panel 3 stepping back into green; bottle placeholder proportions and slow-drift timing; stanza pacing (~70vh per stanza) and type scale throughout.
+7. **Closest-match design choices in Panels 1–3 (per §3.1a — judge on the preview, flagged not asked):** display face **Archivo Black** via `next/font/google` (nearest available heavy/tight all-caps grotesque; body face **Inter**); "PRISM" text wordmark in the nav (no logo asset supplied); band gradients — hero near-black deepening to green at its base, bridge continuing one step deeper and returning to black, Panel 3 stepping back into green; bottle placeholder proportions and slow-drift timing; stanza pacing (~70vh per stanza) and type scale throughout. **System tokens (§2.2):** grid `max-w-6xl` with `px-6 md:px-10` margins, panel rhythm `py-28 md:py-36`, container radius `1.25rem`; the wearable strip rendered as a pill-shaped designed element (`rounded-full` + faint ring) — pill radius for small designed elements, the radius token for contained visuals.
 8. **Panel 3 drafted copy (per §4 — flag for preview judgement):** the mechanism line is set as "Prism reads the health data your wearable already records." and the drafted contrast line is **"Simple to read. Nothing new to buy. With you day and night."** — best candidate for the simplicity/cost/always-available contrast, observational, no superlatives. Founder approves or reworks on the preview.
 9. **Panel 6 header repeat** ("No more guessing") — locked, built as-is when Panel 6 comes; founder resolves on preview (§5 collision check 1).
 
