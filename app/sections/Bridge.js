@@ -1,6 +1,6 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow, HumanPlaceholder } from "./system";
+import { GRID, PANEL_PAD, Eyebrow, HumanPlaceholder, HEADLINE_STEPPED } from "./system";
 
 /*
  * Panel 2 — BRIDGE (§4, LIGHT — correction round: was dark statement,
@@ -41,7 +41,7 @@ export default function Bridge() {
 
           <motion.h2
             {...enter(0.06)}
-            className="font-display uppercase leading-[0.98] tracking-[-0.01em] text-[clamp(2.1rem,4.8vw,3.9rem)]"
+            className={`font-display uppercase leading-[0.98] tracking-[-0.01em] ${HEADLINE_STEPPED}`}
             style={{ color: INK }}
           >
             Are your supplements making a difference?

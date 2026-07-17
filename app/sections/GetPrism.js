@@ -10,6 +10,7 @@ import { GRID, PANEL_PAD, Eyebrow, IS_LAUNCHED } from "./system";
  * The only input on the entire site. POSTs to /api/waitlist (Airtable,
  * §8.10 preview-gated). Form-state microcopy is drafted, flagged in
  * CLAUDE.md §11. At launch IS_LAUNCHED swaps this block (§4).
+ * Left-aligned (P5-round rule: the hero is the only centred panel).
  */
 
 const INK = "var(--prism-ink)";
@@ -53,7 +54,7 @@ export default function GetPrism() {
       style={{ background: "var(--prism-cream)", color: INK }}
     >
       <div
-        className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-9 text-center`}
+        className={`${GRID} ${PANEL_PAD} flex flex-col items-start gap-9 text-left`}
       >
         <motion.div {...enter()}>
           <Eyebrow mode="light">Get started</Eyebrow>

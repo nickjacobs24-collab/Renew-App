@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow } from "./system";
+import { GRID, PANEL_PAD, Eyebrow, HEADLINE_STEPPED } from "./system";
 
 /*
  * Panel 3 — HOW IT WORKS (§4). DARK band (consolidated round band
@@ -68,7 +68,7 @@ export default function HeresHow() {
 
           <motion.h2
             {...enter(0.06)}
-            className="font-display uppercase leading-[0.98] tracking-[-0.01em] text-white text-[clamp(2.1rem,4.8vw,3.9rem)]"
+            className={`font-display uppercase leading-[0.98] tracking-[-0.01em] text-white ${HEADLINE_STEPPED}`}
           >
             Based on your health data
           </motion.h2>

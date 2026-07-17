@@ -7,6 +7,14 @@
 // Horizontal grid: same max-width and margins on every panel.
 export const GRID = "mx-auto w-full max-w-6xl px-6 md:px-10";
 
+// §4 headline-scale calibration. The hero (P1) is the singular display
+// PEAK and keeps its own larger bespoke scale. Every interior headline
+// is multi-line (wraps or hard-broken), so all use the STEPPED tier —
+// clearly subordinate to the hero. A one-line interior statement would
+// use DISPLAY; none currently qualify.
+export const HEADLINE_DISPLAY = "text-[clamp(2.3rem,5.4vw,4.25rem)]";
+export const HEADLINE_STEPPED = "text-[clamp(1.9rem,4.4vw,3.4rem)]";
+
 // §4 Panel 6: THE launch flag. Flipping this swaps the waitlist block
 // to the App Store state (badge + pricing) and the nav CTA to the App
 // Store link — one flag, not scattered edits. Launch state renders are
@@ -34,21 +42,43 @@ export function Contained({ as: Tag = "div", mode = "dark", className = "", chil
 
 // §4 visual slots: marker for future HUMAN imagery. Founder supplies
 // direction later — never source or generate imagery. Grey block,
-// clearly labelled, correct proportions.
-export function HumanPlaceholder({ mode = "light", className = "" }) {
+// clearly labelled, correct proportions. With `label` (Whoop-card
+// pattern) the label sits top-left inside the card and the TBD marker
+// moves to the bottom-left; without it the marker centres.
+export function HumanPlaceholder({ mode = "light", label, className = "" }) {
+  const isDark = mode === "dark";
+  const box = isDark
+    ? "bg-white/[0.06] ring-white/10"
+    : "bg-black/[0.08] ring-black/10";
+  const strong = isDark ? "text-white/85" : "text-[#14140f]/85";
+  const faint = isDark ? "text-white/45" : "text-[#14140f]/45";
+
   return (
     <div
       role="img"
-      aria-label="Placeholder for human imagery, to be supplied"
-      className={`flex items-center justify-center rounded-[var(--prism-radius)] ring-1 ${
-        mode === "dark"
-          ? "bg-white/[0.06] ring-white/10 text-white/50"
-          : "bg-black/[0.08] ring-black/10 text-[#14140f]/50"
-      } ${className}`}
+      aria-label={`Placeholder for ${label ? label + " " : ""}human imagery, to be supplied`}
+      className={`relative overflow-hidden rounded-[var(--prism-radius)] ring-1 ${box} ${className}`}
     >
-      <span className="text-[11px] font-medium uppercase tracking-[0.3em]">
-        Human visual TBD
-      </span>
+      {label ? (
+        <>
+          <span
+            className={`absolute left-4 top-4 text-xs font-medium uppercase tracking-[0.25em] ${strong}`}
+          >
+            {label}
+          </span>
+          <span
+            className={`absolute bottom-4 left-4 text-[11px] font-medium uppercase tracking-[0.3em] ${faint}`}
+          >
+            Human visual TBD
+          </span>
+        </>
+      ) : (
+        <span
+          className={`absolute inset-0 flex items-center justify-center text-[11px] font-medium uppercase tracking-[0.3em] ${faint}`}
+        >
+          Human visual TBD
+        </span>
+      )}
     </div>
   );
 }

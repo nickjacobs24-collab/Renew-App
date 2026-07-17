@@ -1,18 +1,19 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, Eyebrow, HumanPlaceholder } from "./system";
+import { GRID, Eyebrow, HumanPlaceholder, HEADLINE_STEPPED } from "./system";
 
 /*
- * Panel 5 — TRUST / OUR PROMISE (§4, DARK, centred statement; final
- * copy from the consolidated round). Elaboration is ONE paragraph.
- * Headline re-broken so "THE EVIDENCE" never splits (nbsp). Narrower
- * measure; trimmed vertical padding so the eyebrow doesn't float in
- * dead space. Beneath the strap: three HUMAN VISUAL TBD markers
- * (your body / your goals / your results) — founder supplies
- * direction; never source or generate imagery.
+ * Panel 5 — TRUST / OUR PROMISE (§4, DARK; Whoop-pattern recomposition).
+ * ENTIRE panel left-aligned within the grid — the hero (P1) is the only
+ * centred panel on the page. Headline stepped down (multi-line), caps +
+ * green EVIDENCE kept. Paragraph small, ~60ch measure. The strap
+ * dissolves into the three card labels (YOUR BODY / YOUR GOALS / YOUR
+ * RESULTS) — Whoop-card proportions, HUMAN VISUAL TBD until the founder
+ * supplies imagery. Height content-driven, not viewport-filling.
  */
 
 const ACCENT = "var(--prism-accent)";
+const CARDS = ["Your body", "Your goals", "Your results"];
 
 export default function Trust() {
   const prefersReduced = useReducedMotion();
@@ -20,7 +21,7 @@ export default function Trust() {
   const enter = (delay = 0) => ({
     initial: prefersReduced ? false : { opacity: 0, y: 26 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.4 },
+    viewport: { once: true, amount: 0.3 },
     transition: { duration: 0.9, delay, ease: [0.25, 0.1, 0.25, 1] },
   });
 
@@ -31,16 +32,14 @@ export default function Trust() {
           "linear-gradient(180deg, #000000 0%, #052605 70%, #0a3c0a 100%)",
       }}
     >
-      <div
-        className={`${GRID} flex flex-col items-center gap-8 py-24 text-center md:py-28`}
-      >
+      <div className={`${GRID} flex flex-col items-start gap-7 py-24 text-left md:py-28`}>
         <motion.div {...enter()}>
           <Eyebrow mode="dark">Our promise</Eyebrow>
         </motion.div>
 
         <motion.h2
           {...enter(0.06)}
-          className="font-display uppercase leading-[0.98] tracking-[-0.01em] text-white text-[clamp(2rem,5.5vw,4.5rem)]"
+          className={`font-display uppercase leading-[1.02] tracking-[-0.01em] text-white ${HEADLINE_STEPPED}`}
         >
           We don&rsquo;t sell supplements
           <br />
@@ -52,7 +51,7 @@ export default function Trust() {
 
         <motion.p
           {...enter(0.14)}
-          className="max-w-xl text-white/95 text-[clamp(1.1rem,2.2vw,1.4rem)] leading-relaxed"
+          className="max-w-[60ch] text-white/85 text-[clamp(1rem,1.6vw,1.15rem)] leading-relaxed"
         >
           Supplements are sold with sales and marketing. Studies on someone
           else, somewhere else. Not you. Not your data. So how can you be sure
@@ -60,21 +59,19 @@ export default function Trust() {
           your data.
         </motion.p>
 
-        <motion.p
-          {...enter(0.2)}
-          className="mt-2 text-xs font-medium uppercase tracking-[0.3em] text-white/75"
-        >
-          Your body&ensp;|&ensp;Your goals&ensp;|&ensp;Your results
-        </motion.p>
-
-        {/* Future human imagery — strip of three under the strap */}
+        {/* Strap dissolved into the card labels — future human imagery */}
         <motion.div
-          {...enter(0.26)}
-          className="mt-6 grid w-full max-w-3xl grid-cols-1 gap-5 sm:grid-cols-3"
+          {...enter(0.22)}
+          className="mt-4 grid w-full grid-cols-1 gap-5 sm:grid-cols-3"
         >
-          <HumanPlaceholder mode="dark" className="aspect-[4/5]" />
-          <HumanPlaceholder mode="dark" className="aspect-[4/5]" />
-          <HumanPlaceholder mode="dark" className="aspect-[4/5]" />
+          {CARDS.map((label) => (
+            <HumanPlaceholder
+              key={label}
+              mode="dark"
+              label={label}
+              className="aspect-[4/5]"
+            />
+          ))}
         </motion.div>
       </div>
     </section>

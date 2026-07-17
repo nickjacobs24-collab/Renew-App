@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Consolidated polish + layout round applied — FINAL two-colour band map (D·C·D·C·D·C·D), composition map (centred P1/P5/P6, alternating splits P2–P4, P7 list), visual slots with HUMAN VISUAL TBD markers (P2 + P5×3), P5 final copy. Full page on `rebuild`, preview iteration continues. Outstanding before ship: hero footage (video slot dormant), OG image redefinition, human imagery direction, FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap (IS_LAUNCHED). Do not re-run completed phases.**
+**STATUS: P5 recomposed (Whoop pattern: left-aligned, stepped headline, ~60ch paragraph, strap dissolved into three labelled cards). Page-wide headline-scale calibration applied (hero peak; P2–P5 shared stepped tier). P6 left-aligned so the hero is the only centred panel. Full page on `rebuild`, preview iteration continues. Outstanding before ship: hero footage, OG image redefinition, human imagery direction, FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -63,9 +63,11 @@ A small fixed layout vocabulary, varied across panels so **no two consecutive pa
 
 System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow (required except hero) → headline → support → content.
 
-Composition map (consolidated round — FINAL): **Centred:** P1 (over the dimmed hero video), P5, P6 (hero and promise are the page's centred statement moments; Get Started centres as a conversion block). **Split alternating:** P2 text LEFT / visual right · P3 text RIGHT / visual left · P4 text LEFT / visual right. **P7:** left-aligned questions list. Every split panel has a visual slot opposite its text.
+Composition map (P5-round revision — FINAL): **Centred: P1 ONLY** (over the dimmed hero video — the page's single centred statement moment). Everything else left-aligns to the grid. **Split alternating (text left-aligned in its column):** P2 text LEFT / visual right · P3 text RIGHT / visual left · P4 text LEFT / visual right. **P5:** entire panel left-aligned (Whoop pattern). **P6:** left-aligned conversion block (moved off-centre so the hero is the only centred panel). **P7:** left-aligned questions list. Every split panel has a visual slot opposite its text.
 
-In code: the grid and container primitives live in [app/sections/system.js](app/sections/system.js) (`GRID` container class, `Contained` wrapper, `--prism-radius` token). Every panel composes from them — never restyle margins/gutters per panel.
+**Headline-scale calibration (P5 round):** display size for one-line statements, stepped down for multi-line headlines. The hero (P1) is the singular display PEAK (its own larger scale). Every interior headline is multi-line and uses the shared `HEADLINE_STEPPED` tier — subordinate to the hero, consistent across P2–P5. `HEADLINE_DISPLAY` exists for any future one-line interior statement.
+
+In code: the grid and shared primitives live in [app/sections/system.js](app/sections/system.js) (`GRID`, `Contained`, `HumanPlaceholder`, `Eyebrow`, `HEADLINE_DISPLAY`/`HEADLINE_STEPPED`, `--prism-radius`, `IS_LAUNCHED`). Every panel composes from them — never restyle margins/gutters/headline-scale per panel.
 
 ## 3. Brand (locked)
 
@@ -146,14 +148,15 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 - Small annotation near the chart: **Two-week rolling average against your baseline.**
 - Rule: app-screen copy is never edited on the website. If a line inside a real screen trips a copy rule, flag it as an app question. Do not patch it on the site.
 
-### Panel 5 — TRUST (DARK, centred — FINAL copy, consolidated round)
+### Panel 5 — TRUST (DARK, **left-aligned** — Whoop-pattern, P5-round recomposition)
 
+- **Entire panel left-aligned within the grid** (eyebrow, headline, paragraph, cards). Not centred — the hero is the only centred panel.
 - Eyebrow: **OUR PROMISE**
-- Headline pair: **WE DON'T SELL SUPPLEMENTS** / **WE SHOW YOU THE EVIDENCE** (green: EVIDENCE) — re-broken so "THE" never orphans before EVIDENCE (non-breaking space).
-- Elaboration is **ONE paragraph**, exact: **Supplements are sold with sales and marketing. Studies on someone else, somewhere else. Not you. Not your data. So how can you be sure it's working? Prism just shows you what's changing, using your data.**
-- **"No more guessing. Just evidence, from your body." is DELETED** — Panel 6's header is the only "no more guessing" on the page.
-- Strap, small caps: **YOUR BODY | YOUR GOALS | YOUR RESULTS** — with the three HUMAN VISUAL TBD markers beneath (§2.1).
-- Narrower measure; less dead space above the eyebrow.
+- Headline pair (stepped-down scale, caps kept, green EVIDENCE): **WE DON'T SELL SUPPLEMENTS** / **WE SHOW YOU THE EVIDENCE** — "THE EVIDENCE" protected from orphaning (nbsp + nowrap).
+- Elaboration is **ONE paragraph**, exact: **Supplements are sold with sales and marketing. Studies on someone else, somewhere else. Not you. Not your data. So how can you be sure it's working? Prism just shows you what's changing, using your data.** — smaller reading size, ~60ch measure, left-aligned.
+- **"No more guessing. Just evidence, from your body." stays DELETED** — Panel 6's header is the only "no more guessing" on the page.
+- **The strap dissolves into the card labels.** Three cards in a left-aligned row (Whoop-card proportions, ~4:5), each carrying its label top-left inside the card: **YOUR BODY / YOUR GOALS / YOUR RESULTS**. HUMAN VISUAL TBD until the founder supplies imagery (§2.1).
+- Height content-driven, not viewport-filling.
 
 ### Panel 6 — GET PRISM (LIGHT)
 
@@ -295,6 +298,7 @@ What exists now:
 - `PRISM_WEBSITE_BRIEF.md` deleted; this file is the single source of truth.
 - `Lifestyle.png` removed from `brief-assets/`; no beat uses it. Recoverable from `main` at `72cde1e`.
 - **Hero bottles removed permanently** (amended round, 2026-07-17): placeholder deleted, PDF p.1 extraction cancelled, PDF stays as style reference. Hero is video-slot + gradient. Do not reintroduce bottles.
+- **Composition FINAL (P5 round):** the hero is the ONLY centred panel; all others left-align. P6 was moved off-centre to satisfy this. Headline scale is calibrated hero-peak / stepped-interior via `HEADLINE_STEPPED`.
 - Baseline committed and pushed to `main`; `rebuild` branch created (§8.1, §8.2).
 - Delete pass executed and verified building clean (§8.3), 2026-07-17.
 - The pinned-phone sequence (original §8.8 motion proof) was built, then **deleted by the 2026-07-17 structural revision** — the five-screen demonstration misread the concept. Panels only. Do not resurrect.
