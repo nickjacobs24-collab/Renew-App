@@ -56,36 +56,50 @@ export default function Proof() {
             the page — the proof payoff. Screen contents never altered. */}
         <motion.figure {...enter(0.14)} className="flex w-full flex-col items-center gap-4">
           <div
-            className="relative mx-auto h-[min(70vh,660px)] w-full overflow-hidden rounded-[2rem] ring-1 ring-white/10"
+            className="relative mx-auto h-[min(70vh,660px)] w-full overflow-hidden rounded-[2rem] ring-1 ring-white/[0.06]"
             style={{
-              /* Darker charcoal with only a faint mirror sheen — not bright
-                 silver. Soft diagonal light sweep over a dark metallic grey. */
+              /* Much darker — near-black charcoal, barely above the section
+                 black, with only a whisper of mirror sheen. */
               background:
-                "linear-gradient(120deg, transparent 8%, rgba(255,255,255,0.04) 30%, transparent 44%), radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.06), rgba(255,255,255,0) 55%), linear-gradient(155deg, #3b3e44 0%, #2a2c31 40%, #161719 72%, #232529 100%)",
+                "linear-gradient(120deg, transparent 12%, rgba(255,255,255,0.025) 30%, transparent 46%), linear-gradient(155deg, #202226 0%, #131417 46%, #0b0b0d 78%, #161719 100%)",
               boxShadow: "0 50px 150px rgba(0,0,0,0.75)",
             }}
           >
-            {/* phone: narrow, centred, in a SILVER metallic case rim,
-                bleeding off the bottom edge */}
-            <div className="absolute left-1/2 top-16 -translate-x-1/2">
+            {/* A real iPhone — titanium rail, black bezel, Dynamic Island,
+                side buttons — bigger and wider, rising from the card's
+                bottom edge. Screen contents never altered. */}
+            <div className="absolute left-1/2 top-12 -translate-x-1/2">
               <div
-                className="relative rounded-t-[2.5rem] p-[6px] pb-0 shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
-                style={{
-                  aspectRatio: "853 / 1844",
-                  height: "min(72vh, 640px)",
-                  /* metallic silver case */
-                  background:
-                    "linear-gradient(145deg, #eef0f2 0%, #b8bbc0 22%, #8f9298 50%, #c6c9ce 78%, #e4e6e9 100%)",
-                }}
+                className="relative"
+                style={{ aspectRatio: "72 / 148", height: "min(82vh, 740px)" }}
               >
-                <div className="relative h-full w-full overflow-hidden rounded-t-[2.1rem] bg-black">
-                  <Image
-                    src="/screens/progress.png"
-                    alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
-                    fill
-                    sizes="(max-width: 768px) 60vw, 300px"
-                    className="object-cover object-top"
-                  />
+                {/* titanium metal rail */}
+                <div
+                  className="absolute inset-0 rounded-[3.2rem] rounded-b-none"
+                  style={{
+                    background:
+                      "linear-gradient(135deg,#f0f1f3 0%,#a6a9af 16%,#cfd2d6 34%,#8b8e94 52%,#dcdee1 72%,#a9acb2 88%,#c4c7cc 100%)",
+                    boxShadow: "0 25px 70px rgba(0,0,0,0.55)",
+                  }}
+                />
+                {/* side buttons: mute + volume (left), power (right) */}
+                <span className="absolute -left-[2px] top-[19%] h-8 w-[3px] rounded-l-sm bg-[#8b8e94]" />
+                <span className="absolute -left-[2px] top-[28%] h-16 w-[3px] rounded-l-sm bg-[#c4c7cc]" />
+                <span className="absolute -left-[2px] top-[40%] h-16 w-[3px] rounded-l-sm bg-[#c4c7cc]" />
+                <span className="absolute -right-[2px] top-[30%] h-24 w-[3px] rounded-r-sm bg-[#c4c7cc]" />
+                {/* black bezel + screen */}
+                <div className="absolute inset-[7px] bottom-0 rounded-[2.7rem] rounded-b-none bg-black p-[3px] pb-0">
+                  <div className="relative h-full w-full overflow-hidden rounded-[2.55rem] rounded-b-none bg-black">
+                    <Image
+                      src="/screens/progress.png"
+                      alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
+                      fill
+                      sizes="(max-width: 768px) 82vw, 360px"
+                      className="object-cover object-top"
+                    />
+                    {/* Dynamic Island */}
+                    <span className="absolute left-1/2 top-[10px] h-[24px] w-[86px] -translate-x-1/2 rounded-full bg-black" />
+                  </div>
                 </div>
               </div>
             </div>
