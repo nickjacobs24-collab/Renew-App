@@ -76,7 +76,7 @@ export default function Trust() {
             Uniform small-caps across all three — no italic, no accent. */}
         <motion.div
           {...enter(0.22)}
-          className="mt-24 flex items-center gap-4 text-[11px] font-medium uppercase tracking-[0.22em] text-white/70 md:mt-32 md:text-[13px]"
+          className="mt-12 flex items-center gap-4 text-[11px] font-medium uppercase tracking-[0.22em] text-white/70 md:mt-16 md:text-[13px]"
         >
           <span className="whitespace-nowrap">Your body</span>
           <span aria-hidden="true" className="h-3 w-px shrink-0 bg-white/25" />

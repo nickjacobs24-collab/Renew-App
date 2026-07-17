@@ -12,7 +12,7 @@ import { GRID, PANEL_PAD, Eyebrow } from "./system";
 const QUESTIONS = [
   {
     q: "Do I need a wearable?",
-    a: "Yes. Your health data comes from your device, like a watch or a ring. That’s what we use to show you what’s changing.",
+    a: "Yes. Your health data comes from your device, like a watch or a ring. That’s what’s used to show you what’s changing.",
   },
   {
     q: "Is this a medical device?",
@@ -20,7 +20,7 @@ const QUESTIONS = [
   },
   {
     q: "How do I see what’s working?",
-    a: "We track your health data over time and show you what changes after you start, stop, or adjust a supplement. You see the difference for yourself.",
+    a: "Your health data is tracked over time, so you can see what changes after you start, stop, or adjust a supplement. You see the difference for yourself.",
   },
   {
     q: "When will I see results?",
