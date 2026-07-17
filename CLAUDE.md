@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Final structure applied (§4 is the 2026-07-17 FINAL panel map). Panels 1–3 built fully dressed and pushed to `rebuild`. STOPPED per §8.4 — awaiting founder judgement on the preview before Panels 4–7 build. Update this line as panels clear. Do not re-run completed phases.**
+**STATUS: Two-mode chaptering correction applied (§2 — alternating LIGHT/DARK panels; single dark canvas was wrong). Panels 1–3 rebuilt on the two-mode system and pushed to `rebuild`. STOPPED per §8.4 — awaiting founder judgement on the preview before Panels 4–7 build. Update this line as panels clear. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -24,7 +24,10 @@ The website sells a new capability, not an app. Its one job: make this belief la
 
 - One continuous scrollable page built as **self-contained panels** — the App Store model on a webpage. Not a multi-page site.
 - Each panel: full-width colour band, one message, one headline moment, self-contained like an App Store card. **No pinning, no scroll-driven screen swapping, no content morphing.** Story through logical sequence, not linkage.
-- Band colours chapter the page: shifts within the black → deep-green gradient world (`#000000` → `#0A3C0A` range), contrast handled through gradient depth per band.
+- **Two-mode chaptering (correction, 2026-07-17 — supersedes the single continuous dark canvas, which was wrong):** the page is chaptered by alternating **LIGHT** and **DARK** panel modes, colour doing the section separation — no divider lines. DARK = the black → deep-green gradient (`#000000` → `#0A3C0A`) with white type. LIGHT = soft cream (not pure white) with near-black type. Green `#3AB203` is an ACCENT in both modes (headline accent words, small elements) and is **never a background colour**.
+- **Mode map:** P1 Hero DARK · P2 Bridge DARK (hero + bridge form one dark opening act) · P3 Here's How LIGHT · P4 Proof LIGHT (the dark app screen contained against cream ground) · P5 Trust DARK · P6 Get Prism LIGHT · P7 FAQ+footer LIGHT.
+- **Contrast rule:** no washed grey secondary text. Supporting copy is high-contrast in both modes (near-white on dark, near-black on cream). Every line clearly legible.
+- Panels transition at clean band edges — built as **hard colour changes** (closest-match call, flagged; a very short fade is the alternative if the hard cut reads harsh on preview).
 - Panel grammar (from Levels/Oura): optional small-caps eyebrow label → large display headline (green accent word where locked) → short supporting copy → content. Generous vertical air. Alternating composition where a panel has a visual.
 - Quality bar: **Oura/Levels-grade restraint and finish.**
 
@@ -66,9 +69,10 @@ In code: the grid and container primitives live in [app/sections/system.js](app/
 
 ### 3.1 Design tokens (extracted from shipped App Store screens, sRGB)
 
-- Canvas gradient: vertical, `#000000` (top) → `#0A3C0A` (bottom). `linear-gradient(180deg, #000000, #0A3C0A)` matches the screens near-exactly. Per §2 the ramp is **per-band**: each panel's band sits somewhere in this range, contrast through gradient depth.
-- Accent green (WORK / NOT / EVIDENCE only): `#3AB203`
-- Display type colour: `#FFFFFF`, all caps for headlines.
+- DARK mode canvas: vertical, `#000000` (top) → `#0A3C0A` (bottom). `linear-gradient(180deg, #000000, #0A3C0A)` matches the screens near-exactly. Each dark panel's band sits somewhere in this range.
+- LIGHT mode canvas: soft cream with near-black type. **Proposed (closest-match, flag): `#F7F2E8` cream, `#14140F` ink** — warmth sampled from the reference class and the cream CTA pills in the App Store screens. Founder judges the exact temperature on preview.
+- Accent green (WORK / NOT / EVIDENCE only): `#3AB203` — an accent in BOTH modes, never a background.
+- Display type colour: `#FFFFFF` on dark panels, the ink colour on light panels; all caps for headlines in both modes.
 - **Trap** — in-app greens (`#5FDC02`, `#A8F161`, `#7AC95D`) belong to app screens only. They arrive on the site inside screenshots. Never use them for website type, buttons, or accents.
 - Display face: exact family still founder-supplied eventually, but per the closest-match rule below, **build now with the nearest available typeface to the App Store display face (heavy, tight, all-caps grotesque) and flag what was chosen.**
 - Body type and CTA button styling: closest-match from reference images; flag choices.
@@ -105,35 +109,35 @@ Hero bottles must carry no labels, flavour names or ecommerce cues. They are sym
 
 Each panel follows the §2 grammar: its own colour band, one message, self-contained. **No pinning, no scroll-driven swapping.** Story through sequence.
 
-### Panel 1 — HERO
+### Panel 1 — HERO (DARK)
 
 - Full viewport. Bottles visual from the App Store PDF p.1 (background removed; grey placeholder of correct proportion until extracted), slow drift. Minimal nav: **logo left; "Join waitlist" right.** No other nav items. (Mobile per §8: logo + one CTA, no hamburger — same composition.)
 - Headline: **KNOW IF YOUR SUPPLEMENTS ACTUALLY WORK** (green: WORK)
 - CTA: **Join the waitlist** (white pill)
 - No supporting line. Deliberate. Do not add one.
 
-### Panel 2 — BRIDGE (locked copy — replaces the earlier bridge lines)
+### Panel 2 — BRIDGE (DARK — with the hero, one dark opening act; locked copy)
 
-- Typography panel, three stanzas paced down the scroll, in this exact copy:
+- Typography panel, three stanzas paced with generous air but NOT full empty viewports — the whole bridge reads within roughly 1.5 viewports of scroll, each stanza arriving on a natural scroll beat. No dead screens. Exact copy:
 
 > Are your supplements making a difference?
 > The only way to check was a blood test. Expensive, complicated, hard to understand.
 > The answer has been on your wrist all along.
 
-### Panel 3 — HERE'S HOW (mechanism)
+### Panel 3 — HERE'S HOW (LIGHT — mechanism)
 
 - Headline: **HERE'S HOW** (no accent word — green is WORK/NOT/EVIDENCE only)
 - Supporting copy theme: Prism reads the health data your wearable already records — followed by a short contrast line on simplicity/cost/always-available. **Draft as best candidate and flag for preview judgement. Observational tone, no superlatives.**
 - Then the strip: **APPLE WATCH | WHOOP | OURA | GARMIN** (factual claim — confirm final integration list before ship)
 
-### Panel 4 — PROOF (the one app-screen moment)
+### Panel 4 — PROOF (LIGHT — the one app-screen moment)
 
 - Headline pair: **SEE WHAT'S WORKING** then **AND WHAT'S NOT** (green: NOT)
-- The single app screenshot on the entire site: `Progress 1.png` in a device frame, **supporting the panel Levels-style, not filling it.**
+- The single app screenshot on the entire site: `Progress 1.png` in a device frame — the dark app screen contained against the cream ground, **supporting the panel Levels-style, not filling it.**
 - Small annotation near the chart: **Two-week rolling average against your baseline.**
 - Rule: app-screen copy is never edited on the website. If a line inside a real screen trips a copy rule, flag it as an app question. Do not patch it on the site.
 
-### Panel 5 — TRUST (locked copy)
+### Panel 5 — TRUST (DARK — locked copy)
 
 - Typography panel. Headline pair: **WE DON'T SELL SUPPLEMENTS** / **WE SHOW YOU THE EVIDENCE** (green: EVIDENCE)
 - Elaboration stanzas, exact copy:
@@ -145,14 +149,14 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 
 - Strap, small caps: **YOUR BODY | YOUR GOALS | YOUR RESULTS**
 
-### Panel 6 — GET PRISM
+### Panel 6 — GET PRISM (LIGHT)
 
 - Header: **No more guessing. See for yourself.** (**flagged: repeats a Panel 5 line — build as-is, founder resolves on preview**)
 - One email field, one button (**Join the waitlist**). The only input on the entire site. Backend: `app/api/waitlist` (Airtable, with the existing §8.10 preview gate).
 - At launch this block swaps to: App Store badge dominant; pricing cards beneath — annual £49.99 highlighted with 7-day free trial flagged and the honest arithmetic shown (£4.17/month, billed annually); monthly £6.99 secondary. No urgency language.
 - Nav "Join waitlist" item swaps to the App Store link at launch. Build the swap as **one flag, not scattered edits**.
 
-### Panel 7 — FAQ + FOOTER
+### Panel 7 — FAQ + FOOTER (LIGHT)
 
 - Accordion, closed by default, quiet type. **These six locked questions**, with clearly-marked placeholder answers (founder supplies final copy — do not write final answers):
   1. Do I need a wearable?
@@ -255,6 +259,8 @@ What exists now:
 7. **Closest-match design choices in Panels 1–3 (per §3.1a — judge on the preview, flagged not asked):** display face **Archivo Black** via `next/font/google` (nearest available heavy/tight all-caps grotesque; body face **Inter**); "PRISM" text wordmark in the nav (no logo asset supplied); band gradients — hero near-black deepening to green at its base, bridge continuing one step deeper and returning to black, Panel 3 stepping back into green; bottle placeholder proportions and slow-drift timing; stanza pacing (~70vh per stanza) and type scale throughout. **System tokens (§2.2):** grid `max-w-6xl` with `px-6 md:px-10` margins, panel rhythm `py-28 md:py-36`, container radius `1.25rem`; the wearable strip rendered as a pill-shaped designed element (`rounded-full` + faint ring) — pill radius for small designed elements, the radius token for contained visuals.
 8. **Panel 3 drafted copy (per §4 — flag for preview judgement):** the mechanism line is set as "Prism reads the health data your wearable already records." and the drafted contrast line is **"Simple to read. Nothing new to buy. With you day and night."** — best candidate for the simplicity/cost/always-available contrast, observational, no superlatives. Founder approves or reworks on the preview.
 9. **Panel 6 header repeat** ("No more guessing") — locked, built as-is when Panel 6 comes; founder resolves on preview (§5 collision check 1).
+10. **Two-mode closest-match calls (judge on preview):** cream `#F7F2E8` / ink `#14140F` (§3.1 — exact warmth is the founder's call); panel transitions built as **hard band edges** (short fade is the fallback if harsh); dark-mode supporting copy at `white/90`+, light-mode at ink `/80`+ per the contrast rule; bridge pacing compressed to ~1.5 viewports total (~50vh per stanza beat).
+11. **Green-on-cream contrast, matters at Panel 4:** `#3AB203` on `#F7F2E8` measures ≈2.5:1 — fine as a display-size accent word by Levels/Oura convention, below WCAG AA large-text (3:1). Panel 4's NOT is the first light-mode accent word. Founder call: accept, or deepen the accent on light panels only (e.g. `#2E8F02`) — the §3.1 token would then be mode-dependent.
 
 ### Logged app-side questions (not website work)
 
@@ -274,4 +280,5 @@ What exists now:
 - Delete pass executed and verified building clean (§8.3), 2026-07-17.
 - The pinned-phone sequence (original §8.8 motion proof) was built, then **deleted by the 2026-07-17 structural revision** — the five-screen demonstration misread the concept. Panels only. Do not resurrect.
 - The final-structure revision (same day) then: replaced the bridge copy (wrist/blood-test version is final), deleted the steps section and "No blood tests. No guesswork.", dissolved the Beat 3 bench (HERE'S HOW + strip returned as Panel 3; bubble and whisper superseded), locked the Panel 6 header, and supplied the six FAQ questions. §4 is FINAL — earlier panel maps are dead.
+- The design-system correction (same day) replaced the single continuous dark canvas with **alternating LIGHT/DARK mode chaptering** (§2 mode map), killed washed-grey secondary text, and compressed the bridge to ~1.5 viewports. Do not rebuild an all-dark page.
 - `Home.png`, `Gap.png`, `Plan.png`, `Goal 2.png` removed from `public/screens/` — style reference only, they stay in `brief-assets/`.
