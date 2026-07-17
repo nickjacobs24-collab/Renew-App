@@ -43,12 +43,13 @@ export default function Bridge() {
         </motion.h2>
 
         <motion.div {...enter(0.14)} className="max-w-4xl">
-          {/* Both supporting sentences on ONE line — tighter block, less
-              wasted vertical space (sized to sit on a single line at tablet
-              width and up; wraps only on the narrowest phones). */}
-          <p className="font-light leading-relaxed text-[#14140f]/80 text-[clamp(0.85rem,1.9vw,1.15rem)]">
-            The only way to check was a blood test. Expensive, complicated,
-            hard to understand.
+          {/* Supporting copy on ONE line — sized to fit within the headline
+              measure (max-w-4xl) at tablet width and up, so it sits under
+              the headline as a balanced single line; wraps only on the
+              narrowest phones. */}
+          <p className="font-light leading-relaxed text-[#14140f]/80 text-[clamp(0.8rem,1.55vw,0.98rem)]">
+            Until now, the only way to check was a blood test. But these can be
+            expensive, complicated and hard to understand.
           </p>
           {/* The emotional turn — set apart from the two supporting lines:
               italic serif, larger, offset toward centre/right (not hard-left
