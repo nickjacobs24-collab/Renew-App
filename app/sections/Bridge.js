@@ -42,19 +42,14 @@ export default function Bridge() {
           Are your supplements making a difference?
         </motion.h2>
 
-        <motion.div {...enter(0.14)} className="max-w-3xl">
-          {/* Each sentence forced to EXACTLY one line — inline
-              white-space:nowrap (guaranteed, not a purge-able utility class)
-              plus a stepped-down clamp so the full sentence fits on one line
-              at every width down to the smallest phone. */}
-          <div className="font-light leading-relaxed text-[#14140f]/80 text-[clamp(0.72rem,3.2vw,1.2rem)]">
-            <p style={{ whiteSpace: "nowrap" }}>
-              The only way to check was a blood test.
-            </p>
-            <p style={{ whiteSpace: "nowrap" }}>
-              Expensive, complicated, hard to understand.
-            </p>
-          </div>
+        <motion.div {...enter(0.14)} className="max-w-4xl">
+          {/* Both supporting sentences on ONE line — tighter block, less
+              wasted vertical space (sized to sit on a single line at tablet
+              width and up; wraps only on the narrowest phones). */}
+          <p className="font-light leading-relaxed text-[#14140f]/80 text-[clamp(0.85rem,1.9vw,1.15rem)]">
+            The only way to check was a blood test. Expensive, complicated,
+            hard to understand.
+          </p>
           {/* The emotional turn — set apart from the two supporting lines:
               italic serif, larger, offset toward centre/right (not hard-left
               with the rest). NEAR-BLACK, not green: bright green accents are
