@@ -30,6 +30,14 @@ body {
   font-weight: 400;
 }
 
+/* Italic-serif accent face (app-screen serif, closest-match Newsreader).
+   A sparing editorial accent alongside the grotesque — pair with `italic`
+   at the call site for the Oura/Levels "gives your body a voice" register.
+   Distinct from Tailwind's font-serif utility so it can't be confused. */
+.font-accent {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
 /* Panel entrance — one subtle fade-rise on load, staggered via delay. */
 @keyframes fade-rise {
   from {

@@ -5,7 +5,6 @@ import {
   PANEL_PAD,
   Eyebrow,
   HEADLINE_STEPPED,
-  BODY_TEXT,
   GAP_STACK,
 } from "./system";
 
@@ -57,8 +56,14 @@ export default function Bridge() {
               Expensive, complicated, hard to understand.
             </p>
           </div>
-          {/* Green wrist line, dropped down for breathing room */}
-          <p className={`mt-8 ${BODY_TEXT}`} style={{ color: ACCENT }}>
+          {/* The emotional turn — set apart from the two supporting lines:
+              italic serif accent, larger, and offset toward centre/right
+              (not hard-left with the rest). The payoff, not a fourth block.
+              Green accent-word treatment stays intact (this line is green). */}
+          <p
+            className="font-accent italic mt-10 md:ml-[20%] max-w-xl text-[clamp(1.5rem,3.6vw,2.7rem)] leading-[1.15]"
+            style={{ color: ACCENT }}
+          >
             The answer has been on your wrist all along.
           </p>
         </motion.div>

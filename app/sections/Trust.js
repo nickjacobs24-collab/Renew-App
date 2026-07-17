@@ -4,24 +4,21 @@ import {
   GRID,
   PANEL_PAD,
   Eyebrow,
-  HumanPlaceholder,
   HEADLINE_STEPPED,
   BODY_TEXT,
   GAP_STACK,
 } from "./system";
 
 /*
- * Panel 5 — TRUST / OUR PROMISE (§4, DARK; Whoop-pattern recomposition).
- * ENTIRE panel left-aligned within the grid — the hero (P1) is the only
- * centred panel on the page. Headline stepped down (multi-line), caps +
- * green EVIDENCE kept. Paragraph small, ~60ch measure. The strap
- * dissolves into the three card labels (YOUR BODY / YOUR GOALS / YOUR
- * RESULTS) — Whoop-card proportions, HUMAN VISUAL TBD until the founder
- * supplies imagery. Height content-driven, not viewport-filling.
+ * Panel 5 — TRUST / OUR PROMISE (§4, DARK). ENTIRE panel left-aligned —
+ * the hero (P1) is the only centred panel. Headline stepped down, caps +
+ * green EVIDENCE kept. Paragraph ~60ch. Typographic-variation pass: the
+ * three cards are removed; the strap YOUR BODY / YOUR GOALS / YOUR RESULTS
+ * becomes the panel's visual — a large stacked typographic moment, the
+ * final "results" set in the italic serif accent as the payoff.
  */
 
 const ACCENT = "var(--prism-accent)";
-const CARDS = ["Your body", "Your goals", "Your results"];
 
 export default function Trust() {
   const prefersReduced = useReducedMotion();
@@ -72,20 +69,22 @@ export default function Trust() {
           your data.
         </motion.p>
 
-        {/* Strap dissolved into the card labels — future human imagery */}
+        {/* The strap is now the panel's visual — a large stacked
+            typographic moment (each segment on its own line, generous
+            spacing). The final segment is set in the italic serif accent
+            as the emotional payoff. No cards, no boxes. */}
         <motion.div
           {...enter(0.22)}
-          className="mt-2 grid w-full grid-cols-1 gap-5 sm:grid-cols-3"
+          className="mt-8 flex flex-col gap-2 font-display uppercase leading-[0.98] tracking-[-0.03em] text-white text-[clamp(2.6rem,7vw,5.5rem)]"
         >
-          {CARDS.map((label) => (
-            <HumanPlaceholder
-              key={label}
-              mode="dark"
-              label={label}
-              marker=""
-              className="aspect-[4/5]"
-            />
-          ))}
+          <span>Your body</span>
+          <span>Your goals</span>
+          <span>
+            Your{" "}
+            <span className="font-accent italic lowercase" style={{ color: ACCENT }}>
+              results
+            </span>
+          </span>
         </motion.div>
       </div>
     </section>

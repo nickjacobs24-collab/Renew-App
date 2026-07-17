@@ -62,6 +62,9 @@ export default function GetPrism() {
           <Eyebrow mode="light">Get started</Eyebrow>
         </motion.div>
 
+        {/* Typographic-variation pass (general device, FLAGGED for review):
+            the payoff half "See for yourself." set in the italic serif
+            accent against the grotesque first line. */}
         <motion.h2
           {...enter(0.06)}
           className="font-display tracking-[-0.025em] text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.08]"
@@ -69,7 +72,9 @@ export default function GetPrism() {
         >
           No more guessing.
           <br />
-          See for yourself.
+          <span className="font-accent italic font-normal tracking-normal">
+            See for yourself.
+          </span>
         </motion.h2>
 
         {status === "success" ? (
