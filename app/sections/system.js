@@ -21,3 +21,17 @@ export function Contained({ as: Tag = "div", className = "", children }) {
     </Tag>
   );
 }
+
+// §2 grammar: eyebrow label — REQUIRED on every panel except the hero.
+// One treatment in both modes (muted to 60% of the mode's type colour).
+export function Eyebrow({ mode = "dark", children }) {
+  return (
+    <p
+      className={`text-[11px] font-medium uppercase tracking-[0.3em] ${
+        mode === "dark" ? "text-white/60" : "text-[#14140f]/60"
+      }`}
+    >
+      {children}
+    </p>
+  );
+}

@@ -1,6 +1,6 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID } from "./system";
+import { GRID, Eyebrow } from "./system";
 
 /*
  * Panel 2 — BRIDGE (§4 FINAL, locked copy). DARK — forms one opening
@@ -28,6 +28,10 @@ export default function Bridge() {
           "linear-gradient(180deg, #052605 0%, #041f04 55%, #000000 100%)",
       }}
     >
+      <div className={`${GRID} flex justify-center pb-2`}>
+        <Eyebrow mode="dark">The problem</Eyebrow>
+      </div>
+
       {STANZAS.map((stanza, i) => (
         <div
           key={i}

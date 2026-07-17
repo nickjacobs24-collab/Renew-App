@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Two-mode chaptering correction applied (§2 — alternating LIGHT/DARK panels; single dark canvas was wrong). Panels 1–3 rebuilt on the two-mode system and pushed to `rebuild`. STOPPED per §8.4 — awaiting founder judgement on the preview before Panels 4–7 build. Update this line as panels clear. Do not re-run completed phases.**
+**STATUS: Two-mode chaptering + copy/grammar corrections applied (§2 mode map; §4 Panel 3 verbatim copy; required eyebrows). Panels 1–3 rebuilt and pushed to `rebuild`. STOPPED per §8.4 — awaiting founder judgement on the preview before Panels 4–7 build. Update this line as panels clear. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -28,7 +28,7 @@ The website sells a new capability, not an app. Its one job: make this belief la
 - **Mode map:** P1 Hero DARK · P2 Bridge DARK (hero + bridge form one dark opening act) · P3 Here's How LIGHT · P4 Proof LIGHT (the dark app screen contained against cream ground) · P5 Trust DARK · P6 Get Prism LIGHT · P7 FAQ+footer LIGHT.
 - **Contrast rule:** no washed grey secondary text. Supporting copy is high-contrast in both modes (near-white on dark, near-black on cream). Every line clearly legible.
 - Panels transition at clean band edges — built as **hard colour changes** (closest-match call, flagged; a very short fade is the alternative if the hard cut reads harsh on preview).
-- Panel grammar (from Levels/Oura): optional small-caps eyebrow label → large display headline (green accent word where locked) → short supporting copy → content. Generous vertical air. Alternating composition where a panel has a visual.
+- Panel grammar (from Levels/Oura): small-caps eyebrow label (**REQUIRED on every panel except the hero** — quiet, above the headline, naming the section's job; same treatment in both modes) → large display headline (green accent word where locked) → short supporting copy → content. Generous vertical air. Alternating composition where a panel has a visual.
 - Quality bar: **Oura/Levels-grade restraint and finish.**
 
 Unchanged:
@@ -58,7 +58,7 @@ A small fixed layout vocabulary, varied across panels so **no two consecutive pa
 - **Statement panel** — full-width pure typography (Bridge and Trust are this).
 - **Full-bleed visual moment** — used sparingly.
 
-System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow → headline → support → content.
+System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow (required except hero) → headline → support → content.
 
 Current assignments (1–3 built; 4–7 provisional, settled at build time):
 P1 Stacked (headline above, bottles below — bottles float as a cut-out asset, not a contained visual) · P2 Statement · P3 Stacked (strip as the designed visual-row) · P4 Split (framed screen beside copy) · P5 Statement · P6 Stacked (header above, form below) · P7 quiet utility (accordion + footer). **Flag: P6→P7 would be consecutive stacked-ish arrangements — resolve composition at Panel 6/7 build time on the preview.**
@@ -118,6 +118,8 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 
 ### Panel 2 — BRIDGE (DARK — with the hero, one dark opening act; locked copy)
 
+- Eyebrow: **THE PROBLEM**
+
 - Typography panel, three stanzas paced with generous air but NOT full empty viewports — the whole bridge reads within roughly 1.5 viewports of scroll, each stanza arriving on a natural scroll beat. No dead screens. Exact copy:
 
 > Are your supplements making a difference?
@@ -126,11 +128,16 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 
 ### Panel 3 — HERE'S HOW (LIGHT — mechanism)
 
+- Eyebrow: **HOW IT WORKS**
 - Headline: **HERE'S HOW** (no accent word — green is WORK/NOT/EVIDENCE only)
-- Supporting copy theme: Prism reads the health data your wearable already records — followed by a short contrast line on simplicity/cost/always-available. **Draft as best candidate and flag for preview judgement. Observational tone, no superlatives.**
+- Supporting line, verbatim (App Store screen-2 narrative): **Based on your health data**
+- Contrast line, verbatim: **Cost-effective. Simple. Easy to understand.**
 - Then the strip: **APPLE WATCH | WHOOP | OURA | GARMIN** (factual claim — confirm final integration list before ship)
+- The earlier drafted lines ("Prism reads the health data your wearable already records", "Simple to read. Nothing new to buy. With you day and night.") are **deleted** — replaced by this verbatim copy.
 
 ### Panel 4 — PROOF (LIGHT — the one app-screen moment)
+
+- Eyebrow: **THE EVIDENCE**
 
 - Headline pair: **SEE WHAT'S WORKING** then **AND WHAT'S NOT** (green: NOT)
 - The single app screenshot on the entire site: `Progress 1.png` in a device frame — the dark app screen contained against the cream ground, **supporting the panel Levels-style, not filling it.**
@@ -138,6 +145,8 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 - Rule: app-screen copy is never edited on the website. If a line inside a real screen trips a copy rule, flag it as an app question. Do not patch it on the site.
 
 ### Panel 5 — TRUST (DARK — locked copy)
+
+- Eyebrow: **OUR PROMISE**
 
 - Typography panel. Headline pair: **WE DON'T SELL SUPPLEMENTS** / **WE SHOW YOU THE EVIDENCE** (green: EVIDENCE)
 - Elaboration stanzas, exact copy:
@@ -151,12 +160,16 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 
 ### Panel 6 — GET PRISM (LIGHT)
 
+- Eyebrow: **GET STARTED**
+
 - Header: **No more guessing. See for yourself.** (**flagged: repeats a Panel 5 line — build as-is, founder resolves on preview**)
 - One email field, one button (**Join the waitlist**). The only input on the entire site. Backend: `app/api/waitlist` (Airtable, with the existing §8.10 preview gate).
 - At launch this block swaps to: App Store badge dominant; pricing cards beneath — annual £49.99 highlighted with 7-day free trial flagged and the honest arithmetic shown (£4.17/month, billed annually); monthly £6.99 secondary. No urgency language.
 - Nav "Join waitlist" item swaps to the App Store link at launch. Build the swap as **one flag, not scattered edits**.
 
 ### Panel 7 — FAQ + FOOTER (LIGHT)
+
+- Eyebrow: **COMMON QUESTIONS**
 
 - Accordion, closed by default, quiet type. **These six locked questions**, with clearly-marked placeholder answers (founder supplies final copy — do not write final answers):
   1. Do I need a wearable?
@@ -182,6 +195,7 @@ The steps section (Tell us what you take / Review your plan / Track your results
 - Never attack or blame the reader. Concerns are raised about the situation or the industry, never the person.
 - Banned: leverage, optimise, unlock, urgency language, marketing intensifiers, wellness clichés.
 - Prism presents options, never instructs.
+- **The site's voice never refers to Prism in the third person as the speaker** (locked §4 copy stands as written).
 - Green accent appears only on WORK, NOT, EVIDENCE.
 
 ### Collision checks (judge on the preview, resolve in situ)
@@ -257,7 +271,7 @@ What exists now:
 5. **FAQ copy is founder-supplied (§4 Beat 9).** Placeholders only, plus the two product-truth checks (wearable required or not; day-14 answer).
 6. **Vercel-side cleanup after merge (founder-side, not repo work):** retire the MailerSend integration and its env vars, `DATABASE_URL`, `NEXTAUTH_*`, `GOOGLE_CLIENT_*`. Only `AIRTABLE_TOKEN` (and any analytics var) remains needed. Flag, don't touch — the dashboard is the founder's.
 7. **Closest-match design choices in Panels 1–3 (per §3.1a — judge on the preview, flagged not asked):** display face **Archivo Black** via `next/font/google` (nearest available heavy/tight all-caps grotesque; body face **Inter**); "PRISM" text wordmark in the nav (no logo asset supplied); band gradients — hero near-black deepening to green at its base, bridge continuing one step deeper and returning to black, Panel 3 stepping back into green; bottle placeholder proportions and slow-drift timing; stanza pacing (~70vh per stanza) and type scale throughout. **System tokens (§2.2):** grid `max-w-6xl` with `px-6 md:px-10` margins, panel rhythm `py-28 md:py-36`, container radius `1.25rem`; the wearable strip rendered as a pill-shaped designed element (`rounded-full` + faint ring) — pill radius for small designed elements, the radius token for contained visuals.
-8. **Panel 3 drafted copy (per §4 — flag for preview judgement):** the mechanism line is set as "Prism reads the health data your wearable already records." and the drafted contrast line is **"Simple to read. Nothing new to buy. With you day and night."** — best candidate for the simplicity/cost/always-available contrast, observational, no superlatives. Founder approves or reworks on the preview.
+8. **Eyebrow treatment (closest-match, judge on preview):** 11px small caps, `0.3em` tracking, muted to 60% of the mode's type colour (white/60 dark, ink/60 light) — quiet-label convention; deliberately NOT the accent green, to keep WORK/NOT/EVIDENCE special. One primitive in `system.js`, same treatment both modes per spec.
 9. **Panel 6 header repeat** ("No more guessing") — locked, built as-is when Panel 6 comes; founder resolves on preview (§5 collision check 1).
 10. **Two-mode closest-match calls (judge on preview):** cream `#F7F2E8` / ink `#14140F` (§3.1 — exact warmth is the founder's call); panel transitions built as **hard band edges** (short fade is the fallback if harsh); dark-mode supporting copy at `white/90`+, light-mode at ink `/80`+ per the contrast rule; bridge pacing compressed to ~1.5 viewports total (~50vh per stanza beat).
 11. **Green-on-cream contrast, matters at Panel 4:** `#3AB203` on `#F7F2E8` measures ≈2.5:1 — fine as a display-size accent word by Levels/Oura convention, below WCAG AA large-text (3:1). Panel 4's NOT is the first light-mode accent word. Founder call: accept, or deepen the accent on light panels only (e.g. `#2E8F02`) — the §3.1 token would then be mode-dependent.
@@ -281,4 +295,5 @@ What exists now:
 - The pinned-phone sequence (original §8.8 motion proof) was built, then **deleted by the 2026-07-17 structural revision** — the five-screen demonstration misread the concept. Panels only. Do not resurrect.
 - The final-structure revision (same day) then: replaced the bridge copy (wrist/blood-test version is final), deleted the steps section and "No blood tests. No guesswork.", dissolved the Beat 3 bench (HERE'S HOW + strip returned as Panel 3; bubble and whisper superseded), locked the Panel 6 header, and supplied the six FAQ questions. §4 is FINAL — earlier panel maps are dead.
 - The design-system correction (same day) replaced the single continuous dark canvas with **alternating LIGHT/DARK mode chaptering** (§2 mode map), killed washed-grey secondary text, and compressed the bridge to ~1.5 viewports. Do not rebuild an all-dark page.
+- The copy/grammar correction (same day) replaced Panel 3's drafted lines with the verbatim App Store screen-2 narrative ("Based on your health data" / "Cost-effective. Simple. Easy to understand."), made eyebrows required on every panel except the hero (labels locked in §4), and added the §5 voice rule (the site's voice never refers to Prism in the third person as the speaker).
 - `Home.png`, `Gap.png`, `Plan.png`, `Goal 2.png` removed from `public/screens/` — style reference only, they stay in `brief-assets/`.

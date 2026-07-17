@@ -1,14 +1,14 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD } from "./system";
+import { GRID, PANEL_PAD, Eyebrow } from "./system";
 
 /*
- * Panel 3 — HERE'S HOW (§4 FINAL, mechanism). LIGHT mode (§2): cream
- * ground, near-black ink, hard band edge against the bridge's black.
- * Stacked panel per §2.2: headline/copy above, the wearable strip
- * below as the designed visual-row. The contrast line is a DRAFTED
- * best candidate (flagged in CLAUDE.md §11.8). Integrations strip is
- * a factual claim; confirm the list before ship.
+ * Panel 3 — HERE'S HOW (§4 FINAL — verbatim App Store screen-2
+ * narrative; the earlier drafted lines are deleted). LIGHT mode:
+ * cream ground, ink type, hard band edge against the bridge's black.
+ * Stacked panel: eyebrow → headline → support → contrast → strip
+ * (the designed visual-row). Strip is a factual claim; confirm the
+ * integration list before ship.
  */
 
 const WEARABLES = ["APPLE WATCH", "WHOOP", "OURA", "GARMIN"];
@@ -31,26 +31,29 @@ export default function HeresHow() {
       style={{ background: "var(--prism-cream)", color: INK }}
     >
       <div
-        className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-10 text-center`}
+        className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-8 text-center`}
       >
+        <motion.div {...enter()}>
+          <Eyebrow mode="light">How it works</Eyebrow>
+        </motion.div>
+
         <motion.h2
-          {...enter()}
+          {...enter(0.06)}
           className="font-display uppercase leading-[0.95] tracking-[-0.01em] text-[clamp(2.2rem,6.5vw,5rem)]"
           style={{ color: INK }}
         >
           Here&rsquo;s how
         </motion.h2>
 
-        <motion.div {...enter(0.12)} className="max-w-2xl space-y-4">
+        <motion.div {...enter(0.14)} className="max-w-2xl space-y-4">
           <p
             className="text-[clamp(1.15rem,2.4vw,1.5rem)] leading-relaxed"
             style={{ color: INK }}
           >
-            Prism reads the health data your wearable already records.
+            Based on your health data
           </p>
-          {/* Drafted contrast line — flagged for preview judgement */}
           <p className="text-[#14140f]/80 text-[clamp(1rem,2vw,1.25rem)] leading-relaxed">
-            Simple to read. Nothing new to buy. With you day and night.
+            Cost-effective. Simple. Easy to understand.
           </p>
         </motion.div>
 
