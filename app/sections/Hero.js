@@ -40,9 +40,13 @@ export default function Hero() {
         </div>
       </nav>
 
-      {/* Headline zone — single tight stack, centred (Oura pattern) */}
+      {/* ONE tight centred stack, vertically centred as a unit:
+          headline → small gap → button directly beneath. The video
+          slot (above) fills the frame behind this; over the bare
+          gradient the tight stack still reads as composed, not
+          floating. */}
       <div
-        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center pt-28 text-center`}
+        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center gap-8 pt-24 pb-16 text-center`}
       >
         {/* No supporting line (§4: deliberate, do not add one) */}
         <h1 className="fade-rise font-display uppercase leading-[0.98] tracking-[-0.03em] text-white text-[clamp(2.8rem,8.5vw,7rem)]">
@@ -52,10 +56,7 @@ export default function Hero() {
           <br />
           actually <span style={{ color: ACCENT }}>work</span>
         </h1>
-      </div>
 
-      {/* CTA — low (Oura pattern: button near the viewport base) */}
-      <div className={`${GRID} relative z-10 flex justify-center pb-16`}>
         <a
           href="#get-prism"
           className="fade-rise fade-rise-2 rounded-full bg-white px-10 py-4 text-lg font-medium text-black shadow-[0_12px_40px_rgba(0,0,0,0.45)] transition-transform hover:scale-[1.03]"

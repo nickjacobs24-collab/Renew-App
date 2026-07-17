@@ -5,7 +5,9 @@
  */
 
 // Horizontal grid: same max-width and margins on every panel.
-export const GRID = "mx-auto w-full max-w-6xl px-6 md:px-10";
+// Global-refinement round: widened + less side padding (was max-w-6xl
+// px-6 md:px-10) for the wider, less-boxed feel of Levels/Oura/Whoop.
+export const GRID = "mx-auto w-full max-w-7xl px-5 md:px-8";
 
 // ── Global type + spacing tokens (global-refinement round) ──────────
 // Applied to ALL panels; never restyle per-panel.
@@ -57,7 +59,12 @@ export function Contained({ as: Tag = "div", mode = "dark", className = "", chil
 // clearly labelled, correct proportions. With `label` (Whoop-card
 // pattern) the label sits top-left inside the card and the TBD marker
 // moves to the bottom-left; without it the marker centres.
-export function HumanPlaceholder({ mode = "light", label, className = "" }) {
+export function HumanPlaceholder({
+  mode = "light",
+  label,
+  marker = "Human visual TBD",
+  className = "",
+}) {
   const isDark = mode === "dark";
   const box = isDark
     ? "bg-white/[0.06] ring-white/10"
@@ -81,14 +88,14 @@ export function HumanPlaceholder({ mode = "light", label, className = "" }) {
           <span
             className={`absolute bottom-4 left-4 text-[11px] font-medium uppercase tracking-[0.3em] ${faint}`}
           >
-            Human visual TBD
+            {marker}
           </span>
         </>
       ) : (
         <span
           className={`absolute inset-0 flex items-center justify-center text-[11px] font-medium uppercase tracking-[0.3em] ${faint}`}
         >
-          Human visual TBD
+          {marker}
         </span>
       )}
     </div>

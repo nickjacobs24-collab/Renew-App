@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Global refinement applied as tokens (display weight → medium/large-and-lighter via Archivo; sizes up + tracking tightened; vertical spacing reduced globally; body copy lighter + larger). Hero = tight centred stack with CTA low. Full page on `rebuild`, preview iteration continues. Outstanding before ship: hero footage, OG image redefinition, human imagery direction, FAQ answers, Privacy/Terms pages, medical disclaimer copy, integration-list confirmation, launch swap. Do not re-run completed phases.**
+**STATUS: Global refinement (round 2) applied as tokens — wider/less-padded grid; P2 restructured to a stacked panel with the page's one full-width landscape image (placeholder); hero pulled into one tight centred stack (headline → small gap → button). Builds on the medium-weight / tighter-spacing / lighter-body tokens from the prior commit. Full page on `rebuild`. Outstanding before ship: hero footage, P2 landscape + human imagery, OG image, FAQ answers, Privacy/Terms pages, disclaimer, integration-list confirmation, launch swap. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -63,7 +63,7 @@ A small fixed layout vocabulary, varied across panels so **no two consecutive pa
 
 System rules: every visual sits in a consistent container (uniform corner radius, treatment); **one grid governs the whole page** — identical margins, gutters, and spacing rhythm across all panels; variation happens in arrangement only, never in the system. Alternate compositions for visual rhythm; keep hierarchy identical: eyebrow (required except hero) → headline → support → content.
 
-Composition map (P5-round revision — FINAL): **Centred: P1 ONLY** (over the dimmed hero video — the page's single centred statement moment). Everything else left-aligns to the grid. **Split alternating (text left-aligned in its column):** P2 text LEFT / visual right · P3 text RIGHT / visual left · P4 text LEFT / visual right. **P5:** entire panel left-aligned (Whoop pattern). **P6:** left-aligned conversion block (moved off-centre so the hero is the only centred panel). **P7:** left-aligned questions list. Every split panel has a visual slot opposite its text.
+Composition map (P5-round revision — FINAL): **Centred: P1 ONLY** (over the dimmed hero video — the page's single centred statement moment). Everything else left-aligns to the grid. **P2:** stacked — text block above, one WIDE landscape image below at full content width (Whoop horizontal pattern; the page's only landscape image, breaking P3/P4's portrait rhythm). **Split alternating (text left-aligned in its column):** P3 text RIGHT / visual left · P4 text LEFT / visual right. **P5:** entire panel left-aligned (Whoop pattern). **P6:** left-aligned conversion block (moved off-centre so the hero is the only centred panel). **P7:** left-aligned questions list. Every split panel has a visual slot opposite its text.
 
 **Headline-scale calibration (P5 round):** display size for one-line statements, stepped down for multi-line headlines. The hero (P1) is the singular display PEAK (its own larger scale). Every interior headline is multi-line and uses the shared `HEADLINE_STEPPED` tier — subordinate to the hero, consistent across P2–P5. `HEADLINE_DISPLAY` exists for any future one-line interior statement.
 
@@ -71,6 +71,7 @@ Composition map (P5-round revision — FINAL): **Centred: P1 ONLY** (over the di
 - Display weight: ONE global medium (500) — set on `.font-display`. Headline sizes bumped up and letter-spacing tightened (`tracking-[-0.025em]`, baked into the `HEADLINE_*` tokens) to compensate for the lighter weight. Green accent words unchanged.
 - `BODY_TEXT` — supporting copy at font-light, comfortable size (thinner + larger reads calmer). Colour/contrast still set per mode at the call site.
 - Vertical rhythm reduced for a denser Levels/Whoop feel: `PANEL_PAD` = `py-16 md:py-24` (was `py-28 md:py-36`); `GAP_STACK` = `gap-5` (intra-panel element rhythm — one connected unit); `GAP_SPLIT` = `gap-10 md:gap-12` (between split columns).
+- Grid width: `GRID` = `max-w-7xl px-5 md:px-8` (was `max-w-6xl px-6 md:px-10`) — wider content, less side padding, matching the less-boxed Levels/Oura/Whoop feel.
 
 In code: the grid and shared primitives live in [app/sections/system.js](app/sections/system.js) (`GRID`, `Contained`, `HumanPlaceholder`, `Eyebrow`, `HEADLINE_DISPLAY`/`HEADLINE_STEPPED`, `--prism-radius`, `IS_LAUNCHED`). Every panel composes from them — never restyle margins/gutters/headline-scale per panel.
 
@@ -120,20 +121,20 @@ Each panel follows the §2 grammar: its own colour band, one message, self-conta
 
 ### Panel 1 — HERO (DARK)
 
-- Full viewport, centred (the ONLY centred panel). **Bottles removed permanently.** Oura/Levels anatomy: dimmed background video → **single tight headline stack (centred)** → **CTA low** (near the viewport base, its own zone). Video: muted, looping, autoplay, heavily dimmed under the content layer; **poster fallback is the black→green gradient alone** — used on mobile, under reduced-motion, and until footage is supplied (slot dormant in `app/sections/HeroVideo.js`, `HERO_VIDEO_SRC`). Founder supplies footage.
+- Full viewport, centred (the ONLY centred panel). **Bottles removed permanently.** Oura anatomy: dimmed background video behind **ONE tight centred stack — headline → small gap → button directly beneath — vertically centred as a unit** (not two separated zones; earlier "button low" is superseded — it read as floating over the bare gradient). Video (`HeroVideo.js`) fills the frame behind the text via `absolute inset-0 z-0`; the composition depends on it. Muted, looping, autoplay, heavily dimmed; **poster fallback is the black→green gradient alone** — mobile, reduced-motion, and until footage is supplied (`HERO_VIDEO_SRC`). Founder supplies footage.
 - Minimal nav: **logo left; "Join waitlist" right.** No other nav items. (Mobile per §8: logo + one CTA, no hamburger — same composition.)
 - **Gradient (Fix 1):** black at top, deep green through roughly the lower half, matching App Store screen 1. Not a sliver at the foot.
 - Headline: **KNOW IF YOUR SUPPLEMENTS ACTUALLY WORK** (green: WORK)
 - CTA: **Join the waitlist** (white pill)
 - No supporting line. Deliberate. Do not add one.
 
-### Panel 2 — BRIDGE (LIGHT — correction round Fix 2 rebuild; locked copy)
+### Panel 2 — BRIDGE (LIGHT, **stacked** — Whoop horizontal pattern, global-refinement round)
 
 - Eyebrow: **THE PROBLEM** (small caps)
-- Levels text hierarchy, ONE coherent left-aligned text unit, headline-weighted, no viewport gaps:
-  - Headline (large, dominant): **Are your supplements making a difference?**
-  - ONE supporting block directly beneath, lines together, clearly subordinate in size: **The only way to check was a blood test. Expensive, complicated, hard to understand.** followed by **The answer has been on your wrist all along.** — the final line takes the green accent treatment.
-- Visual slot right (consolidated round): **HUMAN VISUAL TBD placeholder**, clearly marked, correct proportions — founder supplies imagery direction. (The trend crop previously here is retired; regenerate from `Progress 1.png` if ever wanted.)
+- Levels text hierarchy, ONE coherent left-aligned text unit above the image:
+  - Headline (dominant): **Are your supplements making a difference?**
+  - Supporting block directly beneath: **The only way to check was a blood test. Expensive, complicated, hard to understand.** then **The answer has been on your wrist all along.** — the final line takes the green accent treatment.
+- **Below the text, at full content width: the page's ONE landscape image** (standard card radius, ~16:9), breaking P3/P4's portrait rhythm. Currently a clearly-marked **"HUMAN VISUAL TBD — horizontal"** placeholder; reserved for a wide human/lifestyle image supplied later. Never source or generate imagery.
 
 ### Panel 3 — HOW IT WORKS (DARK — consolidated band map)
 
