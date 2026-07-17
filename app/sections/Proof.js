@@ -56,7 +56,11 @@ export default function Proof() {
 
         {/* Visual side — the sleep-chart screen, contained-card
             treatment: grounded, subtle shadow, deliberate scale.
-            Screen contents never altered. */}
+            Screen contents never altered.
+            VISUALS ROUND — P4 slot: v1 = this static Progress 1.png.
+            v2 UPGRADE = animated proof line (line climbing, Magnesium
+            marker, change revealing). This is the ONLY product
+            animation on the page — it lives here, the proof payoff. */}
         <motion.figure
           {...enter(0.14)}
           className="flex flex-col items-center gap-4 justify-self-center md:justify-self-end"

@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**STATUS: Levels-precision density pass — panel padding cut ~50%, interior panels made content-driven (no forced viewport height), intra-panel gaps and headline tracking tightened, display weight → regular (400). P2 confirmed already text-above/full-width-landscape-below. Full page on `rebuild`. Outstanding before ship: hero footage, P2 landscape + human imagery, OG image, FAQ answers, Privacy/Terms pages, disclaimer, integration-list confirmation, launch swap. Do not re-run completed phases.**
+**STATUS: Visual slot map recorded (§2.3, LOCKED) — every panel now carries a correctly-shaped, clearly-labelled placeholder stating exactly what goes there (hero background video, P2 human/atmospheric-no-product, P3/P4 real screens with P4's v2 animated-proof-line upgrade marked, P5 human+Prism-UI hybrid). No imagery sourced/generated. Full page on `rebuild`. Outstanding before ship: hero footage, P2 image, P4 v2 animation, P5 imagery, OG image, FAQ answers, Privacy/Terms pages, disclaimer, integration-list confirmation, launch swap. Do not re-run completed phases.**
 
 This file is the single source of truth. `PRISM_WEBSITE_BRIEF.md` has been merged into it and deleted (recoverable from `main` at commit `72cde1e`).
 
@@ -72,6 +72,20 @@ Composition map (P5-round revision — FINAL): **Centred: P1 ONLY** (over the di
 - `BODY_TEXT` — supporting copy at font-light, comfortable size (thinner + larger reads calmer). Colour/contrast still set per mode at the call site.
 - Vertical rhythm — **Levels-precision density.** `PANEL_PAD` = `py-8 md:py-12` (cut ~50% from `py-16 md:py-24`); `GAP_STACK` = `gap-4`; `GAP_SPLIT` = `gap-10 md:gap-12`. **Interior panels are content-driven** — only the hero forces viewport height; P2–P7 size to their content, so the two-colour band edge is the section separator and no viewport-fill dead space remains.
 - Grid width: `GRID` = `max-w-7xl px-5 md:px-8` (was `max-w-6xl px-6 md:px-10`) — wider content, less side padding, matching the less-boxed Levels/Oura/Whoop feel.
+
+### 2.3 Visual slot map (visuals round — LOCKED; placeholders only until then)
+
+For each panel, a correctly-shaped, clearly-labelled placeholder states exactly what goes there. **Do not source or generate imagery outside the visuals round.** All human imagery = licensed photography sourced in that round.
+
+- **P1 Hero** — full-bleed **BACKGROUND VIDEO** behind the centred text (dimmed, health/supplement-aligned, atmospheric). Slot in `HeroVideo.js`; on-screen marker "HERO BACKGROUND VIDEO — TBD". **v1 may ship on the gradient alone.**
+- **P2 Problem** — visual slot with the text: **HUMAN or ATMOSPHERIC image** (the frustration/problem mood). **NOT a product screen, NOT an animation — the product must NOT appear here** (this panel states the problem before the solution). Shape: the locked landscape (full-width, below the text — see §4 P2). Marker: "P2 — Human / atmospheric image — TBD (no product)".
+- **P3 How It Works** — real app screen **HOME** (`Home.png`) in a device frame, beside text. **FILLED** (real asset, not a placeholder).
+- **P4 Evidence** — real app screen **sleep chart** (`Progress 1.png`) in a device frame. **v1 = static, FILLED.** **v2 UPGRADE = ANIMATED proof line** (line climbing, Magnesium marker, the change revealing). **This is the ONLY product animation on the page** — it lives here because this is the proof payoff. Marked at the slot in `Proof.js`.
+- **P5 Promise** — three cards: **HUMAN + carved-out real PRISM UI fragment + label** (your body / your goals / your results). Placeholders present; marker "Human + Prism UI — TBD".
+- **P6 Get Prism** — no imagery.
+- **P7 FAQ + Footer** — no imagery.
+
+**Visual type language for the round:** the primary language is **PRODUCT SCREENS** (P3, P4). **HUMANS are secondary** (P2, P5). Where human + product co-occur (P5), the product appears **only as a carved fragment of the real Prism UI — never fabricated**. Human imagery is licensed photography.
 
 In code: the grid and shared primitives live in [app/sections/system.js](app/sections/system.js) (`GRID`, `Contained`, `HumanPlaceholder`, `Eyebrow`, `HEADLINE_DISPLAY`/`HEADLINE_STEPPED`, `--prism-radius`, `IS_LAUNCHED`). Every panel composes from them — never restyle margins/gutters/headline-scale per panel.
 

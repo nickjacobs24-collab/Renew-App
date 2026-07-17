@@ -62,7 +62,7 @@ export default function Bridge() {
         <motion.div {...enter(0.2)} className="mt-3 w-full">
           <HumanPlaceholder
             mode="light"
-            marker="Human visual TBD — horizontal"
+            marker="P2 — Human / atmospheric image — TBD (no product)"
             className="aspect-[16/9] w-full"
           />
         </motion.div>

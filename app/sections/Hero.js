@@ -64,6 +64,13 @@ export default function Hero() {
           Join the waitlist
         </a>
       </div>
+
+      {/* Visuals-round slot marker — the full-bleed background video goes
+          behind the text (HeroVideo). Unobtrusive; v1 may ship on the
+          gradient alone. Remove when footage lands. */}
+      <span className="pointer-events-none absolute inset-x-0 bottom-4 z-10 text-center text-[10px] font-medium uppercase tracking-[0.3em] text-white/30">
+        Hero background video — TBD
+      </span>
     </section>
   );
 }

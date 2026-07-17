@@ -79,6 +79,7 @@ export default function Trust() {
               key={label}
               mode="dark"
               label={label}
+              marker="Human + Prism UI — TBD"
               className="aspect-[4/5]"
             />
           ))}

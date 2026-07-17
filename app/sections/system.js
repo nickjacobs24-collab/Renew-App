@@ -85,19 +85,19 @@ export function HumanPlaceholder({
       {label ? (
         <>
           <span
-            className={`absolute left-4 top-4 text-xs font-medium uppercase tracking-[0.25em] ${strong}`}
+            className={`absolute left-4 top-4 max-w-[80%] text-xs font-medium uppercase tracking-[0.25em] ${strong}`}
           >
             {label}
           </span>
           <span
-            className={`absolute bottom-4 left-4 text-[11px] font-medium uppercase tracking-[0.3em] ${faint}`}
+            className={`absolute bottom-4 left-4 max-w-[80%] text-[11px] font-medium uppercase leading-relaxed tracking-[0.25em] ${faint}`}
           >
             {marker}
           </span>
         </>
       ) : (
         <span
-          className={`absolute inset-0 flex items-center justify-center text-[11px] font-medium uppercase tracking-[0.3em] ${faint}`}
+          className={`absolute inset-0 flex items-center justify-center px-6 text-center text-[11px] font-medium uppercase leading-relaxed tracking-[0.25em] ${faint}`}
         >
           {marker}
         </span>
