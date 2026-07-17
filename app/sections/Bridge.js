@@ -16,7 +16,6 @@ import {
  */
 
 const INK = "var(--prism-ink)";
-const ACCENT = "var(--prism-accent)";
 
 export default function Bridge() {
   const prefersReduced = useReducedMotion();
@@ -57,12 +56,13 @@ export default function Bridge() {
             </p>
           </div>
           {/* The emotional turn — set apart from the two supporting lines:
-              italic serif accent, larger, and offset toward centre/right
-              (not hard-left with the rest). The payoff, not a fourth block.
-              Green accent-word treatment stays intact (this line is green). */}
+              italic serif, larger, offset toward centre/right (not hard-left
+              with the rest). NEAR-BLACK, not green: bright green accents are
+              dark-panels-only; on cream the italic serif carries the
+              emphasis and colour would read cheap/low-contrast. */}
           <p
             className="font-accent italic mt-10 md:ml-[20%] max-w-xl text-[clamp(1.5rem,3.6vw,2.7rem)] leading-[1.15]"
-            style={{ color: ACCENT }}
+            style={{ color: INK }}
           >
             The answer has been on your wrist all along.
           </p>

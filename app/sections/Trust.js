@@ -69,19 +69,22 @@ export default function Trust() {
           your data.
         </motion.p>
 
-        {/* The strap is now the panel's visual — a large stacked
-            typographic moment (each segment on its own line, generous
-            spacing). The final segment is set in the italic serif accent
-            as the emotional payoff. No cards, no boxes. */}
+        {/* Quiet strap line, not a display moment — small (smaller than the
+            paragraph), horizontal on ONE line, segments split by thin
+            vertical dividers. Sits as a subtle footer to the panel. The
+            "results" payoff is set in the italic serif accent; italic-only
+            (white) for restraint on this dark panel. */}
         <motion.div
           {...enter(0.22)}
-          className="mt-8 flex flex-col gap-2 font-display uppercase leading-[0.98] tracking-[-0.03em] text-white text-[clamp(2.6rem,7vw,5.5rem)]"
+          className="mt-8 flex items-center gap-4 text-[11px] font-medium uppercase tracking-[0.22em] text-white/70 md:text-[13px]"
         >
-          <span>Your body</span>
-          <span>Your goals</span>
-          <span>
+          <span className="whitespace-nowrap">Your body</span>
+          <span aria-hidden="true" className="h-3 w-px shrink-0 bg-white/25" />
+          <span className="whitespace-nowrap">Your goals</span>
+          <span aria-hidden="true" className="h-3 w-px shrink-0 bg-white/25" />
+          <span className="whitespace-nowrap">
             Your{" "}
-            <span className="font-accent italic lowercase" style={{ color: ACCENT }}>
+            <span className="font-accent italic lowercase tracking-normal text-white/90">
               results
             </span>
           </span>
