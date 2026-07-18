@@ -1,5 +1,5 @@
 import { GRID, PANEL_PAD, Eyebrow } from "./system";
-import ContactLink from "./ContactLink";
+import FooterLinks from "./FooterLinks";
 
 /*
  * Panel 7 — FAQ + FOOTER (§4). BLACK — it was always black; the cream
@@ -55,21 +55,11 @@ export default function FaqFooter() {
         </div>
       </div>
 
-      {/* Footer — within Panel 7's black */}
+      {/* Footer — within Panel 7's black. Privacy (page link) and Contact
+          (inline expand/collapse) — see FooterLinks. */}
       <footer className="border-t border-white/10 py-10">
-        <div
-          className={`${GRID} flex flex-col gap-4 text-sm text-white/70 md:flex-row md:items-center md:justify-between`}
-        >
-          {/* Quiet grouped links, clearly separated by a thin divider.
-              Privacy is a real page (/privacy); Contact opens an in-page
-              modal (ContactLink). */}
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <a href="/privacy" className="hover:text-white">
-              Privacy
-            </a>
-            <span aria-hidden="true" className="h-3 w-px bg-white/20" />
-            <ContactLink />
-          </div>
+        <div className={`${GRID} text-sm text-white/70`}>
+          <FooterLinks />
         </div>
       </footer>
     </section>
