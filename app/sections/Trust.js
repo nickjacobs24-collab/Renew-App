@@ -67,11 +67,19 @@ export default function Trust() {
           {...enter(0.14)}
           className="flex w-full flex-col items-start max-md:mt-3"
         >
-          <p className={`max-w-[54ch] text-white/85 ${BODY_TEXT}`}>
+          {/* Desktop: whole sentence on ONE line (nowrap + full width +
+              slightly smaller body size so it fits). Mobile keeps wrapping
+              with "someone else." held together. */}
+          <p
+            className={`max-w-[54ch] text-white/85 md:max-w-none md:whitespace-nowrap md:text-[1.15rem] ${BODY_TEXT}`}
+          >
             Supplements are sold with marketing and studies based on{" "}
             <span className="whitespace-nowrap">someone else.</span>
           </p>
-          <p className={`mt-4 md:mt-5 max-w-[54ch] text-white/85 ${BODY_TEXT}`}>
+          {/* Moved up slightly (reduced gap), still a visible pause. */}
+          <p
+            className={`mt-2 md:mt-3 max-w-[54ch] text-white/85 md:text-[1.15rem] ${BODY_TEXT}`}
+          >
             Not you. Not your data.
           </p>
           {/* Editorial pull quote — same treatment as the Problem pull quote:
@@ -82,7 +90,8 @@ export default function Trust() {
             <span className="block ml-[4%] md:ml-[12%]">
               See what&rsquo;s changing using
             </span>
-            <span className="block ml-[18%] md:ml-[34%]">
+            {/* Line 2 only moved left — "your" ~ beneath the C in "changing". */}
+            <span className="block ml-[14%] md:ml-[26%]">
               your own health data.
             </span>
           </p>

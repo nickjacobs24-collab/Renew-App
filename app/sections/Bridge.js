@@ -59,10 +59,12 @@ export default function Bridge() {
             className="font-accent italic mt-10 md:mt-16 w-full text-[clamp(1.5rem,3.8vw,2.9rem)] leading-[1.2]"
             style={{ color: INK }}
           >
-            <span className="block ml-[4%] md:ml-[12%]">
+            {/* Whole block further right; line 2 pulled left so "your" sits
+                ~ beneath the W in "answer". */}
+            <span className="block ml-[8%] md:ml-[18%]">
               The answer has been on
             </span>
-            <span className="block ml-[18%] md:ml-[34%]">
+            <span className="block ml-[18%] md:ml-[32%]">
               your wrist all along.
             </span>
           </p>
