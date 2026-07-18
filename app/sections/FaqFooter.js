@@ -63,14 +63,13 @@ export default function FaqFooter() {
             <a href="/privacy" className="hover:text-white">
               Privacy
             </a>
-            <a href="/terms" className="hover:text-white">
-              Terms
-            </a>
+            {/* Show the address itself — readable and selectable so it can be
+                copied manually, and a mailto so clicking opens a mail client. */}
             <a
               href="mailto:hello@prismhealthco.com"
-              className="hover:text-white"
+              className="select-text hover:text-white"
             >
-              Contact
+              hello@prismhealthco.com
             </a>
           </div>
         </div>
