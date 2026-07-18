@@ -32,7 +32,7 @@ export default function Bridge() {
             size that fits both lines; desktop scale/wrap restored via md:. */}
         <motion.h2
           {...enter(0.06)}
-          className="font-display uppercase leading-[1.0] max-w-4xl text-[clamp(1.6rem,7vw,2rem)] tracking-[-0.045em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.04em]"
+          className="font-display leading-[1.05] max-w-4xl text-[clamp(1.6rem,7vw,2rem)] tracking-[-0.03em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.03em]"
           style={{ color: INK }}
         >
           Are your supplements{" "}

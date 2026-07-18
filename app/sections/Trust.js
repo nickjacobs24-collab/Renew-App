@@ -49,7 +49,7 @@ export default function Trust() {
             THE EVIDENCE". Green EVIDENCE preserved. Desktop restored via md:. */}
         <motion.h2
           {...enter(0.06)}
-          className="font-display uppercase leading-[1.04] text-white max-md:mt-3 text-[clamp(1.4rem,6vw,1.6rem)] tracking-[-0.045em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.04em]"
+          className="font-display leading-[1.08] text-white max-md:mt-3 text-[clamp(1.4rem,6vw,1.6rem)] tracking-[-0.03em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.03em]"
         >
           <span className="whitespace-nowrap">We don&rsquo;t sell supplements</span>
           <br />

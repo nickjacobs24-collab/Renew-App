@@ -37,7 +37,7 @@ export default function Proof() {
 
         <motion.h2
           {...enter(0.06)}
-          className={`font-display uppercase leading-[1.0] text-white ${HEADLINE_STEPPED}`}
+          className={`font-display leading-[1.05] text-white ${HEADLINE_STEPPED}`}
         >
           <span style={{ color: ACCENT }}>See</span> what&rsquo;s working
           <br />

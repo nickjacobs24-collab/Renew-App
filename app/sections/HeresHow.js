@@ -79,7 +79,7 @@ export default function HeresHow() {
           {/* Mobile: exactly two lines via a mobile-only break. */}
           <motion.h2
             {...enter(0.06)}
-            className={`font-display uppercase leading-[1.0] text-white ${HEADLINE_STEPPED}`}
+            className={`font-display leading-[1.05] text-white ${HEADLINE_STEPPED}`}
           >
             Based on your{" "}
             <br className="md:hidden" />
