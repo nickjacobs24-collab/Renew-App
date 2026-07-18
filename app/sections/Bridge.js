@@ -56,7 +56,7 @@ export default function Bridge() {
               (bright green is dark-panels only). Consistent across breakpoints,
               only the offset/size scale responsively. */}
           <p
-            className="font-accent italic mt-10 md:mt-14 ml-[12%] md:ml-[20%] max-w-md text-[clamp(1.3rem,2.8vw,2.15rem)] leading-[1.25]"
+            className="font-accent italic mt-10 md:mt-16 ml-[12%] md:ml-[30%] max-w-xl text-[clamp(1.4rem,3.4vw,2.6rem)] leading-[1.2]"
             style={{ color: INK }}
           >
             The answer has been on

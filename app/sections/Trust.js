@@ -68,16 +68,17 @@ export default function Trust() {
           className="flex w-full flex-col items-start max-md:mt-3"
         >
           <p className={`max-w-[54ch] text-white/85 ${BODY_TEXT}`}>
-            Supplements are sold with marketing and studies based on someone
-            else.
+            Supplements are sold with marketing and studies based on{" "}
+            <span className="whitespace-nowrap">someone else.</span>
           </p>
           <p className={`mt-4 md:mt-5 max-w-[54ch] text-white/85 ${BODY_TEXT}`}>
             Not you. Not your data.
           </p>
           {/* Editorial pull quote — same treatment as the Problem pull quote:
-              italic serif, decisively offset, a deliberate reflection. White
-              on the dark panel. */}
-          <p className="font-accent italic mt-10 md:mt-14 ml-[12%] md:ml-[20%] max-w-md text-[clamp(1.3rem,2.8vw,2.15rem)] leading-[1.25] text-white">
+              italic serif, larger, occupying more horizontal space and set
+              in the centre-right of the column. A deliberate concluding
+              reflection. White on the dark panel. */}
+          <p className="font-accent italic mt-10 md:mt-16 ml-[12%] md:ml-[30%] max-w-xl text-[clamp(1.4rem,3.4vw,2.6rem)] leading-[1.2] text-white">
             See what&rsquo;s changing using
             <br />
             your own health data.

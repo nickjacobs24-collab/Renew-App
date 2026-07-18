@@ -55,10 +55,12 @@ export default function Proof() {
           <div
             className="relative mx-auto w-full overflow-hidden rounded-[2rem] ring-1 ring-white/[0.08]"
             style={{
-              /* --w drives the phone size AND the panel height, so the panel
-                 frames the phone and the crop lands in the bottom bezel. */
+              /* --w drives the phone size AND the panel height. The height is
+                 set so the crop lands just below the "Your sleep" cards, in
+                 the straight bezel — the bottom rounded corners stay hidden
+                 and the phone reads as continuing beyond the panel. */
               "--w": "min(92vw, 520px)",
-              height: "calc(2.5rem + 1.34 * var(--w))",
+              height: "calc(4rem + 1.38 * var(--w))",
               /* Refined charcoal/graphite surface — a single soft radial for
                  depth. No diagonal streak, no glow. Hairline top light +
                  soft drop shadow give it material without competing. */
@@ -68,31 +70,20 @@ export default function Proof() {
                 "0 40px 120px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05)",
             }}
           >
-            {/* Device-width column: crops the render's black side + top
-                margins so only the device shows, centred, on the graphite. */}
-            <div
-              className="absolute left-1/2 top-10 -translate-x-1/2 overflow-hidden"
-              style={{
-                width: "calc(0.708 * var(--w))",
-                height: "calc(1.4 * var(--w))",
-              }}
-            >
-              <Image
-                src="/screens/progress-2.png"
-                alt="Prism Sleep screen: a rising two-week sleep trend with a Magnesium marker, and Total, REM and Deep sleep summary cards."
-                width={1024}
-                height={1536}
-                priority
-                sizes="(max-width: 768px) 92vw, 520px"
-                className="pointer-events-none absolute max-w-none select-none"
-                style={{
-                  width: "var(--w)",
-                  height: "auto",
-                  left: "calc(-0.146 * var(--w))",
-                  top: "calc(-0.045 * var(--w))",
-                }}
-              />
-            </div>
+            {/* Progress 3 — full device render on a TRANSPARENT background,
+                placed directly on the graphite (no black rectangle). Sat a
+                little lower (top-16) for breathing room below the headline;
+                the panel's overflow crops the bottom bezel. */}
+            <Image
+              src="/screens/progress-3.png"
+              alt="Prism Sleep screen: a rising two-week sleep trend with a Magnesium marker, and Total, REM and Deep sleep summary cards."
+              width={1024}
+              height={1536}
+              priority
+              sizes="(max-width: 768px) 92vw, 520px"
+              className="pointer-events-none absolute left-1/2 top-16 max-w-none -translate-x-1/2 select-none"
+              style={{ width: "var(--w)", height: "auto" }}
+            />
           </div>
         </motion.figure>
       </div>
