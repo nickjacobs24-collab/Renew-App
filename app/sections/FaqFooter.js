@@ -38,18 +38,19 @@ export default function FaqFooter() {
         <div className="max-w-2xl divide-y divide-white/10">
           {QUESTIONS.map(({ q, a }) => (
             <details key={q} className="group py-5">
-              {/* Mobile: slightly smaller question + tighter icon gap so
-                  every question fits one line; desktop restored via md:. */}
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[13px] font-medium text-white md:gap-4 md:text-base">
+              {/* Mobile hierarchy: question effortless to scan (fits one
+                  line), answer clearly secondary (smaller grey), + / × icon
+                  a touch larger. Desktop restored via md:. */}
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[clamp(13.5px,3.7vw,15px)] font-medium text-white md:gap-4 md:text-base">
                 {q}
                 <span
                   aria-hidden="true"
-                  className="shrink-0 text-white/40 transition-transform group-open:rotate-45"
+                  className="shrink-0 text-lg text-white/40 transition-transform group-open:rotate-45 md:text-base"
                 >
                   +
                 </span>
               </summary>
-              <p className="pt-3 text-[15px] leading-relaxed text-white/80">
+              <p className="pt-3 text-[12.5px] leading-relaxed text-white/80 md:text-[15px]">
                 {a}
               </p>
             </details>

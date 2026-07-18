@@ -54,11 +54,16 @@ export default function Bridge() {
               with the rest). NEAR-BLACK, not green: bright green accents are
               dark-panels-only; on cream the italic serif carries the
               emphasis and colour would read cheap/low-contrast. */}
+          {/* Mobile: an editorial pull quote — slightly offset from the
+              left (not flush with the body), with deliberate, balanced line
+              breaks so "along." is never stranded. Desktop offset/wrap via md:. */}
           <p
-            className="font-accent italic mt-10 md:ml-[20%] max-w-xl text-[clamp(1.5rem,3.6vw,2.7rem)] leading-[1.15]"
+            className="font-accent italic mt-10 max-md:ml-6 md:ml-[20%] max-w-xl text-[clamp(1.5rem,3.6vw,2.7rem)] leading-[1.15]"
             style={{ color: INK }}
           >
-            The answer has been on your wrist all along.
+            The answer has been on{" "}
+            <br className="md:hidden" />
+            your wrist all along.
           </p>
         </motion.div>
       </div>

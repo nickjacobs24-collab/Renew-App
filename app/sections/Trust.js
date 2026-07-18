@@ -44,13 +44,14 @@ export default function Trust() {
             desktop keeps two lines. Green EVIDENCE preserved. Mobile size
             fits the lines; desktop scale restored via md:. Extra top space
             on mobile so the section feels less compressed. */}
+        {/* Two complete thoughts: "WE DON'T SELL SUPPLEMENTS" kept on one
+            line (mobile size reduced just enough to hold it), then "WE SHOW
+            THE EVIDENCE". Green EVIDENCE preserved. Desktop restored via md:. */}
         <motion.h2
           {...enter(0.06)}
-          className="font-display uppercase leading-[1.04] text-white max-md:mt-3 text-[clamp(1.55rem,7vw,1.95rem)] tracking-[-0.045em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.04em]"
+          className="font-display uppercase leading-[1.04] text-white max-md:mt-3 text-[clamp(1.4rem,6vw,1.6rem)] tracking-[-0.045em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.04em]"
         >
-          We don&rsquo;t sell{" "}
-          <br className="md:hidden" />
-          supplements
+          <span className="whitespace-nowrap">We don&rsquo;t sell supplements</span>
           <br />
           we show{" "}
           <span className="whitespace-nowrap">
@@ -58,13 +59,22 @@ export default function Trust() {
           </span>
         </motion.h2>
 
+        {/* Mobile: three editorial beats — statement, "Not you. Not your
+            data.", then the conclusion set apart as a reflective italic-serif
+            line (same language as Bridge's wrist line). All beat styling is
+            max-md only, so DESKTOP stays one continuous paragraph, unchanged. */}
         <motion.p
           {...enter(0.14)}
           className={`max-w-[60ch] text-white/85 max-md:mt-3 ${BODY_TEXT}`}
         >
           Supplements are sold with marketing and studies based on someone
-          else. Not you. Not your data. See what&rsquo;s changing using your
-          own health data.
+          else.{" "}
+          <span className="max-md:mt-4 max-md:block">Not you. Not your data.</span>{" "}
+          <span className="max-md:mt-10 max-md:ml-4 max-md:block max-md:font-accent max-md:text-[1.2rem] max-md:italic max-md:leading-[1.35] max-md:text-white">
+            See what&rsquo;s changing{" "}
+            <br className="md:hidden" />
+            using your own health data.
+          </span>
         </motion.p>
 
         {/* Quiet strap line — a separate closing beat, not part of the
@@ -74,12 +84,12 @@ export default function Trust() {
             Uniform small-caps across all three — no italic, no accent. */}
         <motion.div
           {...enter(0.22)}
-          className="mt-12 flex items-center gap-4 text-[11px] font-medium uppercase tracking-[0.22em] text-white/70 md:mt-16 md:text-[13px]"
+          className="mt-20 flex items-center gap-4 text-[10px] font-medium uppercase tracking-[0.22em] text-white/45 md:mt-16 md:text-[13px] md:text-white/70"
         >
           <span className="whitespace-nowrap">Your body</span>
-          <span aria-hidden="true" className="h-3 w-px shrink-0 bg-white/25" />
+          <span aria-hidden="true" className="h-3 w-px shrink-0 bg-white/15 md:bg-white/25" />
           <span className="whitespace-nowrap">Your goals</span>
-          <span aria-hidden="true" className="h-3 w-px shrink-0 bg-white/25" />
+          <span aria-hidden="true" className="h-3 w-px shrink-0 bg-white/15 md:bg-white/25" />
           <span className="whitespace-nowrap">Your results</span>
         </motion.div>
       </div>
