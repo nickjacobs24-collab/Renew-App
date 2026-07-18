@@ -39,9 +39,9 @@ export default function Proof() {
           {...enter(0.06)}
           className={`font-display uppercase leading-[1.0] text-white ${HEADLINE_STEPPED}`}
         >
-          See what&rsquo;s working
+          <span style={{ color: ACCENT }}>See</span> what&rsquo;s working
           <br />
-          and what&rsquo;s <span style={{ color: ACCENT }}>not</span>
+          and what&rsquo;s not
         </motion.h2>
 
         {/* robin hood 2 card: near FULL-WIDTH card (fills the grid, so only
