@@ -44,68 +44,54 @@ export default function Proof() {
           and what&rsquo;s not
         </motion.h2>
 
-        {/* robin hood 2 card: near FULL-WIDTH card (fills the grid, so only
-            the grid's slight side padding sits between the jet-black section
-            and the silver box), a BRIGHTER GREY/SILVER MIRROR sheen (not
-            near-black), running tall close to the bottom. The phone sits
-            centred and STRAIGHT in a SILVER metallic case rim, larger, and
-            bleeds off the card's bottom edge.
-            VISUALS ROUND — P4 slot: v1 = this static Progress 1.png;
-            v2 UPGRADE = live proof animation in the same frame (line
-            climbing, Magnesium marker). The ONLY product animation on
-            the page — the proof payoff. Screen contents never altered. */}
-        <motion.figure {...enter(0.14)} className="flex w-full flex-col items-center gap-4">
+        {/* Progress 2 — the final phone render (full device on black), used
+            INTACT. A device-width column crops the render's black margins so
+            the phone sits cleanly on the graphite with breathing room; the
+            panel's overflow crops the bottom bezel so the device runs off the
+            bottom edge while the chart and the three "Your sleep" cards stay
+            fully visible. Crop is layout-only (no asset editing) and tunable
+            per breakpoint via --w (the render's display width). */}
+        <motion.figure {...enter(0.14)} className="flex w-full flex-col items-center">
           <div
-            className="relative mx-auto h-[min(72vh,700px)] w-full overflow-hidden rounded-[2rem] ring-1 ring-white/[0.08]"
+            className="relative mx-auto w-full overflow-hidden rounded-[2rem] ring-1 ring-white/[0.08]"
             style={{
+              /* --w drives the phone size AND the panel height, so the panel
+                 frames the phone and the crop lands in the bottom bezel. */
+              "--w": "min(92vw, 520px)",
+              height: "calc(2.5rem + 1.34 * var(--w))",
               /* Refined charcoal/graphite surface — a single soft radial for
-                 depth (light gathered gently toward the top, falling to a
-                 deeper graphite at the base and edges). No diagonal streak,
-                 no glow. A hairline top light + soft drop shadow give it
-                 material without competing with the product. */
+                 depth. No diagonal streak, no glow. Hairline top light +
+                 soft drop shadow give it material without competing. */
               background:
                 "radial-gradient(130% 115% at 50% -12%, #26282c 0%, #181a1d 52%, #0d0e10 100%)",
               boxShadow:
                 "0 40px 120px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05)",
             }}
           >
-            {/* A real iPhone — titanium rail, black bezel, Dynamic Island,
-                side buttons — bigger and wider, rising from the card's
-                bottom edge. Screen contents never altered. */}
-            <div className="absolute left-1/2 top-10 -translate-x-1/2">
-              <div
-                className="relative"
-                style={{ aspectRatio: "72 / 148", height: "min(86vh, 810px)" }}
-              >
-                {/* titanium metal rail */}
-                <div
-                  className="absolute inset-0 rounded-[3.2rem] rounded-b-none"
-                  style={{
-                    background:
-                      "linear-gradient(135deg,#f0f1f3 0%,#a6a9af 16%,#cfd2d6 34%,#8b8e94 52%,#dcdee1 72%,#a9acb2 88%,#c4c7cc 100%)",
-                    boxShadow: "0 25px 70px rgba(0,0,0,0.55)",
-                  }}
-                />
-                {/* side buttons: mute + volume (left), power (right) */}
-                <span className="absolute -left-[2px] top-[19%] h-8 w-[3px] rounded-l-sm bg-[#8b8e94]" />
-                <span className="absolute -left-[2px] top-[28%] h-16 w-[3px] rounded-l-sm bg-[#c4c7cc]" />
-                <span className="absolute -left-[2px] top-[40%] h-16 w-[3px] rounded-l-sm bg-[#c4c7cc]" />
-                <span className="absolute -right-[2px] top-[30%] h-24 w-[3px] rounded-r-sm bg-[#c4c7cc]" />
-                {/* black bezel + screen */}
-                <div className="absolute inset-[7px] bottom-0 rounded-[2.7rem] rounded-b-none bg-black p-[3px] pb-0">
-                  <div className="relative h-full w-full overflow-hidden rounded-[2.55rem] rounded-b-none bg-black">
-                    <Image
-                      src="/screens/progress.png"
-                      alt="Prism Sleep trend. Total sleep 8h 12m, a rising line with a Magnesium marker where it was started."
-                      fill
-                      sizes="(max-width: 768px) 82vw, 360px"
-                      className="object-cover object-top"
-                    />
-                    {/* Dynamic Island */}
-                    <span className="absolute left-1/2 top-[10px] h-[24px] w-[86px] -translate-x-1/2 rounded-full bg-black" />
-                  </div>
-                </div>
-              </div>
+            {/* Device-width column: crops the render's black side + top
+                margins so only the device shows, centred, on the graphite. */}
+            <div
+              className="absolute left-1/2 top-10 -translate-x-1/2 overflow-hidden"
+              style={{
+                width: "calc(0.708 * var(--w))",
+                height: "calc(1.4 * var(--w))",
+              }}
+            >
+              <Image
+                src="/screens/progress-2.png"
+                alt="Prism Sleep screen: a rising two-week sleep trend with a Magnesium marker, and Total, REM and Deep sleep summary cards."
+                width={1024}
+                height={1536}
+                priority
+                sizes="(max-width: 768px) 92vw, 520px"
+                className="pointer-events-none absolute max-w-none select-none"
+                style={{
+                  width: "var(--w)",
+                  height: "auto",
+                  left: "calc(-0.146 * var(--w))",
+                  top: "calc(-0.045 * var(--w))",
+                }}
+              />
             </div>
           </div>
         </motion.figure>
