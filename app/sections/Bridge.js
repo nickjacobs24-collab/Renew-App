@@ -1,12 +1,13 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import { GRID, PANEL_PAD, Eyebrow, GAP_STACK } from "./system";
+import { Eyebrow } from "./system";
 
 /*
- * Panel 2 — BRIDGE (§4, LIGHT). Text-only statement: eyebrow → headline →
- * two one-line supporting sentences → the green wrist line, with breathing
- * room above it. (The landscape image placeholder was removed at the
- * founder's request.)
+ * Panel 2 — PROBLEM (§4, LIGHT). Rebuilt to the "Section 2 Problem" reference:
+ * wide panoramic off-white panel. Left: eyebrow → large sans headline (two
+ * lines) → two-line grey supporting copy. Right: the italic-serif quote,
+ * centre-aligned, sitting close to the supporting-copy baseline. No footer
+ * row, no imagery.
  */
 
 const INK = "var(--prism-ink)";
@@ -20,55 +21,52 @@ export default function Bridge() {
     viewport: { once: true, amount: 0.3 },
     transition: { duration: 0.9, delay, ease: [0.25, 0.1, 0.25, 1] },
   });
+  const fade = {
+    initial: prefersReduced ? false : { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true, amount: 0.3 },
+    transition: { duration: 1, delay: 0.2, ease: "easeOut" },
+  };
 
   return (
     <section style={{ background: "var(--prism-cream)", color: INK }}>
-      <div className={`${GRID} ${PANEL_PAD} flex flex-col ${GAP_STACK}`}>
-        <motion.div {...enter()}>
-          <Eyebrow mode="light">The problem</Eyebrow>
-        </motion.div>
+      <div className="relative mx-auto w-full max-w-[1600px] px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
+        {/* Left block */}
+        <div className="max-w-[44rem]">
+          <motion.div {...enter()}>
+            <Eyebrow mode="light">The problem</Eyebrow>
+          </motion.div>
 
-        {/* Mobile: exactly two lines via a mobile-only break, with a mobile
-            size that fits both lines; desktop scale/wrap restored via md:. */}
-        <motion.h2
-          {...enter(0.06)}
-          className="font-display leading-[1.05] max-w-4xl text-[clamp(1.6rem,7vw,2rem)] tracking-[-0.03em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.03em]"
-          style={{ color: INK }}
-        >
-          Are your supplements{" "}
-          <br className="md:hidden" />
-          making a difference?
-        </motion.h2>
-
-        <motion.div {...enter(0.14)} className="max-w-4xl">
-          {/* Supporting copy on ONE line — sized to fit within the headline
-              measure (max-w-4xl) at tablet width and up, so it sits under
-              the headline as a balanced single line; wraps only on the
-              narrowest phones. */}
-          <p className="font-light leading-relaxed text-[#14140f]/80 text-[clamp(0.8rem,1.55vw,0.98rem)]">
-            Until now, the only way to check was a blood test. But these can be
-            expensive, complicated and hard to understand.
-          </p>
-          {/* Editorial pull quote — italic serif, decisively offset from the
-              left body copy (not flush, not merely indented), sitting within
-              the text column but clearly separate. Deliberate two-line break.
-              Same treatment as the Promise pull quote; near-black on cream
-              (bright green is dark-panels only). Consistent across breakpoints,
-              only the offset/size scale responsively. */}
-          <p
-            className="font-accent italic mt-10 md:mt-16 w-full text-[clamp(1.5rem,3.8vw,2.9rem)] leading-[1.2]"
+          <motion.h2
+            {...enter(0.06)}
+            className="mt-6 font-display font-medium leading-[1.04] tracking-[-0.02em] text-[clamp(2.1rem,5vw,4rem)] lg:mt-8"
             style={{ color: INK }}
           >
-            {/* Whole block further right; line 2 pulled left so "your" sits
-                ~ beneath the W in "answer". */}
-            <span className="block ml-[8%] md:ml-[18%]">
-              The answer has been on
-            </span>
-            <span className="block ml-[18%] md:ml-[32%]">
-              your wrist all along.
-            </span>
-          </p>
-        </motion.div>
+            Are your supplements
+            <br />
+            making a difference?
+          </motion.h2>
+
+          <motion.div
+            {...enter(0.14)}
+            className="mt-8 space-y-1.5 font-light leading-relaxed text-[clamp(1rem,1.25vw,1.15rem)] text-[#14140f]/60 lg:mt-10"
+          >
+            <p>Until now, the only way to check was a blood test.</p>
+            <p>But these can be expensive, complicated and hard to understand.</p>
+          </motion.div>
+        </div>
+
+        {/* Italic quote — centre-aligned, right side, near the support baseline.
+            Absolutely positioned on desktop; stacks below on smaller screens. */}
+        <motion.p
+          {...fade}
+          className="mt-14 font-accent italic leading-[1.25] text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-28 lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
+          style={{ color: INK }}
+        >
+          The answer has been on
+          <br />
+          your wrist all along.
+        </motion.p>
       </div>
     </section>
   );
