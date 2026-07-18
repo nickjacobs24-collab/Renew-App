@@ -87,33 +87,41 @@ export default function GetPrism() {
             You&rsquo;re on the list.
           </motion.p>
         ) : (
-          <motion.form
+          <motion.div
             {...enter(0.14)}
-            onSubmit={onSubmit}
-            className="mx-auto flex w-full max-w-md flex-col items-stretch gap-2.5 sm:flex-row"
+            className="flex w-full flex-col items-center gap-2.5"
           >
-            <label htmlFor="waitlist-email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="waitlist-email"
-              type="email"
-              required
-              autoComplete="email"
-              placeholder="Email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 rounded-full border border-black/15 bg-white px-5 py-2 text-sm outline-none placeholder:text-[#14140f]/50 focus:border-black/40"
-              style={{ color: INK }}
-            />
-            <button
-              type="submit"
-              disabled={status === "submitting"}
-              className="rounded-full bg-[#14140f] px-6 py-2 text-sm font-medium text-[#fcfbf8] transition-opacity hover:opacity-90 disabled:opacity-60"
+            <form
+              onSubmit={onSubmit}
+              className="mx-auto flex w-full max-w-md flex-col items-stretch gap-2.5 sm:flex-row"
             >
-              {status === "submitting" ? "Joining…" : "Join the waitlist"}
-            </button>
-          </motion.form>
+              <label htmlFor="waitlist-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="waitlist-email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 rounded-full border border-black/15 bg-white px-5 py-2 text-sm outline-none placeholder:text-[#14140f]/50 focus:border-black/40"
+                style={{ color: INK }}
+              />
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="rounded-full bg-[#14140f] px-6 py-2 text-sm font-medium text-[#fcfbf8] transition-opacity hover:opacity-90 disabled:opacity-60"
+              >
+                {status === "submitting" ? "Joining…" : "Join the waitlist"}
+              </button>
+            </form>
+            {/* Quiet reassurance directly beneath the field */}
+            <p className="text-[13px]" style={{ color: "rgba(20,20,15,0.55)" }}>
+              We&rsquo;ll email you once when Prism launches. Nothing else.
+            </p>
+          </motion.div>
         )}
 
         {status === "error" && (

@@ -13,7 +13,7 @@ import Link from "next/link";
 const PAPER = "#fefdfb";
 const INK = "#1a1a18";
 
-export default function LegalPage({ title, children }) {
+export default function LegalPage({ title, updated, children }) {
   return (
     <main
       className="min-h-screen"
@@ -34,8 +34,20 @@ export default function LegalPage({ title, children }) {
           {title}
         </h1>
 
-        {/* Body — normal reading size, standard paragraph spacing */}
-        <div className="mt-6 space-y-5 text-[1.0625rem] leading-[1.7]">
+        {updated && (
+          <p className="mt-2 text-sm" style={{ color: "rgba(26,26,24,0.6)" }}>
+            Last updated: {updated}
+          </p>
+        )}
+
+        {/*
+         * Body — normal reading size, standard paragraph spacing. Section
+         * <h2>s (smaller than the page title, clearly distinct from body,
+         * consistent spacing above/below) and inline <a>s are styled here
+         * so page files stay clean semantic markup. Reused by every legal
+         * page.
+         */}
+        <div className="mt-8 text-[1.0625rem] leading-[1.7] [&>p]:mt-4 [&>h2]:mt-10 [&>h2]:mb-1 [&>h2]:text-lg [&>h2]:font-semibold [&>h2]:tracking-tight [&_a]:underline [&_a]:underline-offset-2">
           {children}
         </div>
       </div>
