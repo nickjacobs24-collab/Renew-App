@@ -42,21 +42,34 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-black text-white">
-      {/* Full-bleed background artwork — reaches every edge, no rectangle.
-          object-position keeps the prism on the right and the dark negative
-          space behind the copy; on mobile it favours the darker left. */}
-      <div className="absolute inset-0 z-0">
+      {/* DESKTOP: full-bleed background artwork — reaches every edge, prism on
+          the right, dark negative space behind the copy. */}
+      <div className="absolute inset-0 z-0 max-md:hidden">
         <Image
           src={HERO_ART_SRC}
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[42%_center] md:object-center"
+          className="object-cover object-center"
         />
         {/* Subtle contrast gradient for legibility — fades to nothing, never
             reads as a separate solid panel. */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/65 md:bg-gradient-to-r md:from-black/80 md:via-black/25 md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/25 to-transparent" />
+      </div>
+
+      {/* MOBILE: the prism as a DISTINCT object on the right (black canvas on
+          the left for the copy — no overlap). Hidden on desktop. */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-[43%] items-center md:hidden">
+        <Image
+          src="/hero/prism-mobile.png"
+          alt=""
+          width={600}
+          height={660}
+          priority
+          sizes="43vw"
+          className="h-auto w-full"
+        />
       </div>
 
       {/* Header — logo only, no navigation. */}
@@ -71,10 +84,11 @@ export default function Hero() {
         </div>
       </header>
 
-      {/* Content — overlaid, constrained to a content width on the left. */}
+      {/* Content — on the LEFT. Mobile is constrained so it never overlaps the
+          right-side prism; desktop keeps its content width over the artwork. */}
       <div className={`${GRID} relative z-10 flex min-h-screen items-center`}>
-        <div className="w-full max-w-xl py-28 md:py-24">
-          <h1 className="fade-rise font-accent text-[clamp(2.5rem,5.6vw,4.6rem)] leading-[1.06] tracking-[-0.01em] text-white">
+        <div className="w-full max-w-xl py-28 max-md:max-w-[57%] md:py-24">
+          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(1.65rem,4.4vw,1.95rem)] md:text-[clamp(2.5rem,5.6vw,4.6rem)] md:leading-[1.06]">
             Know if your supplements are actually{" "}
             <span style={{ color: ACCENT }}>working</span>.
           </h1>

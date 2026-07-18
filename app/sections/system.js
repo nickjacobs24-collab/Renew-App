@@ -20,7 +20,7 @@ export const GRID = "mx-auto w-full max-w-7xl px-5 md:px-8";
 // Tracking tightened (was -0.025em) — the loose default left large word
 // gaps at display size ("ARE YOUR"). Travels with the size token.
 export const HEADLINE_DISPLAY = "text-[clamp(2.6rem,6vw,4.9rem)] tracking-[-0.04em]";
-export const HEADLINE_STEPPED = "text-[clamp(2.1rem,4.8vw,3.9rem)] tracking-[-0.04em]";
+export const HEADLINE_STEPPED = "text-[clamp(2.4rem,4.8vw,3.9rem)] tracking-[-0.04em]";
 
 // Supporting/body copy: lighter weight, comfortable size — thinner and
 // larger reads calmer. Colour (contrast) is set per mode at call site.

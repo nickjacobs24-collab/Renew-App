@@ -46,11 +46,11 @@ export default function Trust() {
 
           <motion.h2
             {...enter(0.06)}
-            className="mt-6 font-display font-medium leading-[1.05] tracking-[-0.02em] text-white text-[clamp(1.9rem,4.8vw,3.8rem)] lg:mt-8"
+            className="mt-6 font-display font-medium leading-[1.05] tracking-[-0.02em] text-white text-[clamp(2.3rem,4.8vw,3.8rem)] lg:mt-8"
           >
-            We don&rsquo;t sell supplements
+            We don&rsquo;t sell supplements.
             <br />
-            we show the <span style={{ color: ACCENT }}>evidence</span>
+            We show the <span style={{ color: ACCENT }}>evidence</span>.
           </motion.h2>
 
           <motion.div
@@ -69,7 +69,7 @@ export default function Trust() {
             positioned on desktop; stacks below on smaller screens. */}
         <motion.p
           {...fade}
-          className="mt-14 font-accent italic leading-[1.25] text-white text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-20 lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
+          className="mt-14 font-accent italic leading-[1.25] text-white text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-[6.75rem] lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
         >
           See what&rsquo;s changing using
           <br />

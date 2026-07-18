@@ -41,7 +41,7 @@ export default function Proof() {
         >
           <span style={{ color: ACCENT }}>See</span> what&rsquo;s working
           <br />
-          and what&rsquo;s not
+          and what&rsquo;s not.
         </motion.h2>
 
         {/* Progress 2 — the final phone render (full device on black), used

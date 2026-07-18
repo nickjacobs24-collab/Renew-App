@@ -39,7 +39,7 @@ export default function Bridge() {
 
           <motion.h2
             {...enter(0.06)}
-            className="mt-6 font-display font-medium leading-[1.04] tracking-[-0.02em] text-[clamp(2.1rem,5vw,4rem)] lg:mt-8"
+            className="mt-6 font-display font-medium leading-[1.04] tracking-[-0.02em] text-[clamp(2.35rem,5vw,4rem)] lg:mt-8"
             style={{ color: INK }}
           >
             Are your supplements
@@ -60,7 +60,7 @@ export default function Bridge() {
             Absolutely positioned on desktop; stacks below on smaller screens. */}
         <motion.p
           {...fade}
-          className="mt-14 font-accent italic leading-[1.25] text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-28 lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
+          className="mt-14 font-accent italic leading-[1.25] text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-[5.25rem] lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
           style={{ color: INK }}
         >
           The answer has been on

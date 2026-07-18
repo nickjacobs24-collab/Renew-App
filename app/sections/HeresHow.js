@@ -81,9 +81,9 @@ export default function HeresHow() {
             {...enter(0.06)}
             className={`font-display leading-[1.05] text-white ${HEADLINE_STEPPED}`}
           >
-            Based on your{" "}
-            <br className="md:hidden" />
-            health data
+            Based on your
+            <br />
+            health data.
           </motion.h2>
 
           <motion.p
