@@ -49,20 +49,18 @@ export default function Bridge() {
             Until now, the only way to check was a blood test. But these can be
             expensive, complicated and hard to understand.
           </p>
-          {/* The emotional turn — set apart from the two supporting lines:
-              italic serif, larger, offset toward centre/right (not hard-left
-              with the rest). NEAR-BLACK, not green: bright green accents are
-              dark-panels-only; on cream the italic serif carries the
-              emphasis and colour would read cheap/low-contrast. */}
-          {/* Mobile: an editorial pull quote — slightly offset from the
-              left (not flush with the body), with deliberate, balanced line
-              breaks so "along." is never stranded. Desktop offset/wrap via md:. */}
+          {/* Editorial pull quote — italic serif, decisively offset from the
+              left body copy (not flush, not merely indented), sitting within
+              the text column but clearly separate. Deliberate two-line break.
+              Same treatment as the Promise pull quote; near-black on cream
+              (bright green is dark-panels only). Consistent across breakpoints,
+              only the offset/size scale responsively. */}
           <p
-            className="font-accent italic mt-10 max-md:ml-6 md:ml-[20%] max-w-xl text-[clamp(1.5rem,3.6vw,2.7rem)] leading-[1.15]"
+            className="font-accent italic mt-10 md:mt-14 ml-[12%] md:ml-[20%] max-w-md text-[clamp(1.3rem,2.8vw,2.15rem)] leading-[1.25]"
             style={{ color: INK }}
           >
-            The answer has been on{" "}
-            <br className="md:hidden" />
+            The answer has been on
+            <br />
             your wrist all along.
           </p>
         </motion.div>

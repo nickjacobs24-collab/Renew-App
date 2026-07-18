@@ -132,14 +132,21 @@ export default function FooterLinks() {
               <a
                 href="mailto:hello@prismhealthco.com"
                 aria-label="Email Prism at hello@prismhealthco.com"
-                className="flex flex-1 items-center justify-between gap-4 px-5 py-4 text-[15px] font-medium transition-colors hover:bg-black/[0.03]"
+                className="group flex flex-1 cursor-pointer items-center justify-between gap-4 px-5 py-4 text-[15px] font-medium transition-colors hover:bg-black/[0.04]"
                 style={{
                   borderRadius: "calc(var(--prism-radius) - 0.45rem)",
-                  border: "1px solid rgba(20,20,15,0.15)",
+                  border: "1px solid rgba(20,20,15,0.18)",
                 }}
               >
-                <span>hello@prismhealthco.com</span>
-                <span aria-hidden="true" className="text-base leading-none">
+                {/* Persistent underline + hover so it reads as a real
+                    clickable email link, not static text. */}
+                <span className="underline decoration-[#14140f]/30 underline-offset-4 transition-colors group-hover:decoration-[#14140f]">
+                  hello@prismhealthco.com
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="text-base leading-none opacity-60 transition-transform group-hover:translate-x-0.5"
+                >
                   &#8599;
                 </span>
               </a>

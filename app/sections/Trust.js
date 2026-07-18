@@ -59,23 +59,30 @@ export default function Trust() {
           </span>
         </motion.h2>
 
-        {/* Mobile: three editorial beats — statement, "Not you. Not your
-            data.", then the conclusion set apart as a reflective italic-serif
-            line (same language as Bridge's wrist line). All beat styling is
-            max-md only, so DESKTOP stays one continuous paragraph, unchanged. */}
-        <motion.p
+        {/* Editorial rhythm on BOTH desktop and mobile: explanatory
+            sentence -> "Not you. Not your data." -> pull quote. Never
+            collapsed back into one paragraph; only spacing/size scale
+            responsively. */}
+        <motion.div
           {...enter(0.14)}
-          className={`max-w-[60ch] text-white/85 max-md:mt-3 ${BODY_TEXT}`}
+          className="flex w-full flex-col items-start max-md:mt-3"
         >
-          Supplements are sold with marketing and studies based on someone
-          else.{" "}
-          <span className="max-md:mt-4 max-md:block">Not you. Not your data.</span>{" "}
-          <span className="max-md:mt-10 max-md:ml-4 max-md:block max-md:font-accent max-md:text-[1.2rem] max-md:italic max-md:leading-[1.35] max-md:text-white">
-            See what&rsquo;s changing{" "}
-            <br className="md:hidden" />
-            using your own health data.
-          </span>
-        </motion.p>
+          <p className={`max-w-[54ch] text-white/85 ${BODY_TEXT}`}>
+            Supplements are sold with marketing and studies based on someone
+            else.
+          </p>
+          <p className={`mt-4 md:mt-5 max-w-[54ch] text-white/85 ${BODY_TEXT}`}>
+            Not you. Not your data.
+          </p>
+          {/* Editorial pull quote — same treatment as the Problem pull quote:
+              italic serif, decisively offset, a deliberate reflection. White
+              on the dark panel. */}
+          <p className="font-accent italic mt-10 md:mt-14 ml-[12%] md:ml-[20%] max-w-md text-[clamp(1.3rem,2.8vw,2.15rem)] leading-[1.25] text-white">
+            See what&rsquo;s changing using
+            <br />
+            your own health data.
+          </p>
+        </motion.div>
 
         {/* Quiet strap line — a separate closing beat, not part of the
             paragraph. Clear air above it, pushed toward the base of the
