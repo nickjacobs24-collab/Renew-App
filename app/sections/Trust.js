@@ -1,13 +1,6 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  GRID,
-  PANEL_PAD,
-  Eyebrow,
-  HEADLINE_STEPPED,
-  BODY_TEXT,
-  GAP_STACK,
-} from "./system";
+import { GRID, PANEL_PAD, Eyebrow, BODY_TEXT, GAP_STACK } from "./system";
 
 /*
  * Panel 5 — TRUST / OUR PROMISE (§4, DARK). ENTIRE panel left-aligned —
@@ -47,13 +40,19 @@ export default function Trust() {
           <Eyebrow mode="dark">Our promise</Eyebrow>
         </motion.div>
 
+        {/* Mobile: exactly three lines (mobile-only break after "sell");
+            desktop keeps two lines. Green EVIDENCE preserved. Mobile size
+            fits the lines; desktop scale restored via md:. Extra top space
+            on mobile so the section feels less compressed. */}
         <motion.h2
           {...enter(0.06)}
-          className={`font-display uppercase leading-[1.04] text-white ${HEADLINE_STEPPED}`}
+          className="font-display uppercase leading-[1.04] text-white max-md:mt-3 text-[clamp(1.55rem,7vw,1.95rem)] tracking-[-0.045em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.04em]"
         >
-          We don&rsquo;t sell supplements
+          We don&rsquo;t sell{" "}
+          <br className="md:hidden" />
+          supplements
           <br />
-          we show you{" "}
+          we show{" "}
           <span className="whitespace-nowrap">
             the&nbsp;<span style={{ color: ACCENT }}>evidence</span>
           </span>
@@ -61,12 +60,11 @@ export default function Trust() {
 
         <motion.p
           {...enter(0.14)}
-          className={`max-w-[60ch] text-white/85 ${BODY_TEXT}`}
+          className={`max-w-[60ch] text-white/85 max-md:mt-3 ${BODY_TEXT}`}
         >
-          Supplements are sold with sales and marketing. Studies on someone
-          else, somewhere else. Not you. Not your data. So how can you be sure
-          it&rsquo;s working? Prism shows you what&rsquo;s changing, using
-          your data.
+          Supplements are sold with marketing and studies based on someone
+          else. Not you. Not your data. See what&rsquo;s changing using your
+          own health data.
         </motion.p>
 
         {/* Quiet strap line — a separate closing beat, not part of the

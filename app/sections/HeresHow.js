@@ -81,11 +81,14 @@ export default function HeresHow() {
             <Eyebrow mode="dark">How it works</Eyebrow>
           </motion.div>
 
+          {/* Mobile: exactly two lines via a mobile-only break. */}
           <motion.h2
             {...enter(0.06)}
             className={`font-display uppercase leading-[1.0] text-white ${HEADLINE_STEPPED}`}
           >
-            Based on your health data
+            Based on your{" "}
+            <br className="md:hidden" />
+            health data
           </motion.h2>
 
           <motion.p
@@ -95,15 +98,16 @@ export default function HeresHow() {
             Cost-effective. Simple. Easy to understand.
           </motion.p>
 
-          {/* Wearable brand row */}
+          {/* Wearable brand row. Mobile: kept on ONE line — smaller size
+              and tighter gap, no wrap. Desktop restored via md:. */}
           <motion.div
             {...enter(0.22)}
-            className="mt-2 flex flex-wrap items-center gap-x-10 gap-y-4"
+            className="mt-2 flex flex-nowrap items-center gap-x-3 gap-y-4 md:flex-wrap md:gap-x-10"
           >
             {BRANDS.map((brand) => (
               <span
                 key={brand.name}
-                className={`text-sm text-white/75 ${brand.cls}`}
+                className={`whitespace-nowrap text-[11px] text-white/75 md:text-sm ${brand.cls}`}
               >
                 {brand.name}
               </span>

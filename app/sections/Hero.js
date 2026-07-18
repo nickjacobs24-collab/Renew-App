@@ -46,22 +46,27 @@ export default function Hero() {
           slot (above) fills the frame behind this; over the bare
           gradient the tight stack still reads as composed, not
           floating. */}
+      {/* Mobile: block sits moderately higher (more bottom than top padding
+          with justify-center), tighter gap. Desktop restored via md:. */}
       <div
-        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center gap-12 pt-28 pb-20 text-center`}
+        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center gap-8 pt-16 pb-28 text-center md:gap-12 md:pt-28 md:pb-20`}
       >
         {/* No supporting line (§4: deliberate, do not add one).
-            Calmer scale — 3 lines, not oversized. */}
-        {/* Forced two-line break — controlled, not free-wrapping:
-            line 1 "KNOW IF YOUR SUPPLEMENTS", line 2 "ACTUALLY WORK". */}
-        <h1 className="fade-rise font-display uppercase leading-[1.05] tracking-[-0.04em] text-white text-[clamp(1.5rem,6vw,4.75rem)]">
+            Forced two-line break — controlled, not free-wrapping:
+            line 1 "KNOW IF YOUR SUPPLEMENTS", line 2 "ACTUALLY WORK".
+            Mobile: larger scale + tighter tracking (grows on wider phones);
+            desktop scale restored via md:. */}
+        <h1 className="fade-rise font-display uppercase leading-[1.05] text-white tracking-[-0.05em] text-[clamp(1.5rem,6.4vw,2.05rem)] md:tracking-[-0.04em] md:text-[clamp(1.5rem,6vw,4.75rem)]">
           <span className="whitespace-nowrap">Know if your supplements</span>
           <br />
           actually <span style={{ color: ACCENT }}>work</span>
         </h1>
 
+        {/* Mobile: slightly smaller button so it doesn't overpower the
+            heading; desktop size restored via md:. */}
         <a
           href="#get-prism"
-          className="fade-rise fade-rise-2 rounded-full bg-white px-10 py-4 text-lg font-medium text-black shadow-[0_12px_40px_rgba(0,0,0,0.45)] transition-transform hover:scale-[1.03]"
+          className="fade-rise fade-rise-2 rounded-full bg-white px-8 py-3 text-base font-medium text-black shadow-[0_12px_40px_rgba(0,0,0,0.45)] transition-transform hover:scale-[1.03] md:px-10 md:py-4 md:text-lg"
         >
           Join the waitlist
         </a>

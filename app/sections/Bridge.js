@@ -1,12 +1,6 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  GRID,
-  PANEL_PAD,
-  Eyebrow,
-  HEADLINE_STEPPED,
-  GAP_STACK,
-} from "./system";
+import { GRID, PANEL_PAD, Eyebrow, GAP_STACK } from "./system";
 
 /*
  * Panel 2 — BRIDGE (§4, LIGHT). Text-only statement: eyebrow → headline →
@@ -34,12 +28,16 @@ export default function Bridge() {
           <Eyebrow mode="light">The problem</Eyebrow>
         </motion.div>
 
+        {/* Mobile: exactly two lines via a mobile-only break, with a mobile
+            size that fits both lines; desktop scale/wrap restored via md:. */}
         <motion.h2
           {...enter(0.06)}
-          className={`font-display uppercase leading-[1.0] max-w-4xl ${HEADLINE_STEPPED}`}
+          className="font-display uppercase leading-[1.0] max-w-4xl text-[clamp(1.6rem,7vw,2rem)] tracking-[-0.045em] md:text-[clamp(2.1rem,4.8vw,3.9rem)] md:tracking-[-0.04em]"
           style={{ color: INK }}
         >
-          Are your supplements making a difference?
+          Are your supplements{" "}
+          <br className="md:hidden" />
+          making a difference?
         </motion.h2>
 
         <motion.div {...enter(0.14)} className="max-w-4xl">

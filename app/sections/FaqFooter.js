@@ -20,7 +20,7 @@ const QUESTIONS = [
     a: "The information shown is not medical advice. Always speak to a doctor or qualified healthcare professional before making decisions about health.",
   },
   {
-    q: "How will I know if a supplement is making a difference?",
+    q: "How will I know if a supplement is working?",
     a: "Changes in health data are shown over time after a supplement is started, stopped or changed.",
   },
   {
@@ -38,11 +38,13 @@ export default function FaqFooter() {
         <div className="max-w-2xl divide-y divide-white/10">
           {QUESTIONS.map(({ q, a }) => (
             <details key={q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium text-white md:text-base">
+              {/* Mobile: slightly smaller question + tighter icon gap so
+                  every question fits one line; desktop restored via md:. */}
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[13px] font-medium text-white md:gap-4 md:text-base">
                 {q}
                 <span
                   aria-hidden="true"
-                  className="text-white/40 transition-transform group-open:rotate-45"
+                  className="shrink-0 text-white/40 transition-transform group-open:rotate-45"
                 >
                   +
                 </span>
