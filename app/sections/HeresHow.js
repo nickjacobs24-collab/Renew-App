@@ -53,10 +53,8 @@ export default function HeresHow() {
           stays a supporting visual, not the star. */}
       <div className={`${GRID} ${PANEL_PAD}`}>
        <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
-        {/* Visual — left column, pulled toward centre. Home 1 is a full
-            device render on a TRANSPARENT background, placed directly (no CSS
-            frame — the asset already is the phone). Soft drop shadow grounds
-            it, matching the previous presentation. Position/size unchanged. */}
+        {/* Visual — left column, pulled toward centre. Home 1 placed as-is,
+            no frame or styling around it. Position/size unchanged. */}
         <motion.div
           {...enter(0.18)}
           className="order-2 justify-self-center md:order-1 md:justify-self-center"
@@ -67,12 +65,8 @@ export default function HeresHow() {
             width={907}
             height={1734}
             sizes="(max-width: 768px) 66vw, 320px"
-            className="pointer-events-none max-w-none select-none"
-            style={{
-              height: "min(66vh, 600px)",
-              width: "auto",
-              filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.55))",
-            }}
+            className="max-w-none select-none"
+            style={{ height: "min(66vh, 600px)", width: "auto" }}
           />
         </motion.div>
 

@@ -1,33 +1,22 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Copy } from "lucide-react";
-
-const EMAIL = "hello@prismhealthco.com";
 
 /*
- * Footer links. Privacy is a real page (/privacy). Contact opens a clean,
- * spacious contact card anchored above the footer (a popover on desktop, a
- * restrained bottom sheet on mobile). Uses the site's light register (warm
- * off-white cream, ink text), shared corner radius, a restrained border and
- * a soft shadow.
- *
- * The email action is a real, full-width semantic <a href="mailto:..."> —
- * the whole row (address + arrow) is the link, no button/onClick, no
- * preventDefault, no target=_blank. A separate, discreet copy control sits
- * beside the anchor (outside it) so it can't interfere with the mail link.
- * Closes on the X, a click outside, or Escape; focus is managed.
+ * Footer links. Privacy is a real page (/privacy). Contact opens a small
+ * contact card anchored above the footer (a popover on desktop, a restrained
+ * bottom sheet on mobile). The email is a plain, standard mailto anchor —
+ * clicking it opens the visitor's mail composer. No clipboard behaviour.
+ * Obvious link affordance: pointer cursor, persistent underline, hover and
+ * focus states. Closes on the X, a click outside, or Escape.
  */
 export default function FooterLinks() {
   const [open, setOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
   const wrapRef = useRef(null);
   const closeBtnRef = useRef(null);
   const triggerRef = useRef(null);
-  const copyTimer = useRef(null);
 
   useEffect(() => {
     if (!open) return;
-
     const onKey = (e) => {
       if (e.key === "Escape") setOpen(false);
     };
@@ -42,33 +31,9 @@ export default function FooterLinks() {
     return () => {
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("mousedown", onDown);
-      clearTimeout(copyTimer.current);
-      setCopied(false);
       triggerRef.current?.focus();
     };
   }, [open]);
-
-  const handleCopy = async () => {
-    try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(EMAIL);
-      } else {
-        const ta = document.createElement("textarea");
-        ta.value = EMAIL;
-        ta.style.position = "fixed";
-        ta.style.opacity = "0";
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        document.body.removeChild(ta);
-      }
-      setCopied(true);
-      clearTimeout(copyTimer.current);
-      copyTimer.current = setTimeout(() => setCopied(false), 1600);
-    } catch {
-      // Copy is a convenience only — the mailto link remains the primary action.
-    }
-  };
 
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
@@ -127,47 +92,26 @@ export default function FooterLinks() {
               Email us and we&rsquo;ll get back to you.
             </p>
 
-            <div className="mt-7 flex items-stretch gap-2">
-              {/* Primary action: the entire row is a real mailto anchor. */}
-              <a
-                href="mailto:hello@prismhealthco.com"
-                aria-label="Email Prism at hello@prismhealthco.com"
-                className="group flex flex-1 cursor-pointer items-center justify-between gap-4 px-5 py-4 text-[15px] font-medium transition-colors hover:bg-black/[0.04]"
-                style={{
-                  borderRadius: "calc(var(--prism-radius) - 0.45rem)",
-                  border: "1px solid rgba(20,20,15,0.18)",
-                }}
-              >
-                {/* Persistent underline + hover so it reads as a real
-                    clickable email link, not static text. */}
-                <span className="underline decoration-[#14140f]/30 underline-offset-4 transition-colors group-hover:decoration-[#14140f]">
-                  hello@prismhealthco.com
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="text-base leading-none opacity-60 transition-transform group-hover:translate-x-0.5"
-                >
-                  &#8599;
-                </span>
-              </a>
-
-              {/* Discreet, separate copy control — never inside the anchor. */}
-              <button
-                type="button"
-                onClick={handleCopy}
-                aria-label="Copy email address to clipboard"
-                className="flex min-w-[4.25rem] shrink-0 items-center justify-center px-3 text-[13px] font-medium text-[#14140f]/60 transition-colors hover:bg-black/[0.03] hover:text-[#14140f]"
-                style={{
-                  borderRadius: "calc(var(--prism-radius) - 0.45rem)",
-                  border: "1px solid rgba(20,20,15,0.15)",
-                }}
-              >
-                {copied ? "Copied" : <Copy size={15} aria-hidden="true" />}
-              </button>
-              <span className="sr-only" role="status" aria-live="polite">
-                {copied ? "Email address copied to clipboard" : ""}
+            {/* Plain, standard mailto link — opens the mail composer. Obvious
+                affordance: pointer, persistent underline, hover + focus. */}
+            <a
+              href="mailto:hello@prismhealthco.com"
+              className="group mt-7 flex cursor-pointer items-center justify-between gap-4 px-5 py-4 text-[15px] font-medium transition-colors hover:bg-black/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14140f]/40"
+              style={{
+                borderRadius: "calc(var(--prism-radius) - 0.45rem)",
+                border: "1px solid rgba(20,20,15,0.18)",
+              }}
+            >
+              <span className="underline decoration-[#14140f]/40 underline-offset-4 transition-colors group-hover:decoration-[#14140f]">
+                hello@prismhealthco.com
               </span>
-            </div>
+              <span
+                aria-hidden="true"
+                className="text-base leading-none opacity-60 transition-transform group-hover:translate-x-0.5"
+              >
+                &#8599;
+              </span>
+            </a>
           </div>
         )}
       </div>

@@ -56,12 +56,15 @@ export default function Bridge() {
               (bright green is dark-panels only). Consistent across breakpoints,
               only the offset/size scale responsively. */}
           <p
-            className="font-accent italic mt-10 md:mt-16 ml-[12%] md:ml-[30%] max-w-xl text-[clamp(1.4rem,3.4vw,2.6rem)] leading-[1.2]"
+            className="font-accent italic mt-10 md:mt-16 w-full text-[clamp(1.5rem,3.8vw,2.9rem)] leading-[1.2]"
             style={{ color: INK }}
           >
-            The answer has been on
-            <br />
-            your wrist all along.
+            <span className="block ml-[4%] md:ml-[12%]">
+              The answer has been on
+            </span>
+            <span className="block ml-[18%] md:ml-[34%]">
+              your wrist all along.
+            </span>
           </p>
         </motion.div>
       </div>

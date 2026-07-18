@@ -58,9 +58,10 @@ export default function Proof() {
               /* --w drives the phone size AND the panel height. The height is
                  set so the crop lands just below the "Your sleep" cards, in
                  the straight bezel — the bottom rounded corners stay hidden
-                 and the phone reads as continuing beyond the panel. */
-              "--w": "min(92vw, 520px)",
-              height: "calc(4rem + 1.38 * var(--w))",
+                 and the phone reads as continuing beyond the panel.
+                 (Progress 2 aspect 713x1420 -> 1.99; crop ~0.93 -> 1.85.) */
+              "--w": "min(92vw, 380px)",
+              height: "calc(5rem + 1.85 * var(--w))",
               /* Refined charcoal/graphite surface — a single soft radial for
                  depth. No diagonal streak, no glow. Hairline top light +
                  soft drop shadow give it material without competing. */
@@ -70,18 +71,18 @@ export default function Proof() {
                 "0 40px 120px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05)",
             }}
           >
-            {/* Progress 3 — full device render on a TRANSPARENT background,
-                placed directly on the graphite (no black rectangle). Sat a
-                little lower (top-16) for breathing room below the headline;
-                the panel's overflow crops the bottom bezel. */}
+            {/* Progress 2 — full device render, transparent background, placed
+                directly on the graphite (no black box / no inner background).
+                Sat lower (top-20) for breathing room below the headline; the
+                panel's overflow crops the bottom bezel. */}
             <Image
-              src="/screens/progress-3.png"
+              src="/screens/progress-2.png"
               alt="Prism Sleep screen: a rising two-week sleep trend with a Magnesium marker, and Total, REM and Deep sleep summary cards."
-              width={1024}
-              height={1536}
+              width={713}
+              height={1420}
               priority
-              sizes="(max-width: 768px) 92vw, 520px"
-              className="pointer-events-none absolute left-1/2 top-16 max-w-none -translate-x-1/2 select-none"
+              sizes="(max-width: 768px) 92vw, 380px"
+              className="pointer-events-none absolute left-1/2 top-20 max-w-none -translate-x-1/2 select-none"
               style={{ width: "var(--w)", height: "auto" }}
             />
           </div>

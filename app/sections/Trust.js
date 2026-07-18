@@ -78,10 +78,13 @@ export default function Trust() {
               italic serif, larger, occupying more horizontal space and set
               in the centre-right of the column. A deliberate concluding
               reflection. White on the dark panel. */}
-          <p className="font-accent italic mt-10 md:mt-16 ml-[12%] md:ml-[30%] max-w-xl text-[clamp(1.4rem,3.4vw,2.6rem)] leading-[1.2] text-white">
-            See what&rsquo;s changing using
-            <br />
-            your own health data.
+          <p className="font-accent italic mt-10 md:mt-16 w-full text-[clamp(1.5rem,3.8vw,2.9rem)] leading-[1.2] text-white">
+            <span className="block ml-[4%] md:ml-[12%]">
+              See what&rsquo;s changing using
+            </span>
+            <span className="block ml-[18%] md:ml-[34%]">
+              your own health data.
+            </span>
           </p>
         </motion.div>
 
