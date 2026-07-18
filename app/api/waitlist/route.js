@@ -12,7 +12,6 @@ export async function POST(request) {
     // local submissions log only. VERCEL_ENV, not NODE_ENV — preview builds
     // run with NODE_ENV=production too.
     if (process.env.VERCEL_ENV !== "production") {
-      console.log(`[waitlist] non-production (${process.env.VERCEL_ENV || "local"}): logged only —`, email);
       return NextResponse.json({ success: true, preview: true });
     }
 
