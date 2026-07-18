@@ -62,8 +62,8 @@ export default function HeresHow() {
           <Image
             src="/screens/home-1.png"
             alt="Prism Home screen. Sleep at Stage 2, Improving. Immunity at Stage 3, Maintaining."
-            width={806}
-            height={1678}
+            width={869}
+            height={1810}
             sizes="(max-width: 768px) 66vw, 320px"
             className="max-w-none select-none"
             style={{ height: "min(66vh, 600px)", width: "auto" }}

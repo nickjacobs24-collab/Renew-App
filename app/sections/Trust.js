@@ -87,11 +87,12 @@ export default function Trust() {
               in the centre-right of the column. A deliberate concluding
               reflection. White on the dark panel. */}
           <p className="font-accent italic mt-10 md:mt-16 w-full text-[clamp(1.5rem,3.8vw,2.9rem)] leading-[1.2] text-white">
-            <span className="block ml-[4%] md:ml-[12%]">
+            {/* Whole block nudged ~6% further right (desktop) into the
+                centre-right; stagger between the two lines preserved. */}
+            <span className="block ml-[4%] md:ml-[18%]">
               See what&rsquo;s changing using
             </span>
-            {/* Line 2 only moved left — "your" ~ beneath the C in "changing". */}
-            <span className="block ml-[14%] md:ml-[26%]">
+            <span className="block ml-[14%] md:ml-[32%]">
               your own health data.
             </span>
           </p>
