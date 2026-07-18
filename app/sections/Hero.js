@@ -1,75 +1,127 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { GRID } from "./system";
-import HeroVideo from "./HeroVideo";
 
 /*
- * Panel 1 — HERO (§4, DARK, centred; amended round). Bottles removed
- * permanently. Levels-anatomy: dimmed background video (slot in
- * HeroVideo.js, dormant until footage is supplied) under a content
- * layer of headline → CTA. The black→green gradient is the canvas
- * and the video's poster fallback. Motion: CSS-only load fade,
- * disabled under prefers-reduced-motion.
+ * Panel 1 — HERO. Rebuilt to the approved landing-page mock: dark canvas,
+ * PRISM wordmark top-left (no nav), a serif headline + supporting line +
+ * working waitlist form on the LEFT, and the large prism artwork on the
+ * RIGHT. Two-column on desktop; stacks content-first on mobile.
+ *
+ * The artwork is a TEMPORARY placeholder (cropped from the mock) and is the
+ * only non-final element. Swapping it later is just changing the <Image>
+ * src — the layout, sizing and object-fit are already production-ready and
+ * do not depend on the placeholder's exact dimensions.
  */
 
 const ACCENT = "var(--prism-accent)";
+const HERO_ART_SRC = "/hero/prism-hero.png"; // swap for the final artwork
 
 export default function Hero() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle"); // idle | submitting | success | error
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    if (!email || status === "submitting") return;
+    setStatus("submitting");
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      setStatus(res.ok ? "success" : "error");
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
-    <section
-      className="relative flex min-h-screen flex-col overflow-hidden"
-      style={{
-        /* Mostly black, with only a subtle DARK MUTED green settling in
-           at the base (not half-and-half, not bright). Also serves as the
-           video poster fallback. */
-        background:
-          "linear-gradient(180deg, #000000 0%, #000000 62%, #071a06 84%, #0c2a0d 100%)",
-      }}
-    >
-      <HeroVideo />
-
-      {/* Minimal nav (§4 Panel 1): logo left, "Join waitlist" right — nothing else. */}
-      <nav className="absolute inset-x-0 top-0 z-10 py-5">
-        <div className={`${GRID} flex items-center justify-between`}>
-          <a href="/" className="font-display text-sm tracking-[0.35em] text-white">
-            PRISM
-          </a>
-          <a
-            href="#get-prism"
-            className="rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition-colors hover:bg-white/90"
+    <section id="hero" className="relative overflow-hidden bg-black text-white">
+      {/* Header — logo only, no navigation. */}
+      <header className="absolute inset-x-0 top-0 z-20 py-6 md:py-8">
+        <div className={GRID}>
+          <Link
+            href="/"
+            className="font-accent text-xl tracking-[0.28em] text-white md:text-2xl"
           >
-            Join waitlist
-          </a>
+            PRISM
+          </Link>
         </div>
-      </nav>
+      </header>
 
-      {/* ONE tight centred stack, vertically centred as a unit:
-          headline → small gap → button directly beneath. The video
-          slot (above) fills the frame behind this; over the bare
-          gradient the tight stack still reads as composed, not
-          floating. */}
-      {/* Mobile: block sits moderately higher (more bottom than top padding
-          with justify-center), tighter gap. Desktop restored via md:. */}
       <div
-        className={`${GRID} relative z-10 flex flex-1 flex-col items-center justify-center gap-8 pt-16 pb-28 text-center md:gap-12 md:pt-28 md:pb-20`}
+        className={`${GRID} grid min-h-screen items-center gap-10 pt-28 pb-16 md:grid-cols-2 md:gap-14 md:pt-24 md:pb-20`}
       >
-        {/* No supporting line (§4: deliberate, do not add one).
-            Forced two-line break — controlled, not free-wrapping:
-            line 1 "KNOW IF YOUR SUPPLEMENTS", line 2 "ACTUALLY WORK".
-            Mobile: larger scale + tighter tracking (grows on wider phones);
-            desktop scale restored via md:. */}
-        <h1 className="fade-rise font-display uppercase leading-[1.05] text-white tracking-[-0.05em] text-[clamp(1.5rem,6.4vw,2.05rem)] md:tracking-[-0.04em] md:text-[clamp(1.5rem,6vw,4.75rem)]">
-          <span className="whitespace-nowrap">Know if your supplements</span>
-          <br />
-          actually <span style={{ color: ACCENT }}>work</span>
-        </h1>
+        {/* LEFT — content (stacks first on mobile, keeping hierarchy). */}
+        <div className="flex flex-col">
+          <h1 className="fade-rise font-accent text-[clamp(2.5rem,6vw,4.6rem)] leading-[1.06] tracking-[-0.01em] text-white">
+            Know if your supplements are actually{" "}
+            <span style={{ color: ACCENT }}>working</span>.
+          </h1>
 
-        {/* Mobile: slightly smaller button so it doesn't overpower the
-            heading; desktop size restored via md:. */}
-        <a
-          href="#get-prism"
-          className="fade-rise fade-rise-2 rounded-full bg-white px-8 py-3 text-base font-medium text-black shadow-[0_12px_40px_rgba(0,0,0,0.45)] transition-transform hover:scale-[1.03] md:px-10 md:py-4 md:text-lg"
-        >
-          Join the waitlist
-        </a>
+          <p className="mt-6 max-w-md text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/55">
+            See what&rsquo;s changing in your health, so you can keep what works
+            and change what doesn&rsquo;t.
+          </p>
+
+          {status === "success" ? (
+            <p className="mt-9 text-lg text-white/90">You&rsquo;re on the list.</p>
+          ) : (
+            <form
+              onSubmit={onSubmit}
+              className="mt-9 flex w-full max-w-md flex-col gap-2.5 sm:flex-row"
+            >
+              <label htmlFor="hero-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="hero-email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 rounded-xl border border-white/15 bg-white/[0.04] px-5 py-3.5 text-[15px] text-white outline-none transition-colors placeholder:text-white/40 focus:border-white/40"
+              />
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="shrink-0 rounded-xl bg-white px-6 py-3.5 text-[15px] font-medium text-black transition-opacity hover:opacity-90 disabled:opacity-60"
+              >
+                {status === "submitting" ? "Joining…" : "Join the waitlist"}
+              </button>
+            </form>
+          )}
+
+          {status === "error" && (
+            <p className="mt-3 text-sm text-white/70">
+              Something went wrong. Please try again.
+            </p>
+          )}
+
+          {/* Waitlist supporting line — no lock icon, generous spacing. */}
+          <p className="mt-7 text-[13px] text-white/45">
+            We&rsquo;ll email you once when Prism launches.
+          </p>
+        </div>
+
+        {/* RIGHT — hero artwork (temporary placeholder; swap the src only).
+            Scales responsively, preserves composition, never overlaps text. */}
+        <div className="relative w-full overflow-hidden aspect-[5/6] sm:aspect-[4/3] md:aspect-auto md:h-[min(80vh,780px)]">
+          <Image
+            src={HERO_ART_SRC}
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-center"
+          />
+        </div>
       </div>
     </section>
   );
