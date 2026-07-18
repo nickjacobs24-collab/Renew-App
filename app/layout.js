@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Archivo, Inter, Newsreader } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 /*
  * §3.1a closest-match: Archivo (multi-weight grotesque) for display,
@@ -48,7 +49,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${display.variable} ${body.variable} ${serif.variable}`}
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
