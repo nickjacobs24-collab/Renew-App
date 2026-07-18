@@ -1,21 +1,29 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { Copy } from "lucide-react";
+
+const EMAIL = "hello@prismhealthco.com";
 
 /*
  * Footer links. Privacy is a real page (/privacy). Contact opens a clean,
  * spacious contact card anchored above the footer (a popover on desktop, a
- * restrained bottom sheet on mobile) — not a tooltip, not a full-screen
- * modal. Uses the site's light register (warm off-white cream, ink text),
- * shared corner radius, a restrained border and a soft shadow. The email is
- * a full-width clickable row (mailto) that opens the visitor's mail client.
- * Closes on the X, a click outside, or Escape; focus moves into the card on
- * open and returns to the trigger on close.
+ * restrained bottom sheet on mobile). Uses the site's light register (warm
+ * off-white cream, ink text), shared corner radius, a restrained border and
+ * a soft shadow.
+ *
+ * The email action is a real, full-width semantic <a href="mailto:..."> —
+ * the whole row (address + arrow) is the link, no button/onClick, no
+ * preventDefault, no target=_blank. A separate, discreet copy control sits
+ * beside the anchor (outside it) so it can't interfere with the mail link.
+ * Closes on the X, a click outside, or Escape; focus is managed.
  */
 export default function FooterLinks() {
   const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
   const wrapRef = useRef(null);
   const closeBtnRef = useRef(null);
   const triggerRef = useRef(null);
+  const copyTimer = useRef(null);
 
   useEffect(() => {
     if (!open) return;
@@ -34,9 +42,33 @@ export default function FooterLinks() {
     return () => {
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("mousedown", onDown);
+      clearTimeout(copyTimer.current);
+      setCopied(false);
       triggerRef.current?.focus();
     };
   }, [open]);
+
+  const handleCopy = async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(EMAIL);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = EMAIL;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+      setCopied(true);
+      clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => setCopied(false), 1600);
+    } catch {
+      // Copy is a convenience only — the mailto link remains the primary action.
+    }
+  };
 
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
@@ -95,19 +127,40 @@ export default function FooterLinks() {
               Email us and we&rsquo;ll get back to you.
             </p>
 
-            <a
-              href="mailto:hello@prismhealthco.com"
-              className="mt-7 flex w-full items-center justify-between gap-4 px-5 py-4 text-[15px] font-medium transition-colors hover:bg-black/[0.03]"
-              style={{
-                borderRadius: "calc(var(--prism-radius) - 0.45rem)",
-                border: "1px solid rgba(20,20,15,0.15)",
-              }}
-            >
-              <span className="select-text">hello@prismhealthco.com</span>
-              <span aria-hidden="true" className="text-base leading-none">
-                &#8599;
+            <div className="mt-7 flex items-stretch gap-2">
+              {/* Primary action: the entire row is a real mailto anchor. */}
+              <a
+                href="mailto:hello@prismhealthco.com"
+                aria-label="Email Prism at hello@prismhealthco.com"
+                className="flex flex-1 items-center justify-between gap-4 px-5 py-4 text-[15px] font-medium transition-colors hover:bg-black/[0.03]"
+                style={{
+                  borderRadius: "calc(var(--prism-radius) - 0.45rem)",
+                  border: "1px solid rgba(20,20,15,0.15)",
+                }}
+              >
+                <span>hello@prismhealthco.com</span>
+                <span aria-hidden="true" className="text-base leading-none">
+                  &#8599;
+                </span>
+              </a>
+
+              {/* Discreet, separate copy control — never inside the anchor. */}
+              <button
+                type="button"
+                onClick={handleCopy}
+                aria-label="Copy email address to clipboard"
+                className="flex min-w-[4.25rem] shrink-0 items-center justify-center px-3 text-[13px] font-medium text-[#14140f]/60 transition-colors hover:bg-black/[0.03] hover:text-[#14140f]"
+                style={{
+                  borderRadius: "calc(var(--prism-radius) - 0.45rem)",
+                  border: "1px solid rgba(20,20,15,0.15)",
+                }}
+              >
+                {copied ? "Copied" : <Copy size={15} aria-hidden="true" />}
+              </button>
+              <span className="sr-only" role="status" aria-live="polite">
+                {copied ? "Email address copied to clipboard" : ""}
               </span>
-            </a>
+            </div>
           </div>
         )}
       </div>
