@@ -66,6 +66,9 @@ export default function FaqFooter() {
             <a href="/terms" className="hover:text-white">
               Terms
             </a>
+            <a href="/medical-disclaimer" className="hover:text-white">
+              Medical disclaimer
+            </a>
             <a
               href="mailto:hello@prismhealthco.com"
               className="hover:text-white"
@@ -73,10 +76,6 @@ export default function FaqFooter() {
               Contact
             </a>
           </div>
-          <p className="text-[13px]">
-            Medical disclaimer — placeholder; the founder supplies final copy
-            before ship.
-          </p>
         </div>
       </footer>
     </section>
