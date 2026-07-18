@@ -87,7 +87,7 @@ export default function Hero() {
       {/* Content — on the LEFT. Mobile is constrained so it never overlaps the
           right-side prism; desktop keeps its content width over the artwork. */}
       <div className={`${GRID} relative z-10 flex min-h-screen items-center`}>
-        <div className="w-full max-w-xl py-28 max-md:max-w-[57%] md:py-24">
+        <div className="w-full max-w-xl py-28 max-md:max-w-[54%] md:py-24">
           <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(1.65rem,4.4vw,1.95rem)] md:text-[clamp(2.5rem,5.6vw,4.6rem)] md:leading-[1.06]">
             Know if your supplements are actually{" "}
             <span style={{ color: ACCENT }}>working</span>.
@@ -116,7 +116,7 @@ export default function Hero() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 rounded-xl border border-white/15 bg-white/[0.06] px-5 py-3.5 text-[15px] text-white outline-none backdrop-blur-sm transition-colors placeholder:text-white/40 focus:border-white/40"
+                className="w-full min-w-0 flex-1 rounded-xl border border-white/15 bg-white/[0.06] px-5 py-3.5 text-[15px] text-white outline-none backdrop-blur-sm transition-colors placeholder:text-white/40 focus:border-white/40"
               />
               <button
                 type="submit"
