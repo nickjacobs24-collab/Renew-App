@@ -1,4 +1,5 @@
 import { GRID, PANEL_PAD, Eyebrow } from "./system";
+import ContactLink from "./ContactLink";
 
 /*
  * Panel 7 — FAQ + FOOTER (§4). BLACK — it was always black; the cream
@@ -59,19 +60,15 @@ export default function FaqFooter() {
         <div
           className={`${GRID} flex flex-col gap-4 text-sm text-white/70 md:flex-row md:items-center md:justify-between`}
         >
-          {/* Quiet grouped links, clearly separated by a thin divider —
-              Privacy and Contact only. */}
+          {/* Quiet grouped links, clearly separated by a thin divider.
+              Privacy is a real page (/privacy); Contact opens an in-page
+              modal (ContactLink). */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <a href="/privacy" className="hover:text-white">
               Privacy
             </a>
             <span aria-hidden="true" className="h-3 w-px bg-white/20" />
-            <a
-              href="mailto:hello@prismhealthco.com"
-              className="hover:text-white"
-            >
-              Contact
-            </a>
+            <ContactLink />
           </div>
         </div>
       </footer>
