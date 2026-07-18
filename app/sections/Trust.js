@@ -30,6 +30,7 @@ export default function Trust() {
 
   return (
     <section
+      id="promise"
       className="text-white"
       style={{
         background:

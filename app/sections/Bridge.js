@@ -29,7 +29,7 @@ export default function Bridge() {
   };
 
   return (
-    <section style={{ background: "var(--prism-cream)", color: INK }}>
+    <section id="problem" style={{ background: "var(--prism-cream)", color: INK }}>
       <div className="relative mx-auto w-full max-w-[1600px] px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
         {/* Left block */}
         <div className="max-w-[44rem]">
