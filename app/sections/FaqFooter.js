@@ -67,7 +67,7 @@ export default function FaqFooter() {
               Terms
             </a>
             <a
-              href="mailto:nick.jacobs24@gmail.com"
+              href="mailto:hello@prismhealthco.com"
               className="hover:text-white"
             >
               Contact
