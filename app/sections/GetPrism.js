@@ -89,7 +89,7 @@ export default function GetPrism() {
         ) : (
           <motion.div
             {...enter(0.14)}
-            className="flex w-full flex-col items-center gap-2.5"
+            className="flex w-full flex-col items-center gap-5"
           >
             <form
               onSubmit={onSubmit}
@@ -119,7 +119,7 @@ export default function GetPrism() {
             </form>
             {/* Quiet reassurance directly beneath the field */}
             <p className="text-[13px]" style={{ color: "rgba(20,20,15,0.55)" }}>
-              We&rsquo;ll email you once when Prism launches. Nothing else.
+              We&rsquo;ll email you once when Prism launches.
             </p>
           </motion.div>
         )}

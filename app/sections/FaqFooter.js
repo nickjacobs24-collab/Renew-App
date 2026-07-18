@@ -12,20 +12,20 @@ import FooterLinks from "./FooterLinks";
 
 const QUESTIONS = [
   {
-    q: "Do I need a wearable?",
-    a: "Yes. Your health data comes from your device, like a watch or a ring. That’s what’s used to show you what’s changing.",
+    q: "Do I need a smartwatch or fitness tracker?",
+    a: "A smartwatch, fitness tracker or smart ring is required to provide the health data needed to show what is changing.",
   },
   {
-    q: "Is this a medical device?",
-    a: "No. It isn’t a medical device or medical advice. Always speak to a doctor or qualified professional before making any decisions about your health.",
+    q: "Is this medical advice?",
+    a: "The information shown is not medical advice. Always speak to a doctor or qualified healthcare professional before making decisions about health.",
   },
   {
-    q: "How do I see what’s working?",
-    a: "Your health data is tracked over time, so you can see what changes after you start, stop, or adjust a supplement. You see the difference for yourself.",
+    q: "How will I know if a supplement is making a difference?",
+    a: "Changes in health data are shown over time after a supplement is started, stopped or changed.",
   },
   {
     q: "When will I see results?",
-    a: "Your first view comes after two weeks. That’s once there’s enough data to show how things are starting to change.",
+    a: "The first results are shown after two weeks, once enough data has been collected to identify early changes.",
   },
 ];
 
