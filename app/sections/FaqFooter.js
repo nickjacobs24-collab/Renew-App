@@ -59,17 +59,18 @@ export default function FaqFooter() {
         <div
           className={`${GRID} flex flex-col gap-4 text-sm text-white/70 md:flex-row md:items-center md:justify-between`}
         >
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
+          {/* Quiet grouped links, clearly separated by a thin divider —
+              Privacy and Contact only. */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <a href="/privacy" className="hover:text-white">
               Privacy
             </a>
-            {/* Show the address itself — readable and selectable so it can be
-                copied manually, and a mailto so clicking opens a mail client. */}
+            <span aria-hidden="true" className="h-3 w-px bg-white/20" />
             <a
               href="mailto:hello@prismhealthco.com"
-              className="select-text hover:text-white"
+              className="hover:text-white"
             >
-              hello@prismhealthco.com
+              Contact
             </a>
           </div>
         </div>
