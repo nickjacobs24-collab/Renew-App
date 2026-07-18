@@ -29,7 +29,7 @@ export default function Proof() {
       {/* robin hood 2 layout on flat jet black: centred text, then the
           phone in a soft-glow dark card, centred, STRAIGHT. */}
       <div
-        className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-10 text-center`}
+        className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-12 text-center`}
       >
         <motion.div {...enter()}>
           <Eyebrow mode="dark">The evidence</Eyebrow>
@@ -56,22 +56,26 @@ export default function Proof() {
             the page — the proof payoff. Screen contents never altered. */}
         <motion.figure {...enter(0.14)} className="flex w-full flex-col items-center gap-4">
           <div
-            className="relative mx-auto h-[min(70vh,660px)] w-full overflow-hidden rounded-[2rem] ring-1 ring-white/[0.06]"
+            className="relative mx-auto h-[min(72vh,700px)] w-full overflow-hidden rounded-[2rem] ring-1 ring-white/[0.08]"
             style={{
-              /* Much darker — near-black charcoal, barely above the section
-                 black, with only a whisper of mirror sheen. */
+              /* Refined charcoal/graphite surface — a single soft radial for
+                 depth (light gathered gently toward the top, falling to a
+                 deeper graphite at the base and edges). No diagonal streak,
+                 no glow. A hairline top light + soft drop shadow give it
+                 material without competing with the product. */
               background:
-                "linear-gradient(120deg, transparent 12%, rgba(255,255,255,0.025) 30%, transparent 46%), linear-gradient(155deg, #202226 0%, #131417 46%, #0b0b0d 78%, #161719 100%)",
-              boxShadow: "0 50px 150px rgba(0,0,0,0.75)",
+                "radial-gradient(130% 115% at 50% -12%, #26282c 0%, #181a1d 52%, #0d0e10 100%)",
+              boxShadow:
+                "0 40px 120px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05)",
             }}
           >
             {/* A real iPhone — titanium rail, black bezel, Dynamic Island,
                 side buttons — bigger and wider, rising from the card's
                 bottom edge. Screen contents never altered. */}
-            <div className="absolute left-1/2 top-12 -translate-x-1/2">
+            <div className="absolute left-1/2 top-10 -translate-x-1/2">
               <div
                 className="relative"
-                style={{ aspectRatio: "72 / 148", height: "min(82vh, 740px)" }}
+                style={{ aspectRatio: "72 / 148", height: "min(86vh, 810px)" }}
               >
                 {/* titanium metal rail */}
                 <div
