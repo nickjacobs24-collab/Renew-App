@@ -46,7 +46,7 @@ export default function Trust() {
 
           <motion.h2
             {...enter(0.06)}
-            className="mt-6 font-display font-medium leading-[1.05] tracking-[-0.02em] text-white text-[clamp(1.55rem,4.8vw,3.8rem)] lg:mt-8"
+            className="mt-6 font-display font-medium leading-[1.05] tracking-[-0.02em] text-white text-[clamp(1.5rem,6.8vw,2.7rem)] md:text-[clamp(1.55rem,4.8vw,3.8rem)] lg:mt-8"
           >
             {/* Exactly two lines — the first sentence never wraps. */}
             <span className="whitespace-nowrap">

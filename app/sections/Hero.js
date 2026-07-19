@@ -76,6 +76,10 @@ export default function Hero() {
               "radial-gradient(112% 82% at 64% 48%, #000 30%, transparent 74%)",
           }}
         />
+        {/* Strong, rapid fade on the LEFT so there is no hard vertical edge —
+            the prism blends into the black background. Top/bottom/right are
+            handled by the image mask above and left unchanged. */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_0%,#000_15%,transparent_46%)]" />
       </div>
 
       {/* Header — logo only, no navigation. */}
