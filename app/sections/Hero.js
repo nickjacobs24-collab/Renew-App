@@ -66,15 +66,17 @@ export default function Hero() {
       {/* Layout: desktop = copy overlaid on the left, vertically centred;
           mobile = copy stacked ABOVE the prism image. */}
       <div
-        className={`${GRID} relative z-10 flex min-h-screen flex-col justify-center py-28 md:flex-row md:items-center md:py-24`}
+        className={`${GRID} relative z-10 flex min-h-screen flex-col justify-center py-28 md:flex-row md:items-center md:justify-start md:py-24`}
       >
         {/* Copy column. Wider on desktop so the headline sets on two lines
             ("See if your supplements" / "are working.") with a gutter to the
             prism; the subhead and form keep their own widths. */}
-        <div className="w-full max-w-xl md:max-w-[48rem]">
-          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.9rem,6.4vw,5.3rem)] md:leading-[1.06]">
-            See if your supplements are{" "}
-            <span style={{ color: ACCENT }}>working</span>.
+        <div className="w-full max-w-xl md:max-w-[49rem]">
+          {/* Desktop: forced two-line break; mobile wraps naturally. */}
+          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.9rem,6vw,5rem)] md:leading-[1.06]">
+            See if your supplements{" "}
+            <br className="max-md:hidden" />
+            are <span style={{ color: ACCENT }}>working</span>.
           </h1>
 
           <p className="mt-7 max-w-[33rem] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60 md:mt-10">
