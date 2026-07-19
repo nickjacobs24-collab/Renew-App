@@ -69,6 +69,12 @@ export default function Hero() {
           priority
           sizes="43vw"
           className="h-auto w-full"
+          style={{
+            WebkitMaskImage:
+              "radial-gradient(112% 82% at 64% 48%, #000 30%, transparent 74%)",
+            maskImage:
+              "radial-gradient(112% 82% at 64% 48%, #000 30%, transparent 74%)",
+          }}
         />
       </div>
 
@@ -87,12 +93,17 @@ export default function Hero() {
       {/* Content — on the LEFT. Mobile is constrained so it never overlaps the
           right-side prism; desktop keeps its content width over the artwork. */}
       <div className={`${GRID} relative z-10 flex min-h-screen items-center`}>
-        <div className="w-full max-w-xl py-28 max-md:max-w-[54%] md:py-24">
-          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(1.65rem,4.4vw,1.95rem)] md:text-[clamp(2.5rem,5.6vw,4.6rem)] md:leading-[1.06]">
+        <div className="w-full max-w-xl py-28 md:py-24">
+          {/* Headline spans the full mobile width (hero title authority);
+              desktop size restored via md:. */}
+          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.5rem,5.6vw,4.6rem)] md:leading-[1.06]">
             Know if your supplements are actually{" "}
             <span style={{ color: ACCENT }}>working</span>.
           </h1>
 
+          {/* Copy + form stay in a narrower column on mobile so they don't
+              overlap the prism; desktop keeps them within the content width. */}
+          <div className="max-md:max-w-[58%]">
           <p className="mt-6 max-w-md text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60">
             See what&rsquo;s changing in your health, so you can keep what works
             and change what doesn&rsquo;t.
@@ -137,6 +148,7 @@ export default function Hero() {
           <p className="mt-7 text-[13px] text-white/50">
             We&rsquo;ll email you once when Prism launches.
           </p>
+          </div>
         </div>
       </div>
     </section>

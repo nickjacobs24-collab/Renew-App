@@ -60,7 +60,7 @@ export default function Bridge() {
             Absolutely positioned on desktop; stacks below on smaller screens. */}
         <motion.p
           {...fade}
-          className="mt-14 font-accent italic leading-[1.25] text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-[5.25rem] lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
+          className="mt-14 font-accent italic leading-[1.25] text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-[3.75rem] lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
           style={{ color: INK }}
         >
           The answer has been on
