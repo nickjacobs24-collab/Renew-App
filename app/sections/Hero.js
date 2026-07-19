@@ -37,6 +37,17 @@ export default function Hero() {
     }
   }
 
+  // Mobile CTA: jump to the Get started section and focus its email field.
+  // focus() runs first, inside the tap gesture, with preventScroll so iOS
+  // opens the keyboard without a hard jump; the smooth scroll then settles
+  // on the section.
+  function goToWaitlist() {
+    const section = document.getElementById("get-prism");
+    const input = document.getElementById("waitlist-email");
+    if (input) input.focus({ preventScroll: true });
+    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-black text-white">
       {/* DESKTOP: right-weighted prism artwork as a CSS background sized in
@@ -112,47 +123,62 @@ export default function Hero() {
             so you can keep what works and change what doesn&rsquo;t.
           </p>
 
-          {status === "success" ? (
-            <p className="mt-10 text-lg text-white/90 md:mt-12">
-              You&rsquo;re on the list.
-            </p>
-          ) : (
-            <form
-              onSubmit={onSubmit}
-              className="mx-auto mt-10 flex w-full max-w-md flex-col gap-2.5 sm:flex-row md:mx-0 md:mt-12"
-            >
-              <label htmlFor="hero-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="hero-email"
-                type="email"
-                required
-                autoComplete="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full min-w-0 flex-1 rounded-xl border border-white/15 bg-white/[0.06] px-5 py-3.5 text-[15px] text-white outline-none backdrop-blur-sm transition-colors placeholder:text-white/40 focus:border-white/40"
-              />
-              <button
-                type="submit"
-                disabled={status === "submitting"}
-                className="shrink-0 rounded-xl bg-white px-6 py-3.5 text-[15px] font-medium text-black transition-opacity hover:opacity-90 disabled:opacity-60"
+          {/* MOBILE CTA: a single anchor button (no input, no submit). Taps
+              through to the Get started section and focuses its email field so
+              the keyboard opens on arrival. The hero microcopy is dropped on
+              mobile — it already sits under the Get started form. */}
+          <button
+            type="button"
+            onClick={goToWaitlist}
+            className="mx-auto mt-10 w-full max-w-md rounded-xl bg-white px-6 py-3.5 text-[15px] font-medium text-black transition-opacity hover:opacity-90 md:hidden"
+          >
+            Join the waitlist
+          </button>
+
+          {/* DESKTOP: the inline waitlist form (hidden on mobile). */}
+          <div className="max-md:hidden">
+            {status === "success" ? (
+              <p className="mt-10 text-lg text-white/90 md:mt-12">
+                You&rsquo;re on the list.
+              </p>
+            ) : (
+              <form
+                onSubmit={onSubmit}
+                className="mt-10 flex w-full max-w-md flex-col gap-2.5 sm:flex-row md:mt-12"
               >
-                {status === "submitting" ? "Joining…" : "Join the waitlist"}
-              </button>
-            </form>
-          )}
+                <label htmlFor="hero-email" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="hero-email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full min-w-0 flex-1 rounded-xl border border-white/15 bg-white/[0.06] px-5 py-3.5 text-[15px] text-white outline-none backdrop-blur-sm transition-colors placeholder:text-white/40 focus:border-white/40"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="shrink-0 rounded-xl bg-white px-6 py-3.5 text-[15px] font-medium text-black transition-opacity hover:opacity-90 disabled:opacity-60"
+                >
+                  {status === "submitting" ? "Joining…" : "Join the waitlist"}
+                </button>
+              </form>
+            )}
 
-          {status === "error" && (
-            <p className="mt-3 text-sm text-white/70">
-              Something went wrong. Please try again.
+            {status === "error" && (
+              <p className="mt-3 text-sm text-white/70">
+                Something went wrong. Please try again.
+              </p>
+            )}
+
+            <p className="mt-7 text-[13px] text-white/50">
+              We&rsquo;ll email you once when Prism launches.
             </p>
-          )}
-
-          <p className="mt-7 text-[13px] text-white/50">
-            We&rsquo;ll email you once when Prism launches.
-          </p>
+          </div>
         </div>
       </div>
     </section>
