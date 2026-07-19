@@ -51,8 +51,8 @@ export default function Hero() {
         style={{
           backgroundImage: `url(${HERO_ART_SRC})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "46vw auto",
-          backgroundPosition: "92.7% center",
+          backgroundSize: "34vw auto",
+          backgroundPosition: "85.4% center",
         }}
       />
       {/* Feather the seam between the copy side and the artwork so the left
@@ -74,12 +74,28 @@ export default function Hero() {
       {/* Layout: desktop = copy overlaid on the left, vertically centred;
           mobile = copy stacked ABOVE the prism image. */}
       <div
-        className={`${GRID} relative z-10 flex min-h-screen flex-col justify-center py-28 md:flex-row md:items-center md:justify-start md:py-24`}
+        className={`${GRID} relative z-10 flex min-h-screen flex-col justify-center py-16 md:flex-row md:items-center md:justify-start md:py-24`}
       >
-        {/* Copy column. Wider on desktop so the headline sets on two lines
-            ("See if your supplements" / "are working.") with a gutter to the
-            prism; the subhead and form keep their own widths. */}
-        <div className="w-full max-w-xl md:max-w-[38rem]">
+        {/* MOBILE: prism FIRST — a contained, centred, fully-uncropped object
+            sitting in the top third with clear space around it (resend/vercel
+            pattern). Height-capped so the whole hero fits one viewport with no
+            scroll. Hidden on desktop, where the prism is the CSS background. */}
+        <div className="mb-8 flex w-full justify-center md:hidden">
+          <Image
+            src="/hero/prism-mobile.png"
+            alt=""
+            width={642}
+            height={760}
+            priority
+            sizes="(max-width: 768px) 60vw, 0px"
+            className="h-[29vh] max-h-[290px] w-auto"
+          />
+        </div>
+
+        {/* Copy column. Mobile: centred, headline wraps naturally. Desktop:
+            left-aligned, wider, with the forced two-line break and a gutter to
+            the prism; the subhead and form keep their own widths. */}
+        <div className="w-full max-w-xl text-center md:max-w-[38rem] md:text-left">
           {/* Desktop: forced two-line break; mobile wraps naturally. Sized so
               "See if your supplements" ends at ~48% of the viewport (matching
               the reference) — the hard copy-column width plus this size hold
@@ -103,7 +119,7 @@ export default function Hero() {
           ) : (
             <form
               onSubmit={onSubmit}
-              className="mt-10 flex w-full max-w-md flex-col gap-2.5 sm:flex-row md:mt-12"
+              className="mx-auto mt-10 flex w-full max-w-md flex-col gap-2.5 sm:flex-row md:mx-0 md:mt-12"
             >
               <label htmlFor="hero-email" className="sr-only">
                 Email address
@@ -137,19 +153,6 @@ export default function Hero() {
           <p className="mt-7 text-[13px] text-white/50">
             We&rsquo;ll email you once when Prism launches.
           </p>
-        </div>
-
-        {/* MOBILE: uncropped prism stacked below the copy (never behind it). */}
-        <div className="mt-12 w-full md:hidden">
-          <Image
-            src="/hero/prism-mobile.png"
-            alt=""
-            width={560}
-            height={700}
-            priority
-            sizes="(max-width: 768px) 86vw, 0px"
-            className="mx-auto h-auto w-[86%] max-w-[21rem]"
-          />
         </div>
       </div>
     </section>
