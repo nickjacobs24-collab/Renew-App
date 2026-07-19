@@ -38,6 +38,32 @@ body {
   font-family: var(--font-serif), Georgia, serif;
 }
 
+/* Hero: darkening overlay that contains the prism's incoming beam and floor
+   reflection so the headline, subhead and form sit on a near-black field.
+   Opacity values and gradient stops are exposed as custom properties for
+   quick tuning. Desktop composition only (the overlay lives inside the
+   desktop full-bleed layer); the mobile hero copy already sits on black.
+   The transition is deliberately long/smooth (30% -> 62%) to avoid any
+   visible band or tonal step, and reaches zero before the prism's left edge. */
+.hero-light-overlay {
+  --hero-o-start: 0.92;
+  --hero-o-mid: 0.55;
+  --hero-s1: 0%;
+  --hero-s2: 30%;
+  --hero-s3: 45%;
+  --hero-s4: 62%;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, var(--hero-o-start)) var(--hero-s1),
+    rgba(0, 0, 0, var(--hero-o-start)) var(--hero-s2),
+    rgba(0, 0, 0, var(--hero-o-mid)) var(--hero-s3),
+    rgba(0, 0, 0, 0) var(--hero-s4)
+  );
+}
+
 /* Panel entrance — one subtle fade-rise on load, staggered via delay. */
 @keyframes fade-rise {
   from {

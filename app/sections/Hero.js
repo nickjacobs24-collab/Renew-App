@@ -53,9 +53,12 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Subtle contrast gradient for legibility — fades to nothing, never
-            reads as a separate solid panel. */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/25 to-transparent" />
+        {/* Darkening overlay — sits between the artwork and the content and
+            contains the prism's incoming beam / floor reflection so the copy
+            reads on a near-black field. Reaches zero before the prism's left
+            edge, leaving the prism and the spectrum untouched. Tunable via the
+            CSS custom properties in globals.css. */}
+        <div className="hero-light-overlay" />
       </div>
 
       {/* MOBILE: the prism as a DISTINCT object on the right (black canvas on
@@ -101,7 +104,7 @@ export default function Hero() {
           {/* Headline spans the full mobile width (hero title authority);
               desktop size restored via md:. */}
           <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.5rem,5.6vw,4.6rem)] md:leading-[1.06]">
-            Know if your supplements are actually{" "}
+            See if your supplements are{" "}
             <span style={{ color: ACCENT }}>working</span>.
           </h1>
 
@@ -109,8 +112,8 @@ export default function Hero() {
               overlap the prism; desktop keeps them within the content width. */}
           <div className="max-md:max-w-[58%]">
           <p className="mt-6 max-w-md text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60">
-            See what&rsquo;s changing in your health, so you can keep what works
-            and change what doesn&rsquo;t.
+            Prism shows how supplements affect your health, so you can keep
+            what works and change what doesn&rsquo;t.
           </p>
 
           {status === "success" ? (
