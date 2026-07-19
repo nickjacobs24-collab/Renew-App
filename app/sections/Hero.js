@@ -71,9 +71,11 @@ export default function Hero() {
         {/* Copy column. Wider on desktop so the headline sets on two lines
             ("See if your supplements" / "are working.") with a gutter to the
             prism; the subhead and form keep their own widths. */}
-        <div className="w-full max-w-xl md:max-w-[49rem]">
-          {/* Desktop: forced two-line break; mobile wraps naturally. */}
-          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.9rem,6vw,5rem)] md:leading-[1.06]">
+        <div className="w-full max-w-xl md:max-w-[48rem]">
+          {/* Desktop: forced two-line break; mobile wraps naturally. Sized as
+              large as the two-line break allows while keeping a clear gutter
+              to the prism (a bigger size would overlap it). */}
+          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.9rem,5.7vw,4.65rem)] md:leading-[1.07]">
             See if your supplements{" "}
             <br className="max-md:hidden" />
             are <span style={{ color: ACCENT }}>working</span>.
