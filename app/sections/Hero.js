@@ -39,19 +39,25 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-black text-white">
-      {/* DESKTOP: right-weighted background artwork. object-contain (not
-          cover) so the prism is never scaled up or cropped on any edge and
-          keeps the reference scale; positioned right of centre with a gutter. */}
-      <div className="absolute inset-0 z-0 max-md:hidden">
-        <Image
-          src={HERO_ART_SRC}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-contain object-[72%_center]"
-        />
-      </div>
+      {/* DESKTOP: right-weighted prism artwork as a CSS background sized in
+          vw. Using vw (not object-contain) makes the geometry independent of
+          viewport HEIGHT, so the prism/beam land at the same % of the viewport
+          width at 1440 and 1920. The asset (public/hero/prism-hero.png) is
+          pre-cropped from "Landing page" and left-feathered so no light spills
+          past the object; size + position keep every lit pixel right of 50%,
+          the prism ~30vw wide, centred in the right half with padding. */}
+      <div
+        className="absolute inset-0 z-0 max-md:hidden"
+        style={{
+          backgroundImage: `url(${HERO_ART_SRC})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "46vw auto",
+          backgroundPosition: "92.7% center",
+        }}
+      />
+      {/* Feather the seam between the copy side and the artwork so the left
+          half stays clean black even if a lit pixel edges near the midline. */}
+      <div className="absolute inset-y-0 left-0 z-[1] w-1/2 max-md:hidden bg-gradient-to-r from-black via-black/85 to-transparent" />
 
       {/* Header — logo only, no navigation. */}
       <header className="absolute inset-x-0 top-0 z-20 py-6 md:py-8">
