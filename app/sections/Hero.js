@@ -107,7 +107,7 @@ export default function Hero() {
           <div className="max-md:max-w-[58%]">
           {/* Widened so the subhead sets on two lines, breaking naturally
               after the comma. Mobile stays constrained by the wrapper above. */}
-          <p className="mt-6 max-w-[31rem] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60">
+          <p className="mt-6 max-w-[29rem] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60">
             Prism shows how supplements affect your health, so you can keep
             what works and change what doesn&rsquo;t.
           </p>
