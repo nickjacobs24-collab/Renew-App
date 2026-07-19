@@ -53,12 +53,6 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Darkening overlay — sits between the artwork and the content and
-            contains the prism's incoming beam / floor reflection so the copy
-            reads on a near-black field. Reaches zero before the prism's left
-            edge, leaving the prism and the spectrum untouched. Tunable via the
-            CSS custom properties in globals.css. */}
-        <div className="hero-light-overlay" />
       </div>
 
       {/* MOBILE: the prism as a DISTINCT object on the right (black canvas on
@@ -111,7 +105,9 @@ export default function Hero() {
           {/* Copy + form stay in a narrower column on mobile so they don't
               overlap the prism; desktop keeps them within the content width. */}
           <div className="max-md:max-w-[58%]">
-          <p className="mt-6 max-w-md text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60">
+          {/* Widened so the subhead sets on two lines, breaking naturally
+              after the comma. Mobile stays constrained by the wrapper above. */}
+          <p className="mt-6 max-w-[31rem] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60">
             Prism shows how supplements affect your health, so you can keep
             what works and change what doesn&rsquo;t.
           </p>
