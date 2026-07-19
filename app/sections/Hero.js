@@ -14,7 +14,6 @@ import { GRID } from "./system";
  * independently from desktop.
  */
 
-const ACCENT = "var(--prism-accent)";
 const HERO_ART_SRC = "/hero/prism-hero.png"; // Landing background (desktop full-bleed)
 
 export default function Hero() {
@@ -114,10 +113,10 @@ export default function Hero() {
           <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.5rem,4.5vw,3.7rem)] md:leading-[1.1]">
             See if your supplements{" "}
             <br className="max-md:hidden" />
-            are <span style={{ color: ACCENT }}>working</span>.
+            are working.
           </h1>
 
-          <p className="mt-7 max-w-[33rem] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60 md:mt-10">
+          <p className="mx-auto mt-7 max-w-[18.5rem] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60 md:mx-0 md:mt-10 md:max-w-[33rem]">
             Prism shows how supplements affect your health,{" "}
             <br className="max-md:hidden" />
             so you can keep what works and change what doesn&rsquo;t.
