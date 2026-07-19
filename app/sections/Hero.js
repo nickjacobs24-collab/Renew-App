@@ -5,20 +5,17 @@ import Link from "next/link";
 import { GRID } from "./system";
 
 /*
- * Panel 1 — HERO. The prism artwork is a FULL-BLEED background layer that
- * spans the whole section (its own wide composition: dark negative space on
- * the left, prism on the right). The logo, headline, supporting copy and
- * waitlist form are real HTML overlaid ABOVE the image — the copy sits over
- * the image's natural dark left through a constrained content width, not a
- * separate black panel or a two-column split.
- *
- * The artwork is a TEMPORARY placeholder (derived from the mock). Swap it by
- * changing HERO_ART_SRC only — the full-bleed layout, object-fit and
- * object-position are production-ready and don't depend on its exact size.
+ * Panel 1 — HERO.
+ * Desktop: the "Landing background" prism artwork is a full-bleed, right-
+ * weighted background (object-fit: cover) with the copy overlaid on the dark
+ * left. Headline sets on two lines with a gutter to the prism.
+ * Mobile: its own treatment — the copy stacks ABOVE an uncropped prism image
+ * (never over the prism or its light path). H1 size and wrapping are set
+ * independently from desktop.
  */
 
 const ACCENT = "var(--prism-accent)";
-const HERO_ART_SRC = "/hero/prism-hero.png"; // swap for the final wide artwork
+const HERO_ART_SRC = "/hero/prism-hero.png"; // Landing background (desktop full-bleed)
 
 export default function Hero() {
   const [email, setEmail] = useState("");
@@ -42,8 +39,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-black text-white">
-      {/* DESKTOP: full-bleed background artwork — reaches every edge, prism on
-          the right, dark negative space behind the copy. */}
+      {/* DESKTOP: full-bleed, right-weighted background artwork. */}
       <div className="absolute inset-0 z-0 max-md:hidden">
         <Image
           src={HERO_ART_SRC}
@@ -53,30 +49,6 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover object-center"
         />
-      </div>
-
-      {/* MOBILE: the prism as a DISTINCT object on the right (black canvas on
-          the left for the copy — no overlap). Hidden on desktop. */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-[43%] items-center md:hidden">
-        <Image
-          src="/hero/prism-mobile.png"
-          alt=""
-          width={600}
-          height={660}
-          priority
-          sizes="43vw"
-          className="h-auto w-full"
-          style={{
-            WebkitMaskImage:
-              "radial-gradient(112% 82% at 64% 48%, #000 30%, transparent 74%)",
-            maskImage:
-              "radial-gradient(112% 82% at 64% 48%, #000 30%, transparent 74%)",
-          }}
-        />
-        {/* Strong, rapid fade on the LEFT so there is no hard vertical edge —
-            the prism blends into the black background. Top/bottom/right are
-            handled by the image mask above and left unchanged. */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_0%,#000_15%,transparent_46%)]" />
       </div>
 
       {/* Header — logo only, no navigation. */}
@@ -91,34 +63,34 @@ export default function Hero() {
         </div>
       </header>
 
-      {/* Content — on the LEFT. Mobile is constrained so it never overlaps the
-          right-side prism; desktop keeps its content width over the artwork. */}
-      <div className={`${GRID} relative z-10 flex min-h-screen items-center`}>
-        <div className="w-full max-w-xl py-28 md:py-24">
-          {/* Headline spans the full mobile width (hero title authority);
-              desktop size restored via md:. */}
-          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.5rem,5.6vw,4.6rem)] md:leading-[1.06]">
+      {/* Layout: desktop = copy overlaid on the left, vertically centred;
+          mobile = copy stacked ABOVE the prism image. */}
+      <div
+        className={`${GRID} relative z-10 flex min-h-screen flex-col justify-center py-28 md:flex-row md:items-center md:py-24`}
+      >
+        {/* Copy column. Wider on desktop so the headline sets on two lines
+            ("See if your supplements" / "are working.") with a gutter to the
+            prism; the subhead and form keep their own widths. */}
+        <div className="w-full max-w-xl md:max-w-[48rem]">
+          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.9rem,6.4vw,5.3rem)] md:leading-[1.06]">
             See if your supplements are{" "}
             <span style={{ color: ACCENT }}>working</span>.
           </h1>
 
-          {/* Copy + form stay in a narrower column on mobile so they don't
-              overlap the prism; desktop keeps them within the content width. */}
-          <div className="max-md:max-w-[58%]">
-          {/* Widened so the subhead sets on two lines, breaking naturally
-              after the comma. Mobile stays constrained by the wrapper above. */}
-          <p className="mt-6 max-w-[33rem] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60">
+          <p className="mt-7 max-w-[33rem] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-relaxed text-white/60 md:mt-10">
             Prism shows how supplements affect your health,{" "}
             <br className="max-md:hidden" />
             so you can keep what works and change what doesn&rsquo;t.
           </p>
 
           {status === "success" ? (
-            <p className="mt-9 text-lg text-white/90">You&rsquo;re on the list.</p>
+            <p className="mt-10 text-lg text-white/90 md:mt-12">
+              You&rsquo;re on the list.
+            </p>
           ) : (
             <form
               onSubmit={onSubmit}
-              className="mt-9 flex w-full max-w-md flex-col gap-2.5 sm:flex-row"
+              className="mt-10 flex w-full max-w-md flex-col gap-2.5 sm:flex-row md:mt-12"
             >
               <label htmlFor="hero-email" className="sr-only">
                 Email address
@@ -152,7 +124,19 @@ export default function Hero() {
           <p className="mt-7 text-[13px] text-white/50">
             We&rsquo;ll email you once when Prism launches.
           </p>
-          </div>
+        </div>
+
+        {/* MOBILE: uncropped prism stacked below the copy (never behind it). */}
+        <div className="mt-12 w-full md:hidden">
+          <Image
+            src="/hero/prism-mobile.png"
+            alt=""
+            width={560}
+            height={700}
+            priority
+            sizes="(max-width: 768px) 86vw, 0px"
+            className="mx-auto h-auto w-[86%] max-w-[21rem]"
+          />
         </div>
       </div>
     </section>
