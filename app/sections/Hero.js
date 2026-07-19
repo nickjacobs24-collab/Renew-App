@@ -39,7 +39,9 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-black text-white">
-      {/* DESKTOP: full-bleed, right-weighted background artwork. */}
+      {/* DESKTOP: right-weighted background artwork. object-contain (not
+          cover) so the prism is never scaled up or cropped on any edge and
+          keeps the reference scale; positioned right of centre with a gutter. */}
       <div className="absolute inset-0 z-0 max-md:hidden">
         <Image
           src={HERO_ART_SRC}
@@ -47,7 +49,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-contain object-[72%_center]"
         />
       </div>
 
@@ -71,11 +73,12 @@ export default function Hero() {
         {/* Copy column. Wider on desktop so the headline sets on two lines
             ("See if your supplements" / "are working.") with a gutter to the
             prism; the subhead and form keep their own widths. */}
-        <div className="w-full max-w-xl md:max-w-[48rem]">
-          {/* Desktop: forced two-line break; mobile wraps naturally. Sized as
-              large as the two-line break allows while keeping a clear gutter
-              to the prism (a bigger size would overlap it). */}
-          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.9rem,5.7vw,4.65rem)] md:leading-[1.07]">
+        <div className="w-full max-w-xl md:max-w-[38rem]">
+          {/* Desktop: forced two-line break; mobile wraps naturally. Sized so
+              "See if your supplements" ends at ~48% of the viewport (matching
+              the reference) — the hard copy-column width plus this size hold
+              the two-line break with a clear gutter to the prism. */}
+          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.5rem,4.5vw,3.7rem)] md:leading-[1.1]">
             See if your supplements{" "}
             <br className="max-md:hidden" />
             are <span style={{ color: ACCENT }}>working</span>.
