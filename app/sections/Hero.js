@@ -96,7 +96,7 @@ export default function Hero() {
               working.") holds on one line each at 375px up through desktop. */}
           <h1
             style={{ fontWeight: 700 }}
-            className="fade-rise font-display leading-[1.12] tracking-[-0.02em] text-white text-[clamp(1.75rem,6.8vw,2.15rem)] md:text-[clamp(2rem,3.6vw,3.2rem)] md:leading-[1.08]"
+            className="fade-rise font-display leading-[1.12] tracking-[-0.02em] text-white text-[clamp(1.8rem,7.4vw,2.2rem)] md:text-[clamp(2rem,3.6vw,3.2rem)] md:leading-[1.08]"
           >
             See if your supplements{" "}
             <br />

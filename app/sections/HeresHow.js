@@ -72,7 +72,7 @@ export default function HeresHow() {
               Matches the two-beat question in the Problem section. */}
           <motion.h2
             {...enter(0.06)}
-            className="font-display leading-[1.15] tracking-[-0.02em] text-white text-[clamp(1.5rem,3.15vw,2.6rem)]"
+            className="font-display leading-[1.15] tracking-[-0.02em] text-white text-[clamp(1.5rem,6.4vw,1.85rem)] md:text-[1.5rem] lg:text-[clamp(2rem,3.3vw,2.6rem)]"
           >
             <span className="block">We show you the evidence.</span>
             <span className="block text-white/70">Based on your health data.</span>

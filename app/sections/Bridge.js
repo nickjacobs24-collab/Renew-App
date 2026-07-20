@@ -32,14 +32,14 @@ export default function Bridge() {
     <section id="problem" style={{ background: "var(--prism-cream)", color: INK }}>
       <div className="relative mx-auto w-full max-w-[1600px] px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
         {/* Left block */}
-        <div className="max-w-[44rem]">
+        <div className="max-w-[44rem] lg:max-w-[54rem]">
           <motion.div {...enter()}>
             <Eyebrow mode="light">The problem</Eyebrow>
           </motion.div>
 
           <motion.h2
             {...enter(0.06)}
-            className="mt-6 font-display font-semibold leading-[1.1] tracking-[-0.02em] text-[clamp(1.5rem,4vw,3.2rem)] lg:mt-8"
+            className="mt-6 font-display font-semibold leading-[1.1] tracking-[-0.02em] text-[clamp(1.55rem,6.6vw,1.9rem)] md:text-[3rem] lg:mt-8 lg:text-[4rem]"
             style={{ color: INK }}
           >
             {/* Two beats, two sentences — never reflow into one line. */}
@@ -60,7 +60,7 @@ export default function Bridge() {
             Absolutely positioned on desktop; stacks below on smaller screens. */}
         <motion.p
           {...fade}
-          className="mt-14 font-accent italic leading-[1.25] text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-[3.75rem] lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
+          className="mt-14 font-accent italic leading-[1.3] text-[clamp(1rem,2.8vw,2.5rem)] lg:absolute lg:bottom-[3.75rem] lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
           style={{ color: INK }}
         >
           The answer has been on

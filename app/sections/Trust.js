@@ -71,7 +71,7 @@ export default function Trust() {
             positioned on desktop; stacks below on smaller screens. */}
         <motion.p
           {...fade}
-          className="mt-14 font-accent italic leading-[1.25] text-white text-[clamp(1.7rem,3vw,2.8rem)] lg:absolute lg:bottom-[8rem] lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
+          className="mt-14 font-accent italic leading-[1.3] text-white text-[clamp(1rem,2.8vw,2.5rem)] lg:absolute lg:bottom-[8rem] lg:right-16 lg:mt-0 lg:w-auto lg:text-center"
         >
           See what&rsquo;s changing using
           <br />
