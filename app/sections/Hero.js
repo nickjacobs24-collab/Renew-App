@@ -54,7 +54,7 @@ export default function Hero() {
         <div className={GRID}>
           <Link
             href="/"
-            className="font-accent text-xl tracking-[0.28em] text-white md:text-2xl"
+            className="font-display text-xl tracking-[0.28em] text-white md:text-2xl"
           >
             PRISM
           </Link>
@@ -90,9 +90,16 @@ export default function Hero() {
               "See if your supplements" ends at ~48% of the viewport (matching
               the reference) — the hard copy-column width plus this size hold
               the two-line break with a clear gutter to the prism. */}
-          <h1 className="fade-rise font-accent leading-[1.08] tracking-[-0.01em] text-white text-[clamp(2.4rem,6.4vw,2.9rem)] md:text-[clamp(2.5rem,4.5vw,3.7rem)] md:leading-[1.1]">
+          {/* Inter now (was serif). font-bold as a utility is overridden by
+              .font-display's weight, so the 700 hero peak is set inline. Sized
+              so the forced two-line break ("See if your supplements / are
+              working.") holds on one line each at 375px up through desktop. */}
+          <h1
+            style={{ fontWeight: 700 }}
+            className="fade-rise font-display leading-[1.12] tracking-[-0.02em] text-white text-[clamp(1.75rem,6.8vw,2.15rem)] md:text-[clamp(2rem,3.6vw,3.2rem)] md:leading-[1.08]"
+          >
             See if your supplements{" "}
-            <br className="max-md:hidden" />
+            <br />
             are working.
           </h1>
 

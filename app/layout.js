@@ -1,23 +1,16 @@
 import "./globals.css";
-import { Archivo, Inter, Newsreader } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
 /*
- * §3.1a closest-match: Archivo (multi-weight grotesque) for display,
- * set to MEDIUM globally (§ global-refinement round — large-and-lighter
- * premium feel per Oura/Levels heroes, not heavy/black). Inter for
- * body, with a light weight for supporting copy. Self-hosted by
- * next/font at build — no runtime third-party requests.
+ * Typography: ONE sans family — Inter — for everything (headlines, body,
+ * eyebrows, buttons, nav, footer). Hierarchy is carried by weight only:
+ * headlines 600–700, body 400, eyebrow labels 500. Weights 600/700 are
+ * loaded here so the headline swap from the old display face is real, not
+ * synthesised. Self-hosted by next/font at build — no runtime requests.
  */
-const display = Archivo({
-  weight: ["400", "500", "600"],
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
 const body = Inter({
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
@@ -47,7 +40,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} ${serif.variable}`}
+      className={`${body.variable} ${serif.variable}`}
     >
       <body className="antialiased">
         {children}

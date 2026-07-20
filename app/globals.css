@@ -22,12 +22,11 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-display), system-ui, sans-serif;
-  /* ONE display weight, every headline — regular (400), the lightest of
-     the large-and-lighter Oura/Levels register. Dropped from 500 after
-     the medium still read heavier than the reference (uppercase reads
-     denser than Levels' sentence-case, so it needs the lighter weight). */
-  font-weight: 400;
+  /* Headlines are Inter now (one sans family across the whole page).
+     Hierarchy is weight, not family: this is the headline weight (600);
+     the hero peak bumps to 700 at its call site. */
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 600;
 }
 
 /* Italic-serif accent face (app-screen serif, closest-match Newsreader).

@@ -39,17 +39,17 @@ export default function Bridge() {
 
           <motion.h2
             {...enter(0.06)}
-            className="mt-6 font-display font-medium leading-[1.04] tracking-[-0.02em] text-[clamp(2.35rem,5vw,4rem)] lg:mt-8"
+            className="mt-6 font-display font-semibold leading-[1.1] tracking-[-0.02em] text-[clamp(1.5rem,4vw,3.2rem)] lg:mt-8"
             style={{ color: INK }}
           >
-            Are your supplements
-            <br />
-            making a difference?
+            {/* Two beats, two sentences — never reflow into one line. */}
+            <span className="block">Do your supplements work?</span>
+            <span className="block">How do you know?</span>
           </motion.h2>
 
           <motion.div
             {...enter(0.14)}
-            className="mt-8 space-y-1.5 font-light leading-relaxed text-[clamp(1rem,1.25vw,1.15rem)] text-[#14140f]/60 lg:mt-10"
+            className="mt-8 space-y-1.5 font-normal leading-relaxed text-[clamp(1rem,1.25vw,1.15rem)] text-[#14140f]/60 lg:mt-10"
           >
             <p>Until now, the only way to check was a blood test.</p>
             <p>But these can be expensive, complicated and hard to understand.</p>

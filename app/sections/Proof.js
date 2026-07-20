@@ -32,7 +32,7 @@ export default function Proof() {
         className={`${GRID} ${PANEL_PAD} flex flex-col items-center gap-12 text-center`}
       >
         <motion.div {...enter()}>
-          <Eyebrow mode="dark">The evidence</Eyebrow>
+          <Eyebrow mode="dark">The results</Eyebrow>
         </motion.div>
 
         <motion.h2

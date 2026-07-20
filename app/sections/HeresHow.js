@@ -1,15 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  GRID,
-  PANEL_PAD,
-  Eyebrow,
-  HEADLINE_STEPPED,
-  BODY_TEXT,
-  GAP_STACK,
-  GAP_SPLIT,
-} from "./system";
+import { GRID, PANEL_PAD, Eyebrow, GAP_STACK } from "./system";
 
 /*
  * Panel 3 — HOW IT WORKS (§4). DARK band (consolidated round band
@@ -76,28 +68,21 @@ export default function HeresHow() {
             <Eyebrow mode="dark">How it works</Eyebrow>
           </motion.div>
 
-          {/* Mobile: exactly two lines via a mobile-only break. */}
+          {/* Two beats, two sentences — stacked, same size, never one line.
+              Matches the two-beat question in the Problem section. */}
           <motion.h2
             {...enter(0.06)}
-            className={`font-display leading-[1.05] text-white ${HEADLINE_STEPPED}`}
+            className="font-display leading-[1.15] tracking-[-0.02em] text-white text-[clamp(1.5rem,3.15vw,2.6rem)]"
           >
-            Based on your
-            <br />
-            health data.
+            <span className="block">We show you the evidence.</span>
+            <span className="block text-white/70">Based on your health data.</span>
           </motion.h2>
-
-          <motion.p
-            {...enter(0.14)}
-            className={`max-w-xl text-white/90 ${BODY_TEXT}`}
-          >
-            Cost-effective. Simple. Easy to understand.
-          </motion.p>
 
           {/* Wearable brand row. Mobile: kept on ONE line — smaller size
               and tighter gap, no wrap. Desktop restored via md:. */}
           <motion.div
             {...enter(0.22)}
-            className="mt-2 flex flex-nowrap items-center gap-x-3 gap-y-4 md:flex-wrap md:gap-x-10"
+            className="mt-4 flex flex-nowrap items-center gap-x-3 gap-y-4 md:mt-6 md:flex-wrap md:gap-x-10"
           >
             {BRANDS.map((brand) => (
               <span

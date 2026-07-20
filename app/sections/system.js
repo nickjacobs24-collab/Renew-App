@@ -24,7 +24,7 @@ export const HEADLINE_STEPPED = "text-[clamp(2.4rem,4.8vw,3.9rem)] tracking-[-0.
 
 // Supporting/body copy: lighter weight, comfortable size — thinner and
 // larger reads calmer. Colour (contrast) is set per mode at call site.
-export const BODY_TEXT = "font-light leading-relaxed text-[clamp(1.1rem,1.6vw,1.3rem)]";
+export const BODY_TEXT = "font-normal leading-relaxed text-[clamp(1.1rem,1.6vw,1.3rem)]";
 
 // Vertical rhythm — Levels-precision density. Panel padding cut ~50%
 // (was py-16 md:py-24) AND interior panels are content-driven (no
