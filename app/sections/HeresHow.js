@@ -11,13 +11,6 @@ import { GRID, PANEL_PAD, Eyebrow, GAP_STACK } from "./system";
  * logos; swap for licensed SVGs when supplied.
  */
 
-const BRANDS = [
-  { name: "APPLE WATCH", cls: "font-medium tracking-[0.1em]" },
-  { name: "WHOOP", cls: "font-extrabold tracking-[0.2em]" },
-  { name: "ŌURA", cls: "font-medium tracking-[0.32em]" },
-  { name: "GARMIN", cls: "font-bold tracking-[0.16em]" },
-];
-
 export default function HeresHow() {
   const prefersReduced = useReducedMotion();
 
@@ -78,20 +71,12 @@ export default function HeresHow() {
             <span className="block text-white/70">Based on your health data.</span>
           </motion.h2>
 
-          {/* Wearable brand row. Mobile: kept on ONE line — smaller size
-              and tighter gap, no wrap. Desktop restored via md:. */}
-          <motion.div
-            {...enter(0.22)}
-            className="mt-4 flex flex-nowrap items-center gap-x-3 gap-y-4 md:mt-6 md:flex-wrap md:gap-x-10"
-          >
-            {BRANDS.map((brand) => (
-              <span
-                key={brand.name}
-                className={`whitespace-nowrap text-[11px] text-white/75 md:text-sm ${brand.cls}`}
-              >
-                {brand.name}
-              </span>
-            ))}
+          {/* Compatibility line — same wordmark styling as the Apple Watch
+              brand mark (the only supported device at launch). */}
+          <motion.div {...enter(0.22)} className="mt-4 md:mt-6">
+            <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-white/75 md:text-sm">
+              Works with Apple Watch
+            </span>
           </motion.div>
         </div>
        </div>
