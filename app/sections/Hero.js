@@ -121,6 +121,11 @@ export default function Hero() {
           >
             Join the waitlist
           </button>
+
+          {/* Device compatibility — small muted caption beneath the CTA. */}
+          <p className="mt-6 text-[13px] text-white/50">
+            Works with Apple Watch. Oura and Garmin coming soon.
+          </p>
         </div>
       </div>
     </section>
